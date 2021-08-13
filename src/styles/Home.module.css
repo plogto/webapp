@@ -1,0 +1,5 @@
+.main {
+  @apply flex flex-col items-center justify-center;
+  @apply w-screen h-screen;
+  @apply font-bold text-7xl;
+}

@@ -1,0 +1,34 @@
+.container {
+  @apply flex flex-col justify-center items-center;
+  @apply h-screen w-screen bg-white md:bg-gray-50;
+}
+
+.form {
+  @apply flex flex-col w-80 m-auto justify-center lg:bg-white;
+  @apply pt-8 px-5 pb-6 rounded-xl lg:shadow-sm lg:border lg:border-gray-100;
+}
+
+.logo {
+  @apply text-5xl text-gray-800 font-bold text-center my-4;
+}
+
+.description {
+  @apply text-center text-gray-600;
+}
+
+.error {
+  @apply text-sm text-red-500 text-center bg-red-100 rounded-md;
+  @apply py-2.5 w-full;
+}
+
+.submitButton {
+  @apply text-white bg-blue-500 w-full;
+}
+
+.registerLink {
+  @apply text-blue-500;
+}
+
+.footer {
+  @apply flex flex-row text-gray-400 mb-5 text-center text-xs;
+}
