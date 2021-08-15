@@ -1,0 +1,4 @@
+.container {
+  @apply flex flex-col justify-end items-center;
+  @apply h-screen w-screen bg-white md:bg-gray-50;
+}
