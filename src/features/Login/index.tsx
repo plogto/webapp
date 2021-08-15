@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import styles from "@/styles/Login.module.css";
+import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
 
 export default function Login() {
