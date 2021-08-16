@@ -1,3 +1,4 @@
 .navbar {
-  @apply bg-white rounded-lg p-2 shadow flex mb-5;
+  @apply fixed bottom-0 flex justify-center w-120 p-2;
+  @apply rounded-t-lg  bg-gradient-to-b from-white to-gray-50;
 }

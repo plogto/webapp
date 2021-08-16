@@ -5,11 +5,16 @@ import {
   ViewGridIcon,
   BellIcon,
   PlusIcon,
+  GlobeIcon,
 } from "@heroicons/react/solid";
 import NavLink from "@/components/NavLink";
 
 export default function Navbar() {
   const items = [
+    {
+      icon: <GlobeIcon />,
+      href: "/search",
+    },
     {
       icon: <BellIcon />,
       href: "/notifications",
