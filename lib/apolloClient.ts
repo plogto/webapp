@@ -1,19 +1,34 @@
 import { useMemo } from "react";
 import {
   ApolloClient,
-  HttpLink,
+  ApolloLink,
+  concat,
+  createHttpLink,
   InMemoryCache,
   NormalizedCacheObject,
 } from "@apollo/client";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
+const httpLink = createHttpLink({
+  uri: process.env.NEXT_PUBLIC_BASE_URL + "/query",
+});
+
+const authLink = new ApolloLink((operation, forward) => {
+  const Authorization = localStorage.getItem("Authorization") || "null";
+
+  operation.setContext({
+    headers: {
+      Authorization: `Bearer ${Authorization}`,
+    },
+  });
+  return forward(operation);
+});
+
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
-    link: new HttpLink({
-      uri: process.env.NEXT_PUBLIC_BASE_URL + "/query",
-    }),
+    link: concat(authLink, httpLink),
     cache: new InMemoryCache(),
   });
 }
