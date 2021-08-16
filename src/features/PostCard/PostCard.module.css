@@ -1,0 +1,25 @@
+.container {
+  @apply bg-white rounded-lg shadow w-full;
+  @apply mt-4;
+}
+
+.header {
+  @apply flex border-b border-gray-100;
+  @apply p-2;
+}
+
+.avatar {
+  @apply text-gray-400 w-10 h-10 mr-1;
+}
+
+.fullname {
+  @apply font-bold text-sm pr-1;
+}
+
+.username {
+  @apply text-gray-500 text-sm pr-1;
+}
+
+.content {
+  @apply text-sm py-2 p-3;
+}
