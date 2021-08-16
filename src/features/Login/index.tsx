@@ -47,7 +47,6 @@ export default function Login() {
           </Button>
         </div>
       </form>
-      <p className={styles.footer}>All rights reserved @ Note 2021</p>
     </div>
   );
 }

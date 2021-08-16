@@ -4,7 +4,7 @@ import { GET_USER_POSTS_BY_USERNAME } from "@/graphql/post";
 import { useLazyQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 
-export function useDashboard() {
+export function useHome() {
   const { user } = useAccount();
   const [getUserPostsByUsername, { error, loading, data }] = useLazyQuery(
     GET_USER_POSTS_BY_USERNAME,

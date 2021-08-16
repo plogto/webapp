@@ -18,7 +18,7 @@ export function useLogin() {
       localStorage.setItem("Authorization", token);
       setToken(token);
       setIsAutheticated(true);
-      router.push(PageUrls.DASHBOARD);
+      router.push(PageUrls.HOME);
     }
   }, [data]);
 

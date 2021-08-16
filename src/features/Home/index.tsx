@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import PostCard from "../PostCard";
-import styles from "./Dashboard.module.css";
-import { useDashboard } from "./hooks/useDashboard";
+import styles from "./Home.module.css";
+import { useHome } from "./hooks/useHome";
 
-export default function Dashboard() {
-  const { posts } = useDashboard();
+export default function Home() {
+  const { posts } = useHome();
 
   return (
     <div className={styles.container}>
