@@ -1,5 +1,5 @@
+import { v4 as uuid } from "uuid";
 import styles from "./Navbar.module.css";
-import Link from "next/link";
 import {
   UserCircleIcon,
   ViewGridIcon,
@@ -8,8 +8,11 @@ import {
   GlobeIcon,
 } from "@heroicons/react/solid";
 import NavLink from "@/components/NavLink";
+import { useAccount } from "@/context/AccountContext";
+import { PageUrls } from "@/@enums/pages";
 
 export default function Navbar() {
+  const { user } = useAccount();
   const items = [
     {
       icon: <GlobeIcon />,
@@ -25,19 +28,23 @@ export default function Navbar() {
     },
     {
       icon: <ViewGridIcon />,
-      href: "/dashboard",
+      href: PageUrls.HOME,
     },
     {
       icon: <UserCircleIcon />,
-      href: "/",
+      href: user?.username,
     },
   ];
 
-  return (
-    <div className={styles.navbar}>
-      {items.map(item => (
-        <NavLink key={item.href} {...item} />
-      ))}
+  return user ? (
+    <div className={styles.container}>
+      <div className={styles.navbar}>
+        {items.map(item => (
+          <NavLink key={uuid()} {...item} />
+        ))}
+      </div>
     </div>
+  ) : (
+    <></>
   );
 }

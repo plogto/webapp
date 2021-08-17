@@ -1,4 +1,10 @@
+.container {
+  @apply fixed bottom-0 w-full;
+  @apply flex justify-center;
+}
+
 .navbar {
-  @apply fixed bottom-0 flex justify-center w-120 p-2;
-  @apply rounded-t-lg  bg-gradient-to-b from-white to-gray-50;
+  @apply fixed bottom-0 w-full lg:w-120 p-2;
+  @apply flex justify-around lg:justify-center;
+  @apply rounded-t-lg bg-gradient-to-b from-white to-gray-50;
 }

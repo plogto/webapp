@@ -1,5 +1,6 @@
 import styles from "./Input.module.css";
 import { UseFormRegisterReturn } from "react-hook-form";
+
 type Props = {
   type: "text" | "password";
   name: string;
@@ -7,6 +8,7 @@ type Props = {
   placeholder: string;
   register?: UseFormRegisterReturn;
 };
+
 export default function Input({
   type,
   name,

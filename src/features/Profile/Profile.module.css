@@ -1,0 +1,30 @@
+.container {
+  @apply flex flex-col justify-between items-center;
+  @apply w-full;
+}
+
+.notFound {
+  @apply flex flex-col items-center justify-center h-screen;
+  @apply h-screen text-gray-400;
+}
+
+.header {
+  @apply flex items-center p-7;
+}
+
+.avatar {
+  @apply text-gray-400 w-32 h-32 mr-1;
+}
+
+.setting {
+  @apply text-gray-400 w-7 h-7 mr-1 cursor-pointer;
+  @apply hover:text-indigo-500 duration-300;
+}
+
+.fullname {
+  @apply text-2xl font-bold pr-1;
+}
+
+.username {
+  @apply text-gray-500 pr-1;
+}

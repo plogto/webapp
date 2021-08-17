@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./NavLink.module.css";
 
 type Props = {
-  href: string;
+  href?: string;
   className?: string;
   icon?: ReactNode;
 };
@@ -12,7 +12,7 @@ type Props = {
 export default function NavLink({ icon, href }: Props) {
   const router = useRouter();
 
-  return (
+  return href ? (
     <Link href={href}>
       <a
         className={`${styles.navLink} ${
@@ -21,5 +21,7 @@ export default function NavLink({ icon, href }: Props) {
         {icon}
       </a>
     </Link>
+  ) : (
+    <></>
   );
 }

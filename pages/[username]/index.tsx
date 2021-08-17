@@ -1,14 +1,14 @@
 import Navbar from "@/components/Navbar";
-import Home from "@/features/Home";
+import Profile from "@/features/Profile";
 import Head from "next/head";
 
-export default function HomePage() {
+export default function ProfilePage() {
   return (
     <>
       <Head>
-        <title>Home | Note</title>
+        <title>Profile | Note</title>
       </Head>
-      <Home />
+      <Profile />
       <Navbar />
     </>
   );
