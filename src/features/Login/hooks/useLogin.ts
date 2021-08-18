@@ -10,13 +10,17 @@ import { useAccount } from "@/context/AccountContext";
 export function useLogin() {
   const formMethods = useForm<LoginForm>({ mode: "all" });
   const [login, { error, loading, data }] = useLazyQuery(LOGIN);
-  const { setToken, setIsAutheticated } = useAccount();
+  const { setIsAutheticated, setToken, setUser } = useAccount();
 
   useEffect(() => {
     if (data) {
-      const { token } = data.login.authToken;
+      const {
+        authToken: { token },
+        user,
+      } = data.login;
       localStorage.setItem("Authorization", token);
       setToken(token);
+      setUser(user);
       setIsAutheticated(true);
       router.push(PageUrls.HOME);
     }
