@@ -13,12 +13,8 @@
 }
 
 .avatar {
-  @apply text-gray-400 w-32 h-32 mr-1;
-}
-
-.setting {
-  @apply text-gray-400 w-7 h-7 mr-1 cursor-pointer;
-  @apply hover:text-indigo-500 duration-300;
+  @apply w-24 h-24 lg:w-32 lg:h-32 text-gray-400;
+  @apply rounded-full shadow-sm border;
 }
 
 .fullname {

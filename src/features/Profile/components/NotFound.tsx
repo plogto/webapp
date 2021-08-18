@@ -1,9 +1,4 @@
-import Avatar from "@/components/Avatar";
-import {
-  CogIcon,
-  EmojiSadIcon,
-  UserCircleIcon,
-} from "@heroicons/react/outline";
+import { EmojiSadIcon } from "@heroicons/react/outline";
 import styles from "../Profile.module.css";
 
 export default function NotFound() {
