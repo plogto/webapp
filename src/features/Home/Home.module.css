@@ -1,4 +1,4 @@
 .container {
   @apply flex flex-col justify-between items-center;
-  @apply w-full bg-white md:bg-gray-50;
+  @apply w-full bg-white;
 }

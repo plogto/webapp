@@ -1,4 +1,4 @@
-import { User } from "@/@types/user";
+import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import styles from "../Profile.module.css";
 

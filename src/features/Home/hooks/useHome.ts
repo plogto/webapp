@@ -1,5 +1,5 @@
 import { PageUrls } from "@/@enums/pages";
-import { Post } from "@/@types/post";
+import type { Post } from "@/@types/post";
 import { useAccount } from "@/context/AccountContext";
 import { GET_USER_POSTS_BY_USERNAME } from "@/graphql/post";
 import { useLazyQuery } from "@apollo/client";

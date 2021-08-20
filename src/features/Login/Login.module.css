@@ -1,6 +1,6 @@
 .container {
   @apply flex flex-col justify-center items-center;
-  @apply h-screen w-screen bg-white md:bg-gray-50;
+  @apply h-screen w-screen;
 }
 
 .form {
@@ -22,7 +22,7 @@
 }
 
 .submitButton {
-  @apply text-white bg-blue-500 w-full;
+  @apply text-white bg-blue-500 w-full px-4 py-2.5;
 }
 
 .registerLink {

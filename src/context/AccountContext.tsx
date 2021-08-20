@@ -1,4 +1,4 @@
-import { Account, SetAccount } from "@/@types/account";
+import type { Account, SetAccount } from "@/@types/account";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 const token =

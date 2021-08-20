@@ -1,4 +1,4 @@
-import { User } from "@/@types/user";
+import type { User } from "@/@types/user";
 import { GET_USER_BY_USERNAME } from "@/graphql/user";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
