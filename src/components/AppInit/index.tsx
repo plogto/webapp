@@ -11,7 +11,7 @@ function AppInit() {
     if (data) {
       setUser(data.getUserInfo);
     }
-  }, [data]);
+  }, [data, setUser]);
 
   return <></>;
 }

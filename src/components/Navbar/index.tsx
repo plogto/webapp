@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-import styles from "./Navbar.module.css";
 import {
   UserCircleIcon,
   ViewGridIcon,
@@ -7,6 +5,8 @@ import {
   PlusIcon,
   GlobeIcon,
 } from "@heroicons/react/solid";
+import { v4 as uuid } from "uuid";
+import styles from "./Navbar.module.css";
 import NavLink from "@/components/NavLink";
 import { useAccount } from "@/context/AccountContext";
 import { PageUrls } from "@/@enums/pages";
@@ -24,7 +24,7 @@ export default function Navbar() {
     },
     {
       icon: <PlusIcon />,
-      href: "/add",
+      href: PageUrls.ADD_POST,
     },
     {
       icon: <ViewGridIcon />,

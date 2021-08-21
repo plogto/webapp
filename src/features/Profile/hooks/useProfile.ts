@@ -19,7 +19,7 @@ export function useProfile() {
         },
       });
     }
-  }, [username]);
+  }, [username, getUserByUsername]);
 
   useEffect(() => {
     if (data) {

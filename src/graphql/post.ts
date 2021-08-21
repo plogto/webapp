@@ -16,3 +16,20 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+  mutation addPost($content: String!) {
+    addPost(input: { content: $content }) {
+      id
+      user {
+        id
+        username
+        fullname
+      }
+      content
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;

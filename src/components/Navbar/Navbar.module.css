@@ -5,6 +5,6 @@
 
 .navbar {
   @apply fixed bottom-0 w-full lg:w-120 p-2;
-  @apply flex justify-around lg:justify-center;
+  @apply flex justify-around lg:justify-center shadow;
   @apply rounded-t-lg bg-gradient-to-b from-white to-gray-50;
 }

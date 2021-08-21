@@ -1,0 +1,42 @@
+.container {
+  @apply flex flex-col justify-between items-center;
+  @apply w-full p-2 lg:p-0;
+}
+
+.form {
+  @apply w-full lg:w-120 lg:mt-5 lg:px-0;
+  @apply bg-white rounded-lg shadow;
+}
+
+.header {
+  @apply flex border-b border-gray-100;
+  @apply p-2;
+}
+
+.avatar {
+  @apply text-gray-400 w-10 h-10 mr-2;
+  @apply rounded-full shadow-sm border;
+}
+
+.fullname {
+  @apply font-bold text-sm pr-1;
+}
+
+.username {
+  @apply text-gray-500 text-sm pr-1;
+}
+
+.textarea {
+  @apply border-none w-full m-0 resize-none;
+  box-shadow: none !important;
+}
+
+.footer {
+  @apply flex justify-between p-2 lg:p-3;
+}
+
+.submit {
+  @apply bg-indigo-500 text-white py-2 px-3;
+  @apply font-bold w-24;
+  outline: none;
+}

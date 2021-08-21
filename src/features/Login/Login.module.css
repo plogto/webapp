@@ -5,7 +5,7 @@
 
 .form {
   @apply flex flex-col w-80 m-auto justify-center lg:bg-white;
-  @apply pt-8 px-5 pb-6 rounded-xl lg:shadow-sm lg:border lg:border-gray-100;
+  @apply pt-8 px-5 pb-6 rounded-lg lg:shadow-sm lg:border lg:border-gray-100;
 }
 
 .logo {

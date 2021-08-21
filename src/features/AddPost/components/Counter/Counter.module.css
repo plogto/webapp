@@ -1,0 +1,18 @@
+.counter {
+  @apply flex items-center justify-center text-gray-400 w-24;
+  @apply rounded-lg shadow-sm border border-gray-200 duration-300;
+}
+
+.number {
+  @apply inline-flex items-center justify-center;
+  @apply text-center h-full w-full;
+}
+
+.number:first-child {
+  @apply border-r border-gray-200;
+}
+
+.number:first-child.counterOverflow,
+.counterOverflow {
+  @apply text-red-500 border-red-500;
+}

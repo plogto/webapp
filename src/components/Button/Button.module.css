@@ -1,7 +1,16 @@
 .button {
   @apply inline-flex items-center justify-center;
-  @apply select-none;
+  @apply select-none duration-300;
   @apply rounded-md shadow-sm;
-  @apply text-sm cursor-pointer font-normal;
+  @apply text-sm cursor-pointer;
   outline: none !important;
+}
+
+.button.disabled {
+  @apply bg-gray-300 text-gray-500;
+  @apply py-2 px-3 cursor-not-allowed;
+}
+
+.button.loading {
+  @apply cursor-not-allowed;
 }

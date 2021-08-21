@@ -28,7 +28,7 @@ export function useHome() {
         },
       });
     }
-  }, [user]);
+  }, [user, getUserPostsByUsername]);
 
   useEffect(() => {
     if (data) {

@@ -3,4 +3,5 @@ export enum PageUrls {
   LOGOUT = "/logout",
   REGISTER = "/register",
   HOME = "/",
+  ADD_POST = "/compose/post",
 }

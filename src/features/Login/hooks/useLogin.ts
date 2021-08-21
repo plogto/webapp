@@ -24,7 +24,7 @@ export function useLogin() {
       setIsAutheticated(true);
       router.push(PageUrls.HOME);
     }
-  }, [data]);
+  }, [data, setToken, setUser, setIsAutheticated]);
 
   const submit = (variables: LoginForm) => {
     login({ variables });
