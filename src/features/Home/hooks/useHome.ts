@@ -32,7 +32,7 @@ export function useHome() {
 
   useEffect(() => {
     if (data) {
-      setPosts(data.getUserPostsByUsername);
+      setPosts(data.getUserPostsByUsername.posts);
     }
   }, [data]);
 
