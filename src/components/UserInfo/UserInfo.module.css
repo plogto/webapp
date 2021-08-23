@@ -1,0 +1,21 @@
+.container {
+  @apply flex items-start border-b border-gray-100 bg-white;
+  @apply w-full p-2;
+}
+
+.avatar {
+  @apply text-gray-400 w-10 h-10 mr-2;
+  @apply rounded-full shadow-sm border;
+}
+
+.fullname {
+  @apply font-bold text-sm pr-1;
+}
+
+.username {
+  @apply text-gray-500 text-sm pr-1;
+}
+
+.content {
+  @apply text-sm py-2 p-3;
+}
