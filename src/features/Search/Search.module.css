@@ -1,0 +1,19 @@
+.container {
+  @apply flex flex-col justify-between items-center;
+  @apply w-full lg:w-120 lg:mx-auto p-2 lg:p-0 mx-auto;
+}
+
+.form {
+  @apply w-full lg:mt-5 p-2 overflow-hidden;
+  @apply bg-white rounded-lg shadow;
+}
+
+.searchInput {
+  @apply border-0 w-full py-1 px-2;
+  box-shadow: none !important;
+}
+
+.users {
+  @apply w-full mt-2;
+  @apply rounded-lg shadow overflow-hidden;
+}
