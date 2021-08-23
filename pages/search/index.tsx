@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Search from "@/features/Search";
 import Head from "next/head";
 
 export default function SearchPage() {
@@ -7,7 +8,7 @@ export default function SearchPage() {
       <Head>
         <title>Search | Note</title>
       </Head>
-      <div>Search</div>
+      <Search />
       <Navbar />
     </>
   );
