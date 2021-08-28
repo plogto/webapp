@@ -32,7 +32,7 @@ export default function Navbar() {
     },
     {
       icon: <UserCircleIcon />,
-      href: user?.username,
+      href: `/${user?.username}`,
     },
   ];
 
