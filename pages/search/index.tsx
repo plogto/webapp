@@ -6,7 +6,7 @@ export default function SearchPage() {
   return (
     <>
       <Head>
-        <title>Search | Note</title>
+        <title>Search | Poster</title>
       </Head>
       <Search />
       <Navbar />

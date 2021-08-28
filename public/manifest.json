@@ -1,6 +1,6 @@
 {
-  "name": "Note",
-  "short_name": "Note",
+  "name": "Poster",
+  "short_name": "Poster",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#FFFFFF",

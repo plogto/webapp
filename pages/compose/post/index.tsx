@@ -6,7 +6,7 @@ export default function AddPostPage() {
   return (
     <>
       <Head>
-        <title>Add | Note</title>
+        <title>Add | Poster</title>
       </Head>
       <AddPost />
       <Navbar />

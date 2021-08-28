@@ -5,7 +5,7 @@ export default function NotificationsPage() {
   return (
     <>
       <Head>
-        <title>Notifications | Note</title>
+        <title>Notifications | Poster</title>
       </Head>
       <div>Notifications</div>
       <Navbar />

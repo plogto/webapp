@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit(submit)} className={styles.form}>
-        <h1 className={styles.logo}>Note</h1>
+        <h1 className={styles.logo}>Poster</h1>
         {error && (
           <div className="mt-3 w-full">
             <div className={styles.error}>{error.message}</div>

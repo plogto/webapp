@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default function LoginPage() {
   <Head>
-    <title>Login | Note</title>
+    <title>Login | Poster</title>
   </Head>;
   return <Login />;
 }

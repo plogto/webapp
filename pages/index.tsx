@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Home | Note</title>
+        <title>Home | Poster</title>
       </Head>
       <Home />
       <Navbar />
