@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/favecode/poster-fe/compare/v0.3.2...v0.3.3) (2021-08-28)
+
+
+### Features
+
+* initialize ConnectionButton for Profile feature ([642807e](https://github.com/favecode/poster-fe/commit/642807e8f72393bd3532ead88caa01e0e7bd232c))
+
+
+### Bug Fixes
+
+* profile link in navbar ([1efd4d5](https://github.com/favecode/poster-fe/commit/1efd4d534d4a557e228cc7248573b87d5cd1fdab))
+
 ### [0.3.2](https://github.com/favecode/poster-fe/compare/v0.3.1...v0.3.2) (2021-08-28)
 
 ### [0.3.1](https://github.com/favecode/poster-fe/compare/v0.3.0...v0.3.1) (2021-08-28)
