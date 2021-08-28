@@ -9,12 +9,12 @@
 }
 
 .header {
-  @apply flex items-center p-5;
+  @apply flex items-center py-5 px-5 lg:pt-5 lg:px-0;
 }
 
 .avatar {
-  @apply w-24 h-24 lg:w-32 lg:h-32 text-gray-400;
-  @apply rounded-full shadow-sm border;
+  @apply w-24 h-24 lg:w-24 lg:h-24 text-gray-400;
+  @apply bg-white rounded-full shadow-sm border;
 }
 
 .fullname {
