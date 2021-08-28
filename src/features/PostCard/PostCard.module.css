@@ -1,6 +1,6 @@
 .container {
   @apply bg-white rounded-lg shadow w-full;
-  @apply mt-4;
+  @apply mb-4;
 }
 
 .header {
