@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/favecode/note-fe/compare/v0.3.0...v0.3.1) (2021-08-28)
+
+
+### Features
+
+* implement Posts component ([d72c41f](https://github.com/favecode/note-fe/commit/d72c41f58266880896886c5bcb6d7b6b44c71897))
+
 ## [0.3.0](https://github.com/favecode/note-fe/compare/v0.2.1...v0.3.0) (2021-08-23)
 
 
