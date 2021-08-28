@@ -6,7 +6,7 @@ export default function ProfilePage() {
   return (
     <>
       <Head>
-        <title>Profile | Note</title>
+        <title>Profile | Poster</title>
       </Head>
       <Profile />
       <Navbar />
