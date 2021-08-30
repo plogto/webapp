@@ -10,7 +10,7 @@ type Props = {
 export default function Users({ user }: Props) {
   return user ? (
     <div className={styles.users}>
-      {user.users.map(user => (
+      {user.users?.map(user => (
         <Link key={user.id} href={user.username}>
           <a>
             <UserInfo {...user} />
