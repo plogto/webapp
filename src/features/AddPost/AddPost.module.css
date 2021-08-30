@@ -4,7 +4,7 @@
 }
 
 .form {
-  @apply w-full lg:w-120 lg:mt-5 lg:px-0;
+  @apply w-full lg:w-128 lg:mt-5 lg:px-0;
   @apply bg-white rounded-lg shadow;
 }
 

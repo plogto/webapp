@@ -1,22 +1,21 @@
-import { Post } from "@/@types/post";
-import type { User } from "@/@types/user";
 import { GET_USER_POSTS_BY_USERNAME } from "@/graphql/post";
 import { GET_USER_BY_USERNAME } from "@/graphql/user";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useUserProfile } from "@/context/UserProfileContext";
+import type { GetUserByUsernameQuery } from "@/graphql/@types/user";
+import type { GetUserPostsByUsernameQuery } from "@/graphql/@types/post";
 
 export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
-  const [getUserByUsername, { error, loading, data }] =
-    useLazyQuery(GET_USER_BY_USERNAME);
-  const [getUserPostsByUsername, { data: postsData }] = useLazyQuery(
-    GET_USER_POSTS_BY_USERNAME,
-  );
+  const { setUser, setPosts, user, posts } = useUserProfile();
 
-  const [user, setUser] = useState<User>();
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [getUserByUsername, getUserByUsernameResponse] =
+    useLazyQuery<GetUserByUsernameQuery>(GET_USER_BY_USERNAME);
+  const [getUserPostsByUsername, getUserPostsByUsernameResponse] =
+    useLazyQuery<GetUserPostsByUsernameQuery>(GET_USER_POSTS_BY_USERNAME);
 
   useEffect(() => {
     if (username) {
@@ -34,16 +33,18 @@ export function useProfile() {
   }, [username, getUserByUsername]);
 
   useEffect(() => {
-    if (data) {
-      setUser(data.getUserByUsername);
+    if (getUserByUsernameResponse.data) {
+      setUser(getUserByUsernameResponse.data.getUserByUsername);
     }
-  }, [data]);
+  }, [getUserByUsernameResponse.data]);
 
   useEffect(() => {
-    if (postsData) {
-      setPosts(postsData.getUserPostsByUsername.posts);
+    if (getUserPostsByUsernameResponse.data) {
+      setPosts(
+        getUserPostsByUsernameResponse.data.getUserPostsByUsername.posts,
+      );
     }
-  }, [postsData]);
+  }, [getUserPostsByUsernameResponse.data]);
 
-  return { error, loading, user, router, posts };
+  return { getUserByUsernameResponse, user, router, posts };
 }

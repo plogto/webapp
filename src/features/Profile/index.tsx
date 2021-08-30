@@ -5,15 +5,15 @@ import NotFound from "./components/NotFound";
 import Posts from "@/components/Posts";
 
 export default function Profile() {
-  const { error, user, posts } = useProfile();
+  const { getUserByUsernameResponse, user, posts } = useProfile();
 
   return (
     <div className={styles.container}>
-      {error?.message ? (
+      {getUserByUsernameResponse.error?.message ? (
         <NotFound />
       ) : (
         <>
-          <div className="w-full lg:w-120 h-screen">
+          <div className="w-full lg:w-128 h-screen">
             {user && <Header {...user} />}
             <Posts posts={posts} />
           </div>

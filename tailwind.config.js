@@ -6,11 +6,11 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     extend: {
       width: {
-        120: "30rem",
+        128: "32rem",
       },
     },
     colors: {
@@ -22,7 +22,7 @@ module.exports = {
       red: colors.red,
       green: colors.green,
       yellow: colors.amber,
-      indigo: colors.violet,
+      indigo: colors.indigo,
       blue: colors.blue,
     },
   },

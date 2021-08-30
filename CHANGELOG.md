@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/favecode/poster-fe/compare/v0.3.3...v0.4.0) (2021-08-30)
+
+
+### Features
+
+* add connection for Profile feature ([34f9e36](https://github.com/favecode/poster-fe/commit/34f9e36a0794f689b365a02224020874a64aeef3))
+* implement UserProfileContext ([80c0376](https://github.com/favecode/poster-fe/commit/80c03766d90577981f0bcc155d8bea6ade097c3e))
+
 ### [0.3.3](https://github.com/favecode/poster-fe/compare/v0.3.2...v0.3.3) (2021-08-28)
 
 

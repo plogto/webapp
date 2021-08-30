@@ -1,6 +1,6 @@
 import styles from "../Search.module.css";
 import UserInfo from "@/components/UserInfo";
-import { SearchResult } from "../@types";
+import type { SearchResult } from "../@types";
 import Link from "next/link";
 
 type Props = {

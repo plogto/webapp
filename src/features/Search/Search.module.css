@@ -1,6 +1,6 @@
 .container {
   @apply flex flex-col justify-between items-center;
-  @apply w-full lg:w-120 lg:mx-auto p-2 lg:p-0 mx-auto;
+  @apply w-full lg:w-128 lg:mx-auto p-2 lg:p-0 mx-auto;
 }
 
 .form {
