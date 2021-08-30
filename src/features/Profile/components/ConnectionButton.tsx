@@ -1,23 +1,27 @@
-import type { User } from "@/@types/user";
+import { MouseEventHandler, ReactNode } from "react";
 import Button from "@/components/Button";
-import styles from "../Profile.module.css";
 
 type Props = {
-  connectionStatus: User["connectionStatus"];
+  className?: string;
+  children: ReactNode;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  loading?: boolean;
 };
 
-export default function ConnectionButton({ connectionStatus }: Props) {
-  return connectionStatus == 2 ? (
-    <Button type="button" className={styles.following}>
-      Following
-    </Button>
-  ) : connectionStatus == 1 ? (
-    <Button type="button" className={styles.follow}>
-      Pending
-    </Button>
-  ) : (
-    <Button type="button" className={styles.follow}>
-      Follow
+export default function ConnectionButton({
+  onClick,
+  children,
+  className,
+  loading,
+}: Props) {
+  return (
+    <Button
+      type="button"
+      className={className}
+      onClick={onClick}
+      // TODO: fix spacing in loading mode
+      loading={loading}>
+      {children}
     </Button>
   );
 }

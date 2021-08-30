@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ProfileProvider from "@/context/UserProfileContext";
 import Profile from "@/features/Profile";
 import Head from "next/head";
 
@@ -8,7 +9,9 @@ export default function ProfilePage() {
       <Head>
         <title>Profile | Poster</title>
       </Head>
-      <Profile />
+      <ProfileProvider>
+        <Profile />
+      </ProfileProvider>
       <Navbar />
     </>
   );

@@ -4,9 +4,10 @@ import { GET_USER_INFO } from "@/graphql/user";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { PageUrls } from "@/@enums/pages";
+import { GetUserInfoQuery } from "@/graphql/@types/user";
 
 function AppInit() {
-  const { data, error } = useQuery(GET_USER_INFO);
+  const { data, error } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
   const router = useRouter();
   const { setUser } = useAccount();
 
