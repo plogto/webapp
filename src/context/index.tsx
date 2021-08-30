@@ -9,7 +9,7 @@ type Props = {
 function AppContext({ children }: Props) {
   return (
     <AccountProvider>
-      <UserProfileProvider>{children}</UserProfileProvider>;
+      <UserProfileProvider>{children}</UserProfileProvider>
     </AccountProvider>
   );
 }
