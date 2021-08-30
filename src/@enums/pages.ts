@@ -1,7 +1,8 @@
 export enum PageUrls {
+  HOME = "/",
   LOGIN = "/login",
   LOGOUT = "/logout",
   REGISTER = "/register",
-  HOME = "/",
   ADD_POST = "/compose/post",
+  SETTINGS = "/settings",
 }

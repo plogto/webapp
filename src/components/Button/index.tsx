@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, MouseEventHandler } from "react";
 import styles from "./Button.module.css";
 
 type Props = {
@@ -7,6 +7,7 @@ type Props = {
   children?: ReactNode;
   loading?: boolean;
   disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function Button({
@@ -15,9 +16,11 @@ export default function Button({
   children,
   loading,
   disabled,
+  onClick,
 }: Props) {
   return (
     <button
+      onClick={onClick}
       type={type}
       className={`${styles.button} ${loading ? styles.loading : ""} ${
         disabled ? styles.disabled : ""
@@ -25,7 +28,7 @@ export default function Button({
       {loading ? (
         // TODO: create component for loading icon
         <svg
-          className="animate-spin h-5 w-5 text-white"
+          className="animate-spin h-6 w-6 text-current"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24">
