@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/favecode/poster-fe/compare/v0.4.0...v0.5.0) (2021-08-31)
+
+
+### Features
+
+* add follow requests page ([0655493](https://github.com/favecode/poster-fe/commit/0655493998ee65dc35088109935e6edb7bdb3fbf))
+
 ## [0.4.0](https://github.com/favecode/poster-fe/compare/v0.3.3...v0.4.0) (2021-08-30)
 
 
