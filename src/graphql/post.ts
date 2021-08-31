@@ -9,6 +9,7 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
           id
           username
           fullname
+          connectionStatus
         }
         content
         status

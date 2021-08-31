@@ -2,6 +2,7 @@ import type { User } from "@/@types/user";
 import ConnectionButton from "./ConnectionButton";
 import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
+import { ConnectionButtons } from "../@types";
 
 type Props = {
   connectionStatus: User["connectionStatus"];
@@ -11,8 +12,7 @@ export default function ConnectionStatus({ connectionStatus }: Props) {
   const { follow, unfollow, followUserResponse, unfollowUserResponse } =
     useConnection();
 
-  // TODO: add type
-  const connectionButtons = {
+  const connectionButtons: ConnectionButtons = {
     following: {
       className: styles.following,
       onClick: unfollow,
