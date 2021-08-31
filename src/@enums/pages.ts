@@ -7,4 +7,5 @@ export enum PageUrls {
   ADD_POST = "/compose/post",
   SETTINGS = "/accounts/settings",
   NOTIFICATIONS = "/accounts/notifications",
+  FOLLOW_REQUESTS = "/accounts/follow-requests",
 }

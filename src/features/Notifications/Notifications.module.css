@@ -1,0 +1,24 @@
+.container {
+  @apply flex flex-col justify-between items-center;
+  @apply w-full lg:w-128 lg:mx-auto p-2 lg:p-0 mx-auto;
+}
+
+.requestsCard {
+  @apply flex items-center cursor-pointer;
+  @apply mt-2 lg:mt-5 px-5 py-4;
+  @apply w-full overflow-hidden;
+  @apply bg-white rounded-lg shadow;
+}
+
+.badgeContainer {
+  @apply inline-flex items-center justify-center h-2 w-2 relative;
+}
+
+.badge {
+  @apply relative inline-flex rounded-full h-2 w-2 bg-indigo-500;
+}
+
+.badgePinger {
+  @apply absolute inline-flex;
+  @apply h-full w-full rounded-full bg-indigo-400 opacity-75;
+}
