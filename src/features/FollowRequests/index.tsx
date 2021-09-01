@@ -10,7 +10,12 @@ export default function FollowRequests() {
     <div className={styles.container}>
       <div className={styles.card}>
         {followRequests?.map(followRequest => (
-          <UserInfo user={followRequest.follower} showAccept showDelete />
+          <UserInfo
+            key={followRequest.id}
+            user={followRequest.follower}
+            showAccept
+            showDelete
+          />
         ))}
       </div>
     </div>
