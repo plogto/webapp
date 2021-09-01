@@ -36,4 +36,5 @@
 
 .reject {
   @apply bg-indigo-100 text-indigo-500 rounded-lg;
+  @apply w-8 h-8;
 }

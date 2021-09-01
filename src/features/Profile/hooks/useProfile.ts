@@ -11,6 +11,17 @@ export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
   const { setUser, setPosts, user, posts } = useUserProfile();
+  const counts = [
+    {
+      title: `Follower${user?.followersCount !== 1 ? "s" : ""}`,
+      value: user?.followersCount,
+    },
+    { title: "Following", value: user?.followingCount },
+    {
+      title: `Post${user?.postsCount !== 1 ? "s" : ""}`,
+      value: user?.postsCount,
+    },
+  ];
 
   const [getUserByUsername, getUserByUsernameResponse] =
     useLazyQuery<GetUserByUsernameQuery>(GET_USER_BY_USERNAME);
@@ -46,5 +57,5 @@ export function useProfile() {
     }
   }, [getUserPostsByUsernameResponse.data]);
 
-  return { getUserByUsernameResponse, user, router, posts };
+  return { getUserByUsernameResponse, user, router, posts, counts };
 }

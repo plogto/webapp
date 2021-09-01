@@ -41,3 +41,8 @@
 .settings {
   @apply bg-indigo-500 text-white;
 }
+
+.count {
+  @apply bg-indigo-100 rounded-md px-1.5 py-0.5;
+  @apply text-indigo-500 font-medium;
+}

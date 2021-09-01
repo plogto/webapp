@@ -4,6 +4,9 @@ export type User = {
   fullname: string;
   email: string;
   connectionStatus: number;
+  followersCount: number;
+  followingCount: number;
+  postsCount: number;
   createdAt: string;
   updatedAt: string;
 };

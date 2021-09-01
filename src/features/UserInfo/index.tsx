@@ -1,6 +1,7 @@
 import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import { useAccount } from "@/context/AccountContext";
+import { XIcon } from "@heroicons/react/solid";
 import { ActionButtons } from "./@types";
 import ActionButton from "./components/ActionButton";
 import { useActions } from "./hooks/useActions";
@@ -29,7 +30,8 @@ export default function UserInfo({
     unfollowUserResponse,
     acceptUserResponse,
     rejectUserResponse,
-  } = useActions();
+  } = useActions({ id });
+
   const actionButtons: ActionButtons = {
     follow: {
       className: styles.accept,
@@ -62,7 +64,7 @@ export default function UserInfo({
         </div>
       </div>
       {user?.id !== id && (
-        <div>
+        <div className="flex">
           {showFollow && !connectionStatus && (
             <ActionButton {...actionButtons["follow"]}>Follow</ActionButton>
           )}
@@ -75,7 +77,9 @@ export default function UserInfo({
             <ActionButton {...actionButtons["accept"]}>Confirm</ActionButton>
           )}
           {showDelete && (
-            <ActionButton {...actionButtons["reject"]}>Delete</ActionButton>
+            <ActionButton {...actionButtons["reject"]}>
+              <XIcon />
+            </ActionButton>
           )}
         </div>
       )}
