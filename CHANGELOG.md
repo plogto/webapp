@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/favecode/poster-fe/compare/v0.5.0...v0.6.0) (2021-09-01)
+
+
+### Features
+
+* add counts for Profile feature ([5058327](https://github.com/favecode/poster-fe/commit/5058327e3b5a5c1677114aac3c455f59f91757a9))
+
 ## [0.5.0](https://github.com/favecode/poster-fe/compare/v0.4.0...v0.5.0) (2021-08-31)
 
 
