@@ -78,7 +78,7 @@ export default function UserInfo({
           )}
           {showDelete && (
             <ActionButton {...actionButtons["reject"]}>
-              <XIcon />
+              <XIcon className={styles.rejectIcon} />
             </ActionButton>
           )}
         </div>
