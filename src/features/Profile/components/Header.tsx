@@ -33,7 +33,7 @@ export default function Header({
           </LinkButton>
         )}
       </div>
-      <div className="flex w-full space-x-3 mt-3">
+      <div className="flex w-full text-tiny space-x-3 mt-3">
         {counts.map(count => (
           <Count key={count.title} {...count} />
         ))}
