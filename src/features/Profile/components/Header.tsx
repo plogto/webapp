@@ -33,9 +33,9 @@ export default function Header({
           </LinkButton>
         )}
       </div>
-      <div className="flex w-full text-xs space-x-2 mt-2">
+      <div className="flex w-full space-x-3 mt-3">
         {counts.map(count => (
-          <Count {...count} />
+          <Count key={count.title} {...count} />
         ))}
       </div>
     </div>

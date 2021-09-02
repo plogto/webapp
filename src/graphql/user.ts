@@ -7,6 +7,10 @@ export const GET_USER_INFO = gql`
       username
       email
       fullname
+      followersCount
+      followingCount
+      followRequestsCount
+      postsCount
       createdAt
       updatedAt
     }

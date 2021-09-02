@@ -9,7 +9,7 @@ type Props = {
 export default function Count({ className, title, value }: Props) {
   return (
     <div key={title} className={styles.count}>
-      {`${value}`}
+      <span className="text-gray-900 font-bold">{`${value}`}</span>
       {` ${title}`}
     </div>
   );

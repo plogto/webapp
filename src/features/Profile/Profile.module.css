@@ -43,6 +43,6 @@
 }
 
 .count {
-  @apply bg-indigo-100 rounded-md px-1.5 py-0.5;
-  @apply text-indigo-500 font-medium;
+  @apply rounded-md py-0.5 cursor-pointer;
+  @apply text-gray-500 hover:underline;
 }
