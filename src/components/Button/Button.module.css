@@ -1,7 +1,7 @@
 .button {
   @apply inline-flex items-center justify-center;
   @apply select-none duration-300;
-  @apply rounded-md shadow-sm;
+  @apply rounded-lg shadow-sm;
   @apply text-sm cursor-pointer;
   outline: none !important;
 }

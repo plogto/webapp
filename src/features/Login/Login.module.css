@@ -17,7 +17,7 @@
 }
 
 .error {
-  @apply text-sm text-red-500 text-center bg-red-100 rounded-md;
+  @apply text-sm text-red-500 text-center bg-red-100 rounded-lg;
   @apply py-2.5 w-full;
 }
 

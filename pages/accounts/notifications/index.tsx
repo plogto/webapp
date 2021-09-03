@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Notifications from "@/features/Notifications";
 import Head from "next/head";
 
 export default function NotificationsPage() {
@@ -7,7 +8,7 @@ export default function NotificationsPage() {
       <Head>
         <title>Notifications | Poster</title>
       </Head>
-      <div>Notifications</div>
+      <Notifications />
       <Navbar />
     </>
   );

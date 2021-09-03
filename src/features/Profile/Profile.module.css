@@ -28,8 +28,8 @@
 .follow,
 .following,
 .settings {
-  @apply px-2 py-2 mt-2 w-28 h-full;
-  @apply text-base rounded-lg font-medium !important;
+  @apply px-2 py-2 mt-2 w-24 h-full;
+  @apply rounded-lg font-medium !important;
 }
 
 .following {
@@ -40,4 +40,9 @@
 .follow,
 .settings {
   @apply bg-indigo-500 text-white;
+}
+
+.count {
+  @apply rounded-md py-0.5 cursor-pointer;
+  @apply text-gray-500 hover:underline;
 }

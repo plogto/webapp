@@ -22,7 +22,7 @@ function AppInit() {
       console.log("logout");
       router.push(PageUrls.LOGOUT);
     }
-  }, [error]);
+  }, [error, router]);
 
   return <></>;
 }

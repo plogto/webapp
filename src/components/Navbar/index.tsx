@@ -16,11 +16,11 @@ export default function Navbar() {
   const items = [
     {
       icon: <GlobeIcon />,
-      href: "/search",
+      href: PageUrls.SEARCH,
     },
     {
       icon: <BellIcon />,
-      href: "/notifications",
+      href: PageUrls.NOTIFICATIONS,
     },
     {
       icon: <PlusIcon />,

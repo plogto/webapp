@@ -3,8 +3,10 @@ import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import LinkButton from "@/components/LinkButton";
 import { useAccount } from "@/context/AccountContext";
+import { useProfile } from "../hooks/useProfile";
 import styles from "../Profile.module.css";
 import ConnectionButton from "./ConnectionStatus";
+import Count from "./Count";
 
 export default function Header({
   id,
@@ -13,6 +15,7 @@ export default function Header({
   connectionStatus,
 }: User) {
   const { user } = useAccount();
+  const { counts } = useProfile();
 
   return (
     <div className={styles.header}>
@@ -29,6 +32,11 @@ export default function Header({
             Settings
           </LinkButton>
         )}
+      </div>
+      <div className="flex w-full text-tiny space-x-3 mt-3">
+        {counts.map(count => (
+          <Count key={count.title} {...count} />
+        ))}
       </div>
     </div>
   );

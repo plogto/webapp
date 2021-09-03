@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Posts posts={posts} className="mt-2 lg:mt-4" />
+      <Posts posts={posts} className="mt-2 lg:mt-5" />
     </div>
   );
 }

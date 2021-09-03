@@ -1,5 +1,5 @@
 import styles from "../Search.module.css";
-import UserInfo from "@/components/UserInfo";
+import UserInfo from "@/features/UserInfo";
 import type { SearchResult } from "../@types";
 import Link from "next/link";
 
@@ -10,10 +10,10 @@ type Props = {
 export default function Users({ user }: Props) {
   return user ? (
     <div className={styles.users}>
-      {user.users.map(user => (
+      {user.users?.map(user => (
         <Link key={user.id} href={user.username}>
           <a>
-            <UserInfo {...user} />
+            <UserInfo user={user} />
           </a>
         </Link>
       ))}

@@ -1,6 +1,6 @@
 .container {
   @apply bg-white rounded-lg shadow w-full;
-  @apply mb-2 lg:mb-4;
+  @apply mb-2 lg:mb-4 overflow-hidden;
 }
 
 .header {
@@ -22,5 +22,5 @@
 }
 
 .content {
-  @apply text-sm py-2 p-3;
+  @apply text-sm py-2 p-3 break-words whitespace-pre-line;
 }

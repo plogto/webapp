@@ -16,7 +16,7 @@ export default function NavLink({ icon, href }: Props) {
     <Link href={href}>
       <a
         className={`${styles.navLink} ${
-          router.pathname === href ? styles.active : ""
+          router.asPath === href ? styles.active : ""
         }`}>
         {icon}
       </a>

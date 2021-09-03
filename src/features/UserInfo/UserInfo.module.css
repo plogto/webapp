@@ -1,0 +1,44 @@
+.container {
+  @apply flex justify-between items-center;
+  @apply bg-white w-full p-2 pr-4;
+}
+
+.userInfo {
+  @apply flex items-center;
+}
+
+.avatar {
+  @apply text-gray-400 w-10 h-10 mr-2;
+  @apply rounded-full shadow-sm border;
+}
+
+.fullname {
+  @apply font-bold pr-1;
+}
+
+.username {
+  @apply text-gray-500 text-sm pr-1;
+}
+
+.content {
+  @apply text-sm py-2 p-3;
+}
+
+.accept,
+.reject {
+  @apply p-2 ml-3 w-20;
+  @apply font-bold text-xs;
+}
+
+.accept {
+  @apply bg-indigo-500 text-white rounded-lg;
+}
+
+.reject {
+  @apply bg-indigo-100 text-indigo-500 rounded-lg;
+  @apply w-8 h-8;
+}
+
+.rejectIcon {
+  @apply text-indigo-500 w-8 h-8;
+}
