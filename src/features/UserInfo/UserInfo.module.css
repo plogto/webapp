@@ -30,6 +30,11 @@
   @apply font-bold text-xs;
 }
 
+.accept svg,
+.reject svg {
+  @apply w-4 h-4;
+}
+
 .accept {
   @apply bg-indigo-500 text-white rounded-lg;
 }

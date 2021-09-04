@@ -44,12 +44,12 @@ const useUserProfileSetState = () => {
   return { setUser, setPosts };
 };
 
-const useUserProfile = () => {
+const useUserProfileContext = () => {
   const { user, posts } = useUserProfileState();
   const { setUser, setPosts } = useUserProfileSetState();
 
   return { user, posts, setUser, setPosts };
 };
 
-export { useUserProfile };
+export { useUserProfileContext };
 export default UserProfileProvider;

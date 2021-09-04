@@ -5,13 +5,13 @@ import { LOGIN } from "@/graphql/auth";
 import { useLazyQuery } from "@apollo/client";
 import type { LoginForm } from "../@types";
 import { PageUrls } from "@/@enums/pages";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import type { LoginQuery } from "@/graphql/@types/auth";
 
 export function useLogin() {
   const formMethods = useForm<LoginForm>({ mode: "all" });
   const [login, { error, loading, data }] = useLazyQuery<LoginQuery>(LOGIN);
-  const { setIsAutheticated, setToken, setUser } = useAccount();
+  const { setIsAutheticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
     if (data) {

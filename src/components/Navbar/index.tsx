@@ -8,11 +8,11 @@ import {
 import { v4 as uuid } from "uuid";
 import styles from "./Navbar.module.css";
 import NavLink from "@/components/NavLink";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { PageUrls } from "@/@enums/pages";
 
 export default function Navbar() {
-  const { user } = useAccount();
+  const { user } = useAccountContext();
   const items = [
     {
       icon: <GlobeIcon />,

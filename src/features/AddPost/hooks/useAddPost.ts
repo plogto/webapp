@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import router from "next/router";
 import { PageUrls } from "@/@enums/pages";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { ADD_POST } from "@/graphql/post";
 import { useMutation } from "@apollo/client";
 import type { AddPostForm } from "../@types";
@@ -12,7 +12,7 @@ export function useAddPost() {
   const formMethods = useForm<AddPostForm>({
     mode: "all",
   });
-  const { user } = useAccount();
+  const { user } = useAccountContext();
 
   const { setError, getValues } = formMethods;
 

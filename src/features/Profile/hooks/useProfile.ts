@@ -3,14 +3,14 @@ import { GET_USER_BY_USERNAME } from "@/graphql/user";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useUserProfile } from "@/context/UserProfileContext";
+import { useUserProfileContext } from "@/context/UserProfileContext";
 import type { GetUserByUsernameQuery } from "@/graphql/@types/user";
 import type { GetUserPostsByUsernameQuery } from "@/graphql/@types/post";
 
 export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
-  const { setUser, setPosts, user, posts } = useUserProfile();
+  const { setUser, setPosts, user, posts } = useUserProfileContext();
   const counts = [
     {
       title: `Follower${user?.followersCount !== 1 ? "s" : ""}`,

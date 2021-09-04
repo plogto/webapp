@@ -1,7 +1,7 @@
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 
 export function useNotifications() {
-  const { user } = useAccount();
+  const { user } = useAccountContext();
 
   return { followRequestsCount: user?.followRequestsCount };
 }

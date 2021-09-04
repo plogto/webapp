@@ -1,14 +1,14 @@
 import { FOLLOW_USER, UNFOLLOW_USER } from "@/graphql/connection";
 import { useMutation } from "@apollo/client";
 import { useEffect } from "react";
-import { useUserProfile } from "@/context/UserProfileContext";
+import { useUserProfileContext } from "@/context/UserProfileContext";
 import type {
   FollowUserMutation,
   UnfollowUserMutation,
 } from "@/graphql/@types/connection";
 
 export function useConnection() {
-  const { setUser, user } = useUserProfile();
+  const { setUser, user } = useUserProfileContext();
 
   const [followUser, followUserResponse] =
     useMutation<FollowUserMutation>(FOLLOW_USER);

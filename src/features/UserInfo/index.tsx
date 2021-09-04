@@ -1,6 +1,6 @@
 import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { XIcon } from "@heroicons/react/solid";
 import { ActionButtons } from "./@types";
 import ActionButton from "./components/ActionButton";
@@ -20,7 +20,7 @@ export default function UserInfo({
   showDelete,
   showFollow,
 }: Props) {
-  const { user } = useAccount();
+  const { user } = useAccountContext();
   const {
     follow,
     unfollow,

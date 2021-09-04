@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { GET_USER_INFO } from "@/graphql/user";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import { GetUserInfoQuery } from "@/graphql/@types/user";
 function AppInit() {
   const { data, error } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
   const router = useRouter();
-  const { setUser } = useAccount();
+  const { setUser } = useAccountContext();
 
   useEffect(() => {
     if (data) {

@@ -1,11 +1,11 @@
 import { PageUrls } from "@/@enums/pages";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export function useLogout() {
   const router = useRouter();
-  const { setIsAutheticated, setToken, setUser } = useAccount();
+  const { setIsAutheticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
     setIsAutheticated(false);

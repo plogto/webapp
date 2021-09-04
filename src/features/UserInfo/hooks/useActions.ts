@@ -11,6 +11,8 @@ import type {
   RejectUserMutation,
   UnfollowUserMutation,
 } from "@/graphql/@types/connection";
+import { useEffect } from "react";
+import { useFollowRequestsContext } from "@/context/FollowRequestsContext";
 
 type Props = {
   id: string;
@@ -62,6 +64,22 @@ export function useActions({ id }: Props) {
         },
       });
   };
+
+  const { deleteFollowRequestById } = useFollowRequestsContext();
+
+  useEffect(() => {
+    if (acceptUserResponse.data) {
+      const { id } = acceptUserResponse.data.acceptUser;
+      deleteFollowRequestById(id);
+    }
+  }, [acceptUserResponse.data]);
+
+  useEffect(() => {
+    if (rejectUserResponse.data) {
+      const { id } = rejectUserResponse.data.rejectUser;
+      deleteFollowRequestById(id);
+    }
+  }, [rejectUserResponse.data]);
 
   return {
     follow,

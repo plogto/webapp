@@ -2,7 +2,7 @@ import { PageUrls } from "@/@enums/pages";
 import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import LinkButton from "@/components/LinkButton";
-import { useAccount } from "@/context/AccountContext";
+import { useAccountContext } from "@/context/AccountContext";
 import { useProfile } from "../hooks/useProfile";
 import styles from "../Profile.module.css";
 import ConnectionButton from "./ConnectionStatus";
@@ -14,7 +14,7 @@ export default function Header({
   fullname,
   connectionStatus,
 }: User) {
-  const { user } = useAccount();
+  const { user } = useAccountContext();
   const { counts } = useProfile();
 
   return (

@@ -66,12 +66,12 @@ const useAccountSetState = () => {
   return { setIsAutheticated, setToken, setUser };
 };
 
-const useAccount = () => {
+const useAccountContext = () => {
   const { isAuthenticated, token, user } = useAccountState();
   const { setIsAutheticated, setToken, setUser } = useAccountSetState();
 
   return { isAuthenticated, token, user, setIsAutheticated, setToken, setUser };
 };
 
-export { useAccount };
+export { useAccountContext };
 export default AccountProvider;
