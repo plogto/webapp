@@ -13,18 +13,13 @@ export default function Header({
   username,
   fullname,
   connectionStatus,
-  // TODO: fix it from backend
-  private: privateMode,
+  isPrivate,
 }: User) {
   const { user } = useAccountContext();
   const { counts } = useProfile();
 
   const clickable =
-    id == user?.id
-      ? true
-      : privateMode && connectionStatus !== 2
-      ? false
-      : true;
+    id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
 
   return (
     <div className={styles.header}>

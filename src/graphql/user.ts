@@ -24,7 +24,7 @@ export const GET_USER_BY_USERNAME = gql`
       username
       email
       fullname
-      private
+      isPrivate
       connectionStatus
       followersCount
       followingCount
