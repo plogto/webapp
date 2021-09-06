@@ -13,9 +13,18 @@ export default function Header({
   username,
   fullname,
   connectionStatus,
+  // TODO: fix it from backend
+  private: privateMode,
 }: User) {
   const { user } = useAccountContext();
   const { counts } = useProfile();
+
+  const clickable =
+    id == user?.id
+      ? true
+      : privateMode && connectionStatus !== 2
+      ? false
+      : true;
 
   return (
     <div className={styles.header}>
@@ -35,7 +44,7 @@ export default function Header({
       </div>
       <div className="flex w-full text-tiny space-x-3 mt-3">
         {counts.map(count => (
-          <Count key={count.title} {...count} />
+          <Count key={count.title} {...count} clickable={clickable} />
         ))}
       </div>
     </div>

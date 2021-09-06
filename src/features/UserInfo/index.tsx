@@ -6,6 +6,7 @@ import { ActionButtons } from "./@types";
 import ActionButton from "./components/ActionButton";
 import { useActions } from "./hooks/useActions";
 import styles from "./UserInfo.module.css";
+import Link from "next/link";
 
 type Props = {
   user: User;
@@ -39,7 +40,12 @@ export default function UserInfo({
       loading: followUserResponse.loading,
     },
     following: {
-      className: styles.reject,
+      className: styles.following,
+      onClick: unfollow,
+      loading: unfollowUserResponse.loading,
+    },
+    requested: {
+      className: styles.accept,
       onClick: unfollow,
       loading: unfollowUserResponse.loading,
     },
@@ -56,13 +62,17 @@ export default function UserInfo({
   };
   return (
     <div className={styles.container}>
-      <div className={styles.userInfo}>
-        <Avatar className={styles.avatar} />
-        <div>
-          <div className={styles.fullname}>{fullname}</div>
-          <div className={styles.username}>@{username}</div>
-        </div>
-      </div>
+      {username && (
+        <Link href={`/${username}`}>
+          <a className={styles.userInfo}>
+            <Avatar className={styles.avatar} />
+            <div>
+              <div className={styles.fullname}>{fullname}</div>
+              <div className={styles.username}>@{username}</div>
+            </div>
+          </a>
+        </Link>
+      )}
       {user?.id !== id && (
         <div className="flex">
           {showFollow && !connectionStatus && (
@@ -71,6 +81,11 @@ export default function UserInfo({
           {showFollow && connectionStatus == 2 && (
             <ActionButton {...actionButtons["following"]}>
               Following
+            </ActionButton>
+          )}
+          {showFollow && connectionStatus == 1 && (
+            <ActionButton {...actionButtons["requested"]}>
+              Requested
             </ActionButton>
           )}
           {showAccept && (

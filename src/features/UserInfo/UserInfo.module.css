@@ -4,7 +4,7 @@
 }
 
 .userInfo {
-  @apply flex items-center;
+  @apply flex items-center flex-grow;
 }
 
 .avatar {
@@ -24,6 +24,7 @@
   @apply text-sm py-2 p-3;
 }
 
+.following,
 .accept,
 .reject {
   @apply p-2 ml-3 w-20;
@@ -33,6 +34,10 @@
 .accept svg,
 .reject svg {
   @apply w-4 h-4;
+}
+
+.following {
+  @apply bg-indigo-100 text-indigo-500 rounded-lg;
 }
 
 .accept {

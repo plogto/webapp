@@ -9,6 +9,7 @@ type ActionButton = {
 export type ActionButtons = {
   follow: ActionButton;
   following: ActionButton;
+  requested: ActionButton;
   accept: ActionButton;
   reject: ActionButton;
 };

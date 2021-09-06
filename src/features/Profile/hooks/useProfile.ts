@@ -3,23 +3,29 @@ import { GET_USER_BY_USERNAME } from "@/graphql/user";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useUserProfileContext } from "@/context/UserProfileContext";
+import { useProfileContext } from "@/context/ProfileContext";
 import type { GetUserByUsernameQuery } from "@/graphql/@types/user";
 import type { GetUserPostsByUsernameQuery } from "@/graphql/@types/post";
 
 export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
-  const { setUser, setPosts, user, posts } = useUserProfileContext();
+  const { setUser, setPosts, user, posts } = useProfileContext();
   const counts = [
     {
       title: `Follower${user?.followersCount !== 1 ? "s" : ""}`,
       value: user?.followersCount,
+      href: `${user?.username}/followers`,
     },
-    { title: "Following", value: user?.followingCount },
+    {
+      title: "Following",
+      value: user?.followingCount,
+      href: `${user?.username}/following`,
+    },
     {
       title: `Post${user?.postsCount !== 1 ? "s" : ""}`,
       value: user?.postsCount,
+      href: `${user?.username}`,
     },
   ];
 
@@ -54,6 +60,8 @@ export function useProfile() {
       setPosts(
         getUserPostsByUsernameResponse.data.getUserPostsByUsername.posts,
       );
+    } else {
+      setPosts([]);
     }
   }, [getUserPostsByUsernameResponse.data]);
 

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 import type {
   FollowRequests,
   SetFollowRequests,
-} from "@/@types/followRequests";
+} from "@/context/@types/followRequests";
 
 const FollowRequestsContext = createContext<FollowRequests>([]);
 const FollowRequestsContextSetState = createContext<SetFollowRequests>({

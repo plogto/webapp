@@ -43,6 +43,10 @@
 }
 
 .count {
-  @apply rounded-md py-0.5 cursor-pointer;
-  @apply text-gray-500 hover:underline;
+  @apply rounded-md py-0.5;
+  @apply text-gray-500;
+}
+
+.count.clickable {
+  @apply hover:underline;
 }

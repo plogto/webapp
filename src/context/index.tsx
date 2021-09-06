@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import AccountProvider from "./AccountContext";
-import UserProfileProvider from "./UserProfileContext";
+import ProfileProvider from "./ProfileContext";
 
 type Props = {
   children: ReactNode;
@@ -9,7 +9,7 @@ type Props = {
 function AppContext({ children }: Props) {
   return (
     <AccountProvider>
-      <UserProfileProvider>{children}</UserProfileProvider>
+      <ProfileProvider>{children}</ProfileProvider>
     </AccountProvider>
   );
 }

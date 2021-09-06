@@ -23,3 +23,17 @@ export type GetUserFollowRequestsQuery = {
     pagination: Pagination;
   };
 };
+
+export type GetUserFollowingByUsernameQuery = {
+  getUserFollowingByUsername: {
+    connections: Connection[];
+    pagination: Pagination;
+  };
+};
+
+export type GetUserFollowersByUsernameQuery = {
+  getUserFollowersByUsername: {
+    connections: Connection[];
+    pagination: Pagination;
+  };
+};

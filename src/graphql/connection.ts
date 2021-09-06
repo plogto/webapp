@@ -81,3 +81,49 @@ export const GET_USER_FOLLOW_REQUESTS = gql`
     }
   }
 `;
+
+export const GET_USER_FOLLOWING_BY_USERNAME = gql`
+  query getUserFollowingByUsername($username: String!) {
+    getUserFollowingByUsername(username: $username) {
+      connections {
+        id
+        status
+        following {
+          id
+          username
+          fullname
+          connectionStatus
+        }
+      }
+      pagination {
+        totalDocs
+        totalPages
+        page
+        limit
+      }
+    }
+  }
+`;
+
+export const GET_USER_FOLLOWERS_BY_USERNAME = gql`
+  query getUserFollowersByUsername($username: String!) {
+    getUserFollowersByUsername(username: $username) {
+      connections {
+        id
+        status
+        follower {
+          id
+          username
+          fullname
+          connectionStatus
+        }
+      }
+      pagination {
+        totalDocs
+        totalPages
+        page
+        limit
+      }
+    }
+  }
+`;

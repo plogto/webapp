@@ -3,6 +3,7 @@ export type User = {
   username: string;
   fullname: string;
   email: string;
+  private?: boolean;
   connectionStatus: number;
   followersCount: number;
   followingCount: number;
