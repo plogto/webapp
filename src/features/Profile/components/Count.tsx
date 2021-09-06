@@ -12,7 +12,7 @@ type Props = {
 export default function Count({ title, value, href, clickable }: Props) {
   return clickable ? (
     <Link href={href}>
-      <a className={`${styles.count} clickable`}>
+      <a className={`${styles.count} ${styles.clickable}`}>
         <span className="text-gray-900 font-bold">{`${value}`}</span>
         {` ${title}`}
       </a>

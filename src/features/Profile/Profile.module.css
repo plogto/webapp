@@ -47,6 +47,6 @@
   @apply text-gray-500;
 }
 
-.count.clickable {
+.clickable {
   @apply hover:underline;
 }
