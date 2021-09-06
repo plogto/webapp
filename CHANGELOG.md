@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/favecode/poster-fe/compare/v0.6.1...v0.7.0) (2021-09-06)
+
+
+### Features
+
+* add Connections feature and pages ([d0d7d60](https://github.com/favecode/poster-fe/commit/d0d7d60cd3c9dcfbf1ccd8cf02dfe4659e339e38))
+* add SafeHydrate component ([e69ee5b](https://github.com/favecode/poster-fe/commit/e69ee5bee9640dadcf0108afce6f45a7f75ea0af))
+* add text-tiny for fontSize ([a8a7567](https://github.com/favecode/poster-fe/commit/a8a7567c2b14407be13f2e9f158781fc4cb7d921))
+* implement FollowRequestsContext ([e8f03c5](https://github.com/favecode/poster-fe/commit/e8f03c50fd27ce171cd2434510f9007773a53247))
+
+
+### Bug Fixes
+
+* remove ProfileProvider from ProfilePage ([439d1e7](https://github.com/favecode/poster-fe/commit/439d1e734e40adf11258192b08dbbdfb6e08d878))
+
 ### [0.6.1](https://github.com/favecode/poster-fe/compare/v0.5.0...v0.6.1) (2021-09-01)
 
 
