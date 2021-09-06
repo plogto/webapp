@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/favecode/poster-fe/compare/v0.7.0...v0.7.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* clickable style for Profile's header ([0a67790](https://github.com/favecode/poster-fe/commit/0a67790fbe5a51a1dc3c5b65c9501ed761e7fb06))
+* replace private with isPrivate for user type ([9f45736](https://github.com/favecode/poster-fe/commit/9f457360d4050d5d9c05bab3f4eaf582260e0b26))
+
 ## [0.7.0](https://github.com/favecode/poster-fe/compare/v0.6.1...v0.7.0) (2021-09-06)
 
 
