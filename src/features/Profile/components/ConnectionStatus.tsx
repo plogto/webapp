@@ -1,8 +1,9 @@
 import type { User } from "@/@types/user";
-import ConnectionButton from "./ConnectionButton";
+import Button from "@/components/Button";
 import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
 import { ConnectionButtons } from "../@types";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   connectionStatus: User["connectionStatus"];
@@ -11,6 +12,8 @@ type Props = {
 export default function ConnectionStatus({ connectionStatus }: Props) {
   const { follow, unfollow, followUserResponse, unfollowUserResponse } =
     useConnection();
+
+  const { t } = useTranslation("connection");
 
   const connectionButtons: ConnectionButtons = {
     following: {
@@ -31,14 +34,14 @@ export default function ConnectionStatus({ connectionStatus }: Props) {
   };
 
   return connectionStatus == 2 ? (
-    <ConnectionButton {...connectionButtons["following"]}>
-      Following
-    </ConnectionButton>
+    <Button {...connectionButtons["following"]}>
+      {t("buttons.following")}
+    </Button>
   ) : connectionStatus == 1 ? (
-    <ConnectionButton {...connectionButtons["requested"]}>
-      Requested
-    </ConnectionButton>
+    <Button {...connectionButtons["requested"]}>
+      {t("buttons.requested")}
+    </Button>
   ) : (
-    <ConnectionButton {...connectionButtons["follow"]}>Follow</ConnectionButton>
+    <Button {...connectionButtons["follow"]}>{t("buttons.follow")}</Button>
   );
 }

@@ -2,7 +2,7 @@ import type { ReactNode, MouseEventHandler } from "react";
 import styles from "./Button.module.css";
 
 type Props = {
-  type: "button" | "submit";
+  type?: "button" | "submit";
   className?: string;
   children?: ReactNode;
   loading?: boolean;
@@ -21,7 +21,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      type={type}
+      type={type || "button"}
       className={`${styles.button} ${loading ? styles.loading : ""} ${
         disabled ? styles.disabled : ""
       } ${className}`}>
