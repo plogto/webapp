@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/favecode/poster-fe/compare/v0.7.1...v0.8.0) (2021-09-08)
+
+
+### Features
+
+* implement i18next ([3280f61](https://github.com/favecode/poster-fe/commit/3280f617cd4341d626cc2ce4cf527828e9692639))
+
+
+### Bug Fixes
+
+* title for LoginPage ([84029b8](https://github.com/favecode/poster-fe/commit/84029b821ebb8592d93bb785fb26505aff55dfed))
+
 ### [0.7.1](https://github.com/favecode/poster-fe/compare/v0.7.0...v0.7.1) (2021-09-06)
 
 
