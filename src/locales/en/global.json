@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "labels": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "buttons": {
+      "login": "Log In"
+    }
+  }
+}

@@ -6,6 +6,7 @@ import AppContext from "@/context";
 import AppInit from "@/components/AppInit";
 import Head from "next/head";
 import SafeHydrate from "@/components/SafeHydrate";
+import "@/locales";
 
 export default function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps.initialApolloState);
