@@ -13,6 +13,7 @@ export default function Profile() {
         <NotFound />
       ) : (
         <>
+          {/* TODO: move classnames to css file */}
           <div className="w-full lg:w-128 h-screen">
             {user && <Header {...user} />}
             <Posts posts={posts} />

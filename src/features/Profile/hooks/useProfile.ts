@@ -6,24 +6,27 @@ import { useEffect } from "react";
 import { useProfileContext } from "@/context/ProfileContext";
 import type { GetUserByUsernameQuery } from "@/graphql/@types/user";
 import type { GetUserPostsByUsernameQuery } from "@/graphql/@types/post";
+import { useTranslation } from "react-i18next";
 
 export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
   const { setUser, setPosts, user, posts } = useProfileContext();
+  const { t } = useTranslation("profile");
   const counts = [
     {
-      title: `Follower${user?.followersCount !== 1 ? "s" : ""}`,
+      title:
+        user?.followersCount !== 1 ? t("texts.followers") : t("texts.follower"),
       value: user?.followersCount,
       href: `${user?.username}/followers`,
     },
     {
-      title: "Following",
+      title: t("texts.following"),
       value: user?.followingCount,
       href: `${user?.username}/following`,
     },
     {
-      title: `Post${user?.postsCount !== 1 ? "s" : ""}`,
+      title: user?.postsCount !== 1 ? t("texts.posts") : t("texts.post"),
       value: user?.postsCount,
       href: `${user?.username}`,
     },

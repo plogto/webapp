@@ -3,6 +3,7 @@ import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import LinkButton from "@/components/LinkButton";
 import { useAccountContext } from "@/context/AccountContext";
+import { useTranslation } from "react-i18next";
 import { useProfile } from "../hooks/useProfile";
 import styles from "../Profile.module.css";
 import ConnectionButton from "./ConnectionStatus";
@@ -17,6 +18,7 @@ export default function Header({
 }: User) {
   const { user } = useAccountContext();
   const { counts } = useProfile();
+  const { t } = useTranslation("profile");
 
   const clickable =
     id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
@@ -33,7 +35,7 @@ export default function Header({
           <ConnectionButton connectionStatus={connectionStatus} />
         ) : (
           <LinkButton href={PageUrls.SETTINGS} className={styles.settings}>
-            Settings
+            {t("buttons.settings")}
           </LinkButton>
         )}
       </div>

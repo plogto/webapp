@@ -2,10 +2,12 @@ import Button from "@/components/Button";
 import Input from "@/components/Input";
 import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
   const { formMethods, submit, error, loading } = useLogin();
   const { register, handleSubmit } = formMethods;
+  const { t } = useTranslation("auth");
 
   return (
     <div className={styles.container}>
@@ -20,8 +22,8 @@ export default function Login() {
           <Input
             type="text"
             name="username"
-            placeholder="Username"
-            label="Username"
+            placeholder={t("labels.username")}
+            label={t("labels.username")}
             register={register("username", {
               required: true,
             })}
@@ -31,8 +33,8 @@ export default function Login() {
           <Input
             type="password"
             name="password"
-            placeholder="Password"
-            label="Password"
+            placeholder={t("labels.password")}
+            label={t("labels.password")}
             register={register("password", {
               required: true,
             })}
@@ -43,7 +45,7 @@ export default function Login() {
             loading={loading}
             type="submit"
             className={styles.submitButton}>
-            Log In
+            {t("buttons.login")}
           </Button>
         </div>
       </form>
