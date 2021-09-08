@@ -1,0 +1,41 @@
+{
+  "auth": {
+    "labels": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "buttons": {
+      "login": "Log In"
+    }
+  },
+  "profile": {
+    "texts": {
+      "follower": "Follower",
+      "followers": "Followers",
+      "following": "Following",
+      "post": "Post",
+      "posts": "Posts"
+    },
+    "buttons": {
+      "settings": "Settings"
+    }
+  },
+  "connection": {
+    "buttons": {
+      "follow": "Follow",
+      "following": "Following",
+      "requested": "Requested",
+      "confirm": "Confirm"
+    }
+  },
+  "addPost": {
+    "buttons": {
+      "addPost": "Add Post"
+    }
+  },
+  "search": {
+    "placeholders": {
+      "search": "Search"
+    }
+  }
+}
