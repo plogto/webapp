@@ -16,6 +16,16 @@
       "post": "Post",
       "posts": "Posts"
     },
+    "status": {
+      "private": {
+        "title": "This Account is Private",
+        "description": "Follow to see their posts."
+      },
+      "noPosts": {
+        "title": "No Posts Yet",
+        "description": "When they posts, you'll see their posts."
+      }
+    },
     "buttons": {
       "settings": "Settings"
     }

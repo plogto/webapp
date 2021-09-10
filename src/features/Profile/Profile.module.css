@@ -5,7 +5,7 @@
 
 .notFound {
   @apply flex flex-col items-center justify-center h-screen;
-  @apply h-screen text-gray-400;
+  @apply h-screen text-gray-500;
 }
 
 .header {
