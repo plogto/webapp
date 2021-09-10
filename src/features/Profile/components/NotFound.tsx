@@ -1,11 +1,15 @@
-import { EmojiSadIcon } from "@heroicons/react/outline";
+import PageStatus from "@/components/PageStatus";
+import { XIcon } from "@heroicons/react/outline";
+import React from "react";
 import styles from "../Profile.module.css";
 
 export default function NotFound() {
   return (
     <div className={styles.notFound}>
-      <EmojiSadIcon className="w-20 h-20" />
-      <p className="text-center mt-2">User Not Found!</p>
+      <PageStatus
+        title="User Not Found"
+        icon={<XIcon strokeWidth="1" className="w-12" />}
+      />
     </div>
   );
 }
