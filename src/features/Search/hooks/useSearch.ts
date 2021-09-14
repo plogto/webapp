@@ -3,9 +3,15 @@ import { useForm } from "react-hook-form";
 import { SEARCH } from "@/graphql/search";
 import { useLazyQuery } from "@apollo/client";
 import type { SearchForm, SearchResult } from "../@types";
+import { SearchQuery } from "@/graphql/@types/search";
 
 export function useSearch() {
-  const [search, { data, loading, error }] = useLazyQuery(SEARCH);
+  const [search, { data, loading, error }] = useLazyQuery<
+    SearchQuery,
+    {
+      expression: string;
+    }
+  >(SEARCH);
   const formMethods = useForm<SearchForm>({
     mode: "all",
   });

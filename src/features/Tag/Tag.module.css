@@ -1,0 +1,13 @@
+.container {
+  @apply flex flex-col justify-between items-center;
+  @apply w-full lg:w-128 lg:mx-auto mx-auto;
+}
+
+.header {
+  @apply w-full p-3 lg:py-5 lg:px-0;
+}
+
+.tagName {
+  @apply bg-gradient-to-l to-indigo-800 from-indigo-400;
+  @apply text-7xl font-bold text-transparent bg-clip-text;
+}
