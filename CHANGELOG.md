@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/favecode/poster-fe/compare/v0.9.0...v0.10.0) (2021-09-14)
+
+
+### Features
+
+* add getUserPostsByTagName graphql query ([6c10dbd](https://github.com/favecode/poster-fe/commit/6c10dbdc1c6f9508441b49b91761a9b9a0587a00))
+* implement filters for Search feature ([c4b0ed9](https://github.com/favecode/poster-fe/commit/c4b0ed9503c8d28f8bdfa786e6299415bdf4b6f0))
+* implement TagInfo component ([79e3822](https://github.com/favecode/poster-fe/commit/79e382241dc6c3804a1978c45a3366fb003b5666))
+* implement TagPage ([6f874a7](https://github.com/favecode/poster-fe/commit/6f874a78eb5377389014807ae6f397c97a01a670))
+
 ## [0.9.0](https://github.com/favecode/poster-fe/compare/v0.8.0...v0.9.0) (2021-09-10)
 
 
