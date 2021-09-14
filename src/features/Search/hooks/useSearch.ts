@@ -16,6 +16,7 @@ export function useSearch() {
     mode: "all",
   });
   const [result, setResult] = useState<SearchResult>();
+  const [filter, setFilter] = useState<string>("users");
 
   useEffect(() => {
     if (data) {
@@ -32,5 +33,5 @@ export function useSearch() {
       });
   };
 
-  return { formMethods, submit, loading, error, result };
+  return { formMethods, submit, loading, error, result, filter, setFilter };
 }

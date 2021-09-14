@@ -19,10 +19,9 @@ function AppInit() {
 
   useEffect(() => {
     if (error) {
-      console.log("logout");
       router.push(PageUrls.LOGOUT);
     }
-  }, [error, router]);
+  }, [error]);
 
   return <></>;
 }

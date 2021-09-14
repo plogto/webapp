@@ -4,10 +4,25 @@
 }
 
 .header {
-  @apply w-full p-3 lg:py-5 lg:px-0;
+  @apply w-full flex items-center p-3 lg:py-5 lg:px-0;
+}
+
+.icon {
+  @apply flex items-center justify-center;
+  @apply text-gray-900 w-16 h-16 mr-5;
+  @apply rounded-full shadow-sm border;
+}
+
+.icon svg {
+  @apply w-9 h-9;
 }
 
 .tagName {
-  @apply bg-gradient-to-l to-indigo-800 from-indigo-400;
-  @apply text-7xl font-bold text-transparent bg-clip-text;
+  @apply text-3xl font-bold;
+  /* @apply bg-gradient-to-tl to-indigo-500 from-indigo-400;
+  @apply text-transparent bg-clip-text; */
+}
+
+.tagCount {
+  @apply text-sm text-gray-500;
 }

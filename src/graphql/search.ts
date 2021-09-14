@@ -17,6 +17,7 @@ export const SEARCH = gql`
         tags {
           id
           name
+          count
           createdAt
           updatedAt
         }
