@@ -26,6 +26,32 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
   }
 `;
 
+export const GET_USER_POSTS_BY_TAG_NAME = gql`
+  query getUserPostsByTagName($tagName: String!) {
+    getUserPostsByTagName(tagName: $tagName) {
+      posts {
+        id
+        user {
+          id
+          username
+          fullname
+          connectionStatus
+        }
+        content
+        status
+        createdAt
+        updatedAt
+      }
+      pagination {
+        totalDocs
+        totalPages
+        page
+        limit
+      }
+    }
+  }
+`;
+
 export const ADD_POST = gql`
   mutation addPost($content: String!) {
     addPost(input: { content: $content }) {

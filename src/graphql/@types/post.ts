@@ -5,3 +5,9 @@ export type GetUserPostsByUsernameQuery = {
     posts: Post[];
   };
 };
+
+export type GetUserPostsByTagNameQuery = {
+  getUserPostsByTagName: {
+    posts: Post[];
+  };
+};
