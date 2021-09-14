@@ -47,7 +47,6 @@ export function useActions({ id }: Props) {
   };
 
   const accept = () => {
-    console.log(id);
     id &&
       acceptUser({
         variables: {

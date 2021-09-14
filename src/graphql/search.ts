@@ -13,6 +13,15 @@ export const SEARCH = gql`
           updatedAt
         }
       }
+      tag {
+        tags {
+          id
+          name
+          count
+          createdAt
+          updatedAt
+        }
+      }
     }
   }
 `;

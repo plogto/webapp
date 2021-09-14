@@ -1,0 +1,26 @@
+.container {
+  @apply flex justify-between items-center;
+  @apply bg-white w-full p-2 pr-4;
+}
+
+.tagInfo {
+  @apply flex flex-grow items-center;
+}
+
+.icon {
+  @apply flex items-center justify-center;
+  @apply text-gray-900 w-10 h-10 mr-2;
+  @apply rounded-full shadow-sm border;
+}
+
+.icon svg {
+  @apply w-6 h-6;
+}
+
+.tagName {
+  @apply font-bold pr-1;
+}
+
+.tagCount {
+  @apply text-gray-500 text-xs pr-1 -mt-0.5 mb-1.5;
+}

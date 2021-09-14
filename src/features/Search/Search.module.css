@@ -13,7 +13,21 @@
   box-shadow: none !important;
 }
 
-.users {
+.users,
+.tags {
   @apply w-full mt-2 lg:mt-3;
   @apply rounded-lg shadow overflow-hidden;
+}
+
+.filters {
+  @apply w-full mt-3;
+}
+
+.filterButton {
+  @apply rounded-lg py-2 px-4 bg-white mr-4;
+  @apply shadow !important;
+}
+
+.filterButton.active {
+  @apply rounded-lg py-2 px-4 bg-indigo-500 text-white mr-4;
 }
