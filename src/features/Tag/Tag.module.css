@@ -4,17 +4,17 @@
 }
 
 .header {
-  @apply w-full flex items-center p-3 lg:py-5 lg:px-0;
+  @apply w-full flex items-center p-5 lg:py-5 lg:px-0;
 }
 
 .icon {
   @apply flex items-center justify-center;
-  @apply text-gray-900 w-16 h-16 mr-5;
+  @apply text-gray-900 lg:w-16 lg:h-16 w-14 h-14 mr-5;
   @apply rounded-full shadow-sm border;
 }
 
 .icon svg {
-  @apply w-9 h-9;
+  @apply lg:w-9 lg:h-9 w-8 h-8;
 }
 
 .tagName {

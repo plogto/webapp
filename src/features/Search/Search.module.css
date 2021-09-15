@@ -24,10 +24,10 @@
 }
 
 .filterButton {
-  @apply rounded-lg py-2 px-4 bg-white mr-4;
+  @apply rounded-lg py-2 px-4 bg-white mr-3;
   @apply shadow !important;
 }
 
 .filterButton.active {
-  @apply rounded-lg py-2 px-4 bg-indigo-500 text-white mr-4;
+  @apply bg-indigo-500 text-white;
 }
