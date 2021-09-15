@@ -7,12 +7,12 @@ import { useTranslation } from "react-i18next";
 export default function Login() {
   const { formMethods, submit, error, loading } = useLogin();
   const { register, handleSubmit } = formMethods;
-  const { t } = useTranslation("auth");
+  const { t } = useTranslation(["auth", "common"]);
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit(submit)} className={styles.form}>
-        <h1 className={styles.logo}>Poster</h1>
+        <h1 className={styles.logo}>{t("common:logoName")}</h1>
         {error && (
           <div className="mt-3 w-full">
             <div className={styles.error}>{error.message}</div>
@@ -22,8 +22,8 @@ export default function Login() {
           <Input
             type="text"
             name="username"
-            placeholder={t("labels.username")}
-            label={t("labels.username")}
+            placeholder={t("auth:labels.username")}
+            label={t("auth:labels.username")}
             register={register("username", {
               required: true,
             })}
@@ -33,8 +33,8 @@ export default function Login() {
           <Input
             type="password"
             name="password"
-            placeholder={t("labels.password")}
-            label={t("labels.password")}
+            placeholder={t("auth:labels.password")}
+            label={t("auth:labels.password")}
             register={register("password", {
               required: true,
             })}
@@ -44,8 +44,9 @@ export default function Login() {
           <Button
             loading={loading}
             type="submit"
-            className={styles.submitButton}>
-            {t("buttons.login")}
+            className={styles.submitButton}
+          >
+            {t("auth:buttons.login")}
           </Button>
         </div>
       </form>

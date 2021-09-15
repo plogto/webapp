@@ -44,10 +44,20 @@
   },
   "notifications": {
     "texts": {
-      "followRequests": "follow fequests"
+      "followRequests": "follow requests"
     }
   },
   "common": {
+    "logoName": "Plog",
+    "home": "Home",
+    "login": "Login",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "search": "Search",
+    "tag": "Tag",
+    "profile": "Profile",
+    "followRequests": "Follow Requests",
+    "addPost": "Add Post",
     "tags": "tags",
     "users": "users",
     "post": "post",

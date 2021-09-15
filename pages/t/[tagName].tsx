@@ -1,12 +1,17 @@
 import Navbar from "@/components/Navbar";
 import Tag from "@/features/Tag";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 export default function TagPage() {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
-        <title>Tag | Poster</title>
+        <title>
+          {/* TODO: add tagName */}
+          {t("tag")} | {t("logoName")}
+        </title>
       </Head>
       <Tag />
       <Navbar />

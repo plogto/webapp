@@ -1,6 +1,6 @@
 {
-  "name": "Poster",
-  "short_name": "Poster",
+  "name": "Plog",
+  "short_name": "Plog",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#FFFFFF",
