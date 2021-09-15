@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.11.0](https://github.com/favecode/plog-fe/compare/v0.10.1...v0.11.0) (2021-09-15)
+
+
+### Features
+
+* implement Landing feature ([166a5b4](https://github.com/favecode/plog-fe/commit/166a5b4ea7207f4410731059b88ecb92b9a1dde3))
+
 ### [0.10.1](https://github.com/favecode/plog-fe/compare/v0.10.0...v0.10.1) (2021-09-15)
 
 
