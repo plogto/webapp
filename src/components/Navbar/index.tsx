@@ -15,12 +15,12 @@ export default function Navbar() {
   const { user } = useAccountContext();
   const items = [
     {
-      icon: <GlobeIcon />,
-      href: PageUrls.SEARCH,
-    },
-    {
       icon: <BellIcon />,
       href: PageUrls.NOTIFICATIONS,
+    },
+    {
+      icon: <GlobeIcon />,
+      href: PageUrls.SEARCH,
     },
     {
       icon: <PlusIcon />,

@@ -28,7 +28,8 @@
 }
 
 .filterButton {
-  @apply rounded-lg py-2 px-4 bg-white mr-3 capitalize;
+  @apply rounded-lg py-1.5 px-3 mr-3;
+  @apply font-medium bg-white capitalize;
   @apply shadow !important;
 }
 

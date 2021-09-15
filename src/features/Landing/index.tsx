@@ -10,6 +10,7 @@ export default function Landing() {
       <div className={styles.header}>
         <h1 className={styles.logo}>PLOG</h1>
         <p className={styles.description}>
+          {/* TODO: Remove this */}
           Blog + Connections + Blah Blah Blah
         </p>
         <div className={styles.authButtons}>

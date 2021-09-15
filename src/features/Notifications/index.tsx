@@ -9,7 +9,7 @@ export default function Notifications() {
   const { t } = useTranslation("notifications");
   return (
     <div className={styles.container}>
-      {followRequestsCount && followRequestsCount > 0 && (
+      {!!followRequestsCount && followRequestsCount > 0 && (
         <Link href={PageUrls.FOLLOW_REQUESTS}>
           <div className={styles.requestsCard}>
             <span className={styles.badgeContainer}>
