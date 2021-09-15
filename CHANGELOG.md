@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/favecode/poster-fe/compare/v0.10.0...v0.10.1) (2021-09-15)
+
+
+### Features
+
+* add formatCountTitle to utils ([27005d0](https://github.com/favecode/poster-fe/commit/27005d0bacf2d3e5b30583ffb34e4bde2d5f3691))
+
 ## [0.10.0](https://github.com/favecode/poster-fe/compare/v0.9.0...v0.10.0) (2021-09-14)
 
 
