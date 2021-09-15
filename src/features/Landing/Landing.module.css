@@ -1,0 +1,37 @@
+.container {
+  @apply flex flex-col justify-center items-center;
+  @apply w-full h-screen;
+}
+
+.header {
+  @apply flex flex-col items-center;
+}
+
+.logo {
+  @apply font-black lg:text-9xl text-8xl;
+}
+
+.description {
+  @apply font-light lg:text-lg text-lg mt-4;
+  @apply text-center text-gray-600;
+}
+
+.authButtons {
+  @apply flex justify-center mt-8;
+}
+
+.loginButton,
+.registerButton {
+  @apply text-lg !important;
+  @apply px-5 py-2 w-32;
+  @apply rounded-full;
+}
+
+.loginButton {
+  @apply text-indigo-500 shadow-none font-bold;
+}
+
+.registerButton {
+  @apply text-white;
+  @apply bg-indigo-500;
+}

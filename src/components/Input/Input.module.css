@@ -3,6 +3,10 @@
   @apply block w-full sm:text-sm border-gray-300 rounded-lg;
 }
 
+.input::placeholder {
+  @apply capitalize;
+}
+
 .label {
   @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
 }
