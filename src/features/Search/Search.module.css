@@ -13,6 +13,10 @@
   box-shadow: none !important;
 }
 
+.searchInput::placeholder {
+  @apply capitalize;
+}
+
 .users,
 .tags {
   @apply w-full mt-2 lg:mt-3;
@@ -24,7 +28,7 @@
 }
 
 .filterButton {
-  @apply rounded-lg py-2 px-4 bg-white mr-3;
+  @apply rounded-lg py-2 px-4 bg-white mr-3 capitalize;
   @apply shadow !important;
 }
 

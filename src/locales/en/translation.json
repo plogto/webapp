@@ -1,21 +1,14 @@
 {
   "auth": {
     "labels": {
-      "username": "Username",
-      "password": "Password"
+      "username": "username",
+      "password": "password"
     },
     "buttons": {
-      "login": "Log In"
+      "login": "log in"
     }
   },
   "profile": {
-    "texts": {
-      "follower": "Follower",
-      "followers": "Followers",
-      "following": "Following",
-      "post": "Post",
-      "posts": "Posts"
-    },
     "status": {
       "private": {
         "title": "This Account is Private",
@@ -27,25 +20,40 @@
       }
     },
     "buttons": {
-      "settings": "Settings"
+      "settings": "settings"
     }
   },
   "connection": {
     "buttons": {
-      "follow": "Follow",
-      "following": "Following",
-      "requested": "Requested",
-      "confirm": "Confirm"
+      "follow": "follow",
+      "following": "following",
+      "requested": "requested",
+      "confirm": "confirm"
     }
   },
   "addPost": {
     "buttons": {
-      "addPost": "Add Post"
+      "addPost": "add post",
+      "hello": "hello"
     }
   },
   "search": {
     "placeholders": {
-      "search": "Search"
+      "search": "search"
     }
+  },
+  "notifications": {
+    "texts": {
+      "followRequests": "follow fequests"
+    }
+  },
+  "common": {
+    "tags": "tags",
+    "users": "users",
+    "post": "post",
+    "posts": "posts",
+    "follower": "follower",
+    "followers": "followers",
+    "following": "following"
   }
 }

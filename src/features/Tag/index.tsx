@@ -4,13 +4,13 @@ import Posts from "@/components/Posts";
 import Header from "./components/Header";
 
 export default function Tag() {
-  const { posts, tagName } = useTag();
+  const { posts, tag } = useTag();
 
   return (
     <div className={styles.container}>
-      {posts && tagName && (
+      {posts && tag && (
         <>
-          <Header tagName={tagName} />
+          <Header tag={tag} />
           {posts?.length > 0 && <Posts posts={posts} />}
         </>
       )}

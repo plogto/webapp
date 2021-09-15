@@ -4,6 +4,7 @@ import { useSearch } from "./hooks/useSearch";
 import Users from "./components/Users";
 import Tags from "./components/Tags";
 import Button from "@/components/Button";
+import { useTranslation } from "react-i18next";
 
 export default function Search() {
   const { formMethods, submit, loading, result, filter, setFilter } =
@@ -15,14 +16,16 @@ export default function Search() {
     watch,
   } = formMethods;
 
+  const { t } = useTranslation("common");
+
   const filters = [
     {
-      title: "Users",
+      title: t("users"),
       active: filter === "users",
       onClick: () => setFilter("users"),
     },
     {
-      title: "Tags",
+      title: t("tags"),
       active: filter === "tags",
       onClick: () => setFilter("tags"),
     },
@@ -43,7 +46,8 @@ export default function Search() {
             className={`${styles.filterButton} ${
               f.active ? styles.active : ""
             }`}
-            onClick={f.onClick}>
+            onClick={f.onClick}
+          >
             {f.title}
           </Button>
         ))}

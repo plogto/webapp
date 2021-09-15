@@ -1,11 +1,12 @@
 import { PageUrls } from "@/@enums/pages";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { useNotifications } from "./hooks/useNotifications";
 import styles from "./Notifications.module.css";
 
 export default function Notifications() {
   const { followRequestsCount } = useNotifications();
-
+  const { t } = useTranslation("notifications");
   return (
     <div className={styles.container}>
       {followRequestsCount && followRequestsCount > 0 && (
@@ -15,7 +16,7 @@ export default function Notifications() {
               <span className={`${styles.badgePinger} animate-ping`}></span>
               <span className={styles.badge}></span>
             </span>
-            <div className="ml-3">Follow Requests</div>
+            <div className="ml-3 capitalize">{t("texts.followRequests")}</div>
           </div>
         </Link>
       )}

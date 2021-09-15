@@ -5,21 +5,21 @@ type Props = {
   className?: string;
   title?: string;
   href: string;
-  value?: number;
+  count?: number;
   clickable?: boolean;
 };
 
-export default function Count({ title, value, href, clickable }: Props) {
+export default function Count({ title, count, href, clickable }: Props) {
   return clickable ? (
     <Link href={href}>
       <a className={`${styles.count} ${styles.clickable}`}>
-        <span className="text-gray-900 font-bold">{`${value}`}</span>
+        <span className="text-gray-900 font-bold">{`${count}`}</span>
         {` ${title}`}
       </a>
     </Link>
   ) : (
     <div className={styles.count}>
-      <span className="text-gray-900 font-bold">{`${value}`}</span>
+      <span className="text-gray-900 font-bold">{`${count}`}</span>
       {` ${title}`}
     </div>
   );

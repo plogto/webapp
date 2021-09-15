@@ -28,7 +28,7 @@
 .follow,
 .following,
 .settings {
-  @apply px-2 py-2 mt-2 w-24 h-full;
+  @apply px-2 py-2 mt-2 w-24 h-full capitalize;
   @apply rounded-lg font-medium !important;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .count {
-  @apply rounded-md py-0.5;
+  @apply rounded-md py-0.5 capitalize;
   @apply text-gray-500;
 }
 
