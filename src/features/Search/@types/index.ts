@@ -9,6 +9,8 @@ type SearchTag = {
   tags: Tag[];
 };
 
+export type SearchFilters = "users" | "tags";
+
 export type SearchForm = {
   expression: string;
 };

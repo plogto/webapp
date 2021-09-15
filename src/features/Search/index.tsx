@@ -5,16 +5,11 @@ import Users from "./components/Users";
 import Tags from "./components/Tags";
 import Button from "@/components/Button";
 import { useTranslation } from "react-i18next";
+import { HashtagIcon, UsersIcon } from "@heroicons/react/solid";
 
 export default function Search() {
-  const { formMethods, submit, loading, result, filter, setFilter } =
-    useSearch();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = formMethods;
+  const { formMethods, submit, result, filter, setFilter } = useSearch();
+  const { register, handleSubmit, watch } = formMethods;
 
   const { t } = useTranslation("common");
 
@@ -22,11 +17,13 @@ export default function Search() {
     {
       title: t("users"),
       active: filter === "users",
+      icon: <UsersIcon className="w-4 h-4 mr-1" />,
       onClick: () => setFilter("users"),
     },
     {
       title: t("tags"),
       active: filter === "tags",
+      icon: <HashtagIcon className="w-4 h-4 mr-0.5" />,
       onClick: () => setFilter("tags"),
     },
   ];
@@ -48,6 +45,7 @@ export default function Search() {
             }`}
             onClick={f.onClick}
           >
+            {f.icon}
             {f.title}
           </Button>
         ))}

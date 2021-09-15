@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { SEARCH } from "@/graphql/search";
 import { useLazyQuery } from "@apollo/client";
-import type { SearchForm, SearchResult } from "../@types";
+import type { SearchFilters, SearchForm, SearchResult } from "../@types";
 import { SearchQuery } from "@/graphql/@types/search";
 
 export function useSearch() {
@@ -16,7 +16,7 @@ export function useSearch() {
     mode: "all",
   });
   const [result, setResult] = useState<SearchResult>();
-  const [filter, setFilter] = useState<string>("users");
+  const [filter, setFilter] = useState<SearchFilters>("users");
 
   useEffect(() => {
     if (data) {

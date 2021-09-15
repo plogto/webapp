@@ -19,7 +19,7 @@
 
 .users,
 .tags {
-  @apply w-full mt-2 lg:mt-3;
+  @apply w-full mt-3;
   @apply rounded-lg shadow overflow-hidden;
 }
 
