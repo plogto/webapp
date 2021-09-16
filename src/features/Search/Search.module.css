@@ -1,6 +1,5 @@
-.wrapper {
-  @apply flex flex-col justify-start items-center;
-  @apply w-full p-2 lg:p-0 mx-auto;
+.header {
+  @apply flex items-center;
 }
 
 .form {
@@ -24,15 +23,23 @@
 }
 
 .filters {
-  @apply w-full mt-3;
+  @apply ml-2 flex justify-end;
 }
 
 .filterButton {
-  @apply rounded-lg py-1.5 px-3 mr-3;
-  @apply font-medium bg-white capitalize;
+  @apply rounded-lg p-0;
+  @apply font-medium bg-white capitalize w-8 h-8;
   @apply shadow !important;
+}
+
+.filterButton:first-child {
+  @apply mr-3;
 }
 
 .filterButton.active {
   @apply bg-indigo-500 text-white;
+}
+
+.filterButton svg {
+  @apply w-5 h-5;
 }
