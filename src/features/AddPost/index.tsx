@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Wrapper from "@/components/Wrapper";
 import { CONTENT_MAX_LENGTH } from "@/config";
 import { useTranslation } from "react-i18next";
 import styles from "./AddPost.module.css";
@@ -17,7 +18,7 @@ export default function AddPost() {
   const { t } = useTranslation("addPost");
 
   return (
-    <div className={styles.wrapper}>
+    <Wrapper>
       <form className={styles.form} onSubmit={handleSubmit(submit)}>
         {user && (
           <>
@@ -54,6 +55,6 @@ export default function AddPost() {
           </>
         )}
       </form>
-    </div>
+    </Wrapper>
   );
 }

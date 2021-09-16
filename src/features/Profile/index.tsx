@@ -1,4 +1,3 @@
-import styles from "./Profile.module.css";
 import { useProfile } from "./hooks/useProfile";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
@@ -7,6 +6,7 @@ import PageStatus from "@/components/PageStatus";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { PhotographIcon } from "@heroicons/react/outline";
 import { useTranslation } from "react-i18next";
+import Wrapper from "@/components/Wrapper";
 
 export default function Profile() {
   const { getUserByUsernameResponse, user, posts } = useProfile();
@@ -14,7 +14,7 @@ export default function Profile() {
   const { t } = useTranslation("profile");
 
   return (
-    <div className={styles.wrapper}>
+    <Wrapper>
       {getUserByUsernameResponse.error?.message ? (
         <NotFound />
       ) : (
@@ -42,6 +42,6 @@ export default function Profile() {
           </div>
         </>
       )}
-    </div>
+    </Wrapper>
   );
 }

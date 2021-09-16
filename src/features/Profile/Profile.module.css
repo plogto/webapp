@@ -9,7 +9,7 @@
 }
 
 .header {
-  @apply pt-5 pb-3 px-5 lg:pt-4 lg:px-4 lg:pb-3 bg-white;
+  @apply pt-5 pb-3 px-5 lg:pt-4 lg:px-3 lg:pb-3 bg-white;
   @apply flex flex-col items-center rounded-lg my-2 lg:my-5 shadow;
 }
 
@@ -29,7 +29,7 @@
 .follow,
 .following,
 .settings {
-  @apply px-2 py-2 mt-2 w-24 h-full capitalize;
+  @apply px-2 py-2 mt-2 w-28 h-full capitalize;
   @apply rounded-lg font-medium !important;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .count {
-  @apply rounded-md py-0.5 capitalize;
+  @apply rounded-md capitalize;
   @apply text-gray-500;
 }
 

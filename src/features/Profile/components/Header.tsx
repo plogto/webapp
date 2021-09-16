@@ -31,6 +31,13 @@ export default function Header({
           <div className={styles.fullname}>{fullname}</div>
           <div className={styles.username}>@{username}</div>
         </div>
+      </div>
+      <div className="w-full flex items-end justify-between">
+        <div className="flex w-full text-tiny space-x-3">
+          {counts.map(count => (
+            <Count key={count.title} {...count} clickable={clickable} />
+          ))}
+        </div>
         {user?.id !== id ? (
           <ConnectionButton connectionStatus={connectionStatus} />
         ) : (
@@ -38,11 +45,6 @@ export default function Header({
             {t("buttons.settings")}
           </LinkButton>
         )}
-      </div>
-      <div className="flex w-full text-tiny space-x-3 mt-3">
-        {counts.map(count => (
-          <Count key={count.title} {...count} clickable={clickable} />
-        ))}
       </div>
     </div>
   );

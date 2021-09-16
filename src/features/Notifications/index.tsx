@@ -1,4 +1,5 @@
 import { PageUrls } from "@/@enums/pages";
+import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useNotifications } from "./hooks/useNotifications";
@@ -8,7 +9,7 @@ export default function Notifications() {
   const { followRequestsCount } = useNotifications();
   const { t } = useTranslation("notifications");
   return (
-    <div className={styles.wrapper}>
+    <Wrapper>
       {!!followRequestsCount && followRequestsCount > 0 && (
         <Link href={PageUrls.FOLLOW_REQUESTS}>
           <div className={styles.requestsCard}>
@@ -20,6 +21,6 @@ export default function Notifications() {
           </div>
         </Link>
       )}
-    </div>
+    </Wrapper>
   );
 }

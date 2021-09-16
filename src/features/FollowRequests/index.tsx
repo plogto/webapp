@@ -1,13 +1,12 @@
-import { PageUrls } from "@/@enums/pages";
+import Wrapper from "@/components/Wrapper";
 import UserInfo from "@/features/UserInfo";
-import Link from "next/link";
 import styles from "./FollowRequests.module.css";
 import { useFollowRequests } from "./hooks/useFollowRequests";
 
 export default function FollowRequests() {
   const { followRequests } = useFollowRequests();
   return (
-    <div className={styles.wrapper}>
+    <Wrapper>
       <div className={styles.card}>
         {followRequests?.map(followRequest => (
           <UserInfo
@@ -18,6 +17,6 @@ export default function FollowRequests() {
           />
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 }

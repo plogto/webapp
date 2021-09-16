@@ -1,4 +1,0 @@
-.wrapper {
-  @apply flex flex-col justify-between items-center;
-  @apply w-full;
-}
