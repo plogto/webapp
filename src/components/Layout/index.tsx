@@ -27,6 +27,6 @@ export default function Layout({ children }: Props) {
       </div>
     </div>
   ) : (
-    <></>
+    <div className="mx-auto w-128">{children}</div>
   );
 }
