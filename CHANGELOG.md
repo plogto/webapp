@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/favecode/plog-fe/compare/v0.11.0...v0.12.0) (2021-09-16)
+
+
+### Features
+
+* add useClassName hook ([17af480](https://github.com/favecode/plog-fe/commit/17af4804951a270545d42f9e89d713c8ff762a91))
+* implement Layout component and improve features wrapper ([198cef4](https://github.com/favecode/plog-fe/commit/198cef418e2e89f1a8b648294d7e2352816cac6b))
+* implement SidebarNavigation component ([b7a381d](https://github.com/favecode/plog-fe/commit/b7a381de47f2abb0775276bc08000d0707c609d9))
+
 ## [0.11.0](https://github.com/favecode/plog-fe/compare/v0.10.1...v0.11.0) (2021-09-15)
 
 
