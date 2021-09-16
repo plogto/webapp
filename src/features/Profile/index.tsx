@@ -14,13 +14,13 @@ export default function Profile() {
   const { t } = useTranslation("profile");
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {getUserByUsernameResponse.error?.message ? (
         <NotFound />
       ) : (
         <>
           {/* TODO: move classnames to css file */}
-          <div className="w-full lg:w-128 h-screen">
+          <div className="w-full h-screen">
             {user && <Header {...user} />}
             {posts && posts?.length > 0 && <Posts posts={posts} />}
             {(!posts || posts.length < 1) && !loading && user?.isPrivate && (

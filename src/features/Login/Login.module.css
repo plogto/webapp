@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   @apply flex flex-col justify-center items-center;
   @apply h-screen w-screen;
 }
@@ -9,7 +9,7 @@
 }
 
 .logo {
-  @apply text-5xl text-gray-800 font-bold text-center my-4;
+  @apply text-6xl text-gray-600 font-black text-center my-4 uppercase;
 }
 
 .description {
@@ -22,7 +22,8 @@
 }
 
 .submitButton {
-  @apply text-white bg-indigo-500 w-full px-4 py-2.5 capitalize;
+  @apply text-white bg-indigo-500;
+  @apply w-full px-4 py-2.5 capitalize;
 }
 
 .registerLink {

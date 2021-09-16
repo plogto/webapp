@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   @apply flex justify-between items-center;
   @apply bg-white w-full p-2 pr-4;
 }

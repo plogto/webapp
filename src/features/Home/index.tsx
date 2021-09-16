@@ -6,7 +6,7 @@ export default function Home() {
   const { posts } = useHome();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <Posts posts={posts} className="mt-2 lg:mt-5" />
     </div>
   );

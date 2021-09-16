@@ -1,6 +1,6 @@
-.container {
-  @apply flex flex-col justify-between items-center;
-  @apply w-full lg:w-128 lg:mx-auto px-2 lg:p-0 mx-auto;
+.wrapper {
+  @apply flex flex-col justify-start items-center;
+  @apply w-full px-2 lg:p-0 mx-auto;
 }
 
 .card {

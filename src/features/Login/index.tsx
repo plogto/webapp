@@ -10,7 +10,7 @@ export default function Login() {
   const { t } = useTranslation(["auth", "common"]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(submit)} className={styles.form}>
         <h1 className={styles.logo}>{t("common:logoName")}</h1>
         {error && (

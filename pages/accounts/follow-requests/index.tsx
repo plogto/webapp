@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import FollowRequestsProvider from "@/context/FollowRequestsContext";
 import FollowRequests from "@/features/FollowRequests";
 import Head from "next/head";
@@ -14,9 +14,10 @@ export default function FollowRequestsPage() {
         </title>
       </Head>
       <FollowRequestsProvider>
-        <FollowRequests />
+        <Layout>
+          <FollowRequests />
+        </Layout>
       </FollowRequestsProvider>
-      <Navbar />
     </>
   );
 }

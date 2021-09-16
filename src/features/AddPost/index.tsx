@@ -17,7 +17,7 @@ export default function AddPost() {
   const { t } = useTranslation("addPost");
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={handleSubmit(submit)}>
         {user && (
           <>
@@ -46,7 +46,8 @@ export default function AddPost() {
                 className={styles.submit}
                 loading={loading}
                 disabled={!!errors.content?.message}
-                type="submit">
+                type="submit"
+              >
                 {t("buttons.addPost")}
               </Button>
             </div>

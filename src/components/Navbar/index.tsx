@@ -7,11 +7,13 @@ import {
 } from "@heroicons/react/solid";
 import { v4 as uuid } from "uuid";
 import styles from "./Navbar.module.css";
-import NavLink from "@/components/NavLink";
+import Link from "next/link";
 import { useAccountContext } from "@/context/AccountContext";
 import { PageUrls } from "@/@enums/pages";
+import { useClassName } from "@/hooks/useClassName";
 
 export default function Navbar() {
+  const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const items = [
     {
@@ -37,10 +39,19 @@ export default function Navbar() {
   ];
 
   return user ? (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={styles.navbar}>
-        {items.map(item => (
-          <NavLink key={uuid()} {...item} />
+        {items.map(({ href, icon }) => (
+          <Link key={uuid()} href={href}>
+            <a
+              className={`${styles.navLink} ${activeClass({
+                href,
+                className: styles.active,
+              })}`}
+            >
+              {icon}
+            </a>
+          </Link>
         ))}
       </div>
     </div>

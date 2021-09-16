@@ -1,6 +1,6 @@
-.container {
-  @apply flex flex-col justify-between items-center;
-  @apply w-full;
+.wrapper {
+  @apply flex flex-col justify-start items-center;
+  @apply w-full px-2 lg:p-0 mx-auto;
 }
 
 .notFound {
@@ -9,7 +9,8 @@
 }
 
 .header {
-  @apply flex flex-col items-center pt-5 pb-3 px-5 lg:py-5 lg:px-0;
+  @apply pt-5 pb-3 px-5 lg:pt-4 lg:px-4 lg:pb-3 bg-white;
+  @apply flex flex-col items-center rounded-lg my-2 lg:my-5 shadow;
 }
 
 .avatar {

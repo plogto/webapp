@@ -1,10 +1,10 @@
-.container {
+.wrapper {
   @apply flex flex-col justify-between items-center;
   @apply w-full p-2 lg:p-0;
 }
 
 .form {
-  @apply w-full lg:w-128 lg:mt-5 lg:px-0;
+  @apply w-full lg:mt-5 lg:px-0;
   @apply bg-white rounded-lg shadow;
 }
 

@@ -63,7 +63,7 @@ export default function UserInfo({
     },
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {username && (
         <Link href={`/${username}`}>
           <a className={styles.userInfo}>

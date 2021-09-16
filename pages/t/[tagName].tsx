@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import Tag from "@/features/Tag";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -13,8 +13,9 @@ export default function TagPage() {
           {t("tag")} | {t("logoName")}
         </title>
       </Head>
-      <Tag />
-      <Navbar />
+      <Layout>
+        <Tag />
+      </Layout>
     </>
   );
 }

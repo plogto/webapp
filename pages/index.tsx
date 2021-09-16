@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import { useAccountContext } from "@/context/AccountContext";
 import Home from "@/features/Home";
 import Landing from "@/features/Landing";
@@ -17,8 +17,9 @@ export default function HomePage() {
       </Head>
       {isAuthenticated ? (
         <>
-          <Home />
-          <Navbar />
+          <Layout>
+            <Home />
+          </Layout>
         </>
       ) : (
         <Landing />

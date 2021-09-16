@@ -10,7 +10,7 @@ type Props = {
 
 export default function TagInfo({ tag: { name, count } }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {name && (
         <Link href={`/t/${name}`}>
           <a className={styles.tagInfo}>

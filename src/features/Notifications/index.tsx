@@ -8,11 +8,11 @@ export default function Notifications() {
   const { followRequestsCount } = useNotifications();
   const { t } = useTranslation("notifications");
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {!!followRequestsCount && followRequestsCount > 0 && (
         <Link href={PageUrls.FOLLOW_REQUESTS}>
           <div className={styles.requestsCard}>
-            <span className={styles.badgeContainer}>
+            <span className={styles.badgeWrapper}>
               <span className={`${styles.badgePinger} animate-ping`}></span>
               <span className={styles.badge}></span>
             </span>

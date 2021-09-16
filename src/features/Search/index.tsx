@@ -29,7 +29,7 @@ export default function Search() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <form className={styles.form} onSubmit={handleSubmit(submit)}>
         <SearchInput
           onChange={handleSubmit(() => submit(watch()))}

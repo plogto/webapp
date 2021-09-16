@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import Profile from "@/features/Profile";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -13,8 +13,9 @@ export default function ProfilePage() {
           {t("profile")} | {t("logoName")}
         </title>
       </Head>
-      <Profile />
-      <Navbar />
+      <Layout>
+        <Profile />
+      </Layout>
     </>
   );
 }

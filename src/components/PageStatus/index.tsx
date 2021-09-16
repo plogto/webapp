@@ -15,7 +15,7 @@ export default function PageStatus({
   className,
 }: Props) {
   return (
-    <div className={`${styles.container} ${className || ""}`}>
+    <div className={`${styles.wrapper} ${className || ""}`}>
       <div className={styles.icon}>{icon}</div>
       <div className={styles.title}>{title}</div>
       {description && <div className={styles.description}>{description}</div>}

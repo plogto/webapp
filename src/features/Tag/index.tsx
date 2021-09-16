@@ -7,7 +7,7 @@ export default function Tag() {
   const { posts, tag } = useTag();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       {posts && tag && (
         <>
           <Header tag={tag} />

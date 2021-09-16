@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import AddPost from "@/features/AddPost";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -12,8 +12,9 @@ export default function AddPostPage() {
           {t("addPost")} | {t("logoName")}
         </title>
       </Head>
-      <AddPost />
-      <Navbar />
+      <Layout>
+        <AddPost />
+      </Layout>
     </>
   );
 }

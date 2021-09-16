@@ -1,6 +1,6 @@
-.container {
-  @apply flex flex-col justify-between items-center;
-  @apply w-full lg:w-128 lg:mx-auto mx-auto;
+.wrapper {
+  @apply flex flex-col justify-start items-center;
+  @apply w-full mx-auto;
 }
 
 .header {
@@ -9,7 +9,7 @@
 
 .icon {
   @apply flex items-center justify-center;
-  @apply text-gray-900 lg:w-16 lg:h-16 w-14 h-14 mr-5;
+  @apply text-gray-900 lg:w-16 lg:h-16 w-14 h-14 mr-3 lg:mr-4;
   @apply rounded-full shadow-sm border;
 }
 

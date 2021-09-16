@@ -10,7 +10,7 @@ type Props = {
 
 export default function Posts({ posts, className }: Props) {
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={`${styles.wrapper} ${className}`}>
       {posts &&
         posts.length > 0 &&
         posts.map(post => <PostCard key={post.id} post={post} />)}

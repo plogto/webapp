@@ -9,7 +9,7 @@ type Props = {
 
 export default function PostCard({ post }: Props) {
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <Header {...post.user} />
       <Content content={post.content} />
     </div>

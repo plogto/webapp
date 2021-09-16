@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import ConnectionsProvider from "@/context/ConnectionsContext";
 import Connections from "@/features/Connections";
 import Head from "next/head";
@@ -15,9 +15,10 @@ export default function FollowersPage() {
         </title>
       </Head>
       <ConnectionsProvider>
-        <Connections type="followers" />
+        <Layout>
+          <Connections type="followers" />
+        </Layout>
       </ConnectionsProvider>
-      <Navbar />
     </>
   );
 }

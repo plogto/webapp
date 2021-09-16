@@ -7,7 +7,7 @@ export default function FollowRequests({ type }: ConnectionsProps) {
   const { connections } = useConnections({ type });
 
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={styles.card}>
         {connections[type].connections?.map(connection => (
           <UserInfo

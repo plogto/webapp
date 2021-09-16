@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   @apply bg-white rounded-lg shadow w-full;
   @apply mb-2 lg:mb-4 overflow-hidden;
 }

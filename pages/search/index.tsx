@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import Search from "@/features/Search";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -12,8 +12,9 @@ export default function SearchPage() {
           {t("search")} | {t("logoName")}
         </title>
       </Head>
-      <Search />
-      <Navbar />
+      <Layout>
+        <Search />
+      </Layout>
     </>
   );
 }

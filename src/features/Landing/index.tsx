@@ -6,7 +6,7 @@ import styles from "./Landing.module.css";
 export default function Landing() {
   const { t } = useTranslation("common");
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={styles.header}>
         <h1 className={styles.logo}>PLOG</h1>
         <p className={styles.description}>
