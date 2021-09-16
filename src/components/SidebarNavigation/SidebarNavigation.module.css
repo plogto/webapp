@@ -3,16 +3,16 @@
 }
 
 .card {
-  @apply rounded-lg shadow bg-white w-72 m-5;
+  @apply rounded-lg shadow bg-white w-64 m-5;
 }
 
 .header {
   @apply flex flex-col items-center text-gray-400;
-  @apply border-b border-dashed pt-10 pb-3;
+  @apply border-b border-dashed pt-8 pb-3;
 }
 
 .avatar {
-  @apply text-gray-400 bg-white my-3 w-36 h-36 !important;
+  @apply text-gray-400 bg-white my-3 w-40 h-40 !important;
   @apply rounded-full shadow-sm border;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .navLink .title {
-  @apply ml-3 text-current font-medium;
+  @apply ml-3 text-sm text-current font-medium;
 }
 
 .navLink .icon {
@@ -47,5 +47,5 @@
 }
 
 .navLink svg {
-  @apply w-8 h-8 text-current;
+  @apply w-7 h-7 text-current;
 }
