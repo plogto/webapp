@@ -6,8 +6,10 @@ import Button from "@/components/Button";
 import { useTranslation } from "react-i18next";
 import { HashtagIcon, UsersIcon } from "@heroicons/react/solid";
 import Wrapper from "@/components/Wrapper";
+import { MobileTrends } from "../Trends";
+import { MobileOnlyView } from "react-device-detect";
 
-export default function Search() {
+export function Search() {
   const { formMethods, submit, result, filter, setFilter } = useSearch();
   const { register, handleSubmit, watch } = formMethods;
 
@@ -55,6 +57,10 @@ export default function Search() {
           </div>
         </div>
       </form>
+
+      <MobileOnlyView viewClassName="w-full">
+        <MobileTrends />
+      </MobileOnlyView>
 
       {filter == "users" && <Users user={result?.user} />}
       {filter == "tags" && <Tags tag={result?.tag} />}

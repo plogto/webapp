@@ -1,0 +1,75 @@
+/* Desktop */
+
+.card {
+  @apply flex flex-col;
+  @apply rounded-lg shadow bg-white w-full mt-4;
+}
+
+.header {
+  @apply flex items-center px-4 py-3;
+}
+
+.header svg {
+  @apply w-7 h-7;
+}
+
+.title {
+  @apply text-2xl font-bold mr-2 capitalize;
+}
+
+.tag {
+  @apply flex flex-col px-4 py-3 border-t border-dashed;
+}
+
+.tagName {
+  @apply text-indigo-500 font-bold text-xl;
+}
+
+.tagCount {
+  @apply text-gray-400 text-sm;
+}
+
+/* Mobile */
+.mobileWrapper {
+  @apply w-full;
+}
+
+.mobileHeader {
+  @apply flex items-center px-1 pt-3 text-gray-400 font-medium;
+}
+
+.mobileTitle {
+  @apply text-xs capitalize mr-1;
+}
+
+.mobileHeader svg {
+  @apply w-4 h-4;
+}
+
+.mobileTags {
+  @apply flex items-end;
+}
+
+.mobileFirstTag {
+  @apply flex flex-col pl-1 pr-3 py-1;
+}
+
+.mobileFirstTagName {
+  @apply text-indigo-500 font-bold text-2xl;
+}
+
+.mobileFirstTagCount {
+  @apply text-gray-400 text-xs;
+}
+
+.mobileTag {
+  @apply flex flex-col pl-1 pr-3 py-1;
+}
+
+.mobileTagName {
+  @apply text-indigo-500 font-bold text-sm;
+}
+
+.mobileTagCount {
+  @apply text-gray-400 text-xs;
+}

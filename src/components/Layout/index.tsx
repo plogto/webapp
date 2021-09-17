@@ -3,9 +3,10 @@ import { useAccountContext } from "@/context/AccountContext";
 import SidebarNavigation from "../SidebarNavigation";
 import { ReactNode } from "react";
 import Navbar from "../Navbar";
-import Search from "@/features/Search";
+import { Search } from "@/features/Search";
 import { useRouter } from "next/router";
 import { PageUrls } from "@/@enums/pages";
+import { DesktopTrends } from "@/features/Trends";
 
 type Props = {
   children: ReactNode;
@@ -24,6 +25,7 @@ export default function Layout({ children }: Props) {
       {children}
       <div className="hidden lg:block px-5 w-9/12">
         {!limitedRoutes.includes(pathname as PageUrls) && <Search />}
+        <DesktopTrends />
       </div>
     </div>
   ) : (

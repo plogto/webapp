@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.2](https://github.com/favecode/plog-fe/compare/v0.12.1...v0.12.2) (2021-09-17)
+
+
+### Features
+
+* implement Trends feature for desktop and mobile view ([b4e8c69](https://github.com/favecode/plog-fe/commit/b4e8c6979952eea793ef77872f716dc7b09c3e2d))
+* implement trends for Desktop ([65c70d7](https://github.com/favecode/plog-fe/commit/65c70d75e3ef71a0cdfff448016475e2b4f1fb41))
+* import tailwindcss/tailwind.css to _app.tsx ([3a58486](https://github.com/favecode/plog-fe/commit/3a584860dadc6f1946b95aee029d9f32d3ec7e54))
+
 ### [0.12.1](https://github.com/favecode/plog-fe/compare/v0.12.0...v0.12.1) (2021-09-16)
 
 
