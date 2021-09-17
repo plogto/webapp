@@ -9,8 +9,6 @@ export const SEARCH = gql`
           username
           email
           fullname
-          createdAt
-          updatedAt
         }
       }
       tag {
@@ -18,8 +16,6 @@ export const SEARCH = gql`
           id
           name
           count
-          createdAt
-          updatedAt
         }
       }
     }

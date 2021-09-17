@@ -11,8 +11,6 @@ export const GET_USER_INFO = gql`
       followingCount
       followRequestsCount
       postsCount
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -29,8 +27,6 @@ export const GET_USER_BY_USERNAME = gql`
       followersCount
       followingCount
       postsCount
-      createdAt
-      updatedAt
     }
   }
 `;
