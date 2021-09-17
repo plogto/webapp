@@ -2,7 +2,7 @@
 
 .card {
   @apply flex flex-col;
-  @apply rounded-lg shadow bg-white w-full mt-4;
+  @apply rounded-lg shadow bg-white w-full mt-5;
 }
 
 .header {
