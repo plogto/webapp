@@ -6,8 +6,18 @@ export const GET_TAG_BY_TAG_NAME = gql`
       id
       name
       count
-      createdAt
-      updatedAt
+    }
+  }
+`;
+
+export const GET_TRENDS = gql`
+  query getTrends {
+    getTrends {
+      tags {
+        id
+        name
+        count
+      }
     }
   }
 `;

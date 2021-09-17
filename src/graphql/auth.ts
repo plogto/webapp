@@ -8,8 +8,6 @@ export const LOGIN = gql`
         username
         email
         fullname
-        createdAt
-        updatedAt
       }
       authToken {
         token

@@ -5,7 +5,7 @@
 
 .requestsCard {
   @apply flex items-center cursor-pointer;
-  @apply mt-2 lg:mt-5 px-5 py-4;
+  @apply mt-0 lg:mt-5 px-5 py-4;
   @apply w-full overflow-hidden;
   @apply bg-white rounded-lg shadow;
 }

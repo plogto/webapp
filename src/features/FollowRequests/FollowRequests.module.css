@@ -1,4 +1,4 @@
 .card {
   @apply shadow rounded-lg w-full overflow-hidden;
-  @apply mt-2 lg:mt-5;
+  @apply mt-0 lg:mt-5;
 }

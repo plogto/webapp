@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <Wrapper>
-      <Posts posts={posts} className="mt-2 lg:mt-5" />
+      <Posts posts={posts} className="mt-0 lg:mt-5" />
     </Wrapper>
   );
 }
