@@ -30,6 +30,6 @@ export function Layout({ children }: Props): JSX.Element {
       </div>
     </div>
   ) : (
-    <div className="mx-auto w-128">{children}</div>
+    <div className="mx-auto w-full lg:w-128">{children}</div>
   );
 }
