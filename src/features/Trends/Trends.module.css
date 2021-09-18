@@ -59,7 +59,7 @@
 }
 
 .mobileFirstTagCount {
-  @apply text-gray-400 text-sm;
+  @apply text-gray-400 text-xs;
 }
 
 .mobileTag {
@@ -71,5 +71,5 @@
 }
 
 .mobileTagCount {
-  @apply text-gray-400 text-sm;
+  @apply text-gray-400 text-xs;
 }
