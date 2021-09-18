@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.3](https://github.com/favecode/plog-fe/compare/v0.12.2...v0.12.3) (2021-09-18)
+
+
+### Features
+
+* highlight hashtags in PostCard feature ([4e13a69](https://github.com/favecode/plog-fe/commit/4e13a69a9aebe526328de73ed6985b548e0ac8ff))
+
 ### [0.12.2](https://github.com/favecode/plog-fe/compare/v0.12.1...v0.12.2) (2021-09-17)
 
 
