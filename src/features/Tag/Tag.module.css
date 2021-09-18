@@ -1,5 +1,5 @@
 .header {
-  @apply w-full flex items-center p-3 lg:py-5 lg:px-0;
+  @apply w-full flex items-center p-4 lg:p-5;
 }
 
 .icon {

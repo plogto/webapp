@@ -1,4 +1,5 @@
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
 import { AddPost } from "@features/AddPost";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
@@ -13,7 +14,9 @@ export default function AddPostPage(): JSX.Element {
         </title>
       </Head>
       <Layout>
-        <AddPost />
+        <Wrapper className="p-2 lg:p-5">
+          <AddPost />
+        </Wrapper>
       </Layout>
     </>
   );

@@ -1,4 +1,5 @@
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
 import { FollowRequestsProvider } from "@context/FollowRequestsContext";
 import { FollowRequests } from "@features/FollowRequests";
 import Head from "next/head";
@@ -15,7 +16,9 @@ export default function FollowRequestsPage(): JSX.Element {
       </Head>
       <FollowRequestsProvider>
         <Layout>
-          <FollowRequests />
+          <Wrapper className="p-2 lg:p-5">
+            <FollowRequests />
+          </Wrapper>
         </Layout>
       </FollowRequestsProvider>
     </>

@@ -1,4 +1,5 @@
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
 import { useAccountContext } from "@context/AccountContext";
 import { Home } from "@features/Home";
 import { Landing } from "@features/Landing";
@@ -18,7 +19,9 @@ export default function HomePage(): JSX.Element {
       {isAuthenticated ? (
         <>
           <Layout>
-            <Home />
+            <Wrapper>
+              <Home />
+            </Wrapper>
           </Layout>
         </>
       ) : (

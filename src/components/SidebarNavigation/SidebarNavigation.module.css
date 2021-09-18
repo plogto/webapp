@@ -1,9 +1,10 @@
 .wrapper {
-  @apply hidden lg:visible lg:flex justify-center items-start h-screen;
+  @apply hidden h-screen pt-5;
+  @apply lg:visible lg:flex lg:justify-center lg:items-start;
 }
 
 .card {
-  @apply rounded-lg shadow bg-white w-64 m-5;
+  @apply rounded-lg shadow bg-white w-64;
 }
 
 .header {

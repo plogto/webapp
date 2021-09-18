@@ -1,4 +1,4 @@
 .wrapper {
   @apply flex flex-col justify-start items-center;
-  @apply w-full p-2 lg:p-0;
+  @apply w-full;
 }

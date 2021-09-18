@@ -1,4 +1,5 @@
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
 import { ConnectionsProvider } from "@context/ConnectionsContext";
 import { Connections } from "@features/Connections";
 import Head from "next/head";
@@ -16,7 +17,9 @@ export default function FollowersPage(): JSX.Element {
       </Head>
       <ConnectionsProvider>
         <Layout>
-          <Connections type="followers" />
+          <Wrapper className="p-2 lg:p-5">
+            <Connections type="followers" />
+          </Wrapper>
         </Layout>
       </ConnectionsProvider>
     </>
