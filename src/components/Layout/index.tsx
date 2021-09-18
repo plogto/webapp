@@ -1,8 +1,8 @@
 import styles from "./Layout.module.css";
 import { useAccountContext } from "@/context/AccountContext";
-import SidebarNavigation from "../SidebarNavigation";
+import { SidebarNavigation } from "../SidebarNavigation";
 import { ReactNode } from "react";
-import Navbar from "../Navbar";
+import { Navbar } from "../Navbar";
 import { Search } from "@/features/Search";
 import { useRouter } from "next/router";
 import { PageUrls } from "@/@enums/pages";
@@ -12,7 +12,7 @@ type Props = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export function Layout({ children }: Props) {
   const { user } = useAccountContext();
   const { pathname } = useRouter();
 

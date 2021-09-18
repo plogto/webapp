@@ -1,5 +1,5 @@
 import type { User } from "@/@types/user";
-import Avatar from "@/components/Avatar";
+import { Avatar } from "@/components/Avatar";
 import styles from "../PostCard.module.css";
 
 export function Header({ username, fullname }: User) {

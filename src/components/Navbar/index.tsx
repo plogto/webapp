@@ -12,7 +12,7 @@ import { useAccountContext } from "@/context/AccountContext";
 import { PageUrls } from "@/@enums/pages";
 import { useClassName } from "@/hooks/useClassName";
 
-export default function Navbar() {
+export function Navbar() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const items = [

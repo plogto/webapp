@@ -1,9 +1,9 @@
-import Wrapper from "@/components/Wrapper";
-import UserInfo from "@/features/UserInfo";
+import { Wrapper } from "@/components/Wrapper";
+import { UserInfo } from "@/features/UserInfo";
 import styles from "./FollowRequests.module.css";
 import { useFollowRequests } from "./hooks/useFollowRequests";
 
-export default function FollowRequests() {
+export function FollowRequests() {
   const { followRequests } = useFollowRequests();
   return (
     <Wrapper>

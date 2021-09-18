@@ -8,7 +8,7 @@ type Props = {
   children?: ReactNode;
 };
 
-export default function LinkButton({ className, children, href }: Props) {
+export function LinkButton({ className, children, href }: Props) {
   return (
     <Link href={href}>
       <a className={`${styles.linkButton} ${className}`}>{children}</a>

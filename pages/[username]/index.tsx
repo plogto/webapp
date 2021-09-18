@@ -1,5 +1,5 @@
-import Layout from "@/components/Layout";
-import Profile from "@/features/Profile";
+import { Layout } from "@/components/Layout";
+import { Profile } from "@/features/Profile";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 

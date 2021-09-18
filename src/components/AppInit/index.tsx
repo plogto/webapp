@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { PageUrls } from "@/@enums/pages";
 import { GetUserInfoQuery } from "@/graphql/@types/user";
 
-function AppInit() {
+export function AppInit() {
   const { data, error } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
   const router = useRouter();
   const { setUser } = useAccountContext();
@@ -25,5 +25,3 @@ function AppInit() {
 
   return <></>;
 }
-
-export default AppInit;

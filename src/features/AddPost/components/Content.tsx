@@ -5,6 +5,6 @@ type Props = {
   content: Post["content"];
 };
 
-export default function Content({ content }: Props) {
+export function Content({ content }: Props) {
   return <p className={styles.content}>{content}</p>;
 }

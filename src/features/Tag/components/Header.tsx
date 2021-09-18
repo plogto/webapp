@@ -7,7 +7,7 @@ type Props = {
   tag: Tag;
 };
 
-export default function Header({ tag: { name, count } }: Props) {
+export function Header({ tag: { name, count } }: Props) {
   return (
     <div className={styles.header}>
       <span className={styles.icon}>

@@ -1,8 +1,8 @@
-import Posts from "@/components/Posts";
-import Wrapper from "@/components/Wrapper";
+import { Posts } from "@/components/Posts";
+import { Wrapper } from "@/components/Wrapper";
 import { useHome } from "./hooks/useHome";
 
-export default function Home() {
+export function Home() {
   const { posts } = useHome();
 
   return (

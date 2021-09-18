@@ -8,12 +8,7 @@ type Props = {
   className?: string;
 };
 
-export default function PageStatus({
-  title,
-  icon,
-  description,
-  className,
-}: Props) {
+export function PageStatus({ title, icon, description, className }: Props) {
   return (
     <div className={`${styles.wrapper} ${className || ""}`}>
       <div className={styles.icon}>{icon}</div>

@@ -9,7 +9,7 @@ type Props = {
   clickable?: boolean;
 };
 
-export default function Count({ title, count, href, clickable }: Props) {
+export function Count({ title, count, href, clickable }: Props) {
   return clickable ? (
     <Link href={href}>
       <a className={`${styles.count} ${styles.clickable}`}>

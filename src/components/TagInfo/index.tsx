@@ -8,7 +8,7 @@ type Props = {
   tag: Tag;
 };
 
-export default function TagInfo({ tag: { name, count } }: Props) {
+export function TagInfo({ tag: { name, count } }: Props) {
   return (
     <div className={styles.wrapper}>
       {name && (

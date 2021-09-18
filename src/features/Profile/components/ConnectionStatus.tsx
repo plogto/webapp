@@ -1,18 +1,18 @@
 import type { User } from "@/@types/user";
-import Button from "@/components/Button";
+import { Button } from "@/components/Button";
 import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
 import { ConnectionButtons } from "../@types";
 import { useTranslation } from "react-i18next";
 import { useAccountContext } from "@/context/AccountContext";
-import LinkButton from "@/components/LinkButton";
+import { LinkButton } from "@/components/LinkButton";
 import { PageUrls } from "@/@enums/pages";
 
 type Props = {
   connectionStatus: User["connectionStatus"];
 };
 
-export default function ConnectionStatus({ connectionStatus }: Props) {
+export function ConnectionStatus({ connectionStatus }: Props) {
   const { follow, unfollow, followUserResponse, unfollowUserResponse } =
     useConnection();
   const { user } = useAccountContext();

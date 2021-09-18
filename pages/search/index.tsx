@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import { Search } from "@/features/Search";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";

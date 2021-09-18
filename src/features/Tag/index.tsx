@@ -1,9 +1,9 @@
 import { useTag } from "./hooks/useTag";
-import Posts from "@/components/Posts";
-import Header from "./components/Header";
-import Wrapper from "@/components/Wrapper";
+import { Posts } from "@/components/Posts";
+import { Header } from "./components/Header";
+import { Wrapper } from "@/components/Wrapper";
 
-export default function Tag() {
+export function Tag() {
   const { posts, tag } = useTag();
 
   return (

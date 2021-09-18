@@ -6,7 +6,7 @@ type Props = {
   post: Post;
 };
 
-export default function PostCard({ post }: Props) {
+export function PostCard({ post }: Props) {
   return (
     <div className={styles.wrapper}>
       <Header {...post.user} />

@@ -1,9 +1,9 @@
 import type { User } from "@/@types/user";
-import Avatar from "@/components/Avatar";
+import { Avatar } from "@/components/Avatar";
 import { useAccountContext } from "@/context/AccountContext";
 import { XIcon } from "@heroicons/react/solid";
 import { ActionButtons } from "./@types";
-import Button from "@/components/Button";
+import { Button } from "@/components/Button";
 import { useActions } from "./hooks/useActions";
 import styles from "./UserInfo.module.css";
 import Link from "next/link";
@@ -16,7 +16,7 @@ type Props = {
   showFollow?: boolean;
 };
 
-export default function UserInfo({
+export function UserInfo({
   user: { id, username, fullname, connectionStatus },
   showAccept,
   showDelete,

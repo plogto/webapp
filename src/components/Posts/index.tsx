@@ -1,5 +1,5 @@
 import type { Post } from "@/@types/post";
-import PostCard from "@/features/PostCard";
+import { PostCard } from "@/features/PostCard";
 import styles from "./Posts.module.css";
 
 // TODO: add loading prop and implement loading component
@@ -8,7 +8,7 @@ type Props = {
   className?: string;
 };
 
-export default function Posts({ posts, className }: Props) {
+export function Posts({ posts, className }: Props) {
   return (
     <div className={`${styles.wrapper} ${className}`}>
       {posts &&

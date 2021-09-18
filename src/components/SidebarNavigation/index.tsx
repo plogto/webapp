@@ -10,10 +10,10 @@ import { useAccountContext } from "@/context/AccountContext";
 import { PageUrls } from "@/@enums/pages";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import Avatar from "../Avatar";
+import { Avatar } from "../Avatar";
 import { useClassName } from "@/hooks/useClassName";
 
-export default function SidebarNavigation() {
+export function SidebarNavigation() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const { t } = useTranslation("common");

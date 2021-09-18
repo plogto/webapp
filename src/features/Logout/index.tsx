@@ -1,6 +1,6 @@
 import { useLogout } from "./hooks/useLogout";
 
-export default function Logout() {
+export function Logout() {
   useLogout();
 
   return <></>;
