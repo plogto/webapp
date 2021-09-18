@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 import type {
   FollowRequests,
   SetFollowRequests,
-} from "@/context/@types/followRequests";
+} from "@context/@types/followRequests";
 
 const FollowRequestsContext = createContext<FollowRequests>([]);
 const FollowRequestsContextSetState = createContext<SetFollowRequests>({
@@ -13,7 +13,7 @@ type Props = {
   children: ReactNode;
 };
 
-const FollowRequestsProvider = ({ children }: Props) => {
+export function FollowRequestsProvider({ children }: Props) {
   const [followRequestsState, setFollowRequestsState] =
     useState<FollowRequests>([]);
 
@@ -22,26 +22,27 @@ const FollowRequestsProvider = ({ children }: Props) => {
       <FollowRequestsContextSetState.Provider
         value={{
           setFollowRequests: setFollowRequestsState,
-        }}>
+        }}
+      >
         {children}
       </FollowRequestsContextSetState.Provider>
     </FollowRequestsContext.Provider>
   );
-};
+}
 
-const useFollowRequestsState = () => {
+function useFollowRequestsState() {
   const followRequests = useContext(FollowRequestsContext);
 
   return followRequests;
-};
+}
 
-const useFollowRequestsSetState = () => {
+function useFollowRequestsSetState() {
   const { setFollowRequests } = useContext(FollowRequestsContextSetState);
 
   return { setFollowRequests };
-};
+}
 
-const useFollowRequestsContext = () => {
+export function useFollowRequestsContext() {
   const followRequests = useFollowRequestsState();
   const { setFollowRequests } = useFollowRequestsSetState();
 
@@ -52,7 +53,4 @@ const useFollowRequestsContext = () => {
   };
 
   return { followRequests, setFollowRequests, deleteFollowRequestById };
-};
-
-export { useFollowRequestsContext };
-export default FollowRequestsProvider;
+}

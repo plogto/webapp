@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import router from "next/router";
-import { PageUrls } from "@/@enums/pages";
-import { useAccountContext } from "@/context/AccountContext";
-import { ADD_POST } from "@/graphql/post";
+import { PageUrls } from "@enums/pages";
+import { useAccountContext } from "@context/AccountContext";
+import { ADD_POST } from "@graphql/post";
 import { useMutation } from "@apollo/client";
 import type { AddPostForm } from "../@types";
 

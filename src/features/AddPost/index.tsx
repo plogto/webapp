@@ -1,13 +1,13 @@
-import Button from "@/components/Button";
-import Wrapper from "@/components/Wrapper";
-import { CONTENT_MAX_LENGTH } from "@/config";
+import { Button } from "@components/Button";
+import { Wrapper } from "@components/Wrapper";
+import { CONTENT_MAX_LENGTH } from "@config";
 import { useTranslation } from "react-i18next";
 import styles from "./AddPost.module.css";
-import Counter from "./components/Counter";
-import Header from "./components/Header";
+import { Counter } from "./components/Counter";
+import { Header } from "./components/Header";
 import { useAddPost } from "./hooks/useAddPost";
 
-export default function AddPost() {
+export function AddPost() {
   const { user, formMethods, submit, loading } = useAddPost();
   const {
     register,

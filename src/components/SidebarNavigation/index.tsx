@@ -1,19 +1,20 @@
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
 import {
-  ViewGridIcon,
   BellIcon,
-  PlusIcon,
   GlobeIcon,
+  PlusIcon,
+  ViewGridIcon,
 } from "@heroicons/react/solid";
-import { v4 as uuid } from "uuid";
-import styles from "./SidebarNavigation.module.css";
-import { useAccountContext } from "@/context/AccountContext";
-import { PageUrls } from "@/@enums/pages";
+import { useClassName } from "@hooks/useClassName";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import Avatar from "../Avatar";
-import { useClassName } from "@/hooks/useClassName";
+import { v4 as uuid } from "uuid";
 
-export default function SidebarNavigation() {
+import { Avatar } from "../Avatar";
+import styles from "./SidebarNavigation.module.css";
+
+export function SidebarNavigation(): JSX.Element {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const { t } = useTranslation("common");

@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-const SafeHydrate = ({ children }: Props): JSX.Element => {
+export function SafeHydrate({ children }: Props): JSX.Element {
   return (
     <div suppressHydrationWarning>
       {typeof document === "undefined" || typeof window === "undefined"
@@ -12,6 +12,4 @@ const SafeHydrate = ({ children }: Props): JSX.Element => {
         : children}
     </div>
   );
-};
-
-export default SafeHydrate;
+}

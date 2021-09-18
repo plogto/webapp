@@ -1,15 +1,14 @@
-import { PageUrls } from "@/@enums/pages";
-import type { User } from "@/@types/user";
-import Avatar from "@/components/Avatar";
-import LinkButton from "@/components/LinkButton";
-import { useAccountContext } from "@/context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import type { User } from "@t/user";
+import { Avatar } from "@components/Avatar";
+import { LinkButton } from "@components/LinkButton";
+import { useAccountContext } from "@context/AccountContext";
 import { useTranslation } from "react-i18next";
-import { useProfile } from "../hooks/useProfile";
+import { useProfile } from "../hooks";
 import styles from "../Profile.module.css";
-import ConnectionButton from "./ConnectionStatus";
-import Count from "./Count";
+import { Count, ConnectionStatus } from ".";
 
-export default function Header({
+export function Header({
   id,
   username,
   fullname,
@@ -39,7 +38,7 @@ export default function Header({
           ))}
         </div>
         {user?.id !== id ? (
-          <ConnectionButton connectionStatus={connectionStatus} />
+          <ConnectionStatus connectionStatus={connectionStatus} />
         ) : (
           <LinkButton href={PageUrls.SETTINGS} className={styles.settings}>
             {t("buttons.settings")}

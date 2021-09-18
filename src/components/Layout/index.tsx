@@ -1,18 +1,19 @@
-import styles from "./Layout.module.css";
-import { useAccountContext } from "@/context/AccountContext";
-import SidebarNavigation from "../SidebarNavigation";
-import { ReactNode } from "react";
-import Navbar from "../Navbar";
-import { Search } from "@/features/Search";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import { Search } from "@features/Search";
+import { DesktopTrends } from "@features/Trends";
 import { useRouter } from "next/router";
-import { PageUrls } from "@/@enums/pages";
-import { DesktopTrends } from "@/features/Trends";
+import { ReactNode } from "react";
+
+import { Navbar } from "../Navbar";
+import { SidebarNavigation } from "../SidebarNavigation";
+import styles from "./Layout.module.css";
 
 type Props = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export function Layout({ children }: Props): JSX.Element {
   const { user } = useAccountContext();
   const { pathname } = useRouter();
 

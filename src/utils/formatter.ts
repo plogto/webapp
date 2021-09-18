@@ -1,4 +1,4 @@
-import { FormatCountTitle } from "./@types";
+import type { FormatCountTitle } from "./@types";
 
 export const formatCountTitle: FormatCountTitle = ({
   singular,

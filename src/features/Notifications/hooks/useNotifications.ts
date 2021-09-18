@@ -1,4 +1,4 @@
-import { useAccountContext } from "@/context/AccountContext";
+import { useAccountContext } from "@context/AccountContext";
 
 export function useNotifications() {
   const { user } = useAccountContext();

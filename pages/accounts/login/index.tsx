@@ -1,8 +1,8 @@
-import Login from "@/features/Login";
+import { Login } from "@features/Login";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
-export default function LoginPage() {
+export default function LoginPage(): JSX.Element {
   const { t } = useTranslation("common");
   return (
     <>

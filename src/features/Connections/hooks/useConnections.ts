@@ -1,16 +1,16 @@
 import { useLazyQuery } from "@apollo/client";
-import {
+import type {
   GetUserFollowersByUsernameQuery,
   GetUserFollowingByUsernameQuery,
-} from "@/graphql/@types/connection";
+} from "@graphql/@types/connection";
 import {
   GET_USER_FOLLOWERS_BY_USERNAME,
   GET_USER_FOLLOWING_BY_USERNAME,
-} from "@/graphql/connection";
+} from "@graphql/connection";
 import { useRouter } from "next/router";
-import { ConnectionsProps } from "../@types";
+import type { ConnectionsProps } from "../@types";
 import { useEffect } from "react";
-import { useConnectionsContext } from "@/context/ConnectionsContext";
+import { useConnectionsContext } from "@context/ConnectionsContext";
 
 export function useConnections({ type }: ConnectionsProps) {
   const router = useRouter();

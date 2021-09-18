@@ -1,12 +1,12 @@
 import { useQuery } from "@apollo/client";
-import { useAccountContext } from "@/context/AccountContext";
-import { GET_USER_INFO } from "@/graphql/user";
-import { useEffect } from "react";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import type { GetUserInfoQuery } from "@graphql/@types/user";
+import { GET_USER_INFO } from "@graphql/user";
 import { useRouter } from "next/router";
-import { PageUrls } from "@/@enums/pages";
-import { GetUserInfoQuery } from "@/graphql/@types/user";
+import { useEffect } from "react";
 
-function AppInit() {
+export function AppInit(): JSX.Element {
   const { data, error } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
   const router = useRouter();
   const { setUser } = useAccountContext();
@@ -25,5 +25,3 @@ function AppInit() {
 
   return <></>;
 }
-
-export default AppInit;

@@ -1,9 +1,8 @@
-import PageStatus from "@/components/PageStatus";
+import { PageStatus } from "@components/PageStatus";
 import { XIcon } from "@heroicons/react/outline";
-import React from "react";
 import styles from "../Profile.module.css";
 
-export default function NotFound() {
+export function NotFound() {
   return (
     <div className={styles.notFound}>
       <PageStatus

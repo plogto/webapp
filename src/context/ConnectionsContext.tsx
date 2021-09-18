@@ -16,7 +16,7 @@ type Props = {
   children: ReactNode;
 };
 
-const ConnectionsProvider = ({ children }: Props) => {
+export function ConnectionsProvider({ children }: Props) {
   const [followersState, setFollowersState] = useState<
     Connections["followers"]
   >(initialConnections.followers);
@@ -29,36 +29,35 @@ const ConnectionsProvider = ({ children }: Props) => {
       value={{
         followers: followersState,
         following: followingState,
-      }}>
+      }}
+    >
       <ConnectionsContextSetState.Provider
         value={{
           setFollowers: setFollowersState,
           setFollowing: setFollowingState,
-        }}>
+        }}
+      >
         {children}
       </ConnectionsContextSetState.Provider>
     </ConnectionsContext.Provider>
   );
-};
+}
 
-const useConnectionsState = () => {
+function useConnectionsState() {
   const { followers, following } = useContext(ConnectionsContext);
 
   return { followers, following };
-};
+}
 
-const useConnectionsSetState = () => {
+function useConnectionsSetState() {
   const { setFollowers, setFollowing } = useContext(ConnectionsContextSetState);
 
   return { setFollowers, setFollowing };
-};
+}
 
-const useConnectionsContext = () => {
+export function useConnectionsContext() {
   const { followers, following } = useConnectionsState();
   const { setFollowers, setFollowing } = useConnectionsSetState();
 
   return { followers, following, setFollowers, setFollowing };
-};
-
-export { useConnectionsContext };
-export default ConnectionsProvider;
+}

@@ -1,5 +1,5 @@
-import type { Account, SetAccount } from "@/@types/account";
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import type { Account, SetAccount } from "@t/account";
 
 const token =
   typeof window !== "undefined"
@@ -22,7 +22,7 @@ type Props = {
   children: ReactNode;
 };
 
-const AccountProvider = ({ children }: Props) => {
+export function AccountProvider({ children }: Props) {
   const [isAuthenticatedState, setIsAuthenticatedState] = useState<
     Account["isAuthenticated"]
   >(initialAccount.isAuthenticated);
@@ -39,39 +39,38 @@ const AccountProvider = ({ children }: Props) => {
         isAuthenticated: isAuthenticatedState,
         token: tokenState,
         user: userState,
-      }}>
+      }}
+    >
       <AccountContextSetState.Provider
         value={{
           setIsAutheticated: setIsAuthenticatedState,
           setToken: setTokenState,
           setUser: setUserState,
-        }}>
+        }}
+      >
         {children}
       </AccountContextSetState.Provider>
     </AccountContext.Provider>
   );
-};
+}
 
-const useAccountState = () => {
+function useAccountState() {
   const { isAuthenticated, token, user } = useContext(AccountContext);
 
   return { isAuthenticated, token, user };
-};
+}
 
-const useAccountSetState = () => {
+function useAccountSetState() {
   const { setIsAutheticated, setToken, setUser } = useContext(
     AccountContextSetState,
   );
 
   return { setIsAutheticated, setToken, setUser };
-};
+}
 
-const useAccountContext = () => {
+export function useAccountContext() {
   const { isAuthenticated, token, user } = useAccountState();
   const { setIsAutheticated, setToken, setUser } = useAccountSetState();
 
   return { isAuthenticated, token, user, setIsAutheticated, setToken, setUser };
-};
-
-export { useAccountContext };
-export default AccountProvider;
+}

@@ -1,8 +1,8 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@components/Layout";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
-export default function SettingsPage() {
+export default function SettingsPage(): JSX.Element {
   const { t } = useTranslation("common");
   return (
     <>

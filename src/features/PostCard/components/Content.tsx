@@ -1,8 +1,8 @@
-import type { Post } from "@/@types/post";
+import type { Post } from "@t/post";
 import styles from "../PostCard.module.css";
 import { Hashtag } from ".";
 import { v4 as uuid } from "uuid";
-import { usePostParser } from "@/hooks/usePostParser";
+import { usePostParser } from "@hooks/usePostParser";
 
 type Props = {
   content: Post["content"];

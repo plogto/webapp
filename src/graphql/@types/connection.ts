@@ -1,5 +1,5 @@
-import type { Connection } from "@/@types/connection";
-import { Pagination } from "@/@types/pagination";
+import type { Connection } from "@t/connection";
+import type { Pagination } from "@t/pagination";
 
 export type FollowUserMutation = {
   followUser: Connection;

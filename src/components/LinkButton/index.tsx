@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
-import styles from "./LinkButton.module.css";
 import Link from "next/link";
+import type { ReactNode } from "react";
+
+import styles from "./LinkButton.module.css";
 
 type Props = {
   href: string;
@@ -8,7 +9,7 @@ type Props = {
   children?: ReactNode;
 };
 
-export default function LinkButton({ className, children, href }: Props) {
+export function LinkButton({ className, children, href }: Props): JSX.Element {
   return (
     <Link href={href}>
       <a className={`${styles.linkButton} ${className}`}>{children}</a>

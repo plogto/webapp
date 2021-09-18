@@ -1,10 +1,10 @@
-import Button from "@/components/Button";
-import Input from "@/components/Input";
+import { Button } from "@components/Button";
+import { Input } from "@components/Input";
 import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
 import { useTranslation } from "react-i18next";
 
-export default function Login() {
+export function Login() {
   const { formMethods, submit, error, loading } = useLogin();
   const { register, handleSubmit } = formMethods;
   const { t } = useTranslation(["auth", "common"]);

@@ -1,5 +1,5 @@
-import { Tag } from "@/@types/tag";
-import type { User } from "@/@types/user";
+import type { Tag } from "@t/tag";
+import type { User } from "@t/user";
 
 type SearchUser = {
   users: User[];

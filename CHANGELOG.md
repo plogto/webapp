@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.4](https://github.com/favecode/plog-fe/compare/v0.12.3...v0.12.4) (2021-09-18)
+
+
+### Features
+
+* add eslint-plugin-simple-import-sort to eslint rules ([9218769](https://github.com/favecode/plog-fe/commit/9218769ca536e98bac42c863e391cf189714c2d9))
+
 ### [0.12.3](https://github.com/favecode/plog-fe/compare/v0.12.2...v0.12.3) (2021-09-18)
 
 

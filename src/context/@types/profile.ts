@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Post } from "@/@types/post";
-import { User } from "@/@types/user";
+import type { Post } from "@t/post";
+import type { User } from "@t/user";
 
 export type Profile = {
   user?: User;

@@ -1,10 +1,10 @@
-import UserInfo from "@/features/UserInfo";
+import { UserInfo } from "@features/UserInfo";
 import { useConnections } from "./hooks/useConnections";
-import styles from "./FollowRequests.module.css";
-import { ConnectionsProps } from "./@types";
-import Wrapper from "@/components/Wrapper";
+import styles from "./Connections.module.css";
+import type { ConnectionsProps } from "./@types";
+import { Wrapper } from "@components/Wrapper";
 
-export default function FollowRequests({ type }: ConnectionsProps) {
+export function Connections({ type }: ConnectionsProps) {
   const { connections } = useConnections({ type });
 
   return (

@@ -1,4 +1,4 @@
-import { formatCountTitle } from "@/utils/formatter";
+import { formatCountTitle } from "@utils/formatter";
 import { TrendingUpIcon } from "@heroicons/react/solid";
 import { useTranslation } from "react-i18next";
 import { useTrends } from "../hooks/useTrends";
