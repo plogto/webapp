@@ -2,7 +2,7 @@
 
 .card {
   @apply flex flex-col;
-  @apply rounded-lg shadow bg-white w-full mt-4;
+  @apply rounded-lg shadow bg-white w-full mt-5;
 }
 
 .header {
@@ -55,11 +55,11 @@
 }
 
 .mobileFirstTagName {
-  @apply text-indigo-500 font-bold text-2xl;
+  @apply text-indigo-500 font-bold text-3xl;
 }
 
 .mobileFirstTagCount {
-  @apply text-gray-400 text-xs;
+  @apply text-gray-400 text-sm;
 }
 
 .mobileTag {
@@ -67,9 +67,9 @@
 }
 
 .mobileTagName {
-  @apply text-indigo-500 font-bold text-sm;
+  @apply text-indigo-500 font-bold;
 }
 
 .mobileTagCount {
-  @apply text-gray-400 text-xs;
+  @apply text-gray-400 text-sm;
 }

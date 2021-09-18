@@ -11,7 +11,9 @@ export default function Tag() {
       {posts && tag && (
         <>
           <Header tag={tag} />
-          {posts?.length > 0 && <Posts posts={posts} />}
+          {posts?.length > 0 && (
+            <Posts className="pt-2 lg:pt-0" posts={posts} />
+          )}
         </>
       )}
     </Wrapper>

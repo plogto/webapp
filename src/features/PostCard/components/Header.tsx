@@ -2,7 +2,7 @@ import type { User } from "@/@types/user";
 import Avatar from "@/components/Avatar";
 import styles from "../PostCard.module.css";
 
-export default function Header({ username, fullname }: User) {
+export function Header({ username, fullname }: User) {
   return (
     <div className={styles.header}>
       <Avatar className={styles.avatar} />
