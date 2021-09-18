@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   ApolloClient,
   ApolloLink,
@@ -7,6 +6,7 @@ import {
   InMemoryCache,
   NormalizedCacheObject,
 } from "@apollo/client";
+import { useMemo } from "react";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 

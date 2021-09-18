@@ -1,13 +1,15 @@
 import "tailwindcss/tailwind.css";
-import type { AppProps } from "next/app";
-import { ApolloProvider } from "@apollo/client";
-import { useApollo } from "../lib/apolloClient";
 import "@styles/globals.css";
-import { AppContext } from "@context";
-import { AppInit } from "@components/AppInit";
-import Head from "next/head";
-import { SafeHydrate } from "@components/SafeHydrate";
 import "@locales";
+
+import { ApolloProvider } from "@apollo/client";
+import { AppInit } from "@components/AppInit";
+import { SafeHydrate } from "@components/SafeHydrate";
+import { AppContext } from "@context";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+
+import { useApollo } from "../lib/apolloClient";
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = useApollo(pageProps.initialApolloState);

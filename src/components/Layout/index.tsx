@@ -1,12 +1,13 @@
-import styles from "./Layout.module.css";
 import { useAccountContext } from "@context/AccountContext";
-import { SidebarNavigation } from "../SidebarNavigation";
-import { ReactNode } from "react";
-import { Navbar } from "../Navbar";
-import { Search } from "@features/Search";
-import { useRouter } from "next/router";
 import { PageUrls } from "@enums/pages";
+import { Search } from "@features/Search";
 import { DesktopTrends } from "@features/Trends";
+import { useRouter } from "next/router";
+import { ReactNode } from "react";
+
+import { Navbar } from "../Navbar";
+import { SidebarNavigation } from "../SidebarNavigation";
+import styles from "./Layout.module.css";
 
 type Props = {
   children: ReactNode;

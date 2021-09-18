@@ -1,5 +1,6 @@
-import styles from "./Input.module.css";
 import { UseFormRegisterReturn } from "react-hook-form";
+
+import styles from "./Input.module.css";
 
 type Props = {
   type: "text" | "password";

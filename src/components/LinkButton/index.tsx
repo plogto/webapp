@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
-import styles from "./LinkButton.module.css";
 import Link from "next/link";
+import type { ReactNode } from "react";
+
+import styles from "./LinkButton.module.css";
 
 type Props = {
   href: string;

@@ -1,5 +1,6 @@
-import type { Post } from "@t/post";
 import { PostCard } from "@features/PostCard";
+import type { Post } from "@t/post";
+
 import styles from "./Posts.module.css";
 
 // TODO: add loading prop and implement loading component

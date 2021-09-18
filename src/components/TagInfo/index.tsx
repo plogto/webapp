@@ -1,7 +1,8 @@
 import { HashtagIcon } from "@heroicons/react/solid";
-import styles from "./TagInfo.module.css";
-import Link from "next/link";
 import type { Tag } from "@t/tag";
+import Link from "next/link";
+
+import styles from "./TagInfo.module.css";
 
 type Props = {
   tag: Tag;
