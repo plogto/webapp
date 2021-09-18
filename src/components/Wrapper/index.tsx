@@ -5,6 +5,6 @@ type Props = {
   children?: ReactNode;
 };
 
-export function Wrapper({ children }: Props) {
+export function Wrapper({ children }: Props): JSX.Element {
   return <div className={styles.wrapper}>{children}</div>;
 }

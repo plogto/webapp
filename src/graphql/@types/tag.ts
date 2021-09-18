@@ -1,4 +1,4 @@
-import { Tag } from "@/@types/tag";
+import type { Tag } from "@t/tag";
 
 export type GetTagByTagNameQuery = {
   getTagByTagName: Tag;

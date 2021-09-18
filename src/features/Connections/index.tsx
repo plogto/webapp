@@ -1,8 +1,8 @@
-import { UserInfo } from "@/features/UserInfo";
+import { UserInfo } from "@features/UserInfo";
 import { useConnections } from "./hooks/useConnections";
 import styles from "./Connections.module.css";
-import { ConnectionsProps } from "./@types";
-import { Wrapper } from "@/components/Wrapper";
+import type { ConnectionsProps } from "./@types";
+import { Wrapper } from "@components/Wrapper";
 
 export function Connections({ type }: ConnectionsProps) {
   const { connections } = useConnections({ type });

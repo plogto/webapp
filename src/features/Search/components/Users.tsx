@@ -1,5 +1,5 @@
 import styles from "../Search.module.css";
-import { UserInfo } from "@/features/UserInfo";
+import { UserInfo } from "@features/UserInfo";
 import type { SearchResult } from "../@types";
 
 type Props = {

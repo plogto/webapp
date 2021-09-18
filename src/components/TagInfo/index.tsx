@@ -1,14 +1,13 @@
-import type { User } from "@/@types/user";
 import { HashtagIcon } from "@heroicons/react/solid";
 import styles from "./TagInfo.module.css";
 import Link from "next/link";
-import { Tag } from "@/@types/tag";
+import type { Tag } from "@t/tag";
 
 type Props = {
   tag: Tag;
 };
 
-export function TagInfo({ tag: { name, count } }: Props) {
+export function TagInfo({ tag: { name, count } }: Props): JSX.Element {
   return (
     <div className={styles.wrapper}>
       {name && (

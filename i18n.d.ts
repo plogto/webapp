@@ -1,4 +1,4 @@
-import { resources } from "./src/locales";
+import { resources } from "@locales";
 
 declare module "react-i18next" {
   interface CustomTypeOptions {

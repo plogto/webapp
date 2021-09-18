@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Connection } from "@/@types/connection";
+import type { Connection } from "@t/connection";
 
 export type FollowRequests = Connection[];
 

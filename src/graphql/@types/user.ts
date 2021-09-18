@@ -1,4 +1,4 @@
-import type { User } from "@/@types/user";
+import type { User } from "@t/user";
 
 export type GetUserInfoQuery = {
   getUserInfo: User;

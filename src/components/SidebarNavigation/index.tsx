@@ -6,14 +6,14 @@ import {
 } from "@heroicons/react/solid";
 import { v4 as uuid } from "uuid";
 import styles from "./SidebarNavigation.module.css";
-import { useAccountContext } from "@/context/AccountContext";
-import { PageUrls } from "@/@enums/pages";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Avatar } from "../Avatar";
-import { useClassName } from "@/hooks/useClassName";
+import { useClassName } from "@hooks/useClassName";
 
-export function SidebarNavigation() {
+export function SidebarNavigation(): JSX.Element {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const { t } = useTranslation("common");

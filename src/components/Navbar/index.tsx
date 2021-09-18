@@ -8,11 +8,11 @@ import {
 import { v4 as uuid } from "uuid";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { useAccountContext } from "@/context/AccountContext";
-import { PageUrls } from "@/@enums/pages";
-import { useClassName } from "@/hooks/useClassName";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import { useClassName } from "@hooks/useClassName";
 
-export function Navbar() {
+export function Navbar(): JSX.Element {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const items = [

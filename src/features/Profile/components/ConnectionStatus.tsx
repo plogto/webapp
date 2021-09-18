@@ -1,12 +1,12 @@
-import type { User } from "@/@types/user";
-import { Button } from "@/components/Button";
+import type { User } from "@t/user";
+import { Button } from "@components/Button";
 import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
-import { ConnectionButtons } from "../@types";
+import type { ConnectionButtons } from "../@types";
 import { useTranslation } from "react-i18next";
-import { useAccountContext } from "@/context/AccountContext";
-import { LinkButton } from "@/components/LinkButton";
-import { PageUrls } from "@/@enums/pages";
+import { useAccountContext } from "@context/AccountContext";
+import { LinkButton } from "@components/LinkButton";
+import { PageUrls } from "@enums/pages";
 
 type Props = {
   connectionStatus: User["connectionStatus"];

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import type { Account, SetAccount } from "@/@types/account";
+import type { Account, SetAccount } from "@t/account";
 
 const token =
   typeof window !== "undefined"

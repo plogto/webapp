@@ -1,5 +1,5 @@
-import { PageUrls } from "@/@enums/pages";
-import { LinkButton } from "@/components/LinkButton";
+import { PageUrls } from "@enums/pages";
+import { LinkButton } from "@components/LinkButton";
 import { useTranslation } from "react-i18next";
 import styles from "./Landing.module.css";
 

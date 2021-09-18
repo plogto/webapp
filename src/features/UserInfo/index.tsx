@@ -1,9 +1,9 @@
-import type { User } from "@/@types/user";
-import { Avatar } from "@/components/Avatar";
-import { useAccountContext } from "@/context/AccountContext";
+import type { User } from "@t/user";
+import { Avatar } from "@components/Avatar";
+import { useAccountContext } from "@context/AccountContext";
 import { XIcon } from "@heroicons/react/solid";
-import { ActionButtons } from "./@types";
-import { Button } from "@/components/Button";
+import type { ActionButtons } from "./@types";
+import { Button } from "@components/Button";
 import { useActions } from "./hooks/useActions";
 import styles from "./UserInfo.module.css";
 import Link from "next/link";

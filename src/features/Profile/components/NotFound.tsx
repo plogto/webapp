@@ -1,4 +1,4 @@
-import { PageStatus } from "@/components/PageStatus";
+import { PageStatus } from "@components/PageStatus";
 import { XIcon } from "@heroicons/react/outline";
 import styles from "../Profile.module.css";
 

@@ -1,5 +1,5 @@
-import { Button } from "@/components/Button";
-import { Input } from "@/components/Input";
+import { Button } from "@components/Button";
+import { Input } from "@components/Input";
 import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
 import { useTranslation } from "react-i18next";

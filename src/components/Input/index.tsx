@@ -9,7 +9,13 @@ type Props = {
   register?: UseFormRegisterReturn;
 };
 
-export function Input({ type, name, placeholder, label, register }: Props) {
+export function Input({
+  type,
+  name,
+  placeholder,
+  label,
+  register,
+}: Props): JSX.Element {
   return (
     <div>
       {label && (

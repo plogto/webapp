@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import type { Profile, SetProfile } from "@/context/@types/profile";
+import type { Profile, SetProfile } from "@context/@types/profile";
 
 const ProfileContext = createContext<Profile>({});
 const ProfileContextSetState = createContext<SetProfile>({

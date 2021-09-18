@@ -17,7 +17,7 @@ export function Button({
   loading,
   disabled,
   onClick,
-}: Props) {
+}: Props): JSX.Element {
   return (
     <button
       onClick={onClick}

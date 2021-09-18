@@ -1,10 +1,10 @@
 import styles from "./Search.module.css";
 import { useSearch } from "./hooks/useSearch";
 import { Users, Tags } from "./components";
-import { Button } from "@/components/Button";
+import { Button } from "@components/Button";
 import { useTranslation } from "react-i18next";
 import { HashtagIcon, UsersIcon } from "@heroicons/react/solid";
-import { Wrapper } from "@/components/Wrapper";
+import { Wrapper } from "@components/Wrapper";
 import { MobileTrends } from "../Trends";
 import { MobileOnlyView } from "react-device-detect";
 

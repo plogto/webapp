@@ -1,5 +1,5 @@
-import { PageUrls } from "@/@enums/pages";
-import { Wrapper } from "@/components/Wrapper";
+import { PageUrls } from "@enums/pages";
+import { Wrapper } from "@components/Wrapper";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useNotifications } from "./hooks/useNotifications";

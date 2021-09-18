@@ -1,4 +1,4 @@
-import type { Post } from "@/@types/post";
+import type { Post } from "@t/post";
 import styles from "../AddPost.module.css";
 
 type Props = {

@@ -1,9 +1,9 @@
-import { Layout } from "@/components/Layout";
-import { Tag } from "@/features/Tag";
+import { Layout } from "@components/Layout";
+import { Tag } from "@features/Tag";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
-export default function TagPage() {
+export default function TagPage(): JSX.Element {
   const { t } = useTranslation("common");
   return (
     <>

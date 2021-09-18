@@ -1,9 +1,9 @@
-import { Layout } from "@/components/Layout";
-import { Search } from "@/features/Search";
+import { Layout } from "@components/Layout";
+import { Search } from "@features/Search";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
-export default function SearchPage() {
+export default function SearchPage(): JSX.Element {
   const { t } = useTranslation("common");
   return (
     <>
