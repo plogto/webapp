@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import classNames from "classnames";
 
 type Props = {
   value: string;

@@ -1,7 +1,7 @@
-import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
 import { useMutation } from "@apollo/client";
 import { useEffect } from "react";
 import { useProfileContext } from "@context/ProfileContext";
+import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
 import type {
   FollowUserMutation,
   UnfollowUserMutation,
@@ -19,6 +19,7 @@ export function useConnection() {
     if (followUserResponse.data) {
       const { status } = followUserResponse.data.followUser;
       // TODO: fix type
+      /* eslint-disable  @typescript-eslint/no-explicit-any */
       setUser((prevState: any) => {
         return {
           ...prevState,
@@ -32,6 +33,7 @@ export function useConnection() {
     if (unfollowUserResponse.data) {
       const { status } = unfollowUserResponse.data.unfollowUser;
       // TODO: fix type
+      /* eslint-disable  @typescript-eslint/no-explicit-any */
       setUser((prevState: any) => {
         return {
           ...prevState,

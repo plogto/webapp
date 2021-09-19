@@ -1,12 +1,11 @@
-import styles from "./Search.module.css";
-import { useSearch } from "./hooks/useSearch";
-import { Users, Tags } from "./components";
-import { Button } from "@components/Button";
-import { useTranslation } from "react-i18next";
 import { HashtagIcon, UsersIcon } from "@heroicons/react/solid";
-import { Wrapper } from "@components/Wrapper";
-import { MobileTrends } from "../Trends";
 import { MobileOnlyView } from "react-device-detect";
+import { useTranslation } from "react-i18next";
+import { MobileTrends } from "../Trends";
+import styles from "./Search.module.css";
+import { Tags, Users } from "./components";
+import { useSearch } from "./hooks/useSearch";
+import { Button } from "@components/Button";
 
 export function Search() {
   const { formMethods, submit, result, filter, setFilter } = useSearch();
@@ -29,7 +28,7 @@ export function Search() {
   ];
 
   return (
-    <Wrapper>
+    <>
       <form className={styles.form} onSubmit={handleSubmit(submit)}>
         <div className={styles.header}>
           <input
@@ -63,6 +62,6 @@ export function Search() {
 
       {filter == "users" && <Users user={result?.user} />}
       {filter == "tags" && <Tags tag={result?.tag} />}
-    </Wrapper>
+    </>
   );
 }

@@ -1,13 +1,13 @@
-import { GET_USER_POSTS_BY_USERNAME } from "@graphql/post";
-import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useProfileContext } from "@context/ProfileContext";
-import type { GetUserByUsernameQuery } from "@graphql/@types/user";
-import type { GetUserPostsByUsernameQuery } from "@graphql/@types/post";
 import { useTranslation } from "react-i18next";
+import { useProfileContext } from "@context/ProfileContext";
+import { GET_USER_POSTS_BY_USERNAME } from "@graphql/post";
+import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { formatCountTitle } from "@utils/formatter";
+import type { GetUserPostsByUsernameQuery } from "@graphql/@types/post";
+import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 
 export function useProfile() {
   const router = useRouter();

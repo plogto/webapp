@@ -1,14 +1,14 @@
 {
   "name": "plog-fe",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "private": true,
   "scripts": {
     "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|md)\"",
     "release:non-breaking": "standard-version --release-as minor",
     "release:hotfix": "standard-version --release-as patch",
@@ -42,10 +42,10 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-app": "^6.2.2",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
@@ -57,7 +57,7 @@
   "lint-staged": {
     "**/*.{ts,js,tsx,jsx,css,json}": [
       "prettier --write --ignore-unknown --ignore-path .prettierignore",
-      "next lint --fix ."
+      "yarn lint:fix"
     ]
   }
 }

@@ -1,7 +1,13 @@
+import { useMemo } from "react";
 import { useAccountContext } from "@context/AccountContext";
 
 export function useNotifications() {
   const { user } = useAccountContext();
 
-  return { followRequestsCount: user?.followRequestsCount };
+  const followRequestsCount = useMemo(
+    () => user?.followRequestsCount,
+    [user?.followRequestsCount],
+  );
+
+  return { followRequestsCount };
 }

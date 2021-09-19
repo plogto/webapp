@@ -1,8 +1,8 @@
-import { Button } from "@components/Button";
-import { Input } from "@components/Input";
+import { useTranslation } from "react-i18next";
 import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
-import { useTranslation } from "react-i18next";
+import { Button } from "@components/Button";
+import { Input } from "@components/Input";
 
 export function Login() {
   const { formMethods, submit, error, loading } = useLogin();

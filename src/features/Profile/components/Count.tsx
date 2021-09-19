@@ -1,5 +1,5 @@
-import styles from "../Profile.module.css";
 import Link from "next/link";
+import styles from "../Profile.module.css";
 
 type Props = {
   className?: string;

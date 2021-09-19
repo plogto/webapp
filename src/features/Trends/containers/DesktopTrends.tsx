@@ -1,9 +1,9 @@
-import { formatCountTitle } from "@utils/formatter";
 import { TrendingUpIcon } from "@heroicons/react/solid";
-import { useTranslation } from "react-i18next";
-import { useTrends } from "../hooks/useTrends";
-import styles from "../Trends.module.css";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import styles from "../Trends.module.css";
+import { useTrends } from "../hooks/useTrends";
+import { formatCountTitle } from "@utils/formatter";
 
 export function DesktopTrends() {
   const { tags } = useTrends();

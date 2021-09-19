@@ -1,11 +1,11 @@
-import { PageUrls } from "@enums/pages";
-import type { Post } from "@t/post";
-import { useAccountContext } from "@context/AccountContext";
-import type { GetUserPostsByUsernameQuery } from "@graphql/@types/post";
-import { GET_USER_POSTS_BY_USERNAME } from "@graphql/post";
 import { useLazyQuery } from "@apollo/client";
 import router from "next/router";
 import { useEffect, useState } from "react";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import { GET_USER_POSTS_BY_USERNAME } from "@graphql/post";
+import type { GetUserPostsByUsernameQuery } from "@graphql/@types/post";
+import type { Post } from "@t/post";
 
 export function useHome() {
   const { user, isAuthenticated } = useAccountContext();

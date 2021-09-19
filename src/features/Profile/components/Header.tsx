@@ -1,12 +1,12 @@
-import { PageUrls } from "@enums/pages";
-import type { User } from "@t/user";
+import { useTranslation } from "react-i18next";
+import styles from "../Profile.module.css";
+import { useProfile } from "../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/LinkButton";
 import { useAccountContext } from "@context/AccountContext";
-import { useTranslation } from "react-i18next";
-import { useProfile } from "../hooks";
-import styles from "../Profile.module.css";
-import { Count, ConnectionStatus } from ".";
+import { PageUrls } from "@enums/pages";
+import { ConnectionStatus, Count } from ".";
+import type { User } from "@t/user";
 
 export function Header({
   id,

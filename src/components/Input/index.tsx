@@ -1,5 +1,4 @@
 import { UseFormRegisterReturn } from "react-hook-form";
-
 import styles from "./Input.module.css";
 
 type Props = {
@@ -10,13 +9,7 @@ type Props = {
   register?: UseFormRegisterReturn;
 };
 
-export function Input({
-  type,
-  name,
-  placeholder,
-  label,
-  register,
-}: Props): JSX.Element {
+export function Input({ type, name, placeholder, label, register }: Props) {
   return (
     <div>
       {label && (

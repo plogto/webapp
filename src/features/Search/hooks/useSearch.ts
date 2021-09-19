@@ -1,7 +1,8 @@
+import { useLazyQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+
 import { SEARCH } from "@graphql/search";
-import { useLazyQuery } from "@apollo/client";
 import type { SearchFilters, SearchForm, SearchResult } from "../@types";
 import type { SearchQuery } from "@graphql/@types/search";
 

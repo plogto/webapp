@@ -1,6 +1,6 @@
-import type { Post } from "@t/post";
 import styles from "./PostCard.module.css";
-import { Header, Content } from "./components";
+import { Content, Header } from "./components";
+import type { Post } from "@t/post";
 
 type Props = {
   post: Post;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require("tailwindcss/colors");
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
         tiny: "15px",
       },
       width: {
-        128: "32rem",
+        146: "36.5rem",
       },
     },
     colors: {

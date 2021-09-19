@@ -3,7 +3,7 @@
 }
 
 .form {
-  @apply w-full lg:mt-5 p-2 overflow-hidden;
+  @apply w-full p-2 overflow-hidden;
   @apply bg-white rounded-lg shadow;
 }
 

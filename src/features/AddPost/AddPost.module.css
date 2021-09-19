@@ -1,11 +1,9 @@
 .form {
-  @apply w-full lg:mt-5 lg:px-0;
-  @apply bg-white rounded-lg shadow;
+  @apply w-full bg-white rounded-lg shadow;
 }
 
 .header {
-  @apply flex border-b border-gray-100;
-  @apply p-2;
+  @apply flex border-b border-gray-100 p-2;
 }
 
 .avatar {

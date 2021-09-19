@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-
 import styles from "./PageStatus.module.css";
 
 type Props = {
@@ -9,12 +8,7 @@ type Props = {
   className?: string;
 };
 
-export function PageStatus({
-  title,
-  icon,
-  description,
-  className,
-}: Props): JSX.Element {
+export function PageStatus({ title, icon, description, className }: Props) {
   return (
     <div className={`${styles.wrapper} ${className || ""}`}>
       <div className={styles.icon}>{icon}</div>

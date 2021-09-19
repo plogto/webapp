@@ -1,11 +1,12 @@
+import Head from "next/head";
+import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
 import { useAccountContext } from "@context/AccountContext";
 import { Home } from "@features/Home";
 import { Landing } from "@features/Landing";
-import Head from "next/head";
-import { useTranslation } from "react-i18next";
 
-export default function HomePage(): JSX.Element {
+export default function HomePage() {
   const { isAuthenticated } = useAccountContext();
   const { t } = useTranslation("common");
   return (
@@ -18,7 +19,9 @@ export default function HomePage(): JSX.Element {
       {isAuthenticated ? (
         <>
           <Layout>
-            <Home />
+            <Wrapper>
+              <Home />
+            </Wrapper>
           </Layout>
         </>
       ) : (

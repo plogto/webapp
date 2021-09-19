@@ -1,7 +1,7 @@
-import type { Tag } from "@t/tag";
-import { formatCountTitle } from "@utils/formatter";
 import { HashtagIcon } from "@heroicons/react/solid";
 import styles from "../Tag.module.css";
+import { formatCountTitle } from "@utils/formatter";
+import type { Tag } from "@t/tag";
 
 type Props = {
   tag: Tag;

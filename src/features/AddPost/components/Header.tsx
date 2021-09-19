@@ -1,6 +1,6 @@
-import type { User } from "@t/user";
-import { Avatar } from "@components/Avatar";
 import styles from "../AddPost.module.css";
+import { Avatar } from "@components/Avatar";
+import type { User } from "@t/user";
 
 export function Header({ username, fullname }: User) {
   return (

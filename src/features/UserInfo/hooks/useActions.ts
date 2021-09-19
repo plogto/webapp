@@ -1,18 +1,18 @@
+import { useMutation } from "@apollo/client";
+import { useEffect } from "react";
+import { useFollowRequestsContext } from "@context/FollowRequestsContext";
 import {
   ACCEPT_USER,
   FOLLOW_USER,
   REJECT_USER,
   UNFOLLOW_USER,
 } from "@graphql/connection";
-import { useMutation } from "@apollo/client";
 import type {
   AcceptUserMutation,
   FollowUserMutation,
   RejectUserMutation,
   UnfollowUserMutation,
 } from "@graphql/@types/connection";
-import { useEffect } from "react";
-import { useFollowRequestsContext } from "@context/FollowRequestsContext";
 
 type Props = {
   id: string;

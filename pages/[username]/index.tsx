@@ -1,9 +1,10 @@
-import { Layout } from "@components/Layout";
-import { Profile } from "@features/Profile";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
+import { Profile } from "@features/Profile";
 
-export default function ProfilePage(): JSX.Element {
+export default function ProfilePage() {
   const { t } = useTranslation("common");
   return (
     <>
@@ -14,7 +15,9 @@ export default function ProfilePage(): JSX.Element {
         </title>
       </Head>
       <Layout>
-        <Profile />
+        <Wrapper className="box-content">
+          <Profile />
+        </Wrapper>
       </Layout>
     </>
   );

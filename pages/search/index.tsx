@@ -1,9 +1,10 @@
-import { Layout } from "@components/Layout";
-import { Search } from "@features/Search";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
+import { Search } from "@features/Search";
 
-export default function SearchPage(): JSX.Element {
+export default function SearchPage() {
   const { t } = useTranslation("common");
   return (
     <>
@@ -13,7 +14,9 @@ export default function SearchPage(): JSX.Element {
         </title>
       </Head>
       <Layout>
-        <Search />
+        <Wrapper className="p-2 lg:p-5">
+          <Search />
+        </Wrapper>
       </Layout>
     </>
   );

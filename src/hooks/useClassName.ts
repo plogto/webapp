@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+
 import type { ActiveClass } from "./@types";
 
 export function useClassName() {
