@@ -28,10 +28,10 @@
 }
 
 .loginButton {
-  @apply text-indigo-500 shadow-none font-bold;
+  @apply text-primary-500 shadow-none font-bold;
 }
 
 .registerButton {
   @apply text-white;
-  @apply bg-indigo-500;
+  @apply bg-primary-500;
 }

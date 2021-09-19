@@ -22,12 +22,12 @@
 }
 
 .submitButton {
-  @apply text-white bg-indigo-500;
+  @apply text-white bg-primary-500;
   @apply w-full px-4 py-2.5 capitalize;
 }
 
 .registerLink {
-  @apply text-indigo-500;
+  @apply text-primary-500;
 }
 
 .footer {
