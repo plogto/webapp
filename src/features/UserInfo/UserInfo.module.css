@@ -24,11 +24,12 @@
   @apply text-sm py-2 p-3;
 }
 
+.requested,
 .following,
 .accept,
 .reject {
   @apply p-2 ml-3 w-20 capitalize;
-  @apply font-bold text-xs;
+  @apply font-bold text-xs !important;
 }
 
 .accept svg,
@@ -37,18 +38,19 @@
 }
 
 .following {
-  @apply bg-indigo-100 text-indigo-500 rounded-lg;
+  @apply bg-primary-100 text-primary-500 rounded-lg;
 }
 
-.accept {
-  @apply bg-indigo-500 text-white rounded-lg;
+.accept,
+.requested {
+  @apply bg-primary-500 text-white rounded-lg;
 }
 
 .reject {
-  @apply bg-indigo-100 text-indigo-500 rounded-lg;
+  @apply bg-primary-100 text-primary-500 rounded-lg;
   @apply w-8 h-8;
 }
 
 .rejectIcon {
-  @apply text-indigo-500 w-8 h-8;
+  @apply text-primary-500 w-8 h-8;
 }

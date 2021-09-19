@@ -10,10 +10,10 @@
 }
 
 .badge {
-  @apply relative inline-flex rounded-full h-2 w-2 bg-indigo-500;
+  @apply relative inline-flex rounded-full h-2 w-2 bg-primary-500;
 }
 
 .badgePinger {
   @apply absolute inline-flex;
-  @apply h-full w-full rounded-full bg-indigo-400 opacity-75;
+  @apply h-full w-full rounded-full bg-primary-400 opacity-75;
 }

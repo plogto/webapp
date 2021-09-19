@@ -14,7 +14,7 @@
 
 .tagName {
   @apply text-2xl lg:text-3xl font-bold;
-  /* @apply bg-gradient-to-tl to-indigo-500 from-indigo-400;
+  /* @apply bg-gradient-to-tl to-primary-500 from-primary-400;
   @apply text-transparent bg-clip-text; */
 }
 

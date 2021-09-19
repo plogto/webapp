@@ -48,7 +48,7 @@ export function UserInfo({
       loading: unfollowUserResponse.loading,
     },
     requested: {
-      className: styles.accept,
+      className: styles.requested,
       onClick: unfollow,
       loading: unfollowUserResponse.loading,
     },
@@ -77,7 +77,7 @@ export function UserInfo({
         </Link>
       )}
       {user?.id !== id && (
-        <div className="flex">
+        <div className="flex items-stretch">
           {showFollow && !connectionStatus && (
             <Button {...actionButtons["follow"]}>{t("buttons.follow")}</Button>
           )}

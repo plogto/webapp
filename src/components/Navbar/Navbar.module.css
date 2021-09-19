@@ -12,10 +12,10 @@
 .navLink {
   @apply duration-300;
   @apply text-gray-400 w-10 h-10 lg:w-12 lg:h-12 p-1 lg:p-2 mx-1;
-  @apply hover:bg-indigo-50 hover:text-indigo-500 rounded-lg;
+  @apply hover:bg-primary-50 hover:text-primary-500 rounded-lg;
   outline: none !important;
 }
 
 .active {
-  @apply bg-indigo-50 text-indigo-500 rounded-lg;
+  @apply bg-primary-50 text-primary-500 rounded-lg;
 }

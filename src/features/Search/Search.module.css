@@ -37,7 +37,7 @@
 }
 
 .filterButton.active {
-  @apply bg-indigo-500 text-white;
+  @apply bg-primary-500 text-white;
 }
 
 .filterButton svg {
