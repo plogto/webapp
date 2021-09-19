@@ -1,13 +1,14 @@
-import type { User } from "@t/user";
-import { Avatar } from "@components/Avatar";
-import { useAccountContext } from "@context/AccountContext";
 import { XIcon } from "@heroicons/react/solid";
-import type { ActionButtons } from "./@types";
-import { Button } from "@components/Button";
-import { useActions } from "./hooks/useActions";
-import styles from "./UserInfo.module.css";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import styles from "./UserInfo.module.css";
+import { useActions } from "./hooks/useActions";
+import { Avatar } from "@components/Avatar";
+import { Button } from "@components/Button";
+import { useAccountContext } from "@context/AccountContext";
+
+import type { ActionButtons } from "./@types";
+import type { User } from "@t/user";
 
 type Props = {
   user: User;

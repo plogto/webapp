@@ -1,5 +1,5 @@
 import { Content } from "./Content";
-import { Header } from "./Header";
 import { Hashtag } from "./Hashtag";
+import { Header } from "./Header";
 
-export { Content, Header, Hashtag };
+export { Content, Hashtag, Header };

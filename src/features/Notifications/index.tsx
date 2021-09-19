@@ -1,8 +1,8 @@
-import { PageUrls } from "@enums/pages";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { useNotifications } from "./hooks/useNotifications";
 import styles from "./Notifications.module.css";
+import { useNotifications } from "./hooks/useNotifications";
+import { PageUrls } from "@enums/pages";
 
 export function Notifications() {
   const { followRequestsCount } = useNotifications();

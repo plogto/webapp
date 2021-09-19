@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "./en/translation.json";
 
@@ -6,7 +6,7 @@ export const resources = {
   en,
 } as const;
 
-i18n.use(initReactI18next).init({
+i18next.use(initReactI18next).init({
   lng: "en",
   resources,
 });

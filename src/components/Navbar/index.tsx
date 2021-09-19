@@ -1,5 +1,3 @@
-import { useAccountContext } from "@context/AccountContext";
-import { PageUrls } from "@enums/pages";
 import {
   BellIcon,
   GlobeIcon,
@@ -7,13 +5,14 @@ import {
   UserCircleIcon,
   ViewGridIcon,
 } from "@heroicons/react/solid";
-import { useClassName } from "@hooks/useClassName";
 import Link from "next/link";
 import { v4 as uuid } from "uuid";
-
 import styles from "./Navbar.module.css";
+import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+import { useClassName } from "@hooks/useClassName";
 
-export function Navbar(): JSX.Element {
+export function Navbar() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const items = [

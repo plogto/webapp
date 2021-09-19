@@ -1,10 +1,10 @@
-import { Button } from "@components/Button";
-import { CONTENT_MAX_LENGTH } from "@config";
 import { useTranslation } from "react-i18next";
 import styles from "./AddPost.module.css";
 import { Counter } from "./components/Counter";
 import { Header } from "./components/Header";
 import { useAddPost } from "./hooks/useAddPost";
+import { Button } from "@components/Button";
+import { CONTENT_MAX_LENGTH } from "@config";
 
 export function AddPost() {
   const { user, formMethods, submit, loading } = useAddPost();

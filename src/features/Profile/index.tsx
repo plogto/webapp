@@ -1,11 +1,11 @@
-import { useProfile } from "./hooks/useProfile";
-import { useAccountContext } from "@context/AccountContext";
-import { Header, NotFound } from "./components";
-import { Posts } from "@components/Posts";
-import { PageStatus } from "@components/PageStatus";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import { PhotographIcon } from "@heroicons/react/outline";
+import { LockClosedIcon } from "@heroicons/react/solid";
 import { useTranslation } from "react-i18next";
+import { Header, NotFound } from "./components";
+import { useProfile } from "./hooks/useProfile";
+import { PageStatus } from "@components/PageStatus";
+import { Posts } from "@components/Posts";
+import { useAccountContext } from "@context/AccountContext";
 
 export function Profile() {
   const { user: userAccount } = useAccountContext();

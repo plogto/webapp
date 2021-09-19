@@ -1,6 +1,6 @@
-import { UserInfo } from "@features/UserInfo";
 import styles from "./FollowRequests.module.css";
 import { useFollowRequests } from "./hooks/useFollowRequests";
+import { UserInfo } from "@features/UserInfo";
 
 export function FollowRequests() {
   const { followRequests } = useFollowRequests();

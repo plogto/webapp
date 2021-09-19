@@ -1,8 +1,9 @@
-import { HASHTAG_PATTERN, postParser } from "@config";
 import anchorme from "anchorme";
-import type { ParsePostProps, PostStore } from "./@types";
-import { v4 as uuid } from "uuid";
 import { ReactNode } from "react";
+import { v4 as uuid } from "uuid";
+import { HASHTAG_PATTERN, postParser } from "@config";
+
+import type { ParsePostProps, PostStore } from "./@types";
 
 export function usePostParser() {
   function parsePost({ content, hashtagComponent }: ParsePostProps): ReactNode {
@@ -17,7 +18,7 @@ export function usePostParser() {
             store[key] = {
               key,
               // TODO: fix type error
-              // @ts-expect-error
+              // @ts-expect-error ignore
               component: hashtagComponent(value),
             };
             return `$$$___${key}___$$$`;

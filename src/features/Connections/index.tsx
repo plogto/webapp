@@ -1,6 +1,6 @@
-import { UserInfo } from "@features/UserInfo";
-import { useConnections } from "./hooks/useConnections";
 import styles from "./Connections.module.css";
+import { useConnections } from "./hooks/useConnections";
+import { UserInfo } from "@features/UserInfo";
 import type { ConnectionsProps } from "./@types";
 
 export function Connections({ type }: ConnectionsProps) {

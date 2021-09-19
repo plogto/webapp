@@ -1,7 +1,7 @@
-import type { User } from "@t/user";
-import { Avatar } from "@components/Avatar";
-import styles from "../PostCard.module.css";
 import Link from "next/link";
+import styles from "../PostCard.module.css";
+import { Avatar } from "@components/Avatar";
+import type { User } from "@t/user";
 
 export function Header({ username, fullname }: User) {
   return (

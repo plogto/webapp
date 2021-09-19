@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
 import { AccountProvider } from "./AccountContext";
 import { ProfileProvider } from "./ProfileContext";
+import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;

@@ -1,6 +1,5 @@
-import type { MouseEventHandler, ReactNode } from "react";
-
 import styles from "./Button.module.css";
+import type { MouseEventHandler, ReactNode } from "react";
 
 type Props = {
   type?: "button" | "submit";
@@ -18,7 +17,7 @@ export function Button({
   loading,
   disabled,
   onClick,
-}: Props): JSX.Element {
+}: Props) {
   return (
     <button
       onClick={onClick}

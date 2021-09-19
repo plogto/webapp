@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-import router from "next/router";
-import { useForm } from "react-hook-form";
-import { LOGIN } from "@graphql/auth";
 import { useLazyQuery } from "@apollo/client";
-import type { LoginForm } from "../@types";
-import { PageUrls } from "@enums/pages";
+import router from "next/router";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { useAccountContext } from "@context/AccountContext";
+import { PageUrls } from "@enums/pages";
+
+import { LOGIN } from "@graphql/auth";
+import type { LoginForm } from "../@types";
 import type { LoginQuery } from "@graphql/@types/auth";
 
 export function useLogin() {

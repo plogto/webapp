@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const configConventional = require("@commitlint/config-conventional");
 
 module.exports = {

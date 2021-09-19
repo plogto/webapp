@@ -1,20 +1,19 @@
+import { useRouter } from "next/router";
+import { ReactNode } from "react";
+import { Navbar } from "../Navbar";
+import { SidebarNavigation } from "../SidebarNavigation";
+import styles from "./Layout.module.css";
 import { Wrapper } from "@components/Wrapper";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { Search } from "@features/Search";
 import { DesktopTrends } from "@features/Trends";
-import { useRouter } from "next/router";
-import { ReactNode } from "react";
-
-import { Navbar } from "../Navbar";
-import { SidebarNavigation } from "../SidebarNavigation";
-import styles from "./Layout.module.css";
 
 type Props = {
   children: ReactNode;
 };
 
-export function Layout({ children }: Props): JSX.Element {
+export function Layout({ children }: Props) {
   const { user } = useAccountContext();
   const { pathname } = useRouter();
 

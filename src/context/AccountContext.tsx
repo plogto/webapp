@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 import type { Account, SetAccount } from "@t/account";
 
 const token =
@@ -21,7 +21,6 @@ const AccountContextSetState = createContext<SetAccount>({
 type Props = {
   children: ReactNode;
 };
-
 export function AccountProvider({ children }: Props) {
   const [isAuthenticatedState, setIsAuthenticatedState] = useState<
     Account["isAuthenticated"]

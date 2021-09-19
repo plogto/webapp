@@ -1,5 +1,5 @@
-import type { Post } from "@t/post";
 import styles from "../AddPost.module.css";
+import type { Post } from "@t/post";
 
 type Props = {
   content: Post["content"];

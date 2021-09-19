@@ -1,11 +1,11 @@
+import Head from "next/head";
+import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
 import { Wrapper } from "@components/Wrapper";
 import { FollowRequestsProvider } from "@context/FollowRequestsContext";
 import { FollowRequests } from "@features/FollowRequests";
-import Head from "next/head";
-import { useTranslation } from "react-i18next";
 
-export default function FollowRequestsPage(): JSX.Element {
+export default function FollowRequestsPage() {
   const { t } = useTranslation("common");
   return (
     <>

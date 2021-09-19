@@ -1,5 +1,5 @@
 import { Logout } from "@features/Logout";
 
-export default function LogoutPage(): JSX.Element {
+export default function LogoutPage() {
   return <Logout />;
 }

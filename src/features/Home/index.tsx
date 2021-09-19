@@ -1,5 +1,5 @@
-import { Posts } from "@components/Posts";
 import { useHome } from "./hooks/useHome";
+import { Posts } from "@components/Posts";
 
 export function Home() {
   const { posts } = useHome();

@@ -3,15 +3,14 @@ import "@styles/globals.css";
 import "@locales";
 
 import { ApolloProvider } from "@apollo/client";
+import Head from "next/head";
+import { useApollo } from "../lib/apolloClient";
 import { AppInit } from "@components/AppInit";
 import { SafeHydrate } from "@components/SafeHydrate";
 import { AppContext } from "@context";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 
-import { useApollo } from "../lib/apolloClient";
-
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (

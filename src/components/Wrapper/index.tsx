@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
-
 import styles from "./Wrapper.module.css";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-export function Wrapper({ children, className }: Props): JSX.Element {
+export function Wrapper({ children, className }: Props) {
   const classes = classNames(styles.wrapper, className);
   return <div className={classes}>{children}</div>;
 }
