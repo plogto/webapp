@@ -22,7 +22,7 @@
 }
 
 .tagName {
-  @apply text-indigo-500 font-bold text-xl;
+  @apply text-primary-500 font-bold text-xl;
 }
 
 .tagCount {
@@ -55,7 +55,7 @@
 }
 
 .mobileFirstTagName {
-  @apply text-indigo-500 font-bold text-3xl;
+  @apply text-primary-500 font-bold text-3xl;
 }
 
 .mobileFirstTagCount {
@@ -67,7 +67,7 @@
 }
 
 .mobileTagName {
-  @apply text-indigo-500 font-bold;
+  @apply text-primary-500 font-bold;
 }
 
 .mobileTagCount {
