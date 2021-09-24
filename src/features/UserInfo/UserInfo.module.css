@@ -33,6 +33,7 @@
 }
 
 .accept svg,
+.requested svg,
 .reject svg {
   @apply w-4 h-4;
 }
