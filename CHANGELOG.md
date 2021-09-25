@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.13.0](https://github.com/favecode/plog-fe/compare/v0.12.6...v0.13.0) (2021-09-25)
+
+
+### Features
+
+* add storybook for Input component ([4c92cc3](https://github.com/favecode/plog-fe/commit/4c92cc3417c2c24d18f7f1e8aedbf4ea751f9543))
+* implement jest ([0abca96](https://github.com/favecode/plog-fe/commit/0abca96f03547e2ed01b08b145eee36f4a4146c2))
+* implement storybook ([4815278](https://github.com/favecode/plog-fe/commit/4815278b19d195370430a7339f66c65b44ae8170))
+
 ### [0.12.6](https://github.com/favecode/plog-fe/compare/v0.12.5...v0.12.6) (2021-09-19)
 
 ### [0.12.5](https://github.com/favecode/plog-fe/compare/v0.12.4...v0.12.5) (2021-09-18)

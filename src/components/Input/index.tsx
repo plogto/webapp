@@ -1,15 +1,13 @@
-import { UseFormRegisterReturn } from "react-hook-form";
+import { InputProps } from "./@types";
 import styles from "./Input.module.css";
 
-type Props = {
-  type: "text" | "password";
-  name: string;
-  label?: string;
-  placeholder: string;
-  register?: UseFormRegisterReturn;
-};
-
-export function Input({ type, name, placeholder, label, register }: Props) {
+export function Input({
+  type,
+  name,
+  placeholder,
+  label,
+  register,
+}: InputProps) {
   return (
     <div>
       {label && (
