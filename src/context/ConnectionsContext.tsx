@@ -3,8 +3,8 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import type { Connections, SetConnections } from "./@types/connections";
 
 const initialConnections = {
-  followers: {},
-  following: {},
+  followers: null,
+  following: null,
 };
 
 const ConnectionsContext = createContext<Connections>(initialConnections);
@@ -18,12 +18,10 @@ type Props = {
 };
 
 export function ConnectionsProvider({ children }: Props) {
-  const [followersState, setFollowersState] = useState<
-    Connections["followers"]
-  >(initialConnections.followers);
-  const [followingState, setFollowingState] = useState<
-    Connections["following"]
-  >(initialConnections.following);
+  const [followersState, setFollowersState] =
+    useState<Connections["followers"]>(null);
+  const [followingState, setFollowingState] =
+    useState<Connections["following"]>(null);
 
   return (
     <ConnectionsContext.Provider
