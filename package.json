@@ -42,6 +42,7 @@
     "@storybook/addon-links": "^6.3.8",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.3.8",
+    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/forms": "^0.3.3",
     "@testing-library/dom": "^8.6.0",
     "@testing-library/jest-dom": "^5.14.1",
