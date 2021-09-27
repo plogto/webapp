@@ -3,10 +3,12 @@ import { createElement, SVGAttributes } from "react";
 
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
+import CommentCircleFill from "./svg/comment-circle-fill.svg";
+import CommentCircle from "./svg/comment-circle.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 
-const iconsList = {
+export const iconsList = {
   heart: {
     outline: Heart,
     fill: HeartFill,
@@ -14,6 +16,10 @@ const iconsList = {
   bookmark: {
     outline: Bookmark,
     fill: BookmarkFill,
+  },
+  comment: {
+    outline: CommentCircle,
+    fill: CommentCircleFill,
   },
 };
 
