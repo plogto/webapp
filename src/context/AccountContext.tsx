@@ -1,18 +1,17 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import type { Account, SetAccount } from "@t/account";
 
 const token =
   typeof window !== "undefined"
     ? localStorage.getItem("Authorization")
     : undefined;
 
-const initialAccount: Account = {
+const initialAccount: AccountContext = {
   isAuthenticated: !!token,
   token: token || undefined,
 };
 
-const AccountContext = createContext<Account>(initialAccount);
-const AccountContextSetState = createContext<SetAccount>({
+const AccountContext = createContext<AccountContext>(initialAccount);
+const AccountContextSetState = createContext<SetAccountContext>({
   setIsAutheticated: () => {},
   setToken: () => {},
   setUser: () => {},
@@ -23,12 +22,12 @@ type Props = {
 };
 export function AccountProvider({ children }: Props) {
   const [isAuthenticatedState, setIsAuthenticatedState] = useState<
-    Account["isAuthenticated"]
+    AccountContext["isAuthenticated"]
   >(initialAccount.isAuthenticated);
-  const [tokenState, setTokenState] = useState<Account["token"]>(
+  const [tokenState, setTokenState] = useState<AccountContext["token"]>(
     initialAccount.token,
   );
-  const [userState, setUserState] = useState<Account["user"]>(
+  const [userState, setUserState] = useState<AccountContext["user"]>(
     initialAccount.user,
   );
 
