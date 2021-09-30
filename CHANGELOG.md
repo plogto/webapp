@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.14.0](https://github.com/favecode/plog-fe/compare/v0.13.0...v0.14.0) (2021-09-30)
+
+
+### Features
+
+* add Icon stories ([02c9b09](https://github.com/favecode/plog-fe/commit/02c9b09d0e40e15c482ea958471e19fc7b55ca02))
+* add like button for PostCard feature ([dc194bb](https://github.com/favecode/plog-fe/commit/dc194bbb473a70a89accb4f078c4e15920cdfb72))
+* implement Icon component ([aa995c8](https://github.com/favecode/plog-fe/commit/aa995c86739b9e3516b883973d53d9421871f22a))
+* improve components ([81045ce](https://github.com/favecode/plog-fe/commit/81045cee2a9d323850979c93d036b5006fcc4401))
+
 ## [0.13.0](https://github.com/favecode/plog-fe/compare/v0.12.6...v0.13.0) (2021-09-25)
 
 
