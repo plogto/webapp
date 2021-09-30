@@ -20,8 +20,7 @@
 }
 
 .textarea {
-  @apply border-none w-full m-0 resize-none;
-  box-shadow: none !important;
+  @apply border-none w-full m-0 resize-none ring-0 focus:ring-0;
 }
 
 .footer {

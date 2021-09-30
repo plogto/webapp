@@ -1,3 +1,5 @@
+import { Pagination } from "./pagination";
+
 export type User = {
   id: string;
   username: string;
@@ -11,4 +13,9 @@ export type User = {
   followRequestsCount?: number;
   createdAt: string;
   updatedAt: string;
+};
+
+export type UsersWithPagination = {
+  users: User[];
+  pagination: Pagination;
 };

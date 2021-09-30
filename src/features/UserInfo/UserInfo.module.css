@@ -29,7 +29,7 @@
 .accept,
 .reject {
   @apply p-2 ml-3 w-20 capitalize;
-  @apply font-bold text-xs !important;
+  @apply font-bold text-xs;
 }
 
 .accept svg,

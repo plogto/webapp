@@ -1,14 +1,10 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
-import type { Connections, SetConnections } from "./@types/connections";
+const initialConnections = {};
 
-const initialConnections = {
-  followers: {},
-  following: {},
-};
-
-const ConnectionsContext = createContext<Connections>(initialConnections);
-const ConnectionsContextSetState = createContext<SetConnections>({
+const ConnectionsContext =
+  createContext<ConnectionsContext>(initialConnections);
+const ConnectionsContextSetState = createContext<SetConnectionsContext>({
   setFollowers: () => {},
   setFollowing: () => {},
 });
@@ -18,12 +14,10 @@ type Props = {
 };
 
 export function ConnectionsProvider({ children }: Props) {
-  const [followersState, setFollowersState] = useState<
-    Connections["followers"]
-  >(initialConnections.followers);
-  const [followingState, setFollowingState] = useState<
-    Connections["following"]
-  >(initialConnections.following);
+  const [followersState, setFollowersState] =
+    useState<ConnectionAndPagination>();
+  const [followingState, setFollowingState] =
+    useState<ConnectionAndPagination>();
 
   return (
     <ConnectionsContext.Provider

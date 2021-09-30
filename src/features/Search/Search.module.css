@@ -8,8 +8,7 @@
 }
 
 .searchInput {
-  @apply border-0 w-full py-1 px-2;
-  box-shadow: none !important;
+  @apply border-0 w-full py-1 px-2 ring-0 focus:ring-0;
 }
 
 .searchInput::placeholder {
@@ -29,7 +28,7 @@
 .filterButton {
   @apply rounded-lg p-0;
   @apply font-medium bg-white capitalize w-8 h-8;
-  @apply shadow !important;
+  @apply shadow;
 }
 
 .filterButton:first-child {

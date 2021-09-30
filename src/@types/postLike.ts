@@ -1,16 +1,16 @@
 import { Pagination } from "./pagination";
+import { Post } from "./post";
 import { User } from "./user";
 
-export type Connection = {
+export type PostLike = {
   id: string;
-  following: User;
-  follower: User;
-  status: number;
+  user: User;
+  post: Post;
   createdAt: string;
   updatedAt: string;
 };
 
-export type ConnectionsWithPagination = {
-  connections: Connection[];
+export type PostLikesWithPagination = {
+  postLikes: PostLike[];
   pagination: Pagination;
 };

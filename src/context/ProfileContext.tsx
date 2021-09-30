@@ -1,8 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import type { Profile, SetProfile } from "@context/@types/profile";
 
-const ProfileContext = createContext<Profile>({});
-const ProfileContextSetState = createContext<SetProfile>({
+const ProfileContext = createContext<ProfileContext>({});
+const ProfileContextSetState = createContext<SetProfileContext>({
   setUser: () => {},
   setPosts: () => {},
 });
@@ -12,8 +11,8 @@ type Props = {
 };
 
 export function ProfileProvider({ children }: Props) {
-  const [userState, setUserState] = useState<Profile["user"]>();
-  const [postsState, setPostsState] = useState<Profile["posts"]>();
+  const [userState, setUserState] = useState<ProfileContext["user"]>();
+  const [postsState, setPostsState] = useState<ProfileContext["posts"]>();
 
   return (
     <ProfileContext.Provider

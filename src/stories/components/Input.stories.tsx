@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Input } from "@components/Input";
+import { StoryContainer } from "../StoryContainer";
 
 export default {
   title: "components/Input",
@@ -9,9 +10,9 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = args => (
-  <div className="w-screen h-screen flex justify-center items-center">
+  <StoryContainer>
     <Input {...args} />
-  </div>
+  </StoryContainer>
 );
 
 export const TextInput = Template.bind({});

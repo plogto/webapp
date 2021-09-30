@@ -22,9 +22,8 @@
 
 .loginButton,
 .registerButton {
-  @apply text-lg !important;
-  @apply px-5 py-2 w-32;
   @apply rounded-full;
+  @apply px-5 py-2.5 w-32;
 }
 
 .loginButton {

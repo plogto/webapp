@@ -17,6 +17,9 @@ module.exports = {
       width: {
         146: "36.5rem",
       },
+      strokeWidth: {
+        1.5: "1.5",
+      },
     },
     colors: {
       transparent: "transparent",
@@ -25,7 +28,7 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
-      red: colors.red,
+      red: colors.rose,
       green: colors.green,
       yellow: colors.amber,
       blue: colors.blue,

@@ -11,8 +11,18 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
           fullname
           connectionStatus
         }
+        isLiked {
+          id
+        }
+        likes {
+          postLikes {
+            id
+          }
+          pagination {
+            totalDocs
+          }
+        }
         content
-        status
         createdAt
         updatedAt
       }
@@ -37,8 +47,18 @@ export const GET_USER_POSTS_BY_TAG_NAME = gql`
           fullname
           connectionStatus
         }
+        isLiked {
+          id
+        }
+        likes {
+          postLikes {
+            id
+          }
+          pagination {
+            totalDocs
+          }
+        }
         content
-        status
         createdAt
         updatedAt
       }
@@ -62,7 +82,6 @@ export const ADD_POST = gql`
         fullname
       }
       content
-      status
       createdAt
       updatedAt
     }

@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import styles from "../PostCard.module.css";
+import styles from "../../PostCard.module.css";
+import { Hashtag } from "@components/Hashtag";
 import { usePostParser } from "@hooks/usePostParser";
-import { Hashtag } from ".";
 import type { Post } from "@t/post";
 
 type Props = {

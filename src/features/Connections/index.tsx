@@ -8,7 +8,7 @@ export function Connections({ type }: ConnectionsProps) {
 
   return (
     <div className={styles.card}>
-      {connections[type].connections?.map(connection => (
+      {connections[type]?.connections?.map(connection => (
         <UserInfo
           key={connection.id}
           user={

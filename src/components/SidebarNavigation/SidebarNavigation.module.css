@@ -13,7 +13,7 @@
 }
 
 .avatar {
-  @apply text-gray-400 bg-white my-3 w-40 h-40 !important;
+  @apply text-gray-400 bg-white my-3 w-40 h-40;
   @apply rounded-full shadow-sm border;
 }
 
@@ -43,8 +43,7 @@
 }
 
 .navLink .icon {
-  @apply text-current;
-  outline: none !important;
+  @apply text-current ring-0 focus:ring-0;
 }
 
 .navLink svg {

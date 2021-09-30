@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../PostCard.module.css";
+import styles from "../../PostCard.module.css";
 import { Avatar } from "@components/Avatar";
 import type { User } from "@t/user";
 

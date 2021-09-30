@@ -1,11 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import type {
-  FollowRequests,
-  SetFollowRequests,
-} from "@context/@types/followRequests";
 
-const FollowRequestsContext = createContext<FollowRequests>([]);
-const FollowRequestsContextSetState = createContext<SetFollowRequests>({
+const FollowRequestsContext = createContext<FollowRequestsContext>([]);
+const FollowRequestsContextSetState = createContext<SetFollowRequestsContext>({
   setFollowRequests: () => {},
 });
 
@@ -15,7 +11,7 @@ type Props = {
 
 export function FollowRequestsProvider({ children }: Props) {
   const [followRequestsState, setFollowRequestsState] =
-    useState<FollowRequests>([]);
+    useState<FollowRequestsContext>([]);
 
   return (
     <FollowRequestsContext.Provider value={followRequestsState}>
