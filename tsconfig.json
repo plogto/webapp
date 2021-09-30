@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@enums/*": ["src/@enums/*"],
-      "@t": ["src/@types"],
       "@t/*": ["src/@types/*"],
       "@components/*": ["src/components/*"],
       "@config": ["src/config"],

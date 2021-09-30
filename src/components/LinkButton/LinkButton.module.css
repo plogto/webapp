@@ -1,5 +1,4 @@
 .linkButton {
   @apply inline-flex items-center justify-center select-none;
-  @apply text-sm cursor-pointer font-normal outline-none;
-  outline: none !important;
+  @apply text-sm cursor-pointer font-normal ring-0 focus:ring-0;
 }

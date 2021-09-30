@@ -11,7 +11,7 @@ export function Landing() {
         <h1 className={styles.logo}>PLOG</h1>
         <p className={styles.description}>
           {/* TODO: Remove this */}
-          Blog + Connections + Blah Blah Blah
+          Plug + Blog + Blah Blah Blah
         </p>
         <div className={styles.authButtons}>
           <LinkButton
