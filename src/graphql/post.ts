@@ -14,6 +14,9 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
         isLiked {
           id
         }
+        isSaved {
+          id
+        }
         likes {
           postLikes {
             id
@@ -48,6 +51,9 @@ export const GET_USER_POSTS_BY_TAG_NAME = gql`
           connectionStatus
         }
         isLiked {
+          id
+        }
+        isSaved {
           id
         }
         likes {

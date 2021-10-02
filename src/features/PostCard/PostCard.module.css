@@ -33,7 +33,7 @@
 }
 
 .iconWrapper {
-  @apply w-12 h-12 px-3 py-2;
+  @apply w-10 h-10 pl-2 mr-1 py-2;
 }
 
 .icon {
@@ -42,4 +42,8 @@
 
 .liked {
   @apply text-red-500;
+}
+
+.saved {
+  @apply text-gray-600;
 }

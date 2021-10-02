@@ -7,12 +7,12 @@ type Props = {
 };
 
 export function PostCard({ post }: Props) {
-  const { id, isLiked } = post;
+  const { id, isLiked, isSaved } = post;
   return (
     <div className={styles.wrapper}>
       <Header {...post.user} />
       <Content content={post.content} />
-      <Footer id={id} isLiked={isLiked} />
+      <Footer id={id} isLiked={isLiked} isSaved={isSaved} />
     </div>
   );
 }
