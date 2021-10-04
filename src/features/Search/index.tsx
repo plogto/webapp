@@ -56,7 +56,7 @@ export function Search() {
         </div>
       </form>
 
-      <MobileOnlyView viewClassName="w-full">
+      <MobileOnlyView className="w-full">
         <MobileTrends />
       </MobileOnlyView>
 
