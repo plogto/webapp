@@ -25,6 +25,11 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
             totalDocs
           }
         }
+        comments {
+          pagination {
+            totalDocs
+          }
+        }
         content
         createdAt
         updatedAt
