@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { GET_USER_POSTS_BY_TAG_NAME } from "@graphql/post";
+import { GET_POSTS_BY_TAG_NAME } from "@graphql/post";
 import { GET_TAG_BY_TAG_NAME } from "@graphql/tag";
-import type { GetUserPostsByTagNameQuery } from "@graphql/@types/post";
+import type { GetPostsByTagNameQuery } from "@graphql/@types/post";
 import type { GetTagByTagNameQuery } from "@graphql/@types/tag";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
@@ -12,13 +12,13 @@ export function useTag() {
   const router = useRouter();
   const tagName = router.query.tagName as string;
   const variables = { tagName };
-  const getUserPostsByTagNameResponse = useQuery<
-    GetUserPostsByTagNameQuery,
+  const getPostsByTagNameResponse = useQuery<
+    GetPostsByTagNameQuery,
     {
       // TODO: fix this type
       tagName: string;
     }
-  >(GET_USER_POSTS_BY_TAG_NAME, {
+  >(GET_POSTS_BY_TAG_NAME, {
     variables,
   });
   const getTagByTagNameResponse = useQuery<
@@ -34,12 +34,11 @@ export function useTag() {
   const [tag, setTag] = useState<Tag>();
 
   useEffect(() => {
-    if (getUserPostsByTagNameResponse.data) {
-      const { posts } =
-        getUserPostsByTagNameResponse.data.getUserPostsByTagName;
+    if (getPostsByTagNameResponse.data) {
+      const { posts } = getPostsByTagNameResponse.data.getPostsByTagName;
       setPosts(posts);
     }
-  }, [getUserPostsByTagNameResponse.data]);
+  }, [getPostsByTagNameResponse.data]);
 
   useEffect(() => {
     if (getTagByTagNameResponse.data) {

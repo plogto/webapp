@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const GET_USER_POSTS_BY_USERNAME = gql`
-  query getUserPostsByUsername($username: String!) {
-    getUserPostsByUsername(username: $username) {
+export const GET_POSTS_BY_USERNAME = gql`
+  query getPostsByUsername($username: String!) {
+    getPostsByUsername(username: $username) {
       posts {
         id
         user {
@@ -39,9 +39,9 @@ export const GET_USER_POSTS_BY_USERNAME = gql`
   }
 `;
 
-export const GET_USER_POSTS_BY_TAG_NAME = gql`
-  query getUserPostsByTagName($tagName: String!) {
-    getUserPostsByTagName(tagName: $tagName) {
+export const GET_POSTS_BY_TAG_NAME = gql`
+  query getPostsByTagName($tagName: String!) {
+    getPostsByTagName(tagName: $tagName) {
       posts {
         id
         user {

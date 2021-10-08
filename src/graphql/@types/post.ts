@@ -1,13 +1,13 @@
 import type { Post } from "@t/post";
 
-export type GetUserPostsByUsernameQuery = {
-  getUserPostsByUsername: {
+export type GetPostsByUsernameQuery = {
+  getPostsByUsername: {
     posts: Post[];
   };
 };
 
-export type GetUserPostsByTagNameQuery = {
-  getUserPostsByTagName: {
+export type GetPostsByTagNameQuery = {
+  getPostsByTagName: {
     posts: Post[];
   };
 };
