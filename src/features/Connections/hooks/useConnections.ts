@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import { useConnectionsContext } from "@context/ConnectionsContext";
 
 import {
-  GET_USER_FOLLOWERS_BY_USERNAME,
-  GET_USER_FOLLOWING_BY_USERNAME,
+  GET_FOLLOWERS_BY_USERNAME,
+  GET_FOLLOWING_BY_USERNAME,
 } from "@graphql/connection";
 import type { ConnectionsProps } from "../@types";
 import type {
-  GetUserFollowersByUsernameQuery,
-  GetUserFollowingByUsernameQuery,
+  GetFollowersByUsernameQuery,
+  GetFollowingByUsernameQuery,
 } from "@graphql/@types/connection";
 
 export function useConnections({ type }: ConnectionsProps) {
@@ -18,25 +18,25 @@ export function useConnections({ type }: ConnectionsProps) {
   const { followers, following, setFollowers, setFollowing } =
     useConnectionsContext();
 
-  const [getUserFollowersByUsername, getUserFollowersByUsernameResponse] =
-    useLazyQuery<GetUserFollowersByUsernameQuery, { username: string }>(
-      GET_USER_FOLLOWERS_BY_USERNAME,
-    );
+  const [getFollowersByUsername, getFollowersByUsernameResponse] = useLazyQuery<
+    GetFollowersByUsernameQuery,
+    { username: string }
+  >(GET_FOLLOWERS_BY_USERNAME);
 
-  const [getUserFollowingByUsername, getUserFollowingByUsernameResponse] =
-    useLazyQuery<GetUserFollowingByUsernameQuery, { username: string }>(
-      GET_USER_FOLLOWING_BY_USERNAME,
-    );
+  const [getFollowingByUsername, getFollowingByUsernameResponse] = useLazyQuery<
+    GetFollowingByUsernameQuery,
+    { username: string }
+  >(GET_FOLLOWING_BY_USERNAME);
 
   useEffect(() => {
     if (router.query.username) {
       const { username } = router.query;
       if (type === "followers") {
-        getUserFollowersByUsername({
+        getFollowersByUsername({
           variables: { username: username as string },
         });
       } else if (type === "following") {
-        getUserFollowingByUsername({
+        getFollowingByUsername({
           variables: { username: username as string },
         });
       }
@@ -44,22 +44,20 @@ export function useConnections({ type }: ConnectionsProps) {
   }, [router]);
 
   useEffect(() => {
-    if (getUserFollowersByUsernameResponse.data) {
-      const { getUserFollowersByUsername } =
-        getUserFollowersByUsernameResponse.data;
+    if (getFollowersByUsernameResponse.data) {
+      const { getFollowersByUsername } = getFollowersByUsernameResponse.data;
 
-      setFollowers(getUserFollowersByUsername);
+      setFollowers(getFollowersByUsername);
     }
-  }, [getUserFollowersByUsernameResponse.data]);
+  }, [getFollowersByUsernameResponse.data]);
 
   useEffect(() => {
-    if (getUserFollowingByUsernameResponse.data) {
-      const { getUserFollowingByUsername } =
-        getUserFollowingByUsernameResponse.data;
+    if (getFollowingByUsernameResponse.data) {
+      const { getFollowingByUsername } = getFollowingByUsernameResponse.data;
 
-      setFollowing(getUserFollowingByUsername);
+      setFollowing(getFollowingByUsername);
     }
-  }, [getUserFollowingByUsernameResponse.data]);
+  }, [getFollowingByUsernameResponse.data]);
 
   return {
     connections: {

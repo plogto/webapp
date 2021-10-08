@@ -60,9 +60,9 @@ export const REJECT_USER = gql`
   }
 `;
 
-export const GET_USER_FOLLOW_REQUESTS = gql`
-  query getUserFollowRequests {
-    getUserFollowRequests {
+export const GET_FOLLOW_REQUESTS = gql`
+  query getFollowRequests {
+    getFollowRequests {
       connections {
         id
         status
@@ -82,9 +82,9 @@ export const GET_USER_FOLLOW_REQUESTS = gql`
   }
 `;
 
-export const GET_USER_FOLLOWING_BY_USERNAME = gql`
-  query getUserFollowingByUsername($username: String!) {
-    getUserFollowingByUsername(username: $username) {
+export const GET_FOLLOWING_BY_USERNAME = gql`
+  query getFollowingByUsername($username: String!) {
+    getFollowingByUsername(username: $username) {
       connections {
         id
         status
@@ -105,9 +105,9 @@ export const GET_USER_FOLLOWING_BY_USERNAME = gql`
   }
 `;
 
-export const GET_USER_FOLLOWERS_BY_USERNAME = gql`
-  query getUserFollowersByUsername($username: String!) {
-    getUserFollowersByUsername(username: $username) {
+export const GET_FOLLOWERS_BY_USERNAME = gql`
+  query getFollowersByUsername($username: String!) {
+    getFollowersByUsername(username: $username) {
       connections {
         id
         status
