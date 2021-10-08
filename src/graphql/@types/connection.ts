@@ -17,22 +17,22 @@ export type RejectUserMutation = {
   rejectUser: Connection;
 };
 
-export type GetUserFollowRequestsQuery = {
-  getUserFollowRequests: {
+export type GetFollowRequestsQuery = {
+  getFollowRequests: {
     connections: Connection[];
     pagination: Pagination;
   };
 };
 
-export type GetUserFollowingByUsernameQuery = {
-  getUserFollowingByUsername: {
+export type GetFollowingByUsernameQuery = {
+  getFollowingByUsername: {
     connections: Connection[];
     pagination: Pagination;
   };
 };
 
-export type GetUserFollowersByUsernameQuery = {
-  getUserFollowersByUsername: {
+export type GetFollowersByUsernameQuery = {
+  getFollowersByUsername: {
     connections: Connection[];
     pagination: Pagination;
   };

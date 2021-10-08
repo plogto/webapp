@@ -99,7 +99,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add getUserPostsByTagName graphql query ([6c10dbd](https://github.com/favecode/plog-fe/commit/6c10dbdc1c6f9508441b49b91761a9b9a0587a00))
+* add getPostsByTagName graphql query ([6c10dbd](https://github.com/favecode/plog-fe/commit/6c10dbdc1c6f9508441b49b91761a9b9a0587a00))
 * implement filters for Search feature ([c4b0ed9](https://github.com/favecode/plog-fe/commit/c4b0ed9503c8d28f8bdfa786e6299415bdf4b6f0))
 * implement TagInfo component ([79e3822](https://github.com/favecode/plog-fe/commit/79e382241dc6c3804a1978c45a3366fb003b5666))
 * implement TagPage ([6f874a7](https://github.com/favecode/plog-fe/commit/6f874a78eb5377389014807ae6f397c97a01a670))

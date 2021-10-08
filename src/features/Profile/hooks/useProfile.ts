@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useProfileContext } from "@context/ProfileContext";
-import { GET_USER_POSTS_BY_USERNAME } from "@graphql/post";
+import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { formatCountTitle } from "@utils/formatter";
-import type { GetUserPostsByUsernameQuery } from "@graphql/@types/post";
+import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
 import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 
 export function useProfile() {
@@ -43,8 +43,8 @@ export function useProfile() {
 
   const [getUserByUsername, getUserByUsernameResponse] =
     useLazyQuery<GetUserByUsernameQuery>(GET_USER_BY_USERNAME);
-  const [getUserPostsByUsername, getUserPostsByUsernameResponse] =
-    useLazyQuery<GetUserPostsByUsernameQuery>(GET_USER_POSTS_BY_USERNAME);
+  const [getPostsByUsername, getPostsByUsernameResponse] =
+    useLazyQuery<GetPostsByUsernameQuery>(GET_POSTS_BY_USERNAME);
 
   useEffect(() => {
     if (username) {
@@ -53,7 +53,7 @@ export function useProfile() {
           username,
         },
       });
-      getUserPostsByUsername({
+      getPostsByUsername({
         variables: {
           username,
         },
@@ -68,14 +68,12 @@ export function useProfile() {
   }, [getUserByUsernameResponse.data]);
 
   useEffect(() => {
-    if (getUserPostsByUsernameResponse.data) {
-      setPosts(
-        getUserPostsByUsernameResponse.data.getUserPostsByUsername.posts,
-      );
+    if (getPostsByUsernameResponse.data) {
+      setPosts(getPostsByUsernameResponse.data.getPostsByUsername.posts);
     } else {
       setPosts([]);
     }
-  }, [getUserPostsByUsernameResponse.data]);
+  }, [getPostsByUsernameResponse.data]);
 
   return { getUserByUsernameResponse, user, router, posts, counts };
 }
