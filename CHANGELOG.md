@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.2](https://github.com/favecode/plog-fe/compare/v0.16.1...v0.16.2) (2021-10-08)
+
+
+### Bug Fixes
+
+* handle getUserInfo response ([5ab223a](https://github.com/favecode/plog-fe/commit/5ab223ace67510ab58d2f332cc7153e1ed309cc0))
+
 ### [0.16.1](https://github.com/favecode/plog-fe/compare/v0.16.0...v0.16.1) (2021-10-08)
 
 ## [0.16.0](https://github.com/favecode/plog-fe/compare/v0.15.0...v0.16.0) (2021-10-04)
