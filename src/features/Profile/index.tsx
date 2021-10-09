@@ -21,7 +21,7 @@ export function Profile() {
       <div className="w-full h-screen">
         {user && <Header {...user} />}
         {posts && posts?.length > 0 && (
-          <Posts className="pt-0 px-2 lg:px-5" posts={posts} />
+          <Posts className="pt-0 px-2 md:px-5" posts={posts} />
         )}
         {/* TODO: refactor conditions */}
         {(!posts || posts.length < 1) &&
@@ -32,7 +32,7 @@ export function Profile() {
               title={t("status.private.title")}
               description={t("status.private.description")}
               icon={<LockClosedIcon strokeWidth="1" className="w-12" />}
-              className="mt-16 lg:m-32 mx-10"
+              className="mt-16 md:m-32 mx-10"
             />
           )}
         {(!posts || posts.length < 1) &&
@@ -42,7 +42,7 @@ export function Profile() {
               title={t("status.noPosts.title")}
               description={t("status.noPosts.description")}
               icon={<PhotographIcon strokeWidth="1" className="w-12" />}
-              className="mt-16 lg:m-32 mx-10"
+              className="mt-16 md:m-32 mx-10"
             />
           )}
       </div>

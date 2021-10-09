@@ -25,7 +25,7 @@ export function useSearch() {
     }
   }, [data, search]);
 
-  const submit = (formData: SearchForm) => {
+  const onSubmit = (formData: SearchForm) => {
     formData.expression.length &&
       search({
         variables: {
@@ -34,5 +34,5 @@ export function useSearch() {
       });
   };
 
-  return { formMethods, submit, loading, error, result, filter, setFilter };
+  return { formMethods, onSubmit, loading, error, result, filter, setFilter };
 }

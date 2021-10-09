@@ -1,19 +1,19 @@
 .header {
-  @apply w-full flex items-center p-4 lg:p-5;
+  @apply w-full flex items-center p-4 md:p-5;
 }
 
 .icon {
   @apply flex items-center justify-center;
-  @apply text-gray-900 lg:w-16 lg:h-16 w-14 h-14 mr-3 lg:mr-4;
+  @apply text-gray-900 md:w-16 md:h-16 w-14 h-14 mr-3 md:mr-4;
   @apply rounded-full shadow-sm border;
 }
 
 .icon svg {
-  @apply lg:w-9 lg:h-9 w-8 h-8;
+  @apply md:w-9 md:h-9 w-8 h-8;
 }
 
 .tagName {
-  @apply text-2xl lg:text-3xl font-bold;
+  @apply text-2xl md:text-3xl font-bold;
   /* @apply bg-gradient-to-tl to-primary-500 from-primary-400;
   @apply text-transparent bg-clip-text; */
 }

@@ -7,21 +7,19 @@ import { GET_USER_INFO } from "@graphql/user";
 import type { GetUserInfoQuery } from "@graphql/@types/user";
 
 export function AppInit() {
-  const { data, error } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
+  const { data } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
   const router = useRouter();
   const { setUser } = useAccountContext();
 
   useEffect(() => {
     if (data) {
-      setUser(data.getUserInfo);
+      if (data.getUserInfo) {
+        setUser(data.getUserInfo);
+      } else {
+        router.push(PageUrls.LOGOUT);
+      }
     }
   }, [data, setUser]);
-
-  useEffect(() => {
-    if (error) {
-      router.push(PageUrls.LOGOUT);
-    }
-  }, [error]);
 
   return <></>;
 }

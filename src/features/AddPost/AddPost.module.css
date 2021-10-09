@@ -24,7 +24,7 @@
 }
 
 .footer {
-  @apply flex justify-between p-2 lg:p-3;
+  @apply flex justify-between p-2 md:p-3;
 }
 
 .submit {

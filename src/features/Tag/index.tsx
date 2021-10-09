@@ -9,7 +9,7 @@ export function Tag() {
     <>
       <Header tag={tag} />
       {posts?.length > 0 && (
-        <Posts className="pt-0 px-2 lg:px-5" posts={posts} />
+        <Posts className="pt-0 px-2 md:px-5" posts={posts} />
       )}
     </>
   ) : (
