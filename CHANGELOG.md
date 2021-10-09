@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.3](https://github.com/favecode/plog-fe/compare/v0.16.2...v0.16.3) (2021-10-09)
+
+
+### Features
+
+* implement Loading component ([fc18516](https://github.com/favecode/plog-fe/commit/fc185165915b2dd0fe4fe98046009de1d628e9eb))
+
+
+### Bug Fixes
+
+* improve buttons for Profile feature ([f6eead4](https://github.com/favecode/plog-fe/commit/f6eead447355cd57e921c4010713fcbae5c4844b))
+* replace lg with md size ([846c71f](https://github.com/favecode/plog-fe/commit/846c71f2c247c634fe738d9f6c23c730e2a67d39))
+
 ### [0.16.2](https://github.com/favecode/plog-fe/compare/v0.16.1...v0.16.2) (2021-10-08)
 
 
