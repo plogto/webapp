@@ -8,7 +8,7 @@ import { useSearch } from "./hooks/useSearch";
 import { Button } from "@components/Button";
 
 export function Search() {
-  const { formMethods, submit, result, filter, setFilter } = useSearch();
+  const { formMethods, onSubmit, result, filter, setFilter } = useSearch();
   const { register, handleSubmit, watch } = formMethods;
 
   const { t } = useTranslation(["common", "search"]);
@@ -29,11 +29,11 @@ export function Search() {
 
   return (
     <>
-      <form className={styles.form} onSubmit={handleSubmit(submit)}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.header}>
           <input
             {...register("expression")}
-            onInput={handleSubmit(() => submit(watch()))}
+            onInput={handleSubmit(() => onSubmit(watch()))}
             placeholder={t("search:placeholders.search")}
             name="expression"
             type="text"

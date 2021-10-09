@@ -28,9 +28,9 @@ export function useLogin() {
     }
   }, [data, setToken, setUser, setIsAutheticated]);
 
-  const submit = (variables: LoginForm) => {
+  const onSubmit = (variables: LoginForm) => {
     login({ variables });
   };
 
-  return { formMethods, submit, error, loading };
+  return { formMethods, onSubmit, error, loading };
 }

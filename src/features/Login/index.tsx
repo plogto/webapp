@@ -5,13 +5,13 @@ import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 
 export function Login() {
-  const { formMethods, submit, error, loading } = useLogin();
+  const { formMethods, onSubmit, error, loading } = useLogin();
   const { register, handleSubmit } = formMethods;
   const { t } = useTranslation(["auth", "common"]);
 
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={handleSubmit(submit)} className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <h1 className={styles.logo}>{t("common:logoName")}</h1>
         {error && (
           <div className="mt-3 w-full">

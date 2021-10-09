@@ -1,6 +1,6 @@
 .wrapper {
   @apply fixed bottom-0 w-full;
-  @apply flex justify-center lg:hidden;
+  @apply flex justify-center md:hidden;
 }
 
 .navbar {
@@ -11,7 +11,7 @@
 
 .navLink {
   @apply duration-300 ring-0 focus:ring-0;
-  @apply text-gray-400 w-10 h-10 lg:w-12 lg:h-12 p-1 lg:p-2 mx-1;
+  @apply text-gray-400 w-10 h-10 md:w-12 md:h-12 p-1 md:p-2 mx-1;
   @apply hover:bg-primary-50 hover:text-primary-500 rounded-lg;
 }
 

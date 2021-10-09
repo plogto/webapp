@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "./LinkButton.module.css";
 import type { ReactNode } from "react";
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 export function LinkButton({ className, children, href }: Props) {
   return (
     <Link href={href}>
-      <a className={`${styles.linkButton} ${className}`}>{children}</a>
+      <a className={`button ${className}`}>{children}</a>
     </Link>
   );
 }

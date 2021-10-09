@@ -32,7 +32,7 @@ export function useAddPost() {
     }
   }, [data]);
 
-  const submit = (formData: AddPostForm) => {
+  const onSubmit = (formData: AddPostForm) => {
     addPost({
       variables: {
         ...formData,
@@ -40,5 +40,5 @@ export function useAddPost() {
     });
   };
 
-  return { user, formMethods, submit, loading, error };
+  return { user, formMethods, onSubmit, loading, error };
 }

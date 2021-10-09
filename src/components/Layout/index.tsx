@@ -24,7 +24,7 @@ export function Layout({ children }: Props) {
       <Navbar />
       <SidebarNavigation />
       {children}
-      <div className="hidden lg:block w-8/12 mt-5">
+      <div className="hidden md:block w-8/12 mt-5">
         {!limitedRoutes.includes(pathname as PageUrls) && (
           <Wrapper className="mb-5">
             <Search />
@@ -34,6 +34,6 @@ export function Layout({ children }: Props) {
       </div>
     </div>
   ) : (
-    <div className="mx-auto w-full lg:w-146">{children}</div>
+    <div className="mx-auto w-full md:w-146">{children}</div>
   );
 }
