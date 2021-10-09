@@ -12,9 +12,11 @@ import styles from "./SidebarNavigation.module.css";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
+import { useNavigation } from "@hooks/useNavigation";
 
 export function SidebarNavigation() {
   const { activeClass } = useClassName();
+  const { formatProfilePageRoute } = useNavigation();
   const { user } = useAccountContext();
   const { t } = useTranslation("common");
   const items = [
@@ -43,7 +45,7 @@ export function SidebarNavigation() {
   return user ? (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <Link href={`/${user?.username}`}>
+        <Link href={formatProfilePageRoute(user?.username)}>
           <a className={styles.header}>
             <Avatar className={styles.avatar} />
             <span className={styles.fullname}>{user.fullname}</span>

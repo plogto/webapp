@@ -1,11 +1,13 @@
 import Link from "next/link";
 import styles from "../../PostCard.module.css";
 import { Avatar } from "@components/Avatar";
+import { useNavigation } from "@hooks/useNavigation";
 import type { User } from "@t/user";
 
 export function Header({ username, fullname }: User) {
+  const { formatProfilePageRoute } = useNavigation();
   return (
-    <Link href={`/${username}`}>
+    <Link href={formatProfilePageRoute(username)}>
       <a className={styles.header}>
         <Avatar className={styles.avatar} />
         <div>
