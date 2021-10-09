@@ -8,11 +8,11 @@
 }
 
 .logo {
-  @apply font-black lg:text-9xl text-8xl text-gray-600;
+  @apply font-black md:text-9xl text-8xl text-gray-600;
 }
 
 .description {
-  @apply font-light lg:text-lg text-lg mt-4;
+  @apply font-light md:text-lg text-lg mt-4;
   @apply text-center text-gray-600;
 }
 
