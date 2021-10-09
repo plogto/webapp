@@ -25,7 +25,7 @@
 .following,
 .settings {
   @apply px-2 py-2 mt-2 w-28 h-full capitalize;
-  @apply rounded-lg font-medium;
+  @apply font-medium text-sm;
 }
 
 .following {
