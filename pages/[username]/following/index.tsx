@@ -6,13 +6,13 @@ import { ConnectionsProvider } from "@context/ConnectionsContext";
 import { Connections } from "@features/Connections";
 
 export default function FollowingPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
           {/* TODO: add username */}
-          {t("following")} | {t("logoName")}
+          {t("pages:following")} | {t("common:logoName")}
         </title>
       </Head>
       <ConnectionsProvider>

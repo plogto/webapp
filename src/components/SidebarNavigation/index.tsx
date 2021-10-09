@@ -18,7 +18,7 @@ export function SidebarNavigation() {
   const { activeClass } = useClassName();
   const { formatProfilePageRoute } = useNavigation();
   const { user } = useAccountContext();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("pages");
   const items = [
     {
       title: t("notifications"),

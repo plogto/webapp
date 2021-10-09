@@ -5,7 +5,7 @@ import type { Post } from "@t/post";
 type Props = {
   post: Post;
 };
-
+// TODO: refactor this component
 export function PostCard({ post }: Props) {
   const { id, isLiked, isSaved, comments } = post;
   return (

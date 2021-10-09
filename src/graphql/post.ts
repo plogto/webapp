@@ -1,10 +1,47 @@
 import { gql } from "@apollo/client";
 
+export const GET_POST_BY_URL = gql`
+  query getPostByUrl($url: String!) {
+    getPostByUrl(url: $url) {
+      id
+      user {
+        id
+        username
+        fullname
+        connectionStatus
+      }
+      isLiked {
+        id
+      }
+      isSaved {
+        id
+      }
+      likes {
+        postLikes {
+          id
+        }
+        pagination {
+          totalDocs
+        }
+      }
+      comments {
+        pagination {
+          totalDocs
+        }
+      }
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
 export const GET_POSTS_BY_USERNAME = gql`
   query getPostsByUsername($username: String!) {
     getPostsByUsername(username: $username) {
       posts {
         id
+        url
         user {
           id
           username
@@ -49,6 +86,7 @@ export const GET_POSTS_BY_TAG_NAME = gql`
     getPostsByTagName(tagName: $tagName) {
       posts {
         id
+        url
         user {
           id
           username
@@ -87,6 +125,7 @@ export const ADD_POST = gql`
   mutation addPost($content: String!) {
     addPost(input: { content: $content }) {
       id
+      url
       user {
         id
         username

@@ -6,6 +6,7 @@ import { User } from "./user";
 
 export type Post = {
   id: string;
+  url: string;
   user: User;
   content: string;
   isLiked?: PostLike;

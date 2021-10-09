@@ -1,13 +1,17 @@
-import { FooterPostCardProps } from "../../@types";
-import styles from "../../PostCard.module.css";
-import { usePostLike } from "../../hooks";
+import { FooterPostProps } from "../@types";
+import styles from "../Post.module.css";
 import { Icon } from "@components/Icon";
-import { usePostSave } from "@features/PostCard/hooks/useSaveLike";
 
-export function Footer(props: FooterPostCardProps) {
-  const { commentsCounter } = props;
-  const { isLiked, likePost, unlikePost } = usePostLike(props);
-  const { isSaved, savePost, unsavePost } = usePostSave(props);
+export function Footer(props: FooterPostProps) {
+  const {
+    isLiked,
+    likePost,
+    unlikePost,
+    isSaved,
+    savePost,
+    unsavePost,
+    commentsCounter,
+  } = props;
 
   return (
     <div className={styles.footer}>

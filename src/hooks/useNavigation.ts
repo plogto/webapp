@@ -1,3 +1,4 @@
+import { Post } from "@t/post";
 import { Tag } from "@t/tag";
 import { User } from "@t/user";
 
@@ -6,9 +7,13 @@ export function useNavigation() {
     return `/${username}`;
   }
 
+  function formatPostPageRoute(url: Post["url"]) {
+    return `/p/${url}`;
+  }
+
   function formatTagPageRoute(tagName: Tag["name"]) {
     return `/t/${tagName}`;
   }
 
-  return { formatProfilePageRoute, formatTagPageRoute };
+  return { formatProfilePageRoute, formatPostPageRoute, formatTagPageRoute };
 }

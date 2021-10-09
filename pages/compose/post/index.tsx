@@ -5,12 +5,12 @@ import { Wrapper } from "@components/Wrapper";
 import { AddPost } from "@features/AddPost";
 
 export default function AddPostPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("addPost")} | {t("logoName")}
+          {t("pages:addPost")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>
