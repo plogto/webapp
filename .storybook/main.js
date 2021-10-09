@@ -17,6 +17,7 @@ module.exports = {
       },
     },
     "storybook-css-modules-preset",
+    "storybook-dark-mode",
   ],
   webpackFinal: async config => {
     config.resolve.plugins = [
