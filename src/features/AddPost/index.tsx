@@ -7,7 +7,7 @@ import { Button } from "@components/Button";
 import { CONTENT_MAX_LENGTH } from "@config";
 
 export function AddPost() {
-  const { user, formMethods, submit, loading } = useAddPost();
+  const { user, formMethods, onSubmit, loading } = useAddPost();
   const {
     register,
     handleSubmit,
@@ -17,7 +17,7 @@ export function AddPost() {
   const { t } = useTranslation("addPost");
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(submit)}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       {user && (
         <>
           <Header {...user} />
