@@ -28,7 +28,7 @@
 }
 
 .iconWrapper {
-  @apply w-9 h-9 px-2.5 mr-1 my-1.5;
+  @apply ml-2.5 my-2.5;
 }
 
 .icon {
