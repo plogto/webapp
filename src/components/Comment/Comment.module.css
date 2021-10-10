@@ -13,7 +13,7 @@
 }
 /* Content */
 .content {
-  @apply text-xs md:text-sm text-gray-700 py-1 break-words whitespace-pre-line;
+  @apply text-xs text-gray-700 py-1 break-words whitespace-pre-line;
 }
 
 /* Footer */
