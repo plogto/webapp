@@ -4,12 +4,14 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
+import { AddPostMutation } from "@graphql/@types/post";
 import { ADD_POST } from "@graphql/post";
 
 import type { AddPostForm } from "../@types";
 
 export function useAddPost() {
-  const [addPost, { data, loading, error }] = useMutation(ADD_POST);
+  const [addPost, { data, loading, error }] =
+    useMutation<AddPostMutation>(ADD_POST);
   const formMethods = useForm<AddPostForm>({
     mode: "all",
   });
