@@ -117,6 +117,11 @@ export const GET_POSTS_BY_TAG_NAME = gql`
             totalDocs
           }
         }
+        comments {
+          pagination {
+            totalDocs
+          }
+        }
         content
         createdAt
         updatedAt
