@@ -10,7 +10,7 @@
 }
 
 .fullname {
-  @apply font-bold text-sm pr-1;
+  @apply font-semibold text-sm pr-1;
 }
 
 .username {
@@ -28,7 +28,7 @@
 }
 
 .iconWrapper {
-  @apply w-9 h-9 pl-2.5 mr-1 my-1.5;
+  @apply w-9 h-9 px-2.5 mr-1 my-1.5;
 }
 
 .icon {
