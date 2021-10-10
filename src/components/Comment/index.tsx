@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { CommentProps } from "./@types";
 import styles from "./Comment.module.css";
 import { Avatar } from "@components/Avatar";
@@ -14,6 +15,7 @@ export function Comment(props: CommentProps) {
       updatedAt,
     },
   } = props;
+  const { t } = useTranslation("comment");
   const { formatProfilePageRoute } = useNavigation();
   const { formatFromNow } = useDate();
 
@@ -23,17 +25,17 @@ export function Comment(props: CommentProps) {
         <Avatar className={styles.avatar} />
       </div>
       <div>
-        <div className={styles.fullname}>
-          <Link href={formatProfilePageRoute(username)}>{fullname}</Link>
-        </div>
-        <div className={styles.content}>
-          <p>{content}</p>
-        </div>
+        <p className={styles.content}>
+          <div className={styles.fullname}>
+            <Link href={formatProfilePageRoute(username)}>{fullname}</Link>
+          </div>
+          {content}
+        </p>
         <div className={styles.footer}>
           <span className={styles.date}>{formatFromNow(updatedAt)}</span>
           <span>&middot;</span>
           <button type="button" className={styles.reply}>
-            Reply
+            {t("reply")}
           </button>
         </div>
       </div>

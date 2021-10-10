@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { GET_POSTS_BY_TAG_NAME } from "@graphql/post";
@@ -12,26 +12,29 @@ export function useTag() {
   const router = useRouter();
   const tagName = router.query.tagName as string;
   const variables = { tagName };
-  const getPostsByTagNameResponse = useQuery<
+  const [getPostsByTagName, getPostsByTagNameResponse] = useLazyQuery<
     GetPostsByTagNameQuery,
     {
       // TODO: fix this type
       tagName: string;
     }
-  >(GET_POSTS_BY_TAG_NAME, {
-    variables,
-  });
-  const getTagByTagNameResponse = useQuery<
+  >(GET_POSTS_BY_TAG_NAME);
+  const [getTagByTagName, getTagByTagNameResponse] = useLazyQuery<
     GetTagByTagNameQuery,
     {
       // TODO: fix this type
       tagName: string;
     }
-  >(GET_TAG_BY_TAG_NAME, {
-    variables,
-  });
+  >(GET_TAG_BY_TAG_NAME);
   const [posts, setPosts] = useState<Post[]>([]);
   const [tag, setTag] = useState<Tag>();
+
+  useEffect(() => {
+    if (tagName) {
+      getPostsByTagName({ variables });
+      getTagByTagName({ variables });
+    }
+  }, [tagName]);
 
   useEffect(() => {
     if (getPostsByTagNameResponse.data) {

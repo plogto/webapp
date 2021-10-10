@@ -15,7 +15,7 @@
 }
 
 .fullname {
-  @apply font-semibold text-sm pr-1;
+  @apply font-bold text-sm pr-1;
 }
 
 .username {
@@ -29,7 +29,7 @@
 
 /* Footer */
 .footer {
-  @apply border-t border-gray-100 pb-1;
+  @apply border-t border-gray-100;
 }
 
 .iconWrapper {

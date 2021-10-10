@@ -1,45 +1,39 @@
 {
-  "auth": {
-    "labels": {
-      "username": "username",
-      "password": "password"
-    },
-    "buttons": {
-      "login": "log in"
-    }
-  },
-  "profile": {
-    "status": {
-      "private": {
-        "title": "This Account is Private",
-        "description": "Follow to see their posts."
-      },
-      "noPosts": {
-        "title": "No Posts Yet",
-        "description": "When they posts, you'll see their posts."
-      }
-    },
-    "buttons": {
-      "settings": "settings"
-    }
-  },
-  "connection": {
-    "buttons": {
-      "follow": "follow",
-      "following": "following",
-      "requested": "requested",
-      "confirm": "confirm"
-    }
-  },
   "addPost": {
     "buttons": {
       "addPost": "add post",
       "hello": "hello"
     }
   },
-  "search": {
-    "placeholders": {
-      "search": "search"
+  "auth": {
+    "buttons": {
+      "login": "log in"
+    },
+    "labels": {
+      "password": "password",
+      "username": "username"
+    }
+  },
+  "comment": {
+    "reply": "Reply"
+  },
+  "common": {
+    "follower": "follower",
+    "followers": "followers",
+    "following": "following",
+    "logoName": "Plog",
+    "post": "post",
+    "posts": "posts",
+    "tags": "tags",
+    "trends": "trends for you",
+    "users": "users"
+  },
+  "connection": {
+    "buttons": {
+      "confirm": "confirm",
+      "follow": "follow",
+      "following": "following",
+      "requested": "requested"
     }
   },
   "notifications": {
@@ -48,29 +42,38 @@
     }
   },
   "pages": {
-    "home": "Home",
-    "login": "Login",
-    "register": "Register",
-    "notifications": "Notifications",
-    "settings": "Settings",
-    "search": "Search",
-    "tag": "Tag",
-    "profile": "Profile",
-    "post": "Post",
+    "addPost": "Add Post",
     "followRequests": "Follow Requests",
     "followers": "Followers",
     "following": "Following",
-    "addPost": "Add Post"
+    "home": "Home",
+    "login": "Login",
+    "notifications": "Notifications",
+    "post": "Post",
+    "profile": "Profile",
+    "register": "Register",
+    "search": "Search",
+    "settings": "Settings",
+    "tag": "Tag"
   },
-  "common": {
-    "logoName": "Plog",
-    "trends": "trends for you",
-    "tags": "tags",
-    "users": "users",
-    "post": "post",
-    "posts": "posts",
-    "follower": "follower",
-    "followers": "followers",
-    "following": "following"
+  "profile": {
+    "buttons": {
+      "settings": "settings"
+    },
+    "status": {
+      "noPosts": {
+        "description": "When they posts, you'll see their posts.",
+        "title": "No Posts Yet"
+      },
+      "private": {
+        "description": "Follow to see their posts.",
+        "title": "This Account is Private"
+      }
+    }
+  },
+  "search": {
+    "placeholders": {
+      "search": "search"
+    }
   }
 }
