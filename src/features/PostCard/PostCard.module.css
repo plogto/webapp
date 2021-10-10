@@ -15,7 +15,7 @@
 }
 
 .fullname {
-  @apply font-bold text-sm pr-1;
+  @apply font-semibold text-sm pr-1;
 }
 
 .username {
@@ -33,11 +33,11 @@
 }
 
 .iconWrapper {
-  @apply w-9 h-9 pl-2.5 mr-1 mt-1.5;
+  @apply w-9 h-9 px-2.5 mr-1 mt-1.5;
 }
 
 .icon {
-  @apply w-7 h-7 text-gray-800 stroke-1.5;
+  @apply w-7 h-7 text-gray-600 stroke-1.5;
 }
 
 .liked {
@@ -49,5 +49,5 @@
 }
 
 .commentsCounter {
-  @apply text-sm text-gray-500 ml-3.5 mt-1 mb-2;
+  @apply text-xs text-gray-500 ml-3.5 mt-1 mb-2;
 }
