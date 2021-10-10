@@ -9,16 +9,16 @@
 }
 
 .fullname {
-  @apply font-semibold text-xs md:text-sm pr-1 text-gray-700;
+  @apply inline-block font-bold text-sm pr-1 text-gray-700;
 }
 /* Content */
 .content {
-  @apply text-xs text-gray-700 py-1 break-words whitespace-pre-line;
+  @apply text-sm text-gray-700 break-words whitespace-pre-line pr-3;
 }
 
 /* Footer */
 .footer {
-  @apply flex text-xs space-x-2 mb-2 text-gray-500;
+  @apply flex text-xs space-x-2 mt-1 mb-2 text-gray-500;
 }
 
 .date {

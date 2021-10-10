@@ -10,7 +10,7 @@
 }
 
 .fullname {
-  @apply font-semibold text-sm pr-1;
+  @apply font-bold text-sm pr-1;
 }
 
 .username {
