@@ -4,7 +4,7 @@ import { LinkButton } from "@components/LinkButton";
 import { PageUrls } from "@enums/pages";
 
 export function Landing() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("pages");
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>

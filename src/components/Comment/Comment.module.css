@@ -1,0 +1,30 @@
+/* Header */
+.comment {
+  @apply flex space-x-3 border-t border-gray-200 border-dashed pt-2;
+}
+
+.avatar {
+  @apply text-gray-400 w-8 h-8 ml-2;
+  @apply rounded-full shadow-sm border;
+}
+
+.fullname {
+  @apply font-medium text-sm pr-1;
+}
+/* Content */
+.content {
+  @apply text-sm text-gray-700 py-1.5 break-words whitespace-pre-line;
+}
+
+/* Footer */
+.footer {
+  @apply flex text-xs space-x-2 mb-2 text-gray-500;
+}
+
+.date {
+  @apply text-gray-500;
+}
+
+.reply {
+  @apply text-gray-900 font-medium;
+}

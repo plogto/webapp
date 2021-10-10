@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../Post.module.css";
+import styles from "../../Post.module.css";
 import { Avatar } from "@components/Avatar";
 import { useNavigation } from "@hooks/useNavigation";
 import type { User } from "@t/user";

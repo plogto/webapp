@@ -1,4 +1,5 @@
 import { Post } from "@t/post";
+import { PostCommentsWithPagination } from "@t/postComment";
 import { PostLike } from "@t/postLike";
 import { PostSave } from "@t/postSave";
 
@@ -11,6 +12,8 @@ export type FooterPostProps = {
   savePost?: () => void;
   unsavePost?: () => void;
   commentsCounter?: number;
+  showComments?: boolean;
+  comments?: PostCommentsWithPagination;
 };
 
 export type UsePostLikeProps = {

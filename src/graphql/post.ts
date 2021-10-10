@@ -25,6 +25,16 @@ export const GET_POST_BY_URL = gql`
         }
       }
       comments {
+        postComments {
+          id
+          user {
+            id
+            username
+            fullname
+          }
+          content
+          updatedAt
+        }
         pagination {
           totalDocs
         }

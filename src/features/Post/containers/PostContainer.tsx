@@ -14,11 +14,13 @@ export function Post() {
         id={post.id}
         isLiked={isLiked}
         isSaved={isSaved}
+        comments={post.comments}
         commentsCounter={post.comments?.pagination.totalDocs}
         likePost={likePost}
         unlikePost={unlikePost}
         savePost={savePost}
         unsavePost={unsavePost}
+        showComments
       />
     </div>
   ) : null;

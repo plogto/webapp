@@ -33,11 +33,11 @@
 }
 
 .iconWrapper {
-  @apply w-10 h-10 pl-2.5 mr-1 mt-1.5;
+  @apply w-9 h-9 pl-2.5 mr-1 mt-1.5;
 }
 
 .icon {
-  @apply w-8 h-8 text-gray-800 stroke-1.5;
+  @apply w-7 h-7 text-gray-800 stroke-1.5;
 }
 
 .liked {
