@@ -5,12 +5,12 @@ import { Wrapper } from "@components/Wrapper";
 import { Search } from "@features/Search";
 
 export default function SearchPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("search")} | {t("logoName")}
+          {t("pages:search")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>

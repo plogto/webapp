@@ -5,13 +5,13 @@ import { Wrapper } from "@components/Wrapper";
 import { Tag } from "@features/Tag";
 
 export default function TagPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
           {/* TODO: add tagName */}
-          {t("tag")} | {t("logoName")}
+          {t("pages:tag")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>

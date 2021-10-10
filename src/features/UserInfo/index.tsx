@@ -7,6 +7,7 @@ import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Button";
 import { useAccountContext } from "@context/AccountContext";
 
+import { useNavigation } from "@hooks/useNavigation";
 import type { ActionButtons } from "./@types";
 import type { User } from "@t/user";
 
@@ -35,6 +36,7 @@ export function UserInfo({
     rejectUserResponse,
   } = useActions({ id });
   const { t } = useTranslation("connection");
+  const { formatProfilePageRoute } = useNavigation();
 
   const actionButtons: ActionButtons = {
     follow: {
@@ -66,7 +68,7 @@ export function UserInfo({
   return (
     <div className={styles.wrapper}>
       {username && (
-        <Link href={`/${username}`}>
+        <Link href={formatProfilePageRoute(username)}>
           <a className={styles.userInfo}>
             <Avatar className={styles.avatar} />
             <div>

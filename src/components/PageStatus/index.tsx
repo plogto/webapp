@@ -7,7 +7,7 @@ type Props = {
   icon: ReactNode;
   className?: string;
 };
-
+// TODO: refactor this component
 export function PageStatus({ title, icon, description, className }: Props) {
   return (
     <div className={`${styles.wrapper} ${className || ""}`}>

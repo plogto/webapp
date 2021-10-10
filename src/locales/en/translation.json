@@ -47,8 +47,7 @@
       "followRequests": "follow requests"
     }
   },
-  "common": {
-    "logoName": "Plog",
+  "pages": {
     "home": "Home",
     "login": "Login",
     "register": "Register",
@@ -57,8 +56,14 @@
     "search": "Search",
     "tag": "Tag",
     "profile": "Profile",
+    "post": "Post",
     "followRequests": "Follow Requests",
-    "addPost": "Add Post",
+    "followers": "Followers",
+    "following": "Following",
+    "addPost": "Add Post"
+  },
+  "common": {
+    "logoName": "Plog",
     "trends": "trends for you",
     "tags": "tags",
     "users": "users",

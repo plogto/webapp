@@ -2,7 +2,7 @@ import styles from "./Posts.module.css";
 import { PostCard } from "@features/PostCard";
 import type { Post } from "@t/post";
 
-// TODO: add loading prop and implement loading component
+// TODO: add loading prop
 type Props = {
   posts?: Post[];
   className?: string;

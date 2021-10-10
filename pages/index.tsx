@@ -8,12 +8,12 @@ import { Landing } from "@features/Landing";
 
 export default function HomePage() {
   const { isAuthenticated } = useAccountContext();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("home")} | {t("logoName")}
+          {t("pages:home")} | {t("common:logoName")}
         </title>
       </Head>
       {isAuthenticated ? (

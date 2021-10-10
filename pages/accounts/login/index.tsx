@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import { Login } from "@features/Login";
 
 export default function LoginPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("login")} | {t("logoName")}
+          {t("pages:login")} | {t("common:logoName")}
         </title>
       </Head>
       <Login />

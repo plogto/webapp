@@ -5,12 +5,12 @@ import { Wrapper } from "@components/Wrapper";
 import { Notifications } from "@features/Notifications";
 
 export default function NotificationsPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("notifications")} | {t("logoName")}
+          {t("pages:notifications")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>

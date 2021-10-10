@@ -6,12 +6,12 @@ import { FollowRequestsProvider } from "@context/FollowRequestsContext";
 import { FollowRequests } from "@features/FollowRequests";
 
 export default function FollowRequestsPage() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("followRequests")} | {t("logoName")}
+          {t("pages:followRequests")} | {t("common:logoName")}
         </title>
       </Head>
       <FollowRequestsProvider>
