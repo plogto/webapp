@@ -19,12 +19,12 @@
 
 /* Content */
 .content {
-  @apply text-lg font-light py-2 px-3.5 break-words whitespace-pre-line;
+  @apply text-base font-light py-2 px-3.5 break-words whitespace-pre-line;
 }
 
 /* Footer */
 .footer {
-  @apply border-t border-gray-100 pb-1;
+  @apply border-t border-gray-100;
 }
 
 .iconWrapper {

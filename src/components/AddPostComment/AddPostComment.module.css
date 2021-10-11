@@ -1,0 +1,18 @@
+.addCommentWrapper {
+  @apply flex items-end space-x-2.5;
+  @apply p-2 border-t border-gray-100 border-dashed;
+}
+
+.addCommentWrapper textarea {
+  @apply m-0 px-2.5 py-1.5 w-full focus:ring-0 text-sm;
+  @apply resize-none border-gray-200 rounded-lg;
+}
+
+.avatar {
+  @apply text-gray-400 w-8 h-8 mb-px;
+  @apply rounded-full shadow-sm border;
+}
+
+.send {
+  @apply text-sm font-bold text-primary-500 pr-1 mb-2;
+}

@@ -3,8 +3,16 @@ import { usePost } from "../hooks";
 import { Content, Header, Footer } from "@components/Post";
 
 export function Post() {
-  const { post, isLiked, isSaved, likePost, unlikePost, savePost, unsavePost } =
-    usePost();
+  const {
+    post,
+    isLiked,
+    isSaved,
+    likePost,
+    unlikePost,
+    savePost,
+    unsavePost,
+    addPostComment,
+  } = usePost();
 
   return post ? (
     <div className={styles.wrapper}>
@@ -20,7 +28,9 @@ export function Post() {
         unlikePost={unlikePost}
         savePost={savePost}
         unsavePost={unsavePost}
+        addPostComment={addPostComment}
         showComments
+        showAddPostComment
       />
     </div>
   ) : null;

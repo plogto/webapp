@@ -26,9 +26,9 @@ export function Comment(props: CommentProps) {
       </div>
       <div>
         <p className={styles.content}>
-          <div className={styles.fullname}>
-            <Link href={formatProfilePageRoute(username)}>{fullname}</Link>
-          </div>
+          <Link href={formatProfilePageRoute(username)}>
+            <a className={styles.fullname}>{fullname}</a>
+          </Link>
           {content}
         </p>
         <div className={styles.footer}>

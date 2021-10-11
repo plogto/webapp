@@ -1,6 +1,6 @@
 /* Header */
 .comment {
-  @apply flex space-x-3 border-t border-gray-200 border-dashed pt-2;
+  @apply flex space-x-2.5 border-t border-gray-200 border-dashed pt-2;
 }
 
 .avatar {
@@ -18,7 +18,7 @@
 
 /* Footer */
 .footer {
-  @apply flex text-xs space-x-2 mt-1 mb-2 text-gray-500;
+  @apply flex text-xs space-x-2 mt-1.5 mb-2 text-gray-500;
 }
 
 .date {
