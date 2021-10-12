@@ -12,7 +12,7 @@ import type { LoginQuery } from "@graphql/@types/auth";
 export function useLogin() {
   const formMethods = useForm<LoginForm>({ mode: "all" });
   const [login, { error, loading, data }] = useLazyQuery<LoginQuery>(LOGIN);
-  const { setIsAutheticated, setToken, setUser } = useAccountContext();
+  const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
     if (data) {
@@ -23,10 +23,10 @@ export function useLogin() {
       localStorage.setItem("Authorization", token);
       setToken(token);
       setUser(user);
-      setIsAutheticated(true);
+      setIsAuthenticated(true);
       router.push(PageUrls.HOME);
     }
-  }, [data, setToken, setUser, setIsAutheticated]);
+  }, [data, setToken, setUser, setIsAuthenticated]);
 
   const onSubmit = (variables: LoginForm) => {
     login({ variables });

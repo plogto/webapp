@@ -9,7 +9,7 @@ declare global {
   };
 
   export type SetAccountContext = {
-    setIsAutheticated: Dispatch<
+    setIsAuthenticated: Dispatch<
       SetStateAction<AccountContext["isAuthenticated"]>
     >;
     setToken: Dispatch<SetStateAction<AccountContext["token"]>>;

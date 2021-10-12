@@ -5,15 +5,15 @@ import { PageUrls } from "@enums/pages";
 
 export function useLogout() {
   const router = useRouter();
-  const { setIsAutheticated, setToken, setUser } = useAccountContext();
+  const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
-    setIsAutheticated(false);
+    setIsAuthenticated(false);
     setToken(undefined);
     setUser(undefined);
     typeof window !== "undefined"
       ? localStorage.removeItem("Authorization")
       : undefined;
     router.push(PageUrls.LOGIN);
-  }, [setIsAutheticated, setToken, setUser]);
+  }, [setIsAuthenticated, setToken, setUser]);
 }

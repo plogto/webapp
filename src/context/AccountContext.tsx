@@ -12,7 +12,7 @@ const initialAccount: AccountContext = {
 
 const AccountContext = createContext<AccountContext>(initialAccount);
 const AccountContextSetState = createContext<SetAccountContext>({
-  setIsAutheticated: () => {},
+  setIsAuthenticated: () => {},
   setToken: () => {},
   setUser: () => {},
 });
@@ -41,7 +41,7 @@ export function AccountProvider({ children }: Props) {
     >
       <AccountContextSetState.Provider
         value={{
-          setIsAutheticated: setIsAuthenticatedState,
+          setIsAuthenticated: setIsAuthenticatedState,
           setToken: setTokenState,
           setUser: setUserState,
         }}
@@ -59,16 +59,23 @@ function useAccountState() {
 }
 
 function useAccountSetState() {
-  const { setIsAutheticated, setToken, setUser } = useContext(
+  const { setIsAuthenticated, setToken, setUser } = useContext(
     AccountContextSetState,
   );
 
-  return { setIsAutheticated, setToken, setUser };
+  return { setIsAuthenticated, setToken, setUser };
 }
 
 export function useAccountContext() {
   const { isAuthenticated, token, user } = useAccountState();
-  const { setIsAutheticated, setToken, setUser } = useAccountSetState();
+  const { setIsAuthenticated, setToken, setUser } = useAccountSetState();
 
-  return { isAuthenticated, token, user, setIsAutheticated, setToken, setUser };
+  return {
+    isAuthenticated,
+    token,
+    user,
+    setIsAuthenticated,
+    setToken,
+    setUser,
+  };
 }
