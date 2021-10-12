@@ -1,6 +1,6 @@
-import { AddPostCommentProps } from "@components/AddPostComment/@types";
+import { UseFormReturn } from "react-hook-form";
 import { Post } from "@t/post";
-import { PostCommentsWithPagination } from "@t/postComment";
+import { NewComment } from "@t/postComment";
 import { PostLike } from "@t/postLike";
 import { PostSave } from "@t/postSave";
 
@@ -13,10 +13,7 @@ export type FooterPostProps = {
   savePost?: () => void;
   unsavePost?: () => void;
   commentsCounter?: number;
-  showComments?: boolean;
-  showAddPostComment?: boolean;
-  comments?: PostCommentsWithPagination;
-  addPostComment: AddPostCommentProps;
+  showCommentsCounter?: boolean;
 };
 
 export type UsePostLikeProps = {
@@ -27,4 +24,9 @@ export type UsePostLikeProps = {
 export type UsePostSaveProps = {
   id: Post["id"];
   isSaved?: PostSave;
+};
+
+export type AddCommentProps = {
+  onSubmit: (data: NewComment) => void;
+  formMethods: UseFormReturn<NewComment>;
 };

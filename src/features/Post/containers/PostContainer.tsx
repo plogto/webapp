@@ -1,6 +1,7 @@
 import styles from "../Post.module.css";
 import { usePost } from "../hooks";
-import { Content, Header, Footer } from "@components/Post";
+import { Comments } from "@components/Comments";
+import { Content, Header, Footer, AddComment } from "@components/Post";
 
 export function Post() {
   const {
@@ -11,7 +12,7 @@ export function Post() {
     unlikePost,
     savePost,
     unsavePost,
-    addPostComment,
+    addComment,
   } = usePost();
 
   return post ? (
@@ -22,16 +23,14 @@ export function Post() {
         id={post.id}
         isLiked={isLiked}
         isSaved={isSaved}
-        comments={post.comments}
         commentsCounter={post.comments?.pagination.totalDocs}
         likePost={likePost}
         unlikePost={unlikePost}
         savePost={savePost}
         unsavePost={unsavePost}
-        addPostComment={addPostComment}
-        showComments
-        showAddPostComment
       />
+      <AddComment {...addComment} />
+      <Comments comments={post.comments} />
     </div>
   ) : null;
 }

@@ -13,7 +13,7 @@ export type UsePostSaveProps = {
   isSaved?: PostSave;
 };
 
-export type UseAddPostCommentProps = {
+export type UseAddCommentProps = {
   id?: Post["id"];
   parent?: PostComment;
 };

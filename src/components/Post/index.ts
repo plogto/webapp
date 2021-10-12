@@ -1,3 +1,3 @@
-import { Footer, Header, Content } from "./components";
+import { Footer, Header, Content, AddComment } from "./components";
 
-export { Content, Header, Footer };
+export { Content, Header, Footer, AddComment };

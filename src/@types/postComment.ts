@@ -2,6 +2,10 @@ import { Pagination } from "./pagination";
 import { Post } from "./post";
 import { User } from "./user";
 
+export type NewComment = {
+  content: string;
+};
+
 export type PostComment = {
   id: string;
   user: User;

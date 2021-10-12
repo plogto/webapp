@@ -1,7 +1,5 @@
 import { FooterPostProps } from "../../@types";
 import styles from "../../Post.module.css";
-import { AddPostComment } from "@components/AddPostComment";
-import { Comments } from "@components/Comments";
 import { Icon } from "@components/Icon";
 
 export function Footer(props: FooterPostProps) {
@@ -13,10 +11,7 @@ export function Footer(props: FooterPostProps) {
     savePost,
     unsavePost,
     commentsCounter,
-    showComments,
-    showAddPostComment,
-    comments,
-    addPostComment,
+    showCommentsCounter,
   } = props;
 
   return (
@@ -49,13 +44,11 @@ export function Footer(props: FooterPostProps) {
           </button>
         )}
       </div>
-      {!showComments && !!commentsCounter && (
+      {showCommentsCounter && !!commentsCounter && (
         <div className={styles.commentsCounter}>
           View all {commentsCounter} Comments
         </div>
       )}
-      {showAddPostComment && <AddPostComment {...addPostComment} />}
-      {showComments && <Comments comments={comments} />}
     </div>
   );
 }
