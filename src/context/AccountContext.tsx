@@ -21,29 +21,27 @@ type Props = {
   children: ReactNode;
 };
 export function AccountProvider({ children }: Props) {
-  const [isAuthenticatedState, setIsAuthenticatedState] = useState<
+  const [isAuthenticated, setIsAuthenticated] = useState<
     AccountContext["isAuthenticated"]
   >(initialAccount.isAuthenticated);
-  const [tokenState, setTokenState] = useState<AccountContext["token"]>(
+  const [token, setToken] = useState<AccountContext["token"]>(
     initialAccount.token,
   );
-  const [userState, setUserState] = useState<AccountContext["user"]>(
-    initialAccount.user,
-  );
+  const [user, setUser] = useState<AccountContext["user"]>(initialAccount.user);
 
   return (
     <AccountContext.Provider
       value={{
-        isAuthenticated: isAuthenticatedState,
-        token: tokenState,
-        user: userState,
+        isAuthenticated,
+        token,
+        user,
       }}
     >
       <AccountContextSetState.Provider
         value={{
-          setIsAuthenticated: setIsAuthenticatedState,
-          setToken: setTokenState,
-          setUser: setUserState,
+          setIsAuthenticated,
+          setToken,
+          setUser,
         }}
       >
         {children}

@@ -11,20 +11,20 @@ type Props = {
 };
 
 export function ProfileProvider({ children }: Props) {
-  const [userState, setUserState] = useState<ProfileContext["user"]>();
-  const [postsState, setPostsState] = useState<ProfileContext["posts"]>();
+  const [user, setUser] = useState<ProfileContext["user"]>();
+  const [posts, setPosts] = useState<ProfileContext["posts"]>();
 
   return (
     <ProfileContext.Provider
       value={{
-        user: userState,
-        posts: postsState,
+        user,
+        posts,
       }}
     >
       <ProfileContextSetState.Provider
         value={{
-          setUser: setUserState,
-          setPosts: setPostsState,
+          setUser,
+          setPosts,
         }}
       >
         {children}

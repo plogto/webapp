@@ -14,22 +14,20 @@ type Props = {
 };
 
 export function ConnectionsProvider({ children }: Props) {
-  const [followersState, setFollowersState] =
-    useState<ConnectionAndPagination>();
-  const [followingState, setFollowingState] =
-    useState<ConnectionAndPagination>();
+  const [followers, setFollowers] = useState<ConnectionAndPagination>();
+  const [following, setFollowing] = useState<ConnectionAndPagination>();
 
   return (
     <ConnectionsContext.Provider
       value={{
-        followers: followersState,
-        following: followingState,
+        followers,
+        following,
       }}
     >
       <ConnectionsContextSetState.Provider
         value={{
-          setFollowers: setFollowersState,
-          setFollowing: setFollowingState,
+          setFollowers,
+          setFollowing,
         }}
       >
         {children}

@@ -10,14 +10,15 @@ type Props = {
 };
 
 export function FollowRequestsProvider({ children }: Props) {
-  const [followRequestsState, setFollowRequestsState] =
-    useState<FollowRequestsContext>([]);
+  const [followRequests, setFollowRequests] = useState<FollowRequestsContext>(
+    [],
+  );
 
   return (
-    <FollowRequestsContext.Provider value={followRequestsState}>
+    <FollowRequestsContext.Provider value={followRequests}>
       <FollowRequestsContextSetState.Provider
         value={{
-          setFollowRequests: setFollowRequestsState,
+          setFollowRequests,
         }}
       >
         {children}
