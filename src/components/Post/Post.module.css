@@ -58,7 +58,7 @@
   @apply resize-none border-gray-200 rounded-lg;
 }
 
-.avatar {
+.addCommentAvatar {
   @apply text-gray-400 w-8 h-8 mb-px;
   @apply rounded-full shadow-sm border;
 }

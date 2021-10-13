@@ -13,7 +13,7 @@ export function AddComment(props: AddCommentProps) {
       className={styles.addCommentWrapper}
     >
       <div>
-        <Avatar className={styles.avatar} />
+        <Avatar className={styles.addCommentAvatar} />
       </div>
       <TextareaAutosize
         {...register("content", { required: true })}
