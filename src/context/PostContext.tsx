@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
+import { PostComment } from "@t/postComment";
 
 const PostContext = createContext<PostContext>({});
 const PostContextSetState = createContext<SetPostContext>({
@@ -45,5 +52,22 @@ export function usePostContext() {
   const { post } = usePostState();
   const { setPost } = usePostSetState();
 
-  return { post, setPost };
+  const addNewPostCommentToComments = useCallback((comment: PostComment) => {
+    // TODO: fix this type
+    // @ts-expect-error ignore
+    setPost(prevState => {
+      const comments = prevState?.comments;
+      return {
+        ...prevState,
+        comments: {
+          ...comments,
+          postComments: comments
+            ? [comment, ...comments?.postComments]
+            : [comment],
+        },
+      };
+    });
+  }, []);
+
+  return { post, setPost, addNewPostCommentToComments };
 }
