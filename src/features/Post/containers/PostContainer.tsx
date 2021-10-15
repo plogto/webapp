@@ -16,7 +16,7 @@ export function Post() {
   } = usePost();
 
   return post ? (
-    <div className={styles.wrapper}>
+    <div className={styles.postContainerWrapper}>
       <Header {...post?.user} />
       <Content content={post?.content || ""} />
       <Footer

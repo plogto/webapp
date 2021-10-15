@@ -50,7 +50,7 @@
 /* Add Comment */
 .addCommentWrapper {
   @apply flex items-end space-x-2.5;
-  @apply p-2 border-t border-gray-100 border-dashed;
+  @apply p-2 border-t border-gray-200 border-dashed;
 }
 
 .addCommentWrapper textarea {
