@@ -7,6 +7,11 @@ export const ADD_POST_COMMENT = gql`
     ) {
       id
       content
+      user {
+        id
+        username
+        fullname
+      }
       updatedAt
     }
   }

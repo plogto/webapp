@@ -15,7 +15,8 @@
     }
   },
   "comment": {
-    "reply": "Reply"
+    "reply": "Reply",
+    "send": "Send"
   },
   "common": {
     "follower": "follower",
