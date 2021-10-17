@@ -8,12 +8,14 @@ import { useNavigation } from "@hooks/useNavigation";
 
 export function Comment(props: CommentProps) {
   const {
+    comment,
     comment: {
       id,
       content,
       user: { username, fullname },
       updatedAt,
     },
+    onReply,
   } = props;
   const { t } = useTranslation("comment");
   const { formatProfilePageRoute } = useNavigation();
@@ -34,7 +36,11 @@ export function Comment(props: CommentProps) {
         <div className={styles.footer}>
           <span className={styles.date}>{formatFromNow(updatedAt)}</span>
           <span>&middot;</span>
-          <button type="button" className={styles.reply}>
+          <button
+            type="button"
+            onClick={() => onReply(comment)}
+            className={styles.reply}
+          >
             {t("reply")}
           </button>
         </div>

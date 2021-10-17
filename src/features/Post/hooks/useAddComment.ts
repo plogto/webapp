@@ -9,11 +9,12 @@ import { NewComment } from "@t/postComment";
 
 export function useAddComment(props: UseAddCommentProps) {
   const { id } = props;
-  const formMethods = useForm<NewComment>({
+  const formMethods = useForm<Pick<NewComment, "content">>({
     mode: "all",
   });
 
-  const { addNewPostCommentToComments } = usePostContext();
+  const { addNewCommentToComments, removeParentForNewComment, newComment } =
+    usePostContext();
 
   const [addPostComment, addPostCommentResponse] =
     useMutation<AddPostCommentMutation>(ADD_POST_COMMENT);
@@ -21,7 +22,7 @@ export function useAddComment(props: UseAddCommentProps) {
   useEffect(() => {
     if (addPostCommentResponse.data) {
       const { reset } = formMethods;
-      addNewPostCommentToComments(addPostCommentResponse.data.addPostComment);
+      addNewCommentToComments(addPostCommentResponse.data.addPostComment);
       reset();
     }
   }, [addPostCommentResponse.data]);
@@ -32,11 +33,16 @@ export function useAddComment(props: UseAddCommentProps) {
         variables: {
           ...data,
           postId: id,
+          parentId: newComment?.parent?.id,
         },
       });
     },
-    [id],
+    [id, newComment?.parent?.id],
   );
 
-  return { onSubmit, formMethods };
+  const removeReply = useCallback(() => {
+    removeParentForNewComment();
+  }, [newComment]);
+
+  return { onSubmit, formMethods, parent: newComment?.parent, removeReply };
 }
