@@ -1,15 +1,17 @@
-.comment {
-  @apply flex space-x-2.5 border-t border-gray-200 border-dashed pt-2;
+/* Header */
+.replyWrapper {
+  @apply flex space-x-2.5 mt-2.5 mb-1;
 }
 
 .avatar {
-  @apply text-gray-400 w-8 h-8 ml-2;
+  @apply text-gray-400 w-5 h-5 mt-0.5;
   @apply rounded-full shadow-sm border;
 }
 
 .fullname {
-  @apply inline-block font-bold text-sm pr-1 text-gray-700;
+  @apply inline-block font-bold text-xs pr-1 text-gray-700;
 }
+
 /* Content */
 .content {
   @apply text-sm text-gray-700 break-words whitespace-pre-line pr-3;
@@ -17,7 +19,7 @@
 
 /* Footer */
 .footer {
-  @apply flex text-xs space-x-2 mt-1 mb-2 text-gray-500;
+  @apply flex text-xs space-x-2 my-1 text-gray-500;
 }
 
 .date {
