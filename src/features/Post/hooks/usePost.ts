@@ -1,14 +1,16 @@
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useAddComment } from "./useAddComment";
+import { usePostComment } from "./usePostComment";
+import { usePostContext } from "@context/PostContext";
 import { GetPostByUrlQuery } from "@graphql/@types/post";
 import { GET_POST_BY_URL } from "@graphql/post";
-import { Post } from "@t/post";
 import { usePostLike, usePostSave } from ".";
 
 export function usePost() {
   const router = useRouter();
-  const [post, setPost] = useState<Post>();
+  const { post, setPost } = usePostContext();
   const url = router.query.postUrl as string;
   const [getPostByUrl, getPostByUrlResponse] =
     useLazyQuery<GetPostByUrlQuery>(GET_POST_BY_URL);
@@ -22,6 +24,12 @@ export function usePost() {
     isSaved: post?.isSaved,
   });
 
+  const addComment = useAddComment({
+    id: post?.id,
+  });
+
+  const { onReply } = usePostComment();
+
   useEffect(() => {
     if (url) {
       getPostByUrl({ variables: { url } });
@@ -34,5 +42,15 @@ export function usePost() {
     }
   }, [getPostByUrlResponse]);
 
-  return { post, isLiked, likePost, unlikePost, isSaved, savePost, unsavePost };
+  return {
+    post,
+    isLiked,
+    likePost,
+    unlikePost,
+    isSaved,
+    savePost,
+    unsavePost,
+    addComment,
+    onReply,
+  };
 }

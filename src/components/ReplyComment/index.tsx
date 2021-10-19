@@ -1,20 +1,18 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CommentProps } from "./@types";
-import styles from "./Comment.module.css";
+import { ReplyCommentProps } from "./@types";
+import styles from "./ReplyComment.module.css";
 import { Avatar } from "@components/Avatar";
-import { ReplyComments } from "@components/ReplyComments";
 import { useDate } from "@hooks/useDate";
 import { useNavigation } from "@hooks/useNavigation";
 
-export function Comment(props: CommentProps) {
+export function ReplyComment(props: ReplyCommentProps) {
   const {
     comment,
     comment: {
       id,
       content,
       user: { username, fullname },
-      children,
       updatedAt,
     },
     onReply,
@@ -24,7 +22,7 @@ export function Comment(props: CommentProps) {
   const { formatFromNow } = useDate();
 
   return (
-    <div className={styles.comment} key={id}>
+    <div className={styles.replyWrapper} key={id}>
       <div className="flex-shrink-0">
         <Avatar className={styles.avatar} />
       </div>
@@ -46,11 +44,6 @@ export function Comment(props: CommentProps) {
             {t("reply")}
           </button>
         </div>
-        {!!children?.pagination.totalDocs && (
-          <div>
-            <ReplyComments comments={children} onReply={onReply} />
-          </div>
-        )}
       </div>
     </div>
   );

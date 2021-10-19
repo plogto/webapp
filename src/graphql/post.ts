@@ -32,6 +32,21 @@ export const GET_POST_BY_URL = gql`
             username
             fullname
           }
+          children {
+            postComments {
+              id
+              user {
+                id
+                username
+                fullname
+              }
+              content
+              updatedAt
+            }
+            pagination {
+              totalDocs
+            }
+          }
           content
           updatedAt
         }

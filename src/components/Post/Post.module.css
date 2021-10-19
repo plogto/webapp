@@ -4,11 +4,6 @@
   @apply p-2;
 }
 
-.avatar {
-  @apply text-gray-400 w-10 h-10 mr-2;
-  @apply rounded-full shadow-sm border;
-}
-
 .fullname {
   @apply font-bold text-sm pr-1;
 }
@@ -19,12 +14,12 @@
 
 /* Content */
 .content {
-  @apply text-lg font-light py-2 px-3.5 break-words whitespace-pre-line;
+  @apply text-base font-light py-2 px-3.5 break-words whitespace-pre-line;
 }
 
 /* Footer */
 .footer {
-  @apply border-t border-gray-100 pb-1;
+  @apply border-t border-gray-100;
 }
 
 .iconWrapper {
@@ -45,4 +40,58 @@
 
 .commentsCounter {
   @apply text-sm text-gray-500 ml-3.5 mt-1 mb-2;
+}
+
+/* Add Comment */
+.addCommentWrapper {
+  @apply p-2 border-t border-gray-200 border-dashed;
+}
+
+.addCommentForm {
+  @apply flex items-end space-x-2.5;
+}
+
+.addCommentWrapper textarea {
+  @apply m-0 px-2.5 py-1.5 w-full focus:ring-0 text-sm;
+  @apply resize-none border-gray-200 rounded-lg;
+}
+
+.send {
+  @apply text-sm font-bold text-primary-500 pr-1 mb-2;
+}
+
+/* Reply */
+.replyWrapper {
+  @apply inline-flex items-center;
+  @apply cursor-pointer text-xs mb-2 text-gray-600;
+}
+
+.reply {
+  @apply inline-flex items-center;
+  @apply p-1 ml-1.5 font-medium rounded-full;
+  @apply shadow text-gray-800;
+}
+
+.replyUsername {
+  @apply flex mx-1;
+}
+
+/* Avatars */
+
+.avatar,
+.addCommentAvatar,
+.replyAvatar {
+  @apply text-gray-400 bg-white rounded-full shadow-sm border;
+}
+
+.avatar {
+  @apply w-10 h-10 mr-2;
+}
+
+.addCommentAvatar {
+  @apply w-8 h-8 mb-px;
+}
+
+.replyAvatar {
+  @apply w-5 h-5;
 }

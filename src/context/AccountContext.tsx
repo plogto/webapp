@@ -12,7 +12,7 @@ const initialAccount: AccountContext = {
 
 const AccountContext = createContext<AccountContext>(initialAccount);
 const AccountContextSetState = createContext<SetAccountContext>({
-  setIsAutheticated: () => {},
+  setIsAuthenticated: () => {},
   setToken: () => {},
   setUser: () => {},
 });
@@ -21,29 +21,27 @@ type Props = {
   children: ReactNode;
 };
 export function AccountProvider({ children }: Props) {
-  const [isAuthenticatedState, setIsAuthenticatedState] = useState<
+  const [isAuthenticated, setIsAuthenticated] = useState<
     AccountContext["isAuthenticated"]
   >(initialAccount.isAuthenticated);
-  const [tokenState, setTokenState] = useState<AccountContext["token"]>(
+  const [token, setToken] = useState<AccountContext["token"]>(
     initialAccount.token,
   );
-  const [userState, setUserState] = useState<AccountContext["user"]>(
-    initialAccount.user,
-  );
+  const [user, setUser] = useState<AccountContext["user"]>(initialAccount.user);
 
   return (
     <AccountContext.Provider
       value={{
-        isAuthenticated: isAuthenticatedState,
-        token: tokenState,
-        user: userState,
+        isAuthenticated,
+        token,
+        user,
       }}
     >
       <AccountContextSetState.Provider
         value={{
-          setIsAutheticated: setIsAuthenticatedState,
-          setToken: setTokenState,
-          setUser: setUserState,
+          setIsAuthenticated,
+          setToken,
+          setUser,
         }}
       >
         {children}
@@ -59,16 +57,23 @@ function useAccountState() {
 }
 
 function useAccountSetState() {
-  const { setIsAutheticated, setToken, setUser } = useContext(
+  const { setIsAuthenticated, setToken, setUser } = useContext(
     AccountContextSetState,
   );
 
-  return { setIsAutheticated, setToken, setUser };
+  return { setIsAuthenticated, setToken, setUser };
 }
 
 export function useAccountContext() {
   const { isAuthenticated, token, user } = useAccountState();
-  const { setIsAutheticated, setToken, setUser } = useAccountSetState();
+  const { setIsAuthenticated, setToken, setUser } = useAccountSetState();
 
-  return { isAuthenticated, token, user, setIsAutheticated, setToken, setUser };
+  return {
+    isAuthenticated,
+    token,
+    user,
+    setIsAuthenticated,
+    setToken,
+    setUser,
+  };
 }

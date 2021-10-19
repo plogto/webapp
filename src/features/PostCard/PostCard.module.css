@@ -49,5 +49,5 @@
 }
 
 .commentsCounter {
-  @apply text-xs text-gray-500 ml-3.5 mb-2;
+  @apply text-sm text-gray-500 ml-3.5 mb-2;
 }
