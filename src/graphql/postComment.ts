@@ -6,6 +6,9 @@ export const ADD_POST_COMMENT = gql`
       input: { parentId: $parentId, postId: $postId, content: $content }
     ) {
       id
+      parent {
+        id
+      }
       content
       user {
         id

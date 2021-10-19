@@ -57,20 +57,22 @@ export function usePostContext() {
   const { setPost, setNewComment } = usePostSetState();
 
   const addNewCommentToComments = useCallback((comment: PostComment) => {
-    // TODO: fix this type
-    // @ts-expect-error ignore
-    setPost(prevState => {
-      const comments = prevState?.comments;
-      return {
-        ...prevState,
-        comments: {
-          ...comments,
-          postComments: comments
-            ? [comment, ...comments?.postComments]
-            : [comment],
-        },
-      };
-    });
+    if (!comment?.parent) {
+      // TODO: fix this type
+      // @ts-expect-error ignore
+      setPost(prevState => {
+        const comments = prevState?.comments;
+        return {
+          ...prevState,
+          comments: {
+            ...comments,
+            postComments: comments
+              ? [comment, ...comments?.postComments]
+              : [comment],
+          },
+        };
+      });
+    }
   }, []);
 
   const addParentForNewComment = useCallback((comment: PostComment) => {

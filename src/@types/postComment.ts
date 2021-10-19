@@ -11,6 +11,7 @@ export type NewComment = {
 
 export type PostComment = {
   id: string;
+  parent?: PostComment;
   user: User;
   post: Post;
   children?: PostCommentsWithPagination;
