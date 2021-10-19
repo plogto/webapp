@@ -2,12 +2,16 @@ import { Pagination } from "./pagination";
 import { Post } from "./post";
 import { User } from "./user";
 
+export type OnReply = (comment: PostComment) => void;
+
 export type NewComment = {
   content: string;
+  parent?: PostComment;
 };
 
 export type PostComment = {
   id: string;
+  parent?: PostComment;
   user: User;
   post: Post;
   children?: PostCommentsWithPagination;

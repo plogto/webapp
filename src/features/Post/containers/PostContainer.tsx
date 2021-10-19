@@ -13,6 +13,7 @@ export function Post() {
     savePost,
     unsavePost,
     addComment,
+    onReply,
   } = usePost();
 
   return post ? (
@@ -30,7 +31,7 @@ export function Post() {
         unsavePost={unsavePost}
       />
       <AddComment {...addComment} />
-      <Comments comments={post.comments} />
+      <Comments comments={post.comments} onReply={onReply} />
     </div>
   ) : null;
 }

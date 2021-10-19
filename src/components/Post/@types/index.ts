@@ -1,6 +1,6 @@
 import { UseFormReturn } from "react-hook-form";
 import { Post } from "@t/post";
-import { NewComment } from "@t/postComment";
+import { NewComment, PostComment } from "@t/postComment";
 import { PostLike } from "@t/postLike";
 import { PostSave } from "@t/postSave";
 
@@ -28,5 +28,7 @@ export type UsePostSaveProps = {
 
 export type AddCommentProps = {
   onSubmit: (data: NewComment) => void;
-  formMethods: UseFormReturn<NewComment>;
+  formMethods: UseFormReturn<Pick<NewComment, "content">>;
+  parent?: PostComment;
+  removeReply: () => void;
 };

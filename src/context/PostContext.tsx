@@ -10,6 +10,7 @@ import { PostComment } from "@t/postComment";
 const PostContext = createContext<PostContext>({});
 const PostContextSetState = createContext<SetPostContext>({
   setPost: () => {},
+  setNewComment: () => {},
 });
 
 type Props = {
@@ -18,16 +19,19 @@ type Props = {
 
 export function PostProvider({ children }: Props) {
   const [post, setPost] = useState<PostContext["post"]>();
+  const [newComment, setNewComment] = useState<PostContext["newComment"]>();
 
   return (
     <PostContext.Provider
       value={{
         post,
+        newComment,
       }}
     >
       <PostContextSetState.Provider
         value={{
           setPost,
+          setNewComment,
         }}
       >
         {children}
@@ -37,37 +41,69 @@ export function PostProvider({ children }: Props) {
 }
 
 function usePostState() {
-  const { post } = useContext(PostContext);
+  const { post, newComment } = useContext(PostContext);
 
-  return { post };
+  return { post, newComment };
 }
 
 function usePostSetState() {
-  const { setPost } = useContext(PostContextSetState);
+  const { setPost, setNewComment } = useContext(PostContextSetState);
 
-  return { setPost };
+  return { setPost, setNewComment };
 }
 
 export function usePostContext() {
-  const { post } = usePostState();
-  const { setPost } = usePostSetState();
+  const { post, newComment } = usePostState();
+  const { setPost, setNewComment } = usePostSetState();
 
-  const addNewPostCommentToComments = useCallback((comment: PostComment) => {
+  const addNewCommentToComments = useCallback((comment: PostComment) => {
+    if (!comment?.parent) {
+      // TODO: fix this type
+      // @ts-expect-error ignore
+      setPost(prevState => {
+        const comments = prevState?.comments;
+        return {
+          ...prevState,
+          comments: {
+            ...comments,
+            postComments: comments
+              ? [comment, ...comments?.postComments]
+              : [comment],
+          },
+        };
+      });
+    }
+  }, []);
+
+  const addParentForNewComment = useCallback((comment: PostComment) => {
     // TODO: fix this type
     // @ts-expect-error ignore
-    setPost(prevState => {
-      const comments = prevState?.comments;
+    setNewComment(prevState => {
       return {
         ...prevState,
-        comments: {
-          ...comments,
-          postComments: comments
-            ? [comment, ...comments?.postComments]
-            : [comment],
-        },
+        parent: comment,
       };
     });
   }, []);
 
-  return { post, setPost, addNewPostCommentToComments };
+  const removeParentForNewComment = useCallback(() => {
+    // TODO: fix this type
+    // @ts-expect-error ignore
+    setNewComment(prevState => {
+      return {
+        ...prevState,
+        parent: undefined,
+      };
+    });
+  }, []);
+
+  return {
+    post,
+    setPost,
+    newComment,
+    setNewComment,
+    addNewCommentToComments,
+    addParentForNewComment,
+    removeParentForNewComment,
+  };
 }

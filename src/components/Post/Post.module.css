@@ -4,11 +4,6 @@
   @apply p-2;
 }
 
-.avatar {
-  @apply text-gray-400 w-10 h-10 mr-2;
-  @apply rounded-full shadow-sm border;
-}
-
 .fullname {
   @apply font-bold text-sm pr-1;
 }
@@ -49,8 +44,11 @@
 
 /* Add Comment */
 .addCommentWrapper {
-  @apply flex items-end space-x-2.5;
   @apply p-2 border-t border-gray-200 border-dashed;
+}
+
+.addCommentForm {
+  @apply flex items-end space-x-2.5;
 }
 
 .addCommentWrapper textarea {
@@ -58,11 +56,42 @@
   @apply resize-none border-gray-200 rounded-lg;
 }
 
-.addCommentAvatar {
-  @apply text-gray-400 w-8 h-8 mb-px;
-  @apply rounded-full shadow-sm border;
-}
-
 .send {
   @apply text-sm font-bold text-primary-500 pr-1 mb-2;
+}
+
+/* Reply */
+.replyWrapper {
+  @apply inline-flex items-center;
+  @apply cursor-pointer text-xs mb-2 text-gray-600;
+}
+
+.reply {
+  @apply inline-flex items-center;
+  @apply p-1 ml-1.5 font-medium rounded-full;
+  @apply shadow text-gray-800;
+}
+
+.replyUsername {
+  @apply flex mx-1;
+}
+
+/* Avatars */
+
+.avatar,
+.addCommentAvatar,
+.replyAvatar {
+  @apply text-gray-400 bg-white rounded-full shadow-sm border;
+}
+
+.avatar {
+  @apply w-10 h-10 mr-2;
+}
+
+.addCommentAvatar {
+  @apply w-8 h-8 mb-px;
+}
+
+.replyAvatar {
+  @apply w-5 h-5;
 }

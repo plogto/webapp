@@ -18,6 +18,8 @@
   * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    /* TODO: add scrollbar-hide and scrollbar-default classes */
+    scrollbar-width: none;
     outline: none;
   }
 
