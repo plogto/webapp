@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styles from "./ReplyComments.module.css";
 import { ReplyComment } from "@components/ReplyComment";
-import { OnReply, PostCommentsWithPagination } from "@t/postComment";
+import { OnReply, CommentsWithPagination } from "@t/comment";
 
 // TODO: add loading prop
 type Props = {
-  comments?: PostCommentsWithPagination;
+  comments?: CommentsWithPagination;
   onReply: OnReply;
 };
 
@@ -25,7 +25,7 @@ export function ReplyComments(props: Props) {
       )}
       {showReplies && (
         <div>
-          {comments?.postComments?.map(comment => (
+          {comments?.comments?.map(comment => (
             <ReplyComment
               key={comment.id}
               comment={comment}

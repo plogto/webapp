@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { usePostContext } from "@context/PostContext";
-import { PostComment } from "@t/postComment";
+import { Comment } from "@t/comment";
 
-export function usePostComment() {
+export function useComment() {
   const { addParentForNewComment } = usePostContext();
 
-  const onReply = useCallback((comment: PostComment) => {
+  const onReply = useCallback((comment: Comment) => {
     addParentForNewComment(comment);
   }, []);
 

@@ -1,16 +1,16 @@
 import { Comment } from "@components/Comment";
-import { OnReply, PostCommentsWithPagination } from "@t/postComment";
+import { OnReply, CommentsWithPagination } from "@t/comment";
 
 // TODO: add loading prop
 type Props = {
-  comments?: PostCommentsWithPagination;
+  comments?: CommentsWithPagination;
   onReply: OnReply;
 };
 
 export function Comments({ comments, onReply }: Props) {
   return (
     <div>
-      {comments?.postComments?.map(comment => (
+      {comments?.comments?.map(comment => (
         <Comment key={comment.id} comment={comment} onReply={onReply} />
       ))}
     </div>

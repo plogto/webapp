@@ -25,7 +25,7 @@ export const GET_POST_BY_URL = gql`
         }
       }
       comments {
-        postComments {
+        comments {
           id
           user {
             id
@@ -33,7 +33,7 @@ export const GET_POST_BY_URL = gql`
             fullname
           }
           children {
-            postComments {
+            comments {
               id
               user {
                 id

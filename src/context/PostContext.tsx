@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-import { PostComment } from "@t/postComment";
+import { Comment } from "@t/comment";
 
 const PostContext = createContext<PostContext>({});
 const PostContextSetState = createContext<SetPostContext>({
@@ -56,7 +56,7 @@ export function usePostContext() {
   const { post, newComment } = usePostState();
   const { setPost, setNewComment } = usePostSetState();
 
-  const addNewCommentToComments = useCallback((comment: PostComment) => {
+  const addNewCommentToComments = useCallback((comment: Comment) => {
     if (!comment?.parent) {
       // TODO: fix this type
       // @ts-expect-error ignore
@@ -66,16 +66,17 @@ export function usePostContext() {
           ...prevState,
           comments: {
             ...comments,
-            postComments: comments
-              ? [comment, ...comments?.postComments]
+            comments: comments?.comments.length
+              ? [comment, ...comments?.comments]
               : [comment],
           },
         };
       });
     }
+    removeParentForNewComment();
   }, []);
 
-  const addParentForNewComment = useCallback((comment: PostComment) => {
+  const addParentForNewComment = useCallback((comment: Comment) => {
     // TODO: fix this type
     // @ts-expect-error ignore
     setNewComment(prevState => {
