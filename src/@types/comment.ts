@@ -1,3 +1,4 @@
+import { CommentLike } from "./commentLike";
 import { Pagination } from "./pagination";
 import { Post } from "./post";
 import { User } from "./user";
@@ -16,6 +17,7 @@ export type Comment = {
   post: Post;
   children?: CommentsWithPagination;
   content: string;
+  isLiked: CommentLike;
   createdAt: string;
   updatedAt: string;
 };

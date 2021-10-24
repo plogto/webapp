@@ -1,13 +1,16 @@
+import Link from "next/link";
 import { FooterPostCardProps } from "../../@types";
 import styles from "../../PostCard.module.css";
 import { usePostLike } from "../../hooks";
 import { Icon } from "@components/Icon";
 import { usePostSave } from "@features/PostCard/hooks/useSaveLike";
+import { useNavigation } from "@hooks/useNavigation";
 
 export function Footer(props: FooterPostCardProps) {
-  const { commentsCounter } = props;
+  const { commentsCounter, url } = props;
   const { isLiked, likePost, unlikePost } = usePostLike(props);
   const { isSaved, savePost, unsavePost } = usePostSave(props);
+  const { formatPostPageRoute } = useNavigation();
 
   return (
     <div className={styles.footer}>
@@ -40,9 +43,11 @@ export function Footer(props: FooterPostCardProps) {
         )}
       </div>
       {!!commentsCounter && (
-        <div className={styles.commentsCounter}>
-          View all {commentsCounter} Comments
-        </div>
+        <Link href={formatPostPageRoute(url)}>
+          <a className={styles.commentsCounter}>
+            View all {commentsCounter} Comments
+          </a>
+        </Link>
       )}
     </div>
   );

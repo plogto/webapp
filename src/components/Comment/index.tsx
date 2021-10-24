@@ -20,6 +20,9 @@ export function Comment(props: CommentProps) {
     },
     onReply,
     type,
+    isLiked,
+    likeComment,
+    unlikeComment,
   } = props;
   const { t } = useTranslation("comment");
   const { formatProfilePageRoute } = useNavigation();
@@ -32,18 +35,14 @@ export function Comment(props: CommentProps) {
       <div className="flex-shrink-0">
         <Avatar className={styles.avatar} />
       </div>
-      <div className="w-full">
-        <div className={styles.contentWrapper}>
-          <p className={styles.content}>
-            <Link href={formatProfilePageRoute(username)}>
-              <a className={styles.fullname}>{fullname}</a>
-            </Link>
-            {content}
-          </p>
-          <button>
-            <HeartIcon className={styles.icon} />
-          </button>
-        </div>
+      <div>
+        <p className={styles.content}>
+          <Link href={formatProfilePageRoute(username)}>
+            <a className={styles.fullname}>{fullname}</a>
+          </Link>
+          {content}
+        </p>
+
         <div className={styles.footer}>
           <span className={styles.date}>{formatFromNow(updatedAt)}</span>
           <span>&middot;</span>
@@ -54,6 +53,16 @@ export function Comment(props: CommentProps) {
           >
             {t("reply")}
           </button>
+          <span>&middot;</span>
+          {isLiked ? (
+            <button onClick={unlikeComment}>
+              <HeartIcon className={`${styles.icon} ${styles.like}`} />
+            </button>
+          ) : (
+            <button onClick={likeComment}>
+              <HeartIcon className={styles.icon} />
+            </button>
+          )}
         </div>
         {!!children?.pagination.totalDocs && (
           <div>

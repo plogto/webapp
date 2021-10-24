@@ -47,9 +47,13 @@
   @apply w-4.5 h-4.5 stroke-1 mt-0.5 text-gray-600;
 }
 
+.liked {
+  @apply text-red-500;
+}
+
 /* Footer */
 .footer {
-  @apply flex text-xs space-x-2 mt-1 mb-2 text-gray-500;
+  @apply flex items-center text-xs space-x-2 mt-1 mb-2 text-gray-500;
 }
 
 .date {
