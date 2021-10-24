@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./ReplyComments.module.css";
-import { ReplyComment } from "@components/ReplyComment";
+import { Comment } from "@components/Comment";
 import { OnReply, CommentsWithPagination } from "@t/comment";
 
 // TODO: add loading prop
@@ -20,13 +20,15 @@ export function ReplyComments(props: Props) {
           onClick={() => setShowReplies(true)}
           className={styles.repliesCounter}
         >
+          {/* TODO: use Translation */}
           View replies ({comments?.pagination.totalDocs})
         </div>
       )}
       {showReplies && (
         <div>
           {comments?.comments?.map(comment => (
-            <ReplyComment
+            <Comment
+              type="REPLY"
               key={comment.id}
               comment={comment}
               onReply={onReply}
