@@ -44,7 +44,7 @@
 
 /* Icon */
 .icon {
-  @apply w-4.5 h-4.5 stroke-1 mt-0.5 text-gray-600;
+  @apply w-4.5 h-4.5 stroke-2 mt-0.5 text-gray-600;
 }
 
 .liked {
@@ -62,4 +62,11 @@
 
 .reply {
   @apply text-gray-900 font-medium;
+}
+
+.replyCounter {
+  @apply inline-block py-0.5 px-1.5 font-medium text-xs;
+  @apply text-gray-500 bg-gray-100 hover:bg-gray-200 border;
+  @apply cursor-pointer rounded-full mb-2;
+  @apply transition-all ease-in duration-300;
 }

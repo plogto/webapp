@@ -1,10 +1,11 @@
-import { HeartIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CommentProps } from "./@types";
-import styles from "./Comment.module.css";
+import { CommentProps } from "../../@types";
+import styles from "../../Comment.module.css";
+import { Comments } from "../../containers";
+import { useComment } from "../../hooks";
 import { Avatar } from "@components/Avatar";
-import { ReplyComments } from "@components/ReplyComments";
+import { Icon } from "@components/Icon";
 import { useDate } from "@hooks/useDate";
 import { useNavigation } from "@hooks/useNavigation";
 
@@ -15,15 +16,16 @@ export function Comment(props: CommentProps) {
       id,
       content,
       user: { username, fullname },
+      isLiked: initialIsLiked,
       children,
       updatedAt,
     },
-    onReply,
     type,
-    isLiked,
-    likeComment,
-    unlikeComment,
   } = props;
+  const { onReply, isLiked, likeComment, unlikeComment } = useComment({
+    id,
+    isLiked: initialIsLiked,
+  });
   const { t } = useTranslation("comment");
   const { formatProfilePageRoute } = useNavigation();
   const { formatFromNow } = useDate();
@@ -56,17 +58,21 @@ export function Comment(props: CommentProps) {
           <span>&middot;</span>
           {isLiked ? (
             <button onClick={unlikeComment}>
-              <HeartIcon className={`${styles.icon} ${styles.like}`} />
+              <Icon
+                type="fill"
+                name="heart"
+                className={`${styles.icon} ${styles.liked}`}
+              />
             </button>
           ) : (
             <button onClick={likeComment}>
-              <HeartIcon className={styles.icon} />
+              <Icon name="heart" className={styles.icon} />
             </button>
           )}
         </div>
         {!!children?.pagination.totalDocs && (
           <div>
-            <ReplyComments comments={children} onReply={onReply} />
+            <Comments type="REPLY" comments={children} />
           </div>
         )}
       </div>

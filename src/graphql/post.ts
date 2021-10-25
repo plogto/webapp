@@ -32,6 +32,9 @@ export const GET_POST_BY_URL = gql`
             username
             fullname
           }
+          isLiked {
+            id
+          }
           children {
             comments {
               id
@@ -39,6 +42,9 @@ export const GET_POST_BY_URL = gql`
                 id
                 username
                 fullname
+              }
+              isLiked {
+                id
               }
               content
               updatedAt
