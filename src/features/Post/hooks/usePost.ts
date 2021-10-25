@@ -1,12 +1,10 @@
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useAddComment } from "./useAddComment";
-import { usePostComment } from "./usePostComment";
 import { usePostContext } from "@context/PostContext";
 import { GetPostByUrlQuery } from "@graphql/@types/post";
 import { GET_POST_BY_URL } from "@graphql/post";
-import { usePostLike, usePostSave } from ".";
+import { usePostLike, usePostSave, useAddComment } from ".";
 
 export function usePost() {
   const router = useRouter();
@@ -27,8 +25,6 @@ export function usePost() {
   const addComment = useAddComment({
     id: post?.id,
   });
-
-  const { onReply } = usePostComment();
 
   useEffect(() => {
     if (url) {
@@ -51,6 +47,5 @@ export function usePost() {
     savePost,
     unsavePost,
     addComment,
-    onReply,
   };
 }

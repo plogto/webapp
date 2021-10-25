@@ -7,6 +7,7 @@ export type FooterPostCardProps = {
   isLiked?: PostLike;
   isSaved?: PostSave;
   commentsCounter?: number;
+  url: Post["url"];
 };
 
 export type UsePostLikeProps = {

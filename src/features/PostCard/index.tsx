@@ -22,6 +22,7 @@ export function PostCard({ post }: Props) {
       </Link>
       <Footer
         id={id}
+        url={url}
         isLiked={isLiked}
         isSaved={isSaved}
         commentsCounter={comments?.pagination.totalDocs}

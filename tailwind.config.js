@@ -17,6 +17,9 @@ module.exports = {
       width: {
         146: "36.5rem",
       },
+      spacing: {
+        4.5: "1.125rem",
+      },
       strokeWidth: {
         1.5: "1.5",
       },

@@ -3,9 +3,9 @@ import { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { UseAddCommentProps } from "../@types";
 import { usePostContext } from "@context/PostContext";
-import { AddPostCommentMutation } from "@graphql/@types/postComment";
-import { ADD_POST_COMMENT } from "@graphql/postComment";
-import { NewComment } from "@t/postComment";
+import { AddCommentMutation } from "@graphql/@types/comment";
+import { ADD_POST_COMMENT } from "@graphql/comment";
+import { NewComment } from "@t/comment";
 
 export function useAddComment(props: UseAddCommentProps) {
   const { id } = props;
@@ -16,20 +16,20 @@ export function useAddComment(props: UseAddCommentProps) {
   const { addNewCommentToComments, removeParentForNewComment, newComment } =
     usePostContext();
 
-  const [addPostComment, addPostCommentResponse] =
-    useMutation<AddPostCommentMutation>(ADD_POST_COMMENT);
+  const [addComment, addCommentResponse] =
+    useMutation<AddCommentMutation>(ADD_POST_COMMENT);
 
   useEffect(() => {
-    if (addPostCommentResponse.data) {
+    if (addCommentResponse.data) {
       const { reset } = formMethods;
-      addNewCommentToComments(addPostCommentResponse.data.addPostComment);
+      addNewCommentToComments(addCommentResponse.data.addComment);
       reset();
     }
-  }, [addPostCommentResponse.data]);
+  }, [addCommentResponse.data]);
 
   const onSubmit = useCallback(
     (data: NewComment) => {
-      addPostComment({
+      addComment({
         variables: {
           ...data,
           postId: id,
