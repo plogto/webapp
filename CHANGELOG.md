@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.18.0](https://github.com/favecode/plog-fe/compare/v0.17.3...v0.18.0) (2021-10-25)
+
+
+### Features
+
+* add singleUpload graphql query ([433f54c](https://github.com/favecode/plog-fe/commit/433f54cc2cb293d8d2b304c984753eaa4da98aed))
+* add view replies button for Comment component ([8ea185a](https://github.com/favecode/plog-fe/commit/8ea185a3dbe8092709e57f49eb97535fe65efc66))
+* handle reply button for Comment component ([3b459a4](https://github.com/favecode/plog-fe/commit/3b459a4f20c94c5fbc66f2c012ba5ebb25446bb6))
+* implement addPostComment component ([eccd9a9](https://github.com/favecode/plog-fe/commit/eccd9a9885eb2bfc6886eb09635fe45c00d8a3c0))
+* implement Comment feature ([3fba2d9](https://github.com/favecode/plog-fe/commit/3fba2d922f1c18e3bb9005fea11d0a8cff5b5cc4))
+* implement like button for comment component ([a79e8b4](https://github.com/favecode/plog-fe/commit/a79e8b461131da492ba2d24292922cfde39b0280))
+* implement PostContext ([e4cfcd0](https://github.com/favecode/plog-fe/commit/e4cfcd0e98d91bcd8d8906a735fd3611bbffa492))
+
+
+### Bug Fixes
+
+* improve names ([08b33d9](https://github.com/favecode/plog-fe/commit/08b33d92997e43f891bfb08b3200ac2167a94b5e))
+
 ### [0.17.3](https://github.com/favecode/plog-fe/compare/v0.17.2...v0.17.3) (2021-10-12)
 
 ### [0.17.2](https://github.com/favecode/plog-fe/compare/v0.17.1...v0.17.2) (2021-10-10)
@@ -15,7 +33,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 * add commentCounter for PostCard feature ([019855c](https://github.com/favecode/plog-fe/commit/019855c5cc7e4a3e83c08fcdcced5a0d74d580cc))
 * add dark mode for storybook ([8fb6f34](https://github.com/favecode/plog-fe/commit/8fb6f349d345ce036ae903056402ecb5267153f3))
-* add postComment queries ([669fce8](https://github.com/favecode/plog-fe/commit/669fce8f0cd8095c0d2a9b4a7ba7ee448b80670f))
+* add comment queries ([669fce8](https://github.com/favecode/plog-fe/commit/669fce8f0cd8095c0d2a9b4a7ba7ee448b80670f))
 * implement Comment component ([8107ce2](https://github.com/favecode/plog-fe/commit/8107ce2cb166b1f766d9fb0151cc42ef5fc7e452))
 * implement Post page ([50bd65e](https://github.com/favecode/plog-fe/commit/50bd65e245517c21b1075a579d9a5f9baac50b87))
 

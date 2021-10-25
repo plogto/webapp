@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { NewComment } from "@t/postComment";
+import { NewComment } from "@t/comment";
 import type { Post } from "@t/post";
 
 declare global {

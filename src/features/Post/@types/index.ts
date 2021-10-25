@@ -1,5 +1,5 @@
+import { Comment } from "@t/comment";
 import { Post } from "@t/post";
-import { PostComment } from "@t/postComment";
 import { PostLike } from "@t/postLike";
 import { PostSave } from "@t/postSave";
 
@@ -15,5 +15,5 @@ export type UsePostSaveProps = {
 
 export type UseAddCommentProps = {
   id?: Post["id"];
-  parent?: PostComment;
+  parent?: Comment;
 };

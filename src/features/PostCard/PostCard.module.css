@@ -29,7 +29,7 @@
 
 /* Footer */
 .footer {
-  @apply border-t border-gray-100;
+  @apply flex flex-col border-t border-gray-100;
 }
 
 .iconWrapper {

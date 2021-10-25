@@ -1,7 +1,7 @@
 import styles from "../Post.module.css";
 import { usePost } from "../hooks";
-import { Comments } from "@components/Comments";
 import { Content, Header, Footer, AddComment } from "@components/Post";
+import { Comments } from "@features/Comment";
 
 export function Post() {
   const {
@@ -13,7 +13,6 @@ export function Post() {
     savePost,
     unsavePost,
     addComment,
-    onReply,
   } = usePost();
 
   return post ? (
@@ -31,7 +30,7 @@ export function Post() {
         unsavePost={unsavePost}
       />
       <AddComment {...addComment} />
-      <Comments comments={post.comments} onReply={onReply} />
+      <Comments comments={post.comments} />
     </div>
   ) : null;
 }
