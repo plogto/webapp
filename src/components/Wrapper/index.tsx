@@ -1,13 +1,9 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import { WrapperProps } from "./@types";
 import styles from "./Wrapper.module.css";
 
-type Props = {
-  children?: ReactNode;
-  className?: string;
-};
-
-export function Wrapper({ children, className }: Props) {
+export function Wrapper(props: WrapperProps) {
+  const { children, className } = props;
   const classes = classNames(styles.wrapper, className);
   return <div className={classes}>{children}</div>;
 }
