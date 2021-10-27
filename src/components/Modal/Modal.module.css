@@ -1,0 +1,56 @@
+.dialogWrapper {
+  @apply fixed inset-0 z-10 overflow-y-auto;
+}
+
+.dialog {
+  @apply min-h-screen px-4 text-center;
+}
+
+.overlay {
+  @apply fixed inset-0 bg-gray-900 bg-opacity-30;
+}
+
+.content {
+  @apply inline-block w-full max-w-md my-8;
+  @apply overflow-hidden text-left align-middle;
+  @apply transition-all transform bg-white shadow rounded-xl;
+}
+
+/* Transition */
+.enterOverlayTransition {
+  @apply ease-out duration-300;
+}
+.enterFromOverlayTransition {
+  @apply opacity-0;
+}
+.enterToOverlayTransition {
+  @apply opacity-100;
+}
+.leaveOverlayTransition {
+  @apply ease-in duration-200;
+}
+.leaveFromOverlayTransition {
+  @apply opacity-100;
+}
+.leaveToOverlayTransition {
+  @apply opacity-0;
+}
+
+.enterModalTransition {
+  @apply ease-out duration-300;
+}
+.enterFromModalTransition {
+  @apply opacity-0 scale-95;
+}
+.enterToModalTransition {
+  @apply opacity-100 scale-100;
+}
+.leaveModalTransition {
+  @apply ease-in duration-200;
+}
+.leaveFromModalTransition {
+  @apply opacity-100 scale-100;
+}
+.leaveToModalTransition {
+  @apply opacity-0 scale-95;
+}
