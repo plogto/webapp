@@ -1,13 +1,12 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { HashtagProps } from "./@types";
 import { useNavigation } from "@hooks/useNavigation";
 
-type Props = {
-  value: string;
-};
+export function Hashtag(props: HashtagProps) {
+  const { value } = props;
 
-export function Hashtag({ value }: Props) {
   const tagName = value.substring(1);
   const { formatTagPageRoute } = useNavigation();
   const { query } = useRouter();

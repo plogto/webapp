@@ -1,15 +1,15 @@
 import { HashtagIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { TagInfoProps } from "./@types";
 import styles from "./TagInfo.module.css";
 import { useNavigation } from "@hooks/useNavigation";
-import type { Tag } from "@t/tag";
 
-type Props = {
-  tag: Tag;
-};
-
-export function TagInfo({ tag: { name, count } }: Props) {
+export function TagInfo(props: TagInfoProps) {
+  const {
+    tag: { name, count },
+  } = props;
   const { formatTagPageRoute } = useNavigation();
+
   return (
     <div className={styles.wrapper}>
       {name && (

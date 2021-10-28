@@ -76,6 +76,24 @@ export function usePostContext() {
     removeParentForNewComment();
   }, []);
 
+  const removeCommentFromComments = useCallback((comment: Comment) => {
+    if (comment) {
+      // TODO: fix this type
+      // @ts-expect-error ignore
+      setPost(prevState => {
+        const comments = prevState?.comments;
+        const newComments = comments?.comments.filter(c => c.id !== comment.id);
+        return {
+          ...prevState,
+          comments: {
+            ...comments,
+            comments: comments?.comments.length ? newComments : [],
+          },
+        };
+      });
+    }
+  }, []);
+
   const addParentForNewComment = useCallback((comment: Comment) => {
     // TODO: fix this type
     // @ts-expect-error ignore
@@ -106,5 +124,6 @@ export function usePostContext() {
     addNewCommentToComments,
     addParentForNewComment,
     removeParentForNewComment,
+    removeCommentFromComments,
   };
 }
