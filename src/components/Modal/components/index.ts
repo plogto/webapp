@@ -1,3 +1,4 @@
+import { DeleteModal } from "./DeleteModal";
 import { Modal } from "./Modal";
 
-export { Modal };
+export { Modal, DeleteModal };

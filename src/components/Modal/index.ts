@@ -1,3 +1,3 @@
-import { Modal } from "./components";
+import { Modal, DeleteModal } from "./components";
 
-export { Modal };
+export { Modal, DeleteModal };

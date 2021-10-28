@@ -11,7 +11,7 @@
 }
 
 .content {
-  @apply inline-block w-full max-w-md my-8;
+  @apply inline-block w-full max-w-xs my-8;
   @apply overflow-hidden text-left align-middle;
   @apply transition-all transform bg-white shadow rounded-xl;
 }
@@ -53,4 +53,42 @@
 }
 .leaveToModalTransition {
   @apply opacity-0 scale-95;
+}
+/* Modal */
+.modalWrapper {
+  @apply p-5 flex flex-col items-center;
+}
+
+.modalTitle {
+  @apply font-bold text-xl text-center;
+}
+
+.modalDescription {
+  @apply text-sm text-gray-500 pt-2 pb-6 text-center;
+}
+
+.iconWrapper {
+  @apply flex items-center justify-center flex-grow;
+  @apply rounded-full p-4 my-6;
+}
+
+.icon {
+  @apply w-24 h-24 stroke-1.5;
+}
+
+.modalButtons {
+  @apply w-full flex items-center space-x-3;
+}
+
+.modalCancelButton,
+.modalDeleteButton {
+  @apply px-2.5 py-1.5 rounded-lg w-full;
+}
+
+.modalCancelButton {
+  @apply text-gray-900 border;
+}
+
+.modalDeleteButton {
+  @apply text-white bg-red-500;
 }
