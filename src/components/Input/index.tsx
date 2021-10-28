@@ -1,13 +1,9 @@
 import { InputProps } from "./@types";
 import styles from "./Input.module.css";
 
-export function Input({
-  type,
-  name,
-  placeholder,
-  label,
-  register,
-}: InputProps) {
+export function Input(props: InputProps) {
+  const { type, name, placeholder, label, register } = props;
+
   return (
     <div>
       {label && (

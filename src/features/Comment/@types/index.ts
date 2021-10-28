@@ -9,6 +9,7 @@ export type CommentProps = {
 export type UseCommentProps = {
   id?: Comment["id"];
   isLiked?: CommentLike;
+  user: Comment["user"];
 };
 
 export type UseCommentLikeProps = {

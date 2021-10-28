@@ -1,5 +1,5 @@
 import styles from "../Comment.module.css";
-import { Comment } from "../components/Comment";
+import { Comment } from "../components";
 import { useComments } from "../hooks";
 import { CommentsWithPagination } from "@t/comment";
 

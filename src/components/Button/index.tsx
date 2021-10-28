@@ -1,26 +1,18 @@
+import { ButtonProps } from "./@types";
 import styles from "./Button.module.css";
 import { Loading } from "@components/Loading";
-import type { MouseEventHandler, ReactNode } from "react";
 
-type ButtonProps = {
-  type?: "button" | "submit";
-  className?: string;
-  loadingClassName?: string;
-  children?: ReactNode;
-  loading?: boolean;
-  disabled?: boolean;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-};
+export function Button(props: ButtonProps) {
+  const {
+    type,
+    className,
+    loadingClassName,
+    children,
+    loading,
+    disabled,
+    onClick,
+  } = props;
 
-export function Button({
-  type,
-  className,
-  loadingClassName,
-  children,
-  loading,
-  disabled,
-  onClick,
-}: ButtonProps) {
   const classes = `
     button 
     ${loading ? styles.loading : ""} 

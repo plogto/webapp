@@ -5,6 +5,8 @@ import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CommentCircleFill from "./svg/comment-circle-fill.svg";
 import CommentCircle from "./svg/comment-circle.svg";
+import ExclamationFill from "./svg/exclamation-fill.svg";
+import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 
@@ -20,6 +22,10 @@ export const iconsList = {
   comment: {
     outline: CommentCircle,
     fill: CommentCircleFill,
+  },
+  exclamation: {
+    outline: Exclamation,
+    fill: ExclamationFill,
   },
 };
 

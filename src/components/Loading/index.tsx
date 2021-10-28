@@ -1,10 +1,7 @@
-type Props = {
-  className?: string;
-};
+import { LoadingProps } from "./@types";
 
-export function Loading(props: Props) {
+export function Loading(props: LoadingProps) {
   const { className } = props;
-
   const classes = `animate-spin text-current ${className || ""}`;
 
   return (
