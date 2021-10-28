@@ -16,7 +16,7 @@ export function AddComment(props: AddCommentProps) {
     >
       {!!parent && (
         <div onClick={() => removeReply()} className={styles.replyWrapper}>
-          <span>{t("replyTo")}</span>
+          <span>{t("texts.replyTo")}</span>
           <div className={styles.reply}>
             <div>
               <Avatar className={styles.replyAvatar} />
@@ -36,7 +36,7 @@ export function AddComment(props: AddCommentProps) {
           minRows={1}
         />
         <button type="submit" className={styles.send}>
-          Send
+          {t("buttons.send")}
         </button>
       </div>
     </form>

@@ -20,6 +20,14 @@ export const ADD_POST_COMMENT = gql`
   }
 `;
 
+export const DELETE_COMMENT = gql`
+  mutation deleteComment($commentId: ID!) {
+    deleteComment(commentId: $commentId) {
+      id
+    }
+  }
+`;
+
 export const GET_POST_COMMENTS = gql`
   query getComments($postId: ID!) {
     getComments(postId: $postId) {

@@ -15,6 +15,7 @@ export function Comment(props: CommentProps) {
     comment: {
       id,
       content,
+      user,
       user: { username, fullname },
       isLiked: initialIsLiked,
       children,
@@ -22,8 +23,16 @@ export function Comment(props: CommentProps) {
     },
     type,
   } = props;
-  const { onReply, isLiked, likeComment, unlikeComment } = useComment({
+  const {
+    onReply,
+    onDelete,
+    isLiked,
+    likeComment,
+    unlikeComment,
+    showDeleteButton,
+  } = useComment({
     id,
+    user,
     isLiked: initialIsLiked,
   });
   const { t } = useTranslation("comment");
@@ -48,14 +57,6 @@ export function Comment(props: CommentProps) {
         <div className={styles.footer}>
           <span className={styles.date}>{formatFromNow(updatedAt)}</span>
           <span>&middot;</span>
-          <button
-            type="button"
-            onClick={() => onReply(comment)}
-            className={styles.reply}
-          >
-            {t("reply")}
-          </button>
-          <span>&middot;</span>
           {isLiked ? (
             <button onClick={unlikeComment}>
               <Icon
@@ -68,6 +69,26 @@ export function Comment(props: CommentProps) {
             <button onClick={likeComment}>
               <Icon name="heart" className={styles.icon} />
             </button>
+          )}
+          <span>&middot;</span>
+          <button
+            type="button"
+            onClick={() => onReply(comment)}
+            className={styles.replyButton}
+          >
+            {t("buttons.reply")}
+          </button>
+          {showDeleteButton && (
+            <>
+              <span>&middot;</span>
+              <button
+                type="button"
+                onClick={() => onDelete()}
+                className={styles.deleteButton}
+              >
+                {t("buttons.delete")}
+              </button>
+            </>
           )}
         </div>
         {!!children?.pagination.totalDocs && (
