@@ -18,7 +18,10 @@ export function useComment(props: UseCommentProps) {
   const { user: userAccount } = useAccountContext();
   const { openModal, setContent } = useModalContext();
   const { likeComment, unlikeComment, isLiked } = useCommentLike(props);
-  const showDeleteButton = useMemo(() => userAccount?.id == user.id, [user]);
+  const showDeleteButton = useMemo(
+    () => userAccount?.id == user.id,
+    [user.id, userAccount?.id],
+  );
 
   const [deleteComment, deleteCommentResponse] =
     useMutation<DeleteCommentMutation>(DELETE_COMMENT);
