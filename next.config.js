@@ -16,4 +16,5 @@ module.exports = withPWA({
 
     return config;
   },
+  swcMinify: true,
 });

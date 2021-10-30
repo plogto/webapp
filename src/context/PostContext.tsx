@@ -62,13 +62,17 @@ export function usePostContext() {
       // @ts-expect-error ignore
       setPost(prevState => {
         const comments = prevState?.comments;
+        const newComments = [comment];
+
+        if (comments?.comments) {
+          newComments.push(...comments.comments);
+        }
+
         return {
           ...prevState,
           comments: {
             ...comments,
-            comments: comments?.comments.length
-              ? [comment, ...comments?.comments]
-              : [comment],
+            comments: newComments,
           },
         };
       });
