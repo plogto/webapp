@@ -13,6 +13,7 @@ export function Input(props: InputProps) {
       )}
       <input
         type={type}
+        id={name}
         name={name}
         placeholder={placeholder}
         className={styles.input}
