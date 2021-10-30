@@ -1,14 +1,9 @@
 import styles from "./Posts.module.css";
 import { PostCard } from "@features/PostCard";
-import type { Post } from "@t/post";
+import type { PostsProps } from "./@types";
 
-// TODO: add loading prop
-type Props = {
-  posts?: Post[];
-  className?: string;
-};
-
-export function Posts({ posts, className }: Props) {
+export function Posts(props: PostsProps) {
+  const { posts, className } = props;
   return (
     <div className={`${styles.wrapper} ${className}`}>
       {posts &&
