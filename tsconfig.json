@@ -30,7 +30,7 @@
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"]
     },
-    "types": ["jest"],
+    "types": ["jest", "@testing-library/jest-dom"],
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.ts"],
