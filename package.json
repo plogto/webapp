@@ -15,7 +15,8 @@
     "release:non-breaking": "standard-version --release-as minor",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "test": "jest"
+    "test": "jest --watch",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",

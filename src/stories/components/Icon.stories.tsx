@@ -1,8 +1,8 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react";
 
-import { Icon, iconsList } from "@components/Icon";
 import { StoryContainer } from "../StoryContainer";
+import { Icon, iconsList } from "@components/Icon";
 
 export default {
   title: "components/Icon",

@@ -1,8 +1,8 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from "react";
 
-import { Loading } from "@components/Loading";
 import { StoryContainer } from "../StoryContainer";
+import { Loading } from "@components/Loading";
 
 export default {
   title: "components/Loading",

@@ -15,7 +15,7 @@ module.exports = {
     },
   },
   verbose: true,
-  testRegex: "\\**\\**.test.(tsx|ts)$",
+  testRegex: "(/__test__/.*|\\.(test))\\.(ts|tsx)$",
   testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 };
