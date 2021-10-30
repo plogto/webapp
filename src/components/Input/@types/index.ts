@@ -5,7 +5,7 @@ export type InputTypes = "text" | "password";
 export type InputProps = {
   type: InputTypes;
   name: string;
-  label?: string;
+  label: string;
   placeholder: string;
   register?: UseFormRegisterReturn;
 };
