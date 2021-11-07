@@ -23,7 +23,7 @@ Main.args = {
 Main.argTypes = {
   name: {
     options: Object.keys(iconsList),
-    control: { type: "radio" },
+    control: { type: "select" },
   },
   type: {
     options: ["outline", "fill"],
