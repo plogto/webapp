@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 const token =
   typeof window !== "undefined"
-    ? localStorage.getItem("Authorization")
+    ? localStorage.getItem("authorization")
     : undefined;
 
 const initialAccount: AccountContext = {

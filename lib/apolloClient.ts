@@ -1,34 +1,64 @@
 import {
   ApolloClient,
   ApolloLink,
-  concat,
   createHttpLink,
   InMemoryCache,
   NormalizedCacheObject,
+  split,
 } from "@apollo/client";
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { getMainDefinition } from "@apollo/client/utilities";
 import { useMemo } from "react";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_BASE_URL + "/query",
-});
+const token =
+  typeof window !== "undefined"
+    ? localStorage.getItem("authorization")
+    : "null";
+const authorization = `Bearer ${token}`;
 
 const authLink = new ApolloLink((operation, forward) => {
-  const Authorization = localStorage.getItem("Authorization") || "null";
-
   operation.setContext({
     headers: {
-      Authorization: `Bearer ${Authorization}`,
+      authorization,
     },
   });
   return forward(operation);
 });
 
+const httpLink = authLink.concat(
+  createHttpLink({
+    uri: process.env.NEXT_PUBLIC_BASE_URL + "/query",
+  }),
+);
+
+const link = process.browser
+  ? split(
+      ({ query }) => {
+        const definition = getMainDefinition(query);
+        return (
+          definition.kind === "OperationDefinition" &&
+          definition.operation === "subscription"
+        );
+      },
+      new WebSocketLink({
+        uri: process.env.NEXT_PUBLIC_SUBSCRIPTIONS_API + "/query",
+        options: {
+          reconnect: true,
+          connectionParams: () => ({
+            authorization,
+          }),
+        },
+      }),
+      httpLink,
+    )
+  : httpLink;
+
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
-    link: concat(authLink, httpLink),
+    link,
     cache: new InMemoryCache(),
   });
 }

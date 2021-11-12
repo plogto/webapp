@@ -12,7 +12,7 @@ export function useLogout() {
     setToken(undefined);
     setUser(undefined);
     typeof window !== "undefined"
-      ? localStorage.removeItem("Authorization")
+      ? localStorage.removeItem("authorization")
       : undefined;
     router.push(PageUrls.LOGIN);
   }, [setIsAuthenticated, setToken, setUser]);
