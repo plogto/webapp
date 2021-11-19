@@ -4,7 +4,7 @@
   @apply p-2;
 }
 
-.fullname {
+.fullName {
   @apply font-bold text-sm pr-1;
 }
 

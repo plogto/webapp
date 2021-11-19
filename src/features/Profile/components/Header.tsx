@@ -11,7 +11,7 @@ import type { User } from "@t/user";
 export function Header({
   id,
   username,
-  fullname,
+  fullName,
   connectionStatus,
   isPrivate,
 }: User) {
@@ -27,7 +27,7 @@ export function Header({
       <Avatar className={styles.avatar} />
       <div className="flex items-start justify-between w-full">
         <div>
-          <div className={styles.fullname}>{fullname}</div>
+          <div className={styles.fullName}>{fullName}</div>
           <div className={styles.username}>@{username}</div>
         </div>
       </div>

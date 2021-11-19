@@ -22,7 +22,7 @@ export function AddComment(props: AddCommentProps) {
               <Avatar className={styles.replyAvatar} />
             </div>
             <span className={styles.replyUsername}>
-              {parent?.user.fullname}
+              {parent?.user.fullName}
             </span>
           </div>
         </div>

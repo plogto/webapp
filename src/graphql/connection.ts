@@ -69,7 +69,7 @@ export const GET_FOLLOW_REQUESTS = gql`
         follower {
           id
           username
-          fullname
+          fullName
         }
       }
       pagination {
@@ -91,7 +91,7 @@ export const GET_FOLLOWING_BY_USERNAME = gql`
         following {
           id
           username
-          fullname
+          fullName
           connectionStatus
         }
       }
@@ -114,7 +114,7 @@ export const GET_FOLLOWERS_BY_USERNAME = gql`
         follower {
           id
           username
-          fullname
+          fullName
           connectionStatus
         }
       }

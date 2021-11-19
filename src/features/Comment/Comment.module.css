@@ -22,14 +22,14 @@
   @apply w-5 h-5;
 }
 
-/* Fullname */
-.fullname {
+/* fullName */
+.fullName {
   @apply inline-block font-bold pr-1 text-gray-700;
 }
-.commentWrapper .fullname {
+.commentWrapper .fullName {
   @apply text-sm pr-1;
 }
-.replyWrapper .fullname {
+.replyWrapper .fullName {
   @apply text-xs pr-1;
 }
 
