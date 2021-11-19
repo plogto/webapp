@@ -13,7 +13,7 @@
   @apply bg-white rounded-full shadow-sm border;
 }
 
-.fullname {
+.fullName {
   @apply text-2xl font-bold;
 }
 

@@ -16,7 +16,7 @@ export function Comment(props: CommentProps) {
       id,
       content,
       user,
-      user: { username, fullname },
+      user: { username, fullName },
       isLiked: initialIsLiked,
       children,
       updatedAt,
@@ -49,7 +49,7 @@ export function Comment(props: CommentProps) {
       <div>
         <p className={styles.content}>
           <Link href={formatProfilePageRoute(username)}>
-            <a className={styles.fullname}>{fullname}</a>
+            <a className={styles.fullName}>{fullName}</a>
           </Link>
           {content}
         </p>

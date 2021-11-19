@@ -7,7 +7,7 @@ export const LOGIN = gql`
         id
         username
         email
-        fullname
+        fullName
       }
       authToken {
         token
