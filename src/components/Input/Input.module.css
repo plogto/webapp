@@ -7,7 +7,7 @@
 }
 
 .input {
-  @apply shadow-sm;
+  @apply shadow-sm py-2.5;
   @apply block w-full sm:text-sm border-gray-300 rounded-lg;
 }
 

@@ -8,6 +8,6 @@ export type InputProps = {
   label: string;
   placeholder: string;
   register?: UseFormRegisterReturn;
-  status?: "normal" | "error" | "success";
+  messageType?: "error" | "success";
   message?: string;
 };

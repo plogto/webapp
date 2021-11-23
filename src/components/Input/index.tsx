@@ -2,11 +2,12 @@ import { InputProps } from "./@types";
 import styles from "./Input.module.css";
 
 export function Input(props: InputProps) {
-  const { type, name, placeholder, label, register, message, status } = props;
+  const { type, name, placeholder, label, register, message, messageType } =
+    props;
 
   // TODO: fix styles type
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const wrapperClasses = `${styles.wrapper} ${styles[status as any]}`;
+  const wrapperClasses = `${styles.wrapper} ${styles[messageType as any]}`;
 
   return (
     <div className={wrapperClasses}>
