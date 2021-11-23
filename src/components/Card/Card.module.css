@@ -1,4 +1,13 @@
 .card {
   @apply bg-white dark:bg-gray-800;
-  @apply overflow-hidden shadow rounded-lg;
+  @apply overflow-hidden shadow rounded-lg relative;
+}
+
+.loadingContainer {
+  @apply flex items-center justify-center;
+  @apply absolute inset-0 bg-white z-50;
+}
+
+.loading {
+  @apply w-10 text-gray-500;
 }
