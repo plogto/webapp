@@ -1,5 +1,4 @@
-import { ReactNode } from "@reach/router/node_modules/@types/react";
-import { Dispatch, SetStateAction } from "react";
+import { ReactNode, Dispatch, SetStateAction } from "react";
 
 declare global {
   export type ModalContext = {

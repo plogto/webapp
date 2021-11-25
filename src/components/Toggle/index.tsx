@@ -1,11 +1,11 @@
 import { Switch } from "@headlessui/react";
 import classNames from "classnames";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ToggleProps } from "./@types";
 import styles from "./Toggle.module.css";
 
 export function Toggle(props: ToggleProps) {
-  const { label, className, checked } = props;
+  const { label, className, checked, onChange } = props;
   const [enabled, setEnabled] = useState(checked || false);
 
   const wrapperClasses = classNames(styles.wrapper, className);
@@ -21,14 +21,19 @@ export function Toggle(props: ToggleProps) {
     "transform",
   );
 
+  const handleChange = useCallback((value: boolean) => {
+    setEnabled(value);
+    onChange(value);
+  }, []);
+
   return (
     <Switch.Group>
       <div className={wrapperClasses}>
         {label && <Switch.Label className={styles.label}>{label}</Switch.Label>}
         <Switch
           checked={enabled}
-          onChange={setEnabled}
           className={toggleClasses}
+          onChange={handleChange}
         >
           <span className={sliderClasses} />
         </Switch>

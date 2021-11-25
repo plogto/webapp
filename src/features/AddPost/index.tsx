@@ -3,7 +3,7 @@ import styles from "./AddPost.module.css";
 import { Counter } from "./components/Counter";
 import { Header } from "./components/Header";
 import { useAddPost } from "./hooks/useAddPost";
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons/Button";
 import { CONTENT_MAX_LENGTH } from "@config";
 
 export function AddPost() {

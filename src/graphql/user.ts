@@ -7,6 +7,7 @@ export const GET_USER_INFO = gql`
       username
       email
       fullName
+      isPrivate
       followersCount
       followingCount
       followRequestsCount
@@ -26,6 +27,24 @@ export const GET_USER_BY_USERNAME = gql`
       connectionStatus
       followersCount
       followingCount
+      postsCount
+    }
+  }
+`;
+
+export const EDIT_USER = gql`
+  mutation editUser($fullName: String, $email: String, $isPrivate: Boolean) {
+    editUser(
+      input: { fullName: $fullName, email: $email, isPrivate: $isPrivate }
+    ) {
+      id
+      username
+      email
+      fullName
+      isPrivate
+      followersCount
+      followingCount
+      followRequestsCount
       postsCount
     }
   }

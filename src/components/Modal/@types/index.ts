@@ -1,4 +1,4 @@
-import { ReactNode } from "@reach/router/node_modules/@types/react";
+import { ReactNode } from "react";
 
 export type ModalProps = {
   children: ReactNode;
