@@ -6,7 +6,7 @@
 }
 
 .disabled {
-  @apply bg-gray-300 text-gray-500;
+  @apply bg-gray-300 text-gray-500 !important;
   @apply cursor-not-allowed;
 }
 
