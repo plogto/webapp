@@ -2,8 +2,16 @@ import { InputProps } from "./@types";
 import styles from "./Input.module.css";
 
 export function Input(props: InputProps) {
-  const { type, name, placeholder, label, register, message, messageType } =
-    props;
+  const {
+    type,
+    name,
+    placeholder,
+    label,
+    register,
+    message,
+    messageType,
+    ...others
+  } = props;
 
   // TODO: fix styles type
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,6 +31,7 @@ export function Input(props: InputProps) {
         placeholder={placeholder}
         className={styles.input}
         {...register}
+        {...others}
       />
       {<small className={styles.message}>{message}</small>}
     </div>
