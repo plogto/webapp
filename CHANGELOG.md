@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.20.0](https://github.com/favecode/plog-fe/compare/v0.19.3...v0.20.0) (2021-11-26)
+
+
+### Features
+
+* add bio for User type ([8e98167](https://github.com/favecode/plog-fe/commit/8e98167f315d0bbb3f07e6206f35eadb0518eb4e))
+* implement Card component ([4bdbc7b](https://github.com/favecode/plog-fe/commit/4bdbc7b06680e30e6e08d0cb928697a59598cf0c))
+* implement Settings feature ([04d05a2](https://github.com/favecode/plog-fe/commit/04d05a232b374b338030f16914ecb75fafa9826b))
+* implement Textarea component ([87476da](https://github.com/favecode/plog-fe/commit/87476da169e32c4cfabc201718cb4e1fd3157ce7))
+* implement Toggle component ([1d122a0](https://github.com/favecode/plog-fe/commit/1d122a0effa675359c5d999338b6d0d03b03c963))
+
 ### [0.19.3](https://github.com/favecode/plog-fe/compare/v0.19.2...v0.19.3) (2021-11-19)
 
 ### [0.19.2](https://github.com/favecode/plog-fe/compare/v0.19.1...v0.19.2) (2021-11-14)
