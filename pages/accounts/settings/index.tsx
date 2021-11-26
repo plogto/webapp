@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
+import { Wrapper } from "@components/Wrapper";
+import { Settings } from "@features/Settings";
 
 export default function SettingsPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -12,7 +14,9 @@ export default function SettingsPage() {
         </title>
       </Head>
       <Layout>
-        <div>Settings</div>
+        <Wrapper className="box-content">
+          <Settings />
+        </Wrapper>
       </Layout>
     </>
   );

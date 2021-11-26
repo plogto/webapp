@@ -1,10 +1,10 @@
-import { InputProps } from "./@types";
-import styles from "./Input.module.css";
+import { TextareaProps } from "./@types";
+import styles from "./Textarea.module.css";
 
-export function Input(props: InputProps) {
+export function Textarea(props: TextareaProps) {
   const {
-    type,
     name,
+    rows,
     placeholder,
     label,
     register,
@@ -24,12 +24,12 @@ export function Input(props: InputProps) {
           {label}
         </label>
       )}
-      <input
-        type={type}
+      <textarea
         id={name}
         name={name}
         placeholder={placeholder}
-        className={styles.input}
+        className={styles.textarea}
+        rows={rows || 3}
         {...register}
         {...others}
       />

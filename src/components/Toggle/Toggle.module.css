@@ -1,0 +1,21 @@
+.wrapper {
+  @apply flex items-center justify-between;
+  @apply w-full;
+}
+
+.label {
+  @apply text-sm font-medium;
+}
+
+.toggle,
+.slider {
+  @apply transition ease-in-out duration-200;
+}
+
+.toggle {
+  @apply relative inline-flex items-center h-6 rounded-full w-11;
+}
+
+.slider {
+  @apply inline-block w-4 h-4 bg-white rounded-full;
+}

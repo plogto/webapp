@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Landing.module.css";
-import { LinkButton } from "@components/LinkButton";
+import { LinkButton } from "@components/Buttons/LinkButton";
 import { PageUrls } from "@enums/pages";
 
 export function Landing() {

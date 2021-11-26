@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import styles from "../Profile.module.css";
 import { useProfile } from "../hooks";
 import { Avatar } from "@components/Avatar";
-import { LinkButton } from "@components/LinkButton";
+import { LinkButton } from "@components/Buttons/LinkButton";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { ConnectionStatus, Count } from ".";
@@ -12,6 +12,7 @@ export function Header({
   id,
   username,
   fullName,
+  bio,
   connectionStatus,
   isPrivate,
 }: User) {
@@ -31,6 +32,7 @@ export function Header({
           <div className={styles.username}>@{username}</div>
         </div>
       </div>
+      <p className={styles.bio}>{bio}</p>
       <div className="w-full flex items-end justify-between">
         <div className="flex w-full text-tiny space-x-3">
           {counts.map(count => (

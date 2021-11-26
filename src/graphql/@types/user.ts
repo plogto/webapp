@@ -7,3 +7,7 @@ export type GetUserInfoQuery = {
 export type GetUserByUsernameQuery = {
   getUserByUsername: User;
 };
+
+export type EditUserMutation = {
+  editUser: User;
+};

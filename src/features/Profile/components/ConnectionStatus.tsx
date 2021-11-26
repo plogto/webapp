@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
-import { Button } from "@components/Button";
-import { LinkButton } from "@components/LinkButton";
+import { Button } from "@components/Buttons/Button";
+import { LinkButton } from "@components/Buttons/LinkButton";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 

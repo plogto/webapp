@@ -1,10 +1,8 @@
-import { InputHTMLAttributes } from "react";
+import { TextareaHTMLAttributes } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
-export type InputTypes = "text" | "password";
-
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: InputTypes;
+export interface TextareaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label: string;
   placeholder: string;

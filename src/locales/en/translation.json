@@ -89,5 +89,22 @@
     "placeholders": {
       "search": "search"
     }
+  },
+  "settings": {
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "errors": {
+      "fullname": "Full Name is required",
+      "email": "Email is required"
+    },
+    "labels": {
+      "email": "Email",
+      "fullname": "Full Name",
+      "bio": "Bio",
+      "private": "Private Page",
+      "username": "Username"
+    }
   }
 }
