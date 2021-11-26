@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.20.1](https://github.com/favecode/plog-fe/compare/v0.20.0...v0.20.1) (2021-11-26)
+
+
+### Bug Fixes
+
+* improve toggle styles for Settings feature ([4b85e37](https://github.com/favecode/plog-fe/commit/4b85e37878d13722716c20669e7b8d43925ec99e))
+
 ## [0.20.0](https://github.com/favecode/plog-fe/compare/v0.19.3...v0.20.0) (2021-11-26)
 
 
