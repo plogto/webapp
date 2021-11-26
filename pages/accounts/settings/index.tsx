@@ -14,7 +14,7 @@ export default function SettingsPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper>
+        <Wrapper className="box-content">
           <Settings />
         </Wrapper>
       </Layout>

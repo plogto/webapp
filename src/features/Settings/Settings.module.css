@@ -1,5 +1,5 @@
 .settings {
-  @apply flex w-full pt-5;
+  @apply flex w-full pt-2 md:pt-5;
 }
 
 .header {
@@ -14,7 +14,7 @@
 
 .card {
   @apply flex flex-col;
-  @apply w-full mx-5;
+  @apply w-full mx-2 md:mx-5;
 }
 
 .cardFooter {
@@ -33,7 +33,7 @@
 
 .saveButton,
 .cancelButton {
-  @apply w-16 rounded-lg px-3 py-1.5 text-sm;
+  @apply w-full md:w-16 rounded-lg px-3 py-2 md:py-1.5 text-sm;
 }
 
 .saveButton {
