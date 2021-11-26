@@ -11,7 +11,7 @@ export function AddPost() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isValid },
     watch,
   } = formMethods;
   const { t } = useTranslation("addPost");
@@ -44,7 +44,7 @@ export function AddPost() {
             <Button
               className={styles.submit}
               loading={loading}
-              disabled={!!errors.content?.message}
+              disabled={!isValid}
               type="submit"
             >
               {t("buttons.addPost")}

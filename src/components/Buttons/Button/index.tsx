@@ -14,10 +14,12 @@ export function Button(props: ButtonProps) {
     onClick,
   } = props;
 
-  const classes = classNames(styles.button, className, {
-    [`${styles.loading}`]: loading,
-    [`${styles.disabled}`]: disabled,
-  });
+  const classes = classNames(
+    styles.button,
+    className,
+    loading && styles.loading,
+    disabled && styles.disabled,
+  );
 
   return (
     <button onClick={onClick} type={type || "button"} className={classes}>
