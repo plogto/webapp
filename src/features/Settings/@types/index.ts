@@ -5,6 +5,7 @@ export type SettingsForm = {
   username: User["username"];
   fullName: User["fullName"];
   email: User["email"];
+  bio: User["bio"];
   isPrivate: User["isPrivate"];
 };
 

@@ -11,6 +11,7 @@ export function useSettings() {
       username: user?.username,
       fullName: user?.fullName,
       email: user?.email,
+      bio: user?.bio,
       isPrivate: user?.isPrivate,
     },
   });

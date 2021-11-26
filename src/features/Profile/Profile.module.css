@@ -21,6 +21,10 @@
   @apply text-gray-500;
 }
 
+.bio {
+  @apply w-full text-sm mt-2.5;
+}
+
 .follow,
 .following,
 .settings {

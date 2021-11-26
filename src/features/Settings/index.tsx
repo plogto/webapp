@@ -8,6 +8,7 @@ import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
 import { Input } from "@components/Input";
+import { Textarea } from "@components/Textarea";
 import { Toggle } from "@components/Toggle";
 import { useNavigation } from "@hooks/useNavigation";
 
@@ -82,6 +83,16 @@ export function Settings() {
             />
           </div>
         </div>
+        <div className={`${styles.inputContainer} px-4`}>
+          <Textarea
+            name="bio"
+            placeholder={t("labels.bio")}
+            label={t("labels.bio")}
+            register={register("bio")}
+            messageType={errors.bio && "error"}
+            message={errors.bio?.message}
+          />
+        </div>
         <div className="flex space-x-3 mt-5">
           <Controller
             name="isPrivate"
@@ -97,6 +108,7 @@ export function Settings() {
             )}
           />
         </div>
+
         {user && (
           <div className={styles.cardFooter}>
             <LinkButton

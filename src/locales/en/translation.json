@@ -102,6 +102,7 @@
     "labels": {
       "email": "Email",
       "fullname": "Full Name",
+      "bio": "Bio",
       "private": "Private Page",
       "username": "Username"
     }

@@ -12,6 +12,7 @@ export function Header({
   id,
   username,
   fullName,
+  bio,
   connectionStatus,
   isPrivate,
 }: User) {
@@ -31,6 +32,7 @@ export function Header({
           <div className={styles.username}>@{username}</div>
         </div>
       </div>
+      <p className={styles.bio}>{bio}</p>
       <div className="w-full flex items-end justify-between">
         <div className="flex w-full text-tiny space-x-3">
           {counts.map(count => (

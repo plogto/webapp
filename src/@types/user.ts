@@ -5,6 +5,7 @@ export type User = {
   username: string;
   fullName: string;
   email: string;
+  bio?: string;
   isPrivate?: boolean;
   connectionStatus: number;
   followersCount: number;
