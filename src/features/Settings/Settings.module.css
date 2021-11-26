@@ -27,7 +27,7 @@
 }
 
 .toggle {
-  @apply mx-4 px-2 py-2;
+  @apply mx-4 py-2.5 px-3;
   @apply border border-gray-300 rounded-lg shadow-sm;
 }
 
