@@ -1,8 +1,0 @@
-.disabled {
-  @apply bg-gray-300 text-gray-500;
-  @apply py-2 px-3 cursor-not-allowed;
-}
-
-.loading {
-  @apply cursor-not-allowed;
-}

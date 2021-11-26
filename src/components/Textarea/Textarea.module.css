@@ -1,17 +1,17 @@
-.wrapper .input {
+.wrapper .textarea {
   @apply focus:ring-primary-500 focus:border-primary-500;
 }
 
-.wrapper.error .input {
+.wrapper.error .textarea {
   @apply focus:ring-red-500 focus:border-red-500;
 }
 
-.input {
-  @apply shadow-sm py-2.5;
+.textarea {
+  @apply shadow-sm py-2.5 resize-none;
   @apply block w-full sm:text-sm border-gray-300 rounded-lg;
 }
 
-.input::placeholder {
+.textarea::placeholder {
   @apply capitalize;
 }
 
