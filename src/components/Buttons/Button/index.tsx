@@ -23,7 +23,7 @@ export function Button(props: ButtonProps) {
 
   return (
     <button onClick={onClick} type={type || "button"} className={classes}>
-      {loading ? <Loading className={loadingClassName || "w-6"} /> : children}
+      {loading ? <Loading className={loadingClassName || "w-5"} /> : children}
     </button>
   );
 }
