@@ -45,6 +45,7 @@ export function Login() {
             loading={loading}
             type="submit"
             className={styles.submitButton}
+            loadingClassName={styles.submitButtonLoading}
           >
             {t("auth:buttons.login")}
           </Button>
