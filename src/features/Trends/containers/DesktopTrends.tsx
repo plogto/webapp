@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "../Trends.module.css";
 import { useTrends } from "../hooks/useTrends";
+import { Card } from "@components/Card";
 import { useNavigation } from "@hooks/useNavigation";
 import { formatCountTitle } from "@utils/formatter";
 
@@ -11,7 +12,7 @@ export function DesktopTrends() {
   const { t } = useTranslation("common");
   const { formatTagPageRoute } = useNavigation();
   return (
-    <div className={styles.card}>
+    <Card className={styles.card}>
       <span className={styles.header}>
         <span className={styles.title}>{t("trends")}</span>
         <TrendingUpIcon />
@@ -32,6 +33,6 @@ export function DesktopTrends() {
           </a>
         </Link>
       ))}
-    </div>
+    </Card>
   );
 }

@@ -1,4 +1,8 @@
-import { UseFormReturn } from "react-hook-form";
+import {
+  UseFormClearErrors,
+  UseFormReturn,
+  UseFormSetError,
+} from "react-hook-form";
 import type { User } from "@t/user";
 
 export type SettingsForm = {
@@ -15,4 +19,9 @@ export type SettingsProps = {
 
 export type UseEditUser = {
   user?: User;
+};
+
+export type UseEditUserValidations = {
+  setError: UseFormSetError<SettingsForm>;
+  clearErrors: UseFormClearErrors<SettingsForm>;
 };

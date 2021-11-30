@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import styles from "./Settings.module.css";
-import { useSettings } from "./hooks/useSettings";
+import { useEditUser, useEditUserValidations, useSettings } from "./hooks";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
@@ -13,7 +13,8 @@ import { Toggle } from "@components/Toggle";
 import { useNavigation } from "@hooks/useNavigation";
 
 export function Settings() {
-  const { formMethods, user, editUser, editUserResponse } = useSettings();
+  const { formMethods, user } = useSettings();
+  const { editUser, editUserResponse } = useEditUser({ user });
   const { loading } = editUserResponse;
   const { formatProfilePageRoute } = useNavigation();
   const {
@@ -23,7 +24,13 @@ export function Settings() {
     handleSubmit,
     control,
     setValue,
+    setError,
+    clearErrors,
   } = formMethods;
+  const { checkUsername, checkEmail } = useEditUserValidations({
+    setError,
+    clearErrors,
+  });
   const { t } = useTranslation("settings");
 
   const handleToggleIsPrivate = useCallback((value: boolean) => {
@@ -45,7 +52,7 @@ export function Settings() {
             register={register("fullName", {
               required: {
                 value: true,
-                message: t("errors.fullname"),
+                message: t("errors.fullnameRequired"),
               },
             })}
             messageType={errors.fullName && "error"}
@@ -53,19 +60,35 @@ export function Settings() {
           />
         </div>
         <div className="w-full flex flex-col md:flex-row md:space-x-4 px-4">
-          {false && (
-            <div className={styles.inputContainer}>
-              <Input
-                type="text"
-                name="username"
-                placeholder={t("labels.username")}
-                label={t("labels.username")}
-                register={register("username", {
-                  required: true,
-                })}
-              />
-            </div>
-          )}
+          <div className={styles.inputContainer}>
+            <Input
+              autoComplete="off"
+              type="text"
+              name="username"
+              placeholder={t("labels.username")}
+              label={t("labels.username")}
+              register={register("username", {
+                minLength: {
+                  value: 5,
+                  message: t("errors.usernameIsTooShort"),
+                },
+                required: {
+                  value: true,
+                  message: t("errors.usernameRequired"),
+                },
+                validate: (username: string) => {
+                  if (username === user?.username) {
+                    return true;
+                  } else {
+                    checkUsername(username);
+                    return false;
+                  }
+                },
+              })}
+              messageType={errors.username && "error"}
+              message={errors.username?.message}
+            />
+          </div>
           <div className={styles.inputContainer}>
             <Input
               type="text"
@@ -75,7 +98,15 @@ export function Settings() {
               register={register("email", {
                 required: {
                   value: true,
-                  message: t("errors.email"),
+                  message: t("errors.emailRequired"),
+                },
+                validate: (email: string) => {
+                  if (email === user?.email) {
+                    return true;
+                  } else {
+                    checkEmail(email);
+                    return false;
+                  }
                 },
               })}
               messageType={errors.email && "error"}

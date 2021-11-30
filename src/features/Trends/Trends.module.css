@@ -2,7 +2,6 @@
 
 .card {
   @apply flex flex-col;
-  @apply rounded-lg shadow bg-white w-full;
 }
 
 .header {
@@ -18,7 +17,9 @@
 }
 
 .tag {
+  @apply transition-all ease-linear duration-300;
   @apply flex flex-col px-4 py-3 border-t border-dashed;
+  @apply hover:bg-blue-50 overflow-hidden;
 }
 
 .tagName {

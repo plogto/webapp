@@ -1,7 +1,7 @@
 .button {
   @apply inline-flex items-center justify-center;
   @apply select-none duration-300;
-  @apply rounded-lg shadow-sm;
+  @apply rounded-lg;
   @apply cursor-pointer ring-0 focus:ring-0;
 }
 
