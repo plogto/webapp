@@ -4,11 +4,19 @@
 }
 
 .header {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center pt-10;
+}
+
+.logoContainer {
+  @apply flex flex-col items-center justify-center;
 }
 
 .logo {
-  @apply font-black md:text-9xl text-8xl text-gray-600;
+  @apply h-32 text-gray-600 mb-5;
+}
+
+.logoTitle {
+  @apply font-bold md:text-7xl text-7xl text-gray-600 uppercase;
 }
 
 .description {
