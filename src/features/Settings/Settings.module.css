@@ -42,5 +42,4 @@
 
 .cancelButton {
   @apply text-gray-800 mr-2;
-  @apply shadow-none !important;
 }

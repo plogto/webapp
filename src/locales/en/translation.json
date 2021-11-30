@@ -96,13 +96,17 @@
       "save": "Save"
     },
     "errors": {
-      "fullname": "Full Name is required",
-      "email": "Email is required"
+      "emailRequired": "Email is required",
+      "fullnameRequired": "Full Name is required",
+      "usernameRequired": "Username is required",
+      "usernameIsTooShort": "Username is too short",
+      "usernameIsAlreadyTaken": "Username is already taken",
+      "emailIsAlreadyTaken": "Email is already taken"
     },
     "labels": {
+      "bio": "Bio",
       "email": "Email",
       "fullname": "Full Name",
-      "bio": "Bio",
       "private": "Private Page",
       "username": "Username"
     }

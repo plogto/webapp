@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { SettingsForm } from "../@types";
 import { useAccountContext } from "@context/AccountContext";
-import { useEditUser } from ".";
 
 export function useSettings() {
   const { user } = useAccountContext();
@@ -16,7 +15,5 @@ export function useSettings() {
     },
   });
 
-  const { editUser, editUserResponse } = useEditUser({ user });
-
-  return { formMethods, user, editUser, editUserResponse };
+  return { formMethods, user };
 }

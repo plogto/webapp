@@ -4,6 +4,14 @@ export type GetUserInfoQuery = {
   getUserInfo: User;
 };
 
+export type CheckUsernameQuery = {
+  checkUsername: User;
+};
+
+export type CheckEmailQuery = {
+  checkEmail: User;
+};
+
 export type GetUserByUsernameQuery = {
   getUserByUsername: User;
 };
