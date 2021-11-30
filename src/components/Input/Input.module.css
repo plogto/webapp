@@ -3,7 +3,7 @@
 }
 
 .wrapper.error .input {
-  @apply focus:ring-red-500 focus:border-red-500;
+  @apply focus:ring-red-500 focus:border-red-500 bg-red-50 border-red-500;
 }
 
 .input {
