@@ -1,14 +1,18 @@
 import { useTranslation } from "react-i18next";
 import styles from "./Landing.module.css";
 import { LinkButton } from "@components/Buttons/LinkButton";
+import { Icon } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
 
 export function Landing() {
-  const { t } = useTranslation("pages");
+  const { t } = useTranslation(["pages", "common"]);
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <h1 className={styles.logo}>PLOG</h1>
+        <div className={styles.logoContainer}>
+          <Icon name="plog" className={styles.logo} />
+          <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
+        </div>
         <p className={styles.description}>
           {/* TODO: Remove this */}
           Plug + Blog + Blah Blah Blah
@@ -18,10 +22,10 @@ export function Landing() {
             href={PageUrls.REGISTER}
             className={styles.registerButton}
           >
-            {t("register")}
+            {t("pages:register")}
           </LinkButton>
           <LinkButton href={PageUrls.LOGIN} className={styles.loginButton}>
-            {t("login")}
+            {t("pages:login")}
           </LinkButton>
         </div>
       </div>

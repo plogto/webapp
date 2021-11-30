@@ -15,7 +15,7 @@ export function AppInit() {
     if (data) {
       if (data.getUserInfo) {
         setUser(data.getUserInfo);
-      } else {
+      } else if (router.asPath !== PageUrls.HOME) {
         router.push(PageUrls.LOGOUT);
       }
     }
