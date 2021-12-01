@@ -9,9 +9,15 @@ export function useEditUserValidations(props: UseEditUserValidations) {
   const { setError, clearErrors } = props;
   const { t } = useTranslation("settings");
   const [checkUsernameRequest, checkUsernameResponse] =
-    useLazyQuery<CheckUsernameQuery>(CHECK_USERNAME);
-  const [checkEmailRequest, checkEmailResponse] =
-    useLazyQuery<CheckEmailQuery>(CHECK_EMAIL);
+    useLazyQuery<CheckUsernameQuery>(CHECK_USERNAME, {
+      fetchPolicy: "no-cache",
+    });
+  const [checkEmailRequest, checkEmailResponse] = useLazyQuery<CheckEmailQuery>(
+    CHECK_EMAIL,
+    {
+      fetchPolicy: "no-cache",
+    },
+  );
 
   const checkUsername = useCallback((username: string) => {
     checkUsernameRequest({
@@ -33,7 +39,7 @@ export function useEditUserValidations(props: UseEditUserValidations) {
     } else {
       clearErrors("username");
     }
-  }, [checkUsernameResponse]);
+  }, [checkUsernameResponse.data]);
 
   useEffect(() => {
     if (checkEmailResponse.data?.checkEmail) {
@@ -43,7 +49,12 @@ export function useEditUserValidations(props: UseEditUserValidations) {
     } else {
       clearErrors("email");
     }
-  }, [checkEmailResponse]);
+  }, [checkEmailResponse.data]);
 
-  return { checkUsername, checkEmail };
+  return {
+    checkUsername,
+    checkEmail,
+    checkUsernameResponse,
+    checkEmailResponse,
+  };
 }

@@ -27,7 +27,12 @@ export function Settings() {
     setError,
     clearErrors,
   } = formMethods;
-  const { checkUsername, checkEmail } = useEditUserValidations({
+  const {
+    checkUsername,
+    checkEmail,
+    checkUsernameResponse,
+    checkEmailResponse,
+  } = useEditUserValidations({
     setError,
     clearErrors,
   });
@@ -85,7 +90,11 @@ export function Settings() {
                   }
                 },
               })}
-              messageType={errors.username && "error"}
+              messageType={
+                checkUsernameResponse.loading
+                  ? undefined
+                  : errors.username && "error"
+              }
               message={errors.username?.message}
             />
           </div>
@@ -109,7 +118,9 @@ export function Settings() {
                   }
                 },
               })}
-              messageType={errors.email && "error"}
+              messageType={
+                checkEmailResponse.loading ? undefined : errors.email && "error"
+              }
               message={errors.email?.message}
             />
           </div>
