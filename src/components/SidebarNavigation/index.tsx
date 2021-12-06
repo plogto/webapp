@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 import { Avatar } from "../Avatar";
 import styles from "./SidebarNavigation.module.css";
+import { Card } from "@components/Card";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
@@ -44,11 +45,11 @@ export function SidebarNavigation() {
 
   return user ? (
     <div className={styles.wrapper}>
-      <div className={styles.card}>
+      <Card className={styles.card}>
         <Link href={formatProfilePageRoute(user?.username)}>
           <a className={styles.header}>
             <Avatar className={styles.avatar} />
-            <span className={styles.fullname}>{user.fullname}</span>
+            <span className={styles.fullName}>{user.fullName}</span>
             <span className={styles.username}>@{user.username}</span>
           </a>
         </Link>
@@ -67,7 +68,7 @@ export function SidebarNavigation() {
             </Link>
           ))}
         </div>
-      </div>
+      </Card>
     </div>
   ) : (
     <></>

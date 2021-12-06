@@ -35,6 +35,10 @@
   @apply mr-3;
 }
 
+.filterButton:last-child {
+  @apply border border-gray-200;
+}
+
 .filterButton.active {
   @apply bg-primary-500 text-white;
 }

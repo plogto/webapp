@@ -9,6 +9,7 @@ import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
+import Plog from "./svg/plog.svg";
 
 export const iconsList = {
   heart: {
@@ -26,6 +27,11 @@ export const iconsList = {
   exclamation: {
     outline: Exclamation,
     fill: ExclamationFill,
+  },
+  plog: {
+    outline: Plog,
+    // TODO: add PlogFill icon
+    fill: Plog,
   },
 };
 

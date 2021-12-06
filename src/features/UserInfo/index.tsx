@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./UserInfo.module.css";
 import { useActions } from "./hooks/useActions";
 import { Avatar } from "@components/Avatar";
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons/Button";
 import { useAccountContext } from "@context/AccountContext";
 
 import { useNavigation } from "@hooks/useNavigation";
@@ -19,7 +19,7 @@ type Props = {
 };
 
 export function UserInfo({
-  user: { id, username, fullname, connectionStatus },
+  user: { id, username, fullName, connectionStatus },
   showAccept,
   showDelete,
   showFollow,
@@ -72,7 +72,7 @@ export function UserInfo({
           <a className={styles.userInfo}>
             <Avatar className={styles.avatar} />
             <div>
-              <div className={styles.fullname}>{fullname}</div>
+              <div className={styles.fullName}>{fullName}</div>
               <div className={styles.username}>@{username}</div>
             </div>
           </a>

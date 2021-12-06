@@ -3,8 +3,9 @@ import { Pagination } from "./pagination";
 export type User = {
   id: string;
   username: string;
-  fullname: string;
+  fullName: string;
   email: string;
+  bio?: string;
   isPrivate?: boolean;
   connectionStatus: number;
   followersCount: number;

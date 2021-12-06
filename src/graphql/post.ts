@@ -7,7 +7,7 @@ export const GET_POST_BY_URL = gql`
       user {
         id
         username
-        fullname
+        fullName
         connectionStatus
       }
       isLiked {
@@ -30,7 +30,7 @@ export const GET_POST_BY_URL = gql`
           user {
             id
             username
-            fullname
+            fullName
           }
           isLiked {
             id
@@ -41,7 +41,7 @@ export const GET_POST_BY_URL = gql`
               user {
                 id
                 username
-                fullname
+                fullName
               }
               isLiked {
                 id
@@ -76,7 +76,7 @@ export const GET_POSTS_BY_USERNAME = gql`
         user {
           id
           username
-          fullname
+          fullName
           connectionStatus
         }
         isLiked {
@@ -121,7 +121,7 @@ export const GET_POSTS_BY_TAG_NAME = gql`
         user {
           id
           username
-          fullname
+          fullName
           connectionStatus
         }
         isLiked {
@@ -165,7 +165,7 @@ export const ADD_POST = gql`
       user {
         id
         username
-        fullname
+        fullName
       }
       content
       createdAt

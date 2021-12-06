@@ -1,8 +1,11 @@
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "./Login.module.css";
 import { useLogin } from "./hooks/useLogin";
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons/Button";
+import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
+import { PageUrls } from "@enums/pages";
 
 export function Login() {
   const { formMethods, onSubmit, error, loading } = useLogin();
@@ -12,7 +15,12 @@ export function Login() {
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <h1 className={styles.logo}>{t("common:logoName")}</h1>
+        <Link href={PageUrls.HOME}>
+          <a className={styles.logoContainer}>
+            <Icon name="plog" className={styles.logo} />
+            <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
+          </a>
+        </Link>
         {error && (
           <div className="mt-3 w-full">
             <div className={styles.error}>{error.message}</div>
@@ -45,6 +53,7 @@ export function Login() {
             loading={loading}
             type="submit"
             className={styles.submitButton}
+            loadingClassName={styles.submitButtonLoading}
           >
             {t("auth:buttons.login")}
           </Button>

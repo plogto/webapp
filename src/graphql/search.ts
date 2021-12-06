@@ -8,7 +8,7 @@ export const SEARCH = gql`
           id
           username
           email
-          fullname
+          fullName
         }
       }
       tag {

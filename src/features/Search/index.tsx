@@ -5,7 +5,7 @@ import { MobileTrends } from "../Trends";
 import styles from "./Search.module.css";
 import { Tags, Users } from "./components";
 import { useSearch } from "./hooks/useSearch";
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons/Button";
 
 export function Search() {
   const { formMethods, onSubmit, result, filter, setFilter } = useSearch();

@@ -8,8 +8,16 @@
   @apply pt-8 px-5 pb-6 rounded-lg md:shadow-sm md:border md:border-gray-100;
 }
 
+.logoContainer {
+  @apply flex flex-col items-center justify-center;
+}
+
 .logo {
-  @apply text-6xl text-gray-600 font-black text-center my-4 uppercase;
+  @apply h-20 text-gray-600 mt-3 mb-1;
+}
+
+.logoTitle {
+  @apply text-5xl text-gray-600 font-bold text-center my-4 uppercase;
 }
 
 .description {
@@ -24,6 +32,10 @@
 .submitButton {
   @apply text-white bg-primary-500;
   @apply w-full px-4 py-2.5 capitalize;
+}
+
+.submitButtonLoading {
+  @apply w-5 md:w-6;
 }
 
 .registerLink {

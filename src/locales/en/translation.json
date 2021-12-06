@@ -89,5 +89,26 @@
     "placeholders": {
       "search": "search"
     }
+  },
+  "settings": {
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "errors": {
+      "emailRequired": "Email is required",
+      "fullnameRequired": "Full Name is required",
+      "usernameRequired": "Username is required",
+      "usernameIsTooShort": "Username is too short",
+      "usernameIsAlreadyTaken": "Username is already taken",
+      "emailIsAlreadyTaken": "Email is already taken"
+    },
+    "labels": {
+      "bio": "Bio",
+      "email": "Email",
+      "fullname": "Full Name",
+      "private": "Private Page",
+      "username": "Username"
+    }
   }
 }
