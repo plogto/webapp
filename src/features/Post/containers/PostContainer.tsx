@@ -1,7 +1,7 @@
 import styles from "../Post.module.css";
 import { usePost } from "../hooks";
 import { Content, Header, Footer, AddComment } from "@components/Post";
-import { Comments } from "@features/Comment";
+import { Comments } from "@features/Comments";
 
 export function Post() {
   const {
