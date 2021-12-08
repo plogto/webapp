@@ -1,5 +1,5 @@
-import { UserNotificationsWithPagination } from "@t/notification";
+import { NotificationsWithPagination } from "@t/notification";
 
 export type GetNotificationsQuery = {
-  getNotifications: UserNotificationsWithPagination;
+  getNotifications: NotificationsWithPagination;
 };

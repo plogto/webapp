@@ -29,6 +29,7 @@ export const GET_NOTIFICATIONS = gql`
         read
         createdAt
       }
+      unreadNotificationsCount
       pagination {
         totalDocs
       }

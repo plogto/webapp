@@ -24,7 +24,8 @@ export type Notification = {
   updatedAt: string;
 };
 
-export type UserNotificationsWithPagination = {
-  notifications: Notification[];
-  pagination: Pagination;
+export type NotificationsWithPagination = {
+  notifications?: Notification[];
+  unreadNotificationsCount?: number;
+  pagination?: Pagination;
 };

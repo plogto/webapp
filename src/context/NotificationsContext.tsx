@@ -1,9 +1,11 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import type { Notification } from "@t/notification";
 
-const NotificationsContext = createContext<NotificationsContext>([]);
+const NotificationsContext = createContext<NotificationsContext>({});
 const NotificationsContextSetState = createContext<SetNotificationsContext>({
   setNotifications: () => {},
+  setUnreadNotificationsCount: () => {},
+  setPagination: () => {},
 });
 
 type Props = {
@@ -11,13 +13,23 @@ type Props = {
 };
 
 export function NotificationsProvider({ children }: Props) {
-  const [notifications, setNotifications] = useState<NotificationsContext>([]);
+  const [notifications, setNotifications] = useState<
+    NotificationsContext["notifications"]
+  >([]);
+  const [unreadNotificationsCount, setUnreadNotificationsCount] =
+    useState<NotificationsContext["unreadNotificationsCount"]>();
+  const [pagination, setPagination] =
+    useState<NotificationsContext["pagination"]>();
 
   return (
-    <NotificationsContext.Provider value={notifications}>
+    <NotificationsContext.Provider
+      value={{ notifications, unreadNotificationsCount, pagination }}
+    >
       <NotificationsContextSetState.Provider
         value={{
           setNotifications,
+          setUnreadNotificationsCount,
+          setPagination,
         }}
       >
         {children}
@@ -27,24 +39,39 @@ export function NotificationsProvider({ children }: Props) {
 }
 
 function useNotificationsState() {
-  const notifications = useContext(NotificationsContext);
+  const { notifications, unreadNotificationsCount, pagination } =
+    useContext(NotificationsContext);
 
-  return notifications;
+  return { notifications, unreadNotificationsCount, pagination };
 }
 
 function useNotificationsSetState() {
-  const { setNotifications } = useContext(NotificationsContextSetState);
+  const { setNotifications, setUnreadNotificationsCount, setPagination } =
+    useContext(NotificationsContextSetState);
 
-  return { setNotifications };
+  return { setNotifications, setUnreadNotificationsCount, setPagination };
 }
 
 export function useNotificationsContext() {
-  const notifications = useNotificationsState();
-  const { setNotifications } = useNotificationsSetState();
+  const { notifications, unreadNotificationsCount, pagination } =
+    useNotificationsState();
+  const { setNotifications, setUnreadNotificationsCount, setPagination } =
+    useNotificationsSetState();
 
   const pushNotifications = (notification: Notification) => {
-    setNotifications(prevNotifications => [notification, ...prevNotifications]);
+    setNotifications(prevNotifications =>
+      prevNotifications ? [notification, ...prevNotifications] : [notification],
+    );
+    setUnreadNotificationsCount(prevCount => (prevCount ? prevCount + 1 : 1));
   };
 
-  return { notifications, setNotifications, pushNotifications };
+  return {
+    notifications,
+    unreadNotificationsCount,
+    pagination,
+    setNotifications,
+    setUnreadNotificationsCount,
+    setPagination,
+    pushNotifications,
+  };
 }

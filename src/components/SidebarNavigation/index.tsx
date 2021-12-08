@@ -1,14 +1,10 @@
-import {
-  BellIcon,
-  GlobeIcon,
-  PlusIcon,
-  ViewGridIcon,
-} from "@heroicons/react/solid";
+import { GlobeIcon, PlusIcon, ViewGridIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 import { Avatar } from "../Avatar";
 import styles from "./SidebarNavigation.module.css";
+import { NotificationIcon } from "./components/NotificationIcon";
 import { Card } from "@components/Card";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -23,7 +19,7 @@ export function SidebarNavigation() {
   const items = [
     {
       title: t("notifications"),
-      icon: <BellIcon />,
+      icon: <NotificationIcon />,
       href: PageUrls.NOTIFICATIONS,
     },
     {
