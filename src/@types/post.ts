@@ -1,8 +1,8 @@
-import { CommentsWithPagination } from "./comment";
-import { Pagination } from "./pagination";
-import { PostLike, PostLikesWithPagination } from "./postLike";
-import { PostSave } from "./postSave";
-import { User } from "./user";
+import type { CommentsWithPagination } from "./comment";
+import type { Pagination } from "./pagination";
+import type { PostLike, PostLikesWithPagination } from "./postLike";
+import type { PostSave } from "./postSave";
+import type { User } from "./user";
 
 export type Post = {
   id: string;

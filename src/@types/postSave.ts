@@ -1,6 +1,6 @@
-import { Pagination } from "./pagination";
-import { Post } from "./post";
-import { User } from "./user";
+import type { Pagination } from "./pagination";
+import type { Post } from "./post";
+import type { User } from "./user";
 
 export type PostSave = {
   id: string;

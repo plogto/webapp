@@ -1,6 +1,6 @@
-import { Comment } from "./comment";
-import { Pagination } from "./pagination";
-import { User } from "./user";
+import type { Comment } from "./comment";
+import type { Pagination } from "./pagination";
+import type { User } from "./user";
 
 export type CommentLike = {
   id: string;
