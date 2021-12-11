@@ -11,11 +11,12 @@ import styles from "./Navbar.module.css";
 import { useAccountContext } from "@context/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
+import { NavigationItem } from "@t/navigation";
 
 export function Navbar() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
-  const items = [
+  const items: NavigationItem[] = [
     {
       icon: <BellIcon />,
       href: PageUrls.NOTIFICATIONS,
