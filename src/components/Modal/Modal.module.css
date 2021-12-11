@@ -1,24 +1,25 @@
 .dialogWrapper {
-  @apply fixed inset-0 z-10 overflow-y-auto;
+  @apply fixed inset-0 z-50 overflow-y-auto;
 }
 
 .dialog {
+  @apply flex items-end md:items-center justify-center;
   @apply min-h-screen px-4 text-center;
 }
 
 .overlay {
-  @apply fixed inset-0 bg-gray-900 bg-opacity-30;
+  @apply fixed inset-0 bg-gray-900 bg-opacity-30 z-0;
 }
 
 .content {
-  @apply inline-block w-full max-w-xs my-8;
+  @apply absolute inline-block w-full max-w-xs my-8;
   @apply overflow-hidden text-left align-middle;
   @apply transition-all transform bg-white shadow rounded-xl;
 }
 
 /* Transition */
 .enterOverlayTransition {
-  @apply ease-out duration-300;
+  @apply ease-out duration-200;
 }
 .enterFromOverlayTransition {
   @apply opacity-0;
@@ -37,7 +38,7 @@
 }
 
 .enterModalTransition {
-  @apply ease-out duration-300;
+  @apply ease-out duration-200;
 }
 .enterFromModalTransition {
   @apply opacity-0 scale-95;
@@ -86,7 +87,7 @@
 }
 
 .modalCancelButton {
-  @apply text-gray-900 border;
+  @apply text-gray-900 border border-gray-200;
 }
 
 .modalDeleteButton {
