@@ -5,7 +5,7 @@ import styles from "./UserInfo.module.css";
 import { useActions } from "./hooks/useActions";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 
 import { useNavigation } from "@hooks/useNavigation";
 import type { ActionButtons } from "./@types";

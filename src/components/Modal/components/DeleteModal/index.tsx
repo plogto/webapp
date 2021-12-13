@@ -4,7 +4,7 @@ import styles from "../../Modal.module.css";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { DeleteModalProps } from "@components/Modal/@types";
-import { useModalContext } from "@context/ModalContext";
+import { useModalContext } from "@contexts/ModalContext";
 
 export function DeleteModal(props: DeleteModalProps) {
   const { onDelete } = props;

@@ -3,7 +3,7 @@ import styles from "../Profile.module.css";
 import { useConnection } from "../hooks/useConnection";
 import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 
 import type { ConnectionButtons } from "../@types";
