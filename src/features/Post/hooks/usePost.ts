@@ -1,7 +1,7 @@
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { usePostContext } from "@context/PostContext";
+import { usePostContext } from "@contexts/PostContext";
 import { GetPostByUrlQuery } from "@graphql/@types/post";
 import { GET_POST_BY_URL } from "@graphql/post";
 import { usePostLike, usePostSave, useAddComment } from ".";

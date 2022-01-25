@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useEffect } from "react";
-import { useFollowRequestsContext } from "@context/FollowRequestsContext";
+import { useFollowRequestsContext } from "@contexts/FollowRequestsContext";
 import { GET_FOLLOW_REQUESTS } from "@graphql/connection";
 import type { GetFollowRequestsQuery } from "@graphql/@types/connection";
 

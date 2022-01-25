@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import router from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { AddPostMutation } from "@graphql/@types/post";
 import { ADD_POST } from "@graphql/post";
