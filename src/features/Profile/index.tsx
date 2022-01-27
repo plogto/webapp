@@ -5,7 +5,7 @@ import { Header, NotFound } from "./components";
 import { useProfile } from "./hooks/useProfile";
 import { PageStatus } from "@components/PageStatus";
 import { Posts } from "@components/Posts";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 
 export function Profile() {
   const { user: userAccount } = useAccountContext();

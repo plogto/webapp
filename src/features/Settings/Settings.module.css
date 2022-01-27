@@ -4,7 +4,7 @@
 
 .header {
   @apply flex flex-col items-center;
-  @apply pt-5 pb-3 md:pt-4 border-b border-dashed;
+  @apply pt-5 pb-3 md:pt-4 border-b border-dashed border-gray-200;
 }
 
 .avatar {
