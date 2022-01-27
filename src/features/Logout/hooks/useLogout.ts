@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 
 export function useLogout() {

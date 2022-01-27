@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require("tailwindcss/colors");
 
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
-  jit: true,
   content: [
     "./public/**/*.html",
     "./pages/**/*.{js,ts,jsx,tsx}",

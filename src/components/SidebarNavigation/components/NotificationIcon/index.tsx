@@ -1,6 +1,6 @@
 import styles from "../../SidebarNavigation.module.css";
 import { Icon } from "@components/Icon";
-import { useNotificationsContext } from "@context/NotificationsContext";
+import { useNotificationsContext } from "@contexts/NotificationsContext";
 
 export function NotificationIcon() {
   const { unreadNotificationsCount } = useNotificationsContext();

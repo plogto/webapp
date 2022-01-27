@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { SettingsForm } from "../@types";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 
 export function useSettings() {
   const { user } = useAccountContext();

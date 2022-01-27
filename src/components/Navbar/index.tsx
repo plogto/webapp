@@ -8,14 +8,15 @@ import {
 import Link from "next/link";
 import { v4 as uuid } from "uuid";
 import styles from "./Navbar.module.css";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
+import { NavigationItem } from "@t/navigation";
 
 export function Navbar() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
-  const items = [
+  const items: NavigationItem[] = [
     {
       icon: <BellIcon />,
       href: PageUrls.NOTIFICATIONS,

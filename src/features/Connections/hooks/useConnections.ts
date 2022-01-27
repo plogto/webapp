@@ -1,7 +1,7 @@
 import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useConnectionsContext } from "@context/ConnectionsContext";
+import { useConnectionsContext } from "@contexts/ConnectionsContext";
 
 import {
   GET_FOLLOWERS_BY_USERNAME,
