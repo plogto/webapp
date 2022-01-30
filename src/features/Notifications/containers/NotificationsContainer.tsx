@@ -12,7 +12,7 @@ export function Notifications() {
     <Card className={styles.notifications}>
       <div className={styles.header}>
         <h2 className={styles.title}>{t("texts.notifications")}</h2>
-        {unreadNotificationsCount && (
+        {!!unreadNotificationsCount && (
           <span className={styles.unreadNotificationsCount}>
             {unreadNotificationsCount}
           </span>
