@@ -36,3 +36,34 @@ export const GET_NOTIFICATIONS = gql`
     }
   }
 `;
+
+export const GET_NOTIFICATION = gql`
+  subscription getNotification {
+    getNotification {
+      id
+      sender {
+        id
+        username
+        fullName
+      }
+      receiver {
+        id
+      }
+      url
+      notificationType {
+        name
+        template
+      }
+      post {
+        id
+        content
+      }
+      comment {
+        id
+        content
+      }
+      read
+      createdAt
+    }
+  }
+`;
