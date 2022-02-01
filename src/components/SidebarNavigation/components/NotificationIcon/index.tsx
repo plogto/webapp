@@ -7,7 +7,7 @@ export function NotificationIcon() {
 
   return (
     <div className="relative">
-      {unreadNotificationsCount && (
+      {!!unreadNotificationsCount && (
         <span className={styles.notificationBadge} />
       )}
       <Icon name="bell" type="fill" />
