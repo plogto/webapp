@@ -19,7 +19,8 @@
       "cancel": "Cancel",
       "delete": "Delete",
       "reply": "Reply",
-      "send": "Send"
+      "send": "Send",
+      "viewReplies": "View replies"
     },
     "modals": {
       "delete": {

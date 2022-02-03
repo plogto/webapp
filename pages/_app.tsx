@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css";
 import "@styles/globals.css";
 import "@locales";
 
@@ -7,7 +6,7 @@ import Head from "next/head";
 import { useApollo } from "../lib/apolloClient";
 import { AppInit } from "@components/AppInit";
 import { SafeHydrate } from "@components/SafeHydrate";
-import { AppContext } from "@context";
+import { AppContext } from "@contexts";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -35,6 +35,7 @@ export function Comment(props: CommentProps) {
     user,
     isLiked: initialIsLiked,
   });
+
   const { t } = useTranslation("comment");
   const { formatProfilePageRoute } = useNavigation();
   const { formatFromNow } = useDate();

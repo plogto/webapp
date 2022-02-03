@@ -1,7 +1,7 @@
 import { useLazyQuery } from "@apollo/client";
 import router from "next/router";
 import { useEffect, useState } from "react";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
