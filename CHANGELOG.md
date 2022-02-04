@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.21.0](https://github.com/favecode/plog-fe/compare/v0.20.3...v0.21.0) (2022-02-04)
+
+
+### Features
+
+* add bell icon ([8f24637](https://github.com/favecode/plog-fe/commit/8f246372c1ef60e73500f7cd6e52251adf804235))
+* add getNotification graphql query ([328b86d](https://github.com/favecode/plog-fe/commit/328b86df38b7a103952d5d91a4f84c035b0fe435))
+* add getNotifications graphql query ([1f6a21e](https://github.com/favecode/plog-fe/commit/1f6a21e735a90dffb52638c11ba2294897e4032d))
+* implement NotificationContext ([55ea85c](https://github.com/favecode/plog-fe/commit/55ea85c43a63e46e19e21fe1526c8e05fe88bfad))
+* implement Notifications feature ([6b71546](https://github.com/favecode/plog-fe/commit/6b715467b7027ccad7e9c38603065d37fcef536e))
+* implement push nofitications ([b975702](https://github.com/favecode/plog-fe/commit/b975702b1db10d86fe87a743a1fe352eb8ff4cbe))
+* implement subscription ([39144c8](https://github.com/favecode/plog-fe/commit/39144c8124c9b458f1e395e5d329c347bb37dd8e))
+
+
+### Bug Fixes
+
+* add keys for parseNotification components ([801b1e5](https://github.com/favecode/plog-fe/commit/801b1e5e8e0a5db4f980bc01349cfd99862d3c0f))
+* change fetchPolicy for validations of Settings feature ([9fcb365](https://github.com/favecode/plog-fe/commit/9fcb3654982851c5681b8903015cf09b03b4b79a))
+* modify styles of Modal component ([cd99b87](https://github.com/favecode/plog-fe/commit/cd99b879623dee5da52772fe448c4197ed29901d))
+
 ### [0.20.3](https://github.com/favecode/plog-fe/compare/v0.20.2...v0.20.3) (2021-11-30)
 
 
