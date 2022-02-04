@@ -49,3 +49,13 @@
 .navLink svg {
   @apply w-7 h-7 text-current;
 }
+
+.notificationBadge {
+  @apply absolute -top-0.5 right-0 border-2 border-white;
+  @apply w-3 h-3 rounded-full block bg-red-500;
+}
+
+.navLink:hover .notificationBadge,
+.navLink.active .notificationBadge {
+  @apply border-primary-50;
+}

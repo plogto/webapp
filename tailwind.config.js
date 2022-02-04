@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require("tailwindcss/colors");
 
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   content: [
     "./public/**/*.html",
@@ -15,6 +16,9 @@ module.exports = {
       },
       width: {
         146: "36.5rem",
+      },
+      minWidth: {
+        6: "1.5rem",
       },
       spacing: {
         4.5: "1.125rem",

@@ -12,7 +12,7 @@
 
 /* Avatar */
 .avatar {
-  @apply text-gray-400  ml-2;
+  @apply text-gray-400 ml-2;
   @apply rounded-full shadow-sm border;
 }
 .commentWrapper .avatar {

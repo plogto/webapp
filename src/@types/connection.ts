@@ -1,5 +1,5 @@
-import { Pagination } from "./pagination";
-import { User } from "./user";
+import type { Pagination } from "./pagination";
+import type { User } from "./user";
 
 export type Connection = {
   id: string;

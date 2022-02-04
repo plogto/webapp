@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import styles from "../Comment.module.css";
+import styles from "../Comments.module.css";
 import { Comment } from "../components";
 import { useComments } from "../hooks";
 import { CommentsWithPagination } from "@t/comment";

@@ -53,7 +53,8 @@
   },
   "notifications": {
     "texts": {
-      "followRequests": "follow requests"
+      "followRequests": "follow requests",
+      "notifications": "Notifications"
     }
   },
   "pages": {
@@ -97,12 +98,12 @@
       "save": "Save"
     },
     "errors": {
+      "emailIsAlreadyTaken": "Email is already taken",
       "emailRequired": "Email is required",
       "fullnameRequired": "Full Name is required",
-      "usernameRequired": "Username is required",
-      "usernameIsTooShort": "Username is too short",
       "usernameIsAlreadyTaken": "Username is already taken",
-      "emailIsAlreadyTaken": "Email is already taken"
+      "usernameIsTooShort": "Username is too short",
+      "usernameRequired": "Username is required"
     },
     "labels": {
       "bio": "Bio",

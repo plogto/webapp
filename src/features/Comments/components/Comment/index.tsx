@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { CommentProps } from "../../@types";
-import styles from "../../Comment.module.css";
+import styles from "../../Comments.module.css";
 import { Comments } from "../../containers";
 import { useComment } from "../../hooks";
 import { Avatar } from "@components/Avatar";

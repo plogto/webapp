@@ -20,7 +20,7 @@ export function useLogin() {
         authToken: { token },
         user,
       } = data.login;
-      localStorage.setItem("Authorization", token);
+      localStorage.setItem("authorization", token);
       setToken(token);
       setUser(user);
       setIsAuthenticated(true);
