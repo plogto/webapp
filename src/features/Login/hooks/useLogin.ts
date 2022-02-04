@@ -2,7 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import router from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 
 import { LOGIN } from "@graphql/auth";
@@ -20,7 +20,7 @@ export function useLogin() {
         authToken: { token },
         user,
       } = data.login;
-      localStorage.setItem("Authorization", token);
+      localStorage.setItem("authorization", token);
       setToken(token);
       setUser(user);
       setIsAuthenticated(true);

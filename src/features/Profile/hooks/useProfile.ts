@@ -2,7 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useProfileContext } from "@context/ProfileContext";
+import { useProfileContext } from "@contexts/ProfileContext";
 import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { formatCountTitle } from "@utils/formatter";

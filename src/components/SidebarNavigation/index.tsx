@@ -1,29 +1,26 @@
-import {
-  BellIcon,
-  GlobeIcon,
-  PlusIcon,
-  ViewGridIcon,
-} from "@heroicons/react/solid";
+import { GlobeIcon, PlusIcon, ViewGridIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 import { Avatar } from "../Avatar";
 import styles from "./SidebarNavigation.module.css";
+import { NotificationIcon } from "./components/NotificationIcon";
 import { Card } from "@components/Card";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
 import { useNavigation } from "@hooks/useNavigation";
+import { NavigationItem } from "@t/navigation";
 
 export function SidebarNavigation() {
   const { activeClass } = useClassName();
   const { formatProfilePageRoute } = useNavigation();
   const { user } = useAccountContext();
   const { t } = useTranslation("pages");
-  const items = [
+  const items: NavigationItem[] = [
     {
       title: t("notifications"),
-      icon: <BellIcon />,
+      icon: <NotificationIcon />,
       href: PageUrls.NOTIFICATIONS,
     },
     {

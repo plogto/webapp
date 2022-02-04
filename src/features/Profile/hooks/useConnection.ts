@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useEffect } from "react";
-import { useProfileContext } from "@context/ProfileContext";
+import { useProfileContext } from "@contexts/ProfileContext";
 import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
 import type {
   FollowUserMutation,

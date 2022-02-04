@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
 
+import BellFill from "./svg/bell-fill.svg";
+import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CommentCircleFill from "./svg/comment-circle-fill.svg";
@@ -27,6 +29,10 @@ export const iconsList = {
   exclamation: {
     outline: Exclamation,
     fill: ExclamationFill,
+  },
+  bell: {
+    outline: Bell,
+    fill: BellFill,
   },
   plog: {
     outline: Plog,

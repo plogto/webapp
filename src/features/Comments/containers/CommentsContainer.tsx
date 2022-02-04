@@ -1,4 +1,5 @@
-import styles from "../Comment.module.css";
+import { useTranslation } from "react-i18next";
+import styles from "../Comments.module.css";
 import { Comment } from "../components";
 import { useComments } from "../hooks";
 import { CommentsWithPagination } from "@t/comment";
@@ -11,6 +12,7 @@ type Props = {
 
 export function Comments(props: Props) {
   const { type, comments } = props;
+  const { t } = useTranslation("comment");
   const { showReplies, setShowReplies } = useComments();
 
   return (
@@ -22,8 +24,7 @@ export function Comments(props: Props) {
               onClick={() => setShowReplies(true)}
               className={styles.replyCounter}
             >
-              {/* TODO: use Translation */}
-              View replies ({comments?.pagination.totalDocs})
+              {t("buttons.viewReplies")} ({comments?.pagination.totalDocs})
             </div>
           )}
           {showReplies && (

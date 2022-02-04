@@ -3,7 +3,7 @@ import styles from "../Profile.module.css";
 import { useProfile } from "../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
-import { useAccountContext } from "@context/AccountContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { ConnectionStatus, Count } from ".";
 import type { User } from "@t/user";

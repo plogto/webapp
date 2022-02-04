@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useEffect } from "react";
-import { useFollowRequestsContext } from "@context/FollowRequestsContext";
+import { useFollowRequestsContext } from "@contexts/FollowRequestsContext";
 import {
   ACCEPT_USER,
   FOLLOW_USER,
