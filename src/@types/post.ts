@@ -1,4 +1,3 @@
-import type { CommentsWithPagination } from "./comment";
 import type { Pagination } from "./pagination";
 import type { PostLike, PostLikesWithPagination } from "./postLike";
 import type { PostSave } from "./postSave";
@@ -12,7 +11,7 @@ export type Post = {
   isLiked?: PostLike;
   isSaved?: PostSave;
   likes?: PostLikesWithPagination;
-  comments?: CommentsWithPagination;
+  replies?: PostsWithPagination;
   createdAt: string;
   updatedAt: string;
 };
@@ -20,4 +19,11 @@ export type Post = {
 export type PostsWithPagination = {
   posts: Post[];
   pagination: Pagination;
+};
+
+export type NewReply = {
+  postId: string;
+  content: string;
+  attachment?: string;
+  status?: string;
 };
