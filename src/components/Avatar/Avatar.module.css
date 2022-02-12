@@ -1,0 +1,7 @@
+.normal {
+  @apply w-12 h-12;
+}
+
+.small {
+  @apply w-10 h-10;
+}
