@@ -13,31 +13,49 @@ export function Header(props: HeaderPostProps) {
     onMoreButton,
     size = "normal",
     user: { username, fullName },
+    replyTo,
   } = props;
 
   const { formatProfilePageRoute } = useNavigation();
-  const sizeClasses = size === "small" && styles.small;
+  const sizeClasses = styles[size];
 
   return (
     <div className={styles.header}>
-      <Link href={formatProfilePageRoute(username)}>
-        <a className={classNames(styles.profile)}>
-          <Avatar size={size} className={styles.avatar} />
-          <div
-            className={classNames(
-              styles.userInfo,
-              isCompact && styles.isCompact,
-            )}
-          >
-            <div className={classNames(styles.fullName, sizeClasses)}>
-              {fullName}
-            </div>
-            <div className={classNames(styles.username, sizeClasses)}>
-              @{username}
-            </div>
-          </div>
-        </a>
-      </Link>
+      <a className={classNames(styles.profile)}>
+        <Link href={formatProfilePageRoute(username)}>
+          <a>
+            <Avatar size={size} className={styles.avatar} />
+          </a>
+        </Link>
+        <div className="flex flex-col justify-center">
+          <Link href={formatProfilePageRoute(username)}>
+            <a
+              className={classNames(
+                styles.userInfo,
+                isCompact && styles.isCompact,
+              )}
+            >
+              <div className={classNames(styles.fullName, sizeClasses)}>
+                {fullName}
+              </div>
+              <div className={classNames(styles.username, sizeClasses)}>
+                @{username}
+              </div>
+            </a>
+          </Link>
+          {replyTo && (
+            <Link href={formatProfilePageRoute(replyTo.username)}>
+              <a className={styles.replyTo}>
+                Replying to{" "}
+                <span
+                  className={styles.username}
+                >{`@${replyTo.username}`}</span>
+              </a>
+            </Link>
+          )}
+        </div>
+      </a>
+
       {showMoreButton && (
         <button onClick={onMoreButton} className={styles.more}>
           <Icon
