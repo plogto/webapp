@@ -1,7 +1,15 @@
-.normal {
-  @apply w-12 h-12;
-}
+.avatar {
+  @apply relative text-gray-400 bg-white rounded-full shadow-sm border z-20;
 
-.small {
-  @apply w-10 h-10;
+  &.extra {
+    @apply w-40 h-40;
+  }
+
+  &.normal {
+    @apply w-12 h-12;
+  }
+
+  &.small {
+    @apply w-10 h-10;
+  }
 }

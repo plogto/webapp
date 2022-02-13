@@ -3,8 +3,8 @@ import styles from "./Avatar.module.css";
 import type { AvatarProps } from "./@types";
 
 export function Avatar(props: AvatarProps) {
-  const { className, size } = props;
-  const classes = classNames(className, size && styles[size]);
+  const { className, size = "normal" } = props;
+  const classes = classNames(styles.avatar, className, styles[size]);
 
   return (
     <svg className={classes} fill="currentColor" viewBox="0 0 24 24">

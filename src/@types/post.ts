@@ -29,3 +29,5 @@ export type NewReply = {
 };
 
 export type PostSize = "small" | "normal";
+export type PostType = "post" | "reply";
+export type RepliesView = "none" | "quick" | "complete" | "children";
