@@ -27,3 +27,5 @@ export type NewReply = {
   attachment?: string;
   status?: string;
 };
+
+export type PostSize = "small" | "normal";

@@ -1,6 +1,6 @@
-import type { AvatarSize } from "@t/avatar";
+import type { PostSize } from "@t/post";
 
 export type AvatarProps = {
-  size: AvatarSize;
+  size: PostSize;
   className?: string;
 };

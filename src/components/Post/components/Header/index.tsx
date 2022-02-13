@@ -16,7 +16,7 @@ export function Header(props: HeaderPostProps) {
   } = props;
 
   const { formatProfilePageRoute } = useNavigation();
-  const smallClasses = size === "small" && styles.small;
+  const sizeClasses = size === "small" && styles.small;
 
   return (
     <div className={styles.header}>
@@ -29,10 +29,10 @@ export function Header(props: HeaderPostProps) {
               isCompact && styles.isCompact,
             )}
           >
-            <div className={classNames(styles.fullName, smallClasses)}>
+            <div className={classNames(styles.fullName, sizeClasses)}>
               {fullName}
             </div>
-            <div className={classNames(styles.username, smallClasses)}>
+            <div className={classNames(styles.username, sizeClasses)}>
               @{username}
             </div>
           </div>
@@ -42,7 +42,7 @@ export function Header(props: HeaderPostProps) {
         <button onClick={onMoreButton} className={styles.more}>
           <Icon
             name="dotsHorizontal"
-            className={classNames(styles.icon, smallClasses)}
+            className={classNames(styles.icon, sizeClasses)}
           />
         </button>
       )}
