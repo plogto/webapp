@@ -43,7 +43,11 @@
 
 /* Content */
 .content {
-  @apply text-base font-light py-2 px-3.5 break-words whitespace-pre-line;
+  @apply text-lg font-light py-2 px-3.5 break-words whitespace-pre-line;
+
+  &.small {
+    @apply text-base;
+  }
 }
 
 /* Footer */
