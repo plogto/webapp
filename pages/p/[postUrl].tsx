@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
 import { Wrapper } from "@components/Wrapper";
 import { PostProvider } from "@contexts/PostContext";
-import { Post } from "@features/Post";
+import { PostContainer } from "@features/Post";
 
 export default function PostPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -17,8 +17,8 @@ export default function PostPage() {
       </Head>
       <PostProvider>
         <Layout>
-          <Wrapper className="p-2 md:p-5">
-            <Post />
+          <Wrapper className="p-2 md:p-5 min-h-screen">
+            <PostContainer />
           </Wrapper>
         </Layout>
       </PostProvider>
