@@ -81,6 +81,9 @@ export const GET_POST_BY_URL = gql`
           createdAt
           updatedAt
         }
+        pagination {
+          totalDocs
+        }
       }
       content
       createdAt

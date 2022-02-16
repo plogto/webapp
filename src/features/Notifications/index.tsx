@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import styles from "../Notifications.module.css";
-import { Notification } from "../components/Notification";
-import { useNotifications } from "../hooks/useNotifications";
+import styles from "./Notifications.module.css";
+import { Notification } from "./components/Notification";
+import { useNotifications } from "./hooks/useNotifications";
 import { Card } from "@components/Card";
 
 export function Notifications() {

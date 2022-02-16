@@ -17,7 +17,7 @@ export type Notification = {
   sender: User;
   receiver: User;
   post?: Post;
-  comment?: Comment;
+  reply?: Post;
   url: string;
   read?: boolean;
   createdAt: string;
