@@ -9,6 +9,6 @@ export const postParser = {
   RIGHT_TRIM_PATTERN: /___\$\$\$$/gim,
 };
 
-export const notificationParser = {
+export const NOTIFICATION_PARSER = {
   KEY_PATTERN: /(\$\$\$___[a-z.]+___\$\$\$)(?!;)/gim,
 };
