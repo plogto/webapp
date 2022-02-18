@@ -1,7 +1,7 @@
 import anchorme from "anchorme";
 import { ReactNode } from "react";
 import { v4 as uuid } from "uuid";
-import { HASHTAG_PATTERN, postParser } from "@config";
+import { HASHTAG_PATTERN, POST_PARSER } from "@config";
 
 import type { ParsePostProps, PostStore } from "./@types";
 
@@ -27,12 +27,12 @@ export function usePostParser() {
       ],
     });
 
-    const keys = result.split(postParser.KEY_PATTERN);
+    const keys = result.split(POST_PARSER.KEY_PATTERN);
 
     return keys.map(item => {
-      if (item.match(postParser.KEY_PATTERN)) {
-        let key = item.replace(postParser.LEFT_TRIM_PATTERN, "");
-        key = key.replace(postParser.RIGHT_TRIM_PATTERN, "");
+      if (item.match(POST_PARSER.KEY_PATTERN)) {
+        let key = item.replace(POST_PARSER.LEFT_TRIM_PATTERN, "");
+        key = key.replace(POST_PARSER.RIGHT_TRIM_PATTERN, "");
         return store[`${key}`].component;
       } else {
         return item;
