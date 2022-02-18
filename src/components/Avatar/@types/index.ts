@@ -1,4 +1,4 @@
-import type { AvatarSize } from "@t/avatar";
+import type { AvatarSize } from "@t/size";
 
 export type AvatarProps = {
   size?: AvatarSize;

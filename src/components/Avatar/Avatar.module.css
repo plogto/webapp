@@ -5,11 +5,15 @@
     @apply w-40 h-40;
   }
 
+  &.large {
+    @apply w-24 h-24;
+  }
+
   &.normal {
     @apply w-12 h-12;
   }
 
   &.small {
-    @apply w-10 h-10;
+    @apply w-9 h-9;
   }
 }
