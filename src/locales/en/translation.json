@@ -14,24 +14,6 @@
       "username": "username"
     }
   },
-  "comment": {
-    "buttons": {
-      "cancel": "Cancel",
-      "delete": "Delete",
-      "reply": "Reply",
-      "send": "Send",
-      "viewReplies": "View replies"
-    },
-    "modals": {
-      "delete": {
-        "description": "Are you sure you want to delete your comment?",
-        "title": "Delete Comment"
-      }
-    },
-    "texts": {
-      "replyTo": "Reply to"
-    }
-  },
   "common": {
     "follower": "follower",
     "followers": "followers",

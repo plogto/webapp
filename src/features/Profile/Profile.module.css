@@ -9,8 +9,7 @@
 }
 
 .avatar {
-  @apply w-24 h-24 md:w-24 md:h-24 text-gray-400;
-  @apply bg-white rounded-full shadow-sm border;
+  @apply w-24 h-24 md:w-24 md:h-24;
 }
 
 .fullName {

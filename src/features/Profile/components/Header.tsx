@@ -25,7 +25,7 @@ export function Header({
 
   return (
     <div className={styles.header}>
-      <Avatar className={styles.avatar} />
+      <Avatar size="large" className={styles.avatar} />
       <div className="flex items-start justify-between w-full">
         <div>
           <div className={styles.fullName}>{fullName}</div>
