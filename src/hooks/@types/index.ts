@@ -16,3 +16,8 @@ export type PostStore = {
     component?: ReactNode;
   };
 };
+
+export type IsEditProps = {
+  createdAt: string;
+  updatedAt: string;
+};
