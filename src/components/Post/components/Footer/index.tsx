@@ -1,54 +1,57 @@
-import { FooterPostProps } from "../../@types";
+import classNames from "classnames";
 import styles from "../../Post.module.css";
 import { Icon } from "@components/Icon";
+import type { FooterPostProps } from "../../@types";
 
 export function Footer(props: FooterPostProps) {
   const {
+    size = "normal",
     isLiked,
     likePost,
     unlikePost,
     isSaved,
     savePost,
     unsavePost,
-    commentsCounter,
-    showCommentsCounter,
   } = props;
 
+  const wrapperClasses = classNames(styles.footer, styles[size]);
+  const bookmarkIconClasses = classNames(
+    isSaved?.id && styles.saved,
+    styles.icon,
+    styles[size],
+  );
+  const likeIconClasses = classNames(
+    isLiked?.id && styles.liked,
+    styles.icon,
+    styles[size],
+  );
+
   return (
-    <div className={styles.footer}>
+    <div className={wrapperClasses}>
       <div>
-        {isSaved ? (
+        {isSaved?.id ? (
           <button className={styles.iconWrapper} onClick={unsavePost}>
-            <Icon
-              name="bookmark"
-              type="fill"
-              className={`${styles.icon} ${styles.saved}`}
-            />
+            <Icon name="bookmark" type="fill" className={bookmarkIconClasses} />
           </button>
         ) : (
           <button className={styles.iconWrapper} onClick={savePost}>
-            <Icon name="bookmark" type="outline" className={styles.icon} />
+            <Icon
+              name="bookmark"
+              type="outline"
+              className={bookmarkIconClasses}
+            />
           </button>
         )}
-        {isLiked ? (
+        {isLiked?.id ? (
           <button className={styles.iconWrapper} onClick={unlikePost}>
-            <Icon
-              name="heart"
-              type="fill"
-              className={`${styles.icon} ${styles.liked}`}
-            />
+            <Icon name="heart" type="fill" className={likeIconClasses} />
           </button>
         ) : (
           <button className={styles.iconWrapper} onClick={likePost}>
-            <Icon name="heart" type="outline" className={styles.icon} />
+            <Icon name="heart" type="outline" className={likeIconClasses} />
           </button>
         )}
       </div>
-      {showCommentsCounter && !!commentsCounter && (
-        <div className={styles.commentsCounter}>
-          View all {commentsCounter} Comments
-        </div>
-      )}
     </div>
   );
 }

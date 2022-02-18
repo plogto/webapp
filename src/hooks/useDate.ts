@@ -1,9 +1,9 @@
 import { DateTime } from "luxon";
-import { IsEditProps } from "./@types";
 import { DateType } from "@enums";
+import type { FormatFromNowProps, IsEditProps } from "./@types";
 
 export function useDate() {
-  function formatFromNow(date: string, type: DateType) {
+  function formatFromNow({ date, type }: FormatFromNowProps) {
     const dateTime = DateTime.fromISO(date);
     const time =
       type === DateType.SHORT

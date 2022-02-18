@@ -1,4 +1,3 @@
-import type { Comment } from "./comment";
 import type { Pagination } from "./pagination";
 import type { Post } from "./post";
 import type { User } from "./user";

@@ -8,60 +8,44 @@ import type { HeaderPostProps } from "@components/Post/@types";
 
 export function Header(props: HeaderPostProps) {
   const {
-    isCompact,
+    showUserInfo = true,
+    className,
     showMoreButton,
     onMoreButton,
     size = "normal",
     user: { username, fullName },
-    replyTo,
   } = props;
 
   const { formatProfilePageRoute } = useNavigation();
-  const sizeClasses = styles[size];
+  const wrapperClasses = classNames(
+    styles.header,
+    !showUserInfo && styles.inlineHeader,
+    className,
+  );
 
   return (
-    <div className={styles.header}>
-      <a className={classNames(styles.profile)}>
+    <div className={wrapperClasses}>
+      <div className={classNames(styles.profile)}>
         <Link href={formatProfilePageRoute(username)}>
           <a>
             <Avatar size={size} className={styles.avatar} />
           </a>
         </Link>
-        <div className="flex flex-col justify-center">
-          <Link href={formatProfilePageRoute(username)}>
-            <a
-              className={classNames(
-                styles.userInfo,
-                isCompact && styles.isCompact,
-              )}
-            >
-              <div className={classNames(styles.fullName, sizeClasses)}>
-                {fullName}
-              </div>
-              <div className={classNames(styles.username, sizeClasses)}>
-                @{username}
-              </div>
-            </a>
-          </Link>
-          {replyTo && (
-            <Link href={formatProfilePageRoute(replyTo.username)}>
-              <a className={styles.replyTo}>
-                Replying to{" "}
-                <span
-                  className={styles.username}
-                >{`@${replyTo.username}`}</span>
+        {showUserInfo && (
+          <div className="flex flex-col justify-center">
+            <Link href={formatProfilePageRoute(username)}>
+              <a className={classNames(styles.userInfo)}>
+                <div className={classNames(styles.fullName)}>{fullName}</div>
+                <div className={classNames(styles.username)}>@{username}</div>
               </a>
             </Link>
-          )}
-        </div>
-      </a>
+          </div>
+        )}
+      </div>
 
       {showMoreButton && (
         <button onClick={onMoreButton} className={styles.more}>
-          <Icon
-            name="dotsHorizontal"
-            className={classNames(styles.icon, sizeClasses)}
-          />
+          <Icon name="dotsHorizontal" className={classNames(styles.icon)} />
         </button>
       )}
     </div>

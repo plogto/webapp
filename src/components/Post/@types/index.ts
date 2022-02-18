@@ -1,34 +1,63 @@
-import { UseFormReturn } from "react-hook-form";
-import { NewComment, Comment } from "@t/comment";
-import { Post } from "@t/post";
-import { PostLike } from "@t/postLike";
-import { PostSave } from "@t/postSave";
+import { DateType } from "@enums";
+import type { Post, PostType } from "@t/post";
+import type { ContentSize, DateSize, FooterSize, HeaderSize } from "@t/size";
+import type { User } from "@t/user";
 
-export type FooterPostProps = {
-  id: Post["id"];
-  isLiked?: boolean;
+export type UsePostProps = {
+  type: PostType;
+  post: Post;
+  actions?: ActionsPostProps;
+  repliesActions?: ActionsPostProps;
+};
+
+export type PostProps = {
+  type: PostType;
+  post: Post;
+  actions?: ActionsPostProps;
+  repliesActions?: ActionsPostProps;
+  className?: string;
+};
+
+export type HeaderPostProps = {
+  size?: HeaderSize;
+  showUserInfo?: boolean;
+  showMoreButton?: boolean;
+  onMoreButton?: () => void;
+  user: User;
+  className?: string;
+};
+
+export type ContentPostProps = {
+  user?: {
+    fullName: User["fullName"];
+    username: User["username"];
+  };
+  size?: ContentSize;
+  content: Post["content"];
+  showHeader?: boolean;
+  dateSize: DateSize;
+  dateType: DateType;
+  createdAt: string;
+  updatedAt: string;
+  className?: string;
+};
+
+export type DatePostProps = {
+  size?: DateSize;
+  type: DateType;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ActionsPostProps = {
   likePost?: () => void;
   unlikePost?: () => void;
-  isSaved?: boolean;
   savePost?: () => void;
   unsavePost?: () => void;
-  commentsCounter?: number;
-  showCommentsCounter?: boolean;
 };
 
-export type UsePostLikeProps = {
-  id: Post["id"];
-  isLiked?: PostLike;
-};
-
-export type UsePostSaveProps = {
-  id: Post["id"];
-  isSaved?: PostSave;
-};
-
-export type AddCommentProps = {
-  onSubmit: (data: NewComment) => void;
-  formMethods: UseFormReturn<Pick<NewComment, "content">>;
-  parent?: Comment;
-  removeReply: () => void;
-};
+export type FooterPostProps = {
+  size?: FooterSize;
+  isLiked?: Post["isLiked"];
+  isSaved?: Post["isSaved"];
+} & ActionsPostProps;

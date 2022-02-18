@@ -1,7 +1,10 @@
+import { DateType, PostTypeKey, RepliesView } from "@enums";
+import type { PostTypes } from "@t/post";
+
 export const CONTENT_MAX_LENGTH = 500;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
 export const SENDER_USERNAME = "$$$___sender.username___$$$";
-export const COMMENT_CONTENT = "$$$___comment.content___$$$";
+export const POST_CONTENT = "$$$___post.content___$$$";
 
 export const POST_PARSER = {
   KEY_PATTERN: /(\$\$\$___[0123456789abcdefg-]+___\$\$\$)(?!;)/gim,
@@ -11,4 +14,53 @@ export const POST_PARSER = {
 
 export const NOTIFICATION_PARSER = {
   KEY_PATTERN: /(\$\$\$___[a-z.]+___\$\$\$)(?!;)/gim,
+};
+
+export const POST_TYPES: PostTypes = {
+  PAGE: {
+    key: PostTypeKey.PAGE,
+    headerSize: "normal",
+    contentSize: "large",
+    dateSize: "normal",
+    footerSize: "normal",
+    dateType: DateType.LONG,
+    clickableContent: false,
+    repliesView: RepliesView.COMPLETE,
+  },
+  CARD: {
+    key: PostTypeKey.CARD,
+    headerSize: "normal",
+    contentSize: "normal",
+    dateSize: "small",
+    footerSize: "normal",
+    clickableContent: true,
+    repliesView: RepliesView.QUICK,
+  },
+  REPLY: {
+    key: PostTypeKey.REPLY,
+    headerSize: "small",
+    contentSize: "small",
+    dateSize: "small",
+    footerSize: "small",
+    clickableContent: true,
+    repliesView: RepliesView.THREAD,
+  },
+  CHILD: {
+    key: PostTypeKey.CHILD,
+    headerSize: "small",
+    contentSize: "small",
+    dateSize: "small",
+    footerSize: "small",
+    clickableContent: true,
+    repliesView: RepliesView.NONE,
+  },
+  LAST_CHILD: {
+    key: PostTypeKey.LAST_CHILD,
+    headerSize: "small",
+    contentSize: "small",
+    dateSize: "small",
+    footerSize: "small",
+    clickableContent: true,
+    repliesView: RepliesView.NONE,
+  },
 };

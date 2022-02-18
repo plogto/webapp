@@ -1,130 +1,132 @@
-/* Header */
-.header {
-  @apply flex justify-between items-center;
+.post {
+  @apply w-full pb-1 relative;
 
-  & .profile {
-    @apply flex p-2;
+  & .thread {
+    @apply w-0.5 bg-gray-200 absolute top-3 -bottom-3 left-[1.65rem] z-20;
+  }
 
-    & .userInfo {
-      @apply flex flex-col justify-center;
+  &.isNotCard {
+    & .headerAndContentWrapper {
+      @apply flex items-start;
+    }
+  }
 
-      &.isCompact {
-        @apply flex-row space-x-1 items-center;
+  &.isParentReply {
+    @apply border-t border-gray-200;
+
+    & > div > .headerAndContentWrapper {
+      @apply mt-2;
+    }
+  }
+
+  & .repliesCounter {
+    @apply text-[13px] text-gray-500 ml-4 mt-1 mb-2;
+  }
+
+  & .header {
+    @apply flex justify-between items-center;
+
+    &.isParent {
+      @apply pt-2;
+    }
+
+    &.inlineHeader {
+      @apply inline-flex pt-0;
+
+      & .profile {
+        @apply inline-flex pr-0;
+      }
+    }
+
+    & .profile {
+      @apply inline-flex px-2 relative;
+
+      & .avatar {
+        @apply mr-2;
       }
 
-      & .fullName {
-        @apply font-bold text-sm pr-1;
+      & .userInfo {
+        @apply flex flex-col justify-start;
 
-        &.small {
-          @apply text-xs;
+        & .fullName {
+          @apply font-bold text-sm;
+        }
+
+        & .username {
+          @apply text-gray-500 text-sm;
         }
       }
+    }
 
-      & .username {
-        @apply text-gray-500 text-sm pr-1;
-
-        &.small {
-          @apply text-xs;
-        }
+    & .more {
+      & .icon {
+        @apply w-6;
       }
     }
   }
 
-  & .more {
-    & .icon {
-      @apply w-6;
+  & .content {
+    @apply flex font-light break-words whitespace-pre-line;
 
-      &.small {
-        @apply w-5;
+    &.showHeader {
+      @apply inline-block;
+      & .profile {
+        @apply inline-flex items-center;
+
+        & .fullName {
+          @apply font-bold pr-1.5;
+        }
+      }
+    }
+
+    &.large {
+      @apply text-lg px-4 pt-3;
+    }
+
+    &.normal {
+      @apply text-base px-4 pt-3;
+    }
+
+    &.small {
+      @apply text-sm py-0.5;
+    }
+  }
+
+  & .date {
+    @apply block text-gray-400 text-sm mt-1;
+
+    &.small {
+      @apply text-xs;
+    }
+  }
+
+  & .footer {
+    &.small {
+      @apply ml-10;
+
+      & .iconWrapper {
+        @apply ml-2 mr-1.5 my-2;
+      }
+    }
+
+    & .iconWrapper {
+      @apply ml-3 mr-1 my-2.5;
+
+      & .icon {
+        @apply w-6 h-6 text-gray-600 stroke-1.5;
+
+        &.liked {
+          @apply text-red-500;
+        }
+
+        &.saved {
+          @apply text-gray-600;
+        }
+
+        &.small {
+          @apply w-[18px] h-[18px];
+        }
       }
     }
   }
-}
-
-/* Content */
-.content {
-  @apply text-lg font-light py-2 px-3.5 break-words whitespace-pre-line;
-
-  &.small {
-    @apply text-base;
-  }
-}
-
-/* Footer */
-.footer {
-  @apply border-t border-gray-100;
-}
-
-.iconWrapper {
-  @apply ml-2.5 my-2.5;
-}
-
-.icon {
-  @apply w-7 h-7 text-gray-600 stroke-1.5;
-}
-
-.liked {
-  @apply text-red-500;
-}
-
-.saved {
-  @apply text-gray-600;
-}
-
-.commentsCounter {
-  @apply text-sm text-gray-500 ml-3.5 mt-1 mb-2;
-}
-
-/* Add Comment */
-.addCommentWrapper {
-  @apply p-2 border-t border-gray-200 border-dashed;
-}
-
-.addCommentForm {
-  @apply flex items-end space-x-2.5;
-}
-
-.addCommentWrapper textarea {
-  @apply m-0 px-2.5 py-1.5 w-full focus:ring-0 text-sm;
-  @apply resize-none border-gray-200 rounded-lg;
-}
-
-.send {
-  @apply text-sm font-bold text-primary-500 pr-1 mb-2;
-}
-
-/* Reply */
-.replyWrapper {
-  @apply inline-flex items-center;
-  @apply cursor-pointer text-xs mb-2 text-gray-600;
-}
-
-.reply {
-  @apply inline-flex items-center;
-  @apply p-1 ml-1.5 font-medium rounded-full;
-  @apply shadow text-gray-800;
-}
-
-.replyUsername {
-  @apply flex mx-1;
-}
-
-/* Avatars */
-
-.avatar,
-.addCommentAvatar,
-.replyAvatar {
-  @apply text-gray-400 bg-white rounded-full shadow-sm border;
-}
-
-.avatar {
-  @apply w-10 h-10 mr-2;
-}
-
-.addCommentAvatar {
-  @apply w-8 h-8 mb-px;
-}
-
-.replyAvatar {
-  @apply w-5 h-5;
 }

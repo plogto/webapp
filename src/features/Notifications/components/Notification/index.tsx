@@ -37,7 +37,7 @@ export function Notification(props: NotificationProps) {
         <div className={styles.content}>
           {template.map(element => parseNotification(element, notification))}
           <div className={styles.date}>
-            {formatFromNow(createdAt, DateType.SHORT)}
+            {formatFromNow({ date: createdAt, type: DateType.SHORT })}
           </div>
         </div>
       </a>

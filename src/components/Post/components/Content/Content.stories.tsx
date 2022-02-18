@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Card } from "@components/Card";
 import { StoryContainer } from "@stories/StoryContainer";
 import { Content } from ".";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
@@ -11,13 +11,21 @@ export default {
 
 const Template: ComponentStory<typeof Content> = args => (
   <StoryContainer>
-    <div className="w-96">
+    <Card className="w-96 p-3">
       <Content {...args} />
-    </div>
+    </Card>
   </StoryContainer>
 );
 
 export const Main = Template.bind({});
+
+Main.argTypes = {
+  size: {
+    // TODO: refactor this line
+    options: ["small", "normal", "large"],
+    control: { type: "radio" },
+  },
+};
 
 Main.args = {
   content:

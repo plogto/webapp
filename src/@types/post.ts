@@ -1,6 +1,8 @@
+import { DateType, RepliesView, PostTypeKey } from "@enums";
 import type { Pagination } from "./pagination";
 import type { PostLike, PostLikesWithPagination } from "./postLike";
 import type { PostSave } from "./postSave";
+import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
 import type { User } from "./user";
 
 export type Post = {
@@ -28,6 +30,17 @@ export type NewReply = {
   status?: string;
 };
 
-export type PostSize = "small" | "normal";
-export type PostType = "post" | "reply";
-export type RepliesView = "none" | "quick" | "complete" | "children";
+export type PostType = {
+  key: PostTypeKey;
+  headerSize: HeaderSize;
+  contentSize: ContentSize;
+  dateSize: DateSize;
+  dateType?: DateType;
+  footerSize: FooterSize;
+  clickableContent?: boolean;
+  repliesView?: RepliesView;
+};
+
+export type PostTypes = {
+  [key in PostTypeKey]: PostType;
+};
