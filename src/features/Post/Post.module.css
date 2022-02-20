@@ -1,4 +1,0 @@
-.postContainerWrapper {
-  @apply bg-white rounded-lg shadow w-full;
-  @apply mb-16 md:mb-4 overflow-hidden;
-}

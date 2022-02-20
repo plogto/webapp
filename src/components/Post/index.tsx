@@ -24,6 +24,7 @@ export function Post(props: PostProps) {
     },
     post,
     post: {
+      id,
       user,
       url,
       replies,
@@ -98,12 +99,15 @@ export function Post(props: PostProps) {
             contentComponent
           )}
         </div>
-        <Footer
-          size={footerSize}
-          isLiked={isLiked}
-          isSaved={isSaved}
-          {...actions}
-        />
+        {actions && (
+          <Footer
+            id={id}
+            size={footerSize}
+            isLiked={isLiked}
+            isSaved={isSaved}
+            {...actions}
+          />
+        )}
       </div>
       <div className="flex flex-col">
         {showQuickReplies && (

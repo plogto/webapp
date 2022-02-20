@@ -5,6 +5,7 @@ import type { FooterPostProps } from "../../@types";
 
 export function Footer(props: FooterPostProps) {
   const {
+    id,
     size = "normal",
     isLiked,
     likePost,
@@ -30,11 +31,11 @@ export function Footer(props: FooterPostProps) {
     <div className={wrapperClasses}>
       <div>
         {isSaved?.id ? (
-          <button className={styles.iconWrapper} onClick={unsavePost}>
+          <button className={styles.iconWrapper} onClick={() => unsavePost(id)}>
             <Icon name="bookmark" type="fill" className={bookmarkIconClasses} />
           </button>
         ) : (
-          <button className={styles.iconWrapper} onClick={savePost}>
+          <button className={styles.iconWrapper} onClick={() => savePost(id)}>
             <Icon
               name="bookmark"
               type="outline"
@@ -43,11 +44,11 @@ export function Footer(props: FooterPostProps) {
           </button>
         )}
         {isLiked?.id ? (
-          <button className={styles.iconWrapper} onClick={unlikePost}>
+          <button className={styles.iconWrapper} onClick={() => unlikePost(id)}>
             <Icon name="heart" type="fill" className={likeIconClasses} />
           </button>
         ) : (
-          <button className={styles.iconWrapper} onClick={likePost}>
+          <button className={styles.iconWrapper} onClick={() => likePost(id)}>
             <Icon name="heart" type="outline" className={likeIconClasses} />
           </button>
         )}

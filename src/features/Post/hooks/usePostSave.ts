@@ -1,42 +1,55 @@
 import { useMutation } from "@apollo/client";
-import { useCallback, useEffect, useState } from "react";
-import { UsePostSaveProps } from "../@types";
-import { SavePostMutation, UnsavePostMutation } from "@graphql/@types/postSave";
+import { useCallback, useEffect } from "react";
+import { usePostContext } from "@contexts/PostContext";
 import { SAVE_POST, UNSAVE_POST } from "@graphql/postSave";
+import type {
+  SavePostMutation,
+  UnsavePostMutation,
+} from "@graphql/@types/postSave";
 
-export function usePostSave(props: UsePostSaveProps) {
-  const { id, isSaved: initialIsSaved } = props;
-  const [isSaved, setIsSaved] = useState<boolean>(!!initialIsSaved);
-  const variables = { postId: id };
-
+export function usePostSave() {
   const [savePostMutation, savePostResponse] =
     useMutation<SavePostMutation>(SAVE_POST);
   const [unsavePostMutation, unsavePostResponse] =
     useMutation<UnsavePostMutation>(UNSAVE_POST);
 
-  useEffect(() => {
-    setIsSaved(!!initialIsSaved);
-  }, [initialIsSaved]);
+  const { savePostContext, unsavePostContext } = usePostContext();
 
   useEffect(() => {
     if (savePostResponse.data) {
-      setIsSaved(!!savePostResponse.data?.savePost);
+      savePostContext({ isSaved: savePostResponse.data.savePost });
     }
-  }, [savePostResponse.data]);
+  }, [savePostContext, savePostResponse.data]);
 
   useEffect(() => {
     if (unsavePostResponse.data) {
-      setIsSaved(!unsavePostResponse.data?.unsavePost);
+      unsavePostContext({
+        isSaved: unsavePostResponse.data.unsavePost,
+      });
     }
-  }, [unsavePostResponse.data]);
+  }, [unsavePostContext, unsavePostResponse.data]);
 
-  const savePost = useCallback(() => {
-    savePostMutation({ variables });
-  }, [id]);
+  const savePost = useCallback(
+    (postId: string) => {
+      savePostMutation({
+        variables: {
+          postId,
+        },
+      });
+    },
+    [savePostMutation],
+  );
 
-  const unsavePost = useCallback(() => {
-    unsavePostMutation({ variables });
-  }, [id]);
+  const unsavePost = useCallback(
+    (postId: string) => {
+      unsavePostMutation({
+        variables: {
+          postId,
+        },
+      });
+    },
+    [unsavePostMutation],
+  );
 
-  return { savePost, unsavePost, isSaved };
+  return { savePost, unsavePost };
 }

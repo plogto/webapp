@@ -1,7 +1,10 @@
-import { Comment } from "@t/comment";
-import { Post } from "@t/post";
-import { PostLike } from "@t/postLike";
-import { PostSave } from "@t/postSave";
+import type { Post } from "@t/post";
+import type { PostLike } from "@t/postLike";
+import type { PostSave } from "@t/postSave";
+
+export type UsePostProps = {
+  post?: Post;
+};
 
 export type UsePostLikeProps = {
   id?: Post["id"];
@@ -11,9 +14,4 @@ export type UsePostLikeProps = {
 export type UsePostSaveProps = {
   id?: Post["id"];
   isSaved?: PostSave;
-};
-
-export type UseAddCommentProps = {
-  id?: Post["id"];
-  parent?: Comment;
 };

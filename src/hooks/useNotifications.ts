@@ -14,5 +14,5 @@ export function useNotifications() {
     if (data?.getNotification) {
       pushNotifications(data.getNotification);
     }
-  }, [data, loading]);
+  }, [data, loading, pushNotifications]);
 }

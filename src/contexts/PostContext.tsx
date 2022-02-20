@@ -1,16 +1,20 @@
+import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import {
   createContext,
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useState,
 } from "react";
-import { Comment } from "@t/comment";
+import { GET_POST_BY_URL } from "@graphql/post";
+import type { LikePostContextProps, SavePostContextProps } from "./@types/post";
+import type { GetPostByUrlQuery } from "@graphql/@types/post";
 
 const PostContext = createContext<PostContext>({});
 const PostContextSetState = createContext<SetPostContext>({
   setPost: () => {},
-  setNewComment: () => {},
 });
 
 type Props = {
@@ -18,20 +22,29 @@ type Props = {
 };
 
 export function PostProvider({ children }: Props) {
-  const [post, setPost] = useState<PostContext["post"]>();
-  const [newComment, setNewComment] = useState<PostContext["newComment"]>();
+  const router = useRouter();
+  const url = router.query.postUrl as string;
+  const { data, loading } = useQuery<GetPostByUrlQuery>(GET_POST_BY_URL, {
+    variables: { url },
+  });
+
+  const [post, setPost] = useState<PostContext["post"]>(data?.getPostByUrl);
+
+  useEffect(() => {
+    if (data && !loading) {
+      setPost(data.getPostByUrl);
+    }
+  }, [data, loading]);
 
   return (
     <PostContext.Provider
       value={{
         post,
-        newComment,
       }}
     >
       <PostContextSetState.Provider
         value={{
           setPost,
-          setNewComment,
         }}
       >
         {children}
@@ -41,93 +54,223 @@ export function PostProvider({ children }: Props) {
 }
 
 function usePostState() {
-  const { post, newComment } = useContext(PostContext);
+  const { post } = useContext(PostContext);
 
-  return { post, newComment };
+  return { post };
 }
 
 function usePostSetState() {
-  const { setPost, setNewComment } = useContext(PostContextSetState);
+  const { setPost } = useContext(PostContextSetState);
 
-  return { setPost, setNewComment };
+  return { setPost };
 }
 
 export function usePostContext() {
-  const { post, newComment } = usePostState();
-  const { setPost, setNewComment } = usePostSetState();
+  const { post } = usePostState();
+  const { setPost } = usePostSetState();
 
-  const addNewCommentToComments = useCallback((comment: Comment) => {
-    if (!comment?.parent) {
-      // TODO: fix this type
-      // @ts-expect-error ignore
-      setPost(prevState => {
-        const comments = prevState?.comments;
-        const newComments = [comment];
+  const likePostContext = useCallback(
+    ({ isLiked }: LikePostContextProps) => {
+      if (post?.id === isLiked?.post.id) {
+        setPost(prevPost => {
+          return prevPost && { ...prevPost, isLiked };
+        });
+      } else {
+        // TODO: fix the type
+        // @ts-expect-error ignore
+        setPost(prevPost => {
+          return (
+            prevPost && {
+              ...prevPost,
+              replies: {
+                ...prevPost.replies,
+                posts: prevPost.replies?.posts?.map(post => {
+                  if (post?.id === isLiked?.post?.id) {
+                    return {
+                      ...post,
+                      isLiked,
+                    };
+                  } else {
+                    return {
+                      ...post,
+                      replies: {
+                        ...post.replies,
+                        posts: post.replies?.posts?.map(post => {
+                          if (post?.id === isLiked?.post.id) {
+                            return {
+                              ...post,
+                              isLiked,
+                            };
+                          } else {
+                            return post;
+                          }
+                        }),
+                      },
+                    };
+                  }
+                }),
+              },
+            }
+          );
+        });
+      }
+    },
+    [post?.id, setPost],
+  );
 
-        if (comments?.comments) {
-          newComments.push(...comments.comments);
-        }
+  const unlikePostContext = useCallback(
+    ({ isLiked }: LikePostContextProps) => {
+      if (post?.id === isLiked?.post.id) {
+        setPost(prevPost => {
+          return prevPost && { ...prevPost, isLiked: undefined };
+        });
+      } else {
+        // TODO: fix the type
+        // @ts-expect-error ignore
+        setPost(prevPost => {
+          return (
+            prevPost && {
+              ...prevPost,
+              replies: {
+                ...prevPost.replies,
+                posts: prevPost.replies?.posts?.map(post => {
+                  if (post?.id === isLiked?.post.id) {
+                    return {
+                      ...post,
+                      isLiked: undefined,
+                    };
+                  } else {
+                    return {
+                      ...post,
+                      replies: {
+                        ...post.replies,
+                        posts: post.replies?.posts?.map(post => {
+                          if (post?.id === isLiked?.post.id) {
+                            return {
+                              ...post,
+                              isLiked: undefined,
+                            };
+                          } else {
+                            return post;
+                          }
+                        }),
+                      },
+                    };
+                  }
+                }),
+              },
+            }
+          );
+        });
+      }
+    },
+    [post?.id, setPost],
+  );
 
-        return {
-          ...prevState,
-          comments: {
-            ...comments,
-            comments: newComments,
-          },
-        };
-      });
-    }
-    removeParentForNewComment();
-  }, []);
+  const savePostContext = useCallback(
+    ({ isSaved }: SavePostContextProps) => {
+      if (post?.id === isSaved?.post.id) {
+        setPost(prevPost => {
+          return prevPost && { ...prevPost, isSaved };
+        });
+      } else {
+        // TODO: fix the type
+        // @ts-expect-error ignore
+        setPost(prevPost => {
+          return (
+            prevPost && {
+              ...prevPost,
+              replies: {
+                ...prevPost.replies,
+                posts: prevPost.replies?.posts?.map(post => {
+                  if (post?.id === isSaved?.post?.id) {
+                    return {
+                      ...post,
+                      isSaved,
+                    };
+                  } else {
+                    return {
+                      ...post,
+                      replies: {
+                        ...post.replies,
+                        posts: post.replies?.posts?.map(post => {
+                          if (post?.id === isSaved?.post.id) {
+                            return {
+                              ...post,
+                              isSaved,
+                            };
+                          } else {
+                            return post;
+                          }
+                        }),
+                      },
+                    };
+                  }
+                }),
+              },
+            }
+          );
+        });
+      }
+    },
+    [post?.id, setPost],
+  );
 
-  const removeCommentFromComments = useCallback((comment: Comment) => {
-    if (comment) {
-      // TODO: fix this type
-      // @ts-expect-error ignore
-      setPost(prevState => {
-        const comments = prevState?.comments;
-        const newComments = comments?.comments.filter(c => c.id !== comment.id);
-        return {
-          ...prevState,
-          comments: {
-            ...comments,
-            comments: comments?.comments.length ? newComments : [],
-          },
-        };
-      });
-    }
-  }, []);
-
-  const addParentForNewComment = useCallback((comment: Comment) => {
-    // TODO: fix this type
-    // @ts-expect-error ignore
-    setNewComment(prevState => {
-      return {
-        ...prevState,
-        parent: comment,
-      };
-    });
-  }, []);
-
-  const removeParentForNewComment = useCallback(() => {
-    // TODO: fix this type
-    // @ts-expect-error ignore
-    setNewComment(prevState => {
-      return {
-        ...prevState,
-        parent: undefined,
-      };
-    });
-  }, []);
+  const unsavePostContext = useCallback(
+    ({ isSaved }: SavePostContextProps) => {
+      if (post?.id === isSaved?.post.id) {
+        setPost(prevPost => {
+          return prevPost && { ...prevPost, isSaved: undefined };
+        });
+      } else {
+        // TODO: fix the type
+        // @ts-expect-error ignore
+        setPost(prevPost => {
+          return (
+            prevPost && {
+              ...prevPost,
+              replies: {
+                ...prevPost.replies,
+                posts: prevPost.replies?.posts?.map(post => {
+                  if (post?.id === isSaved?.post.id) {
+                    return {
+                      ...post,
+                      isSaved: undefined,
+                    };
+                  } else {
+                    return {
+                      ...post,
+                      replies: {
+                        ...post.replies,
+                        posts: post.replies?.posts?.map(post => {
+                          if (post?.id === isSaved?.post.id) {
+                            return {
+                              ...post,
+                              isSaved: undefined,
+                            };
+                          } else {
+                            return post;
+                          }
+                        }),
+                      },
+                    };
+                  }
+                }),
+              },
+            }
+          );
+        });
+      }
+    },
+    [post?.id, setPost],
+  );
 
   return {
     post,
     setPost,
-    newComment,
-    setNewComment,
-    addNewCommentToComments,
-    addParentForNewComment,
-    removeParentForNewComment,
-    removeCommentFromComments,
+    likePostContext,
+    unlikePostContext,
+    savePostContext,
+    unsavePostContext,
   };
 }

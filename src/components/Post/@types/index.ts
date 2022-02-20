@@ -50,13 +50,14 @@ export type DatePostProps = {
 };
 
 export type ActionsPostProps = {
-  likePost?: () => void;
-  unlikePost?: () => void;
-  savePost?: () => void;
-  unsavePost?: () => void;
+  likePost: (postId: string) => void;
+  unlikePost: (postId: string) => void;
+  savePost: (postId: string) => void;
+  unsavePost: (postId: string) => void;
 };
 
 export type FooterPostProps = {
+  id: Post["id"];
   size?: FooterSize;
   isLiked?: Post["isLiked"];
   isSaved?: Post["isSaved"];

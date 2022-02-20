@@ -1,42 +1,55 @@
 import { useMutation } from "@apollo/client";
-import { useCallback, useEffect, useState } from "react";
-import { UsePostLikeProps } from "../@types";
-import { LikePostMutation, UnlikePostMutation } from "@graphql/@types/postLike";
+import { useCallback, useEffect } from "react";
+import { usePostContext } from "@contexts/PostContext";
 import { LIKE_POST, UNLIKE_POST } from "@graphql/postLike";
+import type {
+  LikePostMutation,
+  UnlikePostMutation,
+} from "@graphql/@types/postLike";
 
-export function usePostLike(props: UsePostLikeProps) {
-  const { id, isLiked: initialIsLiked } = props;
-  const [isLiked, setIsLiked] = useState<boolean>(!!initialIsLiked);
-  const variables = { postId: id };
-
+export function usePostLike() {
   const [likePostMutation, likePostResponse] =
     useMutation<LikePostMutation>(LIKE_POST);
   const [unlikePostMutation, unlikePostResponse] =
     useMutation<UnlikePostMutation>(UNLIKE_POST);
 
-  useEffect(() => {
-    setIsLiked(!!initialIsLiked);
-  }, [initialIsLiked]);
+  const { likePostContext, unlikePostContext } = usePostContext();
 
   useEffect(() => {
     if (likePostResponse.data) {
-      setIsLiked(!!likePostResponse.data?.likePost);
+      likePostContext({ isLiked: likePostResponse.data.likePost });
     }
-  }, [likePostResponse.data]);
+  }, [likePostContext, likePostResponse.data]);
 
   useEffect(() => {
     if (unlikePostResponse.data) {
-      setIsLiked(!unlikePostResponse.data?.unlikePost);
+      unlikePostContext({
+        isLiked: unlikePostResponse.data.unlikePost,
+      });
     }
-  }, [unlikePostResponse.data]);
+  }, [unlikePostContext, unlikePostResponse.data]);
 
-  const likePost = useCallback(() => {
-    likePostMutation({ variables });
-  }, [id]);
+  const likePost = useCallback(
+    (postId: string) => {
+      likePostMutation({
+        variables: {
+          postId,
+        },
+      });
+    },
+    [likePostMutation],
+  );
 
-  const unlikePost = useCallback(() => {
-    unlikePostMutation({ variables });
-  }, [id]);
+  const unlikePost = useCallback(
+    (postId: string) => {
+      unlikePostMutation({
+        variables: {
+          postId,
+        },
+      });
+    },
+    [unlikePostMutation],
+  );
 
-  return { likePost, unlikePost, isLiked };
+  return { likePost, unlikePost };
 }
