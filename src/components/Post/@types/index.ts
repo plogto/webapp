@@ -7,14 +7,12 @@ export type UsePostProps = {
   type: PostType;
   post: Post;
   actions?: ActionsPostProps;
-  repliesActions?: ActionsPostProps;
 };
 
 export type PostProps = {
   type: PostType;
   post: Post;
   actions?: ActionsPostProps;
-  repliesActions?: ActionsPostProps;
   className?: string;
 };
 

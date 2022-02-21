@@ -20,9 +20,9 @@ export function Replies(props: RepliesProps) {
       key={post.id}
       post={post}
       actions={actions}
-      repliesActions={actions}
       type={
-        index < replies.posts.length - 1 || type === POST_TYPES.REPLY
+        (replies.posts && index < replies?.posts?.length - 1) ||
+        type === POST_TYPES.REPLY
           ? type
           : POST_TYPES.LAST_CHILD
       }

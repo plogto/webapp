@@ -35,7 +35,6 @@ export function Post(props: PostProps) {
       content,
     },
     actions,
-    repliesActions,
     className,
   } = props;
 
@@ -51,7 +50,6 @@ export function Post(props: PostProps) {
     type,
     post,
     actions,
-    repliesActions,
   });
 
   const { formatPostPageRoute } = useNavigation();
@@ -119,7 +117,7 @@ export function Post(props: PostProps) {
           <Replies
             type={POST_TYPES.REPLY}
             replies={replies}
-            actions={repliesActions}
+            actions={actions}
           />
         )}
         <div>
@@ -127,7 +125,7 @@ export function Post(props: PostProps) {
             <Replies
               type={POST_TYPES.CHILD}
               replies={replies}
-              actions={repliesActions}
+              actions={actions}
             />
           )}
         </div>

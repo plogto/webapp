@@ -6,7 +6,7 @@ export function usePost(props: UsePostProps) {
   const {
     type,
     post: { replies },
-    repliesActions,
+    actions,
   } = props;
 
   const { repliesView } = type;
@@ -22,7 +22,7 @@ export function usePost(props: UsePostProps) {
   });
 
   const hasReplies = !!repliesCounter.count;
-  const showReplies = hasReplies && repliesActions;
+  const showReplies = hasReplies && actions;
 
   const showQuickReplies = hasReplies && repliesView === RepliesView.QUICK;
   const showCompleteReplies =
