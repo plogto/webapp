@@ -6,13 +6,11 @@ import type { User } from "@t/user";
 export type UsePostProps = {
   type: PostType;
   post: Post;
-  actions?: ActionsPostProps;
 };
 
 export type PostProps = {
   type: PostType;
   post: Post;
-  actions?: ActionsPostProps;
   className?: string;
 };
 
@@ -47,16 +45,17 @@ export type DatePostProps = {
   updatedAt: string;
 };
 
-export type ActionsPostProps = {
-  likePost: (postId: string) => void;
-  unlikePost: (postId: string) => void;
-  savePost: (postId: string) => void;
-  unsavePost: (postId: string) => void;
-};
-
 export type FooterPostProps = {
   id: Post["id"];
   size?: FooterSize;
   isLiked?: Post["isLiked"];
   isSaved?: Post["isSaved"];
-} & ActionsPostProps;
+};
+
+export type UsePostLikeProps = {
+  id: Post["id"];
+};
+
+export type UsePostSaveProps = {
+  id: Post["id"];
+};

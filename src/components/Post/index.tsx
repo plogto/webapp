@@ -34,7 +34,6 @@ export function Post(props: PostProps) {
       isSaved,
       content,
     },
-    actions,
     className,
   } = props;
 
@@ -49,7 +48,6 @@ export function Post(props: PostProps) {
   } = usePost({
     type,
     post,
-    actions,
   });
 
   const { formatPostPageRoute } = useNavigation();
@@ -97,15 +95,7 @@ export function Post(props: PostProps) {
             contentComponent
           )}
         </div>
-        {actions && (
-          <Footer
-            id={id}
-            size={footerSize}
-            isLiked={isLiked}
-            isSaved={isSaved}
-            {...actions}
-          />
-        )}
+        <Footer id={id} size={footerSize} isLiked={isLiked} isSaved={isSaved} />
       </div>
       <div className="flex flex-col">
         {showQuickReplies && (
@@ -114,21 +104,13 @@ export function Post(props: PostProps) {
           </Link>
         )}
         {showCompleteReplies && (
-          <Replies
-            type={POST_TYPES.REPLY}
-            replies={replies}
-            actions={actions}
-          />
+          <Replies type={POST_TYPES.REPLY} replies={replies} />
         )}
-        <div>
-          {showThreadReplies && (
-            <Replies
-              type={POST_TYPES.CHILD}
-              replies={replies}
-              actions={actions}
-            />
-          )}
-        </div>
+        {showThreadReplies && (
+          <div>
+            <Replies type={POST_TYPES.CHILD} replies={replies} />
+          </div>
+        )}
       </div>
     </Card>
   );

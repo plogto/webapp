@@ -6,7 +6,6 @@ export function usePost(props: UsePostProps) {
   const {
     type,
     post: { replies },
-    actions,
   } = props;
 
   const { repliesView } = type;
@@ -22,12 +21,9 @@ export function usePost(props: UsePostProps) {
   });
 
   const hasReplies = !!repliesCounter.count;
-  const showReplies = hasReplies && actions;
-
   const showQuickReplies = hasReplies && repliesView === RepliesView.QUICK;
-  const showCompleteReplies =
-    showReplies && repliesView === RepliesView.COMPLETE;
-  const showThreadReplies = showReplies && repliesView === RepliesView.THREAD;
+  const showCompleteReplies = repliesView === RepliesView.COMPLETE;
+  const showThreadReplies = repliesView === RepliesView.THREAD;
 
   return {
     isParentReply,
