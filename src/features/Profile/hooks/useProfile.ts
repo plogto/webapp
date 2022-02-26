@@ -1,8 +1,7 @@
-import { useLazyQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useProfileContext } from "@contexts/ProfileContext";
 import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { formatCountTitle } from "@utils/formatter";
@@ -12,8 +11,27 @@ import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 export function useProfile() {
   const router = useRouter();
   const username = router.query.username;
-  const { setUser, setPosts, user, posts } = useProfileContext();
+  const variables = useMemo(
+    () => ({
+      username,
+    }),
+    [username],
+  );
+  const userResponse = useQuery<GetUserByUsernameQuery>(GET_USER_BY_USERNAME, {
+    variables,
+  });
+  const postsResponse = useQuery<GetPostsByUsernameQuery>(
+    GET_POSTS_BY_USERNAME,
+    { variables },
+  );
+
+  const user = useMemo(
+    () => userResponse.data?.getUserByUsername,
+    [userResponse.data?.getUserByUsername],
+  );
+
   const { t } = useTranslation("common");
+  // TODO: refactor this counts
   const counts = [
     {
       ...formatCountTitle({
@@ -41,39 +59,11 @@ export function useProfile() {
     },
   ];
 
-  const [getUserByUsername, getUserByUsernameResponse] =
-    useLazyQuery<GetUserByUsernameQuery>(GET_USER_BY_USERNAME);
-  const [getPostsByUsername, getPostsByUsernameResponse] =
-    useLazyQuery<GetPostsByUsernameQuery>(GET_POSTS_BY_USERNAME);
-
-  useEffect(() => {
-    if (username) {
-      getUserByUsername({
-        variables: {
-          username,
-        },
-      });
-      getPostsByUsername({
-        variables: {
-          username,
-        },
-      });
-    }
-  }, [username, getUserByUsername]);
-
-  useEffect(() => {
-    if (getUserByUsernameResponse.data) {
-      setUser(getUserByUsernameResponse.data.getUserByUsername);
-    }
-  }, [getUserByUsernameResponse.data]);
-
-  useEffect(() => {
-    if (getPostsByUsernameResponse.data) {
-      setPosts(getPostsByUsernameResponse.data.getPostsByUsername.posts);
-    } else {
-      setPosts([]);
-    }
-  }, [getPostsByUsernameResponse.data]);
-
-  return { getUserByUsernameResponse, user, router, posts, counts };
+  return {
+    userData: user,
+    isUserLoading: userResponse.loading,
+    postsData: postsResponse.data?.getPostsByUsername.posts,
+    isPostsLoading: postsResponse.loading,
+    counts,
+  };
 }

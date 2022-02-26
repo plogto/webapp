@@ -19,7 +19,7 @@ export function useNotifications() {
 
   useEffect(() => {
     getNotifications();
-  }, []);
+  }, [getNotifications]);
 
   useEffect(() => {
     if (getNotificationsResponse.data?.getNotifications) {
@@ -31,7 +31,11 @@ export function useNotifications() {
           .unreadNotificationsCount,
       );
     }
-  }, [getNotificationsResponse.data]);
+  }, [
+    getNotificationsResponse.data,
+    setNotifications,
+    setUnreadNotificationsCount,
+  ]);
 
   const followRequestsCount = useMemo(
     () => user?.followRequestsCount,

@@ -33,27 +33,28 @@ const httpLink = authLink.concat(
   }),
 );
 
-const link = process.browser
-  ? split(
-      ({ query }) => {
-        const definition = getMainDefinition(query);
-        return (
-          definition.kind === "OperationDefinition" &&
-          definition.operation === "subscription"
-        );
-      },
-      new WebSocketLink({
-        uri: process.env.NEXT_PUBLIC_SUBSCRIPTIONS_API + "/query",
-        options: {
-          reconnect: true,
-          connectionParams: () => ({
-            authorization,
-          }),
+const link =
+  typeof window !== "undefined"
+    ? split(
+        ({ query }) => {
+          const definition = getMainDefinition(query);
+          return (
+            definition.kind === "OperationDefinition" &&
+            definition.operation === "subscription"
+          );
         },
-      }),
-      httpLink,
-    )
-  : httpLink;
+        new WebSocketLink({
+          uri: process.env.NEXT_PUBLIC_SUBSCRIPTIONS_API + "/query",
+          options: {
+            reconnect: true,
+            connectionParams: () => ({
+              authorization,
+            }),
+          },
+        }),
+        httpLink,
+      )
+    : httpLink;
 
 function createApolloClient() {
   return new ApolloClient({

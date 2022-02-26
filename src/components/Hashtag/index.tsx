@@ -1,22 +1,24 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { HashtagProps } from "./@types";
 import { useNavigation } from "@hooks/useNavigation";
+import type { HashtagProps } from "./@types";
 
 export function Hashtag(props: HashtagProps) {
-  const { value } = props;
-
+  const { value, isClickable = true } = props;
+  const { query } = useRouter();
   const tagName = value.substring(1);
   const { formatTagPageRoute } = useNavigation();
-  const { query } = useRouter();
-  const classes = classNames({
+
+  const wrapperClasses = classNames("text-primary-500", {
     "font-bold": tagName === query.tagName,
   });
 
-  return (
+  return isClickable ? (
     <Link href={formatTagPageRoute(tagName)}>
-      <a className={`text-primary-500 ${classes}`}>{value}</a>
+      <a className={wrapperClasses}>{value}</a>
     </Link>
+  ) : (
+    <span className={wrapperClasses}>{value}</span>
   );
 }

@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { DateType } from "@enums";
+import type { ReactNode } from "react";
 
 export type ActiveClass = (props: {
   href: string;
@@ -15,4 +16,14 @@ export type PostStore = {
     key: string;
     component?: ReactNode;
   };
+};
+
+export type FormatFromNowProps = {
+  date: string;
+  type: DateType;
+};
+
+export type IsEditProps = {
+  createdAt: string;
+  updatedAt: string;
 };

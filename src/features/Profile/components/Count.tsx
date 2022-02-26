@@ -9,6 +9,7 @@ type Props = {
   clickable?: boolean;
 };
 
+// TODO: refactor this component
 export function Count({ title, count, href, clickable }: Props) {
   return clickable ? (
     <Link href={href}>

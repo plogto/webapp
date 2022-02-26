@@ -1,7 +1,8 @@
-import type { CommentsWithPagination } from "./comment";
+import { DateType, RepliesView, PostTypeKey } from "@enums";
 import type { Pagination } from "./pagination";
 import type { PostLike, PostLikesWithPagination } from "./postLike";
 import type { PostSave } from "./postSave";
+import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
 import type { User } from "./user";
 
 export type Post = {
@@ -12,7 +13,7 @@ export type Post = {
   isLiked?: PostLike;
   isSaved?: PostSave;
   likes?: PostLikesWithPagination;
-  comments?: CommentsWithPagination;
+  replies?: PostsWithPagination;
   createdAt: string;
   updatedAt: string;
 };
@@ -20,4 +21,26 @@ export type Post = {
 export type PostsWithPagination = {
   posts: Post[];
   pagination: Pagination;
+};
+
+export type NewReply = {
+  postId: string;
+  content: string;
+  attachment?: string;
+  status?: string;
+};
+
+export type PostType = {
+  key: PostTypeKey;
+  headerSize: HeaderSize;
+  contentSize: ContentSize;
+  dateSize: DateSize;
+  dateType?: DateType;
+  footerSize: FooterSize;
+  isContentClickable?: boolean;
+  repliesView?: RepliesView;
+};
+
+export type PostTypes = {
+  [key in PostTypeKey]: PostType;
 };

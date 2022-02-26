@@ -5,17 +5,22 @@ import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-
 import type { ConnectionButtons } from "../@types";
 import type { User } from "@t/user";
 
 type Props = {
-  connectionStatus: User["connectionStatus"];
+  user: {
+    id: User["id"];
+    connectionStatus: User["connectionStatus"];
+  };
 };
 
-export function ConnectionStatus({ connectionStatus }: Props) {
+export function ConnectionStatus(props: Props) {
+  const {
+    user: { id: userId, connectionStatus },
+  } = props;
   const { follow, unfollow, followUserResponse, unfollowUserResponse } =
-    useConnection();
+    useConnection({ userId });
   const { user } = useAccountContext();
 
   const { t } = useTranslation("connection");

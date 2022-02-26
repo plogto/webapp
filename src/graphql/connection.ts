@@ -7,9 +7,14 @@ export const FOLLOW_USER = gql`
       status
       following {
         id
+        connectionStatus
+        followersCount
+        followingCount
       }
       follower {
         id
+        followersCount
+        followingCount
       }
     }
   }
@@ -22,9 +27,14 @@ export const UNFOLLOW_USER = gql`
       status
       following {
         id
+        connectionStatus
+        followersCount
+        followingCount
       }
       follower {
         id
+        followersCount
+        followingCount
       }
     }
   }
@@ -37,6 +47,7 @@ export const ACCEPT_USER = gql`
       status
       following {
         id
+        connectionStatus
       }
       follower {
         id
@@ -52,6 +63,7 @@ export const REJECT_USER = gql`
       status
       following {
         id
+        connectionStatus
       }
       follower {
         id

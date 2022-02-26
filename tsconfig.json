@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@enums": ["src/@enums"],
       "@enums/*": ["src/@enums/*"],
       "@t/*": ["src/@types/*"],
       "@components/*": ["src/components/*"],
