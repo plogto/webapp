@@ -7,13 +7,13 @@ export type User = {
   email: string;
   bio?: string;
   isPrivate?: boolean;
-  connectionStatus: number;
-  followersCount: number;
-  followingCount: number;
-  postsCount: number;
+  connectionStatus?: number;
+  followersCount?: number;
+  followingCount?: number;
+  postsCount?: number;
   followRequestsCount?: number;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UsersWithPagination = {

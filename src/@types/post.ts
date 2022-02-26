@@ -37,7 +37,7 @@ export type PostType = {
   dateSize: DateSize;
   dateType?: DateType;
   footerSize: FooterSize;
-  clickableContent?: boolean;
+  isContentClickable?: boolean;
   repliesView?: RepliesView;
 };
 

@@ -21,7 +21,9 @@ export const Main = Template.bind({});
 
 Main.args = {
   user: {
+    id: "fake_id",
     fullName: "Jane Cooper",
     username: "jane_cooper",
+    email: "jane_cooper@mail.com",
   },
 };
