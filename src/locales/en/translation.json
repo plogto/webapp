@@ -33,6 +33,12 @@
       "requested": "requested"
     }
   },
+  "modal": {
+    "buttons": {
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
+  },
   "notifications": {
     "texts": {
       "followRequests": "follow requests",
@@ -53,6 +59,11 @@
     "search": "Search",
     "settings": "Settings",
     "tag": "Tag"
+  },
+  "post": {
+    "buttons": {
+      "viewReplies": "View replies"
+    }
   },
   "profile": {
     "buttons": {
