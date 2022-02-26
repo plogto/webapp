@@ -1,9 +1,8 @@
 import anchorme from "anchorme";
-import { ReactNode } from "react";
 import { v4 as uuid } from "uuid";
 import { HASHTAG_PATTERN, POST_PARSER } from "@config";
-
 import type { ParsePostProps, PostStore } from "./@types";
+import type { ReactNode } from "react";
 
 export function usePostParser() {
   function parsePost({ content, hashtagComponent }: ParsePostProps): ReactNode {
