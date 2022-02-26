@@ -1,3 +1,7 @@
-.wrapper {
+.posts {
   @apply w-full max-h-screen overflow-y-scroll;
+
+  & .post {
+    @apply pt-2 mb-2 md:mb-4;
+  }
 }
