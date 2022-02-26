@@ -1,29 +1,19 @@
-import { usePostLike, usePostSave } from "./hooks";
+import { useQuery } from "@apollo/client";
+import { useRouter } from "next/router";
 import { Post } from "@components/Post";
 import { POST_TYPES } from "@config";
-import { usePostContext } from "@contexts/PostContext";
+import { GetPostByUrlQuery } from "@graphql/@types/post";
+import { GET_POST_BY_URL } from "@graphql/post";
 
 export function PostContainer() {
-  const { post } = usePostContext();
+  const router = useRouter();
+  const url = router.query.postUrl as string;
+  const { data } = useQuery<GetPostByUrlQuery>(GET_POST_BY_URL, {
+    variables: { url },
+  });
 
-  const { likePost, unlikePost } = usePostLike();
-  const { savePost, unsavePost } = usePostSave();
-
-  const actions = {
-    likePost,
-    unlikePost,
-    savePost,
-    unsavePost,
-  };
-
-  return post ? (
-    <Post
-      actions={actions}
-      repliesActions={actions}
-      className="mb-14"
-      post={post}
-      type={POST_TYPES.PAGE}
-    />
+  return data ? (
+    <Post className="mb-14" post={data.getPostByUrl} type={POST_TYPES.PAGE} />
   ) : (
     <></>
   );
