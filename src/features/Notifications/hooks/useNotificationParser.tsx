@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { v4 as uuid } from "uuid";
 import styles from "../Notifications.module.css";
-import { COMMENT_CONTENT, SENDER_USERNAME } from "@config";
+import { POST_CONTENT, SENDER_USERNAME } from "@config";
 import type { Notification } from "@t/notification";
 
 export function useNotificationParser() {
@@ -14,10 +14,10 @@ export function useNotificationParser() {
               {notification.sender.fullName}
             </span>
           );
-        case COMMENT_CONTENT:
+        case POST_CONTENT:
           return (
-            <span key={uuid()} className={styles.comment}>
-              {notification.comment?.content}
+            <span key={uuid()} className={styles.reply}>
+              {notification.reply?.content}
             </span>
           );
         default:

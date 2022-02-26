@@ -22,7 +22,7 @@ export const GET_NOTIFICATIONS = gql`
           id
           content
         }
-        comment {
+        reply {
           id
           content
         }
@@ -58,7 +58,7 @@ export const GET_NOTIFICATION = gql`
         id
         content
       }
-      comment {
+      reply {
         id
         content
       }

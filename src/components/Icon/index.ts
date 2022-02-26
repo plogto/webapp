@@ -7,6 +7,8 @@ import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CommentCircleFill from "./svg/comment-circle-fill.svg";
 import CommentCircle from "./svg/comment-circle.svg";
+import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
+import DotsHorizontal from "./svg/dots-horizontal.svg";
 import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
@@ -14,9 +16,9 @@ import Heart from "./svg/heart.svg";
 import Plog from "./svg/plog.svg";
 
 export const iconsList = {
-  heart: {
-    outline: Heart,
-    fill: HeartFill,
+  bell: {
+    outline: Bell,
+    fill: BellFill,
   },
   bookmark: {
     outline: Bookmark,
@@ -26,13 +28,17 @@ export const iconsList = {
     outline: CommentCircle,
     fill: CommentCircleFill,
   },
+  dotsHorizontal: {
+    outline: DotsHorizontal,
+    fill: DotsHorizontalFill,
+  },
   exclamation: {
     outline: Exclamation,
     fill: ExclamationFill,
   },
-  bell: {
-    outline: Bell,
-    fill: BellFill,
+  heart: {
+    outline: Heart,
+    fill: HeartFill,
   },
   plog: {
     outline: Plog,

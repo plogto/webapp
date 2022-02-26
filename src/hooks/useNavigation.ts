@@ -1,6 +1,6 @@
-import { Post } from "@t/post";
-import { Tag } from "@t/tag";
-import { User } from "@t/user";
+import type { Post } from "@t/post";
+import type { Tag } from "@t/tag";
+import type { User } from "@t/user";
 
 export function useNavigation() {
   function formatProfilePageRoute(username: User["username"]) {

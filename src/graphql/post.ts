@@ -24,29 +24,53 @@ export const GET_POST_BY_URL = gql`
           totalDocs
         }
       }
-      comments {
-        comments {
+      replies {
+        posts {
           id
+          url
           user {
             id
             username
             fullName
+            connectionStatus
           }
           isLiked {
             id
           }
-          children {
-            comments {
+          isSaved {
+            id
+          }
+          likes {
+            postLikes {
               id
+            }
+            pagination {
+              totalDocs
+            }
+          }
+          replies {
+            posts {
+              id
+              url
               user {
                 id
                 username
                 fullName
+                connectionStatus
               }
               isLiked {
                 id
               }
+              isSaved {
+                id
+              }
+              likes {
+                pagination {
+                  totalDocs
+                }
+              }
               content
+              createdAt
               updatedAt
             }
             pagination {
@@ -54,6 +78,7 @@ export const GET_POST_BY_URL = gql`
             }
           }
           content
+          createdAt
           updatedAt
         }
         pagination {
@@ -93,7 +118,7 @@ export const GET_POSTS_BY_USERNAME = gql`
             totalDocs
           }
         }
-        comments {
+        replies {
           pagination {
             totalDocs
           }
@@ -138,7 +163,7 @@ export const GET_POSTS_BY_TAG_NAME = gql`
             totalDocs
           }
         }
-        comments {
+        replies {
           pagination {
             totalDocs
           }
@@ -170,6 +195,32 @@ export const ADD_POST = gql`
       content
       createdAt
       updatedAt
+    }
+  }
+`;
+
+export const REPLY_POST = gql`
+  mutation replyPost($postId: ID!, $content: String!) {
+    replyPost(postId: $postId, input: { content: $content }) {
+      id
+      parent {
+        id
+      }
+      content
+      user {
+        id
+        username
+        fullName
+      }
+      updatedAt
+    }
+  }
+`;
+
+export const DELETE_POST = gql`
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId) {
+      id
     }
   }
 `;

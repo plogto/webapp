@@ -1,16 +1,14 @@
-import { ReactNode } from "react";
+import classNames from "classnames";
 import styles from "./PageStatus.module.css";
+import type { PageStatusProps } from "./@types";
 
-type Props = {
-  title: string;
-  description?: string;
-  icon: ReactNode;
-  className?: string;
-};
 // TODO: refactor this component
-export function PageStatus({ title, icon, description, className }: Props) {
+export function PageStatus(props: PageStatusProps) {
+  const { title, icon, description, className } = props;
+  const wrapperClasses = classNames(styles.wrapper, className);
+
   return (
-    <div className={`${styles.wrapper} ${className || ""}`}>
+    <div className={wrapperClasses}>
       <div className={styles.icon}>{icon}</div>
       <div className={styles.title}>{title}</div>
       {description && <div className={styles.description}>{description}</div>}

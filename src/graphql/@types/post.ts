@@ -1,4 +1,4 @@
-import type { Post } from "@t/post";
+import type { Post, NewReply } from "@t/post";
 
 export type GetPostByUrlQuery = {
   getPostByUrl: Post;
@@ -18,4 +18,12 @@ export type GetPostsByTagNameQuery = {
 
 export type AddPostMutation = {
   addPost: Post;
+};
+
+export type ReplyPostMutation = {
+  replyPost: NewReply;
+};
+
+export type DeletePostMutation = {
+  deletePost: Post;
 };

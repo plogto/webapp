@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useMemo } from "react";
 import styles from "../../Notifications.module.css";
 import { Avatar } from "@components/Avatar";
-import { notificationParser } from "@config";
-import { NotificationProps } from "@features/Notifications/@types";
+import { NOTIFICATION_PARSER } from "@config";
+import { DateType } from "@enums";
 import { useNotificationParser } from "@features/Notifications/hooks/useNotificationParser";
 import { useDate } from "@hooks/useDate";
+import type { NotificationProps } from "@features/Notifications/@types";
 
 export function Notification(props: NotificationProps) {
   const {
@@ -18,7 +19,7 @@ export function Notification(props: NotificationProps) {
   const { formatFromNow } = useDate();
 
   const template = useMemo(
-    () => notificationType.template.split(notificationParser.KEY_PATTERN),
+    () => notificationType.template.split(NOTIFICATION_PARSER.KEY_PATTERN),
     [notificationType.template],
   );
 
@@ -35,7 +36,9 @@ export function Notification(props: NotificationProps) {
         </div>
         <div className={styles.content}>
           {template.map(element => parseNotification(element, notification))}
-          <div className={styles.date}>{formatFromNow(createdAt)}</div>
+          <div className={styles.date}>
+            {formatFromNow({ date: createdAt, type: DateType.SHORT })}
+          </div>
         </div>
       </a>
     </Link>

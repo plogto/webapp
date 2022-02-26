@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { PageUrls } from "@enums/pages";
+import type { ReactNode } from "react";
 
 export type NavigationItem = {
   title?: string;
