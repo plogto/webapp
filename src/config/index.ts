@@ -24,7 +24,7 @@ export const POST_TYPES: PostTypes = {
     dateSize: "normal",
     footerSize: "normal",
     dateType: DateType.LONG,
-    clickableContent: false,
+    isContentClickable: false,
     repliesView: RepliesView.COMPLETE,
   },
   CARD: {
@@ -33,7 +33,7 @@ export const POST_TYPES: PostTypes = {
     contentSize: "normal",
     dateSize: "small",
     footerSize: "normal",
-    clickableContent: true,
+    isContentClickable: true,
     repliesView: RepliesView.QUICK,
   },
   REPLY: {
@@ -42,7 +42,7 @@ export const POST_TYPES: PostTypes = {
     contentSize: "small",
     dateSize: "small",
     footerSize: "small",
-    clickableContent: true,
+    isContentClickable: true,
     repliesView: RepliesView.THREAD,
   },
   CHILD: {
@@ -51,7 +51,7 @@ export const POST_TYPES: PostTypes = {
     contentSize: "small",
     dateSize: "small",
     footerSize: "small",
-    clickableContent: true,
+    isContentClickable: true,
     repliesView: RepliesView.NONE,
   },
   LAST_CHILD: {
@@ -60,7 +60,7 @@ export const POST_TYPES: PostTypes = {
     contentSize: "small",
     dateSize: "small",
     footerSize: "small",
-    clickableContent: true,
+    isContentClickable: true,
     repliesView: RepliesView.NONE,
   },
 };

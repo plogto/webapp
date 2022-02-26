@@ -18,7 +18,7 @@ export function Post(props: PostProps) {
       contentSize,
       dateSize,
       footerSize,
-      clickableContent,
+      isContentClickable,
       dateType = DateType.SHORT,
       key,
     },
@@ -52,21 +52,6 @@ export function Post(props: PostProps) {
 
   const { formatPostPageRoute } = useNavigation();
 
-  const contentComponent = (
-    <span>
-      <Content
-        showHeader={!isCard}
-        user={user}
-        size={contentSize}
-        content={content}
-        dateSize={dateSize}
-        dateType={dateType}
-        createdAt={createdAt}
-        updatedAt={updatedAt}
-      />
-    </span>
-  );
-
   const wrapperClasses = classNames(
     styles.post,
     isParentReply && styles.isParentReply,
@@ -87,13 +72,18 @@ export function Post(props: PostProps) {
             size={headerSize}
             user={user}
           />
-          {clickableContent ? (
-            <Link href={formatPostPageRoute(url)}>
-              <a>{contentComponent}</a>
-            </Link>
-          ) : (
-            contentComponent
-          )}
+          <Content
+            showHeader={!isCard}
+            url={url}
+            isClickable={isContentClickable}
+            user={user}
+            size={contentSize}
+            content={content}
+            dateSize={dateSize}
+            dateType={dateType}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+          />
         </div>
         <Footer id={id} size={footerSize} isLiked={isLiked} isSaved={isSaved} />
       </div>

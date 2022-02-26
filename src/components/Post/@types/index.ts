@@ -28,6 +28,8 @@ export type ContentPostProps = {
     fullName: User["fullName"];
     username: User["username"];
   };
+  url?: Post["url"];
+  isClickable?: boolean;
   size?: ContentSize;
   content: Post["content"];
   showHeader?: boolean;

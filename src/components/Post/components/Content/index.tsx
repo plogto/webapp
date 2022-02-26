@@ -11,6 +11,8 @@ import type { ContentPostProps } from "@components/Post/@types";
 export function Content(props: ContentPostProps) {
   const {
     size = "normal",
+    url,
+    isClickable,
     showHeader = false,
     content = "",
     className,
@@ -20,7 +22,7 @@ export function Content(props: ContentPostProps) {
     createdAt,
     updatedAt,
   } = props;
-  const { formatProfilePageRoute } = useNavigation();
+  const { formatProfilePageRoute, formatPostPageRoute } = useNavigation();
   const { parsePost } = usePostParser();
   const sizeClasses = styles[size];
   const wrapperClasses = classNames(
@@ -30,8 +32,19 @@ export function Content(props: ContentPostProps) {
     className,
   );
 
+  const textComponent = (
+    <p>
+      {parsePost({
+        content,
+        hashtagComponent: (value: string) => (
+          <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
+        ),
+      })}
+    </p>
+  );
+
   return (
-    <p className={wrapperClasses}>
+    <span className={wrapperClasses}>
       {showHeader && user && (
         <a className={classNames(styles.profile)}>
           <div className="flex flex-col justify-center">
@@ -44,12 +57,13 @@ export function Content(props: ContentPostProps) {
         </a>
       )}
       <span>
-        {parsePost({
-          content,
-          hashtagComponent: (value: string) => (
-            <Hashtag key={uuid()} value={value} />
-          ),
-        })}
+        {isClickable && url ? (
+          <Link href={formatPostPageRoute(url)}>
+            <a>{textComponent}</a>
+          </Link>
+        ) : (
+          textComponent
+        )}
         <DateTime
           type={dateType}
           createdAt={createdAt}
@@ -57,6 +71,6 @@ export function Content(props: ContentPostProps) {
           size={dateSize}
         />
       </span>
-    </p>
+    </span>
   );
 }
