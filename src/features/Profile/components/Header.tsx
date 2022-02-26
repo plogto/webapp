@@ -8,14 +8,9 @@ import { PageUrls } from "@enums/pages";
 import { ConnectionStatus, Count } from ".";
 import type { User } from "@t/user";
 
-export function Header({
-  id,
-  username,
-  fullName,
-  bio,
-  connectionStatus,
-  isPrivate,
-}: User) {
+// TODO: refactor this component
+export function Header(props: User) {
+  const { id, username, fullName, bio, connectionStatus, isPrivate } = props;
   const { user } = useAccountContext();
   const { counts } = useProfile();
   const { t } = useTranslation("profile");
@@ -43,7 +38,7 @@ export function Header({
           ))}
         </div>
         {user?.id !== id ? (
-          <ConnectionStatus connectionStatus={connectionStatus} />
+          <ConnectionStatus user={{ id, connectionStatus }} />
         ) : (
           <LinkButton href={PageUrls.SETTINGS} className={styles.settings}>
             {t("buttons.settings")}
