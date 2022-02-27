@@ -1,4 +1,5 @@
-import { MouseEventHandler } from "react";
+import type { User } from "@t/user";
+import type { MouseEventHandler } from "react";
 
 type ActionButton = {
   className?: string;
@@ -12,4 +13,11 @@ export type ActionButtons = {
   requested: ActionButton;
   accept: ActionButton;
   reject: ActionButton;
+};
+
+export type UserProps = {
+  user: User;
+  showAccept?: boolean;
+  showDelete?: boolean;
+  showFollow?: boolean;
 };
