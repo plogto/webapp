@@ -1,29 +1,22 @@
 import { XIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import styles from "./UserInfo.module.css";
+import styles from "./User.module.css";
 import { useActions } from "./hooks/useActions";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
 import { useAccountContext } from "@contexts/AccountContext";
-
 import { useNavigation } from "@hooks/useNavigation";
-import type { ActionButtons } from "./@types";
-import type { User } from "@t/user";
+import type { ActionButtons, UserProps } from "./@types";
 
-type Props = {
-  user: User;
-  showAccept?: boolean;
-  showDelete?: boolean;
-  showFollow?: boolean;
-};
-
-export function UserInfo({
-  user: { id, username, fullName, connectionStatus },
-  showAccept,
-  showDelete,
-  showFollow,
-}: Props) {
+// TODO: refactor this component
+export function User(props: UserProps) {
+  const {
+    user: { id, username, fullName, connectionStatus },
+    showAccept,
+    showDelete,
+    showFollow,
+  } = props;
   const { user } = useAccountContext();
   const {
     follow,

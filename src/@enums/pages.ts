@@ -8,4 +8,6 @@ export enum PageUrls {
   SETTINGS = "/accounts/settings",
   NOTIFICATIONS = "/accounts/notifications",
   FOLLOW_REQUESTS = "/accounts/follow-requests",
+  FOLLOWERS = "/followers",
+  FOLLOWING = "/following",
 }

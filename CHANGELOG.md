@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.22.0](https://github.com/favecode/plog-fe/compare/v0.21.0...v0.22.0) (2022-02-27)
+
+
+### Features
+
+* add bundle analyer ([3abeb47](https://github.com/favecode/plog-fe/commit/3abeb47e12491068ced5b7e2f495cf4cb82a61ab))
+* add chevronLeft icon ([205deb5](https://github.com/favecode/plog-fe/commit/205deb51ca223d18454557c08bc586e3527b775a))
+* add dots-horizontal icon ([581b905](https://github.com/favecode/plog-fe/commit/581b9059532a3c883ef6cc67f5cc1fbbf7fccb45))
+* add formatFollowersPageRoute and formatFollowingPageRoute to useNavigation ([82aabd4](https://github.com/favecode/plog-fe/commit/82aabd478c86d48b3c00c39d4b5f7e49842a8225))
+* add useDate hook ([8ca7e3b](https://github.com/favecode/plog-fe/commit/8ca7e3b51181e0a65c83753375e489f5ac3b5d7c))
+* implement UserInfo component ([1c55dc3](https://github.com/favecode/plog-fe/commit/1c55dc37676c996ddf6fc732e001c7ee404802e5))
+
+
+### Bug Fixes
+
+* add min-height for pages ([51cb03d](https://github.com/favecode/plog-fe/commit/51cb03db171b12d69022c198f002445238dac64a))
+* change Post and User types ([8b19127](https://github.com/favecode/plog-fe/commit/8b191272346c2a810ca5c5d5f7661ed66bd576f7))
+* change Wrapper styles ([67bb76c](https://github.com/favecode/plog-fe/commit/67bb76c04d3900e3fdafa6c58b24e0b710d6a8ff))
+* increase z-index of Navbar component ([89ac42b](https://github.com/favecode/plog-fe/commit/89ac42b5ae21cecba2e16d37479c7c18792f3b26))
+* remove unused repliesActions props from Post and Replies component ([7a9dd8b](https://github.com/favecode/plog-fe/commit/7a9dd8b446df2cea32797eb44a9eee9f5fda8a29))
+* set full width content for Post component ([52c6653](https://github.com/favecode/plog-fe/commit/52c66534f6f58e3c55429c280da1d2a1cacdbc8f))
+
 ## [0.21.0](https://github.com/favecode/plog-fe/compare/v0.20.3...v0.21.0) (2022-02-04)
 
 

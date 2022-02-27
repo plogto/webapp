@@ -1,3 +1,35 @@
-.card {
-  @apply rounded-lg w-full;
+.header {
+  @apply flex justify-between items-center space-x-5;
+  @apply px-4 py-2;
+
+  & .back {
+    @apply pl-1;
+    & .icon {
+      @apply w-[1.3rem] h-[1.3rem] md:w-6 md:h-6 stroke-2;
+    }
+  }
+}
+
+.buttons {
+  @apply flex border-b border-gray-200 px-2 mb-3;
+  & .button {
+    @apply capitalize text-gray-500 w-20 font-bold px-2 m-2 text-sm;
+
+    &.active {
+      @apply text-black relative;
+
+      &::after {
+        @apply content-[''] w-full h-1 rounded-t-md rounded-b-none bg-primary-500 rounded;
+        @apply absolute -bottom-2 left-0 right-0;
+      }
+    }
+  }
+}
+
+.privateStatus {
+  @apply w-full py-16 md:py-32 border-t;
+}
+
+.noConnectionsStatus {
+  @apply mt-16 md:m-32 mx-10;
 }
