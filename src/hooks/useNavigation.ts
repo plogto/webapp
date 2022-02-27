@@ -1,3 +1,4 @@
+import { PageUrls } from "@enums/pages";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
 import type { User } from "@t/user";
@@ -15,5 +16,19 @@ export function useNavigation() {
     return `/t/${tagName}`;
   }
 
-  return { formatProfilePageRoute, formatPostPageRoute, formatTagPageRoute };
+  function formatFollowersPageRoute(username: User["username"]) {
+    return `/${username}${PageUrls.FOLLOWERS}`;
+  }
+
+  function formatFollowingPageRoute(username: User["username"]) {
+    return `/${username}${PageUrls.FOLLOWING}`;
+  }
+
+  return {
+    formatProfilePageRoute,
+    formatPostPageRoute,
+    formatTagPageRoute,
+    formatFollowersPageRoute,
+    formatFollowingPageRoute,
+  };
 }

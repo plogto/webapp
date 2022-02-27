@@ -31,6 +31,15 @@
       "follow": "follow",
       "following": "following",
       "requested": "requested"
+    },
+    "status": {
+      "noConnections": {
+        "title": "No Connections Yet"
+      },
+      "private": {
+        "description": "Follow to see their connections.",
+        "title": "This Account is Private"
+      }
     }
   },
   "modal": {

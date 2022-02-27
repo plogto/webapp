@@ -1,0 +1,26 @@
+.userInfo {
+  @apply inline-flex items-center flex-grow;
+
+  & .avatar {
+    @apply text-gray-400 w-10 h-10 mr-2;
+    @apply rounded-full shadow-sm border;
+  }
+
+  & .fullName {
+    @apply font-bold pr-1;
+  }
+
+  & .username {
+    @apply text-gray-500 text-sm pr-1;
+  }
+
+  &.large {
+    & .fullName {
+      @apply text-lg;
+    }
+
+    & .username {
+      @apply -mt-1 text-[13px];
+    }
+  }
+}

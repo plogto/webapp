@@ -1,6 +1,5 @@
 import styles from "../Search.module.css";
-import { UserInfo } from "@features/UserInfo";
-
+import { User } from "@components/User";
 import type { SearchResult } from "../@types";
 
 type Props = {
@@ -11,7 +10,7 @@ export function Users({ user }: Props) {
   return user ? (
     <div className={styles.users}>
       {user.users?.map(user => (
-        <UserInfo key={user.id} user={user} />
+        <User key={user.id} user={user} />
       ))}
     </div>
   ) : null;
