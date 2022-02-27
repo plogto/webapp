@@ -33,14 +33,22 @@ export function Content(props: ContentPostProps) {
   );
 
   const textComponent = (
-    <p>
-      {parsePost({
-        content,
-        hashtagComponent: (value: string) => (
-          <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
-        ),
-      })}
-    </p>
+    <>
+      <p>
+        {parsePost({
+          content,
+          hashtagComponent: (value: string) => (
+            <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
+          ),
+        })}
+      </p>
+      <DateTime
+        type={dateType}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+        size={dateSize}
+      />
+    </>
   );
 
   return (
@@ -56,7 +64,7 @@ export function Content(props: ContentPostProps) {
           </div>
         </a>
       )}
-      <span>
+      <span className="w-full">
         {isClickable && url ? (
           <Link href={formatPostPageRoute(url)}>
             <a>{textComponent}</a>
@@ -64,12 +72,6 @@ export function Content(props: ContentPostProps) {
         ) : (
           textComponent
         )}
-        <DateTime
-          type={dateType}
-          createdAt={createdAt}
-          updatedAt={updatedAt}
-          size={dateSize}
-        />
       </span>
     </span>
   );
