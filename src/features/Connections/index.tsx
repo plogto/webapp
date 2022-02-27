@@ -1,23 +1,88 @@
+import { LockClosedIcon, UserIcon } from "@heroicons/react/outline";
+import classNames from "classnames";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import { v4 as uuid } from "uuid";
 import styles from "./Connections.module.css";
 import { useConnections } from "./hooks/useConnections";
+import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
-import { UserInfo } from "@features/UserInfo";
+import { Icon } from "@components/Icon";
+import { PageStatus } from "@components/PageStatus";
+import { User } from "@components/User";
+import { UserInfo } from "@components/UserInfo";
+import { PageUrls } from "@enums/pages";
+import { useNavigation } from "@hooks/useNavigation";
 import type { ConnectionsProps } from "./@types";
 
 export function Connections({ type }: ConnectionsProps) {
-  const { connections } = useConnections({ type });
+  const { CONNECTIONS_TABS, connections, user } = useConnections({
+    type,
+  });
+  const { formatProfilePageRoute } = useNavigation();
+  const { t } = useTranslation("connection");
+
+  const isPrivate = user?.isPrivate && user.connectionStatus !== 2;
 
   return (
-    <Card className={styles.card}>
-      {connections[type]?.connections?.map(connection => (
-        <UserInfo
-          key={connection.id}
-          user={
-            type == "following" ? connection.following : connection.follower
-          }
-          showFollow
+    <Card>
+      <div className={styles.header}>
+        <Link
+          href={user ? formatProfilePageRoute(user?.username) : PageUrls.HOME}
+        >
+          <a className={styles.back}>
+            <Icon className={styles.icon} name="chevronLeft" />
+          </a>
+        </Link>
+        <UserInfo size="large" showAvatar={false} user={user} />
+      </div>
+
+      {isPrivate && (
+        <PageStatus
+          title={t("status.private.title")}
+          description={t("status.private.description")}
+          icon={<LockClosedIcon strokeWidth="1" className="w-12" />}
+          className={styles.privateStatus}
         />
-      ))}
+      )}
+
+      {!isPrivate && (
+        <>
+          <div className={styles.buttons}>
+            {Object.values(CONNECTIONS_TABS).map(({ title, onClick }) => (
+              <Button
+                key={uuid()}
+                onClick={onClick}
+                className={classNames(
+                  styles.button,
+                  type === title && styles.active,
+                )}
+              >
+                {title}
+              </Button>
+            ))}
+          </div>
+          {connections[type]?.connections ? (
+            connections[type]?.connections?.map(connection => (
+              <User
+                key={connection.id}
+                user={
+                  type == "following"
+                    ? connection.following
+                    : connection.follower
+                }
+                showFollow
+              />
+            ))
+          ) : (
+            <PageStatus
+              title={t("status.noConnections.title")}
+              icon={<UserIcon strokeWidth="1" className="w-12" />}
+              className={styles.noConnectionsStatus}
+            />
+          )}
+        </>
+      )}
     </Card>
   );
 }
