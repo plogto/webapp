@@ -16,6 +16,12 @@ import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 import Plog from "./svg/plog.svg";
+import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
+import RectangleHorizontal from "./svg/rectangle-horizontal.svg";
+import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
+import RectangleVertical from "./svg/rectangle-vertical.svg";
+import SquareFill from "./svg/square-fill.svg";
+import Square from "./svg/square.svg";
 
 export const iconsList = {
   bell: {
@@ -50,6 +56,18 @@ export const iconsList = {
     outline: Plog,
     // TODO: add PlogFill icon
     fill: Plog,
+  },
+  rectangleHorizontal: {
+    outline: RectangleHorizontal,
+    fill: RectangleHorizontalFill,
+  },
+  rectangleVertical: {
+    outline: RectangleVertical,
+    fill: RectangleVerticalFill,
+  },
+  square: {
+    outline: Square,
+    fill: SquareFill,
   },
 };
 
