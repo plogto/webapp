@@ -15,6 +15,7 @@ import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
+import KeyFill from "./svg/key-fill.svg";
 import Key from "./svg/key.svg";
 import Plog from "./svg/plog.svg";
 import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
@@ -23,6 +24,9 @@ import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
 import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
+import UserFill from "./svg/user-fill.svg";
+import User from "./svg/user.svg";
+import Users from "./svg/users.svg";
 
 export const iconsList = {
   bell: {
@@ -55,7 +59,7 @@ export const iconsList = {
   },
   key: {
     outline: Key,
-    fill: Key,
+    fill: KeyFill,
   },
   plog: {
     outline: Plog,
@@ -73,6 +77,15 @@ export const iconsList = {
   square: {
     outline: Square,
     fill: SquareFill,
+  },
+  user: {
+    outline: User,
+    fill: UserFill,
+  },
+  users: {
+    outline: Users,
+    // TODO: add fill UsersFill icon
+    fill: Users,
   },
 };
 
