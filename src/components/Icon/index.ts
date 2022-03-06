@@ -15,6 +15,7 @@ import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
+import Key from "./svg/key.svg";
 import Plog from "./svg/plog.svg";
 import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
 import RectangleHorizontal from "./svg/rectangle-horizontal.svg";
@@ -51,6 +52,10 @@ export const iconsList = {
   heart: {
     outline: Heart,
     fill: HeartFill,
+  },
+  key: {
+    outline: Key,
+    fill: Key,
   },
   plog: {
     outline: Plog,
