@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.23.0](https://github.com/favecode/plog-fe/compare/v0.22.1...v0.23.0) (2022-03-06)
+
+
+### Features
+
+* add CropImageTypeKey enum ([353e6dd](https://github.com/favecode/plog-fe/commit/353e6ddf050176429a0f75cf6684c1b723c32b12))
+* add square, rectangle horizontal and vertical icons ([cccfbf1](https://github.com/favecode/plog-fe/commit/cccfbf15cacdb4836f1729b454e3c082e62199f5))
+* implement CropImage component ([224d105](https://github.com/favecode/plog-fe/commit/224d105df816df5ef73ff87ca07b01b62fb92e04))
+
 ### [0.22.1](https://github.com/favecode/plog-fe/compare/v0.22.0...v0.22.1) (2022-03-04)
 
 ## [0.22.0](https://github.com/favecode/plog-fe/compare/v0.21.0...v0.22.0) (2022-02-27)

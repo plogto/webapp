@@ -42,6 +42,15 @@
       }
     }
   },
+  "cropImage": {
+    "buttons": {
+      "apply": "Apply",
+      "cancel": "Cancel"
+    },
+    "texts": {
+      "cropImage": "Crop Image"
+    }
+  },
   "modal": {
     "buttons": {
       "cancel": "Cancel",
