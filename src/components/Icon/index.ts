@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
-
 import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
@@ -13,6 +12,7 @@ import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
 import DotsHorizontal from "./svg/dots-horizontal.svg";
 import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
+import Hashtag from "./svg/hashtag.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 import KeyFill from "./svg/key-fill.svg";
@@ -52,6 +52,10 @@ export const iconsList = {
   exclamation: {
     outline: Exclamation,
     fill: ExclamationFill,
+  },
+  hashtag: {
+    outline: Hashtag,
+    fill: Hashtag,
   },
   heart: {
     outline: Heart,
