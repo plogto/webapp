@@ -80,3 +80,22 @@ export const EDIT_USER = gql`
     }
   }
 `;
+
+export const CHANGE_PASSWORD = gql`
+  mutation changePassword($oldPassword: String!, $newPassword: String!) {
+    changePassword(
+      input: { oldPassword: $oldPassword, newPassword: $newPassword }
+    ) {
+      user {
+        id
+        username
+        email
+        fullName
+      }
+      authToken {
+        token
+        expiredAt
+      }
+    }
+  }
+`;
