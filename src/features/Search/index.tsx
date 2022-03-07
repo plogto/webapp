@@ -1,4 +1,4 @@
-import { HashtagIcon, UsersIcon } from "@heroicons/react/solid";
+import classNames from "classnames";
 import { MobileOnlyView } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { MobileTrends } from "../Trends";
@@ -6,23 +6,25 @@ import styles from "./Search.module.css";
 import { Tags, Users } from "./components";
 import { useSearch } from "./hooks/useSearch";
 import { Button } from "@components/Buttons/Button";
+import { Icon } from "@components/Icon";
+import type { Filter } from "./@types";
 
 export function Search() {
   const { formMethods, onSubmit, result, filter, setFilter } = useSearch();
   const { register, handleSubmit, watch } = formMethods;
 
   const { t } = useTranslation(["common", "search"]);
-  const filters = [
+  const filters: Filter[] = [
     {
       title: t("common:users"),
       active: filter === "users",
-      icon: <UsersIcon />,
+      icon: "users",
       onClick: () => setFilter("users"),
     },
     {
       title: t("common:tags"),
       active: filter === "tags",
-      icon: <HashtagIcon />,
+      icon: "hashtag",
       onClick: () => setFilter("tags"),
     },
   ];
@@ -41,15 +43,16 @@ export function Search() {
             className={styles.searchInput}
           />
           <div className={styles.filters}>
-            {filters.map(f => (
+            {filters.map(({ title, active, onClick, icon }) => (
               <Button
-                key={f.title}
-                className={`${styles.filterButton} ${
-                  f.active ? styles.active : ""
-                }`}
-                onClick={f.onClick}
+                key={title}
+                className={classNames(
+                  styles.filterButton,
+                  active && styles.active,
+                )}
+                onClick={onClick}
               >
-                {f.icon}
+                <Icon name={icon} className="stroke-2" />
               </Button>
             ))}
           </div>
