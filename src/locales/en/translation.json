@@ -14,6 +14,27 @@
       "username": "username"
     }
   },
+  "changePassword": {
+    "buttons": {
+      "apply": "Apply",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "confirmPasswordRequired": "Confirm Password is required",
+      "minLength": "Password must be at 8 char long",
+      "newPasswordRequired": "New Password is required",
+      "oldPasswordRequired": "Old Password is required",
+      "doesNotMatch": "Passwords does not match"
+    },
+    "labels": {
+      "confirmPassword": "Confirm Password",
+      "newPassword": "New Password",
+      "oldPassword": "Old Password"
+    },
+    "texts": {
+      "changePassword": "change password"
+    }
+  },
   "common": {
     "follower": "follower",
     "followers": "followers",
