@@ -11,6 +11,7 @@ import { Icon } from "@components/Icon";
 import { PageStatus } from "@components/PageStatus";
 import { User } from "@components/User";
 import { UserInfo } from "@components/UserInfo";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useNavigation } from "@hooks/useNavigation";
 import type { ConnectionsProps } from "./@types";
@@ -19,10 +20,12 @@ export function Connections({ type }: ConnectionsProps) {
   const { CONNECTIONS_TABS, connections, user } = useConnections({
     type,
   });
+  const { user: userAccount } = useAccountContext();
   const { formatProfilePageRoute } = useNavigation();
   const { t } = useTranslation("connection");
 
   const isPrivate = user?.isPrivate && user.connectionStatus !== 2;
+  const isYourProfile = user?.id == userAccount?.id;
 
   return (
     <Card>
@@ -37,7 +40,7 @@ export function Connections({ type }: ConnectionsProps) {
         <UserInfo size="large" showAvatar={false} user={user} />
       </div>
 
-      {isPrivate && (
+      {isPrivate && !isYourProfile && user.connectionStatus !== 2 && (
         <PageStatus
           title={t("status.private.title")}
           description={t("status.private.description")}
@@ -46,7 +49,7 @@ export function Connections({ type }: ConnectionsProps) {
         />
       )}
 
-      {!isPrivate && (
+      {(!isPrivate || isYourProfile || user.connectionStatus === 2) && (
         <>
           <div className={styles.buttons}>
             {Object.values(CONNECTIONS_TABS).map(({ title, onClick }) => (

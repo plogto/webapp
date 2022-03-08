@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
-
 import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
