@@ -83,18 +83,18 @@
 
 .modalCancelButton,
 .modalDeleteButton,
-.modalRedButton {
+.modalApplyButton {
   @apply px-2.5 py-2.5 md:py-2 rounded-lg w-full;
 }
 
 .modalCancelButton {
   @apply text-gray-900 border border-gray-200;
 }
+
+.modalApplyButton {
+  @apply bg-gray-900 text-white;
+}
 /* TODO: fix this class */
 .modalDeleteButton {
-  @apply text-white bg-red-500;
-}
-
-.modalRedButton {
   @apply text-white bg-red-500;
 }

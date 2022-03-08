@@ -75,11 +75,11 @@
   "logout": {
     "buttons": {
       "cancel": "Cancel",
-      "logout": "Logout"
+      "logout": "Log out"
     },
     "texts": {
-      "description": "Are you sure you want to logout?",
-      "logout": "Logout",
+      "description": "Are you sure you want to log out?",
+      "logout": "Log out",
       "title": "Warning"
     }
   },
