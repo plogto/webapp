@@ -1,3 +1,4 @@
+import type { AuthToken } from "./auth";
 import type { User } from "@t/user";
 
 export type GetUserInfoQuery = {
@@ -18,4 +19,9 @@ export type GetUserByUsernameQuery = {
 
 export type EditUserMutation = {
   editUser: User;
+};
+
+export type ChangePasswordMutation = {
+  user: User;
+  authToken: AuthToken;
 };

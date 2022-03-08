@@ -1,6 +1,6 @@
 import type { User } from "@t/user";
 
-type AuthToken = {
+export type AuthToken = {
   token: string;
   expiredAt: string;
 };

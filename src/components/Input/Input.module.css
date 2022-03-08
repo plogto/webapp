@@ -1,32 +1,38 @@
-.wrapper .input {
-  @apply focus:ring-primary-500 focus:border-primary-500;
-}
+.wrapper {
+  & .input {
+    @apply shadow-sm py-2.5;
+    @apply block w-full sm:text-sm border-gray-300 rounded-lg;
 
-.wrapper.error .input {
-  @apply focus:ring-red-500 focus:border-red-500 bg-red-50 border-red-500;
-}
+    & .message {
+      @apply text-xs;
+    }
 
-.input {
-  @apply shadow-sm py-2.5;
-  @apply block w-full sm:text-sm border-gray-300 rounded-lg;
-}
+    &::placeholder {
+      @apply capitalize;
+    }
+  }
 
-.input::placeholder {
-  @apply capitalize;
-}
+  & .label {
+    @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
+  }
 
-.label {
-  @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
-}
+  &.success {
+    & .input {
+      @apply focus:ring-primary-500 focus:border-primary-500;
+    }
 
-.message {
-  @apply text-xs;
-}
+    & .message {
+      @apply text-primary-500;
+    }
+  }
 
-.wrapper.error .message {
-  @apply text-red-500;
-}
+  &.error {
+    & .input {
+      @apply focus:ring-red-500 focus:border-red-500 bg-red-50 border-red-500;
+    }
 
-.wrapper.success .message {
-  @apply text-primary-500;
+    & .message {
+      @apply text-red-500;
+    }
+  }
 }
