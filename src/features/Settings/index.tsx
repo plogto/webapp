@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "./Settings.module.css";
+import { LogoutButton } from "./components/LogoutButton";
 import { SETTINGS_ITEMS } from "./config";
 import { useSettings } from "./hooks/useSettings";
 import { Card } from "@components/Card";
@@ -34,6 +35,7 @@ export function Settings() {
           </a>
         </Link>
       ))}
+      <LogoutButton className={styles.logoutButton} />
     </Card>
   );
 }

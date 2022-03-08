@@ -7,3 +7,7 @@ export type SettingsItem = {
   icon?: IconNames;
   className?: string;
 };
+
+export type LogoutButtonProps = {
+  className?: string;
+};
