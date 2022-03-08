@@ -35,7 +35,7 @@
 }
 
 .submitButtonLoading {
-  @apply w-5 md:w-6;
+  @apply w-6;
 }
 
 .registerLink {
