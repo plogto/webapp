@@ -4,7 +4,7 @@
 
 .dialog {
   @apply flex items-end md:items-center justify-center;
-  @apply min-h-screen px-4 text-center;
+  @apply h-screen px-4 text-center;
 }
 
 .overlay {
@@ -12,7 +12,7 @@
 }
 
 .content {
-  @apply absolute inline-block w-full max-w-xs my-8;
+  @apply absolute bottom-0 md:bottom-[unset] inline-block w-full max-w-[90%] md:max-w-xs my-8;
   @apply overflow-hidden text-left align-middle;
   @apply transition-all transform bg-white shadow rounded-xl;
 }
@@ -82,14 +82,19 @@
 }
 
 .modalCancelButton,
-.modalDeleteButton {
-  @apply px-2.5 py-1.5 rounded-lg w-full;
+.modalDeleteButton,
+.modalRedButton {
+  @apply px-2.5 py-2.5 md:py-2 rounded-lg w-full;
 }
 
 .modalCancelButton {
   @apply text-gray-900 border border-gray-200;
 }
-
+/* TODO: fix this class */
 .modalDeleteButton {
+  @apply text-white bg-red-500;
+}
+
+.modalRedButton {
   @apply text-white bg-red-500;
 }

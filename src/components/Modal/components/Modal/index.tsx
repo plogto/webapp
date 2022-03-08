@@ -2,16 +2,14 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { ModalProps } from "../../@types";
 import styles from "../../Modal.module.css";
-import { useModalContext } from "@contexts/ModalContext";
 
 export function Modal(props: ModalProps) {
   const { children, isOpen } = props;
-  const { closeModal } = useModalContext();
 
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className={styles.dialogWrapper} onClose={closeModal}>
+        <Dialog as="div" className={styles.dialogWrapper} onClose={() => {}}>
           <div className={styles.dialog}>
             <Transition.Child
               as={Fragment}
