@@ -2,9 +2,9 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
 import { Wrapper } from "@components/Wrapper";
-import { Settings } from "@features/Settings";
+import { EditProfile } from "@features/EditProfile";
 
-export default function SettingsPage() {
+export default function EditProfilePage() {
   const { t } = useTranslation(["common", "pages"]);
   return (
     <>
@@ -15,7 +15,7 @@ export default function SettingsPage() {
       </Head>
       <Layout>
         <Wrapper className="p-2 md:p-5">
-          <Settings />
+          <EditProfile />
         </Wrapper>
       </Layout>
     </>

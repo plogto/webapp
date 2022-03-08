@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
-
 import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
@@ -13,8 +12,11 @@ import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
 import DotsHorizontal from "./svg/dots-horizontal.svg";
 import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
+import Hashtag from "./svg/hashtag.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
+import KeyFill from "./svg/key-fill.svg";
+import Key from "./svg/key.svg";
 import Plog from "./svg/plog.svg";
 import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
 import RectangleHorizontal from "./svg/rectangle-horizontal.svg";
@@ -22,6 +24,9 @@ import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
 import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
+import UserFill from "./svg/user-fill.svg";
+import User from "./svg/user.svg";
+import Users from "./svg/users.svg";
 
 export const iconsList = {
   bell: {
@@ -48,9 +53,17 @@ export const iconsList = {
     outline: Exclamation,
     fill: ExclamationFill,
   },
+  hashtag: {
+    outline: Hashtag,
+    fill: Hashtag,
+  },
   heart: {
     outline: Heart,
     fill: HeartFill,
+  },
+  key: {
+    outline: Key,
+    fill: KeyFill,
   },
   plog: {
     outline: Plog,
@@ -68,6 +81,15 @@ export const iconsList = {
   square: {
     outline: Square,
     fill: SquareFill,
+  },
+  user: {
+    outline: User,
+    fill: UserFill,
+  },
+  users: {
+    outline: Users,
+    // TODO: add fill UsersFill icon
+    fill: Users,
   },
 };
 
