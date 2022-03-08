@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.24.0](https://github.com/favecode/plog-fe/compare/v0.23.0...v0.24.0) (2022-03-08)
+
+
+### Features
+
+* add changePassword graphql query ([f7ac6e9](https://github.com/favecode/plog-fe/commit/f7ac6e9163fdc01b9593334911724dcaba873e36))
+* add EditProfile feature ([69b513d](https://github.com/favecode/plog-fe/commit/69b513df246e81f82330faee4f0a3a35dfb27bc6))
+* add hashtag icon ([50312a7](https://github.com/favecode/plog-fe/commit/50312a7187d344b6cc4862ca2bdbcddc678aac27))
+* add key icon ([d52409b](https://github.com/favecode/plog-fe/commit/d52409b8d3c949264ebff90016b8650ed8e90a11))
+* add key, user and users icons ([7ca954b](https://github.com/favecode/plog-fe/commit/7ca954b31f9c8ff48ddc520a15ad7e40e4eb820d))
+* implement ChangePassword feature ([22ac720](https://github.com/favecode/plog-fe/commit/22ac7200e137cb8379924592303856704026c5dc))
+* implement LogoutButton component ([7efcd3c](https://github.com/favecode/plog-fe/commit/7efcd3c3dd6710889950541a20729c9f5bdc40a5))
+
+
+### Bug Fixes
+
+* change loading button size for Login component ([04c3bf5](https://github.com/favecode/plog-fe/commit/04c3bf571317a3ad553e654718612f8c0a122e0d))
+* handle data in Connections feature ([95f6e88](https://github.com/favecode/plog-fe/commit/95f6e8891a5b00ec3eab047aa20d64c71414f5d1))
+
 ## [0.23.0](https://github.com/favecode/plog-fe/compare/v0.22.1...v0.23.0) (2022-03-06)
 
 
