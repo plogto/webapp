@@ -21,10 +21,10 @@
     },
     "errors": {
       "confirmPasswordRequired": "Confirm Password is required",
+      "doesNotMatch": "Passwords does not match",
       "minLength": "Password must be at 8 char long",
       "newPasswordRequired": "New Password is required",
-      "oldPasswordRequired": "Old Password is required",
-      "doesNotMatch": "Passwords does not match"
+      "oldPasswordRequired": "Old Password is required"
     },
     "labels": {
       "confirmPassword": "Confirm Password",
@@ -70,6 +70,17 @@
     },
     "texts": {
       "cropImage": "Crop Image"
+    }
+  },
+  "logout": {
+    "buttons": {
+      "cancel": "Cancel",
+      "logout": "Logout"
+    },
+    "texts": {
+      "description": "Are you sure you want to logout?",
+      "logout": "Logout",
+      "title": "Warning"
     }
   },
   "modal": {
