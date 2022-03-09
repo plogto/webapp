@@ -21,8 +21,8 @@ export function LogoutButton(props: LogoutButtonProps) {
     closeModal();
   }, [closeModal, push]);
 
-  const iconWrapperClasses = classNames(styles.iconWrapper, "bg-red-50");
-  const iconClasses = classNames(styles.icon, "text-red-500");
+  const iconWrapperClasses = classNames(styles.iconWrapper, "bg-yellow-50");
+  const iconClasses = classNames(styles.icon, "text-yellow-500");
 
   const { t } = useTranslation("logout");
 
@@ -39,7 +39,7 @@ export function LogoutButton(props: LogoutButtonProps) {
             <Button onClick={closeModal} className={styles.modalCancelButton}>
               {t("buttons.cancel")}
             </Button>
-            <Button onClick={handleLogout} className={styles.modalDeleteButton}>
+            <Button onClick={handleLogout} className={styles.modalApplyButton}>
               {t("buttons.logout")}
             </Button>
           </div>

@@ -18,8 +18,9 @@
   }
 
   & .item {
-    @apply flex items-center space-x-3;
+    @apply flex items-center space-x-3 hover:bg-gray-50;
     @apply border-dashed border-t p-3.5;
+    @apply transition-all duration-300;
 
     & .icon {
       @apply w-6 h-6 stroke-2;
