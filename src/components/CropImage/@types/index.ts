@@ -2,7 +2,7 @@ import { IconNames } from "@components/Icon";
 import { CropImageTypeKey } from "@enums";
 import type { Dispatch, SetStateAction } from "react";
 
-type Aspect = "1:1" | "1:3" | "4:5" | "16:9";
+type Aspect = "1:1" | "3:1" | "4:5" | "16:9";
 
 export type PixelCrop = {
   x: number;
