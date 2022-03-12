@@ -4,6 +4,8 @@ import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
+import CameraFill from "./svg/camera-fill.svg";
+import Camera from "./svg/camera.svg";
 import ChevronLeftFill from "./svg/chevron-left-fill.svg";
 import ChevronLeft from "./svg/chevron-left.svg";
 import CommentCircleFill from "./svg/comment-circle-fill.svg";
@@ -49,6 +51,10 @@ export const iconsList = {
   bookmark: {
     outline: Bookmark,
     fill: BookmarkFill,
+  },
+  camera: {
+    outline: Camera,
+    fill: CameraFill,
   },
   chevronLeft: {
     outline: ChevronLeft,
