@@ -63,11 +63,11 @@ export function useModalContext() {
 
   const openModal = useCallback(() => {
     setIsOpen(true);
-  }, [isOpen]);
+  }, [setIsOpen]);
 
   const closeModal = useCallback(() => {
     setIsOpen(false);
-  }, [isOpen]);
+  }, [setIsOpen]);
 
   return { isOpen, content, setIsOpen, setContent, openModal, closeModal };
 }
