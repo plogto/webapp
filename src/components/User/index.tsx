@@ -1,10 +1,10 @@
-import { XIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "./User.module.css";
 import { useActions } from "./hooks/useActions";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
+import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNavigation } from "@hooks/useNavigation";
 import type { ActionButtons, UserProps } from "./@types";
@@ -91,7 +91,7 @@ export function User(props: UserProps) {
           )}
           {showDelete && (
             <Button {...actionButtons["reject"]}>
-              <XIcon className={styles.rejectIcon} />
+              <Icon name="x" className={styles.rejectIcon} />
             </Button>
           )}
         </div>

@@ -1,4 +1,3 @@
-import { LockClosedIcon, UserIcon } from "@heroicons/react/outline";
 import classNames from "classnames";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -44,7 +43,7 @@ export function Connections({ type }: ConnectionsProps) {
         <PageStatus
           title={t("status.private.title")}
           description={t("status.private.description")}
-          icon={<LockClosedIcon strokeWidth="1" className="w-12" />}
+          icon={<Icon name="lockClosed" className="w-12" />}
           className={styles.privateStatus}
         />
       )}
@@ -80,7 +79,7 @@ export function Connections({ type }: ConnectionsProps) {
           ) : (
             <PageStatus
               title={t("status.noConnections.title")}
-              icon={<UserIcon strokeWidth="1" className="w-12" />}
+              icon={<Icon name="user" className="w-12" />}
               className={styles.noConnectionsStatus}
             />
           )}

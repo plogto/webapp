@@ -1,9 +1,8 @@
-import { PhotographIcon } from "@heroicons/react/outline";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import { useTranslation } from "react-i18next";
 import styles from "./Profile.module.css";
 import { Header, NotFound } from "./components";
 import { useProfile } from "./hooks/useProfile";
+import { Icon } from "@components/Icon";
 import { PageStatus } from "@components/PageStatus";
 import { Posts } from "@components/Posts";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -31,7 +30,7 @@ export function Profile() {
           <PageStatus
             title={t("status.private.title")}
             description={t("status.private.description")}
-            icon={<LockClosedIcon strokeWidth="1" className="w-12" />}
+            icon={<Icon name="lockClosed" className="w-12" />}
             className={styles.privateStatus}
           />
         )}
@@ -39,7 +38,7 @@ export function Profile() {
           <PageStatus
             title={t("status.noPosts.title")}
             description={t("status.noPosts.description")}
-            icon={<PhotographIcon strokeWidth="1" className="w-12" />}
+            icon={<Icon name="photo" className="w-12" />}
             className={styles.noPostsStatus}
           />
         )}
