@@ -1,5 +1,4 @@
 /* Desktop */
-
 .card {
   @apply flex flex-col;
 }
@@ -9,7 +8,7 @@
 }
 
 .header svg {
-  @apply w-7 h-7;
+  @apply w-7 h-7 stroke-2;
 }
 
 .title {
@@ -44,7 +43,7 @@
 }
 
 .mobileHeader svg {
-  @apply w-4 h-4;
+  @apply w-4 h-4 stroke-1.5;
 }
 
 .mobileTags {
