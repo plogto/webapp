@@ -12,7 +12,7 @@
   }
 
   &.isParentReply {
-    @apply border-t border-gray-200;
+    @apply border-t border-gray-200 border-dashed;
 
     & > div > .headerAndContentWrapper {
       @apply mt-2;

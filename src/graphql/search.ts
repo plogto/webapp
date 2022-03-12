@@ -7,6 +7,7 @@ export const SEARCH = gql`
         users {
           id
           username
+          avatar
           email
           fullName
         }

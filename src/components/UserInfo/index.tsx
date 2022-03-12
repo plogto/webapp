@@ -9,7 +9,7 @@ export function UserInfo(props: UserInfoProps) {
 
   return user ? (
     <div className={wrapperClasses}>
-      {showAvatar && <Avatar className={styles.avatar} />}
+      {showAvatar && <Avatar className={styles.avatar} avatar={user.avatar} />}
       <div>
         <div className={styles.fullName}>{user?.fullName}</div>
         <div className={styles.username}>@{user?.username}</div>

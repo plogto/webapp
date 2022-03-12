@@ -9,7 +9,7 @@
   }
 
   &.loading {
-    @apply cursor-not-allowed;
+    @apply cursor-wait;
   }
 
   &.cancel {

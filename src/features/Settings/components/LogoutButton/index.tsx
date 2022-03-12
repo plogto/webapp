@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
-import styles from "@components/Modal/Modal.module.css";
 import { useModalContext } from "@contexts/ModalContext";
 import { PageUrls } from "@enums/pages";
 import type { LogoutButtonProps } from "@features/Settings/@types";
@@ -13,7 +12,7 @@ import type { LogoutButtonProps } from "@features/Settings/@types";
 export function LogoutButton(props: LogoutButtonProps) {
   const { push } = useRouter();
   const { className } = props;
-
+  const { t } = useTranslation("logout");
   const { closeModal, openModal, isOpen } = useModalContext();
 
   const handleLogout = useCallback(() => {
@@ -21,25 +20,34 @@ export function LogoutButton(props: LogoutButtonProps) {
     closeModal();
   }, [closeModal, push]);
 
-  const iconWrapperClasses = classNames(styles.iconWrapper, "bg-yellow-50");
-  const iconClasses = classNames(styles.icon, "text-yellow-500");
-
-  const { t } = useTranslation("logout");
-
   return (
     <>
       <Modal isOpen={isOpen}>
-        <div className={styles.modalWrapper}>
-          <div className={iconWrapperClasses}>
-            <Icon type="outline" name="exclamation" className={iconClasses} />
+        <div className="modal">
+          <div className="icon-wrapper bg-yellow-50">
+            <Icon
+              type="outline"
+              name="exclamation"
+              className="icon text-yellow-500"
+            />
           </div>
-          <div className={styles.modalTitle}>{t("texts.title")}</div>
-          <p className={styles.modalDescription}>{t("texts.description")}</p>
-          <div className={styles.modalButtons}>
-            <Button onClick={closeModal} className={styles.modalCancelButton}>
+          <div className="modal-title">{t("texts.title")}</div>
+          <p className="modal-description">{t("texts.description")}</p>
+          <div className="modal-buttons">
+            <Button
+              type="button"
+              layout="cancel"
+              onClick={closeModal}
+              className="modal-button"
+            >
               {t("buttons.cancel")}
             </Button>
-            <Button onClick={handleLogout} className={styles.modalApplyButton}>
+            <Button
+              type="button"
+              layout="apply"
+              onClick={handleLogout}
+              className="modal-button"
+            >
               {t("buttons.logout")}
             </Button>
           </div>
