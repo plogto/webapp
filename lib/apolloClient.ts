@@ -1,13 +1,14 @@
 import {
   ApolloClient,
   ApolloLink,
-  createHttpLink,
   InMemoryCache,
   NormalizedCacheObject,
+  RequestHandler,
   split,
 } from "@apollo/client";
 import { WebSocketLink } from "@apollo/client/link/ws";
 import { getMainDefinition } from "@apollo/client/utilities";
+import { createUploadLink } from "apollo-upload-client";
 import { useMemo } from "react";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
@@ -28,9 +29,9 @@ const authLink = new ApolloLink((operation, forward) => {
 });
 
 const httpLink = authLink.concat(
-  createHttpLink({
+  createUploadLink({
     uri: process.env.NEXT_PUBLIC_BASE_URL + "/query",
-  }),
+  }) as unknown as ApolloLink | RequestHandler,
 );
 
 const link =
