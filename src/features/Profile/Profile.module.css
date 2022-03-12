@@ -33,8 +33,7 @@
       @apply font-bold;
     }
 
-    & .follow,
-    & .settings {
+    & .follow {
       @apply bg-primary-500 text-white;
     }
 

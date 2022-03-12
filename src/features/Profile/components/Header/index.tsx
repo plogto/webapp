@@ -41,7 +41,11 @@ export function Header(props: User) {
         {user?.id !== id ? (
           <ConnectionStatus user={{ id, connectionStatus }} />
         ) : (
-          <LinkButton href={PageUrls.SETTINGS} className={styles.settings}>
+          <LinkButton
+            layout="apply"
+            href={PageUrls.SETTINGS}
+            className={styles.settings}
+          >
             {t("buttons.settings")}
           </LinkButton>
         )}
