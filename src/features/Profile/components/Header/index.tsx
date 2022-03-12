@@ -1,16 +1,17 @@
 import { useTranslation } from "react-i18next";
-import styles from "../Profile.module.css";
-import { useProfile } from "../hooks";
+import { ConnectionStatus, Count } from "..";
+import styles from "../../Profile.module.css";
+import { useProfile } from "../../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { ConnectionStatus, Count } from ".";
 import type { User } from "@t/user";
 
 // TODO: refactor this component
 export function Header(props: User) {
-  const { id, username, fullName, bio, connectionStatus, isPrivate } = props;
+  const { id, username, avatar, fullName, bio, connectionStatus, isPrivate } =
+    props;
   const { user } = useAccountContext();
   const { counts } = useProfile();
   const { t } = useTranslation("profile");
@@ -20,7 +21,7 @@ export function Header(props: User) {
 
   return (
     <div className={styles.header}>
-      <Avatar size="large" className={styles.avatar} />
+      <Avatar size="large" className={styles.avatar} avatar={avatar} />
       <div className="flex items-start justify-between w-full">
         <div>
           <div className={styles.fullName}>{fullName}</div>

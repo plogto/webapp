@@ -23,6 +23,7 @@
     & .icon {
       @apply w-8 h-8 stroke-1.5;
     }
+
     & .avatarWrapper {
       @apply absolute -bottom-8 left-6 z-30;
 
