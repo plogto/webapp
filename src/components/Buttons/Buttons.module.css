@@ -1,14 +1,27 @@
 .button {
   @apply inline-flex items-center justify-center;
-  @apply select-none duration-300;
+  @apply select-none transition-all duration-300;
   @apply cursor-pointer ring-0 focus:ring-0 rounded-lg;
-}
 
-.disabled {
-  @apply bg-gray-300 text-gray-500 !important;
-  @apply cursor-not-allowed;
-}
+  &.disabled {
+    @apply bg-gray-300 text-gray-500 !important;
+    @apply cursor-not-allowed;
+  }
 
-.loading {
-  @apply cursor-not-allowed;
+  &.loading {
+    @apply cursor-wait;
+  }
+
+  &.cancel {
+    @apply text-gray-900 hover:shadow;
+  }
+
+  &.remove {
+    @apply text-red-500 border border-red-500;
+    @apply hover:bg-red-50;
+  }
+
+  &.apply {
+    @apply bg-gray-900 text-white;
+  }
 }

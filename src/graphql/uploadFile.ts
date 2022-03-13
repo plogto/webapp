@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const SINGLE_UPLOAD = gql`
-  mutation singleUpload($file: Upload!) {
-    singleUpload(file: $file) {
+export const SINGLE_UPLOAD_FILE = gql`
+  mutation singleUploadFile($file: Upload!) {
+    singleUploadFile(file: $file) {
       name
     }
   }

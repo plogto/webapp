@@ -4,9 +4,13 @@ import styles from "../Buttons.module.css";
 import { LinkButtonProps } from "./@types";
 
 export function LinkButton(props: LinkButtonProps) {
-  const { className, children, href } = props;
+  const { className, layout, children, href } = props;
 
-  const classes = classNames(styles.button, className);
+  const classes = classNames(
+    styles.button,
+    className,
+    layout && styles[layout],
+  );
 
   return (
     <Link href={href}>

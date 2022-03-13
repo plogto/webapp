@@ -2,6 +2,7 @@
   & .input {
     @apply shadow-sm py-2.5;
     @apply block w-full sm:text-sm border-gray-300 rounded-lg;
+    @apply focus:ring-0;
 
     & .message {
       @apply text-xs;
@@ -18,7 +19,7 @@
 
   &.success {
     & .input {
-      @apply focus:ring-primary-500 focus:border-primary-500;
+      @apply focus:ring-primary-500 focus:border-primary-500 border-primary-500;
     }
 
     & .message {

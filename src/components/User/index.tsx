@@ -1,10 +1,10 @@
-import { XIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "./User.module.css";
 import { useActions } from "./hooks/useActions";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
+import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNavigation } from "@hooks/useNavigation";
 import type { ActionButtons, UserProps } from "./@types";
@@ -12,7 +12,7 @@ import type { ActionButtons, UserProps } from "./@types";
 // TODO: refactor this component
 export function User(props: UserProps) {
   const {
-    user: { id, username, fullName, connectionStatus },
+    user: { id, username, fullName, connectionStatus, avatar },
     showAccept,
     showDelete,
     showFollow,
@@ -63,7 +63,7 @@ export function User(props: UserProps) {
       {username && (
         <Link href={formatProfilePageRoute(username)}>
           <a className={styles.userInfo}>
-            <Avatar className={styles.avatar} />
+            <Avatar className={styles.avatar} avatar={avatar} />
             <div>
               <div className={styles.fullName}>{fullName}</div>
               <div className={styles.username}>@{username}</div>
@@ -91,7 +91,7 @@ export function User(props: UserProps) {
           )}
           {showDelete && (
             <Button {...actionButtons["reject"]}>
-              <XIcon className={styles.rejectIcon} />
+              <Icon name="x" className={styles.rejectIcon} />
             </Button>
           )}
         </div>

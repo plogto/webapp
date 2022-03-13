@@ -1,5 +1,5 @@
 .settings {
-  @apply w-full;
+  @apply w-full mb-12 overflow-visible;
 
   & .header {
     @apply flex justify-start items-center space-x-3.5;
@@ -17,9 +17,45 @@
     }
   }
 
+  & .images {
+    @apply relative;
+
+    & .icon {
+      @apply w-8 h-8 stroke-1.5;
+    }
+
+    & .avatarWrapper {
+      @apply absolute -bottom-8 left-6 z-30;
+
+      & .uploadAvatar {
+        @apply w-20 h-20 md:w-24 md:h-24 flex items-center justify-center;
+        @apply absolute inset-0 z-30 rounded-full;
+        @apply bg-gray-800 bg-opacity-30  text-white;
+      }
+
+      & .avatar {
+        @apply bg-white w-20 h-20 md:w-24 md:h-24;
+      }
+    }
+
+    & .backgroundWrapper {
+      @apply bg-center bg-cover rounded-b-lg;
+      @apply w-full h-[33vw] md:h-44 border-none;
+      @apply relative bg-white overflow-hidden;
+
+      & .uploadBackground {
+        @apply flex items-center justify-center;
+        @apply absolute inset-0 z-30;
+        @apply bg-gray-800 bg-opacity-30 text-white;
+      }
+    }
+  }
+}
+
+.itemsWrapper {
   & .item {
     @apply flex items-center space-x-3 hover:bg-gray-50;
-    @apply border-dashed border-t p-3.5;
+    @apply border-dashed border-b p-3.5;
     @apply transition-all duration-300;
 
     & .icon {
@@ -28,7 +64,11 @@
   }
 
   & .logoutButton {
-    @apply justify-start border-dashed border-t p-3.5;
+    @apply justify-start p-3.5;
     @apply w-full text-red-500 rounded-none;
   }
+}
+
+.modalButtons {
+  @apply w-full flex flex-col space-y-3.5;
 }

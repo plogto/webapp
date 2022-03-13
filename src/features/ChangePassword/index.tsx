@@ -62,13 +62,18 @@ export function ChangePassword() {
         </div>
 
         <div className={styles.footer}>
-          <LinkButton href={PageUrls.SETTINGS} className={styles.cancelButton}>
+          <LinkButton
+            layout="cancel"
+            href={PageUrls.SETTINGS}
+            className={styles.button}
+          >
             {t("buttons.cancel")}
           </LinkButton>
           <Button
+            layout="apply"
             disabled={!isValid}
             type="submit"
-            className={styles.applyButton}
+            className={styles.button}
             loadingClassName="w-5"
           >
             {t("buttons.apply")}

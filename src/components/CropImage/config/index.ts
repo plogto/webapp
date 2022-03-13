@@ -7,9 +7,9 @@ const CROP_IMAGES_ASPECTS: CropImageAspects = {
     value: 1 / 1,
     icon: "square",
   },
-  "1:3": {
-    key: "1:3",
-    value: 1 / 3,
+  "3:1": {
+    key: "3:1",
+    value: 3 / 1,
   },
   "4:5": {
     key: "4:5",
@@ -28,9 +28,9 @@ export const CROP_IMAGES_TYPES: CropImageTypes = {
     type: CropImageTypeKey.AVATAR,
     aspects: [CROP_IMAGES_ASPECTS["1:1"]],
   },
-  COVER: {
-    type: CropImageTypeKey.COVER,
-    aspects: [CROP_IMAGES_ASPECTS["1:3"]],
+  BACKGROUND: {
+    type: CropImageTypeKey.BACKGROUND,
+    aspects: [CROP_IMAGES_ASPECTS["3:1"]],
   },
   POST: {
     type: CropImageTypeKey.POST,

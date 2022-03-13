@@ -1,4 +1,3 @@
-import { GlobeIcon, PlusIcon, ViewGridIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
@@ -6,6 +5,7 @@ import { Avatar } from "../Avatar";
 import styles from "./SidebarNavigation.module.css";
 import { NotificationIcon } from "./components/NotificationIcon";
 import { Card } from "@components/Card";
+import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
@@ -25,17 +25,17 @@ export function SidebarNavigation() {
     },
     {
       title: t("search"),
-      icon: <GlobeIcon />,
+      icon: <Icon name="globe" type="fill" />,
       href: PageUrls.SEARCH,
     },
     {
       title: t("home"),
-      icon: <ViewGridIcon />,
+      icon: <Icon name="viewGrid" type="fill" />,
       href: PageUrls.HOME,
     },
     {
       title: t("addPost"),
-      icon: <PlusIcon />,
+      icon: <Icon name="plus" type="fill" />,
       href: PageUrls.ADD_POST,
     },
   ];
@@ -45,7 +45,11 @@ export function SidebarNavigation() {
       <Card className={styles.card}>
         <Link href={formatProfilePageRoute(user?.username)}>
           <a className={styles.header}>
-            <Avatar size="extra" className={styles.avatar} />
+            <Avatar
+              size="extra"
+              className={styles.avatar}
+              avatar={user.avatar}
+            />
             <span className={styles.fullName}>{user.fullName}</span>
             <span className={styles.username}>@{user.username}</span>
           </a>

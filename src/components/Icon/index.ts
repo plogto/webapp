@@ -4,6 +4,8 @@ import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
+import CameraFill from "./svg/camera-fill.svg";
+import Camera from "./svg/camera.svg";
 import ChevronLeftFill from "./svg/chevron-left-fill.svg";
 import ChevronLeft from "./svg/chevron-left.svg";
 import CommentCircleFill from "./svg/comment-circle-fill.svg";
@@ -12,21 +14,34 @@ import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
 import DotsHorizontal from "./svg/dots-horizontal.svg";
 import ExclamationFill from "./svg/exclamation-fill.svg";
 import Exclamation from "./svg/exclamation.svg";
+import GlobeFill from "./svg/globe-fill.svg";
+import Globe from "./svg/globe.svg";
 import Hashtag from "./svg/hashtag.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 import KeyFill from "./svg/key-fill.svg";
 import Key from "./svg/key.svg";
+import LockClosedFill from "./svg/lock-closed-fill.svg";
+import LockClosed from "./svg/lock-closed.svg";
+import Photo from "./svg/photo.svg";
 import Plog from "./svg/plog.svg";
+import PlusFill from "./svg/plus-fill.svg";
+import Plus from "./svg/plus.svg";
 import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
 import RectangleHorizontal from "./svg/rectangle-horizontal.svg";
 import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
 import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
+import TrendingUpFill from "./svg/trending-up-fill.svg";
+import TrendingUp from "./svg/trending-up.svg";
 import UserFill from "./svg/user-fill.svg";
 import User from "./svg/user.svg";
 import Users from "./svg/users.svg";
+import ViewGridFill from "./svg/view-grid-fill.svg";
+import ViewGrid from "./svg/view-grid.svg";
+import XFill from "./svg/x-fill.svg";
+import X from "./svg/x.svg";
 
 export const iconsList = {
   bell: {
@@ -36,6 +51,10 @@ export const iconsList = {
   bookmark: {
     outline: Bookmark,
     fill: BookmarkFill,
+  },
+  camera: {
+    outline: Camera,
+    fill: CameraFill,
   },
   chevronLeft: {
     outline: ChevronLeft,
@@ -53,6 +72,10 @@ export const iconsList = {
     outline: Exclamation,
     fill: ExclamationFill,
   },
+  globe: {
+    outline: Globe,
+    fill: GlobeFill,
+  },
   hashtag: {
     outline: Hashtag,
     fill: Hashtag,
@@ -65,10 +88,24 @@ export const iconsList = {
     outline: Key,
     fill: KeyFill,
   },
+  lockClosed: {
+    outline: LockClosed,
+    fill: LockClosedFill,
+  },
+  photo: {
+    outline: Photo,
+    // TODO: add  icon
+    fill: Photo,
+  },
   plog: {
     outline: Plog,
     // TODO: add PlogFill icon
     fill: Plog,
+  },
+  plus: {
+    outline: Plus,
+    // TODO: add PlogFill icon
+    fill: PlusFill,
   },
   rectangleHorizontal: {
     outline: RectangleHorizontal,
@@ -82,6 +119,10 @@ export const iconsList = {
     outline: Square,
     fill: SquareFill,
   },
+  trendingUp: {
+    outline: TrendingUp,
+    fill: TrendingUpFill,
+  },
   user: {
     outline: User,
     fill: UserFill,
@@ -90,6 +131,14 @@ export const iconsList = {
     outline: Users,
     // TODO: add fill UsersFill icon
     fill: Users,
+  },
+  viewGrid: {
+    outline: ViewGrid,
+    fill: ViewGridFill,
+  },
+  x: {
+    outline: X,
+    fill: XFill,
   },
 };
 
@@ -101,12 +150,17 @@ export interface IconProps extends SVGAttributes<SVGElement> {
   type?: "outline" | "fill";
 }
 
-export function Icon({ name, className, type, ...props }: IconProps) {
+export function Icon({
+  name,
+  className,
+  type = "outline",
+  ...props
+}: IconProps) {
   const classes = classNames({
     icon: true,
   });
 
-  const icon = iconsList[name][type || "outline"];
+  const icon = iconsList[name][type];
 
   if (!icon) {
     throw Error(`"${name}" is not a valid icon name`);

@@ -7,9 +7,11 @@ export function Header(props: HeaderProps) {
   const { t } = useTranslation("cropImage");
   return (
     <div className={styles.header}>
-      <button onClick={onCancel}>{t("buttons.cancel")}</button>
+      <button type="button" onClick={onCancel}>
+        {t("buttons.cancel")}
+      </button>
       <span className={styles.title}>{t("texts.cropImage")}</span>
-      <button className={styles.applyButton} onClick={onApply}>
+      <button type="button" className={styles.applyButton} onClick={onApply}>
         {t("buttons.apply")}
       </button>
     </div>

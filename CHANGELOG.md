@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.25.0](https://github.com/favecode/plog-fe/compare/v0.24.0...v0.25.0) (2022-03-13)
+
+
+### Features
+
+* add bell, globe, lockClosed, photo, plus, trendingUp, user, viewGrid and x  icon ([4eacc8c](https://github.com/favecode/plog-fe/commit/4eacc8cb5acf37505e48562f461e4e447788c84c))
+* add camera icon ([8a8dbf0](https://github.com/favecode/plog-fe/commit/8a8dbf0380817f15081d0c41f73687d75c09a02f))
+* add createUploadLink to ApolloClient config ([cdd63b6](https://github.com/favecode/plog-fe/commit/cdd63b640378defbbc658d09784b5434b1afe4a7))
+* add singleUploadFile graphl query ([1726629](https://github.com/favecode/plog-fe/commit/17266290a43bbe93978e12a08ce684f6f65c5f0d))
+* add tiny size for Avatar component ([25a6c97](https://github.com/favecode/plog-fe/commit/25a6c977d1a0dc7fbd2b49b71f684c7c34039973))
+* add useUploadFile hook ([29ba620](https://github.com/favecode/plog-fe/commit/29ba620e379d2b82797c31bc699804f815e5e860))
+* add useUrls hook ([468a048](https://github.com/favecode/plog-fe/commit/468a0480a53e16585a6cdbfb7ba01ab3ea71bc57))
+* implement LogoutButton component ([f59a98e](https://github.com/favecode/plog-fe/commit/f59a98ee0986d877323c51a8aeea66c38b288138))
+* implement upload avatar and background on Settings feature ([71bccd8](https://github.com/favecode/plog-fe/commit/71bccd86640a2159f6b1ea46b67f9a926744fbe5))
+
+
+### Bug Fixes
+
+* reduce the size of buttons on ChangePassword feature ([4430458](https://github.com/favecode/plog-fe/commit/44304587e6a66dc5e59dc8c89f5cc801243757a0))
+
 ## [0.24.0](https://github.com/favecode/plog-fe/compare/v0.23.0...v0.24.0) (2022-03-08)
 
 
@@ -129,7 +149,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add singleUpload graphql query ([433f54c](https://github.com/favecode/plog-fe/commit/433f54cc2cb293d8d2b304c984753eaa4da98aed))
+* add singleUploadFile graphql query ([433f54c](https://github.com/favecode/plog-fe/commit/433f54cc2cb293d8d2b304c984753eaa4da98aed))
 * add view replies button for Comment component ([8ea185a](https://github.com/favecode/plog-fe/commit/8ea185a3dbe8092709e57f49eb97535fe65efc66))
 * handle reply button for Comment component ([3b459a4](https://github.com/favecode/plog-fe/commit/3b459a4f20c94c5fbc66f2c012ba5ebb25446bb6))
 * implement addPostComment component ([eccd9a9](https://github.com/favecode/plog-fe/commit/eccd9a9885eb2bfc6886eb09635fe45c00d8a3c0))

@@ -1,7 +1,7 @@
-import { HashtagIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { TagInfoProps } from "./@types";
 import styles from "./TagInfo.module.css";
+import { Icon } from "@components/Icon";
 import { useNavigation } from "@hooks/useNavigation";
 
 export function TagInfo(props: TagInfoProps) {
@@ -16,7 +16,7 @@ export function TagInfo(props: TagInfoProps) {
         <Link href={formatTagPageRoute(name)}>
           <a className={styles.tagInfo}>
             <span className={styles.icon}>
-              <HashtagIcon />
+              <Icon name="hashtag" />
             </span>
             <div>
               <div className={styles.tagName}>{name}</div>

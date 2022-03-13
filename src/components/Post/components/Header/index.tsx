@@ -13,7 +13,7 @@ export function Header(props: HeaderPostProps) {
     showMoreButton,
     onMoreButton,
     size = "normal",
-    user: { username, fullName },
+    user: { username, fullName, avatar },
   } = props;
 
   const { formatProfilePageRoute } = useNavigation();
@@ -28,7 +28,7 @@ export function Header(props: HeaderPostProps) {
       <div className={classNames(styles.profile)}>
         <Link href={formatProfilePageRoute(username)}>
           <a>
-            <Avatar size={size} className={styles.avatar} />
+            <Avatar size={size} className={styles.avatar} avatar={avatar} />
           </a>
         </Link>
         {showUserInfo && (

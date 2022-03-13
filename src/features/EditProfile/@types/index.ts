@@ -7,6 +7,8 @@ import type { User } from "@t/user";
 
 export type SettingsForm = {
   username: User["username"];
+  avatar: User["avatar"];
+  background: User["background"];
   fullName: User["fullName"];
   email: User["email"];
   bio: User["bio"];

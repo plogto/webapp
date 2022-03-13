@@ -4,11 +4,11 @@
 }
 
 .icon {
-  @apply rounded-full p-3 border-current border;
+  @apply rounded-full p-3 border-current border-[1.5px];
 }
 
 .title {
-  @apply font-bold mt-4 mb-2;
+  @apply font-medium mt-4 mb-2;
 }
 
 .description {
