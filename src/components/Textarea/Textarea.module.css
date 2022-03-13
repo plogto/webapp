@@ -1,32 +1,39 @@
-.wrapper .textarea {
-  @apply focus:ring-primary-500 focus:border-primary-500;
-}
+.wrapper {
+  & .textarea {
+    @apply shadow-sm py-2.5 resize-none;
+    @apply block w-full sm:text-sm border-gray-300 rounded-lg;
+    @apply focus:ring-0;
 
-.wrapper.error .textarea {
-  @apply focus:ring-red-500 focus:border-red-500;
-}
+    & .message {
+      @apply text-xs;
+    }
 
-.textarea {
-  @apply shadow-sm py-2.5 resize-none;
-  @apply block w-full sm:text-sm border-gray-300 rounded-lg;
-}
+    &::placeholder {
+      @apply capitalize;
+    }
+  }
 
-.textarea::placeholder {
-  @apply capitalize;
-}
+  & .label {
+    @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
+  }
 
-.label {
-  @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
-}
+  &.success {
+    & .textarea {
+      @apply focus:ring-primary-500 focus:border-primary-500 border-primary-500;
+    }
 
-.message {
-  @apply text-xs;
-}
+    & .message {
+      @apply text-primary-500;
+    }
+  }
 
-.wrapper.error .message {
-  @apply text-red-500;
-}
+  &.error {
+    & .textarea {
+      @apply focus:ring-red-500 focus:border-red-500 bg-red-50 border-red-500;
+    }
 
-.wrapper.success .message {
-  @apply text-primary-500;
+    & .message {
+      @apply text-red-500;
+    }
+  }
 }

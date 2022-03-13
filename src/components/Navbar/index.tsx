@@ -29,7 +29,7 @@ export function Navbar() {
       href: PageUrls.HOME,
     },
     {
-      icon: <Avatar size="small" />,
+      icon: <Avatar size="tiny" />,
       href: `/${user?.username}`,
     },
   ];

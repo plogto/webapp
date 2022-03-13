@@ -1,8 +1,8 @@
 import { Switch } from "@headlessui/react";
 import classNames from "classnames";
 import { useCallback, useState } from "react";
-import { ToggleProps } from "./@types";
 import styles from "./Toggle.module.css";
+import type { ToggleProps } from "./@types";
 
 export function Toggle(props: ToggleProps) {
   const { label, className, checked, onChange } = props;
@@ -12,7 +12,7 @@ export function Toggle(props: ToggleProps) {
 
   const toggleClasses = classNames(
     styles.toggle,
-    enabled ? "bg-primary-500" : "bg-gray-200",
+    enabled ? "bg-gray-900" : "bg-gray-200",
   );
 
   const sliderClasses = classNames(
@@ -21,10 +21,13 @@ export function Toggle(props: ToggleProps) {
     "transform",
   );
 
-  const handleChange = useCallback((value: boolean) => {
-    setEnabled(value);
-    onChange(value);
-  }, []);
+  const handleChange = useCallback(
+    (value: boolean) => {
+      setEnabled(value);
+      onChange(value);
+    },
+    [onChange],
+  );
 
   return (
     <Switch.Group>

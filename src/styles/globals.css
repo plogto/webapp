@@ -18,3 +18,34 @@
     display: none;
   }
 }
+
+@layer components {
+  .modal {
+    @apply p-5 py-6 flex flex-col items-center;
+
+    & .modal-title {
+      @apply font-bold text-xl text-center;
+    }
+
+    & .modal-description {
+      @apply text-sm text-gray-500 pt-2 pb-6 text-center;
+    }
+
+    & .icon-wrapper {
+      @apply flex items-center justify-center flex-grow;
+      @apply rounded-full p-4 my-6;
+
+      & .icon {
+        @apply w-24 h-24 stroke-1.5;
+      }
+    }
+
+    & .modal-buttons {
+      @apply w-full flex items-center space-x-3;
+    }
+
+    & .modal-button {
+      @apply px-2.5 py-3 md:py-2.5 rounded-lg w-full;
+    }
+  }
+}

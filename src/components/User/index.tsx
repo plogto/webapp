@@ -12,7 +12,7 @@ import type { ActionButtons, UserProps } from "./@types";
 // TODO: refactor this component
 export function User(props: UserProps) {
   const {
-    user: { id, username, fullName, connectionStatus },
+    user: { id, username, fullName, connectionStatus, avatar },
     showAccept,
     showDelete,
     showFollow,
@@ -63,7 +63,7 @@ export function User(props: UserProps) {
       {username && (
         <Link href={formatProfilePageRoute(username)}>
           <a className={styles.userInfo}>
-            <Avatar className={styles.avatar} />
+            <Avatar className={styles.avatar} avatar={avatar} />
             <div>
               <div className={styles.fullName}>{fullName}</div>
               <div className={styles.username}>@{username}</div>

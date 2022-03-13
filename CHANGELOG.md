@@ -129,7 +129,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add singleUpload graphql query ([433f54c](https://github.com/favecode/plog-fe/commit/433f54cc2cb293d8d2b304c984753eaa4da98aed))
+* add singleUploadFile graphql query ([433f54c](https://github.com/favecode/plog-fe/commit/433f54cc2cb293d8d2b304c984753eaa4da98aed))
 * add view replies button for Comment component ([8ea185a](https://github.com/favecode/plog-fe/commit/8ea185a3dbe8092709e57f49eb97535fe65efc66))
 * handle reply button for Comment component ([3b459a4](https://github.com/favecode/plog-fe/commit/3b459a4f20c94c5fbc66f2c012ba5ebb25446bb6))
 * implement addPostComment component ([eccd9a9](https://github.com/favecode/plog-fe/commit/eccd9a9885eb2bfc6886eb09635fe45c00d8a3c0))

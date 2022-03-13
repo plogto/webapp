@@ -20,6 +20,6 @@ export enum PostTypeKey {
 
 export enum CropImageTypeKey {
   AVATAR = "AVATAR",
-  COVER = "COVER",
+  BACKGROUND = "BACKGROUND",
   POST = "POST",
 }

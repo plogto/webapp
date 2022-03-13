@@ -45,7 +45,11 @@ export function SidebarNavigation() {
       <Card className={styles.card}>
         <Link href={formatProfilePageRoute(user?.username)}>
           <a className={styles.header}>
-            <Avatar size="extra" className={styles.avatar} />
+            <Avatar
+              size="extra"
+              className={styles.avatar}
+              avatar={user.avatar}
+            />
             <span className={styles.fullName}>{user.fullName}</span>
             <span className={styles.username}>@{user.username}</span>
           </a>

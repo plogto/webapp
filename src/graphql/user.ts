@@ -5,6 +5,8 @@ export const GET_USER_INFO = gql`
     getUserInfo {
       id
       username
+      avatar
+      background
       email
       fullName
       bio
@@ -38,6 +40,8 @@ export const GET_USER_BY_USERNAME = gql`
     getUserByUsername(username: $username) {
       id
       username
+      avatar
+      background
       email
       fullName
       bio
@@ -53,6 +57,8 @@ export const GET_USER_BY_USERNAME = gql`
 export const EDIT_USER = gql`
   mutation editUser(
     $username: String
+    $avatar: String
+    $background: String
     $fullName: String
     $email: String
     $bio: String
@@ -61,6 +67,8 @@ export const EDIT_USER = gql`
     editUser(
       input: {
         username: $username
+        avatar: $avatar
+        background: $background
         fullName: $fullName
         email: $email
         bio: $bio
@@ -69,6 +77,8 @@ export const EDIT_USER = gql`
     ) {
       id
       username
+      avatar
+      background
       email
       fullName
       bio

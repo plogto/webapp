@@ -1,21 +1,12 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useState,
-  useCallback,
-} from "react";
-import { Modal } from "@components/Modal/components/Modal";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 const initialModal = {
   isOpen: false,
-  content: null,
 };
 
 const ModalContext = createContext<ModalContext>(initialModal);
 const ModalContextSetState = createContext<SetModalContext>({
   setIsOpen: () => {},
-  setContent: () => {},
 });
 
 type Props = {
@@ -26,19 +17,14 @@ export function ModalProvider({ children }: Props) {
   const [isOpen, setIsOpen] = useState<ModalContext["isOpen"]>(
     initialModal.isOpen,
   );
-  const [content, setContent] = useState<ModalContext["content"]>(
-    initialModal.content,
-  );
 
   return (
-    <ModalContext.Provider value={{ isOpen, content }}>
+    <ModalContext.Provider value={{ isOpen }}>
       <ModalContextSetState.Provider
         value={{
           setIsOpen,
-          setContent,
         }}
       >
-        <Modal isOpen={isOpen}>{content}</Modal>
         {children}
       </ModalContextSetState.Provider>
     </ModalContext.Provider>
@@ -46,28 +32,28 @@ export function ModalProvider({ children }: Props) {
 }
 
 function useModalState() {
-  const { isOpen, content } = useContext(ModalContext);
+  const { isOpen } = useContext(ModalContext);
 
-  return { isOpen, content };
+  return { isOpen };
 }
 
 function useModalSetState() {
-  const { setIsOpen, setContent } = useContext(ModalContextSetState);
+  const { setIsOpen } = useContext(ModalContextSetState);
 
-  return { setIsOpen, setContent };
+  return { setIsOpen };
 }
 
 export function useModalContext() {
-  const { isOpen, content } = useModalState();
-  const { setIsOpen, setContent } = useModalSetState();
+  const { isOpen } = useModalState();
+  const { setIsOpen } = useModalSetState();
 
-  const openModal = useCallback(() => {
+  const openModal = () => {
     setIsOpen(true);
-  }, [isOpen]);
+  };
 
-  const closeModal = useCallback(() => {
+  const closeModal = () => {
     setIsOpen(false);
-  }, [isOpen]);
+  };
 
-  return { isOpen, content, setIsOpen, setContent, openModal, closeModal };
+  return { isOpen, setIsOpen, openModal, closeModal };
 }

@@ -16,4 +16,8 @@
   &.small {
     @apply w-9 h-9;
   }
+
+  &.tiny {
+    @apply w-7 h-7;
+  }
 }

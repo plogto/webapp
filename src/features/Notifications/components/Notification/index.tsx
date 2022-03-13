@@ -12,7 +12,7 @@ import type { NotificationProps } from "@features/Notifications/@types";
 export function Notification(props: NotificationProps) {
   const {
     notification,
-    notification: { url, notificationType, createdAt, read },
+    notification: { url, notificationType, createdAt, read, sender },
   } = props;
 
   const { parseNotification } = useNotificationParser();
@@ -32,7 +32,7 @@ export function Notification(props: NotificationProps) {
     <Link href={`/${url}`}>
       <a className={notificationClasses}>
         <div>
-          <Avatar className={styles.avatar} />
+          <Avatar className={styles.avatar} avatar={sender.avatar} />
         </div>
         <div className={styles.content}>
           {template.map(element => parseNotification(element, notification))}
