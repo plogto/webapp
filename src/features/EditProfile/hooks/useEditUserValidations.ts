@@ -1,13 +1,13 @@
 import { useLazyQuery } from "@apollo/client";
 import { useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { UseEditUserValidations } from "../@types";
-import { CheckEmailQuery, CheckUsernameQuery } from "@graphql/@types/user";
 import { CHECK_EMAIL, CHECK_USERNAME } from "@graphql/user";
+import type { UseEditUserValidations } from "../@types";
+import type { CheckEmailQuery, CheckUsernameQuery } from "@graphql/@types/user";
 
 export function useEditUserValidations(props: UseEditUserValidations) {
   const { setError, clearErrors } = props;
-  const { t } = useTranslation("settings");
+  const { t } = useTranslation("editProfile");
   const [checkUsernameRequest, checkUsernameResponse] =
     useLazyQuery<CheckUsernameQuery>(CHECK_USERNAME, {
       fetchPolicy: "no-cache",
@@ -19,17 +19,23 @@ export function useEditUserValidations(props: UseEditUserValidations) {
     },
   );
 
-  const checkUsername = useCallback((username: string) => {
-    checkUsernameRequest({
-      variables: { username },
-    });
-  }, []);
+  const checkUsername = useCallback(
+    (username: string) => {
+      checkUsernameRequest({
+        variables: { username },
+      });
+    },
+    [checkUsernameRequest],
+  );
 
-  const checkEmail = useCallback((email: string) => {
-    checkEmailRequest({
-      variables: { email },
-    });
-  }, []);
+  const checkEmail = useCallback(
+    (email: string) => {
+      checkEmailRequest({
+        variables: { email },
+      });
+    },
+    [checkEmailRequest],
+  );
 
   useEffect(() => {
     if (checkUsernameResponse.data?.checkUsername) {
@@ -39,7 +45,7 @@ export function useEditUserValidations(props: UseEditUserValidations) {
     } else {
       clearErrors("username");
     }
-  }, [checkUsernameResponse.data]);
+  }, [checkUsernameResponse.data, clearErrors, setError, t]);
 
   useEffect(() => {
     if (checkEmailResponse.data?.checkEmail) {
@@ -49,7 +55,7 @@ export function useEditUserValidations(props: UseEditUserValidations) {
     } else {
       clearErrors("email");
     }
-  }, [checkEmailResponse.data]);
+  }, [checkEmailResponse.data, clearErrors, setError, t]);
 
   return {
     checkUsername,

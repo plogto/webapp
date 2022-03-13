@@ -1,12 +1,12 @@
-import { useCallback } from "react";
+import Link from "next/link";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import styles from "./EditProfile.module.css";
-import { useEditUser, useEditUserValidations, useEditProfile } from "./hooks";
-import { Avatar } from "@components/Avatar";
+import { useEditUserValidations, useEditProfile } from "./hooks";
 import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
+import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
 import { Textarea } from "@components/Textarea";
 import { Toggle } from "@components/Toggle";
@@ -14,39 +14,31 @@ import { PageUrls } from "@enums/pages";
 
 // TODO: refactor this component
 export function EditProfile() {
-  const { formMethods, user } = useEditProfile();
-  const { editUser, editUserResponse } = useEditUser({ user });
-  const { loading } = editUserResponse;
+  const { formMethods, user, onSubmit, loading } = useEditProfile();
   const {
     register,
-    formState: { errors, isValid },
-    getValues,
+    formState: { errors, isValid, isDirty },
     handleSubmit,
     control,
-    setValue,
     setError,
     clearErrors,
   } = formMethods;
-  const {
-    checkUsername,
-    checkEmail,
-    checkUsernameResponse,
-    checkEmailResponse,
-  } = useEditUserValidations({
+  const { checkUsernameResponse, checkEmailResponse } = useEditUserValidations({
     setError,
     clearErrors,
   });
-  const { t } = useTranslation("settings");
-
-  const handleToggleIsPrivate = useCallback((value: boolean) => {
-    setValue("isPrivate", value);
-  }, []);
+  const { t } = useTranslation("editProfile");
 
   return (
-    <form onSubmit={handleSubmit(editUser)} className={styles.changeProfile}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.changeProfile}>
       <Card loading={!user} className={styles.card}>
         <div className={styles.header}>
-          <Avatar className={styles.avatar} />
+          <Link href={PageUrls.SETTINGS}>
+            <a className={styles.back}>
+              <Icon className={styles.icon} name="chevronLeft" />
+            </a>
+          </Link>
+          <h2 className={styles.title}>{t("texts.editProfile")}</h2>
         </div>
         <div className={`${styles.inputContainer} px-4`}>
           <Input
@@ -81,14 +73,6 @@ export function EditProfile() {
                   value: true,
                   message: t("errors.usernameRequired"),
                 },
-                validate: (username: string) => {
-                  if (username === user?.username) {
-                    return true;
-                  } else {
-                    checkUsername(username);
-                    return false;
-                  }
-                },
               })}
               messageType={
                 checkUsernameResponse.loading
@@ -108,14 +92,6 @@ export function EditProfile() {
                 required: {
                   value: true,
                   message: t("errors.emailRequired"),
-                },
-                validate: (email: string) => {
-                  if (email === user?.email) {
-                    return true;
-                  } else {
-                    checkEmail(email);
-                    return false;
-                  }
                 },
               })}
               messageType={
@@ -139,32 +115,32 @@ export function EditProfile() {
           <Controller
             name="isPrivate"
             control={control}
-            defaultValue={getValues("isPrivate")}
-            render={({ field }) => (
+            render={({ field: { value, onChange } }) => (
               <Toggle
-                checked={field.value}
+                checked={value}
                 className={styles.toggle}
                 label={t("labels.private")}
-                onChange={handleToggleIsPrivate}
+                onChange={onChange}
               />
             )}
           />
         </div>
 
         {user && (
-          <div className={styles.cardFooter}>
+          <div className={styles.footer}>
             <LinkButton
+              layout="cancel"
               href={PageUrls.SETTINGS}
-              className={styles.cancelButton}
+              className={styles.button}
             >
               {t("buttons.cancel")}
             </LinkButton>
             <Button
+              layout="apply"
               loading={loading}
-              disabled={!isValid}
+              disabled={!isValid || !isDirty}
               type="submit"
-              className={styles.saveButton}
-              loadingClassName="w-5"
+              className={styles.button}
             >
               {t("buttons.save")}
             </Button>

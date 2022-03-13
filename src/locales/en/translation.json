@@ -72,6 +72,30 @@
       "cropImage": "Crop Image"
     }
   },
+  "editProfile": {
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "errors": {
+      "emailIsAlreadyTaken": "Email is already taken",
+      "emailRequired": "Email is required",
+      "fullnameRequired": "Full Name is required",
+      "usernameIsAlreadyTaken": "Username is already taken",
+      "usernameIsTooShort": "Username is too short",
+      "usernameRequired": "Username is required"
+    },
+    "labels": {
+      "bio": "Bio",
+      "email": "Email",
+      "fullname": "Full Name",
+      "private": "Private Page",
+      "username": "Username"
+    },
+    "texts": {
+      "editProfile": "Edit Profile"
+    }
+  },
   "logout": {
     "buttons": {
       "cancel": "Cancel",
