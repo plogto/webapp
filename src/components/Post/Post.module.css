@@ -68,6 +68,10 @@
   & .content {
     @apply inline-flex font-light break-words whitespace-pre-line w-full pr-4;
 
+    & .attachment {
+      @apply rounded-lg mb-2;
+    }
+
     &.showHeader {
       @apply inline-block;
       & .profile {
@@ -89,6 +93,10 @@
 
     &.small {
       @apply text-sm py-0.5;
+
+      & .attachment {
+        @apply rounded-lg my-2;
+      }
     }
   }
 
