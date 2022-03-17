@@ -10,6 +10,7 @@ export type Post = {
   url: string;
   user: User;
   content: string;
+  attachment?: string[];
   isLiked?: PostLike;
   isSaved?: PostSave;
   likes?: PostLikesWithPagination;

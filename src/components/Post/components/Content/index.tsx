@@ -6,6 +6,7 @@ import { DateTime } from "../DateTime";
 import { Hashtag } from "@components/Hashtag";
 import { useNavigation } from "@hooks/useNavigation";
 import { usePostParser } from "@hooks/usePostParser";
+import { useUrls } from "@hooks/useUrls";
 import type { ContentPostProps } from "@components/Post/@types";
 
 export function Content(props: ContentPostProps) {
@@ -15,6 +16,7 @@ export function Content(props: ContentPostProps) {
     isClickable,
     showHeader = false,
     content = "",
+    attachment = [],
     className,
     user,
     dateSize,
@@ -23,6 +25,7 @@ export function Content(props: ContentPostProps) {
     updatedAt,
   } = props;
   const { formatProfilePageRoute, formatPostPageRoute } = useNavigation();
+  const { getFileUrl } = useUrls();
   const { parsePost } = usePostParser();
   const sizeClasses = styles[size];
   const wrapperClasses = classNames(
@@ -34,14 +37,19 @@ export function Content(props: ContentPostProps) {
 
   const textComponent = (
     <>
-      <p>
-        {parsePost({
-          content,
-          hashtagComponent: (value: string) => (
-            <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
-          ),
-        })}
-      </p>
+      {content?.length > 0 && (
+        <p>
+          {parsePost({
+            content,
+            hashtagComponent: (value: string) => (
+              <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
+            ),
+          })}
+        </p>
+      )}
+      {attachment?.length > 0 && (
+        <img className={styles.attachment} src={getFileUrl(attachment[0])} />
+      )}
       <DateTime
         type={dateType}
         createdAt={createdAt}
