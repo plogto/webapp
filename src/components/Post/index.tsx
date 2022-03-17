@@ -33,6 +33,7 @@ export function Post(props: PostProps) {
       isLiked,
       isSaved,
       content,
+      attachment = [],
     },
     className,
   } = props;
@@ -79,6 +80,7 @@ export function Post(props: PostProps) {
             user={user}
             size={contentSize}
             content={content}
+            attachment={attachment}
             dateSize={dateSize}
             dateType={dateType}
             createdAt={createdAt}

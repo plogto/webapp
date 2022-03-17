@@ -32,6 +32,7 @@ export type ContentPostProps = {
   isClickable?: boolean;
   size?: ContentSize;
   content: Post["content"];
+  attachment?: Post["attachment"];
   showHeader?: boolean;
   dateSize: DateSize;
   dateType: DateType;

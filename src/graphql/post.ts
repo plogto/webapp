@@ -70,6 +70,7 @@ export const GET_POST_BY_URL = gql`
                 }
               }
               content
+              attachment
               createdAt
               updatedAt
             }
@@ -78,6 +79,7 @@ export const GET_POST_BY_URL = gql`
             }
           }
           content
+          attachment
           createdAt
           updatedAt
         }
@@ -86,6 +88,7 @@ export const GET_POST_BY_URL = gql`
         }
       }
       content
+      attachment
       createdAt
       updatedAt
     }
@@ -124,6 +127,7 @@ export const GET_POSTS_BY_USERNAME = gql`
           }
         }
         content
+        attachment
         createdAt
         updatedAt
       }
@@ -169,6 +173,7 @@ export const GET_POSTS_BY_TAG_NAME = gql`
           }
         }
         content
+        attachment
         createdAt
         updatedAt
       }
@@ -193,6 +198,7 @@ export const ADD_POST = gql`
         fullName
       }
       content
+      attachment
       createdAt
       updatedAt
     }
@@ -207,6 +213,7 @@ export const REPLY_POST = gql`
         id
       }
       content
+      attachment
       user {
         id
         username
