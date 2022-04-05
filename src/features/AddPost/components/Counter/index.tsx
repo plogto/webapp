@@ -1,11 +1,7 @@
-import styles from "./Counter.module.css";
+import styles from "../../AddPost.module.css";
+import type { CounterProps } from "@features/AddPost/@types";
 
-type Props = {
-  length: number;
-  maxLength: number;
-};
-
-export function Counter({ length, maxLength }: Props) {
+export function Counter({ length, maxLength }: CounterProps) {
   return (
     <span
       className={`${styles.counter} ${
