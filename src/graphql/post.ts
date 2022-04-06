@@ -188,8 +188,8 @@ export const GET_POSTS_BY_TAG_NAME = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($content: String!) {
-    addPost(input: { content: $content }) {
+  mutation addPost($content: String!, $attachment: [String!]) {
+    addPost(input: { content: $content, attachment: $attachment }) {
       id
       url
       user {
