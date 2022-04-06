@@ -22,12 +22,10 @@ export function Layout(props: LayoutProps) {
       <SidebarNavigation />
       {children}
       <div className="hidden md:block w-8/12 mt-5">
-        {!limitedRoutes.includes(pathname as PageUrls) && (
-          <Wrapper className="mb-5">
-            <Search />
-          </Wrapper>
-        )}
-        <DesktopTrends />
+        <div className="sticky top-5">
+          {!limitedRoutes.includes(pathname as PageUrls) && <Search />}
+          <DesktopTrends />
+        </div>
       </div>
     </div>
   ) : (
