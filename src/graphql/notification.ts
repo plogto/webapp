@@ -9,6 +9,8 @@ export const GET_NOTIFICATIONS = gql`
           id
           username
           fullName
+          avatar
+          background
         }
         receiver {
           id
@@ -45,6 +47,8 @@ export const GET_NOTIFICATION = gql`
         id
         username
         fullName
+        avatar
+        background
       }
       receiver {
         id

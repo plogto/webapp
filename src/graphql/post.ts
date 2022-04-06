@@ -8,6 +8,8 @@ export const GET_POST_BY_URL = gql`
         id
         username
         fullName
+        avatar
+        background
         connectionStatus
       }
       isLiked {
@@ -32,6 +34,8 @@ export const GET_POST_BY_URL = gql`
             id
             username
             fullName
+            avatar
+            background
             connectionStatus
           }
           isLiked {
@@ -56,6 +60,8 @@ export const GET_POST_BY_URL = gql`
                 id
                 username
                 fullName
+                avatar
+                background
                 connectionStatus
               }
               isLiked {
@@ -105,6 +111,8 @@ export const GET_POSTS_BY_USERNAME = gql`
           id
           username
           fullName
+          avatar
+          background
           connectionStatus
         }
         isLiked {
@@ -151,6 +159,8 @@ export const GET_POSTS_BY_TAG_NAME = gql`
           id
           username
           fullName
+          avatar
+          background
           connectionStatus
         }
         isLiked {
@@ -196,6 +206,8 @@ export const ADD_POST = gql`
         id
         username
         fullName
+        avatar
+        background
       }
       content
       attachment
@@ -218,6 +230,8 @@ export const REPLY_POST = gql`
         id
         username
         fullName
+        avatar
+        background
       }
       updatedAt
     }

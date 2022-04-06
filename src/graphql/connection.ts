@@ -104,6 +104,8 @@ export const GET_FOLLOWING_BY_USERNAME = gql`
           id
           username
           fullName
+          avatar
+          background
           connectionStatus
         }
       }
@@ -127,6 +129,8 @@ export const GET_FOLLOWERS_BY_USERNAME = gql`
           id
           username
           fullName
+          avatar
+          background
           connectionStatus
         }
       }
