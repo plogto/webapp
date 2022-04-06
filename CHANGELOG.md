@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.26.0](https://github.com/mahdineer/plog-fe/compare/v0.25.0...v0.26.0) (2022-04-06)
+
+
+### Features
+
+* implement attachment part for Post component ([d41061c](https://github.com/mahdineer/plog-fe/commit/d41061c8bf3a9c98debdab1259a8c69630ee869f))
+* implement AttachmentPreview component for AddPost feature ([f360fbb](https://github.com/mahdineer/plog-fe/commit/f360fbbe9cfbe444a7a7feab3f67e1684c2bcd71))
+
+
+### Bug Fixes
+
+* add attachment prop for addPost graphql query ([1fcf20b](https://github.com/mahdineer/plog-fe/commit/1fcf20b4e9cfc8e80174660ba2f97681ece5cd46))
+
 ## [0.25.0](https://github.com/favecode/plog-fe/compare/v0.24.0...v0.25.0) (2022-03-13)
 
 
