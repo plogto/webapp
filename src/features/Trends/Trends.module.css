@@ -1,6 +1,6 @@
 /* Desktop */
 .card {
-  @apply flex flex-col;
+  @apply flex flex-col mt-5;
 }
 
 .header {

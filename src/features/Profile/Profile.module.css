@@ -1,5 +1,5 @@
 .profile {
-  @apply w-full h-screen;
+  @apply w-full max-h-screen overflow-y-scroll;
 
   & .header {
     @apply pb-3 bg-white overflow-hidden relative;
