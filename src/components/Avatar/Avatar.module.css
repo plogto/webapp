@@ -1,5 +1,6 @@
 .avatar {
-  @apply relative text-gray-400 bg-white rounded-full shadow-sm border z-20;
+  @apply relative text-gray-400 bg-white;
+  @apply rounded-full shadow-sm border z-20 overflow-hidden;
 
   &.extra {
     @apply w-40 h-40;

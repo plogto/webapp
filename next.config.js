@@ -21,5 +21,8 @@ module.exports = withBundleAnalyzer(
       return config;
     },
     swcMinify: true,
+    images: {
+      domains: [process.env.NEXT_PUBLIC_FILES_URL],
+    },
   }),
 );
