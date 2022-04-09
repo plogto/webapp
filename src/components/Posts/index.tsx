@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./Posts.module.css";
 import { Post } from "@components/Post";
-import { POST_TYPES } from "@config";
+import { POST_TYPES } from "@constants";
 import type { PostsProps } from "./@types";
 
 export function Posts(props: PostsProps) {

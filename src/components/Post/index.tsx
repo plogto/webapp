@@ -5,7 +5,7 @@ import { Content, Footer, Header } from "./components";
 import { usePost } from "./hooks/usePost";
 import { Card } from "@components/Card";
 import { Replies } from "@components/Replies";
-import { POST_TYPES } from "@config";
+import { POST_TYPES } from "@constants";
 import { DateType, PostTypeKey } from "@enums";
 import { useNavigation } from "@hooks/useNavigation";
 import type { PostProps } from "./@types";

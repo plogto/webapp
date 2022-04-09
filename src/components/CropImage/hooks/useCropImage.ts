@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useState } from "react";
-import { CROP_IMAGES_TYPES } from "../config";
+import { CROP_IMAGES_TYPES } from "../constants";
 import { readFile } from "../utils";
 import { useCanvas } from ".";
 import type { UseCropImageProps, PixelCrop } from "../@types";

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { v4 as uuid } from "uuid";
 import styles from "../Notifications.module.css";
-import { POST_CONTENT, SENDER_USERNAME } from "@config";
+import { POST_CONTENT, SENDER_USERNAME } from "@constants";
 import type { Notification } from "@t/notification";
 
 export function useNotificationParser() {

@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { Post } from "@components/Post";
-import { POST_TYPES } from "@config";
+import { POST_TYPES } from "@constants";
 import { GetPostByUrlQuery } from "@graphql/@types/post";
 import { GET_POST_BY_URL } from "@graphql/post";
 
