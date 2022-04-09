@@ -1,0 +1,18 @@
+.menuItems {
+  @apply flex flex-col rounded-lg overflow-hidden;
+  @apply z-50 bg-white shadow border border-gray-50;
+
+  & .menuItem {
+    @apply flex justify-between items-center;
+    @apply p-3 stroke-1.5 hover:bg-gray-50;
+    @apply transition-all duration-300;
+
+    & .icon {
+      @apply w-6 h-6;
+    }
+
+    & .title {
+      @apply text-sm font-medium;
+    }
+  }
+}
