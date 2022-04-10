@@ -14,11 +14,11 @@ export function Menu(props: MenuProps) {
     <HeadlessMenu>
       <div className={className}>
         <HeadlessMenu.Items className={itemsClasses}>
-          {items.map(({ title, icon, onClick, className }) => (
+          {items.map(({ title, icon, onClick, type = "normal" }) => (
             <HeadlessMenu.Item key={uuid()}>
               <button
                 onClick={onClick}
-                className={classNames(styles.menuItem, className)}
+                className={classNames(styles.menuItem, styles[type])}
               >
                 <span className={styles.title}>{title}</span>
                 {icon && <Icon name={icon} className={styles.icon} />}

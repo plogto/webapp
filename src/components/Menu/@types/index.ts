@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 
 type MenuItem = {
   key: string;
+  type?: "normal" | "delete";
   title: string;
   icon: IconNames;
-  className?: string;
   onClick?: () => void;
 };
 

@@ -22,7 +22,7 @@ module.exports = withBundleAnalyzer(
     },
     swcMinify: true,
     images: {
-      domains: [process.env.NEXT_PUBLIC_FILES_URL],
+      domains: process.env.NEXT_PUBLIC_IMAGES_DOMAINS.split(", "),
     },
   }),
 );

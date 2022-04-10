@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.1](https://github.com/mahdineer/plog-fe/compare/v0.27.0...v0.27.1) (2022-04-10)
+
+
+### Features
+
+* implement Toast component ([10fb954](https://github.com/mahdineer/plog-fe/commit/10fb954063276aac8db4d1cd3846b18be4eefdb3))
+
+
+### Bug Fixes
+
+* add NEXT_PUBLIC_IMAGES_DOMAINS env ([a4c7bb2](https://github.com/mahdineer/plog-fe/commit/a4c7bb2443804f56894214df1e0ed2546363232d))
+* fix menu items for Post component ([96c2039](https://github.com/mahdineer/plog-fe/commit/96c203929dbc149c9d9d937b7cf3040a8d5a560d))
+
 ## [0.27.0](https://github.com/mahdineer/plog-fe/compare/v0.26.0...v0.27.0) (2022-04-10)
 
 
