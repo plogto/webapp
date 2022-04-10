@@ -21,7 +21,7 @@ export function Layout(props: LayoutProps) {
       <SidebarNavigation />
       {children}
       <div className="hidden md:block w-8/12 mt-5">
-        <div className="sticky top-5">
+        <div className="sticky top-5 flex flex-col space-y-5">
           {!limitedRoutes.includes(pathname as PageUrls) && <Search />}
           <DesktopTrends />
         </div>
