@@ -2,8 +2,7 @@
   @apply inline-flex items-center flex-grow;
 
   & .avatar {
-    @apply text-gray-400 w-10 h-10 mr-2;
-    @apply rounded-full shadow-sm border;
+    @apply mr-2;
   }
 
   & .fullName {
@@ -17,6 +16,16 @@
   &.large {
     & .fullName {
       @apply text-lg;
+    }
+
+    & .username {
+      @apply -mt-1 text-[13px];
+    }
+  }
+
+  &.small {
+    & .fullName {
+      @apply text-sm;
     }
 
     & .username {

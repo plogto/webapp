@@ -4,5 +4,5 @@ import type { User } from "@t/user";
 export type UserInfoProps = {
   user?: User;
   showAvatar?: boolean;
-  size?: Exclude<Size, "small">;
+  size?: Size;
 };
