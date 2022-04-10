@@ -1,3 +1,6 @@
+import { useCallback } from "react";
+import { MenuProps } from "@components/Menu/@types";
+import { useAccountContext } from "@contexts/AccountContext";
 import { PostTypeKey, RepliesView } from "@enums";
 import { formatCountTitle } from "@utils/formatter";
 import type { UsePostProps } from "../@types";
@@ -5,10 +8,11 @@ import type { UsePostProps } from "../@types";
 export function usePost(props: UsePostProps) {
   const {
     type,
-    post: { replies },
+    post: { id, replies },
   } = props;
 
   const { repliesView } = type;
+  const { user } = useAccountContext();
 
   const isParentReply = type.key === PostTypeKey.REPLY;
   const isParent = type.key === PostTypeKey.PAGE || isParentReply;
@@ -25,6 +29,18 @@ export function usePost(props: UsePostProps) {
   const showCompleteReplies = repliesView === RepliesView.COMPLETE;
   const showThreadReplies = repliesView === RepliesView.THREAD;
 
+  const filterMenuItems = useCallback(
+    (items: MenuProps["items"]) => {
+      return items.filter(({ key }) => {
+        if (id !== user?.id && key === "delete") {
+          return false;
+        }
+        return true;
+      });
+    },
+    [id, user?.id],
+  );
+
   return {
     isParentReply,
     isParent,
@@ -33,5 +49,6 @@ export function usePost(props: UsePostProps) {
     showQuickReplies,
     showCompleteReplies,
     showThreadReplies,
+    filterMenuItems,
   };
 }

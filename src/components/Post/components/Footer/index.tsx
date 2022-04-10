@@ -1,15 +1,15 @@
 import classNames from "classnames";
 import styles from "../../Post.module.css";
 import { Icon } from "@components/Icon";
-import { usePostLike } from "@components/Post/hooks/usePostLike";
-import { usePostSave } from "@components/Post/hooks/usePostSave";
+import { useLikePost } from "@components/Post/hooks/useLikePost";
+import { useSavePost } from "@components/Post/hooks/useSavePost";
 import type { FooterPostProps } from "../../@types";
 
 export function Footer(props: FooterPostProps) {
-  const { id, size = "normal", isLiked, isSaved } = props;
+  const { postId, size = "normal", isLiked, isSaved } = props;
 
-  const { likePost } = usePostLike({ id });
-  const { savePost } = usePostSave({ id });
+  const { likePost } = useLikePost({ postId });
+  const { savePost } = useSavePost({ postId });
 
   const wrapperClasses = classNames(styles.footer, styles[size]);
   const bookmarkIconClasses = classNames(

@@ -4,6 +4,7 @@ export const GET_POST_BY_URL = gql`
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
       id
+      url
       user {
         id
         username
