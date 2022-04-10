@@ -10,4 +10,5 @@ export type DeleteModalProps = {
   title: string;
   description: string;
   onDelete: () => void;
+  isOpen: boolean;
 };

@@ -11,7 +11,7 @@ export function Hashtag(props: HashtagProps) {
   const { formatTagPageRoute } = useNavigation();
 
   const wrapperClasses = classNames("text-primary-500", {
-    "font-bold": tagName === query.tagName,
+    "font-bold": tagName.toLowerCase() === String(query.tagName).toLowerCase(),
   });
 
   return isClickable ? (

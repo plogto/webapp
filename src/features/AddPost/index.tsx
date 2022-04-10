@@ -8,7 +8,7 @@ import { Button } from "@components/Buttons/Button";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
 import { UserInfo } from "@components/UserInfo";
-import { CONTENT_MAX_LENGTH } from "@config";
+import { CONTENT_MAX_LENGTH } from "@constants";
 import { CropImageTypeKey } from "@enums";
 
 export function AddPost() {

@@ -1,5 +1,5 @@
 .post {
-  @apply w-full pb-1 relative;
+  @apply w-full pb-1 relative overflow-visible;
 
   & .thread {
     @apply w-0.5 bg-gray-200 absolute top-3 -bottom-3 left-[1.65rem] z-20;
@@ -24,7 +24,7 @@
   }
 
   & .header {
-    @apply flex justify-between items-center;
+    @apply flex justify-between items-start;
 
     &.isParent {
       @apply pt-2;
@@ -42,7 +42,7 @@
       @apply inline-flex px-2 relative;
 
       & .avatar {
-        @apply mr-2;
+        @apply mr-2 !important;
       }
 
       & .userInfo {
@@ -59,8 +59,13 @@
     }
 
     & .more {
+      @apply absolute top-0 right-0 bg-white;
+      @apply mr-2 p-1.5 rounded-md text-gray-500;
+      @apply hover:shadow hover:text-primary-500;
+      @apply transition-all duration-300 box-content;
+
       & .icon {
-        @apply w-6;
+        @apply w-5 text-current;
       }
     }
   }
@@ -74,11 +79,15 @@
 
     &.showHeader {
       @apply inline-block;
+
+      & p {
+        @apply mt-1.5;
+      }
       & .profile {
         @apply inline-flex items-center;
 
         & .fullName {
-          @apply font-bold pr-1.5;
+          @apply font-bold pr-1.5 mt-1;
         }
       }
     }
@@ -92,7 +101,7 @@
     }
 
     &.small {
-      @apply text-sm py-0.5;
+      @apply text-sm;
 
       & .attachment {
         @apply rounded-lg my-2;

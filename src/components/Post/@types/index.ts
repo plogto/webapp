@@ -1,3 +1,4 @@
+import { MenuProps } from "@components/Menu/@types";
 import { DateType } from "@enums";
 import type { Post, PostType } from "@t/post";
 import type { ContentSize, DateSize, FooterSize, HeaderSize } from "@t/size";
@@ -15,12 +16,13 @@ export type PostProps = {
 };
 
 export type HeaderPostProps = {
+  postId: Post["id"];
+  url: Post["url"];
+  user: User;
   size?: HeaderSize;
   showUserInfo?: boolean;
-  showMoreButton?: boolean;
-  onMoreButton?: () => void;
-  user: User;
   className?: string;
+  filterMenuItems: (items: MenuProps["items"]) => MenuProps["items"];
 };
 
 export type ContentPostProps = {
@@ -49,16 +51,20 @@ export type DatePostProps = {
 };
 
 export type FooterPostProps = {
-  id: Post["id"];
+  postId: Post["id"];
   size?: FooterSize;
   isLiked?: Post["isLiked"];
   isSaved?: Post["isSaved"];
 };
 
-export type UsePostLikeProps = {
-  id: Post["id"];
+export type UseLikePostProps = {
+  postId: Post["id"];
 };
 
-export type UsePostSaveProps = {
-  id: Post["id"];
+export type UseSavePostProps = {
+  postId: Post["id"];
+};
+
+export type UseDeletePostProps = {
+  postId: Post["id"];
 };

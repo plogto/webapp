@@ -5,7 +5,7 @@ import styles from "./Settings.module.css";
 import { AvatarProfile } from "./components/AvatarProfile";
 import { BackgroundProfile } from "./components/BackgroundProfile";
 import { LogoutButton } from "./components/LogoutButton";
-import { SETTINGS_ITEMS } from "./config";
+import { SETTINGS_ITEMS } from "./constants";
 import { useSettings } from "./hooks/useSettings";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";

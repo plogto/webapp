@@ -5,7 +5,8 @@ import { Content, Footer, Header } from "./components";
 import { usePost } from "./hooks/usePost";
 import { Card } from "@components/Card";
 import { Replies } from "@components/Replies";
-import { POST_TYPES } from "@config";
+import { POST_TYPES } from "@constants";
+import { ModalProvider } from "@contexts/ModalContext";
 import { DateType, PostTypeKey } from "@enums";
 import { useNavigation } from "@hooks/useNavigation";
 import type { PostProps } from "./@types";
@@ -46,6 +47,7 @@ export function Post(props: PostProps) {
     showQuickReplies,
     showCompleteReplies,
     showThreadReplies,
+    filterMenuItems,
   } = usePost({
     type,
     post,
@@ -67,12 +69,17 @@ export function Post(props: PostProps) {
         {((isParentReply && repliesCounter.count > 0) ||
           key === PostTypeKey.CHILD) && <div className={styles.thread}></div>}
         <div className={classNames(styles.headerAndContentWrapper)}>
-          <Header
-            showUserInfo={isCard}
-            className={headerClasses}
-            size={headerSize}
-            user={user}
-          />
+          <ModalProvider>
+            <Header
+              postId={id}
+              url={url}
+              showUserInfo={isCard}
+              className={headerClasses}
+              size={headerSize}
+              user={user}
+              filterMenuItems={filterMenuItems}
+            />
+          </ModalProvider>
           <Content
             showHeader={!isCard}
             url={url}
@@ -87,7 +94,12 @@ export function Post(props: PostProps) {
             updatedAt={updatedAt}
           />
         </div>
-        <Footer id={id} size={footerSize} isLiked={isLiked} isSaved={isSaved} />
+        <Footer
+          postId={id}
+          size={footerSize}
+          isLiked={isLiked}
+          isSaved={isSaved}
+        />
       </div>
       <div className="flex flex-col">
         {showQuickReplies && (

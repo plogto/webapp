@@ -1,18 +1,18 @@
 import { useMutation } from "@apollo/client";
 import { useCallback } from "react";
+import { UseSavePostProps } from "../@types";
 import { SAVE_POST } from "@graphql/postSave";
-import type { UsePostSaveProps } from "../@types";
 import type { SavePostMutation } from "@graphql/@types/postSave";
 
-export function usePostSave(props: UsePostSaveProps) {
-  const { id } = props;
+export function useSavePost(props: UseSavePostProps) {
+  const { postId } = props;
   const [savePostMutation] = useMutation<SavePostMutation>(SAVE_POST);
 
   const savePost = useCallback(() => {
     savePostMutation({
-      variables: { postId: id },
+      variables: { postId },
     });
-  }, [id, savePostMutation]);
+  }, [postId, savePostMutation]);
 
   return { savePost };
 }

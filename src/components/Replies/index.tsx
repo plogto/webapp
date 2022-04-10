@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Replies.module.css";
 import { Post } from "@components/Post";
-import { POST_TYPES } from "@config";
+import { POST_TYPES } from "@constants";
 import { PostTypeKey } from "@enums";
 import type { RepliesProps } from "./@types";
 

@@ -21,6 +21,7 @@ import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
 import KeyFill from "./svg/key-fill.svg";
 import Key from "./svg/key.svg";
+import Link from "./svg/link.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
 import LockClosed from "./svg/lock-closed.svg";
 import Photo from "./svg/photo.svg";
@@ -33,6 +34,8 @@ import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
 import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
+import TrashFill from "./svg/trash-fill.svg";
+import Trash from "./svg/trash.svg";
 import TrendingUpFill from "./svg/trending-up-fill.svg";
 import TrendingUp from "./svg/trending-up.svg";
 import UserFill from "./svg/user-fill.svg";
@@ -88,13 +91,18 @@ export const iconsList = {
     outline: Key,
     fill: KeyFill,
   },
+  link: {
+    outline: Link,
+    // TODO: add Link icon
+    fill: Link,
+  },
   lockClosed: {
     outline: LockClosed,
     fill: LockClosedFill,
   },
   photo: {
     outline: Photo,
-    // TODO: add  icon
+    // TODO: add PhotoFill icon
     fill: Photo,
   },
   plog: {
@@ -104,7 +112,6 @@ export const iconsList = {
   },
   plus: {
     outline: Plus,
-    // TODO: add PlogFill icon
     fill: PlusFill,
   },
   rectangleHorizontal: {
@@ -118,6 +125,10 @@ export const iconsList = {
   square: {
     outline: Square,
     fill: SquareFill,
+  },
+  trash: {
+    outline: Trash,
+    fill: TrashFill,
   },
   trendingUp: {
     outline: TrendingUp,

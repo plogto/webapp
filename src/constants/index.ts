@@ -1,7 +1,7 @@
 import { DateType, PostTypeKey, RepliesView } from "@enums";
 import type { PostTypes } from "@t/post";
 
-export const CONTENT_MAX_LENGTH = 500;
+export const CONTENT_MAX_LENGTH = 999;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
 export const SENDER_USERNAME = "$$$___sender.username___$$$";
 export const POST_CONTENT = "$$$___post.content___$$$";

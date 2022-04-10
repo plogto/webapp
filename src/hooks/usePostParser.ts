@@ -1,6 +1,6 @@
 import anchorme from "anchorme";
 import { v4 as uuid } from "uuid";
-import { HASHTAG_PATTERN, POST_PARSER } from "@config";
+import { HASHTAG_PATTERN, POST_PARSER } from "@constants";
 import type { ParsePostProps, PostStore } from "./@types";
 import type { ReactNode } from "react";
 

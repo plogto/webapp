@@ -137,6 +137,17 @@
   "post": {
     "buttons": {
       "viewReplies": "View replies"
+    },
+    "modals": {
+      "delete": {
+        "description": "Are you sure you want to delete your post?",
+        "title": "Delete Post"
+      }
+    },
+    "texts": {
+      "copiedToClipboard": "Copied to clipboard",
+      "copyLink": "Copy Link",
+      "deletePost": "Delete Post"
     }
   },
   "profile": {

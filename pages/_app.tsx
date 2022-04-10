@@ -1,8 +1,8 @@
 import "@styles/globals.css";
 import "@locales";
-
 import { ApolloProvider } from "@apollo/client";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 import { useApollo } from "../lib/apolloClient";
 import { AppInit } from "@components/AppInit";
 import { SafeHydrate } from "@components/SafeHydrate";
@@ -23,6 +23,8 @@ export default function App({ Component, pageProps }: AppProps) {
               content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
             />
           </Head>
+
+          <Toaster />
           <Component {...pageProps} />
         </AppContext>
       </ApolloProvider>
