@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.27.0](https://github.com/mahdineer/plog-fe/compare/v0.26.0...v0.27.0) (2022-04-10)
+
+
+### Features
+
+* add copyTextToClipboard to utils ([5f62fc2](https://github.com/mahdineer/plog-fe/commit/5f62fc237656bbac5fdbc33aa7bd3c064c01b286))
+* add link and trash icons ([04e4eea](https://github.com/mahdineer/plog-fe/commit/04e4eea8c26d9de4805b399b55ebe0f25a5001fc))
+* implement Menu component ([b38aa39](https://github.com/mahdineer/plog-fe/commit/b38aa393475287263ecdf6ab3f5243371423a9e0))
+
 ### [0.26.1](https://github.com/mahdineer/plog-fe/compare/v0.26.0...v0.26.1) (2022-04-06)
 
 ## [0.26.0](https://github.com/mahdineer/plog-fe/compare/v0.25.0...v0.26.0) (2022-04-06)
