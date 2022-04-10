@@ -36,7 +36,7 @@ export function Content(props: ContentPostProps) {
   );
 
   const textComponent = (
-    <>
+    <span className="flex flex-col space-y-1.5">
       {content?.length > 0 && (
         <p>
           {parsePost({
@@ -56,7 +56,7 @@ export function Content(props: ContentPostProps) {
         updatedAt={updatedAt}
         size={dateSize}
       />
-    </>
+    </span>
   );
 
   return (

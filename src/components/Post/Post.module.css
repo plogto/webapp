@@ -74,7 +74,7 @@
     @apply inline-flex font-light break-words whitespace-pre-line w-full pr-4;
 
     & .attachment {
-      @apply rounded-lg mb-2;
+      @apply rounded-lg;
     }
 
     &.showHeader {
@@ -104,13 +104,13 @@
       @apply text-sm;
 
       & .attachment {
-        @apply rounded-lg my-2;
+        @apply rounded-lg;
       }
     }
   }
 
   & .date {
-    @apply block text-gray-400 text-sm mt-1;
+    @apply block text-gray-400 text-sm;
 
     &.small {
       @apply text-xs;
