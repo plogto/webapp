@@ -12,6 +12,7 @@ import { useModalContext } from "@contexts/ModalContext";
 import { useNavigation } from "@hooks/useNavigation";
 import { useUrls } from "@hooks/useUrls";
 import { copyTextToClipboard } from "@utils/copyTextToClipboard";
+import { fillToast } from "@utils/toast";
 import type { HeaderPostProps } from "@components/Post/@types";
 
 export function Header(props: HeaderPostProps) {
@@ -33,13 +34,16 @@ export function Header(props: HeaderPostProps) {
   const MENU_ITEMS: MenuProps["items"] = [
     {
       key: "copy",
-      title: "Copy Link",
+      title: t("texts.copyLink"),
       icon: "link",
-      onClick: () => copyTextToClipboard(formatPostUrl(url)),
+      onClick: () =>
+        copyTextToClipboard(formatPostUrl(url)).then(() => {
+          fillToast(t("texts.copiedToClipboard"));
+        }),
     },
     {
       key: "delete",
-      title: "Delete Post",
+      title: t("texts.deletePost"),
       icon: "trash",
       className: "text-red-500",
       onClick: openModal,
