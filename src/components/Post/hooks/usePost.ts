@@ -8,7 +8,10 @@ import type { UsePostProps } from "../@types";
 export function usePost(props: UsePostProps) {
   const {
     type,
-    post: { id, replies },
+    post: {
+      user: { id },
+      replies,
+    },
   } = props;
 
   const { repliesView } = type;

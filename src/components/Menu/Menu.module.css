@@ -7,6 +7,14 @@
     @apply p-3 stroke-1.5 hover:bg-gray-50;
     @apply transition-all duration-300;
 
+    &.normal {
+      @apply hover:bg-gray-50;
+    }
+
+    &.delete {
+      @apply text-red-500 hover:bg-red-50;
+    }
+
     & .icon {
       @apply w-6 h-6;
     }

@@ -45,7 +45,7 @@ export function Header(props: HeaderPostProps) {
       key: "delete",
       title: t("texts.deletePost"),
       icon: "trash",
-      className: "text-red-500",
+      type: "delete",
       onClick: openModal,
     },
   ];
