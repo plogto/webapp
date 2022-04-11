@@ -1,18 +1,18 @@
 import React from "react";
 import { Card } from "@components/Card";
 import { StoryContainer } from "@stories/StoryContainer";
-import { Content } from ".";
+import { PostContent } from ".";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "components/Post/Content",
-  component: Content,
-} as ComponentMeta<typeof Content>;
+  title: "components/Post/PostContent",
+  component: PostContent,
+} as ComponentMeta<typeof PostContent>;
 
-const Template: ComponentStory<typeof Content> = args => (
+const Template: ComponentStory<typeof PostContent> = args => (
   <StoryContainer>
     <Card className="w-96 p-3">
-      <Content {...args} />
+      <PostContent {...args} />
     </Card>
   </StoryContainer>
 );

@@ -1,12 +1,16 @@
 import classNames from "classnames";
+import Link from "next/link";
 import styles from "../../Post.module.css";
 import { Icon } from "@components/Icon";
 import { useLikePost } from "@components/Post/hooks/useLikePost";
 import { useSavePost } from "@components/Post/hooks/useSavePost";
+import { useNavigation } from "@hooks/useNavigation";
 import type { FooterPostProps } from "../../@types";
 
 export function Footer(props: FooterPostProps) {
-  const { postId, size = "normal", isLiked, isSaved } = props;
+  const { postId, url, size = "normal", isLiked, isSaved } = props;
+
+  const { formatReplyPostPageRoute } = useNavigation();
 
   const { likePost } = useLikePost({ postId });
   const { savePost } = useSavePost({ postId });
@@ -22,6 +26,7 @@ export function Footer(props: FooterPostProps) {
     styles.icon,
     styles[size],
   );
+  const replyIconClasses = classNames(styles.icon, styles[size]);
 
   return (
     <div className={wrapperClasses}>
@@ -39,6 +44,11 @@ export function Footer(props: FooterPostProps) {
           className={likeIconClasses}
         />
       </button>
+      <Link href={formatReplyPostPageRoute(url)}>
+        <a className={styles.iconWrapper}>
+          <Icon className={replyIconClasses} name="comment" type="outline" />
+        </a>
+      </Link>
     </div>
   );
 }

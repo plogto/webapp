@@ -1,15 +1,15 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { v4 as uuid } from "uuid";
-import styles from "../../Post.module.css";
-import { DateTime } from "../DateTime";
+import styles from "./PostContent.module.css";
+import { PostDateTime } from "@components/PostDateTime";
 import { Hashtag } from "@components/Hashtag";
 import { useNavigation } from "@hooks/useNavigation";
 import { usePostParser } from "@hooks/usePostParser";
 import { useUrls } from "@hooks/useUrls";
-import type { ContentPostProps } from "@components/Post/@types";
+import { PostContentProps } from "./@types";
 
-export function Content(props: ContentPostProps) {
+export function PostContent(props: PostContentProps) {
   const {
     size = "normal",
     url,
@@ -50,7 +50,7 @@ export function Content(props: ContentPostProps) {
       {attachment?.length > 0 && (
         <img className={styles.attachment} src={getFileUrl(attachment[0])} />
       )}
-      <DateTime
+      <PostDateTime
         type={dateType}
         createdAt={createdAt}
         updatedAt={updatedAt}

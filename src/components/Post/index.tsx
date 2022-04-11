@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import Link from "next/link";
 import styles from "./Post.module.css";
-import { Content, Footer, Header } from "./components";
+import { Footer, Header } from "./components";
 import { usePost } from "./hooks/usePost";
 import { Card } from "@components/Card";
+import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
 import { POST_TYPES } from "@constants";
 import { ModalProvider } from "@contexts/ModalContext";
@@ -80,7 +81,7 @@ export function Post(props: PostProps) {
               filterMenuItems={filterMenuItems}
             />
           </ModalProvider>
-          <Content
+          <PostContent
             showHeader={!isCard}
             url={url}
             isClickable={isContentClickable}
@@ -96,6 +97,7 @@ export function Post(props: PostProps) {
         </div>
         <Footer
           postId={id}
+          url={url}
           size={footerSize}
           isLiked={isLiked}
           isSaved={isSaved}

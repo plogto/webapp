@@ -2,18 +2,18 @@ import React from "react";
 
 import { DateType } from "@enums";
 import { StoryContainer } from "@stories/StoryContainer";
-import { DateTime } from ".";
+import { PostDateTime } from ".";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "components/Post/DateTime",
-  component: DateTime,
-} as ComponentMeta<typeof DateTime>;
+  title: "components/Post/PostDateTime",
+  component: PostDateTime,
+} as ComponentMeta<typeof PostDateTime>;
 
-const Template: ComponentStory<typeof DateTime> = args => (
+const Template: ComponentStory<typeof PostDateTime> = args => (
   <StoryContainer>
     <div className="w-96">
-      <DateTime {...args} />
+      <PostDateTime {...args} />
     </div>
   </StoryContainer>
 );
