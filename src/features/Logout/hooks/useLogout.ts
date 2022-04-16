@@ -4,7 +4,7 @@ import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 
 export function useLogout() {
-  const router = useRouter();
+  const { push } = useRouter();
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
@@ -14,6 +14,6 @@ export function useLogout() {
     typeof window !== "undefined"
       ? localStorage.removeItem("authorization")
       : undefined;
-    router.push(PageUrls.LOGIN);
+    push(PageUrls.LOGIN);
   }, [setIsAuthenticated, setToken, setUser]);
 }

@@ -15,7 +15,7 @@ export function useLogin() {
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
-    if (data) {
+    if (data?.login) {
       const {
         authToken: { token },
         user,

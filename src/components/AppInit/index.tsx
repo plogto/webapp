@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -8,17 +8,24 @@ import { useNotifications } from "@hooks/useNotifications";
 import type { GetUserInfoQuery } from "@graphql/@types/user";
 
 export function AppInit() {
-  const { data } = useQuery<GetUserInfoQuery>(GET_USER_INFO);
-  const router = useRouter();
+  const [getUserInfo, { data }] = useLazyQuery<GetUserInfoQuery>(GET_USER_INFO);
+  const { push } = useRouter();
   const { setUser } = useAccountContext();
   useNotifications();
 
   useEffect(() => {
+    const token = localStorage.getItem("authorization");
+    if (token) {
+      getUserInfo();
+    }
+  }, [getUserInfo]);
+
+  useEffect(() => {
     if (data) {
-      if (data.getUserInfo) {
+      if (data?.getUserInfo) {
         setUser(data.getUserInfo);
-      } else if (router.asPath !== PageUrls.HOME) {
-        router.push(PageUrls.LOGOUT);
+      } else {
+        push(PageUrls.LOGOUT);
       }
     }
   }, [data, setUser]);
