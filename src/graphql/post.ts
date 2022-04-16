@@ -1,5 +1,32 @@
 import { gql } from "@apollo/client";
 
+export const GET_SHORT_POST_BY_URL = gql`
+  query getPostByUrl($url: String!) {
+    getPostByUrl(url: $url) {
+      id
+      url
+      user {
+        id
+        username
+        fullName
+        avatar {
+          id
+          name
+        }
+      }
+      content
+      attachment {
+        id
+        name
+        width
+        height
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
 export const GET_POST_BY_URL = gql`
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
@@ -9,8 +36,16 @@ export const GET_POST_BY_URL = gql`
         id
         username
         fullName
-        avatar
-        background
+        avatar {
+          id
+          name
+        }
+        background {
+          id
+          name
+          width
+          height
+        }
         connectionStatus
       }
       isLiked {
@@ -35,8 +70,14 @@ export const GET_POST_BY_URL = gql`
             id
             username
             fullName
-            avatar
-            background
+            avatar {
+              id
+              name
+            }
+            background {
+              id
+              name
+            }
             connectionStatus
           }
           isLiked {
@@ -61,8 +102,14 @@ export const GET_POST_BY_URL = gql`
                 id
                 username
                 fullName
-                avatar
-                background
+                avatar {
+                  id
+                  name
+                }
+                background {
+                  id
+                  name
+                }
                 connectionStatus
               }
               isLiked {
@@ -77,7 +124,12 @@ export const GET_POST_BY_URL = gql`
                 }
               }
               content
-              attachment
+              attachment {
+                id
+                name
+                width
+                height
+              }
               createdAt
               updatedAt
             }
@@ -86,7 +138,12 @@ export const GET_POST_BY_URL = gql`
             }
           }
           content
-          attachment
+          attachment {
+            id
+            name
+            width
+            height
+          }
           createdAt
           updatedAt
         }
@@ -95,7 +152,12 @@ export const GET_POST_BY_URL = gql`
         }
       }
       content
-      attachment
+      attachment {
+        id
+        name
+        width
+        height
+      }
       createdAt
       updatedAt
     }
@@ -112,8 +174,16 @@ export const GET_POSTS_BY_USERNAME = gql`
           id
           username
           fullName
-          avatar
-          background
+          avatar {
+            id
+            name
+          }
+          background {
+            id
+            name
+            width
+            height
+          }
           connectionStatus
         }
         isLiked {
@@ -136,7 +206,12 @@ export const GET_POSTS_BY_USERNAME = gql`
           }
         }
         content
-        attachment
+        attachment {
+          id
+          name
+          width
+          height
+        }
         createdAt
         updatedAt
       }
@@ -160,8 +235,16 @@ export const GET_POSTS_BY_TAG_NAME = gql`
           id
           username
           fullName
-          avatar
-          background
+          avatar {
+            id
+            name
+          }
+          background {
+            id
+            name
+            width
+            height
+          }
           connectionStatus
         }
         isLiked {
@@ -184,7 +267,12 @@ export const GET_POSTS_BY_TAG_NAME = gql`
           }
         }
         content
-        attachment
+        attachment {
+          id
+          name
+          width
+          height
+        }
         createdAt
         updatedAt
       }
@@ -207,33 +295,25 @@ export const ADD_POST = gql`
         id
         username
         fullName
-        avatar
-        background
+        avatar {
+          id
+          name
+        }
+        background {
+          id
+          name
+          width
+          height
+        }
       }
       content
-      attachment
+      attachment {
+        id
+        name
+        width
+        height
+      }
       createdAt
-      updatedAt
-    }
-  }
-`;
-
-export const REPLY_POST = gql`
-  mutation replyPost($postId: ID!, $content: String!) {
-    replyPost(postId: $postId, input: { content: $content }) {
-      id
-      parent {
-        id
-      }
-      content
-      attachment
-      user {
-        id
-        username
-        fullName
-        avatar
-        background
-      }
       updatedAt
     }
   }

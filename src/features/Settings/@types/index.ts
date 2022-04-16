@@ -1,4 +1,5 @@
 import { PageUrls } from "@enums/pages";
+import { User } from "@t/user";
 import type { IconNames } from "@components/Icon";
 
 export type SettingsItem = {
@@ -13,11 +14,11 @@ export type LogoutButtonProps = {
 };
 
 export type AvatarProfileProps = {
-  avatar?: string;
+  avatar?: User["avatar"];
 };
 
 export type BackgroundProfileProps = {
-  background?: string;
+  background?: User["background"];
 };
 
 export type ChangeImageProfileProps = {

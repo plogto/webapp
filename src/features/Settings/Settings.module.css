@@ -39,13 +39,13 @@
     }
 
     & .backgroundWrapper {
-      @apply bg-center bg-cover rounded-b-lg;
       @apply w-full h-[33vw] md:h-44 border-none;
+      @apply bg-center bg-cover rounded-b-lg;
       @apply relative bg-white overflow-hidden;
 
       & .uploadBackground {
         @apply flex items-center justify-center;
-        @apply absolute inset-0 z-30;
+        @apply absolute inset-0 z-30 w-full;
         @apply bg-gray-800 bg-opacity-30 text-white;
       }
     }

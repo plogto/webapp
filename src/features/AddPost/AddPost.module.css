@@ -1,63 +1,83 @@
-.form {
-  @apply w-full bg-white rounded-lg shadow;
+.addPost {
+  @apply w-full rounded-lg shadow bg-white;
 
-  & .header {
-    @apply flex border-b border-gray-100 p-2;
-  }
-
-  & .attachmentPreview {
-    @apply relative;
-
-    & .removeButton {
-      @apply absolute top-3 right-3 text-xs font-medium rounded-md;
-      @apply text-white bg-gray-800 bg-opacity-50 px-2 py-1;
+  & .back {
+    @apply px-3;
+    & .icon {
+      @apply w-[1.3rem] h-[1.3rem] md:w-6 md:h-6 stroke-2;
     }
   }
 
-  & .textarea {
-    @apply border-none w-full m-0 resize-none ring-0 focus:ring-0;
-
-    &::placeholder {
-      @apply text-gray-400;
+  & .parentPost {
+    & .header {
+      @apply flex items-center pt-2 px-2;
     }
+
+    @apply pb-2 border-b border-dashed;
   }
 
-  & .footer {
-    @apply flex justify-between p-2 md:p-3;
-
-    & .attachmentButton {
-      @apply p-1 border shadow-sm;
-
-      & .icon {
-        @apply w-6 stroke-2 text-primary-500;
-      }
+  & .form {
+    & .header {
+      @apply flex p-2;
     }
 
-    & .buttonContainer {
-      @apply w-full flex justify-end space-x-2;
+    & .main {
+      @apply flex flex-col px-3 md:px-4 pt-4;
+      & .attachmentPreview {
+        @apply relative rounded-lg overflow-hidden;
 
-      & .counter {
-        @apply flex items-center justify-center text-gray-400 w-24;
-        @apply rounded-lg border border-gray-200 duration-300;
-
-        & .number {
-          @apply inline-flex items-center justify-center;
-          @apply text-center h-full w-full;
-        }
-
-        & .number:first-child {
-          @apply border-r border-gray-200;
-        }
-
-        & .number:first-child.counterOverflow,
-        & .counterOverflow {
-          @apply text-red-500 border-red-500;
+        & .removeButton {
+          @apply absolute top-3 right-3 text-xs font-medium rounded-md;
+          @apply text-white bg-gray-800 bg-opacity-50 px-2 py-1;
         }
       }
 
-      & .submit {
-        @apply bg-primary-500 text-white py-2 px-3 focus:ring-0 ring-0 outline-none;
-        @apply font-bold w-24 rounded-lg capitalize text-sm;
+      & .textarea {
+        @apply text-lg border-none w-full p-0 pb-2 m-0 resize-none ring-0 focus:ring-0;
+
+        &::placeholder {
+          @apply text-gray-400;
+        }
+      }
+    }
+
+    & .footer {
+      @apply flex justify-between p-3;
+
+      & .attachmentButton {
+        @apply p-1 border shadow-sm;
+
+        & .icon {
+          @apply w-6 stroke-2 text-primary-500;
+        }
+      }
+
+      & .buttonContainer {
+        @apply w-full flex justify-end space-x-2;
+
+        & .counter {
+          @apply flex items-center justify-center text-gray-400 w-24;
+          @apply rounded-lg border border-gray-200 duration-300;
+
+          & .number {
+            @apply inline-flex items-center justify-center;
+            @apply text-center h-full w-full;
+          }
+
+          & .number:first-child {
+            @apply border-r border-gray-200;
+          }
+
+          & .number:first-child.counterOverflow,
+          & .counterOverflow {
+            @apply text-red-500 border-red-500;
+          }
+        }
+
+        & .submit {
+          @apply bg-primary-500 text-white py-2 px-3 focus:ring-0 ring-0 outline-none;
+          @apply font-bold w-24 rounded-lg capitalize text-sm;
+        }
       }
     }
   }

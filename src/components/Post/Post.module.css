@@ -70,53 +70,6 @@
     }
   }
 
-  & .content {
-    @apply inline-flex font-light break-words whitespace-pre-line w-full pr-4;
-
-    & .attachment {
-      @apply rounded-lg;
-    }
-
-    &.showHeader {
-      @apply inline-block;
-
-      & p {
-        @apply mt-1.5;
-      }
-      & .profile {
-        @apply inline-flex items-center;
-
-        & .fullName {
-          @apply font-bold pr-1.5 mt-1;
-        }
-      }
-    }
-
-    &.large {
-      @apply text-lg px-4 pt-3;
-    }
-
-    &.normal {
-      @apply text-base px-4 pt-3;
-    }
-
-    &.small {
-      @apply text-sm;
-
-      & .attachment {
-        @apply rounded-lg;
-      }
-    }
-  }
-
-  & .date {
-    @apply block text-gray-400 text-sm;
-
-    &.small {
-      @apply text-xs;
-    }
-  }
-
   & .footer {
     &.small {
       @apply ml-10;
@@ -127,7 +80,7 @@
     }
 
     & .iconWrapper {
-      @apply ml-3 mr-1 my-2.5;
+      @apply inline-flex ml-3 mr-1 my-2.5;
 
       & .icon {
         @apply w-6 h-6 text-gray-600 stroke-1.5;

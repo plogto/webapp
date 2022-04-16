@@ -1,0 +1,7 @@
+.date {
+  @apply block text-gray-400 text-sm;
+
+  &.small {
+    @apply text-xs;
+  }
+}

@@ -34,7 +34,9 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
       <div
         className={styles.backgroundWrapper}
         style={{
-          backgroundImage: background ? `url(${getFileUrl(background)})` : "",
+          backgroundImage: background
+            ? `url(${getFileUrl(background.name)})`
+            : "",
         }}
       >
         <button

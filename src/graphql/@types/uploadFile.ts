@@ -1,5 +1,5 @@
+import type { Attachment } from "@t/attachment";
+
 export type SingleUploadFileMutation = {
-  singleUploadFile: {
-    name: string;
-  };
+  singleUploadFile: Attachment;
 };

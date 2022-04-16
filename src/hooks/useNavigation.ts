@@ -24,11 +24,16 @@ export function useNavigation() {
     return `/${username}${PageUrls.FOLLOWING}`;
   }
 
+  function formatReplyPostPageRoute(url: Post["url"]) {
+    return `${PageUrls.ADD_POST}?parentUrl=${url}`;
+  }
+
   return {
     formatProfilePageRoute,
     formatPostPageRoute,
     formatTagPageRoute,
     formatFollowersPageRoute,
     formatFollowingPageRoute,
+    formatReplyPostPageRoute,
   };
 }

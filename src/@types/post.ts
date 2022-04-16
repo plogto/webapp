@@ -1,4 +1,5 @@
 import { DateType, RepliesView, PostTypeKey } from "@enums";
+import type { Attachment } from "./attachment";
 import type { Pagination } from "./pagination";
 import type { PostLike, PostLikesWithPagination } from "./postLike";
 import type { PostSave } from "./postSave";
@@ -10,7 +11,7 @@ export type Post = {
   url: string;
   user: User;
   content: string;
-  attachment?: string[];
+  attachment?: Attachment[];
   isLiked?: PostLike;
   isSaved?: PostSave;
   likes?: PostLikesWithPagination;

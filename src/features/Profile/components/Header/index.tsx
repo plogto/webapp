@@ -4,9 +4,9 @@ import styles from "../../Profile.module.css";
 import { useProfile } from "../../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
+import { Img } from "@components/Img";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { useUrls } from "@hooks/useUrls";
 import type { User } from "@t/user";
 
 // TODO: refactor this component
@@ -24,19 +24,14 @@ export function Header(props: User) {
   const { user } = useAccountContext();
   const { counts } = useProfile();
   const { t } = useTranslation("profile");
-  const { getFileUrl } = useUrls();
 
   const clickable =
     id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
 
   return (
     <div className={styles.header}>
-      <div
-        className={styles.background}
-        style={{
-          backgroundImage: background ? `url(${getFileUrl(background)})` : "",
-        }}
-      >
+      <div className={styles.background}>
+        {background && <Img image={background} />}
         <Avatar size="large" className={styles.avatar} avatar={avatar} />
       </div>
       <div className="flex items-start justify-between w-full pl-3">

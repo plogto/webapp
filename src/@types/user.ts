@@ -1,10 +1,11 @@
+import type { Attachment } from "./attachment";
 import type { Pagination } from "./pagination";
 
 export type User = {
   id: string;
   username: string;
-  avatar?: string;
-  background?: string;
+  avatar?: Attachment;
+  background?: Attachment;
   fullName: string;
   email: string;
   bio?: string;

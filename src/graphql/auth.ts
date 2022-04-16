@@ -7,8 +7,16 @@ export const LOGIN = gql`
         id
         username
         fullName
-        avatar
-        background
+        avatar {
+          id
+          name
+        }
+        background {
+          id
+          name
+          width
+          height
+        }
         email
       }
       authToken {
