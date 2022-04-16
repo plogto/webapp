@@ -2,7 +2,7 @@
   "addPost": {
     "buttons": {
       "addPost": "add post",
-      "hello": "hello"
+      "reply": "Reply"
     }
   },
   "auth": {

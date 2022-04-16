@@ -1,7 +1,7 @@
 .wrapper {
   @apply hidden fixed inset-0 z-40;
   @apply justify-center items-center;
-  @apply bg-gray-900 bg-opacity-50;
+  @apply bg-gray-900 bg-opacity-50 overflow-hidden;
 
   &.isOpen {
     @apply flex;
@@ -25,7 +25,7 @@
     }
 
     & .cropImage {
-      @apply relative w-full h-full z-50;
+      @apply relative w-full h-full z-50 rounded-b-xl overflow-hidden;
     }
 
     & .footer {

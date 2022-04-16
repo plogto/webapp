@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { v4 as uuid } from "uuid";
+import { PostContentProps } from "./@types";
 import styles from "./PostContent.module.css";
-import { PostDateTime } from "@components/PostDateTime";
 import { Hashtag } from "@components/Hashtag";
+import { Img } from "@components/Img";
+import { PostDateTime } from "@components/PostDateTime";
 import { useNavigation } from "@hooks/useNavigation";
 import { usePostParser } from "@hooks/usePostParser";
-import { useUrls } from "@hooks/useUrls";
-import { PostContentProps } from "./@types";
 
 export function PostContent(props: PostContentProps) {
   const {
@@ -25,7 +25,6 @@ export function PostContent(props: PostContentProps) {
     updatedAt,
   } = props;
   const { formatProfilePageRoute, formatPostPageRoute } = useNavigation();
-  const { getFileUrl } = useUrls();
   const { parsePost } = usePostParser();
   const sizeClasses = styles[size];
   const wrapperClasses = classNames(
@@ -48,7 +47,9 @@ export function PostContent(props: PostContentProps) {
         </p>
       )}
       {attachment?.length > 0 && (
-        <img className={styles.attachment} src={getFileUrl(attachment[0])} />
+        <div className={styles.attachment}>
+          <Img image={attachment[0]} />
+        </div>
       )}
       <PostDateTime
         type={dateType}

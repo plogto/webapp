@@ -2,7 +2,7 @@
   @apply inline-flex font-light break-words whitespace-pre-line w-full pr-4;
 
   & .attachment {
-    @apply rounded-lg;
+    @apply rounded-lg overflow-hidden;
   }
 
   &.showHeader {
@@ -21,11 +21,11 @@
   }
 
   &.large {
-    @apply text-lg px-4 pt-3;
+    @apply text-lg px-3 md:px-4 pt-3;
   }
 
   &.normal {
-    @apply text-base px-4 pt-3;
+    @apply text-base px-3 md:px-4 pt-3;
   }
 
   &.small {

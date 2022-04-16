@@ -19,7 +19,7 @@ export function useImageProfile(props: UseImageProfileProps) {
 
   useEffect(() => {
     if (data?.singleUploadFile) {
-      editUser({ variables: { [key]: data.singleUploadFile.name } });
+      editUser({ variables: { [key]: data.singleUploadFile.id } });
     }
   }, [data, editUser, key]);
 

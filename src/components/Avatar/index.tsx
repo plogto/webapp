@@ -1,14 +1,12 @@
 import classNames from "classnames";
-import Image from "next/image";
 import { useMemo } from "react";
 import styles from "./Avatar.module.css";
-import { useUrls } from "@hooks/useUrls";
+import { Img } from "@components/Img";
 import type { AvatarProps } from "./@types";
 
 export function Avatar(props: AvatarProps) {
   const { className, size = "normal", avatar } = props;
   const classes = classNames(styles.avatar, className, styles[size]);
-  const { getFileUrl } = useUrls();
 
   const { width, height } = useMemo(() => {
     switch (size) {
@@ -27,7 +25,13 @@ export function Avatar(props: AvatarProps) {
 
   return avatar ? (
     <div className={classes}>
-      <Image width={width} height={height} src={getFileUrl(avatar)} />
+      <Img
+        image={{
+          ...avatar,
+          width,
+          height,
+        }}
+      />
     </div>
   ) : (
     <svg className={classes} fill="currentColor" viewBox="0 0 24 24">

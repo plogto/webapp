@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import router from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useParentPost } from "./useParentPost";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { ADD_POST } from "@graphql/post";
@@ -18,6 +19,7 @@ export function useAddPost() {
   });
   const { user } = useAccountContext();
   const { singleUploadFile } = useUploadFile();
+  const { parentPost } = useParentPost();
   const inputFileRef = useRef<HTMLInputElement>(null);
 
   const removeAttachmentPreview = useCallback(() => {
@@ -56,7 +58,7 @@ export function useAddPost() {
         addPost({
           variables: {
             ...variables,
-            attachment: [data?.singleUploadFile.name],
+            attachment: [data?.singleUploadFile.id],
           },
         });
       });
@@ -64,6 +66,7 @@ export function useAddPost() {
   };
 
   return {
+    parentPost,
     user,
     formMethods,
     onSubmit,

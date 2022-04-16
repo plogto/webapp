@@ -36,7 +36,7 @@ export function Connections({ type }: ConnectionsProps) {
             <Icon className={styles.icon} name="chevronLeft" />
           </a>
         </Link>
-        <UserInfo size="large" showAvatar={false} user={user} />
+        <UserInfo size="normal" showAvatar={false} user={user} />
       </div>
 
       {isPrivate && !isYourProfile && user.connectionStatus !== 2 && (
