@@ -29,7 +29,9 @@ export function Navbar() {
       href: PageUrls.HOME,
     },
     {
-      icon: <Avatar size="tiny" />,
+      icon: (
+        <Avatar size="tiny" className={styles.avatar} avatar={user?.avatar} />
+      ),
       href: `/${user?.username}`,
     },
   ];
