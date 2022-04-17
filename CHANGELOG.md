@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.3](https://github.com/mahdineer/plog-fe/compare/v0.27.1...v0.27.3) (2022-04-17)
+
+
+### Features
+
+* add reply for Post feature ([e0244ae](https://github.com/mahdineer/plog-fe/commit/e0244aea0945a2b0b63c0866099926667a0d28fc))
+* implement Img component ([7b64ed4](https://github.com/mahdineer/plog-fe/commit/7b64ed4c1e78ce712b8f672cf3adb22e93db939d))
+* implement PageHeader component ([e942a95](https://github.com/mahdineer/plog-fe/commit/e942a95b64577abaa6b58970c108f584762cd61b))
+
+
+### Bug Fixes
+
+* fix DesktopTrends styles ([25bbafd](https://github.com/mahdineer/plog-fe/commit/25bbafd2445ed357d04c4d891c532131ddbd7706))
+
 ### [0.27.2](https://github.com/mahdineer/plog-fe/compare/v0.27.1...v0.27.2) (2022-04-16)
 
 
