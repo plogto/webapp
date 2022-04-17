@@ -18,7 +18,7 @@ export function PageHeader(props: PageHeaderProps) {
         {backIcon}
       </Button>
       <h2 className={styles.title}>{title}</h2>
-      <div className="w-[1.3rem]"></div>
+      <div className={styles.icon}></div>
     </div>
   );
 }
