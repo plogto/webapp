@@ -1,8 +1,9 @@
 import type { Post } from "@t/post";
 
 export type AddPostForm = {
+  postId?: string;
   content?: Post["content"];
-  attachment?: Post["attachment"];
+  attachment?: string[];
 };
 
 export type AttachmentPreviewProps = {

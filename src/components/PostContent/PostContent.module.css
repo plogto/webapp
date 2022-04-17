@@ -1,5 +1,5 @@
 .content {
-  @apply inline-flex font-light break-words whitespace-pre-line w-full pr-4;
+  @apply inline-flex break-words whitespace-pre-line w-full pr-4;
 
   & .attachment {
     @apply rounded-lg overflow-hidden;
@@ -11,6 +11,7 @@
     & p {
       @apply mt-1.5;
     }
+
     & .profile {
       @apply inline-flex items-center;
 

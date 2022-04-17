@@ -16,6 +16,12 @@ export type GetPostsByTagNameQuery = {
   };
 };
 
+export type AddPostMutationRequest = {
+  postId?: string;
+  content?: Post["content"];
+  attachment?: string[];
+};
+
 export type AddPostMutation = {
   addPost: Post;
 };

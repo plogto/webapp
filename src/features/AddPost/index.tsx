@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import TextareaAutosize from "react-textarea-autosize";
 import styles from "./AddPost.module.css";
@@ -19,6 +20,7 @@ export function AddPost() {
     formMethods,
     onSubmit,
     loading,
+    uploadFileLoading,
     attachmentPreview,
     setAttachmentPreview,
     removeAttachmentPreview,
@@ -31,20 +33,21 @@ export function AddPost() {
   return (
     <div className={styles.addPost}>
       <PageHeader
-        title={parentPost.data ? t("texts.replyPost") : t("texts.newPost")}
+        title={parentPost ? t("texts.replyPost") : t("texts.newPost")}
       />
-      {parentPost.data && (
+      {parentPost && (
         <div className={styles.parentPost}>
           <div className={styles.header}>
-            <UserInfo size="normal" user={parentPost.data.getPostByUrl.user} />
+            <UserInfo size="normal" user={parentPost.user} />
           </div>
           <PostContent
             dateSize="large"
+            size="large"
             dateType={DateType.LONG}
-            content={parentPost.data.getPostByUrl.content}
-            attachment={parentPost.data.getPostByUrl.attachment}
-            createdAt={parentPost.data.getPostByUrl.createdAt}
-            updatedAt={parentPost.data.getPostByUrl.updatedAt}
+            content={parentPost.content}
+            attachment={parentPost.attachment}
+            createdAt={parentPost.createdAt}
+            updatedAt={parentPost.updatedAt}
           />
         </div>
       )}
@@ -52,10 +55,7 @@ export function AddPost() {
         {user && (
           <>
             <div className={styles.header}>
-              <UserInfo
-                user={user}
-                size={!parentPost.data ? "normal" : "small"}
-              />
+              <UserInfo user={user} size={!parentPost ? "normal" : "small"} />
             </div>
 
             <div className={styles.main}>
@@ -67,7 +67,10 @@ export function AddPost() {
                   },
                 })}
                 placeholder="Write something ..."
-                className={styles.textarea}
+                className={classNames(
+                  styles.textarea,
+                  parentPost?.id && styles.reply,
+                )}
                 name="content"
               />
               <AttachmentPreview
@@ -92,11 +95,11 @@ export function AddPost() {
 
                 <Button
                   className={styles.submit}
-                  loading={loading}
+                  loading={loading || uploadFileLoading}
                   disabled={!watch("content") && !attachmentPreview}
                   type="submit"
                 >
-                  {parentPost.data ? t("buttons.reply") : t("buttons.addPost")}
+                  {parentPost ? t("buttons.reply") : t("buttons.addPost")}
                 </Button>
               </div>
             </div>
