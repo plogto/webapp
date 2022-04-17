@@ -13,12 +13,6 @@ export const GET_NOTIFICATIONS = gql`
             id
             name
           }
-          background {
-            id
-            name
-            width
-            height
-          }
         }
         receiver {
           id
@@ -58,12 +52,6 @@ export const GET_NOTIFICATION = gql`
         avatar {
           id
           name
-        }
-        background {
-          id
-          name
-          width
-          height
         }
       }
       receiver {
