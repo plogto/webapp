@@ -8,18 +8,24 @@ import { PageUrls } from "@enums/pages";
 import { ADD_POST } from "@graphql/post";
 import { useUploadFile } from "@hooks/useUploadFile";
 import type { AddPostForm } from "../@types";
-import type { AddPostMutation } from "@graphql/@types/post";
+import type {
+  AddPostMutation,
+  AddPostMutationRequest,
+} from "@graphql/@types/post";
 
 export function useAddPost() {
-  const [addPost, { data, loading, error }] =
-    useMutation<AddPostMutation>(ADD_POST);
+  const [addPost, { data, loading, error }] = useMutation<
+    AddPostMutation,
+    AddPostMutationRequest
+  >(ADD_POST);
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
+  const { user } = useAccountContext();
+  const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
+  const { parentPost } = useParentPost();
   const formMethods = useForm<AddPostForm>({
     mode: "all",
   });
-  const { user } = useAccountContext();
-  const { singleUploadFile } = useUploadFile();
-  const { parentPost } = useParentPost();
+  const { setValue } = formMethods;
   const inputFileRef = useRef<HTMLInputElement>(null);
 
   const removeAttachmentPreview = useCallback(() => {
@@ -27,6 +33,12 @@ export function useAddPost() {
   }, []);
 
   const { setError, getValues } = formMethods;
+
+  useEffect(() => {
+    if (parentPost?.id) {
+      setValue("postId", parentPost.id);
+    }
+  }, [parentPost?.id, setValue]);
 
   useEffect(() => {
     if (!getValues("content")?.length) {
@@ -58,7 +70,9 @@ export function useAddPost() {
         addPost({
           variables: {
             ...variables,
-            attachment: [data?.singleUploadFile.id],
+            attachment: data?.singleUploadFile?.id
+              ? [data.singleUploadFile.id]
+              : [],
           },
         });
       });
@@ -71,6 +85,7 @@ export function useAddPost() {
     formMethods,
     onSubmit,
     loading,
+    uploadFileLoading: singleUploadFileResponse.loading,
     error,
     attachmentPreview,
     setAttachmentPreview,

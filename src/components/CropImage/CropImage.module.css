@@ -25,7 +25,7 @@
     }
 
     & .cropImage {
-      @apply relative w-full h-full z-50 rounded-b-xl overflow-hidden;
+      @apply relative w-full h-full z-50 md:rounded-b-xl overflow-hidden;
     }
 
     & .footer {

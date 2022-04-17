@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.4](https://github.com/mahdineer/plog-fe/compare/v0.27.3...v0.27.4) (2022-04-17)
+
+
+### Bug Fixes
+
+* **AddPost:** handle submit button ([c93fd7e](https://github.com/mahdineer/plog-fe/commit/c93fd7e122163f36d4e86afdc768fdaa453affd4))
+
 ### [0.27.3](https://github.com/mahdineer/plog-fe/compare/v0.27.1...v0.27.3) (2022-04-17)
 
 

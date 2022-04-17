@@ -15,7 +15,7 @@
     }
 
     & .main {
-      @apply flex flex-col px-3 md:px-4 pt-4;
+      @apply flex flex-col px-3 md:px-4 pt-2;
       & .attachmentPreview {
         @apply relative rounded-lg overflow-hidden;
 
@@ -27,6 +27,10 @@
 
       & .textarea {
         @apply text-lg border-none w-full p-0 pb-2 m-0 resize-none ring-0 focus:ring-0;
+
+        &.reply {
+          @apply text-sm;
+        }
 
         &::placeholder {
           @apply text-gray-400;

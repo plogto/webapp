@@ -74,10 +74,6 @@ export const GET_POST_BY_URL = gql`
               id
               name
             }
-            background {
-              id
-              name
-            }
             connectionStatus
           }
           isLiked {
@@ -103,10 +99,6 @@ export const GET_POST_BY_URL = gql`
                 username
                 fullName
                 avatar {
-                  id
-                  name
-                }
-                background {
                   id
                   name
                 }
@@ -178,12 +170,6 @@ export const GET_POSTS_BY_USERNAME = gql`
             id
             name
           }
-          background {
-            id
-            name
-            width
-            height
-          }
           connectionStatus
         }
         isLiked {
@@ -239,12 +225,6 @@ export const GET_POSTS_BY_TAG_NAME = gql`
             id
             name
           }
-          background {
-            id
-            name
-            width
-            height
-          }
           connectionStatus
         }
         isLiked {
@@ -287,8 +267,11 @@ export const GET_POSTS_BY_TAG_NAME = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($content: String!, $attachment: [String!]) {
-    addPost(input: { content: $content, attachment: $attachment }) {
+  mutation addPost($postId: ID, $content: String!, $attachment: [String!]) {
+    addPost(
+      postId: $postId
+      input: { content: $content, attachment: $attachment }
+    ) {
       id
       url
       user {
@@ -298,12 +281,6 @@ export const ADD_POST = gql`
         avatar {
           id
           name
-        }
-        background {
-          id
-          name
-          width
-          height
         }
       }
       content

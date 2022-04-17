@@ -7,7 +7,7 @@ import type { GetPostByUrlQuery } from "@graphql/@types/post";
 export function useParentPost() {
   const { query } = useRouter();
   const url = query.parentUrl as string;
-  const [getParentPost, parentPost] = useLazyQuery<GetPostByUrlQuery>(
+  const [getParentPost, { data }] = useLazyQuery<GetPostByUrlQuery>(
     GET_SHORT_POST_BY_URL,
   );
 
@@ -18,6 +18,6 @@ export function useParentPost() {
   }, [getParentPost, url]);
 
   return {
-    parentPost,
+    parentPost: data?.getPostByUrl,
   };
 }

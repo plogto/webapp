@@ -1,16 +1,17 @@
 .header {
-  @apply flex justify-between items-center space-x-3.5;
-  @apply py-1.5 px-2 border-b;
+  @apply flex justify-between items-center;
+  @apply py-1.5 px-2 border-b border-gray-100;
 
   & .title {
-    @apply text-xl font-medium capitalize;
+    @apply text-xl font-medium capitalize mx-0;
   }
 
   & .back {
     @apply p-1.5 hover:shadow;
     @apply transition-all duration-300;
-    & .icon {
-      @apply w-[1.3rem] h-[1.3rem] md:w-6 md:h-6 stroke-2;
-    }
+  }
+
+  & .icon {
+    @apply w-[1.5rem] h-[1.5rem] md:w-6 md:h-6 stroke-2;
   }
 }
