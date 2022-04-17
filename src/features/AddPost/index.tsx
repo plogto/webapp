@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import TextareaAutosize from "react-textarea-autosize";
 import styles from "./AddPost.module.css";
@@ -8,6 +7,7 @@ import { useAddPost } from "./hooks/useAddPost";
 import { Button } from "@components/Buttons/Button";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
+import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { UserInfo } from "@components/UserInfo";
 import { CONTENT_MAX_LENGTH } from "@constants";
@@ -26,17 +26,16 @@ export function AddPost() {
     parentPost,
   } = useAddPost();
   const { register, handleSubmit, watch } = formMethods;
-  const { back } = useRouter();
   const { t } = useTranslation("addPost");
 
   return (
     <div className={styles.addPost}>
+      <PageHeader
+        title={parentPost.data ? t("texts.replyPost") : t("texts.newPost")}
+      />
       {parentPost.data && (
         <div className={styles.parentPost}>
           <div className={styles.header}>
-            <Button className={styles.back} onClick={back}>
-              <Icon className={styles.icon} name="chevronLeft" />
-            </Button>
             <UserInfo size="normal" user={parentPost.data.getPostByUrl.user} />
           </div>
           <PostContent
@@ -53,11 +52,6 @@ export function AddPost() {
         {user && (
           <>
             <div className={styles.header}>
-              {!parentPost.data && (
-                <Button className={styles.back} onClick={back}>
-                  <Icon className={styles.icon} name="chevronLeft" />
-                </Button>
-              )}
               <UserInfo
                 user={user}
                 size={!parentPost.data ? "normal" : "small"}

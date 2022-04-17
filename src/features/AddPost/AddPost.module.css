@@ -1,13 +1,6 @@
 .addPost {
   @apply w-full rounded-lg shadow bg-white;
 
-  & .back {
-    @apply px-3;
-    & .icon {
-      @apply w-[1.3rem] h-[1.3rem] md:w-6 md:h-6 stroke-2;
-    }
-  }
-
   & .parentPost {
     & .header {
       @apply flex items-center pt-2 px-2;

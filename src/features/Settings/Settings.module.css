@@ -2,7 +2,7 @@
   @apply w-full mb-12 overflow-visible;
 
   & .header {
-    @apply flex justify-start items-center space-x-3.5;
+    @apply flex justify-between items-center space-x-3.5;
     @apply py-3.5 px-4;
 
     & .title {

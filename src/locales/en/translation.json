@@ -3,6 +3,10 @@
     "buttons": {
       "addPost": "add post",
       "reply": "Reply"
+    },
+    "texts": {
+      "newPost": "New Post",
+      "replyPost": "Reply Post"
     }
   },
   "auth": {
