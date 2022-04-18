@@ -3,12 +3,13 @@ import {
   UseFormReturn,
   UseFormSetError,
 } from "react-hook-form";
+import { Attachment } from "@t/attachment";
 import type { User } from "@t/user";
 
 export type SettingsForm = {
   username: User["username"];
-  avatar: User["avatar"];
-  background: User["background"];
+  avatar?: Attachment["id"];
+  background?: Attachment["id"];
   fullName: User["fullName"];
   email: User["email"];
   bio: User["bio"];

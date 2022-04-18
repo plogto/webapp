@@ -16,8 +16,8 @@ export function useEditProfile() {
     mode: "all",
     defaultValues: {
       username: user?.username,
-      avatar: user?.avatar,
-      background: user?.background,
+      avatar: user?.avatar?.id,
+      background: user?.background?.id,
       fullName: user?.fullName,
       email: user?.email,
       bio: user?.bio,
