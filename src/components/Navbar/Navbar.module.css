@@ -3,7 +3,7 @@
   @apply flex justify-center md:hidden;
 
   & .navbar {
-    @apply fixed bottom-0 w-full p-2;
+    @apply fixed bottom-0 w-full p-1;
     @apply flex justify-around shadow;
     @apply bg-gradient-to-b from-white to-gray-50;
 
