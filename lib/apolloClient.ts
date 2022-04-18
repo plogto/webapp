@@ -4,10 +4,7 @@ import {
   InMemoryCache,
   NormalizedCacheObject,
   RequestHandler,
-  split,
 } from "@apollo/client";
-import { WebSocketLink } from "@apollo/client/link/ws";
-import { getMainDefinition } from "@apollo/client/utilities";
 import { createUploadLink } from "apollo-upload-client";
 import { useMemo } from "react";
 
@@ -34,28 +31,7 @@ const httpLink = authLink.concat(
   }) as unknown as ApolloLink | RequestHandler,
 );
 
-const link =
-  typeof window !== "undefined"
-    ? split(
-        ({ query }) => {
-          const definition = getMainDefinition(query);
-          return (
-            definition.kind === "OperationDefinition" &&
-            definition.operation === "subscription"
-          );
-        },
-        new WebSocketLink({
-          uri: process.env.NEXT_PUBLIC_SUBSCRIPTIONS_API + "/query",
-          options: {
-            reconnect: true,
-            connectionParams: () => ({
-              authorization,
-            }),
-          },
-        }),
-        httpLink,
-      )
-    : httpLink;
+const link = httpLink;
 
 function createApolloClient() {
   return new ApolloClient({
