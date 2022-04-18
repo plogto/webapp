@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { useParentPost } from "./useParentPost";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { ADD_POST } from "@graphql/post";
+import { ADD_POST, GET_POSTS_BY_USERNAME } from "@graphql/post";
+import { GET_TRENDS } from "@graphql/tag";
 import { useUploadFile } from "@hooks/useUploadFile";
 import type { AddPostForm } from "../@types";
 import type {
@@ -14,12 +15,23 @@ import type {
 } from "@graphql/@types/post";
 
 export function useAddPost() {
+  const { user } = useAccountContext();
+
   const [addPost, { data, loading, error }] = useMutation<
     AddPostMutation,
     AddPostMutationRequest
-  >(ADD_POST);
+  >(ADD_POST, {
+    refetchQueries: [
+      {
+        query: GET_TRENDS,
+      },
+      {
+        query: GET_POSTS_BY_USERNAME,
+        variables: { username: user?.username },
+      },
+    ],
+  });
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
-  const { user } = useAccountContext();
   const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
   const { parentPost } = useParentPost();
   const formMethods = useForm<AddPostForm>({
