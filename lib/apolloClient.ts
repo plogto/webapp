@@ -10,13 +10,13 @@ import { useMemo } from "react";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-const token =
-  typeof window !== "undefined"
-    ? localStorage.getItem("authorization")
-    : "null";
-const authorization = `Bearer ${token}`;
-
 const authLink = new ApolloLink((operation, forward) => {
+  const token =
+    typeof window !== "undefined"
+      ? localStorage.getItem("authorization")
+      : "null";
+  const authorization = `Bearer ${token}`;
+
   operation.setContext({
     headers: {
       authorization,
