@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { useMemo } from "react";
 import styles from "./Avatar.module.css";
 import { Img } from "@components/Img";
 import type { AvatarProps } from "./@types";
@@ -8,28 +7,13 @@ export function Avatar(props: AvatarProps) {
   const { className, size = "normal", avatar } = props;
   const classes = classNames(styles.avatar, className, styles[size]);
 
-  const { width, height } = useMemo(() => {
-    switch (size) {
-      case "extra":
-        return { width: 160, height: 160 };
-      case "large":
-        return { width: 96, height: 96 };
-      case "normal":
-        return { width: 48, height: 48 };
-      case "small":
-        return { width: 36, height: 36 };
-      case "tiny":
-        return { width: 28, height: 28 };
-    }
-  }, [size]);
-
   return avatar ? (
     <div className={classes}>
       <Img
         image={{
           ...avatar,
-          width,
-          height,
+          width: 1,
+          height: 1,
         }}
       />
     </div>
