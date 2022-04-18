@@ -8,6 +8,7 @@ import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
+import { PageHeader } from "@components/PageHeader";
 import { Textarea } from "@components/Textarea";
 import { Toggle } from "@components/Toggle";
 import { PageUrls } from "@enums/pages";
@@ -32,14 +33,7 @@ export function EditProfile() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.changeProfile}>
       <Card loading={!user} className={styles.card}>
-        <div className={styles.header}>
-          <Link href={PageUrls.SETTINGS}>
-            <a className={styles.back}>
-              <Icon className={styles.icon} name="chevronLeft" />
-            </a>
-          </Link>
-          <h2 className={styles.title}>{t("texts.editProfile")}</h2>
-        </div>
+        <PageHeader title={t("texts.editProfile")} />
         <div className={`${styles.inputContainer} px-4`}>
           <Input
             type="text"
