@@ -1,21 +1,6 @@
 .changeProfile {
   @apply flex w-full;
 
-  & .header {
-    @apply flex justify-start items-center space-x-3.5;
-    @apply py-3.5 px-4 border-b border-dashed;
-
-    & .title {
-      @apply text-xl md:text-2xl font-medium capitalize;
-    }
-
-    & .back {
-      @apply pl-1;
-      & .icon {
-        @apply w-[1.3rem] h-[1.3rem] md:w-6 md:h-6 stroke-2;
-      }
-    }
-  }
   & .card {
     @apply flex flex-col;
     @apply w-full;

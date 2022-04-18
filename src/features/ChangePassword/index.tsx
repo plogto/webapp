@@ -7,6 +7,7 @@ import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
+import { PageHeader } from "@components/PageHeader";
 import { PageUrls } from "@enums/pages";
 import type { Inputs } from "./@types";
 
@@ -37,15 +38,7 @@ export function ChangePassword() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Card loading={!user} className={styles.changePassword}>
-        <div className={styles.header}>
-          <Link href={PageUrls.SETTINGS}>
-            <a className={styles.back}>
-              <Icon className={styles.icon} name="chevronLeft" />
-            </a>
-          </Link>
-          <h2 className={styles.title}>{t("texts.changePassword")}</h2>
-        </div>
-
+        <PageHeader title={t("texts.changePassword")} />
         <div className={styles.inputs}>
           {inputs.map(({ name, label }) => (
             <Input
