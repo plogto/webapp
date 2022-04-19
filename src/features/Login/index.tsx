@@ -48,7 +48,7 @@ export function Login() {
             })}
           />
         </div>
-        <div className="mt-5">
+        <div className="mt-7">
           <Button
             loading={loading}
             type="submit"

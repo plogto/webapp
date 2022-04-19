@@ -9,8 +9,8 @@ import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
 
 export function useTag() {
-  const router = useRouter();
-  const tagName = router.query.tagName as string;
+  const { query } = useRouter();
+  const tagName = query.tagName as string;
   const variables = { tagName };
   const [getPostsByTagName, getPostsByTagNameResponse] = useLazyQuery<
     GetPostsByTagNameQuery,

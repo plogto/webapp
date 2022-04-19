@@ -108,7 +108,7 @@
     "texts": {
       "description": "Are you sure you want to log out?",
       "logout": "Log out",
-      "title": "Warning"
+      "title": "Log out"
     }
   },
   "modal": {

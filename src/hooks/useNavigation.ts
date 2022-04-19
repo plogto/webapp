@@ -24,7 +24,7 @@ export function useNavigation() {
     return `/${username}${PageUrls.FOLLOWING}`;
   }
 
-  function formatReplyPostPageRoute(url: Post["url"]) {
+  function formatAddPostPageRoute(url: Post["url"]) {
     return `${PageUrls.ADD_POST}?parentUrl=${url}`;
   }
 
@@ -34,6 +34,6 @@ export function useNavigation() {
     formatTagPageRoute,
     formatFollowersPageRoute,
     formatFollowingPageRoute,
-    formatReplyPostPageRoute,
+    formatAddPostPageRoute,
   };
 }

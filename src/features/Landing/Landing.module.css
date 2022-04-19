@@ -1,44 +1,42 @@
 .wrapper {
   @apply flex flex-col justify-center items-center;
   @apply w-full h-screen;
-}
 
-.header {
-  @apply flex flex-col items-center pt-10;
-}
+  & .header {
+    @apply flex flex-col items-center pt-10;
 
-.logoContainer {
-  @apply flex flex-col items-center justify-center;
-}
+    & .logoContainer {
+      @apply flex flex-col items-center justify-center;
+    }
 
-.logo {
-  @apply h-32 text-gray-600 mb-5;
-}
+    & .logo {
+      @apply h-32 text-gray-900 mb-5;
+    }
 
-.logoTitle {
-  @apply font-bold md:text-7xl text-7xl text-gray-600 uppercase;
-}
+    & .logoTitle {
+      @apply font-bold text-5xl text-gray-900 uppercase;
+    }
 
-.description {
-  @apply font-light md:text-lg text-lg mt-4;
-  @apply text-center text-gray-600;
-}
+    & .description {
+      @apply font-light md:text-lg text-lg mt-4;
+      @apply text-center text-gray-900;
+    }
+  }
 
-.authButtons {
-  @apply flex justify-center mt-8;
-}
+  & .authButtons {
+    @apply flex justify-center space-x-4 mt-8;
 
-.loginButton,
-.registerButton {
-  @apply rounded-full;
-  @apply px-5 py-2.5 w-32;
-}
+    & .loginButton,
+    & .registerButton {
+      @apply px-5 py-2.5 w-32 rounded-xl;
+    }
 
-.loginButton {
-  @apply text-gray-900 shadow-none font-bold;
-}
+    & .loginButton {
+      @apply text-gray-900 font-bold border;
+    }
 
-.registerButton {
-  @apply text-white;
-  @apply bg-gray-900;
+    & .registerButton {
+      @apply text-white bg-gray-900;
+    }
+  }
 }

@@ -1,12 +1,16 @@
 import { useMutation } from "@apollo/client";
-import router from "next/router";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParentPost } from "./useParentPost";
 import { useAccountContext } from "@contexts/AccountContext";
-import { PageUrls } from "@enums/pages";
-import { ADD_POST, GET_POSTS_BY_USERNAME } from "@graphql/post";
+import {
+  ADD_POST,
+  GET_POSTS_BY_USERNAME,
+  GET_POST_BY_URL,
+} from "@graphql/post";
 import { GET_TRENDS } from "@graphql/tag";
+import { useNavigation } from "@hooks/useNavigation";
 import { useUploadFile } from "@hooks/useUploadFile";
 import type { AddPostForm } from "../@types";
 import type {
@@ -15,22 +19,12 @@ import type {
 } from "@graphql/@types/post";
 
 export function useAddPost() {
+  const { push } = useRouter();
   const { user } = useAccountContext();
-
   const [addPost, { data, loading, error }] = useMutation<
     AddPostMutation,
     AddPostMutationRequest
-  >(ADD_POST, {
-    refetchQueries: [
-      {
-        query: GET_TRENDS,
-      },
-      {
-        query: GET_POSTS_BY_USERNAME,
-        variables: { username: user?.username },
-      },
-    ],
-  });
+  >(ADD_POST);
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
   const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
   const { parentPost } = useParentPost();
@@ -39,12 +33,30 @@ export function useAddPost() {
   });
   const { setValue } = formMethods;
   const inputFileRef = useRef<HTMLInputElement>(null);
+  const { formatPostPageRoute, formatProfilePageRoute } = useNavigation();
 
   const removeAttachmentPreview = useCallback(() => {
     setAttachmentPreview(undefined);
   }, []);
 
   const { setError, getValues } = formMethods;
+
+  const refetchQueries = useMemo(
+    () => [
+      {
+        query: GET_TRENDS,
+      },
+      {
+        query: GET_POSTS_BY_USERNAME,
+        variables: { username: user?.username },
+      },
+      {
+        query: GET_POST_BY_URL,
+        variables: { url: parentPost?.url },
+      },
+    ],
+    [parentPost?.url, user?.username],
+  );
 
   useEffect(() => {
     if (parentPost?.id) {
@@ -62,15 +74,20 @@ export function useAddPost() {
   }, [getValues, setError]);
 
   useEffect(() => {
-    if (data?.addPost) {
-      router.push(PageUrls.HOME);
+    if (data?.addPost && user) {
+      if (parentPost) {
+        push(formatPostPageRoute(parentPost.url));
+      } else {
+        push(formatProfilePageRoute(user?.username));
+      }
     }
-  }, [data]);
+  }, [data, formatPostPageRoute, formatProfilePageRoute, parentPost, user]);
 
   const onSubmit = (variables: AddPostForm) => {
     if (!attachmentPreview) {
       addPost({
         variables,
+        refetchQueries,
       });
     } else {
       const file = new File([attachmentPreview], "file.png", {
@@ -86,6 +103,7 @@ export function useAddPost() {
               ? [data.singleUploadFile.id]
               : [],
           },
+          refetchQueries,
         });
       });
     }

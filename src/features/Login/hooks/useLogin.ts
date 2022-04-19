@@ -1,5 +1,5 @@
 import { useLazyQuery } from "@apollo/client";
-import router from "next/router";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -10,6 +10,7 @@ import type { LoginForm } from "../@types";
 import type { LoginQuery } from "@graphql/@types/auth";
 
 export function useLogin() {
+  const { push } = useRouter();
   const formMethods = useForm<LoginForm>({ mode: "all" });
   const [login, { error, loading, data }] = useLazyQuery<LoginQuery>(LOGIN);
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
@@ -24,7 +25,7 @@ export function useLogin() {
       setToken(token);
       setUser(user);
       setIsAuthenticated(true);
-      router.push(PageUrls.HOME);
+      push(PageUrls.HOME);
     }
   }, [data, setToken, setUser, setIsAuthenticated]);
 

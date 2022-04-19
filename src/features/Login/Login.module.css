@@ -10,11 +10,11 @@
       @apply flex flex-col items-center justify-center;
 
       & .logo {
-        @apply h-20 text-gray-600 mt-3 mb-1;
+        @apply h-20 text-gray-900 mt-3 mb-1;
       }
 
       & .logoTitle {
-        @apply text-3xl text-gray-600 font-bold text-center my-4 uppercase;
+        @apply text-3xl text-gray-900 font-bold text-center my-4 uppercase;
       }
     }
 
@@ -24,7 +24,7 @@
     }
 
     & .submitButton {
-      @apply text-white bg-primary-500;
+      @apply text-white bg-gray-900;
       @apply w-full px-4 py-2.5 capitalize;
     }
 

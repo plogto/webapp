@@ -24,11 +24,11 @@ export function LogoutButton(props: LogoutButtonProps) {
     <>
       <Modal isOpen={isOpen}>
         <div className="modal">
-          <div className="icon-wrapper bg-yellow-50">
+          <div className="icon-wrapper bg-gray-50">
             <Icon
               type="outline"
               name="exclamation"
-              className="icon text-yellow-500"
+              className="icon text-gray-500"
             />
           </div>
           <div className="modal-title">{t("texts.title")}</div>

@@ -1,5 +1,5 @@
 import { useLazyQuery } from "@apollo/client";
-import router from "next/router";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -8,6 +8,7 @@ import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
 import type { Post } from "@t/post";
 
 export function useHome() {
+  const { push } = useRouter();
   const { user, isAuthenticated } = useAccountContext();
   const [getPostsByUsername, { error, loading, data }] =
     useLazyQuery<GetPostsByUsernameQuery>(GET_POSTS_BY_USERNAME);
@@ -16,9 +17,9 @@ export function useHome() {
   // TODO: improve this part
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push(PageUrls.LOGIN);
+      push(PageUrls.LOGIN);
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, push]);
 
   useEffect(() => {
     if (user) {
