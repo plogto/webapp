@@ -1,25 +1,17 @@
 .notifications {
   @apply w-full;
 
-  & .header {
-    @apply flex justify-between items-center px-4 py-3;
-
-    & .title {
-      @apply text-xl md:text-2xl font-bold;
-    }
-
-    & .unreadNotificationsCount {
-      @apply flex items-center justify-center;
-      @apply min-w-6 px-2 py-0.5 rounded-full;
-      @apply bg-red-500 text-white text-sm;
-    }
+  & .unreadNotificationsCount {
+    @apply flex items-center justify-center;
+    @apply min-w-[1.5rem] px-1.5 py-0.5 rounded-md mr-[0.35rem];
+    @apply bg-red-500 text-white text-sm;
   }
 
   & .notification {
-    @apply flex items-start w-full p-2 md:p-3 border-t;
+    @apply flex items-start w-full p-2 md:p-3 border-t border-gray-100;
 
     &.unreadNotification {
-      @apply bg-primary-50;
+      @apply bg-gray-50;
     }
 
     & .avatar {

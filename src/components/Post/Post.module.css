@@ -60,8 +60,8 @@
 
     & .more {
       @apply absolute top-0 right-0 bg-white;
-      @apply mr-2 p-1.5 rounded-md text-gray-500;
-      @apply hover:shadow hover:text-primary-500;
+      @apply mr-2 p-1.5 rounded-md text-gray-400;
+      @apply hover:shadow hover:text-gray-900;
       @apply transition-all duration-300 box-content;
 
       & .icon {
@@ -90,7 +90,7 @@
         }
 
         &.saved {
-          @apply text-gray-600;
+          @apply text-gray-900;
         }
 
         &.small {

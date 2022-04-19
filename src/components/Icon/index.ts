@@ -1,15 +1,14 @@
 import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
+import ArrowLeft from "./svg/arrow-left.svg";
 import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CameraFill from "./svg/camera-fill.svg";
 import Camera from "./svg/camera.svg";
-import ChevronLeftFill from "./svg/chevron-left-fill.svg";
-import ChevronLeft from "./svg/chevron-left.svg";
-import CommentCircleFill from "./svg/comment-circle-fill.svg";
-import CommentCircle from "./svg/comment-circle.svg";
+import CommentSquareFill from "./svg/comment-square-fill.svg";
+import CommentSquare from "./svg/comment-square.svg";
 import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
 import DotsHorizontal from "./svg/dots-horizontal.svg";
 import ExclamationFill from "./svg/exclamation-fill.svg";
@@ -47,6 +46,10 @@ import XFill from "./svg/x-fill.svg";
 import X from "./svg/x.svg";
 
 export const iconsList = {
+  arrowLeft: {
+    outline: ArrowLeft,
+    fill: ArrowLeft,
+  },
   bell: {
     outline: Bell,
     fill: BellFill,
@@ -59,13 +62,9 @@ export const iconsList = {
     outline: Camera,
     fill: CameraFill,
   },
-  chevronLeft: {
-    outline: ChevronLeft,
-    fill: ChevronLeftFill,
-  },
   comment: {
-    outline: CommentCircle,
-    fill: CommentCircleFill,
+    outline: CommentSquare,
+    fill: CommentSquareFill,
   },
   dotsHorizontal: {
     outline: DotsHorizontal,

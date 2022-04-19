@@ -27,11 +27,11 @@
 
       & .navLink {
         @apply duration-300 flex items-center p-2 rounded-lg text-gray-400;
-        @apply hover:bg-primary-50 hover:text-primary-500 rounded-lg;
+        @apply hover:bg-gray-50 hover:text-gray-900 rounded-lg;
       }
 
       & .active {
-        @apply text-primary-500 bg-primary-50;
+        @apply text-gray-900 bg-gray-50;
       }
 
       & .title {
@@ -53,7 +53,7 @@
 
       &::hover .notificationBadge,
       &.active .notificationBadge {
-        @apply border-primary-50;
+        @apply border-gray-50;
       }
     }
   }

@@ -35,10 +35,10 @@
 }
 
 .loginButton {
-  @apply text-primary-500 shadow-none font-bold;
+  @apply text-gray-900 shadow-none font-bold;
 }
 
 .registerButton {
   @apply text-white;
-  @apply bg-primary-500;
+  @apply bg-gray-900;
 }

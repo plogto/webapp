@@ -20,7 +20,7 @@
       }
 
       & .applyButton {
-        @apply text-primary-500 font-medium;
+        @apply text-gray-900 font-medium;
       }
     }
 

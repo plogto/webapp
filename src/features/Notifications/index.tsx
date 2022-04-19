@@ -3,6 +3,7 @@ import styles from "./Notifications.module.css";
 import { Notification } from "./components/Notification";
 import { useNotifications } from "./hooks/useNotifications";
 import { Card } from "@components/Card";
+import { PageHeader } from "@components/PageHeader";
 
 export function Notifications() {
   const { notifications, unreadNotificationsCount } = useNotifications();
@@ -10,14 +11,17 @@ export function Notifications() {
 
   return (
     <Card className={styles.notifications}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{t("texts.notifications")}</h2>
-        {!!unreadNotificationsCount && (
-          <span className={styles.unreadNotificationsCount}>
-            {unreadNotificationsCount}
-          </span>
-        )}
-      </div>
+      <PageHeader
+        title={t("texts.notifications")}
+        rightSide={
+          !!unreadNotificationsCount && (
+            <span className={styles.unreadNotificationsCount}>
+              {unreadNotificationsCount}
+            </span>
+          )
+        }
+      />
+
       {notifications?.map(notification => (
         <Notification key={notification.id} notification={notification} />
       ))}

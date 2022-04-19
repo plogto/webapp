@@ -49,14 +49,6 @@ export function useProfile() {
       }),
       href: `${user?.username}/following`,
     },
-    {
-      ...formatCountTitle({
-        singular: t("post"),
-        plural: t("posts"),
-        count: user?.postsCount,
-      }),
-      href: `${user?.username}`,
-    },
   ];
 
   return {
