@@ -10,7 +10,7 @@ export function PageHeader(props: PageHeaderProps) {
   const { handleBack } = usePageHeader();
   const wrapperClasses = classNames(styles.header, className);
 
-  const backIcon = <Icon className={styles.icon} name="chevronLeft" />;
+  const backIcon = <Icon className={styles.icon} name="arrowLeft" />;
 
   return (
     <div className={wrapperClasses}>
