@@ -1,6 +1,6 @@
 .header {
   @apply flex justify-between items-center;
-  @apply py-1.5 px-2 border-b border-gray-100;
+  @apply py-2 px-2 border-b border-gray-100;
 
   & .title {
     @apply text-xl font-medium capitalize mx-0;
