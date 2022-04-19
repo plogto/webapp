@@ -21,7 +21,7 @@
 
 @layer components {
   .modal {
-    @apply p-5 py-6 flex flex-col items-center;
+    @apply px-5 py-5 flex flex-col items-center;
 
     & .modal-title {
       @apply font-bold text-xl text-center;
@@ -45,7 +45,7 @@
     }
 
     & .modal-button {
-      @apply px-2.5 py-3 md:py-2.5 rounded-lg w-full;
+      @apply px-2.5 py-2.5 md:py-2 rounded-lg w-full;
     }
   }
 }

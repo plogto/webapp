@@ -9,8 +9,8 @@ import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
 import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 
 export function useProfile() {
-  const router = useRouter();
-  const username = router.query.username;
+  const { query } = useRouter();
+  const username = query.username;
   const variables = useMemo(
     () => ({
       username,

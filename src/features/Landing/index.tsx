@@ -24,7 +24,11 @@ export function Landing() {
           >
             {t("pages:register")}
           </LinkButton>
-          <LinkButton href={PageUrls.LOGIN} className={styles.loginButton}>
+          <LinkButton
+            layout="cancel"
+            href={PageUrls.LOGIN}
+            className={styles.loginButton}
+          >
             {t("pages:login")}
           </LinkButton>
         </div>

@@ -10,7 +10,7 @@ import type { FooterPostProps } from "../../@types";
 export function Footer(props: FooterPostProps) {
   const { postId, url, size = "normal", isLiked, isSaved } = props;
 
-  const { formatReplyPostPageRoute } = useNavigation();
+  const { formatAddPostPageRoute } = useNavigation();
 
   const { likePost } = useLikePost({ postId });
   const { savePost } = useSavePost({ postId });
@@ -44,7 +44,7 @@ export function Footer(props: FooterPostProps) {
           className={likeIconClasses}
         />
       </button>
-      <Link href={formatReplyPostPageRoute(url)}>
+      <Link href={formatAddPostPageRoute(url)}>
         <a className={styles.iconWrapper}>
           <Icon className={replyIconClasses} name="comment" type="outline" />
         </a>
