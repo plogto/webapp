@@ -40,7 +40,7 @@
 }
 
 .filterButton.active {
-  @apply bg-primary-500 text-white;
+  @apply bg-gray-900 text-white;
 }
 
 .filterButton svg {

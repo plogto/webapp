@@ -35,12 +35,12 @@
     }
 
     & .following {
-      @apply border-primary-500 bg-primary-100 text-primary-500;
+      @apply shadow-sm border text-gray-900 hover:bg-gray-50;
       @apply font-bold;
     }
 
     & .follow {
-      @apply bg-primary-500 text-white;
+      @apply bg-gray-900 text-white;
     }
 
     & .count {

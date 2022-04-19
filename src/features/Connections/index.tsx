@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 import styles from "./Connections.module.css";
@@ -7,12 +6,10 @@ import { useConnections } from "./hooks/useConnections";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
+import { PageHeader } from "@components/PageHeader";
 import { PageStatus } from "@components/PageStatus";
 import { User } from "@components/User";
-import { UserInfo } from "@components/UserInfo";
 import { useAccountContext } from "@contexts/AccountContext";
-import { PageUrls } from "@enums/pages";
-import { useNavigation } from "@hooks/useNavigation";
 import type { ConnectionsProps } from "./@types";
 
 export function Connections({ type }: ConnectionsProps) {
@@ -20,7 +17,6 @@ export function Connections({ type }: ConnectionsProps) {
     type,
   });
   const { user: userAccount } = useAccountContext();
-  const { formatProfilePageRoute } = useNavigation();
   const { t } = useTranslation("connection");
 
   const isPrivate = user?.isPrivate && user.connectionStatus !== 2;
@@ -28,17 +24,7 @@ export function Connections({ type }: ConnectionsProps) {
 
   return (
     <Card>
-      <div className={styles.header}>
-        <Link
-          href={user ? formatProfilePageRoute(user?.username) : PageUrls.HOME}
-        >
-          <a className={styles.back}>
-            <Icon className={styles.icon} name="chevronLeft" />
-          </a>
-        </Link>
-        <UserInfo size="normal" showAvatar={false} user={user} />
-      </div>
-
+      <PageHeader title={user?.fullName} />
       {isPrivate && !isYourProfile && user.connectionStatus !== 2 && (
         <PageStatus
           title={t("status.private.title")}

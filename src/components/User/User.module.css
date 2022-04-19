@@ -17,7 +17,7 @@
 }
 
 .username {
-  @apply text-gray-500 text-sm pr-1;
+  @apply text-gray-900 text-sm pr-1;
 }
 
 .content {
@@ -39,19 +39,19 @@
 }
 
 .following {
-  @apply bg-primary-100 text-primary-500 rounded-lg;
+  @apply border shadow-sm text-gray-900 rounded-lg;
 }
 
 .accept,
 .requested {
-  @apply bg-primary-500 text-white rounded-lg;
+  @apply bg-gray-900 text-white rounded-lg;
 }
 
 .reject {
-  @apply bg-primary-100 text-primary-500 rounded-lg;
+  @apply border shadow-sm text-gray-900 rounded-lg;
   @apply w-8 h-8;
 }
 
 .rejectIcon {
-  @apply text-primary-500 w-8 h-8;
+  @apply text-gray-900 w-8 h-8;
 }

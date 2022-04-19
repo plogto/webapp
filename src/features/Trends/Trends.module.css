@@ -1,75 +1,75 @@
 /* Desktop */
 .card {
   @apply flex flex-col;
-}
 
-.header {
-  @apply flex items-center px-4 py-3;
-}
+  & .header {
+    @apply flex items-center px-4 py-3;
 
-.header svg {
-  @apply w-7 h-7 stroke-2;
-}
+    & svg {
+      @apply w-7 h-7 stroke-2;
+    }
 
-.title {
-  @apply text-2xl font-bold mr-2 capitalize;
-}
+    & .title {
+      @apply text-2xl font-bold mr-2 capitalize;
+    }
+  }
 
-.tag {
-  @apply transition-all ease-linear duration-300;
-  @apply flex flex-col px-4 py-3 border-t border-dashed border-gray-200;
-  @apply hover:bg-blue-50 overflow-hidden;
-}
+  & .tag {
+    @apply transition-all ease-linear duration-300;
+    @apply flex flex-col px-4 py-3 border-t border-dashed border-gray-200;
+    @apply hover:bg-blue-50 overflow-hidden;
 
-.tagName {
-  @apply text-primary-500 font-bold text-xl;
-}
+    & .tagName {
+      @apply text-primary-500 font-bold text-xl;
+    }
 
-.tagCount {
-  @apply text-gray-400 text-sm;
+    & .tagCount {
+      @apply text-gray-400 text-sm;
+    }
+  }
 }
 
 /* Mobile */
 .mobileWrapper {
   @apply w-full;
-}
 
-.mobileHeader {
-  @apply flex items-center px-1 pt-3 text-gray-400 font-medium;
-}
+  & .mobileHeader {
+    @apply flex items-center px-1 pt-3 text-gray-400 font-medium;
 
-.mobileTitle {
-  @apply text-xs capitalize mr-1;
-}
+    & svg {
+      @apply w-4 h-4 stroke-1.5;
+    }
 
-.mobileHeader svg {
-  @apply w-4 h-4 stroke-1.5;
-}
+    & .mobileTitle {
+      @apply text-xs capitalize mr-1;
+    }
+  }
 
-.mobileTags {
-  @apply flex items-end w-full overflow-x-scroll;
-}
+  & .mobileTags {
+    @apply flex items-end w-full overflow-x-scroll;
 
-.mobileFirstTag {
-  @apply flex flex-col pl-1 pr-3 py-1;
-}
+    & .mobileFirstTag {
+      @apply flex flex-col pl-1 pr-3 py-1;
 
-.mobileFirstTagName {
-  @apply text-primary-500 font-bold text-3xl;
-}
+      & .mobileFirstTagName {
+        @apply text-primary-500 font-bold text-3xl;
+      }
 
-.mobileFirstTagCount {
-  @apply text-gray-400 text-xs;
-}
+      & .mobileFirstTagCount {
+        @apply text-gray-400 text-xs;
+      }
+    }
 
-.mobileTag {
-  @apply flex flex-col pl-1 pr-3 py-1;
-}
+    & .mobileTag {
+      @apply flex flex-col pl-1 pr-3 py-1;
 
-.mobileTagName {
-  @apply text-primary-500 font-bold;
-}
+      & .mobileTagName {
+        @apply text-primary-500 font-bold;
+      }
 
-.mobileTagCount {
-  @apply text-gray-400 text-xs;
+      & .mobileTagCount {
+        @apply text-gray-400 text-xs whitespace-nowrap;
+      }
+    }
+  }
 }
