@@ -29,6 +29,7 @@ export function AvatarProfile(props: AvatarProfileProps) {
         removeImage={removeImage}
         closeModal={closeModal}
         onClickInputFile={onClickInputFile}
+        showRemoveButton={!!avatar}
       />
       <div className={styles.avatarWrapper}>
         <button

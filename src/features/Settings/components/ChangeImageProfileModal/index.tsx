@@ -6,7 +6,14 @@ import { Modal } from "@components/Modal";
 import type { ChangeImageProfileProps } from "@features/Settings/@types";
 
 export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
-  const { title, isOpen, closeModal, onClickInputFile, removeImage } = props;
+  const {
+    title,
+    isOpen,
+    closeModal,
+    onClickInputFile,
+    removeImage,
+    showRemoveButton = true,
+  } = props;
   const { t } = useTranslation("settings");
 
   return (
@@ -24,13 +31,15 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
           >
             {t("buttons.uploadPhoto")}
           </Button>
-          <Button
-            layout="remove"
-            className="modal-button"
-            onClick={removeImage}
-          >
-            {t("buttons.removePhoto")}
-          </Button>
+          {showRemoveButton && (
+            <Button
+              layout="remove"
+              className="modal-button"
+              onClick={removeImage}
+            >
+              {t("buttons.removePhoto")}
+            </Button>
+          )}
           <Button layout="cancel" className="modal-button" onClick={closeModal}>
             {t("buttons.cancel")}
           </Button>
