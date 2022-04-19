@@ -8,7 +8,7 @@ import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
 import { POST_TYPES } from "@constants";
 import { ModalProvider } from "@contexts/ModalContext";
-import { DateType, PostTypeKey } from "@enums";
+import { DateType } from "@enums";
 import { useNavigation } from "@hooks/useNavigation";
 import type { PostProps } from "./@types";
 
@@ -22,7 +22,6 @@ export function Post(props: PostProps) {
       footerSize,
       isContentClickable,
       dateType = DateType.SHORT,
-      key,
     },
     post,
     post: {
@@ -67,8 +66,6 @@ export function Post(props: PostProps) {
   return (
     <Card shadow={isCard} className={wrapperClasses}>
       <div className="relative">
-        {((isParentReply && repliesCounter.count > 0) ||
-          key === PostTypeKey.CHILD) && <div className={styles.thread}></div>}
         <div className={classNames(styles.headerAndContentWrapper)}>
           <ModalProvider>
             <Header

@@ -15,7 +15,6 @@ export enum PostTypeKey {
   CARD = "CARD",
   REPLY = "REPLY",
   CHILD = "CHILD",
-  LAST_CHILD = "LAST_CHILD",
 }
 
 export enum CropImageTypeKey {
