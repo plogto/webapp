@@ -54,13 +54,4 @@ export const POST_TYPES: PostTypes = {
     isContentClickable: true,
     repliesView: RepliesView.NONE,
   },
-  LAST_CHILD: {
-    key: PostTypeKey.LAST_CHILD,
-    headerSize: "small",
-    contentSize: "small",
-    dateSize: "small",
-    footerSize: "small",
-    isContentClickable: true,
-    repliesView: RepliesView.NONE,
-  },
 };
