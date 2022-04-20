@@ -10183,6 +10183,11 @@ next-pwa@^5.4.6:
     workbox-webpack-plugin "^6.5.1"
     workbox-window "^6.5.1"
 
+next-themes@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.1.1.tgz#122113a458bf1d1be5ffed66778ab924c106f82a"
+  integrity sha512-Iqxt6rhS/KfK/iHJ0tfFjTcdLEAI0AgwFuAFrMwLOPK5e+MI3I+fzyvBoS+VaOS+NldUiazurhgwYhrfV0VXsQ==
+
 next@^12.1.4:
   version "12.1.4"
   resolved "https://registry.yarnpkg.com/next/-/next-12.1.4.tgz#597a9bdec7aec778b442c4f6d41afd2c64a54b23"
@@ -12844,14 +12849,6 @@ synchronous-promise@^2.0.15:
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
-
-tailwindcss-theme-swapper@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss-theme-swapper/-/tailwindcss-theme-swapper-0.5.1.tgz#0e5171736e1fe62bcf91c99da51ee3fd8205b87e"
-  integrity sha512-r/1A0DXtocf6ZlKSfNK3E9l8M+qwEkDYZ/cUlvtbvuKTF8Xi7cG9Bwy4TzR3XVk4thszzmcHpTh7/Hp2UXaE+w==
-  dependencies:
-    postcss "^8.4.12"
-    tailwindcss "^3.0.23"
 
 tailwindcss@^3.0.23:
   version "3.0.23"
