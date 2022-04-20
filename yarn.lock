@@ -12845,6 +12845,14 @@ synchronous-promise@^2.0.15:
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
 
+tailwindcss-theme-swapper@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-theme-swapper/-/tailwindcss-theme-swapper-0.5.1.tgz#0e5171736e1fe62bcf91c99da51ee3fd8205b87e"
+  integrity sha512-r/1A0DXtocf6ZlKSfNK3E9l8M+qwEkDYZ/cUlvtbvuKTF8Xi7cG9Bwy4TzR3XVk4thszzmcHpTh7/Hp2UXaE+w==
+  dependencies:
+    postcss "^8.4.12"
+    tailwindcss "^3.0.23"
+
 tailwindcss@^3.0.23:
   version "3.0.23"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.0.23.tgz#c620521d53a289650872a66adfcb4129d2200d10"
