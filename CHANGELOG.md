@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.28.0](https://github.com/mahdineer/plog-fe/compare/v0.27.4...v0.28.0) (2022-04-23)
+
+
+### Features
+
+* add themes styles ([2285fb7](https://github.com/mahdineer/plog-fe/commit/2285fb70adbb4759da31cbd2207604de2fba0a31))
+* change primary color with gray color ([44da9a7](https://github.com/mahdineer/plog-fe/commit/44da9a7595ea60cc8a08c50c709b7bb025c91c11))
+* implement Themes feature ([df6c1ee](https://github.com/mahdineer/plog-fe/commit/df6c1eefa713659b7ccf28658181ef00d2e291ce))
+* use PageHeader for ChangePassword and EditProfile feature ([37f1330](https://github.com/mahdineer/plog-fe/commit/37f13301005330e9f36acaf5e91ec65552140103))
+
+
+### Bug Fixes
+
+* **ChangeImageProfile:** add showRemoveButton prop ([d5d6476](https://github.com/mahdineer/plog-fe/commit/d5d64764ce2124a7ff888b252e95ff9432f16559))
+* **cropImage:** fix modal style on mobile layout ([0689eb9](https://github.com/mahdineer/plog-fe/commit/0689eb98b32a4aa1fe42ec68179b7d0acafd9d06))
+* **EditProfile:** set avatar and background id for defaultValues ([36ad732](https://github.com/mahdineer/plog-fe/commit/36ad7328d028363ed6d89e096b700cd3a50b3996))
+* improve apollo config ([ca31d7a](https://github.com/mahdineer/plog-fe/commit/ca31d7a6956a633223ffc46b7c6475c9c432cc39))
+* reduce size of Navbar ([44c6792](https://github.com/mahdineer/plog-fe/commit/44c67927076e8476fb4c6f4fd2e0603f98bd5b2e))
+* remove LAST_CHILD from PostTypeKey ([7bb018a](https://github.com/mahdineer/plog-fe/commit/7bb018accd6273ada3be3c40b254894bf5eb9a3a))
+
 ### [0.27.4](https://github.com/mahdineer/plog-fe/compare/v0.27.3...v0.27.4) (2022-04-17)
 
 
