@@ -1,14 +1,14 @@
 .profile {
-  @apply w-full max-h-screen overflow-y-scroll;
+  @apply w-full max-h-screen overflow-y-scroll text-foreground;
 
   & .header {
-    @apply pb-3 bg-white overflow-hidden relative;
+    @apply pb-3 bg-background-pure overflow-hidden relative;
     @apply flex flex-col items-center rounded-lg m-2 md:m-5 shadow;
 
     & .background {
       @apply bg-center bg-cover absolute;
       @apply w-full h-[33vw] md:h-44 border-none;
-      @apply relative bg-white;
+      @apply relative bg-background-pure;
     }
 
     & .avatar {
@@ -20,7 +20,7 @@
     }
 
     & .username {
-      @apply text-gray-500 -mt-0.5;
+      @apply text-foreground-medium -mt-0.5;
     }
 
     & .bio {
@@ -35,17 +35,17 @@
     }
 
     & .following {
-      @apply shadow-sm border text-gray-900 hover:bg-gray-50;
+      @apply shadow-sm border text-foreground hover:bg-background;
       @apply font-bold;
     }
 
     & .follow {
-      @apply bg-gray-900 text-white;
+      @apply bg-foreground text-background-pure;
     }
 
     & .count {
       @apply rounded-md capitalize;
-      @apply text-gray-500;
+      @apply text-foreground-medium;
 
       &.clickable {
         @apply hover:underline;
@@ -67,5 +67,5 @@
 
 .notFound {
   @apply flex flex-col items-center justify-center h-screen;
-  @apply h-screen text-gray-500;
+  @apply h-screen text-foreground-medium;
 }

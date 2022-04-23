@@ -10,16 +10,16 @@
     }
 
     & .logo {
-      @apply h-32 text-gray-900 mb-5;
+      @apply h-32 text-foreground mb-5;
     }
 
     & .logoTitle {
-      @apply font-bold text-5xl text-gray-900 uppercase;
+      @apply font-bold text-5xl text-foreground uppercase;
     }
 
     & .description {
       @apply font-light md:text-lg text-lg mt-4;
-      @apply text-center text-gray-900;
+      @apply text-center text-foreground;
     }
   }
 
@@ -32,11 +32,11 @@
     }
 
     & .loginButton {
-      @apply text-gray-900 font-bold border;
+      @apply text-foreground font-bold border border-background-light;
     }
 
     & .registerButton {
-      @apply text-white bg-gray-900;
+      @apply text-background-pure bg-foreground;
     }
   }
 }

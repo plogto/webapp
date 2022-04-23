@@ -6,6 +6,7 @@ import styles from "./Search.module.css";
 import { Tags, Users } from "./components";
 import { useSearch } from "./hooks/useSearch";
 import { Button } from "@components/Buttons/Button";
+import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import type { Filter } from "./@types";
 
@@ -31,33 +32,35 @@ export function Search() {
 
   return (
     <>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.header}>
-          <input
-            {...register("expression")}
-            onInput={handleSubmit(() => onSubmit(watch()))}
-            placeholder={t("search:placeholders.search")}
-            name="expression"
-            type="text"
-            autoComplete="off"
-            className={styles.searchInput}
-          />
-          <div className={styles.filters}>
-            {filters.map(({ title, active, onClick, icon }) => (
-              <Button
-                key={title}
-                className={classNames(
-                  styles.filterButton,
-                  active && styles.active,
-                )}
-                onClick={onClick}
-              >
-                <Icon name={icon} className="stroke-2" />
-              </Button>
-            ))}
+      <Card className={styles.form}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.header}>
+            <input
+              {...register("expression")}
+              onInput={handleSubmit(() => onSubmit(watch()))}
+              placeholder={t("search:placeholders.search")}
+              name="expression"
+              type="text"
+              autoComplete="off"
+              className={styles.searchInput}
+            />
+            <div className={styles.filters}>
+              {filters.map(({ title, active, onClick, icon }) => (
+                <Button
+                  key={title}
+                  className={classNames(
+                    styles.filterButton,
+                    active && styles.active,
+                  )}
+                  onClick={onClick}
+                >
+                  <Icon name={icon} className="stroke-2" />
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </Card>
 
       <MobileOnlyView className="w-full">
         <MobileTrends />

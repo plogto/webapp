@@ -1,17 +1,17 @@
 .notifications {
-  @apply w-full;
+  @apply w-full text-foreground;
 
   & .unreadNotificationsCount {
     @apply flex items-center justify-center;
     @apply min-w-[1.5rem] px-1.5 py-0.5 rounded-md mr-[0.35rem];
-    @apply bg-red-500 text-white text-sm;
+    @apply bg-danger text-white text-sm;
   }
 
   & .notification {
-    @apply flex items-start w-full p-2 md:p-3 border-t border-gray-100;
+    @apply flex items-start w-full p-2 md:p-3 border-t border-background-light;
 
     &.unreadNotification {
-      @apply bg-gray-50;
+      @apply bg-background-light;
     }
 
     & .avatar {
@@ -26,11 +26,11 @@
       }
 
       & .reply {
-        @apply text-gray-500;
+        @apply text-foreground-medium;
       }
 
       & .date {
-        @apply text-xs text-gray-700 mt-1;
+        @apply text-xs text-foreground-dark mt-1;
       }
     }
   }

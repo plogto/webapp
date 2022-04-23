@@ -1,18 +1,18 @@
 .menuItems {
   @apply flex flex-col rounded-lg overflow-hidden;
-  @apply z-50 bg-white shadow border border-gray-50;
+  @apply z-50 bg-background-pure shadow-md border border-background-light;
 
   & .menuItem {
     @apply flex justify-between items-center;
-    @apply p-3 stroke-1.5 hover:bg-gray-50;
+    @apply p-3 stroke-1.5 hover:bg-background;
     @apply transition-all duration-300;
 
     &.normal {
-      @apply hover:bg-gray-50;
+      @apply hover:bg-background;
     }
 
     &.delete {
-      @apply text-red-500 hover:bg-red-50;
+      @apply text-danger hover:bg-danger-light;
     }
 
     & .icon {

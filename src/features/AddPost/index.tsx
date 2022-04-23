@@ -6,6 +6,7 @@ import { AttachmentPreview } from "./components/AttachmentPreview";
 import { Counter } from "./components/Counter";
 import { useAddPost } from "./hooks/useAddPost";
 import { Button } from "@components/Buttons/Button";
+import { Card } from "@components/Card";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
 import { PageHeader } from "@components/PageHeader";
@@ -31,7 +32,7 @@ export function AddPost() {
   const { t } = useTranslation("addPost");
 
   return (
-    <div className={styles.addPost}>
+    <Card className={styles.addPost}>
       <PageHeader
         title={parentPost ? t("texts.replyPost") : t("texts.newPost")}
       />
@@ -111,6 +112,6 @@ export function AddPost() {
           </>
         )}
       </form>
-    </div>
+    </Card>
   );
 }

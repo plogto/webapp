@@ -1,48 +1,46 @@
-.header {
-  @apply flex items-center;
-}
-
 .form {
   @apply w-full p-2 overflow-hidden;
-  @apply bg-white rounded-lg shadow;
-}
 
-.searchInput {
-  @apply border-0 w-full py-1 px-2 ring-0 focus:ring-0;
-}
+  & .header {
+    @apply flex items-center;
+  }
 
-.searchInput::placeholder {
-  @apply capitalize;
-}
+  & .searchInput {
+    @apply border-0 w-full py-1 px-2 ring-0 focus:ring-0 text-foreground bg-background-pure;
+    &::placeholder {
+      @apply capitalize;
+    }
+  }
 
-.users,
-.tags {
-  @apply w-full mt-3;
-  @apply rounded-lg shadow overflow-hidden;
-}
+  & .users,
+  & .tags {
+    @apply w-full mt-3;
+    @apply rounded-lg shadow overflow-hidden;
+  }
 
-.filters {
-  @apply ml-2 flex justify-end;
-}
+  & .filters {
+    @apply ml-2 flex justify-end;
 
-.filterButton {
-  @apply rounded-lg p-0;
-  @apply font-medium bg-white capitalize w-8 h-8;
-  @apply shadow;
-}
+    & .filterButton {
+      @apply rounded-lg p-0;
+      @apply font-medium bg-background-pure capitalize w-8 h-8;
+      @apply shadow text-foreground;
 
-.filterButton:first-child {
-  @apply mr-3;
-}
+      &:first-child {
+        @apply mr-3;
+      }
 
-.filterButton:last-child {
-  @apply border border-gray-200;
-}
+      &.active {
+        @apply bg-foreground text-background-pure;
+      }
 
-.filterButton.active {
-  @apply bg-gray-900 text-white;
-}
+      &:not(.active) {
+        @apply border border-background-light;
+      }
 
-.filterButton svg {
-  @apply w-5 h-5;
+      & svg {
+        @apply w-5 h-5;
+      }
+    }
+  }
 }

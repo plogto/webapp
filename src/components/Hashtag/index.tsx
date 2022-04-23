@@ -10,7 +10,7 @@ export function Hashtag(props: HashtagProps) {
   const tagName = value.substring(1);
   const { formatTagPageRoute } = useNavigation();
 
-  const wrapperClasses = classNames("text-primary-500", {
+  const wrapperClasses = classNames("text-primary", {
     "font-bold": tagName.toLowerCase() === String(query.tagName).toLowerCase(),
   });
 

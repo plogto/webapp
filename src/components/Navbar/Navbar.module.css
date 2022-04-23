@@ -5,18 +5,18 @@
   & .navbar {
     @apply fixed bottom-0 w-full p-1;
     @apply flex justify-around shadow;
-    @apply bg-gradient-to-b from-white to-gray-50;
+    @apply bg-background-pure;
 
     & .navLink {
       @apply duration-300 ring-0 focus:ring-0;
       @apply text-gray-400 w-10 h-10 md:w-12 md:h-12 p-1 md:p-2 mx-1;
-      @apply hover:text-gray-900 rounded-lg;
+      @apply hover:text-foreground rounded-lg;
 
       &.active {
-        @apply text-gray-900 rounded-lg;
+        @apply text-foreground rounded-lg;
 
         & .avatar {
-          @apply rounded-full border-2 border-gray-900;
+          @apply rounded-full border-2 border-foreground;
         }
       }
     }

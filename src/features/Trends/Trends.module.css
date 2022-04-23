@@ -3,28 +3,28 @@
   @apply flex flex-col;
 
   & .header {
-    @apply flex items-center px-4 py-3;
+    @apply flex items-center px-4 py-3 text-foreground;
 
     & svg {
-      @apply w-7 h-7 stroke-2;
+      @apply w-7 h-7 stroke-2 text-current;
     }
 
     & .title {
-      @apply text-2xl font-bold mr-2 capitalize;
+      @apply text-2xl font-bold mr-2 capitalize text-current;
     }
   }
 
   & .tag {
     @apply transition-all ease-linear duration-300;
-    @apply flex flex-col px-4 py-3 border-t border-dashed border-gray-200;
-    @apply hover:bg-blue-50 overflow-hidden;
+    @apply flex flex-col px-4 py-3 border-t border-dashed border-background-medium;
+    @apply hover:bg-background-light overflow-hidden;
 
     & .tagName {
-      @apply text-primary-500 font-bold text-xl;
+      @apply text-primary font-bold text-xl;
     }
 
     & .tagCount {
-      @apply text-gray-400 text-sm;
+      @apply text-foreground-light text-sm;
     }
   }
 }
@@ -34,7 +34,7 @@
   @apply w-full;
 
   & .mobileHeader {
-    @apply flex items-center px-1 pt-3 text-gray-400 font-medium;
+    @apply flex items-center px-1 pt-3 text-foreground-light font-medium;
 
     & svg {
       @apply w-4 h-4 stroke-1.5;
@@ -52,11 +52,11 @@
       @apply flex flex-col pl-1 pr-3 py-1;
 
       & .mobileFirstTagName {
-        @apply text-primary-500 font-bold text-3xl;
+        @apply text-primary font-bold text-3xl;
       }
 
       & .mobileFirstTagCount {
-        @apply text-gray-400 text-xs;
+        @apply text-foreground-light text-xs;
       }
     }
 
@@ -64,11 +64,11 @@
       @apply flex flex-col pl-1 pr-3 py-1;
 
       & .mobileTagName {
-        @apply text-primary-500 font-bold;
+        @apply text-primary font-bold;
       }
 
       & .mobileTagCount {
-        @apply text-gray-400 text-xs whitespace-nowrap;
+        @apply text-foreground-light text-xs whitespace-nowrap;
       }
     }
   }

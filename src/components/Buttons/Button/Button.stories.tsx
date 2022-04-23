@@ -17,7 +17,7 @@ const Template: ComponentStory<typeof Button> = args => (
 
 export const Main = Template.bind({});
 Main.args = {
-  className: "py-2 px-3.5 text-white bg-primary-500 w-20",
+  className: "py-2 px-3.5 text-background-pure bg-primary w-20",
   children: "Log In",
   loading: false,
 };

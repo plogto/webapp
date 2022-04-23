@@ -1,6 +1,6 @@
 .wrapper {
   @apply flex justify-between items-center;
-  @apply bg-white w-full p-2 pr-4;
+  @apply text-foreground bg-background-pure w-full p-2 pr-4;
 }
 
 .userInfo {
@@ -8,7 +8,7 @@
 }
 
 .avatar {
-  @apply text-gray-400 w-10 h-10 mr-2;
+  @apply text-foreground-light w-10 h-10 mr-2;
   @apply rounded-full shadow-sm border;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .username {
-  @apply text-gray-900 text-sm pr-1;
+  @apply text-foreground text-sm pr-1;
 }
 
 .content {
@@ -39,19 +39,19 @@
 }
 
 .following {
-  @apply border shadow-sm text-gray-900 rounded-lg;
+  @apply border border-background-light shadow-sm text-foreground rounded-lg;
 }
 
 .accept,
 .requested {
-  @apply bg-gray-900 text-white rounded-lg;
+  @apply bg-foreground text-background-pure rounded-lg;
 }
 
 .reject {
-  @apply border shadow-sm text-gray-900 rounded-lg;
+  @apply border shadow-sm text-foreground rounded-lg;
   @apply w-8 h-8;
 }
 
 .rejectIcon {
-  @apply text-gray-900 w-8 h-8;
+  @apply text-foreground w-8 h-8;
 }

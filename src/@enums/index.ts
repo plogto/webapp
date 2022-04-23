@@ -22,3 +22,18 @@ export enum CropImageTypeKey {
   BACKGROUND = "BACKGROUND",
   POST = "POST",
 }
+
+export enum PrimaryColor {
+  BLUE = "BLUE",
+  GREEN = "GREEN",
+  RED = "RED",
+  PURPLE = "PURPLE",
+  ORANGE = "ORANGE",
+  YELLOW = "YELLOW",
+}
+
+export enum ThemeColor {
+  LIGHT = "LIGHT",
+  DIM = "DIM",
+  DARK = "DARK",
+}

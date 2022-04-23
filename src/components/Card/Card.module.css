@@ -1,17 +1,17 @@
 .card {
-  @apply bg-white dark:bg-gray-800;
+  @apply bg-background-pure;
   @apply overflow-hidden relative;
 
   &.isShadow {
-    @apply shadow rounded-lg;
+    @apply shadow rounded-lg border border-background-light;
   }
 }
 
 .loadingContainer {
   @apply flex items-center justify-center;
-  @apply absolute inset-0 bg-white z-50;
+  @apply absolute inset-0 bg-background-pure z-50;
 }
 
 .loading {
-  @apply w-10 text-gray-500;
+  @apply w-10 text-foreground-medium;
 }

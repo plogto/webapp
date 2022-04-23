@@ -20,8 +20,12 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
     <Modal isOpen={isOpen}>
       <div className="modal">
         <div className="modal-title">{title}</div>
-        <div className="icon-wrapper bg-gray-50">
-          <Icon type="outline" name="photo" className="icon text-gray-500" />
+        <div className="icon-wrapper bg-background">
+          <Icon
+            type="outline"
+            name="photo"
+            className="icon text-foreground-medium"
+          />
         </div>
         <div className={styles.modalButtons}>
           <Button

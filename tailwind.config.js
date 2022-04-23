@@ -8,7 +8,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
+  darkMode: false,
   theme: {
     extend: {
       fontSize: {
@@ -27,14 +27,25 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      primary: colors.blue,
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      red: colors.rose,
-      green: colors.green,
-      yellow: colors.amber,
-      blue: colors.blue,
+      ...colors,
+      // primary
+      "primary-light": "var(--primary-light)",
+      primary: "var(--primary)",
+      // danger
+      "danger-light": "var(--danger-light)",
+      danger: "var(--danger)",
+      // background
+      "background-pure": "var(--background-pure)",
+      background: "var(--background)",
+      "background-light": "var(--background-light)",
+      "background-medium": "var(--background-medium)",
+      "background-dark": "var(--background-dark)",
+      // foreground
+      "foreground-light": "var(--foreground-light)",
+      "foreground-medium": "var(--foreground-medium)",
+      "foreground-dark": "var(--foreground-dark)",
+      foreground: "var(--foreground)",
+      "foreground-pure": "var(--foreground-pure)",
     },
   },
   variants: {

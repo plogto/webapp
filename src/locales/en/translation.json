@@ -136,7 +136,8 @@
     "register": "Register",
     "search": "Search",
     "settings": "Settings",
-    "tag": "Tag"
+    "tag": "Tag",
+    "themes": "Themes"
   },
   "post": {
     "buttons": {
@@ -184,6 +185,16 @@
       "changeAvatarPhoto": "Change Avatar Photo",
       "changeBackgroundPhoto": "Change Background Photo",
       "settings": "Settings"
+    }
+  },
+  "themes": {
+    "texts": {
+      "themes": "Themes"
+    },
+    "buttons": {
+      "light": "Light",
+      "dim": "Dim",
+      "dark": "Dark"
     }
   }
 }

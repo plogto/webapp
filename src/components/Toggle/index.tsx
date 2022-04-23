@@ -12,7 +12,7 @@ export function Toggle(props: ToggleProps) {
 
   const toggleClasses = classNames(
     styles.toggle,
-    enabled ? "bg-gray-900" : "bg-gray-200",
+    enabled ? "bg-foreground" : "bg-background-medium",
   );
 
   const sliderClasses = classNames(

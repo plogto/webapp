@@ -51,12 +51,14 @@ export function PostContent(props: PostContentProps) {
           <Img image={attachment[0]} />
         </div>
       )}
-      <PostDateTime
-        type={dateType}
-        createdAt={createdAt}
-        updatedAt={updatedAt}
-        size={dateSize}
-      />
+      {dateSize && (
+        <PostDateTime
+          type={dateType}
+          createdAt={createdAt}
+          updatedAt={updatedAt}
+          size={dateSize}
+        />
+      )}
     </span>
   );
 

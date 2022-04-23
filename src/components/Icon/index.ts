@@ -7,6 +7,7 @@ import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CameraFill from "./svg/camera-fill.svg";
 import Camera from "./svg/camera.svg";
+import ColorPalette from "./svg/color-palette.svg";
 import CommentSquareFill from "./svg/comment-square-fill.svg";
 import CommentSquare from "./svg/comment-square.svg";
 import DotsHorizontalFill from "./svg/dots-horizontal-fill.svg";
@@ -61,6 +62,10 @@ export const iconsList = {
   camera: {
     outline: Camera,
     fill: CameraFill,
+  },
+  colorPalette: {
+    outline: ColorPalette,
+    fill: ColorPalette,
   },
   comment: {
     outline: CommentSquare,

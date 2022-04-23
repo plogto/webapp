@@ -14,7 +14,7 @@ export type PostContentProps = {
   content: Post["content"];
   attachment?: Post["attachment"];
   showHeader?: boolean;
-  dateSize: DateSize;
+  dateSize?: DateSize;
   dateType: DateType;
   createdAt: string;
   updatedAt: string;

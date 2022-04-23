@@ -1,6 +1,7 @@
 import "@styles/globals.css";
 import "@locales";
 import { ApolloProvider } from "@apollo/client";
+import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 import { useApollo } from "../lib/apolloClient";
@@ -15,18 +16,20 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SafeHydrate>
       <ApolloProvider client={apolloClient}>
-        <AppContext>
-          <AppInit />
-          <Head>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-            />
-          </Head>
+        <ThemeProvider>
+          <AppContext>
+            <AppInit />
+            <Head>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+              />
+            </Head>
 
-          <Toaster />
-          <Component {...pageProps} />
-        </AppContext>
+            <Toaster />
+            <Component {...pageProps} />
+          </AppContext>
+        </ThemeProvider>
       </ApolloProvider>
     </SafeHydrate>
   );

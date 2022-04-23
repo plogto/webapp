@@ -1,0 +1,25 @@
+.themes {
+  & .colorsContainer {
+    @apply flex justify-between space-x-3;
+
+    & .colorButton {
+      @apply w-10 h-10  md:w-12 md:h-12 text-center;
+    }
+  }
+
+  & .themesContainer {
+    @apply flex justify-between space-x-3 md:space-x-5;
+
+    & .themeButton {
+      @apply py-3 font-bold w-full text-center;
+
+      &.active {
+        @apply border-primary border-2;
+      }
+
+      & .badge {
+        @apply ml-3 bg-primary w-3.5 h-3.5 rounded-full;
+      }
+    }
+  }
+}

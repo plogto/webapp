@@ -1,6 +1,6 @@
 .wrapper {
   @apply flex flex-col items-center;
-  @apply text-gray-500;
+  @apply text-foreground-medium;
 }
 
 .icon {

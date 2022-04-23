@@ -3,28 +3,28 @@
   @apply h-screen w-screen;
 
   & .form {
-    @apply flex flex-col w-80 m-auto justify-center md:bg-white;
-    @apply pt-8 px-5 pb-6 rounded-lg md:shadow-sm md:border md:border-gray-100;
+    @apply flex flex-col w-80 m-auto justify-center md:bg-background-pure;
+    @apply pt-8 px-5 pb-6 rounded-lg md:shadow-sm md:border md:border-background-medium;
 
     & .logoContainer {
       @apply flex flex-col items-center justify-center;
 
       & .logo {
-        @apply h-20 text-gray-900 mt-3 mb-1;
+        @apply h-20 text-foreground mt-3 mb-1;
       }
 
       & .logoTitle {
-        @apply text-3xl text-gray-900 font-bold text-center my-4 uppercase;
+        @apply text-3xl text-foreground font-bold text-center my-4 uppercase;
       }
     }
 
     & .error {
-      @apply text-sm text-red-500 text-center bg-red-100 rounded-lg;
+      @apply text-sm text-danger text-center bg-danger-light rounded-lg;
       @apply py-2.5 w-full;
     }
 
     & .submitButton {
-      @apply text-white bg-gray-900;
+      @apply text-background-pure bg-foreground;
       @apply w-full px-4 py-2.5 capitalize;
     }
 
@@ -33,11 +33,11 @@
     }
 
     & .registerLink {
-      @apply text-primary-500;
+      @apply text-primary;
     }
 
     & .footer {
-      @apply flex flex-row text-gray-400 mb-5 text-center text-xs;
+      @apply flex flex-row text-foreground-light mb-5 text-center text-xs;
     }
   }
 }

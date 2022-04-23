@@ -1,7 +1,7 @@
 .wrapper {
   & .input {
-    @apply shadow-sm py-2.5;
-    @apply block w-full sm:text-sm border-gray-300 rounded-lg;
+    @apply shadow-sm py-2.5 bg-background-pure text-foreground;
+    @apply block w-full sm:text-sm border-background-medium rounded-lg;
     @apply focus:ring-0;
 
     & .message {
@@ -14,26 +14,26 @@
   }
 
   & .label {
-    @apply block text-sm font-medium text-gray-700 mb-1 capitalize;
+    @apply block text-sm font-medium text-foreground-dark mb-1 capitalize;
   }
 
   &.success {
     & .input {
-      @apply focus:ring-primary-500 focus:border-primary-500 border-primary-500;
+      @apply focus:ring-primary focus:border-primary border-primary;
     }
 
     & .message {
-      @apply text-primary-500;
+      @apply text-primary;
     }
   }
 
   &.error {
     & .input {
-      @apply focus:ring-red-500 focus:border-red-500 bg-red-50 border-red-500;
+      @apply focus:ring-danger focus:border-danger bg-danger-light border-danger;
     }
 
     & .message {
-      @apply text-red-500;
+      @apply text-danger;
     }
   }
 }

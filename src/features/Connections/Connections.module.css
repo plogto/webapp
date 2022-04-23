@@ -1,13 +1,13 @@
 .buttons {
-  @apply flex border-b border-gray-100 px-2 mb-3;
+  @apply flex border-b border-background-light px-2 mb-3;
   & .button {
-    @apply capitalize text-gray-500 w-20 font-bold px-2 m-2 text-sm;
+    @apply capitalize text-foreground-medium w-20 font-bold px-2 m-2 text-sm;
 
     &.active {
-      @apply text-black relative;
+      @apply text-foreground-pure relative;
 
       &::after {
-        @apply content-[''] w-full h-1 rounded-t-md rounded-b-none bg-gray-900 rounded;
+        @apply content-[''] w-full h-1 rounded-t-md rounded-b-none bg-foreground rounded;
         @apply absolute -bottom-2 left-0 right-0;
       }
     }

@@ -10,7 +10,7 @@
   }
 
   & .username {
-    @apply text-gray-500 text-sm pr-1;
+    @apply text-foreground-medium text-sm pr-1;
   }
 
   &.large {

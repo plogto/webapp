@@ -3,7 +3,7 @@
   @apply w-full;
 
   & .label {
-    @apply text-sm font-medium;
+    @apply text-sm font-medium text-foreground-dark;
   }
 
   & .toggle,
@@ -16,6 +16,6 @@
   }
 
   & .slider {
-    @apply inline-block w-4 h-4 bg-white rounded-full;
+    @apply inline-block w-4 h-4 bg-background-pure rounded-full;
   }
 }

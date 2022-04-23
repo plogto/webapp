@@ -1,5 +1,5 @@
 .content {
-  @apply inline-flex break-words whitespace-pre-line w-full pr-4;
+  @apply inline-flex break-words whitespace-pre-line w-full pr-4 text-foreground;
 
   & .attachment {
     @apply rounded-lg overflow-hidden;

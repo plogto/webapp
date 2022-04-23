@@ -1,0 +1,87 @@
+import { useMutation } from "@apollo/client";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useAccountContext } from "@contexts/AccountContext";
+import { PrimaryColor, ThemeColor } from "@enums";
+import { EditUserMutation } from "@graphql/@types/user";
+import { EDIT_USER } from "@graphql/user";
+
+export function useThemes() {
+  const { user } = useAccountContext();
+  const { t } = useTranslation("themes");
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [primaryColor, setPrimaryColor] = useState(user?.primaryColor);
+  const [themeColor, setThemeColor] = useState(user?.themeColor);
+  const [editUser] = useMutation<EditUserMutation>(EDIT_USER);
+
+  useEffect(() => {
+    const theme = `${themeColor}-${primaryColor}`;
+    setTheme(theme);
+    editUser({
+      variables: {
+        themeColor,
+        primaryColor,
+      },
+    });
+  }, [editUser, primaryColor, setTheme, themeColor]);
+
+  const COLORS = [
+    {
+      key: PrimaryColor.BLUE,
+      onClick: () => setPrimaryColor(PrimaryColor.BLUE),
+      className: "bg-sky-500",
+    },
+    {
+      key: PrimaryColor.GREEN,
+      onClick: () => setPrimaryColor(PrimaryColor.GREEN),
+      className: "bg-emerald-500",
+    },
+    {
+      key: PrimaryColor.RED,
+      onClick: () => setPrimaryColor(PrimaryColor.RED),
+      className: "bg-rose-500",
+    },
+    {
+      key: PrimaryColor.PURPLE,
+      onClick: () => setPrimaryColor(PrimaryColor.PURPLE),
+      className: "bg-indigo-500",
+    },
+    {
+      key: PrimaryColor.ORANGE,
+      onClick: () => setPrimaryColor(PrimaryColor.ORANGE),
+      className: "bg-orange-500",
+    },
+    {
+      key: PrimaryColor.YELLOW,
+      onClick: () => setPrimaryColor(PrimaryColor.YELLOW),
+      className: "bg-amber-400",
+    },
+  ];
+  const THEMES = [
+    {
+      key: ThemeColor.LIGHT,
+      title: t("buttons.light"),
+      onClick: () => setThemeColor(ThemeColor.LIGHT),
+      className: "bg-white text-black",
+    },
+    {
+      key: ThemeColor.DIM,
+      title: t("buttons.dim"),
+      onClick: () => setThemeColor(ThemeColor.DIM),
+      className: "bg-gray-800 text-white",
+    },
+    {
+      key: ThemeColor.DARK,
+      title: t("buttons.dark"),
+      onClick: () => setThemeColor(ThemeColor.DARK),
+      className: "bg-black text-white",
+    },
+  ];
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  return { user, mounted, theme, t, themeColor, primaryColor, COLORS, THEMES };
+}

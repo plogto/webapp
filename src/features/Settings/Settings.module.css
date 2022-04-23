@@ -30,23 +30,23 @@
       & .uploadAvatar {
         @apply w-20 h-20 md:w-24 md:h-24 flex items-center justify-center;
         @apply absolute inset-0 z-30 rounded-full;
-        @apply bg-gray-800 bg-opacity-30  text-white;
+        @apply bg-white bg-opacity-10  text-white;
       }
 
       & .avatar {
-        @apply bg-white w-20 h-20 md:w-24 md:h-24;
+        @apply bg-background-pure w-20 h-20 md:w-24 md:h-24;
       }
     }
 
     & .backgroundWrapper {
       @apply w-full h-[33vw] md:h-44 border-none;
       @apply bg-center bg-cover rounded-b-lg;
-      @apply relative bg-white overflow-hidden;
+      @apply relative bg-background-pure overflow-hidden;
 
       & .uploadBackground {
         @apply flex items-center justify-center;
         @apply absolute inset-0 z-30 w-full;
-        @apply bg-gray-800 bg-opacity-30 text-white;
+        @apply bg-white bg-opacity-10 text-white;
       }
     }
   }
@@ -54,9 +54,9 @@
 
 .itemsWrapper {
   & .item {
-    @apply flex items-center space-x-3 hover:bg-gray-50;
-    @apply border-dashed border-b p-3.5;
-    @apply transition-all duration-300;
+    @apply flex items-center space-x-3 hover:bg-background-light;
+    @apply border-dashed border-b border-background-medium p-3.5;
+    @apply transition-all duration-300 text-foreground;
 
     & .icon {
       @apply w-6 h-6 stroke-2;
@@ -65,7 +65,7 @@
 
   & .logoutButton {
     @apply justify-start p-3.5;
-    @apply w-full text-red-500 rounded-none;
+    @apply w-full text-danger rounded-none;
   }
 }
 

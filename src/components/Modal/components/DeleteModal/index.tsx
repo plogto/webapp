@@ -19,8 +19,8 @@ export function DeleteModal(props: DeleteModalProps) {
   return (
     <Modal isOpen={isOpen}>
       <div className="modal">
-        <div className="icon-wrapper bg-red-50">
-          <Icon type="outline" name="trash" className="icon text-red-500" />
+        <div className="icon-wrapper bg-danger-light">
+          <Icon type="outline" name="trash" className="icon text-danger" />
         </div>
         <div className="modal-title">{title}</div>
         <p className="modal-description">{description}</p>
@@ -36,7 +36,7 @@ export function DeleteModal(props: DeleteModalProps) {
           <Button
             type="button"
             onClick={handleDelete}
-            className="modal-button bg-red-500 text-white"
+            className="modal-button bg-danger text-background-pure"
           >
             {t("buttons.delete")}
           </Button>

@@ -8,6 +8,11 @@ export const SETTINGS_ITEMS: SettingsItem[] = [
     icon: "user",
   },
   {
+    title: "Themes",
+    href: PageUrls.THEMES,
+    icon: "colorPalette",
+  },
+  {
     title: "Change Password",
     href: PageUrls.CHANGE_PASSWORD,
     icon: "key",

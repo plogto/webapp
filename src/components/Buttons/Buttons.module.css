@@ -4,7 +4,7 @@
   @apply cursor-pointer ring-0 focus:ring-0 rounded-lg;
 
   &.disabled {
-    @apply bg-gray-300 text-gray-500 !important;
+    @apply bg-background-medium text-foreground-medium !important;
     @apply cursor-not-allowed;
   }
 
@@ -13,15 +13,15 @@
   }
 
   &.cancel {
-    @apply text-gray-900 hover:shadow;
+    @apply text-foreground hover:shadow;
   }
 
   &.remove {
-    @apply text-red-500 border border-red-500;
-    @apply hover:bg-red-50;
+    @apply text-danger border border-danger;
+    @apply hover:bg-danger-light;
   }
 
   &.apply {
-    @apply bg-gray-900 text-white;
+    @apply bg-foreground text-background-pure;
   }
 }

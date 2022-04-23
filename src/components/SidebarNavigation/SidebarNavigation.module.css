@@ -6,19 +6,19 @@
     @apply rounded-lg w-64 sticky top-5 !important;
 
     & .header {
-      @apply flex flex-col items-center text-gray-400;
-      @apply border-b border-dashed border-gray-200 pt-8 pb-3;
+      @apply flex flex-col items-center text-foreground-light;
+      @apply border-b border-dashed border-background-medium pt-8 pb-3;
 
       & .avatar {
         @apply my-3;
       }
 
       & .fullName {
-        @apply text-3xl font-bold text-gray-800 text-center;
+        @apply text-3xl font-bold text-foreground text-center;
       }
 
       & .username {
-        @apply text-gray-500;
+        @apply text-foreground-medium;
       }
     }
 
@@ -27,11 +27,11 @@
 
       & .navLink {
         @apply duration-300 flex items-center p-2 rounded-lg text-gray-400;
-        @apply hover:bg-gray-50 hover:text-gray-900 rounded-lg;
+        @apply hover:bg-background-light hover:text-foreground rounded-lg;
       }
 
       & .active {
-        @apply text-gray-900 bg-gray-50;
+        @apply text-foreground bg-background-light;
       }
 
       & .title {
@@ -47,13 +47,13 @@
       }
 
       & .notificationBadge {
-        @apply absolute -top-0.5 right-0 border-2 border-white;
-        @apply w-3 h-3 rounded-full block bg-red-500;
+        @apply absolute -top-0.5 right-0 border-2 border-background-pure;
+        @apply w-3 h-3 rounded-full block bg-danger;
       }
 
       &::hover .notificationBadge,
       &.active .notificationBadge {
-        @apply border-gray-50;
+        @apply border-background;
       }
     }
   }

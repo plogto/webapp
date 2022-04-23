@@ -5,6 +5,8 @@ export const GET_USER_INFO = gql`
     getUserInfo {
       id
       username
+      themeColor
+      primaryColor
       avatar {
         id
         name
@@ -73,6 +75,8 @@ export const GET_USER_BY_USERNAME = gql`
 export const EDIT_USER = gql`
   mutation editUser(
     $username: String
+    $themeColor: ThemeColor
+    $primaryColor: PrimaryColor
     $avatar: String
     $background: String
     $fullName: String
@@ -83,6 +87,8 @@ export const EDIT_USER = gql`
     editUser(
       input: {
         username: $username
+        themeColor: $themeColor
+        primaryColor: $primaryColor
         avatar: $avatar
         background: $background
         fullName: $fullName
@@ -93,6 +99,8 @@ export const EDIT_USER = gql`
     ) {
       id
       username
+      themeColor
+      primaryColor
       avatar {
         id
         name
@@ -107,6 +115,7 @@ export const EDIT_USER = gql`
         width
         height
       }
+
       email
       fullName
       bio

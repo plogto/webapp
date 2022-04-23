@@ -1,13 +1,13 @@
 .header {
-  @apply flex justify-between items-center;
-  @apply py-2 px-2 border-b border-gray-100;
+  @apply flex justify-between items-center text-foreground;
+  @apply py-2 px-2 border-b border-background-light;
 
   & .title {
     @apply text-xl font-medium capitalize mx-0;
   }
 
   & .back {
-    @apply p-1.5 hover:shadow;
+    @apply p-1.5 hover:bg-background-light hover:shadow;
     @apply transition-all duration-300;
   }
 

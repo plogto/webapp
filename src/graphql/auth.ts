@@ -6,6 +6,8 @@ export const LOGIN = gql`
       user {
         id
         username
+        themeColor
+        primaryColor
         fullName
         avatar {
           id
