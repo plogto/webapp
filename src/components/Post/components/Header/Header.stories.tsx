@@ -1,5 +1,6 @@
 import React from "react";
 
+import { PrimaryColor, ThemeColor } from "@enums";
 import { StoryContainer } from "@stories/StoryContainer";
 import { Header } from ".";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
@@ -25,5 +26,7 @@ Main.args = {
     fullName: "Jane Cooper",
     username: "jane_cooper",
     email: "jane_cooper@mail.com",
+    themeColor: ThemeColor.LIGHT,
+    primaryColor: PrimaryColor.BLUE,
   },
 };
