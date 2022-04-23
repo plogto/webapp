@@ -1,0 +1,177 @@
+:root {
+  --primary-light: theme("colors.sky.50");
+  --primary: theme("colors.sky.500");
+
+  --danger-light: theme("colors.red.50");
+  --danger: theme("colors.red.500");
+
+  --background-pure: theme("colors.white");
+  --background: theme("colors.gray.50");
+  --background-light: theme("colors.gray.50");
+  --background-medium: theme("colors.gray.100");
+  --background-dark: theme("colors.gray.200");
+
+  --foreground-light: theme("colors.gray.400");
+  --foreground-medium: theme("colors.gray.500");
+  --foreground-dark: theme("colors.gray.700");
+  --foreground: theme("colors.gray.900");
+  --foreground-pure: theme("colors.black");
+}
+
+[data-theme="LIGHT-BLUE"] {
+  --primary-light: theme("colors.sky.50");
+  --primary: theme("colors.sky.500");
+}
+
+[data-theme="LIGHT-GREEN"] {
+  --primary-light: theme("colors.emerald.50");
+  --primary: theme("colors.emerald.500");
+}
+
+[data-theme="LIGHT-RED"] {
+  --primary-light: theme("colors.rose.50");
+  --primary: theme("colors.rose.500");
+}
+
+[data-theme="LIGHT-PURPLE"] {
+  --primary-light: theme("colors.indigo.50");
+  --primary: theme("colors.indigo.500");
+}
+
+[data-theme="LIGHT-ORANGE"] {
+  --primary-light: theme("colors.orange.50");
+  --primary: theme("colors.orange.500");
+}
+
+[data-theme="LIGHT-YELLOW"] {
+  --primary-light: theme("colors.amber.50");
+  --primary: theme("colors.amber.400");
+}
+
+[data-theme="LIGHT-BLUE"],
+[data-theme="LIGHT-GREEN"],
+[data-theme="LIGHT-RED"],
+[data-theme="LIGHT-PURPLE"],
+[data-theme="LIGHT-ORANGE"],
+[data-theme="LIGHT-YELLOW"] {
+  --danger-light: theme("colors.red.50");
+  --danger: theme("colors.red.500");
+
+  --background-pure: theme("colors.white");
+  --background: theme("colors.gray.50");
+  --background-light: theme("colors.gray.50");
+  --background-medium: theme("colors.gray.100");
+  --background-dark: theme("colors.gray.200");
+
+  --foreground-light: theme("colors.gray.400");
+  --foreground-medium: theme("colors.gray.500");
+  --foreground-dark: theme("colors.gray.700");
+  --foreground: theme("colors.gray.900");
+  --foreground-pure: theme("colors.black");
+}
+
+// dim
+[data-theme="DIM-BLUE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.sky.500");
+}
+
+[data-theme="DIM-GREEN"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.emerald.500");
+}
+
+[data-theme="DIM-RED"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.rose.500");
+}
+
+[data-theme="DIM-PURPLE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.indigo.500");
+}
+
+[data-theme="DIM-ORANGE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.orange.500");
+}
+
+[data-theme="DIM-YELLOW"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.amber.400");
+}
+
+[data-theme="DIM-BLUE"],
+[data-theme="DIM-GREEN"],
+[data-theme="DIM-RED"],
+[data-theme="DIM-PURPLE"],
+[data-theme="DIM-ORANGE"],
+[data-theme="DIM-YELLOW"] {
+  --danger-light: theme("colors.red.50");
+  --danger: theme("colors.red.500");
+
+  --background-pure: theme("colors.gray.800");
+  --background: theme("colors.gray.900");
+  --background-light: theme("colors.gray.700");
+  --background-medium: theme("colors.gray.600");
+  --background-dark: theme("colors.gray.500");
+
+  --foreground-light: theme("colors.gray.200");
+  --foreground-medium: theme("colors.gray.300");
+  --foreground-dark: theme("colors.gray.400");
+  --foreground: theme("colors.gray.50");
+  --foreground-pure: theme("colors.white");
+}
+
+// dark
+[data-theme="DARK-BLUE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.sky.500");
+}
+
+[data-theme="DARK-GREEN"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.emerald.500");
+}
+
+[data-theme="DARK-RED"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.rose.500");
+}
+
+[data-theme="DARK-PURPLE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.indigo.500");
+}
+
+[data-theme="DARK-ORANGE"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.orange.500");
+}
+
+[data-theme="DARK-YELLOW"] {
+  --primary-light: #3b82f633;
+  --primary: theme("colors.amber.400");
+}
+
+[data-theme="DARK-BLUE"],
+[data-theme="DARK-GREEN"],
+[data-theme="DARK-RED"],
+[data-theme="DARK-PURPLE"],
+[data-theme="DARK-ORANGE"],
+[data-theme="DARK-YELLOW"] {
+  --danger-light: theme("colors.red.50");
+  --danger: theme("colors.red.500");
+
+  --background-pure: theme("colors.black");
+  --background: theme("colors.black");
+  --background-light: theme("colors.stone.900");
+  --background-medium: theme("colors.stone.800");
+  --background-dark: theme("colors.stone.700");
+
+  --foreground-light: theme("colors.gray.200");
+  --foreground-medium: theme("colors.gray.300");
+  --foreground-dark: theme("colors.gray.400");
+  --foreground: theme("colors.stone.50");
+  --foreground-pure: theme("colors.white");
+}

@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @import "./themes.css";
+}
+
 @layer utilities {
   body {
-    @apply bg-gray-50;
+    @apply bg-background;
   }
   * {
     box-sizing: border-box;
@@ -28,7 +32,7 @@
     }
 
     & .modal-description {
-      @apply text-sm text-gray-500 pt-2 pb-6 text-center;
+      @apply text-sm text-foreground-medium pt-2 pb-6 text-center;
     }
 
     & .icon-wrapper {
