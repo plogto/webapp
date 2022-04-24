@@ -1,12 +1,14 @@
-import { InputHTMLAttributes } from "react";
-import { UseFormRegisterReturn } from "react-hook-form";
+import type { IconNames } from "@components/Icon";
+import type { InputHTMLAttributes } from "react";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 export type InputTypes = "text" | "password";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: InputTypes;
   name: string;
-  label: string;
+  icon?: IconNames;
+  label?: string;
   placeholder?: string;
   register?: UseFormRegisterReturn;
   messageType?: "error" | "success";
