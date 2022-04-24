@@ -24,7 +24,7 @@
     }
 
     & .tagCount {
-      @apply text-foreground-light text-sm;
+      @apply text-gray-400 text-sm;
     }
   }
 }

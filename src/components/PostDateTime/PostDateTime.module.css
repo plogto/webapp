@@ -1,5 +1,5 @@
 .date {
-  @apply block text-foreground-light text-sm;
+  @apply block text-gray-400 text-sm;
 
   &.small {
     @apply text-xs;

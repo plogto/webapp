@@ -35,7 +35,7 @@
     }
 
     & .following {
-      @apply shadow-sm border text-foreground hover:bg-background;
+      @apply border border-background-medium shadow-sm rounded-lg text-foreground hover:bg-background;
       @apply font-bold;
     }
 
