@@ -16,34 +16,40 @@ export function Themes() {
     <form className={styles.themes}>
       <Card>
         <PageHeader title={t("texts.themes")} />
-        <div className="flex flex-col space-y-8 p-3 md:p-5">
+        <div className="flex flex-col space-y-8 my-1 p-3 md:p-5">
           <PreviewPost />
-          <div className={styles.colorsContainer}>
-            {COLORS.map(({ onClick, className }) => (
-              <Button
-                key={uuid()}
-                onClick={onClick}
-                className={classNames(styles.colorButton, className)}
-              />
-            ))}
+          <div>
+            <div className={styles.label}>Color</div>
+            <div className={styles.colorsContainer}>
+              {COLORS.map(({ onClick, className }) => (
+                <Button
+                  key={uuid()}
+                  onClick={onClick}
+                  className={classNames(styles.colorButton, className)}
+                />
+              ))}
+            </div>
           </div>
-          <div className={styles.themesContainer}>
-            {THEMES.map(({ key, title, onClick, className }) => (
-              <Button
-                key={uuid()}
-                onClick={onClick}
-                className={classNames(
-                  styles.themeButton,
-                  key === backgroundColor && styles.active,
-                  className,
-                )}
-              >
-                {title}
-                {key === backgroundColor && (
-                  <span className={styles.badge}></span>
-                )}
-              </Button>
-            ))}
+          <div>
+            <div className={styles.label}>Background</div>
+            <div className={styles.themesContainer}>
+              {THEMES.map(({ key, title, onClick, className }) => (
+                <Button
+                  key={uuid()}
+                  onClick={onClick}
+                  className={classNames(
+                    styles.themeButton,
+                    key === backgroundColor && styles.active,
+                    className,
+                  )}
+                >
+                  {title}
+                  {key === backgroundColor && (
+                    <span className={styles.badge}></span>
+                  )}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </Card>

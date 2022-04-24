@@ -3,6 +3,10 @@
     @apply py-2 !important;
   }
 
+  & .label {
+    @apply font-bold text-foreground mb-3;
+  }
+
   & .colorsContainer {
     @apply flex justify-between space-x-3;
 
