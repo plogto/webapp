@@ -13,7 +13,8 @@
   }
 
   &.cancel {
-    @apply text-foreground hover:shadow;
+    @apply border border-transparent text-foreground;
+    @apply hover:shadow hover:border-background-light;
   }
 
   &.remove {

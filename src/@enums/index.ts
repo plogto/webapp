@@ -15,6 +15,7 @@ export enum PostTypeKey {
   CARD = "CARD",
   REPLY = "REPLY",
   CHILD = "CHILD",
+  PREVIEW = "PREVIEW",
 }
 
 export enum CropImageTypeKey {
@@ -32,7 +33,7 @@ export enum PrimaryColor {
   YELLOW = "YELLOW",
 }
 
-export enum ThemeColor {
+export enum BackgroundColor {
   LIGHT = "LIGHT",
   DIM = "DIM",
   DARK = "DARK",

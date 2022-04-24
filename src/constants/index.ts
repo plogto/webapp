@@ -54,4 +54,13 @@ export const POST_TYPES: PostTypes = {
     isContentClickable: true,
     repliesView: RepliesView.NONE,
   },
+  PREVIEW: {
+    key: PostTypeKey.PREVIEW,
+    headerSize: "normal",
+    contentSize: "normal",
+    dateSize: "small",
+    isContentClickable: false,
+    showMoreButton: false,
+    repliesView: RepliesView.NONE,
+  },
 };

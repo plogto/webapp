@@ -1,8 +1,8 @@
 :root {
-  --primary-light: theme("colors.sky.50");
+  --primary-light: #0ea5e922;
   --primary: theme("colors.sky.500");
 
-  --danger-light: theme("colors.red.50");
+  --danger-light: #ef444422;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.white");
@@ -19,32 +19,32 @@
 }
 
 [data-theme="LIGHT-BLUE"] {
-  --primary-light: theme("colors.sky.50");
+  --primary-light: #0ea5e922;
   --primary: theme("colors.sky.500");
 }
 
 [data-theme="LIGHT-GREEN"] {
-  --primary-light: theme("colors.emerald.50");
+  --primary-light: #10b98122;
   --primary: theme("colors.emerald.500");
 }
 
 [data-theme="LIGHT-RED"] {
-  --primary-light: theme("colors.rose.50");
+  --primary-light: #f43f5e22;
   --primary: theme("colors.rose.500");
 }
 
 [data-theme="LIGHT-PURPLE"] {
-  --primary-light: theme("colors.indigo.50");
+  --primary-light: #6366f122;
   --primary: theme("colors.indigo.500");
 }
 
 [data-theme="LIGHT-ORANGE"] {
-  --primary-light: theme("colors.orange.50");
+  --primary-light: #f9731622;
   --primary: theme("colors.orange.500");
 }
 
 [data-theme="LIGHT-YELLOW"] {
-  --primary-light: theme("colors.amber.50");
+  --primary-light: #fbbf2422;
   --primary: theme("colors.amber.400");
 }
 
@@ -54,7 +54,7 @@
 [data-theme="LIGHT-PURPLE"],
 [data-theme="LIGHT-ORANGE"],
 [data-theme="LIGHT-YELLOW"] {
-  --danger-light: theme("colors.red.50");
+  --danger-light: #ef444422;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.white");
@@ -72,32 +72,32 @@
 
 // dim
 [data-theme="DIM-BLUE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #0ea5e944;
   --primary: theme("colors.sky.500");
 }
 
 [data-theme="DIM-GREEN"] {
-  --primary-light: #3b82f633;
+  --primary-light: #10b98144;
   --primary: theme("colors.emerald.500");
 }
 
 [data-theme="DIM-RED"] {
-  --primary-light: #3b82f633;
+  --primary-light: #f43f5e44;
   --primary: theme("colors.rose.500");
 }
 
 [data-theme="DIM-PURPLE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #6366f144;
   --primary: theme("colors.indigo.500");
 }
 
 [data-theme="DIM-ORANGE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #f9731644;
   --primary: theme("colors.orange.500");
 }
 
 [data-theme="DIM-YELLOW"] {
-  --primary-light: #3b82f633;
+  --primary-light: #fbbf2444;
   --primary: theme("colors.amber.400");
 }
 
@@ -107,7 +107,7 @@
 [data-theme="DIM-PURPLE"],
 [data-theme="DIM-ORANGE"],
 [data-theme="DIM-YELLOW"] {
-  --danger-light: theme("colors.red.50");
+  --danger-light: #ef444444;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.gray.800");
@@ -125,32 +125,32 @@
 
 // dark
 [data-theme="DARK-BLUE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #0ea5e944;
   --primary: theme("colors.sky.500");
 }
 
 [data-theme="DARK-GREEN"] {
-  --primary-light: #3b82f633;
+  --primary-light: #10b98144;
   --primary: theme("colors.emerald.500");
 }
 
 [data-theme="DARK-RED"] {
-  --primary-light: #3b82f633;
+  --primary-light: #f43f5e44;
   --primary: theme("colors.rose.500");
 }
 
 [data-theme="DARK-PURPLE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #6366f144;
   --primary: theme("colors.indigo.500");
 }
 
 [data-theme="DARK-ORANGE"] {
-  --primary-light: #3b82f633;
+  --primary-light: #f9731644;
   --primary: theme("colors.orange.500");
 }
 
 [data-theme="DARK-YELLOW"] {
-  --primary-light: #3b82f633;
+  --primary-light: #fbbf2444;
   --primary: theme("colors.amber.400");
 }
 
@@ -160,18 +160,18 @@
 [data-theme="DARK-PURPLE"],
 [data-theme="DARK-ORANGE"],
 [data-theme="DARK-YELLOW"] {
-  --danger-light: theme("colors.red.50");
+  --danger-light: #ef444444;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: theme("colors.stone.900");
-  --background-medium: theme("colors.stone.800");
-  --background-dark: theme("colors.stone.700");
+  --background-light: theme("colors.stone.800");
+  --background-medium: theme("colors.stone.700");
+  --background-dark: theme("colors.stone.600");
 
-  --foreground-light: theme("colors.gray.200");
-  --foreground-medium: theme("colors.gray.300");
-  --foreground-dark: theme("colors.gray.400");
+  --foreground-light: theme("colors.gray.300");
+  --foreground-medium: theme("colors.gray.400");
+  --foreground-dark: theme("colors.gray.500");
   --foreground: theme("colors.stone.50");
   --foreground-pure: theme("colors.white");
 }

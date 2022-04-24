@@ -20,6 +20,7 @@ export type HeaderPostProps = {
   user: User;
   size?: HeaderSize;
   showUserInfo?: boolean;
+  showMoreButton?: boolean;
   className?: string;
   filterMenuItems: (items: MenuProps["items"]) => MenuProps["items"];
 };

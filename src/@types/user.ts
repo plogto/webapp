@@ -1,11 +1,11 @@
-import { PrimaryColor, ThemeColor } from "@enums";
+import { PrimaryColor, BackgroundColor } from "@enums";
 import type { Attachment } from "./attachment";
 import type { Pagination } from "./pagination";
 
 export type User = {
   id: string;
   username: string;
-  themeColor: ThemeColor;
+  backgroundColor: BackgroundColor;
   primaryColor: PrimaryColor;
   avatar?: Attachment;
   background?: Attachment;

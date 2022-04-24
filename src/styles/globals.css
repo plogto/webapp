@@ -25,10 +25,10 @@
 
 @layer components {
   .modal {
-    @apply px-5 py-5 flex flex-col items-center;
+    @apply px-5 py-5 flex flex-col items-center border border-background-light;
 
     & .modal-title {
-      @apply font-bold text-xl text-center;
+      @apply font-bold text-xl text-center text-foreground;
     }
 
     & .modal-description {

@@ -1,4 +1,8 @@
 .themes {
+  & .post {
+    @apply py-2 !important;
+  }
+
   & .colorsContainer {
     @apply flex justify-between space-x-3;
 

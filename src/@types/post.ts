@@ -36,10 +36,11 @@ export type PostType = {
   key: PostTypeKey;
   headerSize: HeaderSize;
   contentSize: ContentSize;
-  dateSize: DateSize;
+  dateSize?: DateSize;
   dateType?: DateType;
-  footerSize: FooterSize;
+  footerSize?: FooterSize;
   isContentClickable?: boolean;
+  showMoreButton?: boolean;
   repliesView?: RepliesView;
 };
 

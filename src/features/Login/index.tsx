@@ -30,8 +30,8 @@ export function Login() {
           <Input
             type="text"
             name="username"
+            icon="user"
             placeholder={t("auth:labels.username")}
-            label={t("auth:labels.username")}
             register={register("username", {
               required: true,
             })}
@@ -41,14 +41,14 @@ export function Login() {
           <Input
             type="password"
             name="password"
+            icon="lockClosed"
             placeholder={t("auth:labels.password")}
-            label={t("auth:labels.password")}
             register={register("password", {
               required: true,
             })}
           />
         </div>
-        <div className="mt-7">
+        <div className="mt-6">
           <Button
             loading={loading}
             type="submit"

@@ -4,6 +4,7 @@ import styles from "../../Profile.module.css";
 import { useProfile } from "../../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
+import { Card } from "@components/Card";
 import { Img } from "@components/Img";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -29,7 +30,7 @@ export function Header(props: User) {
     id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
 
   return (
-    <div className={styles.header}>
+    <Card className={styles.header}>
       <div className={styles.background}>
         {background && <Img image={background} />}
         <Avatar size="large" className={styles.avatar} avatar={avatar} />
@@ -62,6 +63,6 @@ export function Header(props: User) {
           </LinkButton>
         )}
       </div>
-    </div>
+    </Card>
   );
 }

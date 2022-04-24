@@ -24,7 +24,7 @@ export function LogoutButton(props: LogoutButtonProps) {
     <>
       <Modal isOpen={isOpen}>
         <div className="modal">
-          <div className="icon-wrapper bg-background">
+          <div className="icon-wrapper bg-background-light">
             <Icon
               type="outline"
               name="exclamation"

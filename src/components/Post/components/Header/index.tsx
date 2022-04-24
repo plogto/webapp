@@ -24,6 +24,7 @@ export function Header(props: HeaderPostProps) {
     size = "normal",
     user: { username, fullName, avatar },
     filterMenuItems,
+    showMoreButton,
   } = props;
 
   const { openModal, isOpen } = useModalContext();
@@ -77,23 +78,30 @@ export function Header(props: HeaderPostProps) {
         )}
       </div>
 
-      <DeleteModal
-        isOpen={isOpen}
-        title={t("modals.delete.title")}
-        description={t("modals.delete.description")}
-        onDelete={deletePost}
-      />
+      {showMoreButton && (
+        <>
+          <DeleteModal
+            isOpen={isOpen}
+            title={t("modals.delete.title")}
+            description={t("modals.delete.description")}
+            onDelete={deletePost}
+          />
 
-      <Menu
-        items={filterMenuItems(MENU_ITEMS)}
-        className="absolute right-0"
-        itemsClassName="absolute right-2 w-60"
-        buttonIcon={
-          <span className={styles.more}>
-            <Icon name="dotsHorizontal" className={classNames(styles.icon)} />
-          </span>
-        }
-      />
+          <Menu
+            items={filterMenuItems(MENU_ITEMS)}
+            className="absolute right-0"
+            itemsClassName="absolute right-2 w-60"
+            buttonIcon={
+              <span className={styles.more}>
+                <Icon
+                  name="dotsHorizontal"
+                  className={classNames(styles.icon)}
+                />
+              </span>
+            }
+          />
+        </>
+      )}
     </div>
   );
 }

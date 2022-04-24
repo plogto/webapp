@@ -17,7 +17,7 @@ export function AppInit() {
 
   useEffect(() => {
     if (user) {
-      const theme = `${user?.themeColor}-${user?.primaryColor}`;
+      const theme = `${user?.backgroundColor}-${user?.primaryColor}`;
       setTheme(theme);
     }
   }, [setTheme, user]);

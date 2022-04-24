@@ -7,7 +7,9 @@
   }
 
   & .back {
-    @apply p-1.5 hover:bg-background-light hover:shadow;
+    @apply p-1.5;
+    @apply border border-transparent text-foreground;
+    @apply hover:shadow hover:border-background-light;
     @apply transition-all duration-300;
   }
 

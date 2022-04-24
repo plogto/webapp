@@ -21,6 +21,7 @@ export function Post(props: PostProps) {
       dateSize,
       footerSize,
       isContentClickable,
+      showMoreButton = true,
       dateType = DateType.SHORT,
     },
     post,
@@ -76,6 +77,7 @@ export function Post(props: PostProps) {
               size={headerSize}
               user={user}
               filterMenuItems={filterMenuItems}
+              showMoreButton={showMoreButton}
             />
           </ModalProvider>
           <PostContent
@@ -92,13 +94,15 @@ export function Post(props: PostProps) {
             updatedAt={updatedAt}
           />
         </div>
-        <Footer
-          postId={id}
-          url={url}
-          size={footerSize}
-          isLiked={isLiked}
-          isSaved={isSaved}
-        />
+        {footerSize && (
+          <Footer
+            postId={id}
+            url={url}
+            size={footerSize}
+            isLiked={isLiked}
+            isSaved={isSaved}
+          />
+        )}
       </div>
       <div className="flex flex-col">
         {showQuickReplies && (

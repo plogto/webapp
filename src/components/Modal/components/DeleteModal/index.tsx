@@ -36,7 +36,7 @@ export function DeleteModal(props: DeleteModalProps) {
           <Button
             type="button"
             onClick={handleDelete}
-            className="modal-button bg-danger text-background-pure"
+            className="modal-button bg-danger text-white"
           >
             {t("buttons.delete")}
           </Button>
