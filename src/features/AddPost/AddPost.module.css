@@ -6,7 +6,7 @@
       @apply flex items-center pt-2 px-2;
     }
 
-    @apply pb-2 border-b border-background-light;
+    @apply pb-2 border-b border-background-medium;
   }
 
   & .form {
@@ -42,7 +42,7 @@
       @apply flex justify-between p-3;
 
       & .attachmentButton {
-        @apply p-1 border border-background-light shadow-sm;
+        @apply p-1 border border-background-medium shadow-sm;
 
         & .icon {
           @apply w-6 stroke-2 text-foreground;
@@ -54,7 +54,7 @@
 
         & .counter {
           @apply flex items-center justify-center text-foreground-light w-24;
-          @apply rounded-lg border border-background-medium duration-300;
+          @apply rounded-lg border border-background-dark duration-300;
 
           & .number {
             @apply inline-flex items-center justify-center;
@@ -62,7 +62,7 @@
           }
 
           & .number:first-child {
-            @apply border-r border-background-medium;
+            @apply border-r border-background-dark;
           }
 
           & .number:first-child.counterOverflow,

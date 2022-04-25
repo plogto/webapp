@@ -8,7 +8,7 @@
   }
 
   &.isParentReply {
-    @apply border-t border-background-medium;
+    @apply border-t border-background-dark;
 
     & > div > .headerAndContentWrapper {
       @apply mt-2;
@@ -58,7 +58,7 @@
       @apply absolute top-0 right-0 bg-background-pure;
       @apply mr-2 p-1.5 rounded-md text-gray-400;
       @apply border border-transparent;
-      @apply hover:shadow hover:border-background-light hover:text-foreground;
+      @apply hover:shadow hover:border-background-medium hover:text-foreground;
       @apply transition-all duration-300 box-content;
 
       & .icon {

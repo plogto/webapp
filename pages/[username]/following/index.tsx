@@ -17,7 +17,7 @@ export default function FollowingPage() {
       </Head>
       <ConnectionsProvider>
         <Layout>
-          <Wrapper className="p-2 md:p-5">
+          <Wrapper className="p-2 md:p-4">
             <Connections type="following" />
           </Wrapper>
         </Layout>

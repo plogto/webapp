@@ -3,7 +3,7 @@
   @apply overflow-hidden relative;
 
   &.isShadow {
-    @apply shadow rounded-lg border border-background-light;
+    @apply shadow rounded-lg border border-background-medium;
   }
 }
 

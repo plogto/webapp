@@ -20,8 +20,8 @@ export function Layout(props: LayoutProps) {
       <Navbar />
       <SidebarNavigation />
       {children}
-      <div className="hidden md:block w-8/12 mt-5">
-        <div className="sticky top-5 flex flex-col space-y-5">
+      <div className="hidden md:block w-8/12 mt-4">
+        <div className="sticky top-4 flex flex-col space-y-4">
           {!limitedRoutes.includes(pathname as PageUrls) && <Search />}
           <DesktopTrends />
         </div>

@@ -1,7 +1,7 @@
 .wrapper {
   & .textarea {
     @apply shadow-sm py-2.5 resize-none text-foreground bg-background-pure;
-    @apply block w-full text-sm border-background-medium rounded-lg;
+    @apply block w-full text-sm border-background-dark rounded-lg;
     @apply focus:ring-0;
 
     & .message {

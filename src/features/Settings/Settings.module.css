@@ -55,7 +55,7 @@
 .itemsWrapper {
   & .item {
     @apply flex items-center space-x-3 hover:bg-background-light;
-    @apply border-b border-background-medium p-3.5;
+    @apply border-b border-background-dark p-3.5;
     @apply transition-all duration-300 text-foreground;
 
     & .icon {

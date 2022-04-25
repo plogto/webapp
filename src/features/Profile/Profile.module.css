@@ -3,7 +3,7 @@
 
   & .header {
     @apply pb-3 bg-background-pure overflow-hidden relative;
-    @apply flex flex-col items-center m-2 md:m-5;
+    @apply flex flex-col items-center m-2 md:m-4 md:mb-4;
 
     & .background {
       @apply bg-center bg-cover absolute;
@@ -35,7 +35,7 @@
     }
 
     & .following {
-      @apply border border-background-medium shadow-sm rounded-lg text-foreground hover:bg-background;
+      @apply border border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
       @apply font-bold;
     }
 
@@ -54,7 +54,7 @@
   }
 
   & .posts {
-    @apply pt-0 px-2 md:px-5;
+    @apply pt-0 px-2 md:px-4;
   }
 
   & .privateStatus {

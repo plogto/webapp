@@ -1,5 +1,5 @@
 .buttons {
-  @apply flex border-b border-background-light px-2 mb-3;
+  @apply flex border-b border-background-medium px-2 mb-3;
   & .button {
     @apply capitalize text-foreground-medium w-20 font-bold px-2 m-2 text-sm;
 

@@ -29,7 +29,7 @@
       }
 
       &:not(.active) {
-        @apply border border-background-light;
+        @apply border border-background-medium;
       }
 
       & svg {

@@ -16,7 +16,7 @@ export function Themes() {
     <form className={styles.themes}>
       <Card>
         <PageHeader title={t("texts.themes")} />
-        <div className="flex flex-col space-y-8 my-1 p-3 md:p-5">
+        <div className="flex flex-col space-y-8 my-1 p-3 md:p-4">
           <PreviewPost />
           <div>
             <div className={styles.label}>Color</div>

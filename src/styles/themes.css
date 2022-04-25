@@ -7,9 +7,9 @@
 
   --background-pure: theme("colors.white");
   --background: theme("colors.gray.50");
-  --background-light: theme("colors.gray.50");
-  --background-medium: theme("colors.gray.100");
-  --background-dark: theme("colors.gray.200");
+  --background-light: #f9fafb99;
+  --background-medium: theme("colors.gray.50");
+  --background-dark: theme("colors.gray.100");
 
   --foreground-light: theme("colors.gray.400");
   --foreground-medium: theme("colors.gray.500");
@@ -112,9 +112,9 @@
 
   --background-pure: theme("colors.gray.800");
   --background: theme("colors.gray.900");
-  --background-light: theme("colors.gray.700");
-  --background-medium: theme("colors.gray.600");
-  --background-dark: theme("colors.gray.500");
+  --background-light: #37415199;
+  --background-medium: theme("colors.gray.700");
+  --background-dark: theme("colors.gray.600");
 
   --foreground-light: theme("colors.gray.200");
   --foreground-medium: theme("colors.gray.300");
@@ -165,9 +165,9 @@
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: #332e2d;
-  --background-medium: theme("colors.stone.700");
-  --background-dark: theme("colors.stone.600");
+  --background-light: theme("colors.stone.900");
+  --background-medium: #332e2d;
+  --background-dark: theme("colors.stone.700");
 
   --foreground-light: theme("colors.gray.300");
   --foreground-medium: theme("colors.gray.400");

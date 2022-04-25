@@ -14,7 +14,7 @@ export default function SettingsPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-5">
+        <Wrapper className="p-2 md:p-4">
           <Settings />
         </Wrapper>
       </Layout>

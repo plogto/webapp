@@ -39,7 +39,7 @@
 }
 
 .following {
-  @apply border border-background-light shadow-sm text-foreground rounded-lg;
+  @apply border border-background-medium shadow-sm text-foreground rounded-lg;
 }
 
 .accept,

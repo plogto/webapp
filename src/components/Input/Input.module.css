@@ -1,7 +1,7 @@
 .wrapper {
   & .input {
     @apply flex shadow-sm bg-background-pure text-foreground relative;
-    @apply border border-background-medium rounded-lg overflow-hidden h-11;
+    @apply border border-background-dark rounded-lg overflow-hidden h-11;
 
     & .iconWrapper {
       @apply w-10 flex items-center justify-center z-10;

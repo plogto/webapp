@@ -1,6 +1,6 @@
 .menuItems {
   @apply flex flex-col rounded-lg overflow-hidden;
-  @apply z-50 bg-background-pure shadow-md border border-background-light;
+  @apply z-50 bg-background-pure shadow-md border border-background-medium;
 
   & .menuItem {
     @apply flex justify-between items-center;
@@ -8,7 +8,7 @@
     @apply transition-all duration-300;
 
     &.normal {
-      @apply hover:bg-background;
+      @apply hover:bg-background-light;
     }
 
     &.delete {

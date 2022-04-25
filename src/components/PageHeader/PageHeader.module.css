@@ -1,6 +1,6 @@
 .header {
   @apply flex justify-between items-center text-foreground;
-  @apply py-2 px-2 border-b border-background-light;
+  @apply py-2 px-2 border-b border-background-medium;
 
   & .title {
     @apply text-xl font-medium capitalize mx-0;
@@ -9,7 +9,7 @@
   & .back {
     @apply p-1.5;
     @apply border border-transparent text-foreground;
-    @apply hover:shadow hover:border-background-light;
+    @apply hover:shadow hover:border-background-medium;
     @apply transition-all duration-300;
   }
 

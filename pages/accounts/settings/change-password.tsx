@@ -14,7 +14,7 @@ export default function ChangePasswordPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-5">
+        <Wrapper className="p-2 md:p-4">
           <ChangePassword />
         </Wrapper>
       </Layout>

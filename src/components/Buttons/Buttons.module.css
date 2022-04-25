@@ -4,7 +4,7 @@
   @apply cursor-pointer ring-0 focus:ring-0 rounded-lg;
 
   &.disabled {
-    @apply bg-background-medium text-foreground-medium !important;
+    @apply bg-background-dark text-foreground-medium !important;
     @apply cursor-not-allowed;
   }
 
@@ -14,7 +14,7 @@
 
   &.cancel {
     @apply border border-transparent text-foreground;
-    @apply hover:shadow hover:border-background-light;
+    @apply hover:shadow hover:border-background-medium;
   }
 
   &.remove {
@@ -23,6 +23,6 @@
   }
 
   &.apply {
-    @apply bg-foreground text-background-pure;
+    @apply border border-transparent bg-foreground text-background-pure;
   }
 }

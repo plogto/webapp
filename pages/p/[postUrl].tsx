@@ -15,7 +15,7 @@ export default function PostPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-5 min-h-screen">
+        <Wrapper className="p-2 md:p-4 min-h-screen">
           <PostContainer />
         </Wrapper>
       </Layout>

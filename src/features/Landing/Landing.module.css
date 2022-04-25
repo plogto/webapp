@@ -32,7 +32,7 @@
     }
 
     & .loginButton {
-      @apply text-foreground font-bold border border-background-light;
+      @apply text-foreground font-bold border border-background-medium;
     }
 
     & .registerButton {

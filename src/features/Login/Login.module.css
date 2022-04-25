@@ -4,7 +4,7 @@
 
   & .form {
     @apply flex flex-col w-80 m-auto justify-center md:bg-background-pure;
-    @apply pt-8 px-5 pb-6 rounded-lg md:shadow-sm md:border md:border-background-medium;
+    @apply pt-8 px-5 pb-6 rounded-lg md:shadow-sm md:border md:border-background-dark;
 
     & .logoContainer {
       @apply flex flex-col items-center justify-center;

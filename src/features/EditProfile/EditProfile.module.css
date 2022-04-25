@@ -17,7 +17,7 @@
 
   & .toggle {
     @apply mx-4 py-2.5 px-3;
-    @apply border border-background-medium rounded-lg shadow-sm;
+    @apply border border-background-dark rounded-lg shadow-sm;
   }
 
   & .footer {

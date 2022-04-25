@@ -6,7 +6,7 @@
     & .icon {
       @apply flex items-center justify-center;
       @apply text-foreground md:w-16 md:h-16 w-14 h-14 mr-3 md:mr-4;
-      @apply rounded-full shadow-sm border border-background-medium;
+      @apply rounded-full shadow-sm border border-background-dark;
 
       & svg {
         @apply md:w-9 md:h-9 w-8 h-8 stroke-2;
