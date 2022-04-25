@@ -1,7 +1,7 @@
 .wrapper {
   & .input {
     @apply flex shadow-sm bg-background-pure text-foreground relative;
-    @apply border border-background-medium rounded-lg overflow-hidden h-10;
+    @apply border border-background-medium rounded-lg overflow-hidden h-11;
 
     & .iconWrapper {
       @apply w-10 flex items-center justify-center z-10;
@@ -18,10 +18,10 @@
     }
 
     & input {
-      @apply absolute text-sm focus:ring-0 w-full bg-background-pure text-current py-2.5 border-0;
+      @apply absolute text-sm focus:ring-0 w-full bg-background-pure text-current py-3 border-0;
 
       &::placeholder {
-        @apply capitalize;
+        @apply text-gray-400 capitalize;
       }
     }
   }
@@ -31,7 +31,7 @@
   }
 
   & .label {
-    @apply block text-sm font-medium text-foreground-dark mb-1 capitalize;
+    @apply block text-sm font-medium text-foreground mb-1 capitalize;
   }
 
   &.success {

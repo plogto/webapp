@@ -8,9 +8,7 @@ export function Tag() {
   return posts && tag ? (
     <>
       <Header tag={tag} />
-      {posts?.length > 0 && (
-        <Posts className="pt-0 px-2 md:px-5" posts={posts} />
-      )}
+      {posts?.length > 0 && <Posts posts={posts} />}
     </>
   ) : (
     <></>

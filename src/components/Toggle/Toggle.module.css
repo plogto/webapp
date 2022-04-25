@@ -3,7 +3,7 @@
   @apply w-full;
 
   & .label {
-    @apply text-sm font-medium text-foreground-dark;
+    @apply text-sm font-medium text-foreground;
   }
 
   & .toggle,

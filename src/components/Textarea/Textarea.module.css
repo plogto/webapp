@@ -9,12 +9,12 @@
     }
 
     &::placeholder {
-      @apply capitalize;
+      @apply text-gray-400 capitalize;
     }
   }
 
   & .label {
-    @apply block text-sm font-medium text-foreground-dark mb-1 capitalize;
+    @apply block text-sm font-medium text-foreground mb-1 capitalize;
   }
 
   &.success {

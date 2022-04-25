@@ -6,7 +6,7 @@
       @apply flex items-center pt-2 px-2;
     }
 
-    @apply pb-2 border-b border-dashed;
+    @apply pb-2 border-b border-background-light;
   }
 
   & .form {
@@ -27,6 +27,10 @@
 
       & .textarea {
         @apply text-lg border-none bg-background-pure w-full p-0 pb-2 m-0 resize-none ring-0 focus:ring-0;
+
+        &::placeholder {
+          @apply text-gray-400;
+        }
 
         &.reply {
           @apply text-sm;

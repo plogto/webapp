@@ -1,21 +1,24 @@
-.header {
-  @apply w-full flex items-center p-4 md:p-5 text-foreground;
+.wrapper {
+  @apply mb-2 md:mb-4;
+  & .header {
+    @apply w-full flex items-center p-3 md:p-3 text-foreground;
 
-  & .icon {
-    @apply flex items-center justify-center;
-    @apply text-foreground md:w-16 md:h-16 w-14 h-14 mr-3 md:mr-4;
-    @apply rounded-full shadow-sm border;
+    & .icon {
+      @apply flex items-center justify-center;
+      @apply text-foreground md:w-16 md:h-16 w-14 h-14 mr-3 md:mr-4;
+      @apply rounded-full shadow-sm border border-background-medium;
 
-    & svg {
-      @apply md:w-9 md:h-9 w-8 h-8 stroke-2;
+      & svg {
+        @apply md:w-9 md:h-9 w-8 h-8 stroke-2;
+      }
     }
-  }
 
-  & .tagName {
-    @apply text-2xl md:text-3xl font-bold;
-  }
+    & .tagName {
+      @apply text-2xl md:text-3xl font-bold;
+    }
 
-  & .tagCount {
-    @apply text-sm text-gray-400;
+    & .tagCount {
+      @apply text-sm text-gray-400;
+    }
   }
 }

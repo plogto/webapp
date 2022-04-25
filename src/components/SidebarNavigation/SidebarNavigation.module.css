@@ -7,7 +7,7 @@
 
     & .header {
       @apply flex flex-col items-center text-foreground-light;
-      @apply border-b border-dashed border-background-medium pt-8 pb-3;
+      @apply border-b border-background-medium pt-8 pb-3;
 
       & .avatar {
         @apply my-3;

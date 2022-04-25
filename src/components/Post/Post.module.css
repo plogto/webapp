@@ -8,7 +8,7 @@
   }
 
   &.isParentReply {
-    @apply border-t border-background-medium border-dashed;
+    @apply border-t border-background-medium;
 
     & > div > .headerAndContentWrapper {
       @apply mt-2;

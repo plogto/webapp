@@ -1,11 +1,9 @@
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import styles from "./ChangePassword.module.css";
 import { useChangePassword } from "./hooks/useChangePassword";
 import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
-import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
 import { PageHeader } from "@components/PageHeader";
 import { PageUrls } from "@enums/pages";

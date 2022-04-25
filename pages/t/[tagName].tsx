@@ -15,7 +15,7 @@ export default function TagPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper>
+        <Wrapper className="p-2 md:p-5 min-h-screen">
           <Tag />
         </Wrapper>
       </Layout>

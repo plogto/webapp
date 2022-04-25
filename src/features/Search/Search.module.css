@@ -12,12 +12,6 @@
     }
   }
 
-  & .users,
-  & .tags {
-    @apply w-full mt-3;
-    @apply rounded-lg shadow overflow-hidden;
-  }
-
   & .filters {
     @apply ml-2 flex justify-end;
 
@@ -43,4 +37,10 @@
       }
     }
   }
+}
+
+.users,
+.tags {
+  @apply w-full mt-3;
+  @apply rounded-lg shadow overflow-hidden;
 }

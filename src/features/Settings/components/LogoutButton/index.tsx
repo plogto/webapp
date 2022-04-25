@@ -28,7 +28,7 @@ export function LogoutButton(props: LogoutButtonProps) {
             <Icon
               type="outline"
               name="exclamation"
-              className="icon text-foreground-medium"
+              className="icon text-foreground"
             />
           </div>
           <div className="modal-title">{t("texts.title")}</div>

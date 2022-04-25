@@ -2,7 +2,7 @@
   --primary-light: #0ea5e922;
   --primary: theme("colors.sky.500");
 
-  --danger-light: #ef444422;
+  --danger-light: #ef444411;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.white");
@@ -54,7 +54,7 @@
 [data-theme="LIGHT-PURPLE"],
 [data-theme="LIGHT-ORANGE"],
 [data-theme="LIGHT-YELLOW"] {
-  --danger-light: #ef444422;
+  --danger-light: #ef444411;
   --danger: theme("colors.red.500");
 
   --background-pure: theme("colors.white");
@@ -165,7 +165,7 @@
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: theme("colors.stone.800");
+  --background-light: #332e2d;
   --background-medium: theme("colors.stone.700");
   --background-dark: theme("colors.stone.600");
 

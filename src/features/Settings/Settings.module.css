@@ -30,7 +30,7 @@
       & .uploadAvatar {
         @apply w-20 h-20 md:w-24 md:h-24 flex items-center justify-center;
         @apply absolute inset-0 z-30 rounded-full;
-        @apply bg-white bg-opacity-10  text-white;
+        @apply bg-black bg-opacity-20  text-white;
       }
 
       & .avatar {
@@ -46,7 +46,7 @@
       & .uploadBackground {
         @apply flex items-center justify-center;
         @apply absolute inset-0 z-30 w-full;
-        @apply bg-white bg-opacity-10 text-white;
+        @apply bg-black bg-opacity-20 text-white;
       }
     }
   }
@@ -55,7 +55,7 @@
 .itemsWrapper {
   & .item {
     @apply flex items-center space-x-3 hover:bg-background-light;
-    @apply border-dashed border-b border-background-medium p-3.5;
+    @apply border-b border-background-medium p-3.5;
     @apply transition-all duration-300 text-foreground;
 
     & .icon {
