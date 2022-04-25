@@ -41,7 +41,7 @@ export function PostContent(props: PostContentProps) {
           {parsePost({
             content,
             hashtagComponent: (value: string) => (
-              <Hashtag key={uuid()} value={value} isClickable={!isClickable} />
+              <Hashtag key={uuid()} value={value} />
             ),
           })}
         </p>
