@@ -31,11 +31,11 @@
     & .following,
     & .settings {
       @apply px-2 py-2 mt-2 w-28 h-full capitalize;
-      @apply font-medium text-sm;
+      @apply font-medium text-sm border border-transparent;
     }
 
     & .following {
-      @apply border border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
+      @apply border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
       @apply font-bold;
     }
 
@@ -66,6 +66,6 @@
 }
 
 .notFound {
-  @apply flex flex-col items-center justify-center h-screen;
+  @apply flex flex-col items-center justify-center;
   @apply h-screen text-foreground-medium;
 }
