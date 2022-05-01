@@ -44,7 +44,11 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
               {t("buttons.removePhoto")}
             </Button>
           )}
-          <Button layout="cancel" className="modal-button" onClick={closeModal}>
+          <Button
+            layout="outline"
+            className="modal-button"
+            onClick={closeModal}
+          >
             {t("buttons.cancel")}
           </Button>
         </div>

@@ -12,7 +12,7 @@
     @apply cursor-wait;
   }
 
-  &.cancel {
+  &.outline {
     @apply border border-transparent text-foreground;
     @apply hover:shadow hover:border-background-medium;
   }

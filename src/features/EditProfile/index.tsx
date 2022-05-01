@@ -121,7 +121,7 @@ export function EditProfile() {
         {user && (
           <div className={styles.footer}>
             <LinkButton
-              layout="cancel"
+              layout="outline"
               href={PageUrls.SETTINGS}
               className={styles.button}
             >

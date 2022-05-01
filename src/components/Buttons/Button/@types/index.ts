@@ -2,7 +2,7 @@ import type { MouseEventHandler, ReactNode } from "react";
 
 export type ButtonProps = {
   type?: "button" | "submit";
-  layout?: "cancel" | "remove" | "apply";
+  layout?: "outline" | "remove" | "apply";
   className?: string;
   loadingClassName?: string;
   children?: ReactNode;

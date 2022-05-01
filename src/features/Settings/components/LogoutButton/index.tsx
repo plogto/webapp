@@ -36,7 +36,7 @@ export function LogoutButton(props: LogoutButtonProps) {
           <div className="modal-buttons">
             <Button
               type="button"
-              layout="cancel"
+              layout="outline"
               onClick={closeModal}
               className="modal-button"
             >

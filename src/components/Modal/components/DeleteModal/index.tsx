@@ -27,7 +27,7 @@ export function DeleteModal(props: DeleteModalProps) {
         <div className="modal-buttons">
           <Button
             type="button"
-            layout="cancel"
+            layout="outline"
             onClick={closeModal}
             className="modal-button"
           >

@@ -25,7 +25,7 @@ export function Landing() {
             {t("pages:register")}
           </LinkButton>
           <LinkButton
-            layout="cancel"
+            layout="outline"
             href={PageUrls.LOGIN}
             className={styles.loginButton}
           >
