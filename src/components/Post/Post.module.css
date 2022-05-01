@@ -1,6 +1,20 @@
 .post {
   @apply w-full pb-1 relative overflow-visible text-foreground;
 
+  & .showParentButton {
+    @apply flex justify-start w-full p-2;
+
+    & span {
+      @apply rounded-lg text-sm text-primary p-1 px-2;
+      @apply transition-all duration-300;
+    }
+
+    &:hover span {
+      @apply bg-primary-light;
+      @apply transition-all duration-300;
+    }
+  }
+
   &.isNotCard {
     & .headerAndContentWrapper {
       @apply flex items-start;
@@ -8,8 +22,6 @@
   }
 
   &.isParentReply {
-    @apply border-t border-background-dark;
-
     & > div > .headerAndContentWrapper {
       @apply mt-2;
     }

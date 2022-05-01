@@ -8,6 +8,7 @@ import type { User } from "./user";
 
 export type Post = {
   id: string;
+  parent: Post;
   url: string;
   user: User;
   content: string;

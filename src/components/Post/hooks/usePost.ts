@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { MenuProps } from "@components/Menu/@types";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PostTypeKey, RepliesView } from "@enums";
@@ -16,7 +16,9 @@ export function usePost(props: UsePostProps) {
 
   const { repliesView } = type;
   const { user } = useAccountContext();
+  const [showParent, setShowParent] = useState(false);
 
+  const isPage = type.key === PostTypeKey.PAGE;
   const isParentReply = type.key === PostTypeKey.REPLY;
   const isParent = type.key === PostTypeKey.PAGE || isParentReply;
   const isCard = [
@@ -49,6 +51,7 @@ export function usePost(props: UsePostProps) {
   );
 
   return {
+    isPage,
     isParentReply,
     isParent,
     isCard,
@@ -56,6 +59,8 @@ export function usePost(props: UsePostProps) {
     showQuickReplies,
     showCompleteReplies,
     showThreadReplies,
+    showParent,
+    setShowParent,
     filterMenuItems,
   };
 }

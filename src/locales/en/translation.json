@@ -141,7 +141,8 @@
   },
   "post": {
     "buttons": {
-      "viewReplies": "View replies"
+      "viewReplies": "View replies",
+      "viewParentPost": "View parent post"
     },
     "modals": {
       "delete": {

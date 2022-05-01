@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import styles from "./Post.module.css";
 import { Footer, Header } from "./components";
 import { usePost } from "./hooks/usePost";
@@ -41,6 +42,7 @@ export function Post(props: PostProps) {
   } = props;
 
   const {
+    isPage,
     isParentReply,
     isParent,
     isCard,
@@ -48,6 +50,8 @@ export function Post(props: PostProps) {
     showQuickReplies,
     showCompleteReplies,
     showThreadReplies,
+    showParent,
+    setShowParent,
     filterMenuItems,
   } = usePost({
     type,
@@ -63,9 +67,22 @@ export function Post(props: PostProps) {
     className,
   );
   const headerClasses = classNames(isParent && styles.isParent);
+  const { t } = useTranslation("post");
 
   return (
     <Card shadow={isCard} className={wrapperClasses}>
+      {post.parent &&
+        isPage &&
+        (showParent ? (
+          <Post post={post.parent} type={POST_TYPES.REPLY} />
+        ) : (
+          <button
+            className={styles.showParentButton}
+            onClick={() => setShowParent(true)}
+          >
+            <span>{t("buttons.viewParentPost")}</span>
+          </button>
+        ))}
       <div className="relative">
         <div className={classNames(styles.headerAndContentWrapper)}>
           <ModalProvider>
