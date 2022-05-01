@@ -1,5 +1,5 @@
 .posts {
-  @apply w-full;
+  @apply w-full p-1 md:p-2;
 
   & .post {
     @apply pt-2 mb-2 md:mb-4;

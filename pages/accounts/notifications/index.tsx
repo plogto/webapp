@@ -14,7 +14,7 @@ export default function NotificationsPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-4">
+        <Wrapper>
           <Notifications />
         </Wrapper>
       </Layout>

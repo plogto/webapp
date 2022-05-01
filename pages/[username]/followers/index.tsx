@@ -17,7 +17,7 @@ export default function FollowersPage() {
       </Head>
       <ConnectionsProvider>
         <Layout>
-          <Wrapper className="p-2 md:p-4">
+          <Wrapper>
             <Connections type="followers" />
           </Wrapper>
         </Layout>

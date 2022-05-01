@@ -5,6 +5,7 @@ import styles from "./Post.module.css";
 import { Footer, Header } from "./components";
 import { usePost } from "./hooks/usePost";
 import { Card } from "@components/Card";
+import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
 import { POST_TYPES } from "@constants";
@@ -71,6 +72,9 @@ export function Post(props: PostProps) {
 
   return (
     <Card shadow={isCard} className={wrapperClasses}>
+      {isPage && (
+        <PageHeader title={post.parent ? t("texts.reply") : t("texts.post")} />
+      )}
       {post.parent &&
         isPage &&
         (showParent ? (

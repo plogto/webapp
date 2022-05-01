@@ -14,7 +14,7 @@ export default function EditProfilePage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-4">
+        <Wrapper>
           <EditProfile />
         </Wrapper>
       </Layout>

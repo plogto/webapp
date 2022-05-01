@@ -15,7 +15,7 @@ export default function TagPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-4">
+        <Wrapper paddingSize={2}>
           <Tag />
         </Wrapper>
       </Layout>

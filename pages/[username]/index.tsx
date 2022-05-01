@@ -15,7 +15,7 @@ export default function ProfilePage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="box-content">
+        <Wrapper paddingSize={2} className="box-content">
           <Profile />
         </Wrapper>
       </Layout>

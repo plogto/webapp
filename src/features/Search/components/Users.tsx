@@ -8,7 +8,7 @@ type Props = {
 };
 
 export function Users({ user }: Props) {
-  return user ? (
+  return user?.users?.length ? (
     <Card className={styles.users}>
       {user.users?.map(user => (
         <User key={user.id} user={user} />

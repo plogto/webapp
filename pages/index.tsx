@@ -19,7 +19,7 @@ export default function HomePage() {
       {isAuthenticated ? (
         <>
           <Layout>
-            <Wrapper>
+            <Wrapper paddingSize={2}>
               <Home />
             </Wrapper>
           </Layout>

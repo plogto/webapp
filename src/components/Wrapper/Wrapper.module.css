@@ -1,3 +1,11 @@
 .wrapper {
   @apply w-full md:min-h-screen;
+
+  &.padding-4 {
+    @apply p-2 md:p-4;
+  }
+
+  &.padding-2 {
+    @apply p-1 md:p-2;
+  }
 }

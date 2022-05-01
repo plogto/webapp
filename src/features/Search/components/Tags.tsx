@@ -8,7 +8,7 @@ type Props = {
 };
 
 export function Tags({ tag }: Props) {
-  return tag ? (
+  return tag?.tags?.length ? (
     <Card className={styles.tags}>
       {tag.tags?.map(tag => (
         <TagInfo key={tag.id} tag={tag} />

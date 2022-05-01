@@ -16,7 +16,7 @@ export default function FollowRequestsPage() {
       </Head>
       <FollowRequestsProvider>
         <Layout>
-          <Wrapper className="p-2 md:p-4">
+          <Wrapper>
             <FollowRequests />
           </Wrapper>
         </Layout>

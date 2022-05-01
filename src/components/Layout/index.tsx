@@ -28,6 +28,6 @@ export function Layout(props: LayoutProps) {
       </div>
     </div>
   ) : (
-    <div className="mx-auto w-full md:w-146">{children}</div>
+    <div className="mx-auto w-full md:w-[36.5rem]">{children}</div>
   );
 }

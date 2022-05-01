@@ -1,5 +1,5 @@
 .wrapper {
-  @apply mb-2 md:mb-4;
+  @apply m-1 md:m-2;
   & .header {
     @apply w-full flex items-center p-3 md:p-3 text-foreground;
 

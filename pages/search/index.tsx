@@ -14,7 +14,7 @@ export default function SearchPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-4">
+        <Wrapper>
           <Search />
         </Wrapper>
       </Layout>

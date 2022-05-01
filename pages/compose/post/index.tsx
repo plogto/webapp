@@ -14,7 +14,7 @@ export default function AddPostPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper className="p-2 md:p-4">
+        <Wrapper>
           <AddPost />
         </Wrapper>
       </Layout>
