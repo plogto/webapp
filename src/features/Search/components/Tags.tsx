@@ -1,6 +1,6 @@
 import styles from "../Search.module.css";
+import { Card } from "@components/Card";
 import { TagInfo } from "@components/TagInfo";
-
 import type { SearchResult } from "../@types";
 
 type Props = {
@@ -9,10 +9,10 @@ type Props = {
 
 export function Tags({ tag }: Props) {
   return tag ? (
-    <div className={styles.tags}>
+    <Card className={styles.tags}>
       {tag.tags?.map(tag => (
         <TagInfo key={tag.id} tag={tag} />
       ))}
-    </div>
+    </Card>
   ) : null;
 }

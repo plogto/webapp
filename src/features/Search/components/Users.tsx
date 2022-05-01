@@ -1,4 +1,5 @@
 import styles from "../Search.module.css";
+import { Card } from "@components/Card";
 import { User } from "@components/User";
 import type { SearchResult } from "../@types";
 
@@ -8,10 +9,10 @@ type Props = {
 
 export function Users({ user }: Props) {
   return user ? (
-    <div className={styles.users}>
+    <Card className={styles.users}>
       {user.users?.map(user => (
         <User key={user.id} user={user} />
       ))}
-    </div>
+    </Card>
   ) : null;
 }

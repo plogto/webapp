@@ -1,18 +1,14 @@
 import { gql } from "@apollo/client";
+import { UserFragment } from "./fragments/user";
 
 export const GET_NOTIFICATIONS = gql`
+  ${UserFragment.short}
   query getNotifications {
     getNotifications {
       notifications {
         id
         sender {
-          id
-          username
-          fullName
-          avatar {
-            id
-            name
-          }
+          ...UserFragmentShort
         }
         receiver {
           id
@@ -42,17 +38,12 @@ export const GET_NOTIFICATIONS = gql`
 `;
 
 export const GET_NOTIFICATION = gql`
+  ${UserFragment.short}
   subscription getNotification {
     getNotification {
       id
       sender {
-        id
-        username
-        fullName
-        avatar {
-          id
-          name
-        }
+        ...UserFragmentShort
       }
       receiver {
         id

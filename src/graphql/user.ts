@@ -1,30 +1,11 @@
 import { gql } from "@apollo/client";
+import { UserFragment } from "./fragments/user";
 
 export const GET_USER_INFO = gql`
+  ${UserFragment.complete}
   query getUserInfo {
     getUserInfo {
-      id
-      username
-      backgroundColor
-      primaryColor
-      avatar {
-        id
-        name
-      }
-      background {
-        id
-        name
-        width
-        height
-      }
-      email
-      fullName
-      bio
-      isPrivate
-      followersCount
-      followingCount
-      followRequestsCount
-      postsCount
+      ...UserFragmentComplete
     }
   }
 `;
@@ -60,7 +41,6 @@ export const GET_USER_BY_USERNAME = gql`
         width
         height
       }
-      email
       fullName
       bio
       isPrivate
@@ -73,6 +53,7 @@ export const GET_USER_BY_USERNAME = gql`
 `;
 
 export const EDIT_USER = gql`
+  ${UserFragment.complete}
   mutation editUser(
     $username: String
     $backgroundColor: BackgroundColor
@@ -97,37 +78,12 @@ export const EDIT_USER = gql`
         isPrivate: $isPrivate
       }
     ) {
-      id
-      username
-      backgroundColor
-      primaryColor
-      avatar {
-        id
-        name
-        width
-        height
-      }
-      background {
-        id
-        name
-        width
-        height
-        width
-        height
-      }
-
-      email
-      fullName
-      bio
-      isPrivate
-      followersCount
-      followingCount
-      followRequestsCount
-      postsCount
+      ...UserFragmentComplete
     }
   }
 `;
 
+// TODO: refactor this query
 export const CHANGE_PASSWORD = gql`
   mutation changePassword($oldPassword: String!, $newPassword: String!) {
     changePassword(
