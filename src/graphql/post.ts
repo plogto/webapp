@@ -1,25 +1,22 @@
 import { gql } from "@apollo/client";
+import { FileFragment } from "./fragments/file";
+import { PaginationFragment } from "./fragments/pagination";
+import { PostFragment } from "./fragments/post";
+import { UserFragment } from "./fragments/user";
 
 export const GET_SHORT_POST_BY_URL = gql`
+  ${UserFragment.short}
+  ${FileFragment.complete}
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
       id
       url
       user {
-        id
-        username
-        fullName
-        avatar {
-          id
-          name
-        }
+        ...UserFragmentShort
       }
       content
       attachment {
-        id
-        name
-        width
-        height
+        ...FileFragmentComplete
       }
       createdAt
       updatedAt
@@ -28,245 +25,78 @@ export const GET_SHORT_POST_BY_URL = gql`
 `;
 
 export const GET_POST_BY_URL = gql`
+  ${PostFragment.default}
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
-      id
-      url
-      user {
-        id
-        username
-        fullName
-        avatar {
-          id
-          name
-        }
-        background {
-          id
-          name
-          width
-          height
-        }
-        connectionStatus
-      }
-      isLiked {
-        id
-      }
-      isSaved {
-        id
-      }
-      likes {
-        postLikes {
-          id
-        }
-        pagination {
-          totalDocs
-        }
+      ...PostFragment
+      parent {
+        ...PostFragment
       }
       replies {
         posts {
-          id
-          url
-          user {
-            id
-            username
-            fullName
-            avatar {
-              id
-              name
-            }
-            connectionStatus
-          }
-          isLiked {
-            id
-          }
-          isSaved {
-            id
-          }
-          likes {
-            postLikes {
-              id
-            }
-            pagination {
-              totalDocs
-            }
-          }
+          ...PostFragment
           replies {
             posts {
-              id
-              url
-              user {
-                id
-                username
-                fullName
-                avatar {
-                  id
-                  name
-                }
-                connectionStatus
-              }
-              isLiked {
-                id
-              }
-              isSaved {
-                id
-              }
-              likes {
-                pagination {
-                  totalDocs
-                }
-              }
-              content
-              attachment {
-                id
-                name
-                width
-                height
-              }
-              createdAt
-              updatedAt
+              ...PostFragment
             }
             pagination {
               totalDocs
             }
           }
-          content
-          attachment {
-            id
-            name
-            width
-            height
-          }
-          createdAt
-          updatedAt
         }
         pagination {
           totalDocs
         }
       }
-      content
-      attachment {
-        id
-        name
-        width
-        height
-      }
-      createdAt
-      updatedAt
     }
   }
 `;
 
 export const GET_POSTS_BY_USERNAME = gql`
+  ${PaginationFragment.complete}
+  ${PostFragment.default}
   query getPostsByUsername($username: String!) {
     getPostsByUsername(username: $username) {
       posts {
-        id
-        url
-        user {
-          id
-          username
-          fullName
-          avatar {
-            id
-            name
-          }
-          connectionStatus
-        }
-        isLiked {
-          id
-        }
-        isSaved {
-          id
-        }
-        likes {
-          postLikes {
-            id
-          }
-          pagination {
-            totalDocs
-          }
-        }
+        ...PostFragment
         replies {
           pagination {
             totalDocs
           }
         }
-        content
-        attachment {
-          id
-          name
-          width
-          height
-        }
-        createdAt
-        updatedAt
       }
       pagination {
-        totalDocs
-        totalPages
-        page
-        limit
+        ...PaginationFragmentComplete
       }
     }
   }
 `;
 
 export const GET_POSTS_BY_TAG_NAME = gql`
+  ${UserFragment.default}
+  ${FileFragment.complete}
+  ${PaginationFragment.complete}
+  ${PostFragment.default}
   query getPostsByTagName($tagName: String!) {
     getPostsByTagName(tagName: $tagName) {
       posts {
-        id
-        url
-        user {
-          id
-          username
-          fullName
-          avatar {
-            id
-            name
-          }
-          connectionStatus
-        }
-        isLiked {
-          id
-        }
-        isSaved {
-          id
-        }
-        likes {
-          postLikes {
-            id
-          }
-          pagination {
-            totalDocs
-          }
-        }
+        ...PostFragment
         replies {
           pagination {
             totalDocs
           }
         }
-        content
-        attachment {
-          id
-          name
-          width
-          height
-        }
-        createdAt
-        updatedAt
       }
       pagination {
-        totalDocs
-        totalPages
-        page
-        limit
+        ...PaginationFragmentComplete
       }
     }
   }
 `;
 
 export const ADD_POST = gql`
+  ${UserFragment.short}
+  ${FileFragment.complete}
   mutation addPost($postId: ID, $content: String!, $attachment: [String!]) {
     addPost(
       postId: $postId
@@ -275,20 +105,11 @@ export const ADD_POST = gql`
       id
       url
       user {
-        id
-        username
-        fullName
-        avatar {
-          id
-          name
-        }
+        ...UserFragmentShort
       }
       content
       attachment {
-        id
-        name
-        width
-        height
+        ...FileFragmentComplete
       }
       createdAt
       updatedAt

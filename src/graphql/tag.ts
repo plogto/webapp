@@ -1,22 +1,21 @@
 import { gql } from "@apollo/client";
+import { TagFragment } from "./fragments/tag";
 
 export const GET_TAG_BY_TAG_NAME = gql`
+  ${TagFragment.default}
   query getTagByTagName($tagName: String!) {
     getTagByTagName(tagName: $tagName) {
-      id
-      name
-      count
+      ...TagFragment
     }
   }
 `;
 
 export const GET_TRENDS = gql`
+  ${TagFragment.default}
   query getTrends {
     getTrends {
       tags {
-        id
-        name
-        count
+        ...TagFragment
       }
     }
   }

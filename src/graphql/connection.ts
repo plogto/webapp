@@ -1,4 +1,6 @@
 import { gql } from "@apollo/client";
+import { PaginationFragment } from "./fragments/pagination";
+import { UserFragment } from "./fragments/user";
 
 export const FOLLOW_USER = gql`
   mutation followUser($userId: ID!) {
@@ -73,6 +75,7 @@ export const REJECT_USER = gql`
 `;
 
 export const GET_FOLLOW_REQUESTS = gql`
+  ${PaginationFragment.complete}
   query getFollowRequests {
     getFollowRequests {
       connections {
@@ -85,64 +88,45 @@ export const GET_FOLLOW_REQUESTS = gql`
         }
       }
       pagination {
-        totalDocs
-        totalPages
-        page
-        limit
+        ...PaginationFragmentComplete
       }
     }
   }
 `;
 
 export const GET_FOLLOWING_BY_USERNAME = gql`
+  ${UserFragment.default}
+  ${PaginationFragment.complete}
   query getFollowingByUsername($username: String!) {
     getFollowingByUsername(username: $username) {
       connections {
         id
         status
         following {
-          id
-          username
-          fullName
-          avatar {
-            id
-            name
-          }
-          connectionStatus
+          ...UserFragment
         }
       }
       pagination {
-        totalDocs
-        totalPages
-        page
-        limit
+        ...PaginationFragmentComplete
       }
     }
   }
 `;
 
 export const GET_FOLLOWERS_BY_USERNAME = gql`
+  ${UserFragment.default}
+  ${PaginationFragment.complete}
   query getFollowersByUsername($username: String!) {
     getFollowersByUsername(username: $username) {
       connections {
         id
         status
         follower {
-          id
-          username
-          fullName
-          avatar {
-            id
-            name
-          }
-          connectionStatus
+          ...UserFragment
         }
       }
       pagination {
-        totalDocs
-        totalPages
-        page
-        limit
+        ...PaginationFragmentComplete
       }
     }
   }
