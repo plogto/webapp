@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { Textarea } from "..";
 import { TextareaProps } from "../@types";
 
@@ -21,9 +20,5 @@ describe("<Textarea /> component", () => {
 
     expect(textareaComponent).toHaveAttribute("name", name);
     expect(textareaComponent).toHaveAttribute("placeholder", placeholder);
-
-    expect(textareaComponent).not.toHaveFocus();
-    userEvent.click(labelComponent);
-    expect(textareaComponent).toHaveFocus();
   });
 });

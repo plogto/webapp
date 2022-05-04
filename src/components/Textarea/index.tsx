@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { TextareaProps } from "./@types";
 import styles from "./Textarea.module.css";
 
@@ -13,9 +14,12 @@ export function Textarea(props: TextareaProps) {
     ...others
   } = props;
 
-  // TODO: fix styles type
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const wrapperClasses = `${styles.wrapper} ${styles[messageType as any]}`;
+  const wrapperClasses = classNames(
+    styles.wrapper,
+    // TODO: fix styles type
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    messageType && styles[messageType as any],
+  );
 
   return (
     <div className={wrapperClasses}>

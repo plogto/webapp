@@ -1,7 +1,7 @@
 import classNames from "classnames";
+import { Icon } from "@components/Icon";
 import { InputProps } from "./@types";
 import styles from "./Input.module.css";
-import { Icon } from "@components/Icon";
 
 export function Input(props: InputProps) {
   const {
@@ -21,7 +21,7 @@ export function Input(props: InputProps) {
     styles.wrapper,
     // TODO: fix styles type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    styles[messageType as any],
+    messageType && styles[messageType as any],
     className,
   );
 
