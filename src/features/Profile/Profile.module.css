@@ -30,7 +30,7 @@
     & .follow,
     & .following,
     & .settings {
-      @apply px-2 py-2 mt-2 w-28 h-full capitalize;
+      @apply px-2 py-2 mt-2 w-28 h-full;
       @apply font-medium text-sm border border-transparent;
     }
 
@@ -44,7 +44,7 @@
     }
 
     & .count {
-      @apply rounded-md capitalize;
+      @apply rounded-md;
       @apply text-foreground-medium;
 
       &.clickable {

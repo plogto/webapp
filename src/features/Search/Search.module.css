@@ -7,9 +7,6 @@
 
   & .searchInput {
     @apply border-0 w-full py-1 px-2 ring-0 focus:ring-0 text-foreground bg-background-pure;
-    &::placeholder {
-      @apply capitalize;
-    }
   }
 
   & .filters {
@@ -17,7 +14,7 @@
 
     & .filterButton {
       @apply rounded-lg p-0;
-      @apply font-medium bg-background-pure capitalize w-8 h-8;
+      @apply font-medium bg-background-pure w-8 h-8;
       @apply shadow text-foreground;
 
       &:first-child {

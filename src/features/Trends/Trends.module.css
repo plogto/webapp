@@ -10,7 +10,7 @@
     }
 
     & .title {
-      @apply text-2xl font-bold mr-2 capitalize text-current;
+      @apply text-2xl font-bold mr-2 text-current;
     }
   }
 
@@ -41,7 +41,7 @@
     }
 
     & .mobileTitle {
-      @apply text-xs capitalize mr-1;
+      @apply text-xs mr-1;
     }
   }
 

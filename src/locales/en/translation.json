@@ -1,7 +1,7 @@
 {
   "addPost": {
     "buttons": {
-      "addPost": "add post",
+      "addPost": "Add Post",
       "reply": "Reply"
     },
     "texts": {
@@ -11,11 +11,12 @@
   },
   "auth": {
     "buttons": {
-      "login": "log in"
+      "login": "Log In",
+      "register": "Register"
     },
     "labels": {
-      "password": "password",
-      "username": "username"
+      "password": "Password",
+      "username": "Username"
     }
   },
   "changePassword": {
@@ -36,26 +37,26 @@
       "oldPassword": "Old Password"
     },
     "texts": {
-      "changePassword": "change password"
+      "changePassword": "Change Password"
     }
   },
   "common": {
-    "follower": "follower",
-    "followers": "followers",
-    "following": "following",
+    "follower": "Follower",
+    "followers": "Followers",
+    "following": "Following",
     "logoName": "Plog",
-    "post": "post",
-    "posts": "posts",
-    "tags": "tags",
-    "trends": "trends for you",
-    "users": "users"
+    "post": "Post",
+    "posts": "Posts",
+    "tags": "Tags",
+    "trends": "Trends For You",
+    "users": "Users"
   },
   "connection": {
     "buttons": {
-      "confirm": "confirm",
-      "follow": "follow",
-      "following": "following",
-      "requested": "requested"
+      "confirm": "Confirm",
+      "follow": "Follow",
+      "following": "Following",
+      "requested": "Requested"
     },
     "status": {
       "noConnections": {
@@ -119,7 +120,7 @@
   },
   "notifications": {
     "texts": {
-      "followRequests": "follow requests",
+      "followRequests": "Follow Requests",
       "notifications": "Notifications"
     }
   },
@@ -160,7 +161,7 @@
   },
   "profile": {
     "buttons": {
-      "settings": "settings"
+      "settings": "Settings"
     },
     "status": {
       "noPosts": {
@@ -175,7 +176,7 @@
   },
   "search": {
     "placeholders": {
-      "search": "search"
+      "search": "Search"
     }
   },
   "settings": {

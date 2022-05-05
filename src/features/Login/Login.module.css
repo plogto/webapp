@@ -25,7 +25,7 @@
 
     & .submitButton {
       @apply text-background-pure bg-foreground;
-      @apply w-full px-4 py-2.5 capitalize;
+      @apply w-full px-4 py-2.5;
     }
 
     & .submitButtonLoading {

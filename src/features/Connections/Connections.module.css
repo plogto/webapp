@@ -1,7 +1,7 @@
 .buttons {
   @apply flex border-b border-background-medium px-2 mb-3;
   & .button {
-    @apply capitalize text-foreground-medium w-20 font-bold px-2 m-2 text-sm;
+    @apply text-foreground-medium w-20 font-bold px-2 m-2 text-sm;
 
     &.active {
       @apply text-foreground-pure relative;

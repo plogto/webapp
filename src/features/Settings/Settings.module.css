@@ -6,7 +6,7 @@
     @apply py-3.5 px-4;
 
     & .title {
-      @apply text-xl md:text-2xl font-medium capitalize;
+      @apply text-xl md:text-2xl font-medium;
     }
 
     & .back {
