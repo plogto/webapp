@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import { createElement, SVGAttributes } from "react";
+import classNames from "classnames";
 import ArrowLeft from "./svg/arrow-left.svg";
 import BellFill from "./svg/bell-fill.svg";
 import Bell from "./svg/bell.svg";
@@ -24,6 +24,8 @@ import Key from "./svg/key.svg";
 import Link from "./svg/link.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
 import LockClosed from "./svg/lock-closed.svg";
+import MailFill from "./svg/mail-fill.svg";
+import Mail from "./svg/mail.svg";
 import Photo from "./svg/photo.svg";
 import Plog from "./svg/plog.svg";
 import PlusFill from "./svg/plus-fill.svg";
@@ -103,6 +105,10 @@ export const iconsList = {
   lockClosed: {
     outline: LockClosed,
     fill: LockClosedFill,
+  },
+  mail: {
+    outline: Mail,
+    fill: MailFill,
   },
   photo: {
     outline: Photo,
