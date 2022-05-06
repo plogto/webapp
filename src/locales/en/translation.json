@@ -14,9 +14,22 @@
       "login": "Log In",
       "register": "Register"
     },
+    "errors": {
+      "emailIsNotValid": "Email is not valid",
+      "emailIsRequired": "Email is required",
+      "fullNameIsRequired": "Full Name is required",
+      "passwordIsRequired": "Password is required",
+      "passwordMinLength": "Password must be at 8 char long"
+    },
     "labels": {
+      "email": "Email",
+      "fullName": "Full Name",
       "password": "Password",
       "username": "Username"
+    },
+    "texts": {
+      "loginFooter": "Don't have an account?",
+      "registerFooter": "Have an account already?"
     }
   },
   "changePassword": {

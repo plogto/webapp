@@ -28,3 +28,34 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const REGISTER = gql`
+  mutation register($fullName: String!, $email: String!, $password: String!) {
+    register(
+      input: { fullName: $fullName, email: $email, password: $password }
+    ) {
+      user {
+        id
+        username
+        backgroundColor
+        primaryColor
+        fullName
+        avatar {
+          id
+          name
+        }
+        background {
+          id
+          name
+          width
+          height
+        }
+        email
+      }
+      authToken {
+        token
+        expiredAt
+      }
+    }
+  }
+`;

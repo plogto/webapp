@@ -1,0 +1,50 @@
+.wrapper {
+  @apply flex flex-col justify-center items-center;
+  @apply h-screen w-screen;
+
+  & .card {
+    @apply flex flex-col w-80 m-auto justify-center md:bg-background-pure;
+    @apply rounded-lg md:shadow-sm md:border md:border-background-dark;
+
+    & form {
+      @apply flex flex-col space-y-4;
+      @apply pt-8 px-5 pb-6;
+
+      & .logoContainer {
+        @apply flex items-center justify-center mb-6 space-x-2;
+
+        & .logo {
+          @apply h-8 text-foreground;
+        }
+
+        & .logoTitle {
+          @apply font-brand font-bold tracking-wider;
+          @apply text-4xl text-foreground text-center uppercase;
+        }
+      }
+
+      & .error {
+        @apply text-sm text-danger text-center bg-danger-light rounded-lg;
+        @apply py-2.5 w-full;
+      }
+
+      & .submitButton {
+        @apply text-background-pure bg-foreground;
+        @apply w-full px-4 py-2.5 mt-2;
+      }
+
+      & .submitButtonLoading {
+        @apply w-6;
+      }
+    }
+
+    & .footer {
+      @apply border-t border-background-dark;
+      @apply flex justify-center space-x-1 text-foreground-light py-5 text-sm;
+
+      & .link {
+        @apply text-primary font-medium;
+      }
+    }
+  }
+}

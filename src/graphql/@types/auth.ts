@@ -11,3 +11,10 @@ export type LoginQuery = {
     authToken: AuthToken;
   };
 };
+
+export type RegisterMutation = {
+  register: {
+    user: User;
+    authToken: AuthToken;
+  };
+};
