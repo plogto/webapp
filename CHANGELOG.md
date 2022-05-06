@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.29.0](https://github.com/mahdineer/plog-fe/compare/v0.28.0...v0.29.0) (2022-05-06)
+
+
+### Features
+
+* add mail icon ([4fe0fc3](https://github.com/mahdineer/plog-fe/commit/4fe0fc3e7a08dae12ac6e85044d6f5d6f24528a0))
+* implement Auth feature ([b29468c](https://github.com/mahdineer/plog-fe/commit/b29468c43bfd955949f3cf007417cec17ff59330))
+* implement part for Post component ([1aebf6f](https://github.com/mahdineer/plog-fe/commit/1aebf6f1035ae5ee579f540a9e77ff386adfcdd8))
+* import Fredoka One font ([0d27217](https://github.com/mahdineer/plog-fe/commit/0d2721793ed553ee5c186dbcf0dd9394eff5cd1d))
+
+
+### Bug Fixes
+
+* capitalize translation texts ([cb19705](https://github.com/mahdineer/plog-fe/commit/cb19705fba463e20d1843cfd2cb4a55f14e95e7b))
+* **Header:** add themeColor and primaryColor args to story ([37d9212](https://github.com/mahdineer/plog-fe/commit/37d92121136faae5b6be8fab85ec944b91545438))
+* rename cancel type with outline on Button components ([4113ae5](https://github.com/mahdineer/plog-fe/commit/4113ae5cdba6089db8df2f86546618ce2b64b9d6))
+
 ## [0.28.0](https://github.com/mahdineer/plog-fe/compare/v0.27.4...v0.28.0) (2022-04-23)
 
 
