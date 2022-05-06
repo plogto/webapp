@@ -14,7 +14,7 @@
     }
 
     & .logoTitle {
-      @apply font-bold text-5xl text-foreground uppercase;
+      @apply font-bold font-brand text-5xl text-foreground uppercase;
     }
 
     & .description {
@@ -28,11 +28,11 @@
 
     & .loginButton,
     & .registerButton {
-      @apply px-5 py-2.5 w-32 rounded-xl;
+      @apply px-5 py-2.5 w-32 rounded-xl font-bold;
     }
 
     & .loginButton {
-      @apply text-foreground font-bold border border-background-medium;
+      @apply text-foreground border border-background-medium;
     }
 
     & .registerButton {
