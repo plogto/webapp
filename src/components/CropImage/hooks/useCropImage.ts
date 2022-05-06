@@ -1,8 +1,8 @@
 import { ChangeEvent, useCallback, useState } from "react";
-import { CROP_IMAGES_TYPES } from "../constants";
-import { readFile } from "../utils";
 import { useCanvas } from ".";
 import type { UseCropImageProps, PixelCrop } from "../@types";
+import { CROP_IMAGES_TYPES } from "../constants";
+import { readFile } from "../utils";
 
 export function useCropImage(props: UseCropImageProps) {
   const { type, setImagePreview } = props;
@@ -24,6 +24,8 @@ export function useCropImage(props: UseCropImageProps) {
   const [zoom, setZoom] = useState(1);
   const [pixelCrop, setPixelCrop] = useState<PixelCrop>();
 
+  // TODO: fix this type
+  // @ts-expect-error ignore
   const onCropComplete = useCallback((_, pixelCrop) => {
     setPixelCrop(pixelCrop);
   }, []);

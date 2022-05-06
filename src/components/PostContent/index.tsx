@@ -1,13 +1,13 @@
 import classNames from "classnames";
-import Link from "next/link";
 import { v4 as uuid } from "uuid";
-import { PostContentProps } from "./@types";
-import styles from "./PostContent.module.css";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
 import { PostDateTime } from "@components/PostDateTime";
 import { useNavigation } from "@hooks/useNavigation";
 import { usePostParser } from "@hooks/usePostParser";
+import { PostContentProps } from "./@types";
+import styles from "./PostContent.module.css";
+import Link from "next/link";
 
 export function PostContent(props: PostContentProps) {
   const {
@@ -40,6 +40,8 @@ export function PostContent(props: PostContentProps) {
         <p>
           {parsePost({
             content,
+            // TODO: fix this type
+            // @ts-expect-error ignore
             hashtagComponent: (value: string) => (
               <Hashtag key={uuid()} value={value} />
             ),
