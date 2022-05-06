@@ -11,6 +11,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        brand: ["Fredoka One"],
+      },
       fontSize: {
         tiny: "15px",
       },
