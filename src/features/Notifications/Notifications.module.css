@@ -21,10 +21,6 @@
     & .content {
       @apply text-sm;
 
-      & .fullName {
-        @apply font-bold text-sm;
-      }
-
       & .reply {
         @apply text-foreground-medium;
       }

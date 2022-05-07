@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { Avatar } from "@components/Avatar";
+import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { Menu } from "@components/Menu";
 import { MenuProps } from "@components/Menu/@types";
@@ -22,7 +23,7 @@ export function Header(props: HeaderPostProps) {
     showUserInfo = true,
     className,
     size = "normal",
-    user: { username, fullName, avatar },
+    user: { username, fullName, avatar, isVerified },
     filterMenuItems,
     showMoreButton,
   } = props;
@@ -70,7 +71,7 @@ export function Header(props: HeaderPostProps) {
           <div className="flex flex-col justify-center">
             <Link href={formatProfilePageRoute(username)}>
               <a className={classNames(styles.userInfo)}>
-                <div className={classNames(styles.fullName)}>{fullName}</div>
+                <FullName fullName={fullName} isVerified={isVerified} />
                 <div className={classNames(styles.username)}>@{username}</div>
               </a>
             </Link>

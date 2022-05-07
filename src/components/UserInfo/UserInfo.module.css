@@ -5,29 +5,17 @@
     @apply mr-2;
   }
 
-  & .fullName {
-    @apply font-bold pr-1;
-  }
-
   & .username {
     @apply text-foreground-medium text-sm pr-1;
   }
 
   &.large {
-    & .fullName {
-      @apply text-lg;
-    }
-
     & .username {
       @apply -mt-1 text-[13px];
     }
   }
 
   &.small {
-    & .fullName {
-      @apply text-sm;
-    }
-
     & .username {
       @apply -mt-1 text-[13px];
     }

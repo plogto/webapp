@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
 import { Card } from "@components/Card";
+import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -50,7 +51,11 @@ export function SidebarNavigation() {
               className={styles.avatar}
               avatar={user.avatar}
             />
-            <span className={styles.fullName}>{user.fullName}</span>
+            <FullName
+              fullName={user.fullName}
+              isVerified={user.isVerified}
+              size="extra"
+            />
             <span className={styles.username}>@{user.username}</span>
           </a>
         </Link>

@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { ConnectionStatus, Count } from "..";
-import styles from "../../Profile.module.css";
-import { useProfile } from "../../hooks";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
+import { FullName } from "@components/FullName";
 import { Img } from "@components/Img";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import type { User } from "@t/user";
+import styles from "../../Profile.module.css";
+import { useProfile } from "../../hooks";
 
 // TODO: refactor this component
 export function Header(props: User) {
@@ -21,6 +22,7 @@ export function Header(props: User) {
     bio,
     connectionStatus,
     isPrivate,
+    isVerified,
   } = props;
   const { user } = useAccountContext();
   const { counts } = useProfile();
@@ -37,7 +39,12 @@ export function Header(props: User) {
       </div>
       <div className="flex items-start justify-between w-full pl-3">
         <div>
-          <div className={styles.fullName}>{fullName}</div>
+          <FullName
+            fullName={fullName}
+            isVerified={isVerified}
+            size="large"
+            className="mt-10"
+          />
           <div className={styles.username}>@{username}</div>
         </div>
       </div>

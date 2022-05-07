@@ -15,10 +15,6 @@
       @apply absolute -bottom-8 left-6;
     }
 
-    & .fullName {
-      @apply text-2xl font-bold mt-10;
-    }
-
     & .username {
       @apply text-foreground-medium -mt-0.5;
     }

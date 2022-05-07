@@ -7,6 +7,7 @@ export interface PostContentProps {
   user?: {
     fullName: User["fullName"];
     username: User["username"];
+    isVerified?: User["isVerified"];
   };
   url?: Post["url"];
   isClickable?: boolean;

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
+import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNavigation } from "@hooks/useNavigation";
@@ -12,7 +13,7 @@ import Link from "next/link";
 // TODO: refactor this component
 export function User(props: UserProps) {
   const {
-    user: { id, username, fullName, connectionStatus, avatar },
+    user: { id, username, fullName, connectionStatus, avatar, isVerified },
     showAccept,
     showDelete,
     showFollow,
@@ -65,7 +66,11 @@ export function User(props: UserProps) {
           <a className={styles.userInfo}>
             <Avatar className={styles.avatar} avatar={avatar} />
             <div>
-              <div className={styles.fullName}>{fullName}</div>
+              <FullName
+                fullName={fullName}
+                isVerified={isVerified}
+                className="pr-1"
+              />
               <div className={styles.username}>@{username}</div>
             </div>
           </a>

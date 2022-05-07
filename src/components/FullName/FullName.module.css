@@ -1,0 +1,47 @@
+.wrapper {
+  @apply inline-flex items-end space-x-1;
+
+  & .fullName {
+    @apply font-bold;
+  }
+
+  & .verified {
+    @apply text-foreground-pure;
+  }
+
+  &.small {
+    & .fullName {
+      @apply text-sm;
+    }
+    & .verified {
+      @apply w-[15px] mb-[3px];
+    }
+  }
+
+  &.normal {
+    & .fullName {
+      @apply text-base;
+    }
+    & .verified {
+      @apply w-4 mb-[3px];
+    }
+  }
+
+  &.large {
+    & .fullName {
+      @apply text-2xl;
+    }
+    & .verified {
+      @apply w-6 mb-[3px];
+    }
+  }
+
+  &.extra {
+    & .fullName {
+      @apply text-3xl;
+    }
+    & .verified {
+      @apply w-7 mb-1;
+    }
+  }
+}

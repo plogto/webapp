@@ -4,6 +4,7 @@ export const PREVIEW_POST = {
   user: {
     username: "plog",
     fullName: "Plog",
+    isVerified: true,
     avatar: {
       name: "e5b85a8c-91be-4e3b-8eb4-bc4afb4692c1.png",
     },

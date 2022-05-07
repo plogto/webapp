@@ -56,10 +56,6 @@
       & .userInfo {
         @apply flex flex-col justify-start;
 
-        & .fullName {
-          @apply font-bold text-sm;
-        }
-
         & .username {
           @apply text-foreground-medium text-sm;
         }

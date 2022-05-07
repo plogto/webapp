@@ -8,6 +8,7 @@ export const UserFragment = {
       id
       username
       fullName
+      isVerified
       avatar {
         ...FileFragment
       }
@@ -19,6 +20,7 @@ export const UserFragment = {
       id
       username
       fullName
+      isVerified
       connectionStatus
       avatar {
         ...FileFragment
@@ -32,6 +34,7 @@ export const UserFragment = {
       id
       username
       fullName
+      isVerified
       connectionStatus
       avatar {
         ...FileFragment
@@ -53,6 +56,7 @@ export const UserFragment = {
     fragment UserFragmentComplete on User {
       id
       username
+      isVerified
       backgroundColor
       primaryColor
       avatar {

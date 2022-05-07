@@ -13,10 +13,6 @@
         @apply my-3;
       }
 
-      & .fullName {
-        @apply text-3xl font-bold text-foreground text-center;
-      }
-
       & .username {
         @apply text-foreground-medium;
       }

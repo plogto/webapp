@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { v4 as uuid } from "uuid";
+import { FullName } from "@components/FullName";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
 import { PostDateTime } from "@components/PostDateTime";
@@ -70,8 +71,12 @@ export function PostContent(props: PostContentProps) {
         <a className={classNames(styles.profile)}>
           <div className="flex flex-col justify-center">
             <Link href={formatProfilePageRoute(user.username)}>
-              <a className={classNames(styles.fullName, sizeClasses)}>
-                {user.fullName}
+              <a>
+                <FullName
+                  fullName={user.fullName}
+                  isVerified={user.isVerified}
+                  size="small"
+                />
               </a>
             </Link>
           </div>

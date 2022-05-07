@@ -1,7 +1,8 @@
 import classNames from "classnames";
-import styles from "./UserInfo.module.css";
 import { Avatar } from "@components/Avatar";
+import { FullName } from "@components/FullName";
 import type { UserInfoProps } from "./@types";
+import styles from "./UserInfo.module.css";
 
 export function UserInfo(props: UserInfoProps) {
   const { user, showAvatar = true, size = "normal" } = props;
@@ -13,8 +14,12 @@ export function UserInfo(props: UserInfoProps) {
         <Avatar size={size} className={styles.avatar} avatar={user.avatar} />
       )}
       <div>
-        <div className={styles.fullName}>{user?.fullName}</div>
-        <div className={styles.username}>@{user?.username}</div>
+        <FullName
+          fullName={user.fullName}
+          isVerified={user.isVerified}
+          size={size}
+        />
+        <div className={styles.username}>@{user.username}</div>
       </div>
     </div>
   ) : (

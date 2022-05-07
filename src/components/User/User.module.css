@@ -12,10 +12,6 @@
   @apply rounded-full shadow-sm border;
 }
 
-.fullName {
-  @apply font-bold pr-1;
-}
-
 .username {
   @apply text-foreground-medium text-sm pr-1;
 }
