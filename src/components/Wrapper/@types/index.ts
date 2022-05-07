@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-export type WrapperProps = {
+export interface WrapperProps {
   children?: ReactNode;
   className?: string;
   paddingSize?: 4 | 2;
-};
+}

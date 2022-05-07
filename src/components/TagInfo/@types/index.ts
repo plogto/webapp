@@ -1,5 +1,5 @@
 import type { Tag } from "@t/tag";
 
-export type TagInfoProps = {
+export interface TagInfoProps {
   tag: Tag;
-};
+}

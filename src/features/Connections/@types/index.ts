@@ -1,9 +1,9 @@
-export type ConnectionsProps = {
+export interface ConnectionsProps {
   type: "followers" | "following";
-};
+}
 
-export type ConnectionsTab = {
+export interface ConnectionsTab {
   type: ConnectionsProps["type"];
   title: string;
   onClick: () => void;
-};
+}

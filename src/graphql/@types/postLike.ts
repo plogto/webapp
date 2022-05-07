@@ -1,9 +1,9 @@
 import { PostLike } from "@t/postLike";
 
-export type LikePostMutation = {
+export interface LikePostMutation {
   likePost: PostLike;
-};
+}
 
-export type UnlikePostMutation = {
+export interface UnlikePostMutation {
   unlikePost: PostLike;
-};
+}

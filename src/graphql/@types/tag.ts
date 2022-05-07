@@ -1,11 +1,11 @@
 import type { Tag } from "@t/tag";
 
-export type GetTagByTagNameQuery = {
+export interface GetTagByTagNameQuery {
   getTagByTagName: Tag;
-};
+}
 
-export type GetTrendsQuery = {
+export interface GetTrendsQuery {
   getTrends: {
     tags: Tag[];
   };
-};
+}

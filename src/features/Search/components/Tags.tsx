@@ -1,11 +1,11 @@
-import styles from "../Search.module.css";
 import { Card } from "@components/Card";
 import { TagInfo } from "@components/TagInfo";
 import type { SearchResult } from "../@types";
+import styles from "../Search.module.css";
 
-type Props = {
+interface Props {
   tag?: SearchResult["tag"];
-};
+}
 
 export function Tags({ tag }: Props) {
   return tag?.tags?.length ? (

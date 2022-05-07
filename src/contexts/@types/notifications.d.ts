@@ -4,7 +4,7 @@ import type { NotificationsWithPagination } from "@t/notification";
 declare global {
   export type NotificationsContext = NotificationsWithPagination;
 
-  export type SetNotificationsContext = {
+  export interface SetNotificationsContext {
     setNotifications: Dispatch<
       SetStateAction<NotificationsContext["notifications"]>
     >;
@@ -12,5 +12,5 @@ declare global {
       SetStateAction<NotificationsContext["unreadNotificationsCount"]>
     >;
     setPagination: Dispatch<SetStateAction<NotificationsContext["pagination"]>>;
-  };
+  }
 }

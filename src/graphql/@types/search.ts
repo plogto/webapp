@@ -1,5 +1,5 @@
 import type { SearchResult } from "@features/Search/@types";
 
-export type SearchQuery = {
+export interface SearchQuery {
   search: SearchResult;
-};
+}

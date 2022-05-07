@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
-export type CardProps = {
+export interface CardProps {
   shadow?: boolean;
   loading?: boolean;
   className?: string;
   children?: ReactNode;
-};
+}

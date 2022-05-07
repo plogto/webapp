@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-export type PageHeaderProps = {
+export interface PageHeaderProps {
   title?: ReactNode;
   rightSide?: ReactNode;
   className?: string;
-};
+}

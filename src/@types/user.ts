@@ -2,7 +2,7 @@ import { PrimaryColor, BackgroundColor } from "@enums";
 import type { Attachment } from "./attachment";
 import type { Pagination } from "./pagination";
 
-export type User = {
+export interface User {
   id: string;
   username: string;
   backgroundColor: BackgroundColor;
@@ -13,6 +13,7 @@ export type User = {
   email: string;
   bio?: string;
   isPrivate?: boolean;
+  isVerified?: boolean;
   connectionStatus?: number;
   followersCount?: number;
   followingCount?: number;
@@ -20,9 +21,9 @@ export type User = {
   followRequestsCount?: number;
   createdAt?: string;
   updatedAt?: string;
-};
+}
 
-export type UsersWithPagination = {
+export interface UsersWithPagination {
   users: User[];
   pagination: Pagination;
-};
+}

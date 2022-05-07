@@ -1,5 +1,5 @@
 import type { Attachment } from "@t/attachment";
 
-export type ImgProps = {
+export interface ImgProps {
   image: Attachment;
-};
+}

@@ -1,8 +1,7 @@
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-
 import { Icon, iconsList } from "@components/Icon";
 import { StoryContainer } from "@stories/StoryContainer";
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components/Icon",
@@ -17,7 +16,7 @@ const Template: ComponentStory<typeof Icon> = args => (
 
 export const Main = Template.bind({});
 Main.args = {
-  name: "heart",
+  name: "Heart",
 };
 
 Main.argTypes = {

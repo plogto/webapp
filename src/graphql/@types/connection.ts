@@ -1,39 +1,39 @@
 import type { Connection } from "@t/connection";
 import type { Pagination } from "@t/pagination";
 
-export type FollowUserMutation = {
+export interface FollowUserMutation {
   followUser: Connection;
-};
+}
 
-export type UnfollowUserMutation = {
+export interface UnfollowUserMutation {
   unfollowUser: Connection;
-};
+}
 
-export type AcceptUserMutation = {
+export interface AcceptUserMutation {
   acceptUser: Connection;
-};
+}
 
-export type RejectUserMutation = {
+export interface RejectUserMutation {
   rejectUser: Connection;
-};
+}
 
-export type GetFollowRequestsQuery = {
+export interface GetFollowRequestsQuery {
   getFollowRequests: {
     connections: Connection[];
     pagination: Pagination;
   };
-};
+}
 
-export type GetFollowingByUsernameQuery = {
+export interface GetFollowingByUsernameQuery {
   getFollowingByUsername: {
     connections: Connection[];
     pagination: Pagination;
   };
-};
+}
 
-export type GetFollowersByUsernameQuery = {
+export interface GetFollowersByUsernameQuery {
   getFollowersByUsername: {
     connections: Connection[];
     pagination: Pagination;
   };
-};
+}

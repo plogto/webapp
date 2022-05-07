@@ -1,21 +1,21 @@
 import type { Post } from "@t/post";
 
-export type AddPostForm = {
+export interface AddPostForm {
   postId?: string;
   content?: Post["content"];
   attachment?: string[];
-};
+}
 
-export type AttachmentPreviewProps = {
+export interface AttachmentPreviewProps {
   image?: Blob;
   onClickRemoveButton: () => void;
-};
+}
 
-export type ContentProps = {
+export interface ContentProps {
   content: Post["content"];
-};
+}
 
-export type CounterProps = {
+export interface CounterProps {
   length: number;
   maxLength: number;
-};
+}

@@ -9,9 +9,9 @@ const ModalContextSetState = createContext<SetModalContext>({
   setIsOpen: () => {},
 });
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export function ModalProvider({ children }: Props) {
   const [isOpen, setIsOpen] = useState<ModalContext["isOpen"]>(

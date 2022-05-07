@@ -1,35 +1,35 @@
 import type { Post, NewReply } from "@t/post";
 
-export type GetPostByUrlQuery = {
+export interface GetPostByUrlQuery {
   getPostByUrl: Post;
-};
+}
 
-export type GetPostsByUsernameQuery = {
+export interface GetPostsByUsernameQuery {
   getPostsByUsername: {
     posts: Post[];
   };
-};
+}
 
-export type GetPostsByTagNameQuery = {
+export interface GetPostsByTagNameQuery {
   getPostsByTagName: {
     posts: Post[];
   };
-};
+}
 
-export type AddPostMutationRequest = {
+export interface AddPostMutationRequest {
   postId?: string;
   content?: Post["content"];
   attachment?: string[];
-};
+}
 
-export type AddPostMutation = {
+export interface AddPostMutation {
   addPost: Post;
-};
+}
 
-export type ReplyPostMutation = {
+export interface ReplyPostMutation {
   replyPost: NewReply;
-};
+}
 
-export type DeletePostMutation = {
+export interface DeletePostMutation {
   deletePost: Post;
-};
+}

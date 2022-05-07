@@ -1,8 +1,8 @@
 import type { Size } from "@t/size";
 import type { User } from "@t/user";
 
-export type UserInfoProps = {
+export interface UserInfoProps {
   user?: User;
   showAvatar?: boolean;
   size?: Size;
-};
+}

@@ -1,19 +1,19 @@
-import type { User } from "@t/user";
 import type { MouseEventHandler } from "react";
+import type { User } from "@t/user";
 
-type ConnectionButton = {
+interface ConnectionButton {
   className?: string;
   loadingClassName?: string;
   loading?: boolean;
   onClick: MouseEventHandler<HTMLButtonElement>;
-};
+}
 
-export type ConnectionButtons = {
+export interface ConnectionButtons {
   follow: ConnectionButton;
   following: ConnectionButton;
   requested: ConnectionButton;
-};
+}
 
-export type UseConnectionProps = {
+export interface UseConnectionProps {
   userId: User["id"];
-};
+}

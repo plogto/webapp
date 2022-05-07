@@ -1,9 +1,9 @@
 import { PostSave } from "@t/postSave";
 
-export type SavePostMutation = {
+export interface SavePostMutation {
   savePost: PostSave;
-};
+}
 
-export type UnsavePostMutation = {
+export interface UnsavePostMutation {
   unsavePost: PostSave;
-};
+}

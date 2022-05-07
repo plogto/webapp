@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 
 declare global {
-  export type ModalContext = {
+  export interface ModalContext {
     isOpen: boolean;
-  };
+  }
 
-  export type SetModalContext = {
+  export interface SetModalContext {
     setIsOpen: Dispatch<SetStateAction<ModalContext["isOpen"]>>;
-  };
+  }
 }

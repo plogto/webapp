@@ -1,5 +1,5 @@
 import type { Notification } from "@t/notification";
 
-export type NotificationProps = {
+export interface NotificationProps {
   notification: Notification;
-};
+}

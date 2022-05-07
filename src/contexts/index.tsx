@@ -1,10 +1,10 @@
+import type { ReactNode } from "react";
 import { AccountProvider } from "./AccountContext";
 import { NotificationsProvider } from "./NotificationsContext";
-import type { ReactNode } from "react";
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export function AppContext({ children }: Props) {
   return (

@@ -3,18 +3,18 @@ import type { Post, PostType } from "@t/post";
 import type { FooterSize, HeaderSize } from "@t/size";
 import type { User } from "@t/user";
 
-export type UsePostProps = {
+export interface UsePostProps {
   type: PostType;
   post: Post;
-};
+}
 
-export type PostProps = {
+export interface PostProps {
   type: PostType;
   post: Post;
   className?: string;
-};
+}
 
-export type HeaderPostProps = {
+export interface HeaderPostProps {
   postId: Post["id"];
   url: Post["url"];
   user: User;
@@ -23,24 +23,24 @@ export type HeaderPostProps = {
   showMoreButton?: boolean;
   className?: string;
   filterMenuItems: (items: MenuProps["items"]) => MenuProps["items"];
-};
+}
 
-export type FooterPostProps = {
+export interface FooterPostProps {
   postId: Post["id"];
   url: Post["url"];
   size?: FooterSize;
   isLiked?: Post["isLiked"];
   isSaved?: Post["isSaved"];
-};
+}
 
-export type UseLikePostProps = {
+export interface UseLikePostProps {
   postId: Post["id"];
-};
+}
 
-export type UseSavePostProps = {
+export interface UseSavePostProps {
   postId: Post["id"];
-};
+}
 
-export type UseDeletePostProps = {
+export interface UseDeletePostProps {
   postId: Post["id"];
-};
+}

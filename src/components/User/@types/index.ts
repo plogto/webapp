@@ -1,23 +1,23 @@
-import type { User } from "@t/user";
 import type { MouseEventHandler } from "react";
+import type { User } from "@t/user";
 
-type ActionButton = {
+interface ActionButton {
   className?: string;
   loading?: boolean;
   onClick: MouseEventHandler<HTMLButtonElement>;
-};
+}
 
-export type ActionButtons = {
+export interface ActionButtons {
   follow: ActionButton;
   following: ActionButton;
   requested: ActionButton;
   accept: ActionButton;
   reject: ActionButton;
-};
+}
 
-export type UserProps = {
+export interface UserProps {
   user: User;
   showAccept?: boolean;
   showDelete?: boolean;
   showFollow?: boolean;
-};
+}

@@ -1,22 +1,22 @@
-import { useMutation } from "@apollo/client";
 import { useEffect } from "react";
+import { useMutation } from "@apollo/client";
 import { useFollowRequestsContext } from "@contexts/FollowRequestsContext";
-import {
-  ACCEPT_USER,
-  FOLLOW_USER,
-  REJECT_USER,
-  UNFOLLOW_USER,
-} from "@graphql/connection";
 import type {
   AcceptUserMutation,
   FollowUserMutation,
   RejectUserMutation,
   UnfollowUserMutation,
 } from "@graphql/@types/connection";
+import {
+  ACCEPT_USER,
+  FOLLOW_USER,
+  REJECT_USER,
+  UNFOLLOW_USER,
+} from "@graphql/connection";
 
-type Props = {
+interface Props {
   id: string;
-};
+}
 
 export function useActions({ id }: Props) {
   const [followUser, followUserResponse] =

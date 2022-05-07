@@ -1,13 +1,13 @@
-import Link from "next/link";
 import styles from "../../Profile.module.css";
+import Link from "next/link";
 
-type Props = {
+interface Props {
   className?: string;
   title?: string;
   href: string;
   count?: number;
   clickable?: boolean;
-};
+}
 
 // TODO: refactor this component
 export function Count({ title, count, href, clickable }: Props) {

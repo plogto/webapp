@@ -3,10 +3,10 @@ import type {
   NotificationsWithPagination,
 } from "@t/notification";
 
-export type GetNotificationsQuery = {
+export interface GetNotificationsQuery {
   getNotifications: NotificationsWithPagination;
-};
+}
 
-export type GetNotificationSubscription = {
+export interface GetNotificationSubscription {
   getNotification: Notification;
-};
+}

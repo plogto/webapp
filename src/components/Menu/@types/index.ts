@@ -1,17 +1,17 @@
-import type { IconNames } from "@components/Icon";
 import type { ReactNode } from "react";
+import type { IconNames } from "@components/Icon";
 
-type MenuItem = {
+interface MenuItem {
   key: string;
   type?: "normal" | "delete";
   title: string;
   icon: IconNames;
   onClick?: () => void;
-};
+}
 
-export type MenuProps = {
+export interface MenuProps {
   items: MenuItem[];
   buttonIcon: ReactNode;
   className?: string;
   itemsClassName?: string;
-};
+}

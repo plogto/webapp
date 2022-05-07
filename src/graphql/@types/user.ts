@@ -1,27 +1,27 @@
-import type { AuthToken } from "./auth";
 import type { User } from "@t/user";
+import type { AuthToken } from "./auth";
 
-export type GetUserInfoQuery = {
+export interface GetUserInfoQuery {
   getUserInfo: User;
-};
+}
 
-export type CheckUsernameQuery = {
+export interface CheckUsernameQuery {
   checkUsername: User;
-};
+}
 
-export type CheckEmailQuery = {
+export interface CheckEmailQuery {
   checkEmail: User;
-};
+}
 
-export type GetUserByUsernameQuery = {
+export interface GetUserByUsernameQuery {
   getUserByUsername: User;
-};
+}
 
-export type EditUserMutation = {
+export interface EditUserMutation {
   editUser: User;
-};
+}
 
-export type ChangePasswordMutation = {
+export interface ChangePasswordMutation {
   user: User;
   authToken: AuthToken;
-};
+}

@@ -5,9 +5,9 @@ const FollowRequestsContextSetState = createContext<SetFollowRequestsContext>({
   setFollowRequests: () => {},
 });
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export function FollowRequestsProvider({ children }: Props) {
   const [followRequests, setFollowRequests] = useState<FollowRequestsContext>(

@@ -1,4 +1,4 @@
-export type ToastProps = {
+export interface ToastProps {
   title: string;
   type?: "normal" | "fill";
-};
+}

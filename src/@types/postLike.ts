@@ -2,15 +2,15 @@ import type { Pagination } from "./pagination";
 import type { Post } from "./post";
 import type { User } from "./user";
 
-export type PostLike = {
+export interface PostLike {
   id: string;
   user: User;
   post: Post;
   createdAt: string;
   updatedAt: string;
-};
+}
 
-export type PostLikesWithPagination = {
+export interface PostLikesWithPagination {
   postLikes: PostLike[];
   pagination: Pagination;
-};
+}

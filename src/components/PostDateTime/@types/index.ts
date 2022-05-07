@@ -1,9 +1,9 @@
 import type { DateType } from "@enums";
 import type { DateSize } from "@t/size";
 
-export type PostDateTimeProps = {
+export interface PostDateTimeProps {
   size?: DateSize;
   type: DateType;
   createdAt: string;
   updatedAt: string;
-};
+}

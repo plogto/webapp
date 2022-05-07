@@ -9,9 +9,9 @@ const ConnectionsContextSetState = createContext<SetConnectionsContext>({
   setFollowing: () => {},
 });
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export function ConnectionsProvider({ children }: Props) {
   const [followers, setFollowers] = useState<ConnectionAndPagination>();

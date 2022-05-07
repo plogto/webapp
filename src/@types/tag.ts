@@ -1,14 +1,14 @@
 import type { Pagination } from "./pagination";
 
-export type Tag = {
+export interface Tag {
   id: string;
   name: string;
   count: number;
   createdAt: string;
   updatedAt: string;
-};
+}
 
-export type TagsWithPagination = {
+export interface TagsWithPagination {
   tags: Tag[];
   pagination: Pagination;
-};
+}

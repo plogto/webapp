@@ -1,7 +1,7 @@
 import type { Post } from "@t/post";
 
 // TODO: add loading prop
-export type PostsProps = {
+export interface PostsProps {
   posts?: Post[];
   className?: string;
-};
+}

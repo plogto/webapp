@@ -27,27 +27,10 @@ export const CHECK_EMAIL = gql`
 `;
 
 export const GET_USER_BY_USERNAME = gql`
+  ${UserFragment.profile}
   query getUserByUsername($username: String!) {
     getUserByUsername(username: $username) {
-      id
-      username
-      avatar {
-        id
-        name
-      }
-      background {
-        id
-        name
-        width
-        height
-      }
-      fullName
-      bio
-      isPrivate
-      connectionStatus
-      followersCount
-      followingCount
-      postsCount
+      ...UserFragmentProfile
     }
   }
 `;

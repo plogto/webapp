@@ -6,7 +6,7 @@ import {
 import { Attachment } from "@t/attachment";
 import type { User } from "@t/user";
 
-export type SettingsForm = {
+export interface SettingsForm {
   username: User["username"];
   avatar?: Attachment["id"];
   background?: Attachment["id"];
@@ -14,17 +14,17 @@ export type SettingsForm = {
   email: User["email"];
   bio: User["bio"];
   isPrivate: User["isPrivate"];
-};
+}
 
-export type SettingsProps = {
+export interface SettingsProps {
   formMethods: UseFormReturn<SettingsForm>;
-};
+}
 
-export type UseEditUser = {
+export interface UseEditUser {
   user?: User;
-};
+}
 
-export type UseEditUserValidations = {
+export interface UseEditUserValidations {
   setError: UseFormSetError<SettingsForm>;
   clearErrors: UseFormClearErrors<SettingsForm>;
-};
+}

@@ -1,35 +1,35 @@
+import type { IconNames } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
 import { User } from "@t/user";
-import type { IconNames } from "@components/Icon";
 
-export type SettingsItem = {
+export interface SettingsItem {
   title: string;
   href: PageUrls;
   icon?: IconNames;
   className?: string;
-};
+}
 
-export type LogoutButtonProps = {
+export interface LogoutButtonProps {
   className?: string;
-};
+}
 
-export type AvatarProfileProps = {
+export interface AvatarProfileProps {
   avatar?: User["avatar"];
-};
+}
 
-export type BackgroundProfileProps = {
+export interface BackgroundProfileProps {
   background?: User["background"];
-};
+}
 
-export type ChangeImageProfileProps = {
+export interface ChangeImageProfileProps {
   title: string;
   isOpen: boolean;
   showRemoveButton?: boolean;
   closeModal: () => void;
   removeImage: () => void;
   onClickInputFile: () => void;
-};
+}
 
-export type UseImageProfileProps = {
+export interface UseImageProfileProps {
   key: "avatar" | "background";
-};
+}

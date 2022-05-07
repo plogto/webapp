@@ -17,9 +17,9 @@ const AccountContextSetState = createContext<SetAccountContext>({
   setUser: () => {},
 });
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 export function AccountProvider({ children }: Props) {
   const [isAuthenticated, setIsAuthenticated] = useState<
     AccountContext["isAuthenticated"]

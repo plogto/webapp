@@ -6,9 +6,9 @@ import type { Tag } from "@t/tag";
 import { formatCountTitle } from "@utils/formatter";
 import styles from "../Tag.module.css";
 
-type Props = {
+interface Props {
   tag: Tag;
-};
+}
 
 export function Header({ tag: { name, count } }: Props) {
   const { t } = useTranslation("common");

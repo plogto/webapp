@@ -8,9 +8,9 @@ const NotificationsContextSetState = createContext<SetNotificationsContext>({
   setPagination: () => {},
 });
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export function NotificationsProvider({ children }: Props) {
   const [notifications, setNotifications] = useState<

@@ -3,7 +3,7 @@ import type { Post } from "@t/post";
 import type { ContentSize, DateSize } from "@t/size";
 import type { User } from "@t/user";
 
-export type PostContentProps = {
+export interface PostContentProps {
   user?: {
     fullName: User["fullName"];
     username: User["username"];
@@ -19,4 +19,4 @@ export type PostContentProps = {
   createdAt: string;
   updatedAt: string;
   className?: string;
-};
+}

@@ -3,18 +3,18 @@ import type { Connection } from "@t/connection";
 import type { Pagination } from "@t/pagination";
 
 declare global {
-  export type ConnectionAndPagination = {
+  export interface ConnectionAndPagination {
     connections?: Connection[];
     pagination?: Pagination;
-  };
+  }
 
-  export type ConnectionsContext = {
+  export interface ConnectionsContext {
     followers?: ConnectionAndPagination;
     following?: ConnectionAndPagination;
-  };
+  }
 
-  export type SetConnectionsContext = {
+  export interface SetConnectionsContext {
     setFollowers: Dispatch<SetStateAction<ConnectionsContext["followers"]>>;
     setFollowing: Dispatch<SetStateAction<ConnectionsContext["following"]>>;
-  };
+  }
 }

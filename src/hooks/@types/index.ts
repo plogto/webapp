@@ -1,29 +1,29 @@
-import { DateType } from "@enums";
 import type { ReactNode } from "react";
+import { DateType } from "@enums";
 
 export type ActiveClass = (props: {
   href: string;
   className: string;
 }) => string;
 
-export type ParsePostProps = {
+export interface ParsePostProps {
   content: string;
   hashtagComponent: ReactNode;
-};
+}
 
-export type PostStore = {
+export interface PostStore {
   [key: string]: {
     key: string;
     component?: ReactNode;
   };
-};
+}
 
-export type FormatFromNowProps = {
+export interface FormatFromNowProps {
   date: string;
   type: DateType;
-};
+}
 
-export type IsEditProps = {
+export interface IsEditProps {
   createdAt: string;
   updatedAt: string;
-};
+}

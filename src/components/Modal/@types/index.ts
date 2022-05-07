@@ -1,14 +1,14 @@
 import { ReactNode } from "react";
 
-export type ModalProps = {
+export interface ModalProps {
   children: ReactNode;
   isOpen: boolean;
   contentClassName?: string;
-};
+}
 
-export type DeleteModalProps = {
+export interface DeleteModalProps {
   title: string;
   description: string;
   onDelete: () => void;
   isOpen: boolean;
-};
+}

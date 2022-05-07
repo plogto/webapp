@@ -6,7 +6,7 @@ import type { PostSave } from "./postSave";
 import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
 import type { User } from "./user";
 
-export type Post = {
+export interface Post {
   id: string;
   parent: Post;
   url: string;
@@ -19,21 +19,21 @@ export type Post = {
   replies?: PostsWithPagination;
   createdAt: string;
   updatedAt: string;
-};
+}
 
-export type PostsWithPagination = {
+export interface PostsWithPagination {
   posts: Post[];
   pagination: Pagination;
-};
+}
 
-export type NewReply = {
+export interface NewReply {
   postId: string;
   content: string;
   attachment?: string;
   status?: string;
-};
+}
 
-export type PostType = {
+export interface PostType {
   key: PostTypeKey;
   headerSize: HeaderSize;
   contentSize: ContentSize;
@@ -43,7 +43,7 @@ export type PostType = {
   isContentClickable?: boolean;
   showMoreButton?: boolean;
   repliesView?: RepliesView;
-};
+}
 
 export type PostTypes = {
   [key in PostTypeKey]: PostType;
