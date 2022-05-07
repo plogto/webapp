@@ -43,6 +43,7 @@ import TrendingUp from "./svg/trending-up.svg";
 import UserFill from "./svg/user-fill.svg";
 import User from "./svg/user.svg";
 import Users from "./svg/users.svg";
+import VerifiedFill from "./svg/verified-fill.svg";
 import ViewGridFill from "./svg/view-grid-fill.svg";
 import ViewGrid from "./svg/view-grid.svg";
 import XFill from "./svg/x-fill.svg";
@@ -152,6 +153,11 @@ export const iconsList = {
     outline: Users,
     // TODO: add fill UsersFill icon
     fill: Users,
+  },
+  verified: {
+    // TODO: remove this icon
+    outline: VerifiedFill,
+    fill: VerifiedFill,
   },
   viewGrid: {
     outline: ViewGrid,
