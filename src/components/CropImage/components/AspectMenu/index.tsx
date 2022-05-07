@@ -1,8 +1,8 @@
 import { Menu } from "@headlessui/react";
 import classNames from "classnames";
-import styles from "../../CropImage.module.css";
-import { Icon } from "@components/Icon";
 import type { AspectMenuProps } from "@components/CropImage/@types";
+import { Icon } from "@components/Icon";
+import styles from "../../CropImage.module.css";
 
 export function AspectMenu(props: AspectMenuProps) {
   const { aspects, activeAspect, setActiveAspect } = props;
@@ -30,7 +30,7 @@ export function AspectMenu(props: AspectMenuProps) {
             className="text-white w-5 h-5 stroke-2"
             name={
               aspects.find(item => item.key === activeAspect.key)?.icon ||
-              "square"
+              "Square"
             }
           />
         </Menu.Button>
