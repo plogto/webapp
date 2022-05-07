@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { TagInfoProps } from "./@types";
-import styles from "./TagInfo.module.css";
 import { Icon } from "@components/Icon";
 import { useNavigation } from "@hooks/useNavigation";
+import { TagInfoProps } from "./@types";
+import styles from "./TagInfo.module.css";
+import Link from "next/link";
 
 export function TagInfo(props: TagInfoProps) {
   const {
@@ -16,7 +16,7 @@ export function TagInfo(props: TagInfoProps) {
         <Link href={formatTagPageRoute(name)}>
           <a className={styles.tagInfo}>
             <span className={styles.icon}>
-              <Icon name="hashtag" />
+              <Icon name="Hashtag" />
             </span>
             <div>
               <div className={styles.tagName}>{name}</div>

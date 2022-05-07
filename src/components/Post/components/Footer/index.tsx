@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import Link from "next/link";
-import styles from "../../Post.module.css";
 import { Icon } from "@components/Icon";
 import { useLikePost } from "@components/Post/hooks/useLikePost";
 import { useSavePost } from "@components/Post/hooks/useSavePost";
 import { useNavigation } from "@hooks/useNavigation";
 import type { FooterPostProps } from "../../@types";
+import styles from "../../Post.module.css";
+import Link from "next/link";
 
 export function Footer(props: FooterPostProps) {
   const { postId, url, size = "normal", isLiked, isSaved } = props;
@@ -32,21 +32,19 @@ export function Footer(props: FooterPostProps) {
     <div className={wrapperClasses}>
       <button className={styles.iconWrapper} onClick={savePost}>
         <Icon
-          name="bookmark"
-          type={isSaved?.id ? "fill" : "outline"}
+          name={isSaved?.id ? "BookmarkFill" : "Bookmark"}
           className={bookmarkIconClasses}
         />
       </button>
       <button className={styles.iconWrapper} onClick={likePost}>
         <Icon
-          name="heart"
-          type={isLiked?.id ? "fill" : "outline"}
+          name={isLiked?.id ? "HeartFill" : "Heart"}
           className={likeIconClasses}
         />
       </button>
       <Link href={formatAddPostPageRoute(url)}>
         <a className={styles.iconWrapper}>
-          <Icon className={replyIconClasses} name="comment" type="outline" />
+          <Icon className={replyIconClasses} name="Comment" />
         </a>
       </Link>
     </div>

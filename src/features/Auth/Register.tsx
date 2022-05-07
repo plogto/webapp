@@ -23,7 +23,7 @@ export function Register() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Link href={PageUrls.HOME}>
             <a className={styles.logoContainer}>
-              <Icon name="plog" className={styles.logo} />
+              <Icon name="PlogFill" className={styles.logo} />
               <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
             </a>
           </Link>
@@ -35,7 +35,7 @@ export function Register() {
           <Input
             type="text"
             name="fullName"
-            icon="user"
+            icon="User"
             placeholder={t("auth:labels.fullName")}
             register={register("fullName")}
             messageType={errors.fullName && "error"}
@@ -44,7 +44,7 @@ export function Register() {
           <Input
             type="text"
             name="email"
-            icon="mail"
+            icon="Mail"
             placeholder={t("auth:labels.email")}
             register={register("email")}
             messageType={errors.email && "error"}
@@ -53,7 +53,7 @@ export function Register() {
           <Input
             type="password"
             name="password"
-            icon="lockClosed"
+            icon="LockClosed"
             placeholder={t("auth:labels.password")}
             register={register("password")}
             messageType={errors.password && "error"}

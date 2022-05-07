@@ -5,16 +5,16 @@ export const SETTINGS_ITEMS: SettingsItem[] = [
   {
     title: "Edit Profile",
     href: PageUrls.EDIT_PROFILE,
-    icon: "user",
+    icon: "User",
   },
   {
     title: "Themes",
     href: PageUrls.THEMES,
-    icon: "colorPalette",
+    icon: "ColorPalette",
   },
   {
     title: "Change Password",
     href: PageUrls.CHANGE_PASSWORD,
-    icon: "key",
+    icon: "Key",
   },
 ];

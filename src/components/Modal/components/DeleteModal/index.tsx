@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Modal } from "../Modal";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { DeleteModalProps } from "@components/Modal/@types";
 import { useModalContext } from "@contexts/ModalContext";
+import { Modal } from "../Modal";
 
 export function DeleteModal(props: DeleteModalProps) {
   const { isOpen, title, description, onDelete } = props;
@@ -20,7 +20,7 @@ export function DeleteModal(props: DeleteModalProps) {
     <Modal isOpen={isOpen}>
       <div className="modal">
         <div className="icon-wrapper bg-danger-light">
-          <Icon type="outline" name="trash" className="icon text-danger" />
+          <Icon name="Trash" className="icon text-danger" />
         </div>
         <div className="modal-title">{title}</div>
         <p className="modal-description">{description}</p>

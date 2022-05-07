@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import styles from "../../Settings.module.css";
-import { ChangeImageProfileModal } from "../ChangeImageProfileModal";
+import { CropImageTypeKey } from "@enums";
 import { Avatar } from "@components/Avatar";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
-import { CropImageTypeKey } from "@enums";
-import { useImageProfile } from "@features/Settings/hooks/useImageProfile";
 import type { AvatarProfileProps } from "@features/Settings/@types";
+import { useImageProfile } from "@features/Settings/hooks/useImageProfile";
+import styles from "../../Settings.module.css";
+import { ChangeImageProfileModal } from "../ChangeImageProfileModal";
 
 export function AvatarProfile(props: AvatarProfileProps) {
   const { avatar } = props;
@@ -37,7 +37,7 @@ export function AvatarProfile(props: AvatarProfileProps) {
           type="button"
           onClick={openModal}
         >
-          <Icon name="camera" className={styles.icon} />
+          <Icon name="Camera" className={styles.icon} />
         </button>
         <Avatar avatar={avatar} size="large" className={styles.avatar} />
         <CropImage

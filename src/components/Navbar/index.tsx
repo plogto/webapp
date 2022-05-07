@@ -1,31 +1,31 @@
-import Link from "next/link";
 import { v4 as uuid } from "uuid";
-import styles from "./Navbar.module.css";
 import { Avatar } from "@components/Avatar";
 import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
 import { NavigationItem } from "@t/navigation";
+import styles from "./Navbar.module.css";
+import Link from "next/link";
 
 export function Navbar() {
   const { activeClass } = useClassName();
   const { user } = useAccountContext();
   const items: NavigationItem[] = [
     {
-      icon: <Icon name="bell" type="fill" />,
+      icon: <Icon name="BellFill" />,
       href: PageUrls.NOTIFICATIONS,
     },
     {
-      icon: <Icon name="globe" type="fill" />,
+      icon: <Icon name="GlobeFill" />,
       href: PageUrls.SEARCH,
     },
     {
-      icon: <Icon name="plus" type="fill" />,
+      icon: <Icon name="Plus" />,
       href: PageUrls.ADD_POST,
     },
     {
-      icon: <Icon name="viewGrid" type="fill" />,
+      icon: <Icon name="ViewGridFill" />,
       href: PageUrls.HOME,
     },
     {

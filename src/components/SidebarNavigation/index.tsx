@@ -1,9 +1,5 @@
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { v4 as uuid } from "uuid";
-import { Avatar } from "../Avatar";
-import styles from "./SidebarNavigation.module.css";
-import { NotificationIcon } from "./components/NotificationIcon";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -11,6 +7,10 @@ import { PageUrls } from "@enums/pages";
 import { useClassName } from "@hooks/useClassName";
 import { useNavigation } from "@hooks/useNavigation";
 import { NavigationItem } from "@t/navigation";
+import { Avatar } from "../Avatar";
+import styles from "./SidebarNavigation.module.css";
+import { NotificationIcon } from "./components/NotificationIcon";
+import Link from "next/link";
 
 export function SidebarNavigation() {
   const { activeClass } = useClassName();
@@ -25,17 +25,17 @@ export function SidebarNavigation() {
     },
     {
       title: t("search"),
-      icon: <Icon name="globe" type="fill" />,
+      icon: <Icon name="GlobeFill" />,
       href: PageUrls.SEARCH,
     },
     {
       title: t("home"),
-      icon: <Icon name="viewGrid" type="fill" />,
+      icon: <Icon name="ViewGridFill" />,
       href: PageUrls.HOME,
     },
     {
       title: t("addPost"),
-      icon: <Icon name="plus" type="fill" />,
+      icon: <Icon name="Plus" />,
       href: PageUrls.ADD_POST,
     },
   ];

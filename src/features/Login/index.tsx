@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import styles from "./Login.module.css";
-import { useLogin } from "./hooks/useLogin";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
 import { PageUrls } from "@enums/pages";
+import styles from "./Login.module.css";
+import { useLogin } from "./hooks/useLogin";
+import Link from "next/link";
 
 export function Login() {
   const { formMethods, onSubmit, error, loading } = useLogin();
@@ -17,7 +17,7 @@ export function Login() {
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <Link href={PageUrls.HOME}>
           <a className={styles.logoContainer}>
-            <Icon name="plog" className={styles.logo} />
+            <Icon name="PlogFill" className={styles.logo} />
             <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
           </a>
         </Link>
@@ -30,7 +30,7 @@ export function Login() {
           <Input
             type="text"
             name="username"
-            icon="user"
+            icon="User"
             placeholder={t("auth:labels.username")}
             register={register("username", {
               required: true,
@@ -41,7 +41,7 @@ export function Login() {
           <Input
             type="password"
             name="password"
-            icon="lockClosed"
+            icon="LockClosed"
             placeholder={t("auth:labels.password")}
             register={register("password", {
               required: true,

@@ -1,10 +1,8 @@
-import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import TextareaAutosize from "react-textarea-autosize";
-import styles from "./AddPost.module.css";
-import { AttachmentPreview } from "./components/AttachmentPreview";
-import { Counter } from "./components/Counter";
-import { useAddPost } from "./hooks/useAddPost";
+import classNames from "classnames";
+import { CONTENT_MAX_LENGTH } from "@constants";
+import { CropImageTypeKey, DateType } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { CropImage } from "@components/CropImage";
@@ -12,8 +10,10 @@ import { Icon } from "@components/Icon";
 import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { UserInfo } from "@components/UserInfo";
-import { CONTENT_MAX_LENGTH } from "@constants";
-import { CropImageTypeKey, DateType } from "@enums";
+import styles from "./AddPost.module.css";
+import { AttachmentPreview } from "./components/AttachmentPreview";
+import { Counter } from "./components/Counter";
+import { useAddPost } from "./hooks/useAddPost";
 
 export function AddPost() {
   const {
@@ -85,7 +85,7 @@ export function AddPost() {
                   onClick={() => inputFileRef.current?.click()}
                   className={styles.attachmentButton}
                 >
-                  <Icon name="photo" className={styles.icon} />
+                  <Icon name="Photo" className={styles.icon} />
                 </Button>
               )}
               <div className={styles.buttonContainer}>

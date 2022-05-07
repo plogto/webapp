@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
+import { CropImageTypeKey } from "@enums";
+import { CropImage } from "@components/CropImage";
+import { Icon } from "@components/Icon";
+import type { BackgroundProfileProps } from "@features/Settings/@types";
+import { useUrls } from "@hooks/useUrls";
 import styles from "../../Settings.module.css";
 import { useImageProfile } from "../../hooks/useImageProfile";
 import { ChangeImageProfileModal } from "../ChangeImageProfileModal";
-import { CropImage } from "@components/CropImage";
-import { Icon } from "@components/Icon";
-import { CropImageTypeKey } from "@enums";
-import { useUrls } from "@hooks/useUrls";
-import type { BackgroundProfileProps } from "@features/Settings/@types";
 
 export function BackgroundProfile(props: BackgroundProfileProps) {
   const { background } = props;
@@ -45,7 +45,7 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
           type="button"
           onClick={openModal}
         >
-          <Icon name="camera" className={styles.icon} />
+          <Icon name="Camera" className={styles.icon} />
         </button>
         <CropImage
           type={CropImageTypeKey.BACKGROUND}

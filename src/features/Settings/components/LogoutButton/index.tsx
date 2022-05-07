@@ -1,13 +1,13 @@
-import classNames from "classnames";
-import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
 import { useModalContext } from "@contexts/ModalContext";
 import { PageUrls } from "@enums/pages";
 import type { LogoutButtonProps } from "@features/Settings/@types";
+import { useRouter } from "next/router";
 
 export function LogoutButton(props: LogoutButtonProps) {
   const { push } = useRouter();
@@ -25,11 +25,7 @@ export function LogoutButton(props: LogoutButtonProps) {
       <Modal isOpen={isOpen}>
         <div className="modal">
           <div className="icon-wrapper bg-background-medium">
-            <Icon
-              type="outline"
-              name="exclamation"
-              className="icon text-foreground"
-            />
+            <Icon name="Exclamation" className="icon text-foreground" />
           </div>
           <div className="modal-title">{t("texts.title")}</div>
           <p className="modal-description">{t("texts.description")}</p>

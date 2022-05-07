@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import styles from "../Tag.module.css";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { PageHeader } from "@components/PageHeader";
-import { formatCountTitle } from "@utils/formatter";
 import type { Tag } from "@t/tag";
+import { formatCountTitle } from "@utils/formatter";
+import styles from "../Tag.module.css";
 
 type Props = {
   tag: Tag;
@@ -18,7 +18,7 @@ export function Header({ tag: { name, count } }: Props) {
       <PageHeader title={t("tags")} />
       <div className={styles.header}>
         <span className={styles.icon}>
-          <Icon name="hashtag" />
+          <Icon name="Hashtag" />
         </span>
         <div>
           <div className={styles.tagName}>{name}</div>

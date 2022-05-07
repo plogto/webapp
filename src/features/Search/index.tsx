@@ -1,14 +1,14 @@
-import classNames from "classnames";
 import { MobileOnlyView } from "react-device-detect";
 import { useTranslation } from "react-i18next";
-import { MobileTrends } from "../Trends";
-import styles from "./Search.module.css";
-import { Tags, Users } from "./components";
-import { useSearch } from "./hooks/useSearch";
+import classNames from "classnames";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
+import { MobileTrends } from "../Trends";
 import type { Filter } from "./@types";
+import styles from "./Search.module.css";
+import { Tags, Users } from "./components";
+import { useSearch } from "./hooks/useSearch";
 
 export function Search() {
   const { formMethods, onSubmit, result, filter, setFilter } = useSearch();
@@ -19,13 +19,13 @@ export function Search() {
     {
       title: t("common:users"),
       active: filter === "users",
-      icon: "users",
+      icon: "Users",
       onClick: () => setFilter("users"),
     },
     {
       title: t("common:tags"),
       active: filter === "tags",
-      icon: "hashtag",
+      icon: "Hashtag",
       onClick: () => setFilter("tags"),
     },
   ];

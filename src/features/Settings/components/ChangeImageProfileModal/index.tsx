@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
-import styles from "../../Settings.module.css";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
 import type { ChangeImageProfileProps } from "@features/Settings/@types";
+import styles from "../../Settings.module.css";
 
 export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
   const {
@@ -21,11 +21,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
       <div className="modal">
         <div className="modal-title">{title}</div>
         <div className="icon-wrapper bg-background">
-          <Icon
-            type="outline"
-            name="photo"
-            className="icon text-foreground-medium"
-          />
+          <Icon name="Photo" className="icon text-foreground-medium" />
         </div>
         <div className={styles.modalButtons}>
           <Button

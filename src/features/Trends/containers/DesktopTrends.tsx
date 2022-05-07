@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import styles from "../Trends.module.css";
-import { useTrends } from "../hooks/useTrends";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { useNavigation } from "@hooks/useNavigation";
 import { formatCountTitle } from "@utils/formatter";
+import styles from "../Trends.module.css";
+import { useTrends } from "../hooks/useTrends";
+import Link from "next/link";
 
 export function DesktopTrends() {
   const { tags } = useTrends();
@@ -15,7 +15,7 @@ export function DesktopTrends() {
     <Card className={styles.card}>
       <span className={styles.header}>
         <span className={styles.title}>{t("trends")}</span>
-        <Icon name="trendingUp" />
+        <Icon name="TrendingUp" />
       </span>
       {tags?.map(({ id, name, count }) => (
         <Link key={id} href={formatTagPageRoute(name)}>

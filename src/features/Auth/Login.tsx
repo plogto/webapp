@@ -23,7 +23,7 @@ export function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Link href={PageUrls.HOME}>
             <a className={styles.logoContainer}>
-              <Icon name="plog" className={styles.logo} />
+              <Icon name="PlogFill" className={styles.logo} />
               <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
             </a>
           </Link>
@@ -36,7 +36,7 @@ export function Login() {
             <Input
               type="text"
               name="username"
-              icon="user"
+              icon="User"
               placeholder={t("auth:labels.username")}
               register={register("username")}
             />
@@ -45,7 +45,7 @@ export function Login() {
             <Input
               type="password"
               name="password"
-              icon="lockClosed"
+              icon="LockClosed"
               placeholder={t("auth:labels.password")}
               register={register("password")}
             />

@@ -1,6 +1,6 @@
-import styles from "../../SidebarNavigation.module.css";
 import { Icon } from "@components/Icon";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
+import styles from "../../SidebarNavigation.module.css";
 
 export function NotificationIcon() {
   const { unreadNotificationsCount } = useNotificationsContext();
@@ -10,7 +10,7 @@ export function NotificationIcon() {
       {!!unreadNotificationsCount && (
         <span className={styles.notificationBadge} />
       )}
-      <Icon name="bell" type="fill" />
+      <Icon name="BellFill" />
     </div>
   );
 }

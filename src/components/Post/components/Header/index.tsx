@@ -1,19 +1,19 @@
-import classNames from "classnames";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import styles from "../../Post.module.css";
+import classNames from "classnames";
 import { Avatar } from "@components/Avatar";
 import { Icon } from "@components/Icon";
 import { Menu } from "@components/Menu";
 import { MenuProps } from "@components/Menu/@types";
 import { DeleteModal } from "@components/Modal";
+import type { HeaderPostProps } from "@components/Post/@types";
 import { useDeletePost } from "@components/Post/hooks/useDeletePost";
 import { useModalContext } from "@contexts/ModalContext";
 import { useNavigation } from "@hooks/useNavigation";
 import { useUrls } from "@hooks/useUrls";
 import { copyTextToClipboard } from "@utils/copyTextToClipboard";
 import { fillToast } from "@utils/toast";
-import type { HeaderPostProps } from "@components/Post/@types";
+import styles from "../../Post.module.css";
+import Link from "next/link";
 
 export function Header(props: HeaderPostProps) {
   const {
@@ -36,7 +36,7 @@ export function Header(props: HeaderPostProps) {
     {
       key: "copy",
       title: t("texts.copyLink"),
-      icon: "link",
+      icon: "Link",
       onClick: () =>
         copyTextToClipboard(formatPostUrl(url)).then(() => {
           fillToast(t("texts.copiedToClipboard"));
@@ -45,7 +45,7 @@ export function Header(props: HeaderPostProps) {
     {
       key: "delete",
       title: t("texts.deletePost"),
-      icon: "trash",
+      icon: "Trash",
       type: "delete",
       onClick: openModal,
     },
@@ -94,7 +94,7 @@ export function Header(props: HeaderPostProps) {
             buttonIcon={
               <span className={styles.more}>
                 <Icon
-                  name="dotsHorizontal"
+                  name="DotsHorizontal"
                   className={classNames(styles.icon)}
                 />
               </span>

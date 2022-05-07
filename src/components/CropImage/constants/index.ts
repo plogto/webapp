@@ -5,7 +5,7 @@ const CROP_IMAGES_ASPECTS: CropImageAspects = {
   "1:1": {
     key: "1:1",
     value: 1 / 1,
-    icon: "square",
+    icon: "Square",
   },
   "3:1": {
     key: "3:1",
@@ -14,12 +14,12 @@ const CROP_IMAGES_ASPECTS: CropImageAspects = {
   "4:5": {
     key: "4:5",
     value: 4 / 5,
-    icon: "rectangleVertical",
+    icon: "RectangleVertical",
   },
   "16:9": {
     key: "16:9",
     value: 16 / 9,
-    icon: "rectangleHorizontal",
+    icon: "RectangleHorizontal",
   },
 };
 
