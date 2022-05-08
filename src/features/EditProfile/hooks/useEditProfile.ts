@@ -1,12 +1,12 @@
-import { useMutation } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
-import { EDIT_USER } from "@graphql/user";
+import type { EditUserMutation } from "@graphql/@types/user";
+import { EDIT_USER, GET_USER_INFO } from "@graphql/user";
 import { useNavigation } from "@hooks/useNavigation";
 import type { SettingsForm } from "../@types";
-import type { EditUserMutation } from "@graphql/@types/user";
+import { useRouter } from "next/router";
 
 export function useEditProfile() {
   const { user } = useAccountContext();
@@ -32,6 +32,7 @@ export function useEditProfile() {
       if (user) {
         editUser({
           variables: { ...settingsFormData },
+          refetchQueries: [{ query: GET_USER_INFO }],
         });
         push(formatProfilePageRoute(user?.username));
       }
