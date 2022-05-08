@@ -1,60 +1,56 @@
-.profile {
-  @apply w-full max-h-screen overflow-y-scroll text-foreground;
+.header {
+  @apply pb-3 bg-background-pure overflow-hidden relative;
+  @apply flex flex-col items-center mx-1 md:mx-2 mb-2 md:mb-4;
 
-  & .header {
-    @apply pb-3 bg-background-pure overflow-hidden relative;
-    @apply flex flex-col items-center m-1 md:m-2;
-
-    & .background {
-      @apply bg-center bg-cover absolute;
-      @apply w-full h-[33vw] md:h-44 border-none;
-      @apply relative bg-background-pure;
-    }
-
-    & .avatar {
-      @apply absolute -bottom-8 left-6;
-    }
-
-    & .username {
-      @apply text-foreground-medium -mt-0.5;
-    }
-
-    & .bio {
-      @apply w-11/12 md:w-5/6 text-sm my-1.5 md:my-2 break-all;
-    }
-
-    & .follow,
-    & .following,
-    & .settings {
-      @apply px-2 py-2 mt-2 w-28 h-full;
-      @apply font-medium text-sm border border-transparent;
-    }
-
-    & .following {
-      @apply border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
-      @apply font-bold;
-    }
-
-    & .follow {
-      @apply bg-foreground text-background-pure;
-    }
-
-    & .count {
-      @apply rounded-md;
-      @apply text-foreground-medium;
-
-      &.clickable {
-        @apply hover:underline;
-      }
-    }
+  & .background {
+    @apply bg-center bg-cover absolute;
+    @apply w-full h-[33vw] md:h-44 border-none;
+    @apply relative bg-background-pure;
   }
 
-  & .privateStatus {
-    @apply mt-16 md:m-32 mx-10;
+  & .avatar {
+    @apply absolute -bottom-8 left-6;
   }
-  & .noPostsStatus {
-    @apply mt-16 md:m-32 mx-10;
+
+  & .username {
+    @apply text-foreground-medium -mt-0.5;
   }
+
+  & .bio {
+    @apply text-foreground-pure w-11/12 md:w-5/6 text-sm my-1.5 md:my-2 break-all;
+  }
+
+  & .follow,
+  & .following,
+  & .settings {
+    @apply px-2 py-2 mt-2 w-28 h-full;
+    @apply font-medium text-sm border border-transparent;
+  }
+
+  & .following {
+    @apply border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
+    @apply font-bold;
+  }
+
+  & .follow {
+    @apply bg-foreground text-background-pure;
+  }
+
+  & .count {
+    @apply rounded-md;
+    @apply text-foreground-medium;
+
+    &.clickable {
+      @apply hover:underline;
+    }
+  }
+}
+
+.privateStatus {
+  @apply mt-16 md:m-32 mx-10;
+}
+.noPostsStatus {
+  @apply mt-16 md:m-32 mx-10;
 }
 
 .notFound {

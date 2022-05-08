@@ -20,7 +20,7 @@ export function Profile() {
     <NotFound />
   ) : (
     <>
-      <div className={styles.profile}>
+      <>
         {/* Header */}
         {userData && <Header {...userData} />}
         {/* Posts */}
@@ -42,7 +42,7 @@ export function Profile() {
             className={styles.noPostsStatus}
           />
         )}
-      </div>
+      </>
     </>
   );
 }

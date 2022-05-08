@@ -1,12 +1,12 @@
 .wrapper {
-  @apply inline-flex items-end space-x-1;
+  @apply text-foreground-pure inline-flex items-end space-x-1;
 
   & .fullName {
     @apply font-bold;
   }
 
   & .verified {
-    @apply text-foreground-pure;
+    @apply text-current;
   }
 
   &.small {

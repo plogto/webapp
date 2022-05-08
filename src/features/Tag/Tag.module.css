@@ -1,7 +1,7 @@
 .wrapper {
-  @apply m-1 md:m-2;
+  @apply mx-1 md:mx-2 mb-2 md:mb-4;
   & .header {
-    @apply w-full flex items-center p-3 md:p-3 text-foreground;
+    @apply w-full flex items-center p-3 text-foreground;
 
     & .icon {
       @apply flex items-center justify-center;

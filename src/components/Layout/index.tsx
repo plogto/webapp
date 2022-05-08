@@ -1,12 +1,12 @@
-import { useRouter } from "next/router";
-import { Navbar } from "../Navbar";
-import { SidebarNavigation } from "../SidebarNavigation";
-import { LayoutProps } from "./@types";
-import styles from "./Layout.module.css";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import { Search } from "@features/Search";
 import { DesktopTrends } from "@features/Trends";
+import { Navbar } from "../Navbar";
+import { SidebarNavigation } from "../SidebarNavigation";
+import { LayoutProps } from "./@types";
+import styles from "./Layout.module.css";
+import { useRouter } from "next/router";
 
 export function Layout(props: LayoutProps) {
   const { children } = props;
@@ -16,7 +16,7 @@ export function Layout(props: LayoutProps) {
   const limitedRoutes = [PageUrls.SEARCH];
 
   return user ? (
-    <div className={styles.wrapper}>
+    <div className={styles.layout}>
       <Navbar />
       <SidebarNavigation />
       {children}

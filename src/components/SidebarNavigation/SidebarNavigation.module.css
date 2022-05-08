@@ -24,32 +24,32 @@
       & .navLink {
         @apply duration-300 flex items-center p-2 rounded-lg text-gray-400;
         @apply hover:bg-background-light hover:text-foreground rounded-lg;
-      }
 
-      & .active {
-        @apply text-foreground bg-background-light;
-      }
+        &:hover .notificationBadge,
+        &.active .notificationBadge {
+          @apply border-background-light;
+        }
 
-      & .title {
-        @apply ml-3 text-sm text-current font-medium;
-      }
+        &.active {
+          @apply text-foreground bg-background-light;
+        }
 
-      & .icon {
-        @apply text-current ring-0 focus:ring-0;
-      }
+        & .title {
+          @apply ml-3 text-sm text-current font-medium;
+        }
 
-      & svg {
-        @apply w-7 h-7 text-current;
-      }
+        & .icon {
+          @apply text-current ring-0 focus:ring-0;
+        }
 
-      & .notificationBadge {
-        @apply absolute -top-0.5 right-0 border-2 border-background-pure;
-        @apply w-3 h-3 rounded-full block bg-danger;
-      }
+        & svg {
+          @apply w-7 h-7 text-current;
+        }
 
-      &::hover .notificationBadge,
-      &.active .notificationBadge {
-        @apply border-background;
+        & .notificationBadge {
+          @apply absolute -top-0.5 right-0 border-2 border-background-pure;
+          @apply w-3 h-3 rounded-full block bg-danger;
+        }
       }
     }
   }
