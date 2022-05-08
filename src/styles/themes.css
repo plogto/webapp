@@ -2,8 +2,8 @@
   --primary-light: #0ea5e922;
   --primary: theme("colors.sky.500");
 
-  --danger-light: #ef444411;
-  --danger: theme("colors.red.500");
+  --danger-light: #fb718511;
+  --danger: theme("colors.rose.500");
 
   --background-pure: theme("colors.white");
   --background: theme("colors.gray.50");
@@ -54,8 +54,8 @@
 [data-theme="LIGHT-PURPLE"],
 [data-theme="LIGHT-ORANGE"],
 [data-theme="LIGHT-YELLOW"] {
-  --danger-light: #ef444411;
-  --danger: theme("colors.red.500");
+  --danger-light: #fb718511;
+  --danger: theme("colors.rose.500");
 
   --background-pure: theme("colors.white");
   --background: theme("colors.gray.50");
@@ -107,8 +107,8 @@
 [data-theme="DIM-PURPLE"],
 [data-theme="DIM-ORANGE"],
 [data-theme="DIM-YELLOW"] {
-  --danger-light: #ef444444;
-  --danger: theme("colors.red.500");
+  --danger-light: #fb718533;
+  --danger: theme("colors.rose.500");
 
   --background-pure: theme("colors.gray.800");
   --background: theme("colors.gray.900");
@@ -160,8 +160,8 @@
 [data-theme="DARK-PURPLE"],
 [data-theme="DARK-ORANGE"],
 [data-theme="DARK-YELLOW"] {
-  --danger-light: #ef444444;
-  --danger: theme("colors.red.500");
+  --danger-light: #fb718533;
+  --danger: theme("colors.rose.500");
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
