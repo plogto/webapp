@@ -43,7 +43,7 @@ export function Connections({ type }: ConnectionsProps) {
                 onClick={onClick}
                 className={classNames(
                   styles.button,
-                  type === title && styles.active,
+                  type === title.toLowerCase() && styles.active,
                 )}
               >
                 {title}
