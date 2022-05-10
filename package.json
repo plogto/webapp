@@ -38,6 +38,7 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "18.1.0",
     "react-easy-crop": "^4.2.0",
+    "react-google-login": "^5.2.2",
     "react-hook-form": "^7.30.0",
     "react-hot-toast": "^2.2.0",
     "react-i18next": "^11.16.7",
