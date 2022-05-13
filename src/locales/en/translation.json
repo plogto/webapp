@@ -19,7 +19,8 @@
       "emailIsRequired": "Email is required",
       "fullNameIsRequired": "Full Name is required",
       "passwordIsRequired": "Password is required",
-      "passwordMinLength": "Password must be at 8 char long"
+      "passwordMinLength": "Password must be at 8 char long",
+      "usernameIsRequired": "Username is required"
     },
     "labels": {
       "email": "Email",
