@@ -1,9 +1,8 @@
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-
+import { PostDateTime } from ".";
 import { DateType } from "@enums";
 import { StoryContainer } from "@stories/StoryContainer";
-import { PostDateTime } from ".";
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components/Post/PostDateTime",

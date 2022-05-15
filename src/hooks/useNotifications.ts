@@ -1,8 +1,8 @@
-import { useSubscription } from "@apollo/client";
 import { useEffect } from "react";
+import { useSubscription } from "@apollo/client";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
-import { GET_NOTIFICATION } from "@graphql/notification";
 import type { GetNotificationSubscription } from "@graphql/@types/notification";
+import { GET_NOTIFICATION } from "@graphql/notification";
 
 export function useNotifications() {
   const { data, loading } =

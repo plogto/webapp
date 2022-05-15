@@ -1,6 +1,6 @@
-import type { IconNames } from "@components/Icon";
 import type { InputHTMLAttributes } from "react";
 import type { UseFormRegisterReturn } from "react-hook-form";
+import type { IconNames } from "@components/Icon";
 
 export type InputTypes = "text" | "password";
 

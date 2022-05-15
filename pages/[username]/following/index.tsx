@@ -1,9 +1,9 @@
-import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import { Layout } from "@components/Layout";
 import { Wrapper } from "@components/Wrapper";
 import { ConnectionsProvider } from "@contexts/ConnectionsContext";
 import { Connections } from "@features/Connections";
+import Head from "next/head";
 
 export default function FollowingPage() {
   const { t } = useTranslation(["common", "pages"]);

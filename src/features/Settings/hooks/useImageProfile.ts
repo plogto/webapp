@@ -1,10 +1,10 @@
-import { useMutation } from "@apollo/client";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useMutation } from "@apollo/client";
 import { useModalContext } from "@contexts/ModalContext";
+import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER } from "@graphql/user";
 import { useUploadFile } from "@hooks/useUploadFile";
 import type { UseImageProfileProps } from "../@types";
-import type { EditUserMutation } from "@graphql/@types/user";
 
 export function useImageProfile(props: UseImageProfileProps) {
   const { key } = props;

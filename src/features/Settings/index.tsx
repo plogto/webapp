@@ -1,16 +1,16 @@
-import classNames from "classnames";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import classNames from "classnames";
+import { Card } from "@components/Card";
+import { Icon } from "@components/Icon";
+import { PageHeader } from "@components/PageHeader";
+import { ModalProvider } from "@contexts/ModalContext";
 import styles from "./Settings.module.css";
 import { AvatarProfile } from "./components/AvatarProfile";
 import { BackgroundProfile } from "./components/BackgroundProfile";
 import { LogoutButton } from "./components/LogoutButton";
 import { SETTINGS_ITEMS } from "./constants";
 import { useSettings } from "./hooks/useSettings";
-import { Card } from "@components/Card";
-import { Icon } from "@components/Icon";
-import { PageHeader } from "@components/PageHeader";
-import { ModalProvider } from "@contexts/ModalContext";
+import Link from "next/link";
 
 export function Settings() {
   const { user } = useSettings();

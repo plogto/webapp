@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { PageUrls } from "@enums/pages";
+import { useRouter } from "next/router";
 
 export function usePageHeader() {
   const router = useRouter();

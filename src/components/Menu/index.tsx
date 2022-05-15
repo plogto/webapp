@@ -1,9 +1,9 @@
 import { Menu as HeadlessMenu } from "@headlessui/react";
 import classNames from "classnames";
 import { v4 as uuid } from "uuid";
-import styles from "./Menu.module.css";
 import { Icon } from "@components/Icon";
 import type { MenuProps } from "./@types";
+import styles from "./Menu.module.css";
 
 export function Menu(props: MenuProps) {
   const { items, buttonIcon, className, itemsClassName } = props;

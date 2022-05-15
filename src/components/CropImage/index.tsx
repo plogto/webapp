@@ -1,11 +1,11 @@
-import classNames from "classnames";
 import Cropper from "react-easy-crop";
+import classNames from "classnames";
+import { CropImageTypeKey } from "@enums";
+import type { CropImageProps } from "./@types";
 import styles from "./CropImage.module.css";
 import { AspectMenu } from "./components/AspectMenu";
 import { Header } from "./components/Header";
 import { useCropImage } from "./hooks";
-import { CropImageTypeKey } from "@enums";
-import type { CropImageProps } from "./@types";
 
 export function CropImage(props: CropImageProps) {
   const {

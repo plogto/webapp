@@ -1,11 +1,11 @@
-import { useMutation } from "@apollo/client";
 import { useCallback } from "react";
-import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
-import type { UseConnectionProps } from "../@types";
+import { useMutation } from "@apollo/client";
 import type {
   FollowUserMutation,
   UnfollowUserMutation,
 } from "@graphql/@types/connection";
+import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
+import type { UseConnectionProps } from "../@types";
 
 export function useConnection(props: UseConnectionProps) {
   const { userId } = props;

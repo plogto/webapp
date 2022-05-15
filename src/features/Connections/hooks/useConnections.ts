@@ -1,7 +1,11 @@
-import { useLazyQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useLazyQuery } from "@apollo/client";
+import type {
+  GetFollowersByUsernameQuery,
+  GetFollowingByUsernameQuery,
+} from "@graphql/@types/connection";
+import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 import {
   GET_FOLLOWERS_BY_USERNAME,
   GET_FOLLOWING_BY_USERNAME,
@@ -9,11 +13,7 @@ import {
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { useNavigation } from "@hooks/useNavigation";
 import type { ConnectionsProps, ConnectionsTab } from "../@types";
-import type {
-  GetFollowersByUsernameQuery,
-  GetFollowingByUsernameQuery,
-} from "@graphql/@types/connection";
-import type { GetUserByUsernameQuery } from "@graphql/@types/user";
+import { useRouter } from "next/router";
 
 export function useConnections({ type }: ConnectionsProps) {
   const { query, push } = useRouter();

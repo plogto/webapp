@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
-import { SINGLE_UPLOAD_FILE } from "@graphql/uploadFile";
 import type { SingleUploadFileMutation } from "@graphql/@types/uploadFile";
+import { SINGLE_UPLOAD_FILE } from "@graphql/uploadFile";
 
 export function useUploadFile() {
   const [singleUploadFile, singleUploadFileResponse] =

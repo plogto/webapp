@@ -1,8 +1,7 @@
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-
 import { Input } from "@components/Input";
 import { StoryContainer } from "@stories/StoryContainer";
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components/Input",

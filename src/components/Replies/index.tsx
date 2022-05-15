@@ -1,10 +1,10 @@
-import classNames from "classnames";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "./Replies.module.css";
-import { Post } from "@components/Post";
+import classNames from "classnames";
 import { PostTypeKey } from "@enums";
+import { Post } from "@components/Post";
 import type { RepliesProps } from "./@types";
+import styles from "./Replies.module.css";
 
 export function Replies(props: RepliesProps) {
   const { replies, type } = props;

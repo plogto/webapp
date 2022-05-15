@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "./Card.module.css";
 import { Loading } from "@components/Loading";
 import type { CardProps } from "./@types";
+import styles from "./Card.module.css";
 
 export function Card(props: CardProps) {
   const { shadow = true, loading, children, className } = props;

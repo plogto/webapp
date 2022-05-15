@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { useUrls } from "@hooks/useUrls";
 import type { ImgProps } from "./@types";
+import Image from "next/image";
 
 export function Img(props: ImgProps) {
   const {

@@ -1,9 +1,8 @@
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-
+import { Header } from ".";
 import { PrimaryColor, BackgroundColor } from "@enums";
 import { StoryContainer } from "@stories/StoryContainer";
-import { Header } from ".";
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components/Post/Header",

@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import styles from "./Posts.module.css";
-import { Post } from "@components/Post";
 import { POST_TYPES } from "@constants";
+import { Post } from "@components/Post";
 import type { PostsProps } from "./@types";
+import styles from "./Posts.module.css";
 
 export function Posts(props: PostsProps) {
   const { posts, className } = props;

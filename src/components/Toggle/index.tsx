@@ -1,8 +1,8 @@
 import { Switch } from "@headlessui/react";
-import classNames from "classnames";
 import { useCallback, useState } from "react";
-import styles from "./Toggle.module.css";
+import classNames from "classnames";
 import type { ToggleProps } from "./@types";
+import styles from "./Toggle.module.css";
 
 export function Toggle(props: ToggleProps) {
   const { label, className, checked, onChange } = props;

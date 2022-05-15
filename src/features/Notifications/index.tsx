@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { Card } from "@components/Card";
+import { PageHeader } from "@components/PageHeader";
 import styles from "./Notifications.module.css";
 import { Notification } from "./components/Notification";
 import { useNotifications } from "./hooks/useNotifications";
-import { Card } from "@components/Card";
-import { PageHeader } from "@components/PageHeader";
 
 export function Notifications() {
   const { notifications, unreadNotificationsCount } = useNotifications();

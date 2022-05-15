@@ -1,11 +1,11 @@
-import { useLazyQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
+import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import type { Post } from "@t/post";
+import { useRouter } from "next/router";
 
 export function useHome() {
   const { push } = useRouter();

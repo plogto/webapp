@@ -1,7 +1,5 @@
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import styles from "./EditProfile.module.css";
-import { useEditUserValidations, useEditProfile } from "./hooks";
 import { Button } from "@components/Buttons/Button";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
@@ -10,6 +8,8 @@ import { PageHeader } from "@components/PageHeader";
 import { Textarea } from "@components/Textarea";
 import { Toggle } from "@components/Toggle";
 import { PageUrls } from "@enums/pages";
+import styles from "./EditProfile.module.css";
+import { useEditUserValidations, useEditProfile } from "./hooks";
 
 // TODO: refactor this component
 export function EditProfile() {

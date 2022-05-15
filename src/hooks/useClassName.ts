@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import type { ActiveClass } from "./@types";
+import { useRouter } from "next/router";
 
 export function useClassName() {
   const { asPath } = useRouter();

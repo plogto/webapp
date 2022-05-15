@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
+import { PostTypeKey, RepliesView } from "@enums";
 import { MenuProps } from "@components/Menu/@types";
 import { useAccountContext } from "@contexts/AccountContext";
-import { PostTypeKey, RepliesView } from "@enums";
 import { formatCountTitle } from "@utils/formatter";
 import type { UsePostProps } from "../@types";
 

@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+import { createUploadLink } from "apollo-upload-client";
 import {
   ApolloClient,
   ApolloLink,
@@ -5,8 +7,6 @@ import {
   NormalizedCacheObject,
   RequestHandler,
 } from "@apollo/client";
-import { createUploadLink } from "apollo-upload-client";
-import { useMemo } from "react";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 

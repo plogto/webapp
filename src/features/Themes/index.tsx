@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import { v4 as uuid } from "uuid";
-import styles from "./Themes.module.css";
-import { PreviewPost } from "./components/PreviewPost";
-import { useThemes } from "./hooks/useThemes";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { PageHeader } from "@components/PageHeader";
+import styles from "./Themes.module.css";
+import { PreviewPost } from "./components/PreviewPost";
+import { useThemes } from "./hooks/useThemes";
 
 export function Themes() {
   const { mounted, t, backgroundColor, COLORS, THEMES } = useThemes();

@@ -1,8 +1,8 @@
-import { useLazyQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { GET_SHORT_POST_BY_URL } from "@graphql/post";
+import { useLazyQuery } from "@apollo/client";
 import type { GetPostByUrlQuery } from "@graphql/@types/post";
+import { GET_SHORT_POST_BY_URL } from "@graphql/post";
+import { useRouter } from "next/router";
 
 export function useParentPost() {
   const { query } = useRouter();

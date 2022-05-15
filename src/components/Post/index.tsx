@@ -1,18 +1,18 @@
-import classNames from "classnames";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import styles from "./Post.module.css";
-import { Footer, Header } from "./components";
-import { usePost } from "./hooks/usePost";
+import classNames from "classnames";
+import { POST_TYPES } from "@constants";
+import { DateType } from "@enums";
 import { Card } from "@components/Card";
 import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
-import { POST_TYPES } from "@constants";
 import { ModalProvider } from "@contexts/ModalContext";
-import { DateType } from "@enums";
 import { useNavigation } from "@hooks/useNavigation";
 import type { PostProps } from "./@types";
+import styles from "./Post.module.css";
+import { Footer, Header } from "./components";
+import { usePost } from "./hooks/usePost";
+import Link from "next/link";
 
 export function Post(props: PostProps) {
   const {

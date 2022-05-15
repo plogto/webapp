@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import styles from "../Buttons.module.css";
 import { Loading } from "@components/Loading";
+import styles from "../Buttons.module.css";
 import type { ButtonProps } from "./@types";
 
 export function Button(props: ButtonProps) {

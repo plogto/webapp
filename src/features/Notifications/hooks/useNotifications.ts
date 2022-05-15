@@ -1,5 +1,5 @@
-import { useLazyQuery } from "@apollo/client";
 import { useEffect, useMemo } from "react";
+import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
 import { GetNotificationsQuery } from "@graphql/@types/notification";

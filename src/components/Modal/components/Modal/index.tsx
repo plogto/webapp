@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import classNames from "classnames";
 import { Fragment } from "react";
-import styles from "../../Modal.module.css";
+import classNames from "classnames";
 import type { ModalProps } from "../../@types";
+import styles from "../../Modal.module.css";
 
 export function Modal(props: ModalProps) {
   const { children, isOpen, contentClassName } = props;

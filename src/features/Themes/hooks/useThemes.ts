@@ -1,9 +1,9 @@
-import { useMutation } from "@apollo/client";
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useAccountContext } from "@contexts/AccountContext";
 import { PrimaryColor, BackgroundColor } from "@enums";
+import { useTheme } from "next-themes";
+import { useMutation } from "@apollo/client";
+import { useAccountContext } from "@contexts/AccountContext";
 import { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER } from "@graphql/user";
 

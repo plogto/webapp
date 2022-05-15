@@ -1,12 +1,12 @@
-import { useLazyQuery } from "@apollo/client";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { useTheme } from "next-themes";
+import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
+import type { GetUserInfoQuery } from "@graphql/@types/user";
 import { GET_USER_INFO } from "@graphql/user";
 import { useNotifications } from "@hooks/useNotifications";
-import type { GetUserInfoQuery } from "@graphql/@types/user";
+import { useRouter } from "next/router";
 
 export function AppInit() {
   const [getUserInfo, { data }] = useLazyQuery<GetUserInfoQuery>(GET_USER_INFO);

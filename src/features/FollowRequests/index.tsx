@@ -1,7 +1,7 @@
-import styles from "./FollowRequests.module.css";
-import { useFollowRequests } from "./hooks/useFollowRequests";
 import { Card } from "@components/Card";
 import { User } from "@components/User";
+import styles from "./FollowRequests.module.css";
+import { useFollowRequests } from "./hooks/useFollowRequests";
 
 export function FollowRequests() {
   const { followRequests } = useFollowRequests();

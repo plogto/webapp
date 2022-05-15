@@ -1,12 +1,12 @@
-import { useLazyQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { GET_POSTS_BY_TAG_NAME } from "@graphql/post";
-import { GET_TAG_BY_TAG_NAME } from "@graphql/tag";
+import { useLazyQuery } from "@apollo/client";
 import type { GetPostsByTagNameQuery } from "@graphql/@types/post";
 import type { GetTagByTagNameQuery } from "@graphql/@types/tag";
+import { GET_POSTS_BY_TAG_NAME } from "@graphql/post";
+import { GET_TAG_BY_TAG_NAME } from "@graphql/tag";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
+import { useRouter } from "next/router";
 
 export function useTag() {
   const { query } = useRouter();

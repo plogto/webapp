@@ -1,8 +1,8 @@
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
+import { PostContent } from ".";
 import { Card } from "@components/Card";
 import { StoryContainer } from "@stories/StoryContainer";
-import { PostContent } from ".";
-import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components/Post/PostContent",

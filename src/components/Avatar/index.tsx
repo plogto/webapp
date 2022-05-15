@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "./Avatar.module.css";
 import { Img } from "@components/Img";
 import type { AvatarProps } from "./@types";
+import styles from "./Avatar.module.css";
 
 export function Avatar(props: AvatarProps) {
   const { className, size = "normal", avatar } = props;

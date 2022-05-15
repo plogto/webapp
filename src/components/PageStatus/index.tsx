@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import styles from "./PageStatus.module.css";
 import type { PageStatusProps } from "./@types";
+import styles from "./PageStatus.module.css";
 
 // TODO: refactor this component
 export function PageStatus(props: PageStatusProps) {

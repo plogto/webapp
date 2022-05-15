@@ -1,9 +1,9 @@
-import { useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
-import { Post } from "@components/Post";
 import { POST_TYPES } from "@constants";
+import { useQuery } from "@apollo/client";
+import { Post } from "@components/Post";
 import { GetPostByUrlQuery } from "@graphql/@types/post";
 import { GET_POST_BY_URL } from "@graphql/post";
+import { useRouter } from "next/router";
 
 export function PostContainer() {
   const { query } = useRouter();
