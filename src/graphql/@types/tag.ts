@@ -9,3 +9,6 @@ export interface GetTrendsQuery {
     tags: Tag[];
   };
 }
+export interface GetTrendsQueryRequest {
+  limit: number;
+}

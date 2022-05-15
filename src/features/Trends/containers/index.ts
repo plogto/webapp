@@ -1,4 +1,2 @@
-import { DesktopTrends } from "./DesktopTrends";
-import { MobileTrends } from "./MobileTrends";
-
-export { DesktopTrends, MobileTrends };
+export { DesktopTrends } from "./DesktopTrends";
+export { MobileTrends } from "./MobileTrends";
