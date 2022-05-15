@@ -15,7 +15,7 @@
     "release:non-breaking": "standard-version --release-as minor",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "analyze": "ANALYZE=true yarn build"
   },
