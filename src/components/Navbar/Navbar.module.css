@@ -12,6 +12,10 @@
       @apply text-gray-400 w-10 h-10 md:w-12 md:h-12 p-1 md:p-2 mx-1;
       @apply hover:text-foreground rounded-lg;
 
+      & svg {
+        @apply stroke-2;
+      }
+
       &.active {
         @apply text-foreground rounded-lg;
 

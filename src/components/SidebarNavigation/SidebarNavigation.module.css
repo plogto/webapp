@@ -43,7 +43,7 @@
         }
 
         & svg {
-          @apply w-7 h-7 text-current;
+          @apply w-7 h-7 text-current stroke-2;
         }
 
         & .notificationBadge {
