@@ -1,12 +1,12 @@
-import { useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@apollo/client";
+import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
+import type { GetUserByUsernameQuery } from "@graphql/@types/user";
 import { GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { formatCountTitle } from "@utils/formatter";
-import type { GetPostsByUsernameQuery } from "@graphql/@types/post";
-import type { GetUserByUsernameQuery } from "@graphql/@types/user";
+import { useRouter } from "next/router";
 
 export function useProfile() {
   const { query } = useRouter();
@@ -48,6 +48,13 @@ export function useProfile() {
         count: user?.followingCount,
       }),
       href: `${user?.username}/following`,
+    },
+    {
+      ...formatCountTitle({
+        singular: t("post"),
+        plural: t("posts"),
+        count: user?.postsCount,
+      }),
     },
   ];
 

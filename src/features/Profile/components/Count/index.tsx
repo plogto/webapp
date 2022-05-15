@@ -4,14 +4,14 @@ import Link from "next/link";
 interface Props {
   className?: string;
   title?: string;
-  href: string;
+  href?: string;
   count?: number;
   clickable?: boolean;
 }
 
 // TODO: refactor this component
 export function Count({ title, count, href, clickable }: Props) {
-  return clickable ? (
+  return clickable && href ? (
     <Link href={href}>
       <a className={`${styles.count} ${styles.clickable}`}>
         <span className="text-foreground font-bold">{`${count}`}</span>
