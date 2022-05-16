@@ -7,6 +7,10 @@
     @apply bg-danger text-white text-sm;
   }
 
+  & .followRequests {
+    @apply flex font-medium p-3.5;
+  }
+
   & .notification {
     @apply flex items-start w-full p-2 md:p-3 border-t border-background-dark;
 

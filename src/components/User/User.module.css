@@ -44,10 +44,10 @@
 }
 
 .reject {
-  @apply border shadow-sm text-foreground rounded-lg;
-  @apply w-8 h-8;
-}
+  @apply border border-gray-400 text-gray-400 rounded-lg;
+  @apply w-8 h-8 p-1;
 
-.rejectIcon {
-  @apply text-foreground w-8 h-8;
+  & .rejectIcon {
+    @apply text-gray-400 w-10 h-10 stroke-1.5;
+  }
 }
