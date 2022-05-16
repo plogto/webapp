@@ -49,9 +49,11 @@ export function Header(props: User) {
         </div>
       </div>
 
-      <div className="w-full pl-3">
-        <p className={styles.bio}>{bio}</p>
-      </div>
+      {bio && (
+        <div className="w-full pl-3">
+          <p className={styles.bio}>{bio}</p>
+        </div>
+      )}
       <div className="w-full flex items-end justify-between px-3">
         <div className="flex w-full text-tiny space-x-3">
           {counts.map(count => (
