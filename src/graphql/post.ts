@@ -72,6 +72,28 @@ export const GET_POSTS_BY_USERNAME = gql`
   }
 `;
 
+export const GET_SAVED_POSTS = gql`
+  ${UserFragment.default}
+  ${FileFragment.complete}
+  ${PaginationFragment.complete}
+  ${PostFragment.default}
+  query getSavedPosts {
+    getSavedPosts {
+      posts {
+        ...PostFragment
+        replies {
+          pagination {
+            totalDocs
+          }
+        }
+      }
+      pagination {
+        ...PaginationFragmentComplete
+      }
+    }
+  }
+`;
+
 export const GET_POSTS_BY_TAG_NAME = gql`
   ${UserFragment.default}
   ${FileFragment.complete}

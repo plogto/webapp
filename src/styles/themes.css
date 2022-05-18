@@ -165,9 +165,9 @@
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: theme("colors.gray.900");
-  --background-medium: #2d2f33;
-  --background-dark: theme("colors.gray.700");
+  --background-light: theme("colors.stone.900");
+  --background-medium: #332e2d;
+  --background-dark: theme("colors.stone.700");
 
   --foreground-light: theme("colors.gray.300");
   --foreground-medium: theme("colors.gray.400");

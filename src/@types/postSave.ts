@@ -11,6 +11,6 @@ export interface PostSave {
 }
 
 export interface PostSavesWithPagination {
-  postSaves: PostSave[];
+  savedPosts: PostSave[];
   pagination: Pagination;
 }

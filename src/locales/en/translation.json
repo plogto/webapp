@@ -149,6 +149,7 @@
     "post": "Post",
     "profile": "Profile",
     "register": "Register",
+    "saved": "Saved",
     "search": "Search",
     "settings": "Settings",
     "tag": "Tag",
@@ -186,6 +187,17 @@
         "description": "Follow to see their posts.",
         "title": "This Account is Private"
       }
+    }
+  },
+  "saved": {
+    "status": {
+      "noPosts": {
+        "description": "All the posts you've saved will show up here.",
+        "title": "Nothing saved yet"
+      }
+    },
+    "texts": {
+      "savedPosts": "Saved Posts"
     }
   },
   "search": {

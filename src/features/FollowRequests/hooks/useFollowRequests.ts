@@ -13,7 +13,7 @@ export function useFollowRequests() {
       const { connections } = data.getFollowRequests;
       setFollowRequests(connections);
     }
-  }, [data]);
+  }, [data, setFollowRequests]);
 
   return { followRequests };
 }

@@ -1,3 +1,4 @@
+import { Pagination } from "@t/pagination";
 import type { Post, NewReply } from "@t/post";
 
 export interface GetPostByUrlQuery {
@@ -7,12 +8,20 @@ export interface GetPostByUrlQuery {
 export interface GetPostsByUsernameQuery {
   getPostsByUsername: {
     posts: Post[];
+    pagination: Pagination;
   };
 }
 
 export interface GetPostsByTagNameQuery {
   getPostsByTagName: {
     posts: Post[];
+    pagination: Pagination;
+  };
+}
+export interface getSavedPostsQuery {
+  getSavedPosts: {
+    posts: Post[];
+    pagination: Pagination;
   };
 }
 

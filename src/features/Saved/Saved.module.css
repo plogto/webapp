@@ -1,0 +1,7 @@
+.card {
+  @apply mx-2 mb-2 md:mb-4;
+}
+
+.noPostsStatus {
+  @apply mt-16 md:m-32 mx-10;
+}
