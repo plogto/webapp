@@ -25,6 +25,8 @@ import LockClosed from "./svg/lock-closed.svg";
 import Mail from "./svg/mail.svg";
 import Photo from "./svg/photo.svg";
 import PlogFill from "./svg/plog-fill.svg";
+import PlusCircleFill from "./svg/plus-circle-fill.svg";
+import PlusCircle from "./svg/plus-circle.svg";
 import Plus from "./svg/plus.svg";
 import RectangleHorizontalFill from "./svg/rectangle-horizontal-fill.svg";
 import RectangleHorizontal from "./svg/rectangle-horizontal.svg";
@@ -67,6 +69,8 @@ export const iconsList = {
   Mail,
   Photo,
   PlogFill,
+  PlusCircleFill,
+  PlusCircle,
   Plus,
   RectangleHorizontal,
   RectangleHorizontalFill,
