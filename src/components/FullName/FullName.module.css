@@ -35,13 +35,4 @@
       @apply w-6 mb-[3px];
     }
   }
-
-  &.extra {
-    & .fullName {
-      @apply text-3xl;
-    }
-    & .verified {
-      @apply w-7 mb-1;
-    }
-  }
 }
