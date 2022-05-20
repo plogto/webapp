@@ -7,7 +7,7 @@ import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
 import { ModalProvider } from "@contexts/ModalContext";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { PostProps } from "./@types";
 import styles from "./Post.module.css";
 import { Footer, Header } from "./components";
@@ -59,7 +59,7 @@ export function Post(props: PostProps) {
     post,
   });
 
-  const { formatPostPageRoute } = useNavigation();
+  const { formatPostPageRoute } = useNavigator();
 
   const wrapperClasses = classNames(
     styles.post,
@@ -71,7 +71,7 @@ export function Post(props: PostProps) {
   const { t } = useTranslation("post");
 
   return (
-    <Card shadow={isCard} className={wrapperClasses}>
+    <Card shadow={false} className={wrapperClasses}>
       {isPage && (
         <PageHeader title={post.parent ? t("texts.reply") : t("texts.post")} />
       )}

@@ -4,7 +4,7 @@ import { Button } from "@components/Buttons/Button";
 import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { ActionButtons, UserProps } from "./@types";
 import styles from "./User.module.css";
 import { useActions } from "./hooks/useActions";
@@ -30,7 +30,7 @@ export function User(props: UserProps) {
     rejectUserResponse,
   } = useActions({ id });
   const { t } = useTranslation("connection");
-  const { formatProfilePageRoute } = useNavigation();
+  const { formatProfilePageRoute } = useNavigator();
 
   const actionButtons: ActionButtons = {
     follow: {

@@ -3,9 +3,12 @@ import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
 import type { User } from "@t/user";
 
-export function useNavigation() {
+export function useNavigator() {
   function formatProfilePageRoute(username: User["username"]) {
     return `/${username}`;
+  }
+  function formatSavedPostsPageRoute(username: User["username"]) {
+    return `/${username}?tab=saved`;
   }
 
   function formatPostPageRoute(url: Post["url"]) {
@@ -30,6 +33,7 @@ export function useNavigation() {
 
   return {
     formatProfilePageRoute,
+    formatSavedPostsPageRoute,
     formatPostPageRoute,
     formatTagPageRoute,
     formatFollowersPageRoute,

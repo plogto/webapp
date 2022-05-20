@@ -9,7 +9,7 @@ import { DeleteModal } from "@components/Modal";
 import type { HeaderPostProps } from "@components/Post/@types";
 import { useDeletePost } from "@components/Post/hooks/useDeletePost";
 import { useModalContext } from "@contexts/ModalContext";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import { useUrls } from "@hooks/useUrls";
 import { copyTextToClipboard } from "@utils/copyTextToClipboard";
 import { fillToast } from "@utils/toast";
@@ -52,7 +52,7 @@ export function Header(props: HeaderPostProps) {
     },
   ];
 
-  const { formatProfilePageRoute } = useNavigation();
+  const { formatProfilePageRoute } = useNavigator();
   const wrapperClasses = classNames(
     styles.header,
     !showUserInfo && styles.inlineHeader,

@@ -4,7 +4,7 @@ import { FullName } from "@components/FullName";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
 import { PostDateTime } from "@components/PostDateTime";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import { usePostParser } from "@hooks/usePostParser";
 import { PostContentProps } from "./@types";
 import styles from "./PostContent.module.css";
@@ -25,7 +25,7 @@ export function PostContent(props: PostContentProps) {
     createdAt,
     updatedAt,
   } = props;
-  const { formatProfilePageRoute, formatPostPageRoute } = useNavigation();
+  const { formatProfilePageRoute, formatPostPageRoute } = useNavigator();
   const { parsePost } = usePostParser();
   const sizeClasses = styles[size];
   const wrapperClasses = classNames(

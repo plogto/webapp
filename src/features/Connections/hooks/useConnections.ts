@@ -11,15 +11,14 @@ import {
   GET_FOLLOWING_BY_USERNAME,
 } from "@graphql/connection";
 import { GET_USER_BY_USERNAME } from "@graphql/user";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { ConnectionsProps, ConnectionsTab } from "../@types";
 import { useRouter } from "next/router";
 
 export function useConnections({ type }: ConnectionsProps) {
   const { query, push } = useRouter();
   const username = query.username as string;
-  const { formatFollowersPageRoute, formatFollowingPageRoute } =
-    useNavigation();
+  const { formatFollowersPageRoute, formatFollowingPageRoute } = useNavigator();
   const { t } = useTranslation("common");
   const variables = useMemo(
     () => ({

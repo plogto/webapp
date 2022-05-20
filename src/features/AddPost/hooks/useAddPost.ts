@@ -12,7 +12,7 @@ import {
   GET_POST_BY_URL,
 } from "@graphql/post";
 import { GET_TRENDS } from "@graphql/tag";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import { useUploadFile } from "@hooks/useUploadFile";
 import type { AddPostForm } from "../@types";
 import { useParentPost } from "./useParentPost";
@@ -33,7 +33,7 @@ export function useAddPost() {
   });
   const { setValue } = formMethods;
   const inputFileRef = useRef<HTMLInputElement>(null);
-  const { formatPostPageRoute, formatProfilePageRoute } = useNavigation();
+  const { formatPostPageRoute, formatProfilePageRoute } = useNavigator();
 
   const removeAttachmentPreview = useCallback(() => {
     setAttachmentPreview(undefined);

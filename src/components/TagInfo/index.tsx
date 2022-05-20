@@ -1,5 +1,5 @@
 import { Icon } from "@components/Icon";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import { TagInfoProps } from "./@types";
 import styles from "./TagInfo.module.css";
 import Link from "next/link";
@@ -8,7 +8,7 @@ export function TagInfo(props: TagInfoProps) {
   const {
     tag: { name, count },
   } = props;
-  const { formatTagPageRoute } = useNavigation();
+  const { formatTagPageRoute } = useNavigator();
 
   return (
     <div className={styles.wrapper}>

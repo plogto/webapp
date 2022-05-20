@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Icon } from "@components/Icon";
 import { useLikePost } from "@components/Post/hooks/useLikePost";
 import { useSavePost } from "@components/Post/hooks/useSavePost";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { FooterPostProps } from "../../@types";
 import styles from "../../Post.module.css";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import Link from "next/link";
 export function Footer(props: FooterPostProps) {
   const { postId, url, size = "normal", isLiked, isSaved } = props;
 
-  const { formatAddPostPageRoute } = useNavigation();
+  const { formatAddPostPageRoute } = useNavigator();
 
   const { likePost } = useLikePost({ postId });
   const { savePost } = useSavePost({ postId });

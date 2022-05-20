@@ -4,14 +4,14 @@ import { useAccountContext } from "@contexts/AccountContext";
 import type { DeletePostMutation } from "@graphql/@types/post";
 import { DELETE_POST, GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_TRENDS } from "@graphql/tag";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { UseDeletePostProps } from "../@types";
 import { useRouter } from "next/router";
 
 export function useDeletePost(props: UseDeletePostProps) {
   const { postId } = props;
   const { push } = useRouter();
-  const { formatProfilePageRoute } = useNavigation();
+  const { formatProfilePageRoute } = useNavigator();
   const { user } = useAccountContext();
   const [deletePostMutation, { data }] =
     useMutation<DeletePostMutation>(DELETE_POST);
