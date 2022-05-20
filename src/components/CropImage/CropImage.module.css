@@ -15,12 +15,16 @@
     & .header {
       @apply flex justify-between py-2 px-3;
 
+      & button {
+        @apply text-foreground;
+      }
+
       & .title {
-        @apply font-medium;
+        @apply text-foreground font-medium;
       }
 
       & .applyButton {
-        @apply text-foreground font-medium;
+        @apply font-medium;
       }
     }
 

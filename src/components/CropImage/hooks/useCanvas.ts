@@ -1,4 +1,4 @@
-import type { GetCroppedImageProps } from "../@types";
+import type { GetCroppedImageProps } from "../CropImage.types";
 
 export function useCanvas() {
   function createImage(url: string) {

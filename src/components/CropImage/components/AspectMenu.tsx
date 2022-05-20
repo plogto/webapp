@@ -1,8 +1,8 @@
 import { Menu } from "@headlessui/react";
 import classNames from "classnames";
-import type { AspectMenuProps } from "@components/CropImage/@types";
 import { Icon } from "@components/Icon";
-import styles from "../../CropImage.module.css";
+import styles from "../CropImage.module.css";
+import type { AspectMenuProps } from "../CropImage.types";
 
 export function AspectMenu(props: AspectMenuProps) {
   const { aspects, activeAspect, setActiveAspect } = props;

@@ -2,7 +2,7 @@ import type { Dispatch, Ref, SetStateAction } from "react";
 import { CropImageTypeKey } from "@enums";
 import { IconNames } from "@components/Icon";
 
-type Aspect = "1:1" | "3:1" | "4:5" | "16:9";
+type Aspect = "1:1" | "4:1" | "4:5" | "16:9";
 
 export interface PixelCrop {
   x: number;
@@ -45,7 +45,7 @@ export interface CropImageProps {
   setImagePreview: Dispatch<SetStateAction<Blob | undefined>>;
 }
 
-export interface HeaderProps {
+export interface CropImageHeaderProps {
   onCancel: () => void;
   onApply: () => void;
 }

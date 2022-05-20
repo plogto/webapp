@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import type { HeaderProps } from "@components/CropImage/@types";
-import styles from "../../CropImage.module.css";
+import styles from "../CropImage.module.css";
+import type { CropImageHeaderProps } from "../CropImage.types";
 
-export function Header(props: HeaderProps) {
+export function CropImageHeader(props: CropImageHeaderProps) {
   const { onCancel, onApply } = props;
   const { t } = useTranslation("cropImage");
   return (

@@ -1,5 +1,5 @@
 import { CropImageTypeKey } from "@enums";
-import type { CropImageAspects, CropImageTypes } from "../@types";
+import type { CropImageAspects, CropImageTypes } from "./CropImage.types";
 
 const CROP_IMAGES_ASPECTS: CropImageAspects = {
   "1:1": {
@@ -7,9 +7,9 @@ const CROP_IMAGES_ASPECTS: CropImageAspects = {
     value: 1 / 1,
     icon: "Square",
   },
-  "3:1": {
-    key: "3:1",
-    value: 3 / 1,
+  "4:1": {
+    key: "4:1",
+    value: 4 / 1,
   },
   "4:5": {
     key: "4:5",
@@ -30,7 +30,7 @@ export const CROP_IMAGES_TYPES: CropImageTypes = {
   },
   BACKGROUND: {
     type: CropImageTypeKey.BACKGROUND,
-    aspects: [CROP_IMAGES_ASPECTS["3:1"]],
+    aspects: [CROP_IMAGES_ASPECTS["4:1"]],
   },
   POST: {
     type: CropImageTypeKey.POST,
