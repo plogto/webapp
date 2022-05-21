@@ -5,4 +5,5 @@ export interface FullNameProps {
   isVerified?: boolean;
   size?: Size;
   className?: string;
+  type?: "short" | "complete";
 }
