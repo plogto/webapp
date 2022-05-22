@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { Icon } from "@components/Icon";
 import { Navbar } from "@components/Navbar";
 import { PageUrls } from "@enums/pages";
 import styles from "./Header.module.css";
 import { HeaderProps } from "./Header.types";
-import Link from "next/link";
 
 export function Header(props: HeaderProps) {
   const { user } = props;
@@ -12,7 +12,7 @@ export function Header(props: HeaderProps) {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <Link href={PageUrls.HOME}>
-          <a>
+          <a className={styles.logoWrapper}>
             <Icon name="PlogFill" className={styles.logo} />
           </a>
         </Link>
