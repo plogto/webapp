@@ -1,16 +1,13 @@
 .header {
-  @apply flex justify-between items-center text-foreground;
-  @apply py-2 px-2 border-b border-background-medium;
+  @apply flex justify-between items-center;
+  @apply py-2 px-2 text-foreground;
 
   & .title {
-    @apply text-xl font-medium mx-0;
+    @apply text-xl font-medium mx-0 truncate w-4/6 text-center;
   }
 
   & .back {
-    @apply p-1.5;
-    @apply border border-transparent text-foreground;
-    @apply hover:shadow hover:border-background-medium;
-    @apply transition-all duration-300;
+    @apply px-1.5 py-1;
   }
 
   & .icon {
