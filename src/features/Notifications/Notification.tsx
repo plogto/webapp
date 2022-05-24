@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 import classNames from "classnames";
+import Link from "next/link";
 import { NOTIFICATION_PARSER } from "@constants";
 import { DateType } from "@enums";
 import { Avatar } from "@components/Avatar";
-import type { NotificationProps } from "@features/Notifications/@types";
-import { useNotificationParser } from "@features/Notifications/hooks/useNotificationParser";
 import { useDate } from "@hooks/useDate";
-import styles from "../../Notifications.module.css";
-import Link from "next/link";
+import styles from "./Notifications.module.css";
+import type { NotificationProps } from "./Notifications.types";
+import { useNotificationParser } from "./hooks/useNotificationParser";
 
 export function Notification(props: NotificationProps) {
   const {
