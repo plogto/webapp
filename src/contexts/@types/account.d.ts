@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
-import { User } from "@t/user";
+import type { Dispatch, SetStateAction } from "react";
+import type { User } from "@t/user";
 
 declare global {
   export interface AccountContext {
