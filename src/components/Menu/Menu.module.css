@@ -1,6 +1,6 @@
 .menuItems {
-  @apply flex flex-col rounded-lg overflow-hidden;
-  @apply z-50 bg-background-pure shadow-md border border-background-medium;
+  @apply flex flex-col rounded-xl overflow-hidden;
+  @apply z-20 bg-background-pure shadow-md border border-background-medium;
 
   & .menuItem {
     @apply flex justify-between items-center;
