@@ -119,12 +119,11 @@ export function useProfileContext() {
   const getMoreData = (type: ProfileActiveTab) => {
     switch (type) {
       case ProfileActiveTab.POSTS:
-        getPostsResponse
+        return getPostsResponse
           .fetchMore({
             variables: {
               ...variables,
-              page: getPostsResponse.data?.getPostsByUsername.pagination
-                .nextPage,
+              page: posts?.pagination?.nextPage,
             },
           })
           .then(({ data }) => {
@@ -137,10 +136,10 @@ export function useProfileContext() {
             }));
           });
       case ProfileActiveTab.SAVED:
-        getSavedResponse
+        return getSavedResponse
           .fetchMore({
             variables: {
-              page: getSavedResponse.data?.getSavedPosts.pagination.nextPage,
+              page: savedPosts?.pagination?.nextPage,
             },
           })
           .then(({ data }) => {
