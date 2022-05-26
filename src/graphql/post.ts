@@ -55,8 +55,11 @@ export const GET_POST_BY_URL = gql`
 export const GET_POSTS_BY_USERNAME = gql`
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getPostsByUsername($username: String!) {
-    getPostsByUsername(username: $username) {
+  query getPostsByUsername($username: String!, $page: Int, $limit: Int) {
+    getPostsByUsername(
+      username: $username
+      input: { page: $page, limit: $limit }
+    ) {
       posts {
         ...PostFragment
         replies {
