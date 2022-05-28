@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Loading } from "@components/Loading";
+import { Loader } from "@components/Loader";
 import styles from "../Buttons.module.css";
 import type { ButtonProps } from "./@types";
 
@@ -25,7 +25,7 @@ export function Button(props: ButtonProps) {
 
   return (
     <button onClick={onClick} type={type} className={classes}>
-      {loading ? <Loading className={loadingClassName} /> : children}
+      {loading ? <Loader className={loadingClassName} /> : children}
     </button>
   );
 }

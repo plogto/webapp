@@ -1,8 +1,9 @@
-import { LoadingProps } from "./@types";
+import classNames from "classnames";
+import type { LoaderProps } from "./Loader.types";
 
-export function Loading(props: LoadingProps) {
+export function Loader(props: LoaderProps) {
   const { className } = props;
-  const classes = `animate-spin text-current ${className || ""}`;
+  const classes = classNames("animate-spin text-current", className);
 
   return (
     <svg

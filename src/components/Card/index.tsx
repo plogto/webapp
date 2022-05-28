@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Loading } from "@components/Loading";
+import { Loader } from "@components/Loader";
 import type { CardProps } from "./@types";
 import styles from "./Card.module.css";
 
@@ -16,7 +16,7 @@ export function Card(props: CardProps) {
       {loading && (
         <div className={styles.loadingContainer}>
           <span className="relative">
-            <Loading className={styles.loading} />
+            <Loader className={styles.loading} />
           </span>
         </div>
       )}

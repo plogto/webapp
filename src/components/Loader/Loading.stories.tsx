@@ -1,16 +1,16 @@
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-import { Loading } from "@components/Loading";
+import { Loader } from "@components/Loader";
 import { StoryContainer } from "@stories/StoryContainer";
 
 export default {
-  title: "components/Loading",
-  component: Loading,
-} as ComponentMeta<typeof Loading>;
+  title: "components/Loader",
+  component: Loader,
+} as ComponentMeta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loading> = args => (
+const Template: ComponentStory<typeof Loader> = args => (
   <StoryContainer>
-    <Loading {...args} />
+    <Loader {...args} />
   </StoryContainer>
 );
 
