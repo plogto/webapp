@@ -108,7 +108,7 @@ export function Icon({ name, className, ...props }: IconProps) {
   }
 
   return createElement(icon, {
-    className: `${classes} ${className}`,
+    className: classNames(classes, className),
     role: "icon",
     ...props,
   });

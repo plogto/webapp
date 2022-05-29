@@ -3,9 +3,8 @@ import classNames from "classnames";
 import { v4 as uuid } from "uuid";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
-import { Icon } from "@components/Icon";
+import { ContentStatus } from "@components/ContentStatus";
 import { PageHeader } from "@components/PageHeader";
-import { PageStatus } from "@components/PageStatus";
 import { User } from "@components/User";
 import { useAccountContext } from "@contexts/AccountContext";
 import type { ConnectionsProps } from "./@types";
@@ -26,10 +25,10 @@ export function Connections({ type }: ConnectionsProps) {
     <Card>
       <PageHeader title={user?.fullName} />
       {isPrivate && !isYourProfile && user.connectionStatus !== 2 && (
-        <PageStatus
+        <ContentStatus
           title={t("status.private.title")}
           description={t("status.private.description")}
-          icon={<Icon name="LockClosed" className="w-12" />}
+          icon="LockClosed"
           className={styles.privateStatus}
         />
       )}
@@ -63,9 +62,9 @@ export function Connections({ type }: ConnectionsProps) {
               />
             ))
           ) : (
-            <PageStatus
+            <ContentStatus
               title={t("status.noConnections.title")}
-              icon={<Icon name="User" className="w-12" />}
+              icon="User"
               className={styles.noConnectionsStatus}
             />
           )}

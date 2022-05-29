@@ -1,0 +1,20 @@
+.wrapper {
+  @apply flex flex-col items-center;
+  @apply text-foreground-medium;
+
+  & .iconWrapper {
+    @apply rounded-full p-3 border-current border-[1.5px];
+
+    & .icon {
+      @apply w-12;
+    }
+  }
+
+  & .title {
+    @apply font-medium mt-4 mb-2;
+  }
+
+  & .description {
+    @apply text-sm text-center;
+  }
+}
