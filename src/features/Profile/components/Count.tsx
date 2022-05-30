@@ -1,5 +1,6 @@
-import styles from "../../Profile.module.css";
+import classNames from "classnames";
 import Link from "next/link";
+import styles from "../Profile.module.css";
 
 interface Props {
   className?: string;
@@ -13,15 +14,15 @@ interface Props {
 export function Count({ title, count, href, clickable }: Props) {
   return clickable && href ? (
     <Link href={href}>
-      <a className={`${styles.count} ${styles.clickable}`}>
-        <span className="text-foreground font-bold">{`${count}`}</span>
-        {` ${title}`}
+      <a className={classNames(styles.count, styles.clickable)}>
+        <span className={styles.number}>{count}</span>
+        <span className={styles.title}>{title}</span>
       </a>
     </Link>
   ) : (
     <div className={styles.count}>
-      <span className="text-foreground font-bold">{`${count}`}</span>
-      {` ${title}`}
+      <span className={styles.number}>{count}</span>
+      <span className={styles.title}>{title}</span>
     </div>
   );
 }

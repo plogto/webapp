@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { Profile } from "@features/Profile";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { ProfileProvider } from "@contexts/ProfileContext";
+import { Profile } from "@features/Profile";
 
 export default function ProfilePage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -14,11 +14,11 @@ export default function ProfilePage() {
           {t("pages:profile")} | {t("common:logoName")}
         </title>
       </Head>
-      <Layout>
-        <Wrapper paddingSize={2}>
+      <ProfileProvider>
+        <Layout>
           <Profile />
-        </Wrapper>
-      </Layout>
+        </Layout>
+      </ProfileProvider>
     </>
   );
 }

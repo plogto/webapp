@@ -5,7 +5,7 @@ import type {
   UnfollowUserMutation,
 } from "@graphql/@types/connection";
 import { FOLLOW_USER, UNFOLLOW_USER } from "@graphql/connection";
-import type { UseConnectionProps } from "../@types";
+import type { UseConnectionProps } from "../Profile.types";
 
 export function useConnection(props: UseConnectionProps) {
   const { userId } = props;
