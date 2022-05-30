@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import type { SavePostMutation } from "@graphql/@types/postSave";
 import { GET_SAVED_POSTS } from "@graphql/post";
 import { SAVE_POST } from "@graphql/postSave";
-import { UseSavePostProps } from "../@types";
+import type { UseSavePostProps } from "../Post.types";
 
 export function useSavePost(props: UseSavePostProps) {
   const { postId } = props;

@@ -15,7 +15,7 @@
   & .cards {
     @apply flex flex-col md:flex-row items-start md:space-x-4;
     @apply relative md:px-4 overflow-x-hidden pb-10 md:pb-20;
-    @apply h-[calc(100vh-3.5rem)] md:h-[calc(100vh-3.5rem)];
+    @apply h-[calc(100vh-3.5rem)];
 
     & .profileInfo,
     & .profileContent {

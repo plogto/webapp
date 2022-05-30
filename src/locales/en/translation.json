@@ -183,10 +183,17 @@
         "description": "When they posts, you'll see their posts.",
         "title": "No Posts Yet"
       },
+      "noSavedPosts": {
+        "title": "No Saved Posts Yet"
+      },
       "private": {
         "description": "Follow to see their posts.",
         "title": "This Account is Private"
       }
+    },
+    "tabs": {
+      "posts": "Posts",
+      "saved": "Saved"
     }
   },
   "saved": {

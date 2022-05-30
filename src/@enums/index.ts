@@ -38,3 +38,8 @@ export enum BackgroundColor {
   DIM = "DIM",
   DARK = "DARK",
 }
+
+export enum ProfileActiveTab {
+  POSTS = "POSTS",
+  SAVED = "SAVED",
+}
