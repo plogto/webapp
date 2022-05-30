@@ -98,8 +98,8 @@ export function useProfileContext() {
     if (getPostsResponse.data) {
       const newData: PostData = {
         isLoading: getPostsResponse.loading,
-        data: getPostsResponse.data?.getPostsByUsername.posts,
-        pagination: getPostsResponse.data?.getPostsByUsername.pagination,
+        data: getPostsResponse.data?.getPostsByUsername?.posts,
+        pagination: getPostsResponse.data?.getPostsByUsername?.pagination,
       };
       setPosts((prevState: PostData) => ({ ...prevState, ...newData }));
     }
@@ -109,8 +109,8 @@ export function useProfileContext() {
     if (getSavedResponse.data) {
       const newData: PostData = {
         isLoading: getSavedResponse.loading,
-        data: getSavedResponse.data?.getSavedPosts.posts,
-        pagination: getSavedResponse.data?.getSavedPosts.pagination,
+        data: getSavedResponse.data?.getSavedPosts?.posts,
+        pagination: getSavedResponse.data?.getSavedPosts?.pagination,
       };
       setSavedPosts((prevState: PostData) => ({ ...prevState, ...newData }));
     }
