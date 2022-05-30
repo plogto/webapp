@@ -1,4 +1,4 @@
-import { MenuProps } from "@components/Menu/@types";
+import type { MenuProps } from "@components/Menu/Menu.types";
 import type { Post, PostType } from "@t/post";
 import type { FooterSize, HeaderSize } from "@t/size";
 import type { User } from "@t/user";

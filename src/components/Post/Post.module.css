@@ -47,14 +47,14 @@
     }
 
     & .profile {
-      @apply inline-flex px-2 relative;
+      @apply inline-flex px-2 relative w-11/12;
 
       & .avatar {
         @apply mr-2 !important;
       }
 
       & .userInfo {
-        @apply flex flex-col justify-start;
+        @apply flex flex-col justify-start w-[99%];
 
         & .username {
           @apply text-foreground-medium text-sm;

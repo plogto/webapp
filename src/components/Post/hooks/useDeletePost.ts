@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from "react";
+import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type { DeletePostMutation } from "@graphql/@types/post";
 import { DELETE_POST, GET_POSTS_BY_USERNAME } from "@graphql/post";
 import { GET_TRENDS } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
-import type { UseDeletePostProps } from "../@types";
-import { useRouter } from "next/router";
+import type { UseDeletePostProps } from "../Post.types";
 
 export function useDeletePost(props: UseDeletePostProps) {
   const { postId } = props;

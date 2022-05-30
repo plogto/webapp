@@ -1,11 +1,11 @@
 import classNames from "classnames";
+import Link from "next/link";
 import { Icon } from "@components/Icon";
 import { useLikePost } from "@components/Post/hooks/useLikePost";
 import { useSavePost } from "@components/Post/hooks/useSavePost";
 import { useNavigator } from "@hooks/useNavigator";
-import type { FooterPostProps } from "../../@types";
-import styles from "../../Post.module.css";
-import Link from "next/link";
+import styles from "../Post.module.css";
+import type { FooterPostProps } from "../Post.types";
 
 export function Footer(props: FooterPostProps) {
   const { postId, url, size = "normal", isLiked, isSaved } = props;
