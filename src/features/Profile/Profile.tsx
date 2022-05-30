@@ -1,4 +1,5 @@
 import { isMobile } from "react-device-detect";
+import { ID } from "@constants";
 import { Img } from "@components/Img";
 import { PageHeader } from "@components/PageHeader";
 import styles from "./Profile.module.css";
@@ -17,12 +18,14 @@ export function Profile() {
           <PageHeader className={styles.header} title={userData?.fullName} />
         )}
         <div className={styles.background}>
-          {/* TODO: fix the alt image */}
           {userData?.background && (
-            <Img alt="cover" image={userData.background} />
+            <Img
+              alt={`${userData.username}'s background`}
+              image={userData.background}
+            />
           )}
         </div>
-        <div className={styles.cards} id="profileCards">
+        <div className={styles.cards} id={ID.PROFILE_CARDS}>
           <ProfileInfo user={userData} />
           <ProfileContent tabs={TABS} user={userData} />
         </div>

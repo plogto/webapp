@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ID } from "@constants";
 import { Card } from "@components/Card";
 import { ContentStatus } from "@components/ContentStatus";
 import { Posts } from "@components/Posts";
@@ -62,7 +63,7 @@ export function ProfileContent(props: ProfileContentProps) {
                   isLoading={isLoading}
                   getMoreData={getMoreData}
                   emptyStatus={emptyStatus}
-                  scrollableTarget="profileCards"
+                  scrollableTarget={ID.PROFILE_CARDS}
                 />
               ),
           )

@@ -64,3 +64,5 @@ export const POST_TYPES: PostTypes = {
     repliesView: RepliesView.NONE,
   },
 };
+
+export const ID = { PROFILE_CARDS: "profileCards" };
