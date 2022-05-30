@@ -1,8 +1,12 @@
 .posts {
-  @apply w-full md:mb-0;
+  @apply w-full;
 
   & .post {
     @apply pt-2 border-b border-background-medium last:border-none;
+  }
+
+  & .emptyStatus {
+    @apply my-20 md:m-32 mx-10;
   }
 
   & .loadingWrapper {
