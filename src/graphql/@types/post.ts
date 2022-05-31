@@ -18,6 +18,11 @@ export interface GetPostsByUsernameQueryRequest {
   limit?: number;
 }
 
+export interface GetPostsByTagNameQueryRequest {
+  tagName: string;
+  page?: number;
+  limit?: number;
+}
 export interface GetPostsByTagNameQuery {
   getPostsByTagName: {
     posts: Post[];

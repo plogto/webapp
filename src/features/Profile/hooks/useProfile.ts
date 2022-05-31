@@ -12,7 +12,7 @@ import type {
 import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { useNavigator } from "@hooks/useNavigator";
 import { formatCountTitle } from "@utils/formatter";
-import { Tab } from "../Profile.types";
+import type { Tab } from "../Profile.types";
 
 export function useProfile() {
   const { query } = useRouter();

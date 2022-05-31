@@ -65,4 +65,7 @@ export const POST_TYPES: PostTypes = {
   },
 };
 
-export const ID = { PROFILE_CARDS: "profileCards" };
+export const ID = {
+  PROFILE_CARDS: "profileCards",
+  TAG_POSTS: "tagPosts",
+};

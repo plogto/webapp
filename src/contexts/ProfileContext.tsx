@@ -9,7 +9,7 @@ import {
 import { useRouter } from "next/router";
 import { ProfileActiveTab } from "@enums";
 import { useLazyQuery } from "@apollo/client";
-import {
+import type {
   GetPostsByUsernameQuery,
   GetPostsByUsernameQueryRequest,
   GetSavedPostsQuery,

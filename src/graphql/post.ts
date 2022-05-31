@@ -102,8 +102,11 @@ export const GET_POSTS_BY_TAG_NAME = gql`
   ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getPostsByTagName($tagName: String!) {
-    getPostsByTagName(tagName: $tagName) {
+  query getPostsByTagName($tagName: String!, $page: Int, $limit: Int) {
+    getPostsByTagName(
+      tagName: $tagName
+      input: { page: $page, limit: $limit }
+    ) {
       posts {
         ...PostFragment
         replies {

@@ -1,24 +1,56 @@
 .wrapper {
-  @apply mx-1 md:mx-2 mb-2 md:mb-4;
+  @apply w-full;
+
   & .header {
-    @apply w-full flex items-center p-3 text-foreground;
+    @apply fixed top-0 left-0 right-0 bg-background-pure;
+    @apply z-30 md:hidden;
+  }
 
-    & .icon {
-      @apply flex items-center justify-center;
-      @apply text-foreground md:w-16 md:h-16 w-14 h-14 mr-3 md:mr-4;
-      @apply rounded-full shadow-sm border border-background-dark;
+  & .cards {
+    @apply flex flex-col items-start md:flex-row md:space-x-4;
+    @apply relative overflow-x-hidden pb-10 md:px-4 md:pb-20;
+    @apply h-[calc(100vh-3.5rem)];
 
-      & svg {
-        @apply md:w-9 md:h-9 w-8 h-8 stroke-2;
+    & .tagInfo,
+    & .tagContent {
+      @apply sticky w-full md:rounded-xl;
+    }
+
+    & .tagInfo {
+      @apply flex items-start;
+      @apply top-12 w-full md:top-5 md:w-[35%];
+      @apply p-2 md:p-3.5;
+
+      & .iconWrapper {
+        @apply flex items-center justify-center;
+        @apply mr-2 h-12 w-12 text-foreground md:mr-2.5 md:h-14 md:w-14;
+        @apply rounded-full border border-background-dark shadow-sm;
+
+        & .icon {
+          @apply h-7 w-7 stroke-2 md:h-8 md:w-8;
+        }
+      }
+
+      & .nameWrapper {
+        @apply flex w-full flex-col space-y-0.5 text-foreground;
+
+        & .name {
+          @apply max-w-[80%] break-words text-2xl font-bold text-inherit md:text-3xl;
+        }
+
+        & .count {
+          @apply text-sm text-gray-400;
+        }
       }
     }
 
-    & .tagName {
-      @apply text-2xl md:text-3xl font-bold;
-    }
-
-    & .tagCount {
-      @apply text-sm text-gray-400;
+    & .tagContent {
+      @apply sticky mt-[3rem] md:mt-5 md:w-[65%] md:overflow-y-scroll;
     }
   }
+}
+
+.notFound {
+  @apply flex flex-col items-center pt-64;
+  @apply h-screen w-full text-foreground-medium;
 }

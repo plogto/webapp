@@ -224,6 +224,20 @@
       "settings": "Settings"
     }
   },
+  "tag": {
+    "status": {
+      "noPosts": {
+        "description": "When they posts, you'll see their posts.",
+        "title": "No Posts Yet"
+      },
+      "notFound": {
+        "title": "Tag Not Found"
+      }
+    },
+    "tabs": {
+      "posts": "Posts"
+    }
+  },
   "themes": {
     "buttons": {
       "dark": "Dark",
