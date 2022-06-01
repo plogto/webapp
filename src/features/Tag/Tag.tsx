@@ -18,12 +18,14 @@ export function Tag() {
           title={`#${tagData?.data?.name}`}
         />
       )}
-      {tagData.data ? (
+      {/* TODO: add skeleton component */}
+      {tagData.data && (
         <div className={styles.cards} id={ID.PROFILE_CARDS}>
           <TagInfo tag={tagData?.data} />
           <TagContent tabs={TABS} />
         </div>
-      ) : (
+      )}
+      {!tagData.isLoading && !tagData.data && (
         // TODO: implement a not found page for this part
         <ContentStatus
           title={t("status.notFound.title")}
