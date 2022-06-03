@@ -3,8 +3,8 @@ import { UserFragment } from "./fragments/user";
 
 export const GET_NOTIFICATIONS = gql`
   ${UserFragment.short}
-  query getNotifications {
-    getNotifications {
+  query getNotifications($page: Int, $limit: Int) {
+    getNotifications(input: { page: $page, limit: $limit }) {
       notifications {
         id
         sender {

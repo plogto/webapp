@@ -2,13 +2,18 @@ import { useEffect, useMemo } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
-import { GetNotificationsQuery } from "@graphql/@types/notification";
+import {
+  GetNotificationsQuery,
+  GetNotificationsQueryRequest,
+} from "@graphql/@types/notification";
 import { GET_NOTIFICATIONS } from "@graphql/notification";
 
 export function useNotifications() {
   const { user } = useAccountContext();
-  const [getNotifications, getNotificationsResponse] =
-    useLazyQuery<GetNotificationsQuery>(GET_NOTIFICATIONS);
+  const [getNotifications, getNotificationsResponse] = useLazyQuery<
+    GetNotificationsQuery,
+    GetNotificationsQueryRequest
+  >(GET_NOTIFICATIONS);
 
   const {
     notifications,
@@ -18,7 +23,11 @@ export function useNotifications() {
   } = useNotificationsContext();
 
   useEffect(() => {
-    getNotifications();
+    getNotifications({
+      variables: {
+        limit: 15,
+      },
+    });
   }, [getNotifications]);
 
   useEffect(() => {
