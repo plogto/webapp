@@ -6,25 +6,25 @@
     @apply flex items-center px-4 py-3 text-foreground;
 
     & svg {
-      @apply w-7 h-7 stroke-2 text-current;
+      @apply h-7 w-7 stroke-2 text-current;
     }
 
     & .title {
-      @apply text-2xl font-bold mr-2 text-current;
+      @apply mr-2 text-2xl font-bold text-current;
     }
   }
 
   & .tag {
-    @apply transition-all ease-linear duration-300;
-    @apply flex flex-col px-4 py-3 border-t border-background-dark;
-    @apply hover:bg-background-light overflow-hidden;
+    @apply transition-all duration-300 ease-linear;
+    @apply flex flex-col border-t border-background-medium px-4 py-3;
+    @apply overflow-hidden hover:bg-background-light;
 
     & .tagName {
-      @apply text-primary font-bold text-xl;
+      @apply text-xl font-bold text-primary;
     }
 
     & .tagCount {
-      @apply text-gray-400 text-sm;
+      @apply text-sm text-gray-400;
     }
   }
 }
@@ -34,41 +34,41 @@
   @apply w-full;
 
   & .mobileHeader {
-    @apply flex items-center px-1 pt-3 text-foreground-light font-medium;
+    @apply flex items-center px-1 pt-3 font-medium text-foreground-light;
 
     & svg {
-      @apply w-4 h-4 stroke-1.5;
+      @apply h-4 w-4 stroke-1.5;
     }
 
     & .mobileTitle {
-      @apply text-xs mr-1;
+      @apply mr-1 text-xs;
     }
   }
 
   & .mobileTags {
-    @apply flex items-end w-full overflow-x-scroll;
+    @apply flex w-full items-end overflow-x-scroll;
 
     & .mobileFirstTag {
-      @apply flex flex-col pl-1 pr-3 py-1;
+      @apply flex flex-col py-1 pl-1 pr-3;
 
       & .mobileFirstTagName {
-        @apply text-primary font-bold text-3xl;
+        @apply text-3xl font-bold text-primary;
       }
 
       & .mobileFirstTagCount {
-        @apply text-foreground-light text-xs;
+        @apply text-xs text-foreground-light;
       }
     }
 
     & .mobileTag {
-      @apply flex flex-col pl-1 pr-3 py-1;
+      @apply flex flex-col py-1 pl-1 pr-3;
 
       & .mobileTagName {
-        @apply text-primary font-bold;
+        @apply font-bold text-primary;
       }
 
       & .mobileTagCount {
-        @apply text-foreground-light text-xs whitespace-nowrap;
+        @apply whitespace-nowrap text-xs text-foreground-light;
       }
     }
   }

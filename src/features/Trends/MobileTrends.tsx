@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 import { Icon } from "@components/Icon";
 import { useNavigator } from "@hooks/useNavigator";
 import { formatCountTitle } from "@utils/formatter";
-import styles from "../Trends.module.css";
-import { useTrends } from "../hooks/useTrends";
-import Link from "next/link";
+import styles from "./Trends.module.css";
+import { useTrends } from "./useTrends";
 
 export function MobileTrends() {
   const { tags } = useTrends();
