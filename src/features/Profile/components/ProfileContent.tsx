@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
@@ -24,7 +25,11 @@ export function ProfileContent(props: ProfileContentProps) {
   const { asPath } = useRouter();
 
   return (
-    <Card className={styles.profileContent}>
+    <Card
+      className={styles.profileContent}
+      shadow={!isMobile}
+      rounded={!isMobile}
+    >
       <div className={styles.tabs}>
         {tabs.map(({ title, href }) => (
           <Link key={title} href={href}>

@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { formatCountTitle } from "@utils/formatter";
@@ -10,7 +11,7 @@ export function TagInfo(props: TagInfoProps) {
   } = props;
 
   return (
-    <Card className={styles.tagInfo}>
+    <Card className={styles.tagInfo} shadow={!isMobile} rounded={!isMobile}>
       <span>
         <span className={styles.iconWrapper}>
           <Icon name="Hashtag" className={styles.icon} />

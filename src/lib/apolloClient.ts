@@ -7,6 +7,7 @@ import {
   NormalizedCacheObject,
   RequestHandler,
 } from "@apollo/client";
+import { typePolicies } from "@graphql/typePolicies";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
@@ -37,7 +38,9 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
     link,
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies,
+    }),
   });
 }
 

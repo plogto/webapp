@@ -4,6 +4,7 @@ import type { Pagination } from "./pagination";
 import type { PostLike, PostLikesWithPagination } from "./postLike";
 import type { PostSave } from "./postSave";
 import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
+import type { Status } from "./status";
 import type { User } from "./user";
 
 export interface Post {
@@ -48,3 +49,17 @@ export interface PostType {
 export type PostTypes = {
   [key in PostTypeKey]: PostType;
 };
+
+export interface PostData {
+  data?: Post[];
+  pagination?: Pagination;
+  isLoading?: boolean;
+}
+
+export interface Tab {
+  title: string;
+  href: string;
+  data: PostData;
+  getMoreData: () => void;
+  emptyStatus: Status;
+}

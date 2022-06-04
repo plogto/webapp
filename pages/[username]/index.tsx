@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import { Layout } from "@components/Layout";
-import { ProfileProvider } from "@contexts/ProfileContext";
 import { Profile } from "@features/Profile";
 
 export default function ProfilePage() {
@@ -14,11 +13,9 @@ export default function ProfilePage() {
           {t("pages:profile")} | {t("common:logoName")}
         </title>
       </Head>
-      <ProfileProvider>
-        <Layout>
-          <Profile />
-        </Layout>
-      </ProfileProvider>
+      <Layout>
+        <Profile />
+      </Layout>
     </>
   );
 }

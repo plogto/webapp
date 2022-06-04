@@ -1,13 +1,5 @@
-import type { Status } from "@t/status";
+import type { Tab } from "@t/post";
 import type { Tag } from "@t/tag";
-
-export interface Tab {
-  title: string;
-  href: string;
-  data: PostData;
-  getMoreData: () => void;
-  emptyStatus: Status;
-}
 
 export interface TagInfoProps {
   tag: Tag;

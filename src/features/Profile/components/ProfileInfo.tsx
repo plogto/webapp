@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { ConnectionStatus, Count } from ".";
 import { Avatar } from "@components/Avatar";
@@ -31,7 +32,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
     id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
 
   return (
-    <Card className={styles.profileInfo}>
+    <Card className={styles.profileInfo} shadow={!isMobile} rounded={!isMobile}>
       <div className={styles.avatar}>
         <Avatar size="large" avatar={avatar} />
       </div>

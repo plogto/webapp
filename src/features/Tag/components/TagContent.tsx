@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
@@ -16,7 +17,7 @@ export function TagContent(props: TagContentProps) {
   const { asPath } = useRouter();
 
   return (
-    <Card className={styles.tagContent}>
+    <Card className={styles.tagContent} shadow={!isMobile} rounded={!isMobile}>
       <div>
         {!isPosts ? (
           <ContentStatus
