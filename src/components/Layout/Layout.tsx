@@ -14,18 +14,18 @@ export function Layout(props: LayoutProps) {
   const { user } = useAccountContext();
   const { pathname } = useRouter();
 
-  const limitedRoutes = [PageUrls.ADD_POST];
+  const limitedRoutes: string[] = [];
 
   return user ? (
     <>
       <Header user={user} />
       <div className={styles.layout}>
-        <div className="flex items-start space-x-4 w-full md:mx-2.5">
+        <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
           {children}
           {showTrends && (
             <div className="hidden md:block w-8/12 mt-4 h-[calc(100vh-3.5rem)]">
               <div className="sticky top-[4.5rem] flex flex-col space-y-4 mb-4">
-                {limitedRoutes.includes(pathname as PageUrls) && <Search />}
+                {limitedRoutes?.includes(pathname as PageUrls) && <Search />}
                 <DesktopTrends />
               </div>
             </div>
