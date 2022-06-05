@@ -1,10 +1,10 @@
 .wrapper {
-  @apply sticky top-0 left-0 right-0 h-14 z-40;
-  @apply shadow-sm border-b border-b-background-light bg-background-pure;
-  @apply flex justify-center items-center;
+  @apply sticky top-0 left-0 right-0 z-40 h-14;
+  @apply border-b border-b-background-light bg-background-pure shadow-sm;
+  @apply hidden items-center justify-center md:flex;
 
   & .header {
-    @apply flex justify-between items-center max-w-5xl w-full;
+    @apply flex w-full max-w-5xl items-center justify-between;
 
     & .navbar {
       @apply max-w-2xl;
@@ -13,7 +13,7 @@
     & .logoWrapper {
       @apply pl-2.5;
       & .logo {
-        @apply text-foreground-pure w-7 h-7;
+        @apply h-7 w-7 text-foreground-pure;
       }
     }
   }
