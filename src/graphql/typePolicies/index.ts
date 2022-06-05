@@ -1,20 +1,20 @@
 import type { TypePolicies } from "@apollo/client";
-import type { PostsWithPagination } from "@t/post";
+import { mergePosts } from "@graphql/mergeResponses";
 
 export const typePolicies: TypePolicies = {
   Query: {
     fields: {
       getPostsByUsername: {
+        keyArgs: ["username"],
+        merge: mergePosts,
+      },
+      getSavedPosts: {
         keyArgs: false,
-        merge(existing: PostsWithPagination, incoming: PostsWithPagination) {
-          return {
-            pagination: incoming.pagination,
-            posts:
-              existing?.posts?.length > 0
-                ? [...existing?.posts, ...incoming?.posts]
-                : incoming?.posts || [],
-          };
-        },
+        merge: mergePosts,
+      },
+      getPostsByTagName: {
+        keyArgs: ["tagName"],
+        merge: mergePosts,
       },
     },
   },

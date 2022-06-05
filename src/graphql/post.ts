@@ -80,8 +80,8 @@ export const GET_SAVED_POSTS = gql`
   ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getSavedPosts {
-    getSavedPosts {
+  query getSavedPosts($page: Int, $limit: Int) {
+    getSavedPosts(input: { page: $page, limit: $limit }) {
       posts {
         ...PostFragment
         replies {

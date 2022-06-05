@@ -7,7 +7,7 @@
 
   & .header {
     @apply flex items-center justify-between;
-    @apply px-1 pt-5 pb-1;
+    @apply px-1 pt-5;
 
     & .title {
       @apply text-3xl font-bold text-foreground;

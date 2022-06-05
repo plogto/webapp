@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ProfileActiveTab } from "@enums";
@@ -32,7 +32,7 @@ export function useProfile() {
     [username],
   );
 
-  const { user: userAccount } = useAccountContext();
+  const { isYourAccount } = useAccountContext();
   const { formatProfilePageRoute, formatSavedPostsPageRoute } = useNavigator();
 
   const [getPosts, getPostsResponse] = useLazyQuery<
@@ -56,9 +56,9 @@ export function useProfile() {
       getPosts({
         variables,
       });
-      getSavedPosts();
+      isYourAccount && getSavedPosts();
     }
-  }, [getPosts, getSavedPosts, getUser, username, variables]);
+  }, [getPosts, getSavedPosts, getUser, isYourAccount, username, variables]);
 
   const userData = useMemo(
     () => userResponse.data?.getUserByUsername,
@@ -97,28 +97,27 @@ export function useProfile() {
     },
   ];
 
-  const getMoreData = useCallback(
-    (type: ProfileActiveTab) => {
-      switch (type) {
-        case ProfileActiveTab.POSTS:
-          return getPostsResponse.fetchMore({
-            variables: {
-              ...variables,
-              page: getPostsResponse?.data?.getPostsByUsername?.pagination
-                ?.nextPage,
-            },
-          });
+  // TODO: remove eslint-disable
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getMoreData = (type: ProfileActiveTab) => {
+    switch (type) {
+      case ProfileActiveTab.POSTS:
+        return getPostsResponse.fetchMore({
+          variables: {
+            ...variables,
+            page: getPostsResponse?.data?.getPostsByUsername?.pagination
+              ?.nextPage,
+          },
+        });
 
-        case ProfileActiveTab.SAVED:
-          return getSavedResponse.fetchMore({
-            variables: {
-              page: getSavedResponse?.data?.getSavedPosts.pagination?.nextPage,
-            },
-          });
-      }
-    },
-    [getPostsResponse, getSavedResponse, variables],
-  );
+      case ProfileActiveTab.SAVED:
+        return getSavedResponse.fetchMore({
+          variables: {
+            page: getSavedResponse?.data?.getSavedPosts.pagination?.nextPage,
+          },
+        });
+    }
+  };
 
   const TABS = useMemo(() => {
     const tabs: Tab[] = [
@@ -138,8 +137,7 @@ export function useProfile() {
         },
       },
     ];
-    // TODO: implement isYourAccount method
-    if (userData?.username === userAccount?.username) {
+    if (isYourAccount) {
       tabs.push({
         title: t("profile:tabs.saved"),
         href: formatSavedPostsPageRoute(username),
@@ -161,15 +159,14 @@ export function useProfile() {
     formatProfilePageRoute,
     formatSavedPostsPageRoute,
     getMoreData,
-    getPostsResponse.data?.getPostsByUsername?.pagination,
-    getPostsResponse.data?.getPostsByUsername?.posts,
+    getPostsResponse.data?.getPostsByUsername.pagination,
+    getPostsResponse.data?.getPostsByUsername.posts,
     getPostsResponse.loading,
-    getSavedResponse.data?.getSavedPosts?.pagination,
-    getSavedResponse.data?.getSavedPosts?.posts,
+    getSavedResponse.data?.getSavedPosts.pagination,
+    getSavedResponse.data?.getSavedPosts.posts,
     getSavedResponse.loading,
+    isYourAccount,
     t,
-    userAccount?.username,
-    userData?.username,
     username,
   ]);
 
