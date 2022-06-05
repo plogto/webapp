@@ -1,15 +1,19 @@
 .card {
   @apply bg-background-pure;
-  @apply overflow-hidden relative;
+  @apply relative;
 
   &.isShadow {
-    @apply shadow rounded-lg border border-background-medium;
+    @apply border border-background-medium shadow;
+  }
+
+  &.isRounded {
+    @apply rounded-xl;
   }
 }
 
 .loadingContainer {
   @apply flex items-center justify-center;
-  @apply absolute inset-0 bg-background-pure z-50;
+  @apply absolute inset-0 z-50 bg-background-pure;
 }
 
 .loading {

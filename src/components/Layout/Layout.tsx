@@ -23,7 +23,7 @@ export function Layout(props: LayoutProps) {
         <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
           {children}
           {showTrends && (
-            <div className="hidden md:block w-8/12 mt-4 h-[calc(100vh-3.5rem)]">
+            <div className="hidden md:block w-8/12 mt-4">
               <div className="sticky top-[4.5rem] flex flex-col space-y-4 mb-4">
                 {limitedRoutes?.includes(pathname as PageUrls) && <Search />}
                 <DesktopTrends />
