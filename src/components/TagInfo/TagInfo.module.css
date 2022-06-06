@@ -1,26 +1,26 @@
 .wrapper {
-  @apply flex justify-between items-center text-foreground;
-  @apply bg-background-pure w-full p-2 pr-4;
+  @apply flex items-center justify-between text-foreground;
+  @apply w-full bg-background-pure p-2 pr-4;
 
   & .tagInfo {
     @apply flex flex-grow items-center;
 
     & .icon {
       @apply flex items-center justify-center;
-      @apply text-foreground w-10 h-10 mr-2;
-      @apply rounded-full shadow-sm border;
+      @apply mr-2 h-10 w-10 text-foreground;
+      @apply rounded-full border shadow-sm;
 
       & svg {
-        @apply w-6 h-6 stroke-2;
+        @apply h-6 w-6 stroke-2;
       }
     }
 
     & .tagName {
-      @apply font-bold pr-1;
+      @apply pr-1 font-bold;
     }
 
     & .tagCount {
-      @apply text-foreground-medium text-xs pr-1 -mt-0.5 mb-1.5;
+      @apply -mt-0.5 pr-1 text-xs text-foreground-medium;
     }
   }
 }
