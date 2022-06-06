@@ -1,7 +1,8 @@
+import { isMobile } from "react-device-detect";
 import { Card } from "@components/Card";
 import { TagInfo } from "@components/TagInfo";
-import type { SearchResult } from "../@types";
 import styles from "../Search.module.css";
+import type { SearchResult } from "../Search.types";
 
 interface Props {
   tag?: SearchResult["tag"];
@@ -9,7 +10,7 @@ interface Props {
 
 export function Tags({ tag }: Props) {
   return tag?.tags?.length ? (
-    <Card className={styles.tags}>
+    <Card shadow={!isMobile} rounded={!isMobile} className={styles.tags}>
       {tag.tags?.map(tag => (
         <TagInfo key={tag.id} tag={tag} />
       ))}

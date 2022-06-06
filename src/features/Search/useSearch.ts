@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useLazyQuery } from "@apollo/client";
 import type { SearchQuery, SearchQueryRequest } from "@graphql/@types/search";
 import { SEARCH } from "@graphql/search";
-import type { SearchFilters, SearchForm, SearchResult } from "../@types";
+import type { SearchFilters, SearchForm, SearchResult } from "./Search.types";
 
 export function useSearch() {
   const [search, { data, loading, error }] = useLazyQuery<
