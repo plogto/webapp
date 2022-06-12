@@ -1,6 +1,12 @@
+import type { ReactNode } from "react";
 import type { IconNames } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
-import { User } from "@t/user";
+import type { User } from "@t/user";
+
+export interface SettingsProps {
+  title?: ReactNode;
+  children?: ReactNode;
+}
 
 export interface SettingsItem {
   title: string;
@@ -19,17 +25,4 @@ export interface AvatarProfileProps {
 
 export interface BackgroundProfileProps {
   background?: User["background"];
-}
-
-export interface ChangeImageProfileProps {
-  title: string;
-  isOpen: boolean;
-  showRemoveButton?: boolean;
-  closeModal: () => void;
-  removeImage: () => void;
-  onClickInputFile: () => void;
-}
-
-export interface UseImageProfileProps {
-  key: "avatar" | "background";
 }

@@ -1,16 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { CropImageTypeKey } from "@enums";
+import { Avatar } from "@components/Avatar";
+import { ChangeImageProfileModal } from "@components/ChangeImageProfileModal";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
-import type { BackgroundProfileProps } from "@features/Settings/@types";
-import { useUrls } from "@hooks/useUrls";
-import styles from "../../Settings.module.css";
-import { useImageProfile } from "../../hooks/useImageProfile";
-import { ChangeImageProfileModal } from "../ChangeImageProfileModal";
+import type { AvatarProfileProps } from "@features/Settings/Settings.types";
+import { useImageProfile } from "@hooks/useImageProfile";
+import styles from "../EditProfile.module.css";
 
-export function BackgroundProfile(props: BackgroundProfileProps) {
-  const { background } = props;
-  const { getFileUrl } = useUrls();
+export function AvatarProfile(props: AvatarProfileProps) {
+  const { avatar } = props;
   const {
     inputFileRef,
     onClickInputFile,
@@ -19,7 +18,7 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
     openModal,
     isOpen,
     removeImage,
-  } = useImageProfile({ key: "background" });
+  } = useImageProfile({ key: "avatar" });
   const { t } = useTranslation("settings");
 
   return (
@@ -30,25 +29,19 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
         removeImage={removeImage}
         closeModal={closeModal}
         onClickInputFile={onClickInputFile}
-        showRemoveButton={!!background}
+        showRemoveButton={!!avatar}
       />
-      <div
-        className={styles.backgroundWrapper}
-        style={{
-          backgroundImage: background
-            ? `url(${getFileUrl(background.name)})`
-            : "",
-        }}
-      >
+      <div className={styles.avatarWrapper}>
         <button
-          className={styles.uploadBackground}
+          className={styles.uploadAvatar}
           type="button"
           onClick={openModal}
         >
           <Icon name="Camera" className={styles.icon} />
         </button>
+        <Avatar avatar={avatar} size="large" className={styles.avatar} />
         <CropImage
-          type={CropImageTypeKey.BACKGROUND}
+          type={CropImageTypeKey.AVATAR}
           setImagePreview={setImagePreview}
           inputFileRef={inputFileRef}
         />

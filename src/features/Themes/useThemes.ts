@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { PrimaryColor, BackgroundColor } from "@enums";
 import { useTheme } from "next-themes";
+import { PrimaryColor, BackgroundColor } from "@enums";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { EditUserMutation } from "@graphql/@types/user";
@@ -9,9 +9,9 @@ import { EDIT_USER } from "@graphql/user";
 
 export function useThemes() {
   const { user } = useAccountContext();
+  const { theme, setTheme } = useTheme();
   const { t } = useTranslation("themes");
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [primaryColor, setPrimaryColor] = useState(user?.primaryColor);
   const [backgroundColor, setBackgroundColor] = useState(user?.backgroundColor);
   const [editUser] = useMutation<EditUserMutation>(EDIT_USER);
@@ -59,6 +59,7 @@ export function useThemes() {
       className: "bg-amber-400",
     },
   ];
+
   const THEMES = [
     {
       key: BackgroundColor.LIGHT,
@@ -87,7 +88,6 @@ export function useThemes() {
     user,
     mounted,
     theme,
-    t,
     backgroundColor,
     primaryColor,
     COLORS,

@@ -7,7 +7,7 @@ import { useAccountContext } from "@contexts/AccountContext";
 import type { ChangePasswordMutation } from "@graphql/@types/user";
 import { CHANGE_PASSWORD } from "@graphql/user";
 import { yupResolver } from "@hookform/resolvers/yup";
-import type { ChangePasswordForm } from "../@types";
+import type { ChangePasswordForm } from "./ChangePassword.types";
 
 export function useChangePassword() {
   const { t } = useTranslation("changePassword");

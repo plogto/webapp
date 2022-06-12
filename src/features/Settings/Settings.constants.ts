@@ -1,5 +1,5 @@
 import { PageUrls } from "@enums/pages";
-import type { SettingsItem } from "../@types";
+import type { SettingsItem } from "./Settings.types";
 
 export const SETTINGS_ITEMS: SettingsItem[] = [
   {

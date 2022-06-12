@@ -1,9 +1,12 @@
+import { useMemo } from "react";
+import { useRouter } from "next/router";
 import { PageUrls } from "@enums/pages";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
 import type { User } from "@t/user";
 
 export function useNavigator() {
+  const { pathname } = useRouter();
   function formatProfilePageRoute(username: User["username"]) {
     return `/${username}`;
   }
@@ -31,6 +34,11 @@ export function useNavigator() {
     return `${PageUrls.ADD_POST}?parentUrl=${url}`;
   }
 
+  const isSettingsRoute = useMemo(
+    () => pathname === PageUrls.SETTINGS,
+    [pathname],
+  );
+
   return {
     formatProfilePageRoute,
     formatSavedPostsPageRoute,
@@ -39,5 +47,6 @@ export function useNavigator() {
     formatFollowersPageRoute,
     formatFollowingPageRoute,
     formatAddPostPageRoute,
+    isSettingsRoute,
   };
 }
