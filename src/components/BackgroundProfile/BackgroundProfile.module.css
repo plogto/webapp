@@ -1,6 +1,6 @@
 .backgroundWrapper {
-  @apply h-[33vw] w-full border-none md:h-44;
-  @apply rounded-b-lg bg-cover bg-center;
+  @apply h-auto w-full border-none;
+  @apply bg-cover bg-center md:rounded-b-xl;
   @apply relative overflow-hidden bg-background-pure;
 
   & .icon {
@@ -9,7 +9,7 @@
 
   & .uploadBackground {
     @apply flex items-center justify-center;
-    @apply absolute inset-0 z-30 w-full;
+    @apply absolute inset-0 w-full;
     @apply bg-black bg-opacity-20 text-white;
   }
 }

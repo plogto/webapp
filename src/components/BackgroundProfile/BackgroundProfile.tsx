@@ -3,6 +3,7 @@ import { CropImageTypeKey } from "@enums";
 import { ChangeImageProfileModal } from "@components/ChangeImageProfileModal";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
+import { Img } from "@components/Img";
 import type { BackgroundProfileProps } from "@features/Settings/Settings.types";
 import { useImageProfile } from "@hooks/useImageProfile";
 import { useUrls } from "@hooks/useUrls";
@@ -40,6 +41,7 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
             : "",
         }}
       >
+        {background && <Img image={background} alt="background" />}
         <button
           className={styles.uploadBackground}
           type="button"
