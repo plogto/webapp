@@ -1,6 +1,6 @@
 import { Button } from "@components/Buttons/Button";
-import type { AttachmentPreviewProps } from "@features/AddPost/@types";
-import styles from "../../AddPost.module.css";
+import styles from "../AddPost.module.css";
+import type { AttachmentPreviewProps } from "../AddPost.types";
 
 export function AttachmentPreview(props: AttachmentPreviewProps) {
   const { image, onClickRemoveButton } = props;

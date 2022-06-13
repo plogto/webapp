@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type {
@@ -14,9 +15,8 @@ import {
 import { GET_TRENDS } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
 import { useUploadFile } from "@hooks/useUploadFile";
-import type { AddPostForm } from "../@types";
+import type { AddPostForm } from "../AddPost.types";
 import { useParentPost } from "./useParentPost";
-import { useRouter } from "next/router";
 
 export function useAddPost() {
   const { push } = useRouter();

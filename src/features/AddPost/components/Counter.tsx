@@ -1,5 +1,5 @@
-import type { CounterProps } from "@features/AddPost/@types";
-import styles from "../../AddPost.module.css";
+import styles from "../AddPost.module.css";
+import type { CounterProps } from "../AddPost.types";
 
 export function Counter({ length, maxLength }: CounterProps) {
   return (
