@@ -1,5 +1,5 @@
 import type { MouseEventHandler } from "react";
-import type { Tab } from "@t/post";
+import type { PostTab } from "@t/post";
 import type { User } from "@t/user";
 
 interface ConnectionButton {
@@ -15,7 +15,7 @@ export interface ProfileInfoProps {
 
 export interface ProfileContentProps {
   user?: User;
-  tabs: Tab[];
+  tabs: PostTab[];
 }
 
 export interface ConnectionButtons {

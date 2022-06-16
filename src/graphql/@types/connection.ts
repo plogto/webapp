@@ -30,10 +30,17 @@ export interface GetFollowingByUsernameQuery {
     pagination: Pagination;
   };
 }
+export interface GetFollowingByUsernameQueryRequest {
+  username: string;
+}
 
 export interface GetFollowersByUsernameQuery {
   getFollowersByUsername: {
     connections: Connection[];
     pagination: Pagination;
   };
+}
+
+export interface GetFollowersByUsernameQueryRequest {
+  username: string;
 }

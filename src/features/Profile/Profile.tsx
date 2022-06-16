@@ -1,10 +1,12 @@
 import { isMobile } from "react-device-detect";
 import { ID } from "@constants";
 import { Img } from "@components/Img";
+import { NotFound } from "@components/NotFound";
 import { PageHeader } from "@components/PageHeader";
+import { ProfileInfo } from "@components/ProfileInfo";
 import styles from "./Profile.module.css";
-import { ProfileInfo, NotFound, ProfileContent } from "./components";
-import { useProfile } from "./hooks/useProfile";
+import { ProfileContent } from "./components";
+import { useProfile } from "./useProfile";
 
 export function Profile() {
   const { userData, isUserLoading, TABS } = useProfile();

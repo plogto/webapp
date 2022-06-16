@@ -80,6 +80,10 @@
         "description": "Follow to see their connections.",
         "title": "This Account is Private"
       }
+    },
+    "tabs": {
+      "followers": "Followers",
+      "following": "Following"
     }
   },
   "cropImage": {

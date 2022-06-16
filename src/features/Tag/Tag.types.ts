@@ -1,4 +1,4 @@
-import type { Tab } from "@t/post";
+import type { PostTab } from "@t/post";
 import type { Tag } from "@t/tag";
 
 export interface TagInfoProps {
@@ -6,5 +6,5 @@ export interface TagInfoProps {
 }
 
 export interface TagContentProps {
-  tabs: Tab[];
+  tabs: PostTab[];
 }

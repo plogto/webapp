@@ -13,7 +13,7 @@ import type {
 import { GET_POSTS_BY_TAG_NAME } from "@graphql/post";
 import { GET_TAG_BY_TAG_NAME } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
-import type { Tab } from "@t/post";
+import type { PostTab } from "@t/post";
 
 export function useTag() {
   const { query } = useRouter();
@@ -58,7 +58,7 @@ export function useTag() {
   }, [getPostsResponse, variables]);
 
   const TABS = useMemo(() => {
-    const tabs: Tab[] = [
+    const tabs: PostTab[] = [
       {
         title: t("tabs.posts"),
         href: formatTagPageRoute(tagName),

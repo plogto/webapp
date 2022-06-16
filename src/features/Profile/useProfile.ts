@@ -1,6 +1,5 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
 import { ProfileActiveTab } from "@enums";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -10,27 +9,14 @@ import type {
   GetSavedPostsQuery,
   GetSavedPostsQueryRequest,
 } from "@graphql/@types/post";
-import type {
-  GetUserByUsernameQuery,
-  GetUserByUsernameQueryRequest,
-} from "@graphql/@types/user";
 import { GET_POSTS_BY_USERNAME, GET_SAVED_POSTS } from "@graphql/post";
-import { GET_USER_BY_USERNAME } from "@graphql/user";
 import { useNavigator } from "@hooks/useNavigator";
-import type { Tab } from "@t/post";
-import { formatCountTitle } from "@utils/formatter";
+import { useUserProfile } from "@hooks/useUserProfile";
+import type { PostTab } from "@t/post";
 
 export function useProfile() {
-  const { query } = useRouter();
-  const username = query.username as string;
-
+  const { username, userResponse, variables } = useUserProfile();
   const { t } = useTranslation(["profile", "common"]);
-  const variables = useMemo(
-    () => ({
-      username,
-    }),
-    [username],
-  );
 
   const { isYourAccount } = useAccountContext();
   const { formatProfilePageRoute, formatSavedPostsPageRoute } = useNavigator();
@@ -45,20 +31,14 @@ export function useProfile() {
     GetSavedPostsQueryRequest
   >(GET_SAVED_POSTS);
 
-  const [getUser, userResponse] = useLazyQuery<
-    GetUserByUsernameQuery,
-    GetUserByUsernameQueryRequest
-  >(GET_USER_BY_USERNAME);
-
   useEffect(() => {
     if (username) {
-      getUser({ variables });
       getPosts({
         variables,
       });
       isYourAccount && getSavedPosts();
     }
-  }, [getPosts, getSavedPosts, getUser, isYourAccount, username, variables]);
+  }, [getPosts, getSavedPosts, isYourAccount, username, variables]);
 
   const userData = useMemo(
     () => userResponse.data?.getUserByUsername,
@@ -69,33 +49,6 @@ export function useProfile() {
     () => userResponse.loading || !userResponse.called,
     [userResponse.called, userResponse.loading],
   );
-
-  // TODO: refactor this counts
-  const COUNTS = [
-    {
-      ...formatCountTitle({
-        singular: t("common:post"),
-        plural: t("common:posts"),
-        count: userData?.postsCount,
-      }),
-    },
-    {
-      ...formatCountTitle({
-        singular: t("common:follower"),
-        plural: t("common:followers"),
-        count: userData?.followersCount,
-      }),
-      href: `${userData?.username}/followers`,
-    },
-    {
-      ...formatCountTitle({
-        singular: t("common:following"),
-        plural: t("common:following"),
-        count: userData?.followingCount,
-      }),
-      href: `${userData?.username}/following`,
-    },
-  ];
 
   // TODO: remove eslint-disable
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -120,7 +73,7 @@ export function useProfile() {
   };
 
   const TABS = useMemo(() => {
-    const tabs: Tab[] = [
+    const tabs: PostTab[] = [
       {
         title: t("profile:tabs.posts"),
         href: formatProfilePageRoute(username),
@@ -172,7 +125,6 @@ export function useProfile() {
 
   return {
     TABS,
-    COUNTS,
     userData,
     isUserLoading,
   };
