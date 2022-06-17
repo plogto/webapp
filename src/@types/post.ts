@@ -56,7 +56,7 @@ export interface PostData {
   isLoading?: boolean;
 }
 
-export interface Tab {
+export interface PostTab {
   title: string;
   href: string;
   data: PostData;
