@@ -29,11 +29,13 @@ export function Settings(props: SettingsProps) {
             className={styles.header}
           />
         )}
-        <div className={styles.images}>
-          <ModalProvider>
-            <BackgroundProfile background={user?.background} />
-          </ModalProvider>
-        </div>
+        {!(isMobile && !isSettingsRoute && children) && (
+          <div className={styles.images}>
+            <ModalProvider>
+              <BackgroundProfile background={user?.background} />
+            </ModalProvider>
+          </div>
+        )}
       </div>
       <div className={styles.cards}>
         {!(isMobile && !isSettingsRoute && children) && (

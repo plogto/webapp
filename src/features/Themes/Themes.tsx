@@ -13,9 +13,9 @@ export function Themes() {
   if (!mounted) return null;
 
   return (
-    <form className={styles.themes}>
-      <Card shadow={!isMobile} rounded={!isMobile}>
-        <div className="flex flex-col space-y-6 my-1 p-3 md:p-4">
+    <form className={styles.wrapper}>
+      <Card shadow={!isMobile} rounded={!isMobile} className={styles.themes}>
+        <div className="flex flex-col space-y-6 p-3 md:p-4">
           <PreviewPost />
           <div>
             <div className={styles.label}>Color</div>

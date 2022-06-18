@@ -1,34 +1,37 @@
-.themes {
-  @apply w-full md:-mt-12;
+.wrapper {
+  @apply w-full;
+  & .themes {
+    @apply w-full md:-mt-12;
 
-  & .post {
-    @apply py-2 !important;
-  }
-
-  & .label {
-    @apply mb-3 font-bold text-foreground;
-  }
-
-  & .colorsWrapper {
-    @apply flex justify-between space-x-3;
-
-    & .colorButton {
-      @apply h-10 w-10  text-center md:h-12 md:w-12;
+    & .post {
+      @apply py-2 !important;
     }
-  }
 
-  & .themesWrapper {
-    @apply flex justify-between space-x-3 md:space-x-5;
+    & .label {
+      @apply mb-3 font-bold text-foreground;
+    }
 
-    & .themeButton {
-      @apply w-full py-3 text-center font-bold;
+    & .colorsWrapper {
+      @apply flex justify-between space-x-3;
 
-      &.active {
-        @apply border-2 border-primary;
+      & .colorButton {
+        @apply h-10 w-10  text-center md:h-12 md:w-12;
       }
+    }
 
-      & .badge {
-        @apply ml-3 h-3.5 w-3.5 rounded-full bg-primary;
+    & .themesWrapper {
+      @apply flex justify-between space-x-3 md:space-x-5;
+
+      & .themeButton {
+        @apply w-full py-3 text-center font-bold;
+
+        &.active {
+          @apply border-2 border-primary;
+        }
+
+        & .badge {
+          @apply ml-3 h-3.5 w-3.5 rounded-full bg-primary;
+        }
       }
     }
   }
