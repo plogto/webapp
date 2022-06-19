@@ -6,8 +6,8 @@ import type { PageHeaderProps } from "./PageHeader.types";
 import { usePageHeader } from "./usePageHeader";
 
 export function PageHeader(props: PageHeaderProps) {
-  const { title, rightSide, className } = props;
-  const { handleBack } = usePageHeader();
+  const { title, rightSide, className, backLink } = props;
+  const { handleBack } = usePageHeader({ backLink });
   const wrapperClasses = classNames(styles.header, className);
 
   const backIcon = <Icon className={styles.icon} name="ArrowLeft" />;
