@@ -25,18 +25,18 @@
       @apply sticky mt-14 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
 
       & .tabs {
-        @apply flex items-center justify-around md:justify-start;
+        @apply flex items-center justify-start;
         @apply sticky top-[3rem] z-30 bg-background-pure text-foreground md:top-0;
         @apply border-b border-background-medium px-2;
 
         & .tab {
-          @apply w-full px-3 py-3 text-center md:w-fit;
+          @apply p-3;
         }
       }
     }
   }
 
   & .privateStatus {
-    @apply mx-10 mt-16 md:m-32;
+    @apply mx-10 my-16 md:m-32;
   }
 }
