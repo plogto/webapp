@@ -1,10 +1,16 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import { formatCountTitle } from "@utils/formatter";
 
 export function useProfileInfo() {
   const { userResponse } = useUserProfile();
+  const {
+    formatFollowingPageRoute,
+    formatFollowersPageRoute,
+    formatProfilePageRoute,
+  } = useNavigator();
   const { t } = useTranslation(["profile", "common"]);
 
   const userData = useMemo(
@@ -20,6 +26,7 @@ export function useProfileInfo() {
         plural: t("common:posts"),
         count: userData?.postsCount,
       }),
+      href: userData && formatProfilePageRoute(userData?.username),
     },
     {
       ...formatCountTitle({
@@ -27,7 +34,7 @@ export function useProfileInfo() {
         plural: t("common:followers"),
         count: userData?.followersCount,
       }),
-      href: `${userData?.username}/followers`,
+      href: userData && formatFollowersPageRoute(userData.username),
     },
     {
       ...formatCountTitle({
@@ -35,7 +42,7 @@ export function useProfileInfo() {
         plural: t("common:following"),
         count: userData?.followingCount,
       }),
-      href: `${userData?.username}/following`,
+      href: userData && formatFollowingPageRoute(userData.username),
     },
   ];
 
