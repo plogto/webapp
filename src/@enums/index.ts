@@ -43,3 +43,8 @@ export enum ProfileActiveTab {
   POSTS = "POSTS",
   SAVED = "SAVED",
 }
+
+export enum ConnectionsActiveTab {
+  FOLLOWING = "FOLLOWING",
+  FOLLOWERS = "FOLLOWERS",
+}
