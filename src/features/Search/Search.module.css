@@ -1,14 +1,14 @@
 .search {
   @apply w-full;
   & .form {
-    @apply w-full overflow-hidden p-2 md:mt-4;
+    @apply w-full overflow-hidden md:mt-4;
 
     & .header {
       @apply fixed top-0 left-0 right-0 md:relative;
-      @apply flex items-center;
+      @apply flex items-center bg-background-pure p-2;
 
       & .searchInput {
-        @apply w-full border-0 bg-background-pure py-1 px-2 text-foreground ring-0 focus:ring-0;
+        @apply w-full border-0 bg-background-pure p-2 text-foreground ring-0 focus:ring-0 md:py-1 md:px-2;
       }
 
       & .filters {
@@ -41,6 +41,6 @@
 
   & .users,
   & .tags {
-    @apply mt-12 mb-14 w-full overflow-hidden md:mt-3;
+    @apply mb-14 mt-3 w-full overflow-hidden;
   }
 }

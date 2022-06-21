@@ -32,8 +32,8 @@ export function Search() {
 
   return (
     <div className={styles.search}>
-      <Card shadow={!isMobile} rounded={!isMobile} className={styles.form}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Card shadow={!isMobile} rounded={!isMobile} className={styles.form}>
           <div className={styles.header}>
             <input
               {...register("expression")}
@@ -59,15 +59,15 @@ export function Search() {
               ))}
             </div>
           </div>
-        </form>
-      </Card>
+        </Card>
+      </form>
 
       <MobileOnlyView className="w-full">
         <MobileTrends />
       </MobileOnlyView>
 
-      {filter == "users" && <Users user={result?.user} />}
-      {filter == "tags" && <Tags tag={result?.tag} />}
+      {filter === "users" && <Users user={result?.user} />}
+      {filter === "tags" && <Tags tag={result?.tag} />}
     </div>
   );
 }
