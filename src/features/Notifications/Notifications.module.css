@@ -24,7 +24,7 @@
     @apply mt-12 mb-14 w-full overflow-hidden bg-background md:mt-4 md:p-0;
 
     & .followRequests {
-      @apply flex p-3.5 font-medium;
+      @apply flex border-b border-background-medium bg-background-pure p-3.5 font-medium text-foreground;
     }
 
     & .notification {
