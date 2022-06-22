@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useMutation } from "@apollo/client";
-import { useFollowRequestsContext } from "@contexts/FollowRequestsContext";
+import { useAccountContext } from "@contexts/AccountContext";
 import type {
   AcceptUserMutation,
   FollowUserMutation,
@@ -10,15 +9,17 @@ import type {
 import {
   ACCEPT_USER,
   FOLLOW_USER,
+  GET_FOLLOW_REQUESTS,
   REJECT_USER,
   UNFOLLOW_USER,
 } from "@graphql/connection";
+import { GET_USER_BY_USERNAME } from "@graphql/user";
+import type { UseActionProps } from "./User.types";
 
-interface Props {
-  id: string;
-}
+export function useActions(props: UseActionProps) {
+  const { id } = props;
+  const { user } = useAccountContext();
 
-export function useActions({ id }: Props) {
   const [followUser, followUserResponse] =
     useMutation<FollowUserMutation>(FOLLOW_USER);
   const [unfollowUser, unfollowUserResponse] =
@@ -52,6 +53,13 @@ export function useActions({ id }: Props) {
         variables: {
           userId: id,
         },
+        refetchQueries: [
+          { query: GET_FOLLOW_REQUESTS },
+          {
+            query: GET_USER_BY_USERNAME,
+            variables: { username: user?.username },
+          },
+        ],
       });
   };
 
@@ -61,24 +69,9 @@ export function useActions({ id }: Props) {
         variables: {
           userId: id,
         },
+        refetchQueries: [{ query: GET_FOLLOW_REQUESTS }],
       });
   };
-
-  const { deleteFollowRequestById } = useFollowRequestsContext();
-
-  useEffect(() => {
-    if (acceptUserResponse.data) {
-      const { id } = acceptUserResponse.data.acceptUser;
-      deleteFollowRequestById(id);
-    }
-  }, [acceptUserResponse.data]);
-
-  useEffect(() => {
-    if (rejectUserResponse.data) {
-      const { id } = rejectUserResponse.data.rejectUser;
-      deleteFollowRequestById(id);
-    }
-  }, [rejectUserResponse.data]);
 
   return {
     follow,

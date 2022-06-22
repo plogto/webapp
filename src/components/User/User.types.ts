@@ -21,3 +21,6 @@ export interface UserProps {
   showDelete?: boolean;
   showFollow?: boolean;
 }
+export interface UseActionProps {
+  id: string;
+}
