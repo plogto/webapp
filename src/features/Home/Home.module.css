@@ -1,0 +1,7 @@
+.home {
+  @apply mb-14 w-full overflow-hidden md:mt-4;
+
+  & .mobileHeader {
+    @apply fixed top-0 left-0 right-0 z-30 bg-background-pure;
+  }
+}

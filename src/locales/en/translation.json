@@ -172,6 +172,11 @@
         "title": "Delete Post"
       }
     },
+    "status": {
+      "noPosts": {
+        "title": "No Posts Yet"
+      }
+    },
     "texts": {
       "copiedToClipboard": "Copied to clipboard",
       "copyLink": "Copy Link",
