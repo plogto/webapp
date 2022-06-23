@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { PostContainer } from "@features/Post";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { PostContainer } from "@features/Post";
 
 export default function PostPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -14,10 +13,8 @@ export default function PostPage() {
           {t("pages:post")} | {t("common:logoName")}
         </title>
       </Head>
-      <Layout>
-        <Wrapper>
-          <PostContainer />
-        </Wrapper>
+      <Layout showTrends>
+        <PostContainer />
       </Layout>
     </>
   );

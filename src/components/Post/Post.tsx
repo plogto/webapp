@@ -3,8 +3,6 @@ import classNames from "classnames";
 import Link from "next/link";
 import { POST_TYPES } from "@constants";
 import { DateType } from "@enums";
-import { Card } from "@components/Card";
-import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { Replies } from "@components/Replies";
 import { ModalProvider } from "@contexts/ModalContext";
@@ -71,10 +69,7 @@ export function Post(props: PostProps) {
   const { t } = useTranslation("post");
 
   return (
-    <Card shadow={false} className={wrapperClasses}>
-      {isPage && (
-        <PageHeader title={post.parent ? t("texts.reply") : t("texts.post")} />
-      )}
+    <div className={wrapperClasses}>
       {post.parent &&
         isPage &&
         (showParent ? (
@@ -140,6 +135,6 @@ export function Post(props: PostProps) {
           </div>
         )}
       </div>
-    </Card>
+    </div>
   );
 }

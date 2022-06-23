@@ -1,11 +1,11 @@
 .post {
-  @apply w-full pb-1 relative overflow-visible text-foreground;
+  @apply relative w-full overflow-visible bg-background-pure pb-1 text-foreground;
 
   & .showParentButton {
-    @apply flex justify-start w-full p-2;
+    @apply flex w-full justify-start p-2;
 
     & span {
-      @apply rounded-lg text-sm text-primary p-1 px-2;
+      @apply rounded-lg p-1 px-2 text-sm text-primary;
       @apply transition-all duration-300;
     }
 
@@ -28,11 +28,11 @@
   }
 
   & .repliesCounter {
-    @apply text-[13px] text-foreground-medium ml-4 mt-1 mb-2;
+    @apply ml-4 mt-1 mb-2 text-[13px] text-foreground-medium;
   }
 
   & .header {
-    @apply flex justify-between items-start;
+    @apply flex items-start justify-between;
 
     &.isParent {
       @apply pt-2;
@@ -47,27 +47,27 @@
     }
 
     & .profile {
-      @apply inline-flex px-2 relative w-11/12;
+      @apply relative inline-flex w-11/12 px-2;
 
       & .avatar {
         @apply mr-2 !important;
       }
 
       & .userInfo {
-        @apply flex flex-col justify-start w-[99%];
+        @apply flex w-[99%] flex-col justify-start;
 
         & .username {
-          @apply text-foreground-medium text-sm;
+          @apply text-sm text-foreground-medium;
         }
       }
     }
 
     & .more {
       @apply absolute top-0 right-0 bg-background-pure;
-      @apply mr-2 p-1.5 rounded-md text-gray-400;
+      @apply mr-2 rounded-md p-1.5 text-gray-400;
       @apply border border-transparent;
-      @apply hover:shadow hover:border-background-medium hover:text-foreground;
-      @apply transition-all duration-300 box-content;
+      @apply hover:border-background-medium hover:text-foreground hover:shadow;
+      @apply box-content transition-all duration-300;
 
       & .icon {
         @apply w-5 text-current;
@@ -76,10 +76,10 @@
   }
 
   & .footer {
-    @apply flex space-x-5 ml-3;
+    @apply ml-3 flex space-x-5;
 
     &.small {
-      @apply space-x-4 ml-12;
+      @apply ml-12 space-x-4;
 
       & .iconWrapper {
         @apply my-2;
@@ -87,10 +87,10 @@
     }
 
     & .iconWrapper {
-      @apply inline-flex my-2.5;
+      @apply my-2.5 inline-flex;
 
       & .icon {
-        @apply w-6 h-6 text-foreground-dark stroke-1.5;
+        @apply h-6 w-6 stroke-1.5 text-foreground-dark;
 
         &.liked {
           @apply text-danger;
@@ -101,7 +101,7 @@
         }
 
         &.small {
-          @apply w-[18px] h-[18px];
+          @apply h-[18px] w-[18px];
         }
       }
     }
