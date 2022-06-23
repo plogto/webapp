@@ -1,7 +1,20 @@
 .posts {
-  @apply w-full px-1 md:px-2;
+  @apply w-full;
 
   & .post {
-    @apply pt-2 mb-2 md:mb-4;
+    @apply pt-2 border-b border-background-medium last:border-none;
+  }
+
+  & .emptyStatus {
+    @apply my-20 md:m-32 mx-10;
+  }
+
+  & .loadingWrapper {
+    @apply flex justify-center items-center text-foreground;
+    @apply w-full p-6;
+
+    & .loading {
+      @apply w-8 h-8;
+    }
   }
 }

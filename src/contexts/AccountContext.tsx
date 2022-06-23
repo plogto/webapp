@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useMemo, useState } from "react";
+import { useRouter } from "next/router";
 
 const token =
   typeof window !== "undefined"
@@ -67,8 +68,16 @@ function useAccountSetState() {
 export function useAccountContext() {
   const { isAuthenticated, token, user } = useAccountState();
   const { setIsAuthenticated, setToken, setUser } = useAccountSetState();
+  const { query } = useRouter();
+  const username = query?.username as string;
+
+  const isYourAccount = useMemo(
+    () => username === user?.username,
+    [user?.username, username],
+  );
 
   return {
+    isYourAccount,
     isAuthenticated,
     token,
     user,

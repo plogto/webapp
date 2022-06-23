@@ -27,3 +27,7 @@ export interface IsEditProps {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface UseImageProfileProps {
+  key: "avatar" | "background";
+}

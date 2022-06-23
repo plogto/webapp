@@ -1,30 +1,47 @@
-.changeProfile {
-  @apply flex w-full;
+.wrapper {
+  @apply w-full;
 
-  & .card {
-    @apply flex flex-col;
-    @apply w-full;
-  }
+  & .editProfile {
+    @apply flex flex-col space-y-4 p-4;
+    @apply w-full md:-mt-12;
 
-  & .cardFooter {
-    @apply flex justify-end;
-    @apply m-4;
-  }
+    & .image {
+      @apply relative flex w-full items-center justify-center py-4 md:w-[30%];
 
-  & .inputContainer {
-    @apply w-full mt-3;
-  }
+      & .avatarWrapper {
+        @apply relative z-30;
 
-  & .toggle {
-    @apply mx-4 py-2.5 px-3;
-    @apply border border-background-dark rounded-lg shadow-sm;
-  }
+        & .icon {
+          @apply h-8 w-8 stroke-1.5;
+        }
 
-  & .footer {
-    @apply flex justify-end space-x-3 px-4 pb-4 pt-5;
+        & .uploadAvatar {
+          @apply flex h-20 w-20 items-center justify-center md:h-24 md:w-24;
+          @apply absolute inset-0 z-30 rounded-full;
+          @apply bg-black bg-opacity-20  text-white;
+        }
 
-    & .button {
-      @apply w-full md:w-[4.75rem] rounded-lg py-2.5 md:py-2 text-sm font-medium;
+        & .avatar {
+          @apply h-20 w-20 bg-background-pure md:h-24 md:w-24;
+        }
+      }
+    }
+
+    & .inputWrapper {
+      @apply flex flex-col space-y-4 md:flex-row md:px-4;
+    }
+
+    & .toggle {
+      @apply py-2.5 px-3;
+      @apply rounded-lg border border-background-dark shadow-sm;
+    }
+
+    & .footer {
+      @apply flex justify-end space-x-3;
+
+      & .button {
+        @apply w-full rounded-lg py-2.5 text-sm font-medium md:w-[4.75rem] md:py-2;
+      }
     }
   }
 }

@@ -80,6 +80,10 @@
         "description": "Follow to see their connections.",
         "title": "This Account is Private"
       }
+    },
+    "tabs": {
+      "followers": "Followers",
+      "following": "Following"
     }
   },
   "cropImage": {
@@ -140,6 +144,8 @@
   },
   "pages": {
     "addPost": "Add Post",
+    "changePassword": "Change Password",
+    "editProfile": "Edit Profile",
     "followRequests": "Follow Requests",
     "followers": "Followers",
     "following": "Following",
@@ -166,6 +172,11 @@
         "title": "Delete Post"
       }
     },
+    "status": {
+      "noPosts": {
+        "title": "No Posts Yet"
+      }
+    },
     "texts": {
       "copiedToClipboard": "Copied to clipboard",
       "copyLink": "Copy Link",
@@ -183,10 +194,17 @@
         "description": "When they posts, you'll see their posts.",
         "title": "No Posts Yet"
       },
+      "noSavedPosts": {
+        "title": "No Saved Posts Yet"
+      },
       "private": {
         "description": "Follow to see their posts.",
         "title": "This Account is Private"
       }
+    },
+    "tabs": {
+      "posts": "Posts",
+      "saved": "Saved"
     }
   },
   "saved": {
@@ -215,6 +233,20 @@
       "changeAvatarPhoto": "Change Avatar Photo",
       "changeBackgroundPhoto": "Change Background Photo",
       "settings": "Settings"
+    }
+  },
+  "tag": {
+    "status": {
+      "noPosts": {
+        "description": "When they posts, you'll see their posts.",
+        "title": "No Posts Yet"
+      },
+      "notFound": {
+        "title": "Tag Not Found"
+      }
+    },
+    "tabs": {
+      "posts": "Posts"
     }
   },
   "themes": {

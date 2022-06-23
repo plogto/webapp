@@ -1,3 +1,9 @@
 .layout {
-  @apply max-w-7xl container mx-auto flex justify-center;
+  @apply container relative mx-auto flex w-full justify-center md:max-w-5xl;
+
+  & .footer {
+    @apply fixed bottom-0 z-30 w-full py-1 px-2;
+    @apply flex items-center justify-around shadow md:hidden;
+    @apply bg-background-pure;
+  }
 }

@@ -1,19 +1,16 @@
 .header {
-  @apply flex justify-between items-center text-foreground;
-  @apply py-2 px-2 border-b border-background-medium;
+  @apply flex items-center justify-between;
+  @apply py-2 px-3 text-foreground;
 
   & .title {
-    @apply text-xl font-medium mx-0;
+    @apply mx-0 max-w-[66%] truncate text-center text-xl font-medium;
   }
 
   & .back {
-    @apply p-1.5;
-    @apply border border-transparent text-foreground;
-    @apply hover:shadow hover:border-background-medium;
-    @apply transition-all duration-300;
+    @apply py-1;
   }
 
   & .icon {
-    @apply w-[1.5rem] h-[1.5rem] md:w-6 md:h-6 stroke-2;
+    @apply h-[1.5rem] w-[1.5rem] stroke-2 md:h-6 md:w-6;
   }
 }

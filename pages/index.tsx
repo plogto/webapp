@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
 import { useAccountContext } from "@contexts/AccountContext";
 import { Home } from "@features/Home";
 import { Landing } from "@features/Landing";
-import Head from "next/head";
 
 export default function HomePage() {
   const { isAuthenticated } = useAccountContext();
@@ -17,13 +16,9 @@ export default function HomePage() {
         </title>
       </Head>
       {isAuthenticated ? (
-        <>
-          <Layout>
-            <Wrapper paddingSize={2}>
-              <Home />
-            </Wrapper>
-          </Layout>
-        </>
+        <Layout showTrends>
+          <Home />
+        </Layout>
       ) : (
         <Landing />
       )}

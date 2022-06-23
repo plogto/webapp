@@ -1,3 +1,2 @@
-import { DesktopTrends, MobileTrends } from "./containers";
-
-export { DesktopTrends, MobileTrends };
+export { MobileTrends } from "./MobileTrends";
+export { DesktopTrends } from "./DesktopTrends";

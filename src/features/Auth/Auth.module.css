@@ -4,7 +4,7 @@
 
   & .card {
     @apply flex flex-col w-80 m-auto justify-center md:bg-background-pure;
-    @apply rounded-lg md:shadow-sm md:border md:border-background-dark;
+    @apply rounded-xl md:shadow-sm md:border md:border-background-dark;
 
     & form {
       @apply flex flex-col space-y-4;

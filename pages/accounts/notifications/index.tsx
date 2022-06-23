@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { Notifications } from "@features/Notifications";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { Notifications } from "@features/Notifications";
 
 export default function NotificationsPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -13,10 +12,8 @@ export default function NotificationsPage() {
           {t("pages:notifications")} | {t("common:logoName")}
         </title>
       </Head>
-      <Layout>
-        <Wrapper>
-          <Notifications />
-        </Wrapper>
+      <Layout showTrends>
+        <Notifications />
       </Layout>
     </>
   );

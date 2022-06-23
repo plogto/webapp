@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.30.0](https://github.com/mahdineer/plog-fe/compare/v0.29.0...v0.30.0) (2022-06-23)
+
+
+### Features
+
+* add plus-circle icon ([764d05b](https://github.com/mahdineer/plog-fe/commit/764d05b95dd6a7f45c8bea5e5b47a59bfee47058))
+* add verify icon ([9639bae](https://github.com/mahdineer/plog-fe/commit/9639baee87050836920e958164516a3a17e6de5d))
+* implement FullName component ([c78f994](https://github.com/mahdineer/plog-fe/commit/c78f99438a70f97c85e503d2ad9036e0cfb60566))
+* implement Header component ([9b872ef](https://github.com/mahdineer/plog-fe/commit/9b872ef4e4857a2e13478bbe676f246563fde3b3))
+* implement NotFound component ([d1b6369](https://github.com/mahdineer/plog-fe/commit/d1b636916b87bf91d1b3ab9ef9a2378b011c21b9))
+* implement ProfileContext ([0239e8f](https://github.com/mahdineer/plog-fe/commit/0239e8f01235c6cdfed952a97ccad227d803b5ce))
+* implement Saved page ([718fd3b](https://github.com/mahdineer/plog-fe/commit/718fd3b66a2fd203ad4cc7785c6b032eec121da7))
+* implement Users component ([2ac15ae](https://github.com/mahdineer/plog-fe/commit/2ac15ae12fb9413af6016cf518f2f7cac9135900))
+
+
+### Bug Fixes
+
+* add condition for bio on Profile feature ([332e4eb](https://github.com/mahdineer/plog-fe/commit/332e4ebd8f4900d8f124ea52ab8cd30bedb21c20))
+* add stroke-2 for Navbar icons ([c14aa20](https://github.com/mahdineer/plog-fe/commit/c14aa20ac88213026cfa0925e928c7498b6bf233))
+* add stroke-2 for Navbar icons ([afd5068](https://github.com/mahdineer/plog-fe/commit/afd506884208b41df4411d3d99ec512c2134a188))
+* add validationSchema for login form ([df57f10](https://github.com/mahdineer/plog-fe/commit/df57f10c0ad13961aa976d014d61b8281c32dd0e))
+* **Connections:** fix active tab condition ([00e125d](https://github.com/mahdineer/plog-fe/commit/00e125d9e52cefa43abb619885bfea9dbcf7f9a0))
+* **CropImage:** fix Square icon ([96229f3](https://github.com/mahdineer/plog-fe/commit/96229f3795791e14a81906415fb4c5cd56d4cb43))
+* improve DARK theme colors ([e6b0a7f](https://github.com/mahdineer/plog-fe/commit/e6b0a7f640909faf595c41049140da4e33e72c7e))
+* improve Layout and Wrapper component ([408b2dc](https://github.com/mahdineer/plog-fe/commit/408b2dc00541c744b61a27aff3c082f7dd1d00fb))
+* improve styles on Auth components ([93c9968](https://github.com/mahdineer/plog-fe/commit/93c9968d689d5a6cfb5ab10f2d0686addc6b622e))
+* **ProfileContext:** improve getMoreData ([50cff6b](https://github.com/mahdineer/plog-fe/commit/50cff6bb087c86f3bed9c8d12197dec7a75266fd))
+* refetch GET_USER_INFO after editUserMutation ([bb7b6c5](https://github.com/mahdineer/plog-fe/commit/bb7b6c5214e98b1f5ff9269ecb91ba5d5694ea5f))
+* remove extra size from FullName component ([8384f8a](https://github.com/mahdineer/plog-fe/commit/8384f8a8ba6ecaf8e62f11814b92a17666b2c764))
+
 ## [0.29.0](https://github.com/mahdineer/plog-fe/compare/v0.28.0...v0.29.0) (2022-05-06)
 
 

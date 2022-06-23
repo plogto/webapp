@@ -55,8 +55,11 @@ export const GET_POST_BY_URL = gql`
 export const GET_POSTS_BY_USERNAME = gql`
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getPostsByUsername($username: String!) {
-    getPostsByUsername(username: $username) {
+  query getPostsByUsername($username: String!, $page: Int, $limit: Int) {
+    getPostsByUsername(
+      username: $username
+      input: { page: $page, limit: $limit }
+    ) {
       posts {
         ...PostFragment
         replies {
@@ -77,8 +80,8 @@ export const GET_SAVED_POSTS = gql`
   ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getSavedPosts {
-    getSavedPosts {
+  query getSavedPosts($page: Int, $limit: Int) {
+    getSavedPosts(input: { page: $page, limit: $limit }) {
       posts {
         ...PostFragment
         replies {
@@ -99,8 +102,11 @@ export const GET_POSTS_BY_TAG_NAME = gql`
   ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
-  query getPostsByTagName($tagName: String!) {
-    getPostsByTagName(tagName: $tagName) {
+  query getPostsByTagName($tagName: String!, $page: Int, $limit: Int) {
+    getPostsByTagName(
+      tagName: $tagName
+      input: { page: $page, limit: $limit }
+    ) {
       posts {
         ...PostFragment
         replies {

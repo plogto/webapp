@@ -1,12 +1,16 @@
+.mobileHeader {
+  @apply fixed top-0 right-0 left-0 z-30 bg-background-pure;
+}
+
 .addPost {
-  @apply w-full text-foreground;
+  @apply mt-12 mb-14 w-full text-foreground md:mt-4;
 
   & .parentPost {
     & .header {
-      @apply flex items-center pt-2 px-2;
+      @apply flex items-center px-2 pt-2;
     }
 
-    @apply pb-2 border-b border-background-medium;
+    @apply border-b border-background-medium pb-2;
   }
 
   & .form {
@@ -15,18 +19,18 @@
     }
 
     & .main {
-      @apply flex flex-col px-3 md:px-4 pt-2;
+      @apply flex flex-col px-3 pt-2 md:px-4;
       & .attachmentPreview {
-        @apply relative rounded-lg overflow-hidden;
+        @apply relative overflow-hidden rounded-lg;
 
         & .removeButton {
-          @apply absolute top-3 right-3 text-xs font-medium rounded-md;
-          @apply text-white bg-gray-800 bg-opacity-50 px-2 py-1;
+          @apply absolute top-3 right-3 rounded-md text-xs font-medium;
+          @apply bg-gray-800 bg-opacity-50 px-2 py-1 text-white;
         }
       }
 
       & .textarea {
-        @apply text-lg border-none bg-background-pure w-full p-0 pb-2 m-0 resize-none ring-0 focus:ring-0;
+        @apply m-0 w-full resize-none border-none bg-background-pure p-0 pb-2 text-lg ring-0 focus:ring-0;
 
         &::placeholder {
           @apply text-gray-400;
@@ -42,7 +46,7 @@
       @apply flex justify-between p-3;
 
       & .attachmentButton {
-        @apply p-1 border border-background-medium shadow-sm;
+        @apply border border-background-medium p-1 shadow-sm;
 
         & .icon {
           @apply w-6 stroke-2 text-foreground;
@@ -50,15 +54,15 @@
       }
 
       & .buttonContainer {
-        @apply w-full flex justify-end space-x-2;
+        @apply flex w-full justify-end space-x-2;
 
         & .counter {
-          @apply flex items-center justify-center text-foreground-light w-24;
+          @apply flex w-24 items-center justify-center text-foreground-light;
           @apply rounded-lg border border-background-dark duration-300;
 
           & .number {
             @apply inline-flex items-center justify-center;
-            @apply text-center h-full w-full;
+            @apply h-full w-full text-center;
           }
 
           & .number:first-child {
@@ -67,13 +71,13 @@
 
           & .number:first-child.counterOverflow,
           & .counterOverflow {
-            @apply text-danger border-danger;
+            @apply border-danger text-danger;
           }
         }
 
         & .submit {
-          @apply bg-foreground text-background-pure py-2 px-3 focus:ring-0 ring-0 outline-none;
-          @apply font-bold w-24 rounded-lg text-sm;
+          @apply bg-foreground py-2 px-3 text-background-pure outline-none ring-0 focus:ring-0;
+          @apply w-24 rounded-lg text-sm font-bold;
         }
       }
     }

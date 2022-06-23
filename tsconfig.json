@@ -26,6 +26,7 @@
       "@features/*": ["src/features/*"],
       "@graphql/*": ["src/graphql/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@lib/*": ["src/lib/*"],
       "@locales": ["src/locales"],
       "@locales/*": ["src/locales/*"],
       "@styles/*": ["src/styles/*"],

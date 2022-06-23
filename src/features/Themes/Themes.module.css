@@ -1,32 +1,37 @@
-.themes {
-  & .post {
-    @apply py-2 !important;
-  }
+.wrapper {
+  @apply w-full;
+  & .themes {
+    @apply w-full md:-mt-12;
 
-  & .label {
-    @apply font-bold text-foreground mb-3;
-  }
-
-  & .colorsContainer {
-    @apply flex justify-between space-x-3;
-
-    & .colorButton {
-      @apply w-10 h-10  md:w-12 md:h-12 text-center;
+    & .post {
+      @apply py-2 !important;
     }
-  }
 
-  & .themesContainer {
-    @apply flex justify-between space-x-3 md:space-x-5;
+    & .label {
+      @apply mb-3 font-bold text-foreground;
+    }
 
-    & .themeButton {
-      @apply py-3 font-bold w-full text-center;
+    & .colorsWrapper {
+      @apply flex justify-between space-x-3;
 
-      &.active {
-        @apply border-primary border-2;
+      & .colorButton {
+        @apply h-10 w-10  text-center md:h-12 md:w-12;
       }
+    }
 
-      & .badge {
-        @apply ml-3 bg-primary w-3.5 h-3.5 rounded-full;
+    & .themesWrapper {
+      @apply flex justify-between space-x-3 md:space-x-5;
+
+      & .themeButton {
+        @apply w-full py-3 text-center font-bold;
+
+        &.active {
+          @apply border-2 border-primary;
+        }
+
+        & .badge {
+          @apply ml-3 h-3.5 w-3.5 rounded-full bg-primary;
+        }
       }
     }
   }

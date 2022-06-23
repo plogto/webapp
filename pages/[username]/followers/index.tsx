@@ -1,9 +1,8 @@
 import { useTranslation } from "react-i18next";
+import Head from "next/head";
 import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
 import { ConnectionsProvider } from "@contexts/ConnectionsContext";
 import { Connections } from "@features/Connections";
-import Head from "next/head";
 
 export default function FollowersPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -17,9 +16,7 @@ export default function FollowersPage() {
       </Head>
       <ConnectionsProvider>
         <Layout>
-          <Wrapper>
-            <Connections type="followers" />
-          </Wrapper>
+          <Connections type="followers" />
         </Layout>
       </ConnectionsProvider>
     </>

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useNavigation } from "@hooks/useNavigation";
+import { useNavigator } from "@hooks/useNavigator";
 import type { HashtagProps } from "./@types";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,7 +8,7 @@ export function Hashtag(props: HashtagProps) {
   const { value, isClickable = true } = props;
   const { query } = useRouter();
   const tagName = value.substring(1);
-  const { formatTagPageRoute } = useNavigation();
+  const { formatTagPageRoute } = useNavigator();
 
   const wrapperClasses = classNames("text-primary hover:underline", {
     "font-bold": tagName.toLowerCase() === String(query.tagName).toLowerCase(),
