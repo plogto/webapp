@@ -1,59 +1,42 @@
-.header {
-  @apply pb-3 bg-background-pure overflow-hidden relative;
-  @apply flex flex-col items-center mx-1 md:mx-2 mb-2 md:mb-4;
+.wrapper {
+  @apply relative w-full;
+
+  & .header {
+    @apply fixed top-0 left-0 right-0 bg-background-pure;
+    @apply z-30 md:hidden;
+  }
 
   & .background {
-    @apply bg-center bg-cover absolute;
-    @apply w-full h-[33vw] md:h-44 border-none;
-    @apply relative bg-background-pure;
+    @apply fixed top-12 z-0 bg-cover bg-center md:absolute md:top-0;
+    @apply h-auto w-full overflow-hidden;
+    @apply bg-background-pure md:rounded-b-xl;
   }
 
-  & .avatar {
-    @apply absolute -bottom-8 left-6;
-  }
+  & .cards {
+    @apply flex flex-col items-start md:flex-row md:space-x-4;
+    @apply relative overflow-x-hidden pb-14 md:px-4 md:pb-20;
+    @apply h-[calc(100vh-3rem)];
 
-  & .username {
-    @apply text-foreground-medium -mt-0.5;
-  }
+    & .profileContent {
+      @apply sticky w-full md:rounded-xl;
+    }
 
-  & .bio {
-    @apply text-foreground-pure w-11/12 md:w-5/6 text-sm my-1.5 md:my-2 break-all;
-  }
+    & .profileContent {
+      @apply sticky mt-14 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
 
-  & .follow,
-  & .following,
-  & .settings {
-    @apply px-2 py-2 mt-2 w-28 h-full;
-    @apply font-medium text-sm border border-transparent;
-  }
+      & .tabs {
+        @apply flex items-center justify-start;
+        @apply sticky top-[3rem] z-30 bg-background-pure text-foreground md:top-0;
+        @apply border-b border-background-medium px-2;
 
-  & .following {
-    @apply border-background-dark shadow-sm rounded-lg text-foreground hover:bg-background;
-    @apply font-bold;
-  }
-
-  & .follow {
-    @apply bg-foreground text-background-pure;
-  }
-
-  & .count {
-    @apply rounded-md;
-    @apply text-foreground-medium;
-
-    &.clickable {
-      @apply hover:underline;
+        & .tab {
+          @apply p-3;
+        }
+      }
     }
   }
-}
 
-.privateStatus {
-  @apply mt-16 md:m-32 mx-10;
-}
-.noPostsStatus {
-  @apply mt-16 md:m-32 mx-10;
-}
-
-.notFound {
-  @apply flex flex-col items-center justify-center;
-  @apply h-screen text-foreground-medium;
+  & .privateStatus {
+    @apply mx-10 my-16 md:m-32;
+  }
 }

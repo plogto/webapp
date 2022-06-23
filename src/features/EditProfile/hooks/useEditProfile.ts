@@ -1,16 +1,16 @@
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER, GET_USER_INFO } from "@graphql/user";
-import { useNavigation } from "@hooks/useNavigation";
-import type { SettingsForm } from "../@types";
-import { useRouter } from "next/router";
+import { useNavigator } from "@hooks/useNavigator";
+import type { SettingsForm } from "../EditProfile.types";
 
 export function useEditProfile() {
   const { user } = useAccountContext();
-  const { formatProfilePageRoute } = useNavigation();
+  const { formatProfilePageRoute } = useNavigator();
   const { push } = useRouter();
   const formMethods = useForm<SettingsForm>({
     mode: "all",

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLazyQuery } from "@apollo/client";
 import type { CheckEmailQuery, CheckUsernameQuery } from "@graphql/@types/user";
 import { CHECK_EMAIL, CHECK_USERNAME } from "@graphql/user";
-import type { UseEditUserValidations } from "../@types";
+import type { UseEditUserValidations } from "../EditProfile.types";
 
 export function useEditUserValidations(props: UseEditUserValidations) {
   const { setError, clearErrors } = props;

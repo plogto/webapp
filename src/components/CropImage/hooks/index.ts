@@ -1,4 +1,2 @@
-import { useCanvas } from "./useCanvas";
-import { useCropImage } from "./useCropImage";
-
-export { useCanvas, useCropImage };
+export { useCanvas } from "./useCanvas";
+export { useCropImage } from "./useCropImage";

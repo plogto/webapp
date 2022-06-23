@@ -7,6 +7,7 @@ export const PaginationFragment = {
       limit
       totalDocs
       totalPages
+      nextPage
     }
   `,
 };

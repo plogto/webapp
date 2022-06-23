@@ -1,4 +1,4 @@
-import type { SearchResult } from "@features/Search/@types";
+import type { SearchResult } from "@features/Search/Search.types";
 
 export interface SearchQuery {
   search: SearchResult;

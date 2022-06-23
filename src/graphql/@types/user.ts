@@ -16,6 +16,9 @@ export interface CheckEmailQuery {
 export interface GetUserByUsernameQuery {
   getUserByUsername: User;
 }
+export interface GetUserByUsernameQueryRequest {
+  username: User["username"];
+}
 
 export interface EditUserMutation {
   editUser: User;

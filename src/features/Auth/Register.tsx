@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 import { Button } from "@components/Buttons/Button";
-import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
 import { PageUrls } from "@enums/pages";
 import styles from "./Auth.module.css";
 import { useRegister } from "./hooks/useRegister";
-import Link from "next/link";
 
 export function Register() {
   const { formMethods, onSubmit, error, loading } = useRegister();
@@ -19,7 +18,7 @@ export function Register() {
 
   return (
     <div className={styles.wrapper}>
-      <Card className={styles.card}>
+      <div className={styles.card}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Link href={PageUrls.HOME}>
             <a className={styles.logoContainer}>
@@ -75,7 +74,7 @@ export function Register() {
             <a className={styles.link}>Log In</a>
           </Link>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }

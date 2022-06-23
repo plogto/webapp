@@ -1,23 +1,25 @@
 .wrapper {
-  @apply fixed bottom-0 w-full z-30;
-  @apply flex justify-center md:hidden;
+  @apply w-full flex justify-around;
 
   & .navbar {
-    @apply fixed bottom-0 w-full p-1;
-    @apply flex justify-around shadow;
-    @apply bg-background-pure;
+    @apply w-full flex justify-around;
 
     & .navLink {
+      @apply p-1 md:p-2 mx-1;
       @apply duration-300 ring-0 focus:ring-0;
-      @apply text-gray-400 w-10 h-10 md:w-12 md:h-12 p-1 md:p-2 mx-1;
-      @apply hover:text-foreground rounded-lg;
+      @apply text-gray-400 hover:text-foreground;
+      @apply inline-flex items-center justify-center;
 
       & svg {
-        @apply stroke-2;
+        @apply w-8 h-8 md:w-7 md:h-7 stroke-2;
+      }
+
+      & .avatar {
+        @apply border border-gray-400;
       }
 
       &.active {
-        @apply text-foreground rounded-lg;
+        @apply text-foreground;
 
         & .avatar {
           @apply rounded-full border-2 border-foreground;

@@ -3,6 +3,10 @@
 
   & .fullName {
     @apply font-bold;
+
+    &.short {
+      @apply truncate;
+    }
   }
 
   & .verified {
@@ -29,19 +33,10 @@
 
   &.large {
     & .fullName {
-      @apply text-2xl;
+      @apply text-xl md:text-2xl;
     }
     & .verified {
-      @apply w-6 mb-[3px];
-    }
-  }
-
-  &.extra {
-    & .fullName {
-      @apply text-3xl;
-    }
-    & .verified {
-      @apply w-7 mb-1;
+      @apply w-5 mb-[2px] md:w-6 md:mb-[3px];
     }
   }
 }

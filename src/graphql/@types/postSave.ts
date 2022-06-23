@@ -1,4 +1,4 @@
-import { PostSave } from "@t/postSave";
+import type { PostSave } from "@t/postSave";
 
 export interface SavePostMutation {
   savePost: PostSave;

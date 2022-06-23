@@ -1,0 +1,15 @@
+.backgroundWrapper {
+  @apply h-auto w-full border-none;
+  @apply bg-cover bg-center md:rounded-b-xl;
+  @apply relative overflow-hidden bg-background-pure;
+
+  & .icon {
+    @apply h-8 w-8 stroke-1.5;
+  }
+
+  & .uploadBackground {
+    @apply flex items-center justify-center;
+    @apply absolute inset-0 w-full;
+    @apply bg-black bg-opacity-20 text-white;
+  }
+}

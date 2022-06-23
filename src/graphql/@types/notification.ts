@@ -6,6 +6,10 @@ import type {
 export interface GetNotificationsQuery {
   getNotifications: NotificationsWithPagination;
 }
+export interface GetNotificationsQueryRequest {
+  page?: number;
+  limit?: number;
+}
 
 export interface GetNotificationSubscription {
   getNotification: Notification;

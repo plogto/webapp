@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { Search } from "@features/Search";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { Search } from "@features/Search";
 
 export default function SearchPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -13,10 +12,8 @@ export default function SearchPage() {
           {t("pages:search")} | {t("common:logoName")}
         </title>
       </Head>
-      <Layout>
-        <Wrapper>
-          <Search />
-        </Wrapper>
+      <Layout showTrends>
+        <Search />
       </Layout>
     </>
   );

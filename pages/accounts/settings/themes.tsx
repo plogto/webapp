@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { Themes } from "@features/Themes";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { Settings } from "@features/Settings";
+import { Themes } from "@features/Themes";
 
 export default function ThemesPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -14,9 +14,9 @@ export default function ThemesPage() {
         </title>
       </Head>
       <Layout>
-        <Wrapper>
+        <Settings title={t("pages:themes")}>
           <Themes />
-        </Wrapper>
+        </Settings>
       </Layout>
     </>
   );

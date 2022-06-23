@@ -1,4 +1,4 @@
-import { PostLike } from "@t/postLike";
+import type { PostLike } from "@t/postLike";
 
 export interface LikePostMutation {
   likePost: PostLike;

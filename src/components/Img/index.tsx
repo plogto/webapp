@@ -1,10 +1,11 @@
-import { useUrls } from "@hooks/useUrls";
-import type { ImgProps } from "./@types";
 import Image from "next/image";
+import { useUrls } from "@hooks/useUrls";
+import type { ImgProps } from "./Img.types";
 
 export function Img(props: ImgProps) {
   const {
     image: { name, width, height },
+    alt,
   } = props;
   const { getFileUrl, getThumbnailUrl } = useUrls();
 
@@ -19,6 +20,7 @@ export function Img(props: ImgProps) {
         layout="responsive"
         objectFit="cover"
         src={getFileUrl(name)}
+        alt={alt}
       />
     </div>
   );

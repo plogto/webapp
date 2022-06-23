@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { EditProfile } from "@features/EditProfile";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { EditProfile } from "@features/EditProfile";
+import { Settings } from "@features/Settings";
 
 export default function EditProfilePage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -10,13 +10,13 @@ export default function EditProfilePage() {
     <>
       <Head>
         <title>
-          {t("pages:settings")} | {t("common:logoName")}
+          {t("pages:editProfile")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>
-        <Wrapper>
+        <Settings title={t("pages:editProfile")}>
           <EditProfile />
-        </Wrapper>
+        </Settings>
       </Layout>
     </>
   );

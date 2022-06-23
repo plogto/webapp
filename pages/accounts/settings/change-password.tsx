@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Layout } from "@components/Layout";
-import { Wrapper } from "@components/Wrapper";
-import { ChangePassword } from "@features/ChangePassword";
 import Head from "next/head";
+import { Layout } from "@components/Layout";
+import { ChangePassword } from "@features/ChangePassword";
+import { Settings } from "@features/Settings";
 
 export default function ChangePasswordPage() {
   const { t } = useTranslation(["common", "pages"]);
@@ -10,13 +10,13 @@ export default function ChangePasswordPage() {
     <>
       <Head>
         <title>
-          {t("pages:settings")} | {t("common:logoName")}
+          {t("pages:changePassword")} | {t("common:logoName")}
         </title>
       </Head>
       <Layout>
-        <Wrapper>
+        <Settings title={t("pages:changePassword")}>
           <ChangePassword />
-        </Wrapper>
+        </Settings>
       </Layout>
     </>
   );
