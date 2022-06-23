@@ -64,7 +64,12 @@ export function Header(props: HeaderPostProps) {
       <div className={classNames(styles.profile)}>
         <Link href={formatProfilePageRoute(username)}>
           <a>
-            <Avatar size={size} className={styles.avatar} avatar={avatar} />
+            <Avatar
+              size={size}
+              className={styles.avatar}
+              avatar={avatar}
+              alt={fullName}
+            />
           </a>
         </Link>
         {showUserInfo && (

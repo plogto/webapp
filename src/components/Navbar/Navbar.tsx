@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import Link from "next/link";
 import { Avatar } from "@components/Avatar";
 import { Icon } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
@@ -6,7 +7,6 @@ import { useClassName } from "@hooks/useClassName";
 import { NavigationItem } from "@t/navigation";
 import styles from "./Navbar.module.css";
 import { NavbarProps } from "./Navbar.types";
-import Link from "next/link";
 
 export function Navbar(props: NavbarProps) {
   const { user } = props;
@@ -31,7 +31,12 @@ export function Navbar(props: NavbarProps) {
     },
     {
       icon: (
-        <Avatar size="tiny" className={styles.avatar} avatar={user?.avatar} />
+        <Avatar
+          size="tiny"
+          className={styles.avatar}
+          avatar={user?.avatar}
+          alt={user?.fullName}
+        />
       ),
       href: `/${user?.username}`,
     },

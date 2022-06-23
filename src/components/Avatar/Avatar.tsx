@@ -4,12 +4,13 @@ import styles from "./Avatar.module.css";
 import type { AvatarProps } from "./Avatar.types";
 
 export function Avatar(props: AvatarProps) {
-  const { className, size = "normal", avatar } = props;
+  const { className, size = "normal", avatar, alt } = props;
   const classes = classNames(styles.avatar, className, styles[size]);
 
   return avatar ? (
     <div className={classes}>
       <Img
+        alt={alt}
         image={{
           ...avatar,
           width: 1,

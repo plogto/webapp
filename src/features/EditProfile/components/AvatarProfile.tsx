@@ -39,7 +39,12 @@ export function AvatarProfile(props: AvatarProfileProps) {
         >
           <Icon name="Camera" className={styles.icon} />
         </button>
-        <Avatar avatar={avatar} size="large" className={styles.avatar} />
+        <Avatar
+          avatar={avatar}
+          size="large"
+          className={styles.avatar}
+          alt="avatar"
+        />
         <CropImage
           type={CropImageTypeKey.AVATAR}
           setImagePreview={setImagePreview}

@@ -32,7 +32,11 @@ export function Notification(props: NotificationProps) {
     <Link href={`/${url}`}>
       <a className={notificationClasses}>
         <div>
-          <Avatar className={styles.avatar} avatar={sender.avatar} />
+          <Avatar
+            className={styles.avatar}
+            avatar={sender.avatar}
+            alt={sender.fullName}
+          />
         </div>
         <div className={styles.content}>
           {template.map(element => parseNotification(element, notification))}

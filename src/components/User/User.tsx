@@ -66,7 +66,11 @@ export function User(props: UserProps) {
         <Link href={formatProfilePageRoute(username)}>
           <a className={styles.userInfo}>
             <div>
-              <Avatar className={styles.avatar} avatar={avatar} />
+              <Avatar
+                className={styles.avatar}
+                avatar={avatar}
+                alt={fullName}
+              />
             </div>
             <div className="w-full flex flex-col items-start">
               <FullName

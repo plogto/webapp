@@ -11,7 +11,12 @@ export function UserInfo(props: UserInfoProps) {
   return user ? (
     <div className={wrapperClasses}>
       {showAvatar && (
-        <Avatar size={size} className={styles.avatar} avatar={user.avatar} />
+        <Avatar
+          size={size}
+          className={styles.avatar}
+          avatar={user.avatar}
+          alt={user.fullName}
+        />
       )}
       <div>
         <FullName

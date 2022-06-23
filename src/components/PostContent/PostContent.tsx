@@ -41,8 +41,6 @@ export function PostContent(props: PostContentProps) {
         <p>
           {parsePost({
             content,
-            // TODO: fix this type
-            // @ts-expect-error ignore
             hashtagComponent: (value: string) => (
               <Hashtag key={uuid()} value={value} />
             ),

@@ -34,7 +34,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
   return (
     <Card className={styles.profileInfo} shadow={!isMobile} rounded={!isMobile}>
       <div className={styles.avatar}>
-        <Avatar size="large" avatar={avatar} />
+        <Avatar size="large" avatar={avatar} alt={fullName} />
       </div>
 
       <div className={styles.names}>
