@@ -2,19 +2,19 @@
   @apply w-full;
 
   & .post {
-    @apply pt-2 border-b border-background-medium last:border-none;
+    @apply border-b border-background-medium pt-2 last:border-none;
   }
 
   & .emptyStatus {
-    @apply my-20 md:m-32 mx-10;
+    @apply mx-10 h-[calc(100vh-4.5rem)] md:m-32 md:h-auto;
   }
 
   & .loadingWrapper {
-    @apply flex justify-center items-center text-foreground;
+    @apply flex items-center justify-center text-foreground;
     @apply w-full p-6;
 
     & .loading {
-      @apply w-8 h-8;
+      @apply h-8 w-8;
     }
   }
 }

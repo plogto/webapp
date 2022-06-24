@@ -25,7 +25,7 @@
       @apply sticky mt-14 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
 
       & .tabs {
-        @apply flex items-center justify-start;
+        @apply flex items-center justify-start space-x-3;
         @apply sticky top-[3rem] z-30 bg-background-pure text-foreground md:top-0;
         @apply border-b border-background-medium px-2;
 

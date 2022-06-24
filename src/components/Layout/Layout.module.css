@@ -4,6 +4,6 @@
   & .footer {
     @apply fixed bottom-0 z-30 w-full py-1 px-2;
     @apply flex items-center justify-around shadow md:hidden;
-    @apply bg-background-pure;
+    @apply border-t border-background-medium bg-background-pure;
   }
 }

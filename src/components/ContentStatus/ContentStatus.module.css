@@ -1,9 +1,9 @@
 .wrapper {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center justify-center;
   @apply text-foreground-medium;
 
   & .iconWrapper {
-    @apply rounded-full p-3 border-current border-[1.5px];
+    @apply rounded-full border-[1.5px] border-current p-3;
 
     & .icon {
       @apply w-12;
@@ -11,10 +11,10 @@
   }
 
   & .title {
-    @apply font-medium mt-4 mb-2;
+    @apply mt-4 mb-2 font-medium;
   }
 
   & .description {
-    @apply text-sm text-center;
+    @apply text-center text-sm;
   }
 }

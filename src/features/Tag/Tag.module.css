@@ -9,7 +9,7 @@
   & .cards {
     @apply flex flex-col items-start md:flex-row md:space-x-4;
     @apply relative overflow-x-hidden pb-10 md:px-4 md:pb-20;
-    @apply h-[calc(100vh-3.5rem)];
+    @apply h-[calc(100vh-3rem)];
 
     & .tagInfo,
     & .tagContent {

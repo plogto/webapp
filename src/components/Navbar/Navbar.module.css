@@ -1,17 +1,17 @@
 .wrapper {
-  @apply w-full flex justify-around;
+  @apply flex w-full justify-around;
 
   & .navbar {
-    @apply w-full flex justify-around;
+    @apply flex w-full justify-around;
 
     & .navLink {
-      @apply p-1 md:p-2 mx-1;
-      @apply duration-300 ring-0 focus:ring-0;
+      @apply mx-1 p-1 md:p-2;
+      @apply ring-0 duration-300 focus:ring-0;
       @apply text-gray-400 hover:text-foreground;
       @apply inline-flex items-center justify-center;
 
       & svg {
-        @apply w-8 h-8 md:w-7 md:h-7 stroke-2;
+        @apply h-8 w-8 stroke-2 md:h-7 md:w-7;
       }
 
       & .avatar {

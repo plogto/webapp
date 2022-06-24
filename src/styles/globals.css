@@ -8,7 +8,7 @@
 
 @layer utilities {
   body {
-    @apply bg-background;
+    @apply bg-background-pure md:bg-background;
   }
   * {
     box-sizing: border-box;
@@ -25,31 +25,31 @@
 
 @layer components {
   .modal {
-    @apply px-5 py-5 flex flex-col items-center border border-background-medium;
+    @apply flex flex-col items-center border border-background-medium px-5 py-5;
 
     & .modal-title {
-      @apply font-bold text-xl text-center text-foreground;
+      @apply text-center text-xl font-bold text-foreground;
     }
 
     & .modal-description {
-      @apply text-sm text-foreground-medium pt-2 pb-6 text-center;
+      @apply pt-2 pb-6 text-center text-sm text-foreground-medium;
     }
 
     & .icon-wrapper {
-      @apply flex items-center justify-center flex-grow;
-      @apply rounded-full p-4 my-6;
+      @apply flex flex-grow items-center justify-center;
+      @apply my-6 rounded-full p-4;
 
       & .icon {
-        @apply w-24 h-24 stroke-1.5;
+        @apply h-24 w-24 stroke-1.5;
       }
     }
 
     & .modal-buttons {
-      @apply w-full flex items-center space-x-3;
+      @apply flex w-full items-center space-x-3;
     }
 
     & .modal-button {
-      @apply px-2.5 py-2.5 md:py-2 rounded-lg w-full;
+      @apply w-full rounded-lg px-2.5 py-2.5 md:py-2;
     }
   }
 }

@@ -6,6 +6,7 @@
     & .header {
       @apply fixed top-0 left-0 right-0 md:relative;
       @apply flex items-center bg-background-pure p-2;
+      @apply border-b border-background-medium;
 
       & .searchInput {
         @apply w-full border-0 bg-background-pure p-2 text-foreground ring-0 focus:ring-0 md:py-1 md:px-2;
