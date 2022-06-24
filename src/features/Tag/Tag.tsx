@@ -10,7 +10,14 @@ import { useTag } from "./useTag";
 export function Tag() {
   const { tagData, TABS, t } = useTag();
 
-  return (
+  return !tagData.isLoading && !tagData.data ? (
+    // TODO: implement a not found page for this part
+    <ContentStatus
+      title={t("status.notFound.title")}
+      icon="Hashtag"
+      className={styles.notFound}
+    />
+  ) : (
     <div className={styles.wrapper}>
       {isMobile && (
         <PageHeader
@@ -24,14 +31,6 @@ export function Tag() {
           <TagInfo tag={tagData?.data} />
           <TagContent tabs={TABS} />
         </div>
-      )}
-      {!tagData.isLoading && !tagData.data && (
-        // TODO: implement a not found page for this part
-        <ContentStatus
-          title={t("status.notFound.title")}
-          icon="Hashtag"
-          className={styles.notFound}
-        />
       )}
     </div>
   );

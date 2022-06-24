@@ -2,13 +2,11 @@ import { isMobile } from "react-device-detect";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons/Button";
-import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
 import { Input } from "@components/Input";
 import { Textarea } from "@components/Textarea";
 import { Toggle } from "@components/Toggle";
 import { ModalProvider } from "@contexts/ModalContext";
-import { PageUrls } from "@enums/pages";
 import styles from "./EditProfile.module.css";
 import { AvatarProfile } from "./components/AvatarProfile";
 import { useEditUserValidations, useEditProfile } from "./hooks";
@@ -122,13 +120,6 @@ export function EditProfile() {
         />
         {user && (
           <div className={styles.footer}>
-            <LinkButton
-              layout="outline"
-              href={PageUrls.SETTINGS}
-              className={styles.button}
-            >
-              {t("buttons.cancel")}
-            </LinkButton>
             <Button
               layout="apply"
               loading={loading}
@@ -136,7 +127,7 @@ export function EditProfile() {
               type="submit"
               className={styles.button}
             >
-              {t("buttons.save")}
+              {t("buttons.apply")}
             </Button>
           </div>
         )}
