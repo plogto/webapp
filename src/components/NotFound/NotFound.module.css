@@ -1,4 +1,4 @@
 .notFound {
-  @apply flex flex-col items-center pt-64;
-  @apply h-screen w-full text-foreground-medium;
+  @apply flex flex-col items-center justify-center;
+  @apply h-[calc(100vh-3.5rem)] w-full text-foreground-medium md:h-auto;
 }

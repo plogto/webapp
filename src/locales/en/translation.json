@@ -35,8 +35,7 @@
   },
   "changePassword": {
     "buttons": {
-      "apply": "Apply",
-      "cancel": "Cancel"
+      "apply": "Apply"
     },
     "errors": {
       "confirmPasswordRequired": "Confirm Password is required",
@@ -97,8 +96,7 @@
   },
   "editProfile": {
     "buttons": {
-      "cancel": "Cancel",
-      "save": "Save"
+      "apply": "Apply"
     },
     "errors": {
       "emailIsAlreadyTaken": "Email is already taken",

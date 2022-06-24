@@ -51,6 +51,6 @@
 }
 
 .notFound {
-  @apply flex flex-col items-center pt-64;
+  @apply flex flex-col items-center;
   @apply h-screen w-full text-foreground-medium;
 }

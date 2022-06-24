@@ -58,7 +58,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
         ) : (
           <LinkButton
             layout="apply"
-            href={PageUrls.SETTINGS}
+            href={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
             className={styles.settings}
           >
             {t("buttons.settings")}

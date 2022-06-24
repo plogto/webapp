@@ -1,22 +1,20 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons/Button";
-import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
 import { Input } from "@components/Input";
-import { PageUrls } from "@enums/pages";
 import styles from "./ChangePassword.module.css";
 import type { Inputs } from "./ChangePassword.types";
 import { useChangePassword } from "./useChangePassword";
 
 export function ChangePassword() {
   const { formMethods, user, onSubmit } = useChangePassword();
-  const { t } = useTranslation("changePassword");
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
   } = formMethods;
+  const { t } = useTranslation("changePassword");
 
   const inputs: Inputs[] = [
     {
@@ -55,13 +53,6 @@ export function ChangePassword() {
         ))}
 
         <div className={styles.footer}>
-          <LinkButton
-            layout="outline"
-            href={PageUrls.SETTINGS}
-            className={styles.button}
-          >
-            {t("buttons.cancel")}
-          </LinkButton>
           <Button
             layout="apply"
             disabled={!isValid}
