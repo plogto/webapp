@@ -1,14 +1,12 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
-import classNames from "classnames";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
 import { ContentStatus } from "@components/ContentStatus";
+import { Tabs } from "@components/Tabs/Tabs";
 import { Users } from "@components/Users";
 import { useAccountContext } from "@contexts/AccountContext";
-import { useClassName } from "@hooks/useClassName";
 import styles from "../Connections.module.css";
 import type { ConnectionsContentProps } from "../Connections.types";
 
@@ -24,7 +22,6 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
   const isPrivate = user?.isPrivate;
   const isYourProfile = user?.id === userAccount?.id;
 
-  const { activeClass } = useClassName();
   const { asPath } = useRouter();
 
   return (
@@ -33,20 +30,7 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
       shadow={!isMobile}
       rounded={!isMobile}
     >
-      <div className={styles.tabs}>
-        {tabs.map(({ title, href }) => (
-          <Link key={title} href={href}>
-            <a
-              className={classNames(
-                styles.tab,
-                activeClass({ href, className: "font-bold" }),
-              )}
-            >
-              {title}
-            </a>
-          </Link>
-        ))}
-      </div>
+      <Tabs tabs={tabs} />
       <div>
         {!isConnections && !isYourProfile && isPrivate ? (
           <ContentStatus

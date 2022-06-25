@@ -15,8 +15,6 @@ export function Connections({ type }: ConnectionsProps) {
     type,
   });
   const { formatProfilePageRoute } = useNavigator();
-  // const isPrivate = user?.isPrivate && user.connectionStatus !== 2;
-  // const isYourProfile = user?.id == userAccount?.id;
 
   return !userData && !isUserLoading ? (
     <NotFound />

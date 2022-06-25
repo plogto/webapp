@@ -6,12 +6,13 @@ import styles from "./Home.module.css";
 import { useHome } from "./useHome";
 
 export function Home() {
-  const { posts, emptyStatus, getMoreData } = useHome();
+  const { isLoading, posts, emptyStatus, getMoreData } = useHome();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.home}>
       <Posts
         scrollableTarget={ID.HOME_CARDS}
+        isLoading={isLoading}
         getMoreData={getMoreData}
         posts={posts}
         emptyStatus={emptyStatus}

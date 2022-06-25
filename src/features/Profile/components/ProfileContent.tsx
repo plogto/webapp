@@ -1,14 +1,12 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
-import classNames from "classnames";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
 import { ContentStatus } from "@components/ContentStatus";
 import { Posts } from "@components/Posts";
+import { Tabs } from "@components/Tabs";
 import { useAccountContext } from "@contexts/AccountContext";
-import { useClassName } from "@hooks/useClassName";
 import styles from "../Profile.module.css";
 import type { ProfileContentProps } from "../Profile.types";
 
@@ -21,7 +19,6 @@ export function ProfileContent(props: ProfileContentProps) {
   const isPrivate = user?.isPrivate;
   const isYourProfile = user?.id == userAccount?.id;
 
-  const { activeClass } = useClassName();
   const { asPath } = useRouter();
 
   return (
@@ -30,20 +27,7 @@ export function ProfileContent(props: ProfileContentProps) {
       shadow={!isMobile}
       rounded={!isMobile}
     >
-      <div className={styles.tabs}>
-        {tabs.map(({ title, href }) => (
-          <Link key={title} href={href}>
-            <a
-              className={classNames(
-                styles.tab,
-                activeClass({ href, className: "font-bold" }),
-              )}
-            >
-              {title}
-            </a>
-          </Link>
-        ))}
-      </div>
+      <Tabs tabs={tabs} />
       <div>
         {!isPosts && !isYourProfile && isPrivate ? (
           <ContentStatus
