@@ -12,6 +12,7 @@ import type { Status } from "@t/status";
 export function useHome() {
   const { push } = useRouter();
   const { user, isAuthenticated } = useAccountContext();
+  const [isLoading, setIsLoading] = useState(true);
   const [getPostsByUsername, { error, loading, data }] =
     useLazyQuery<GetPostsByUsernameQuery>(GET_POSTS_BY_USERNAME);
   // TODO: remove this state
@@ -38,8 +39,9 @@ export function useHome() {
   useEffect(() => {
     if (data) {
       setPosts(data.getPostsByUsername.posts);
+      setIsLoading(loading);
     }
-  }, [data]);
+  }, [data, loading]);
 
   const emptyStatus: Status = useMemo(
     () => ({
@@ -53,5 +55,5 @@ export function useHome() {
     // TODO: get more data
   };
 
-  return { error, loading, user, posts, emptyStatus, getMoreData };
+  return { error, isLoading, user, posts, emptyStatus, getMoreData };
 }

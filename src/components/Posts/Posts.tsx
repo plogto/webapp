@@ -9,6 +9,7 @@ import type { PostsProps } from "./Posts.types";
 
 export function Posts(props: PostsProps) {
   const {
+    isLoading,
     posts,
     scrollableTarget,
     className,
@@ -31,7 +32,13 @@ export function Posts(props: PostsProps) {
         </div>
       }
     >
-      {!posts || posts?.length < 1 ? (
+      {isLoading ? (
+        <div className={styles.loadingWrapper}>
+          <span className="relative">
+            <Loader className={styles.loading} />
+          </span>
+        </div>
+      ) : !posts || posts?.length < 1 ? (
         <ContentStatus
           title={title}
           description={description}
