@@ -23,16 +23,6 @@
 
     & .profileContent {
       @apply sticky mt-12 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
-
-      & .tabs {
-        @apply flex items-center justify-around md:justify-start;
-        @apply sticky top-[3rem] z-30 bg-background-pure text-foreground md:top-0;
-        @apply border-b border-background-medium px-2;
-
-        & .tab {
-          @apply w-full px-3 py-3 text-center md:w-fit;
-        }
-      }
     }
   }
 
@@ -40,28 +30,3 @@
     @apply mx-10 mt-16 md:m-32;
   }
 }
-
-/* 
-.buttons {
-  @apply flex border-b border-background-medium px-2 mb-3;
-  & .button {
-    @apply text-foreground-medium w-20 font-bold px-2 m-2 text-sm;
-
-    &.active {
-      @apply text-foreground-pure relative;
-
-      &::after {
-        @apply content-[''] w-full h-1 rounded-t-md rounded-b-none bg-foreground rounded;
-        @apply absolute -bottom-2 left-0 right-0;
-      }
-    }
-  }
-}
-
-.privateStatus {
-  @apply w-full py-16 md:py-32 border-t;
-}
-
-.noConnectionsStatus {
-  @apply mt-16 md:m-32 mx-10;
-} */
