@@ -125,11 +125,30 @@ export const GET_POSTS_BY_TAG_NAME = gql`
 export const ADD_POST = gql`
   ${UserFragment.short}
   ${FileFragment.complete}
-  mutation addPost($postId: ID, $content: String!, $attachment: [String!]) {
+  mutation addPost($parentId: ID, $content: String!, $attachment: [String!]) {
     addPost(
-      postId: $postId
-      input: { content: $content, attachment: $attachment }
+      input: { content: $content, attachment: $attachment, parentId: $parentId }
     ) {
+      id
+      url
+      user {
+        ...UserFragmentShort
+      }
+      content
+      attachment {
+        ...FileFragmentComplete
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+
+export const EDIT_POST = gql`
+  ${UserFragment.short}
+  ${FileFragment.complete}
+  mutation editPost($postId: ID!, $content: String!) {
+    editPost(postId: $postId, input: { content: $content }) {
       id
       url
       user {

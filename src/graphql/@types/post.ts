@@ -41,13 +41,21 @@ export interface GetSavedPostsQueryRequest {
 }
 
 export interface AddPostMutationRequest {
-  postId?: string;
+  parentId?: string;
   content?: Post["content"];
   attachment?: string[];
 }
 
 export interface AddPostMutation {
   addPost: Post;
+}
+export interface EditPostMutationRequest {
+  postId: string;
+  content?: Post["content"];
+}
+
+export interface EditPostMutation {
+  editPost: Post;
 }
 
 export interface ReplyPostMutation {

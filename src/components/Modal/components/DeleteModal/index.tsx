@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
-import { DeleteModalProps } from "@components/Modal/@types";
+import { DeleteModalProps } from "@components/Modal/Modal.types";
 import { useModalContext } from "@contexts/ModalContext";
 import { Modal } from "../Modal";
 

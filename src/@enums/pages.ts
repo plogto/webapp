@@ -5,6 +5,7 @@ export enum PageUrls {
   LOGOUT = "/accounts/logout",
   REGISTER = "/accounts/register",
   ADD_POST = "/compose/post",
+  EDIT_POST = "/edit",
   SETTINGS = "/accounts/settings",
   CHANGE_PASSWORD = "/accounts/settings/change-password",
   EDIT_PROFILE = "/accounts/settings/edit-profile",

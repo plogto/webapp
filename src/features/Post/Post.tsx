@@ -4,8 +4,8 @@ import { POST_TYPES } from "@constants";
 import { Card } from "@components/Card";
 import { PageHeader } from "@components/PageHeader";
 import { Post } from "@components/Post";
+import { usePost } from "@hooks/usePost";
 import styles from "./Post.module.css";
-import { usePost } from "./usePost";
 
 export function PostContainer() {
   const { post } = usePost();
