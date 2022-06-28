@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.31.0](https://github.com/mahdineer/plog-fe/compare/v0.30.1...v0.31.0) (2022-06-28)
+
+
+### Features
+
+* add Pencil icon ([cb14d40](https://github.com/mahdineer/plog-fe/commit/cb14d407ddb5ca7aca1e59af322a21eaea992f1e))
+* implement EditPost page ([0d6924c](https://github.com/mahdineer/plog-fe/commit/0d6924c2c65c1c8e8db63c2753e267143158cdf8))
+* implement Tabs component ([ce64c36](https://github.com/mahdineer/plog-fe/commit/ce64c365a16d030ac0a956a908c9f2b4fc415165))
+
 ### [0.30.1](https://github.com/mahdineer/plog-fe/compare/v0.30.0...v0.30.1) (2022-06-24)
 
 ## [0.30.0](https://github.com/mahdineer/plog-fe/compare/v0.29.0...v0.30.0) (2022-06-23)
