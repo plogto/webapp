@@ -2,6 +2,7 @@
   "addPost": {
     "buttons": {
       "addPost": "Add Post",
+      "editPost": "Edit Post",
       "reply": "Reply"
     },
     "texts": {
@@ -161,6 +162,11 @@
   },
   "post": {
     "buttons": {
+      "copyLink": "Copy Link",
+      "deletePost": "Delete Post",
+      "editPost": "Edit Post",
+      "post": "Post",
+      "reply": "Reply",
       "viewParentPost": "View parent post",
       "viewReplies": "View replies"
     },
@@ -177,8 +183,6 @@
     },
     "texts": {
       "copiedToClipboard": "Copied to clipboard",
-      "copyLink": "Copy Link",
-      "deletePost": "Delete Post",
       "post": "Post",
       "reply": "Reply"
     }

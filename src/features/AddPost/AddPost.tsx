@@ -1,4 +1,5 @@
 import { isMobile } from "react-device-detect";
+import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import TextareaAutosize from "react-textarea-autosize";
 import classNames from "classnames";
@@ -12,24 +13,26 @@ import { PageHeader } from "@components/PageHeader";
 import { PostContent } from "@components/PostContent";
 import { UserInfo } from "@components/UserInfo";
 import styles from "./AddPost.module.css";
+import type { AddPostProps } from "./AddPost.types";
 import { AttachmentPreview } from "./components/AttachmentPreview";
 import { Counter } from "./components/Counter";
 import { useAddPost } from "./hooks/useAddPost";
 
-export function AddPost() {
+export function AddPost(props: AddPostProps) {
+  const { isEditMode } = props;
   const {
+    buttonTitle,
+    isLoading,
     user,
     formMethods,
     onSubmit,
-    loading,
-    uploadFileLoading,
     attachmentPreview,
     setAttachmentPreview,
     removeAttachmentPreview,
     inputFileRef,
     parentPost,
-  } = useAddPost();
-  const { register, handleSubmit, watch } = formMethods;
+  } = useAddPost({ isEditMode });
+  const { control, handleSubmit, watch } = formMethods;
   const { t } = useTranslation("addPost");
 
   return (
@@ -57,66 +60,76 @@ export function AddPost() {
             />
           </div>
         )}
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          {user && (
-            <>
-              <div className={styles.header}>
-                <UserInfo user={user} size={!parentPost ? "normal" : "small"} />
-              </div>
+        {user && (
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.header}>
+              <UserInfo user={user} size={!parentPost ? "normal" : "small"} />
+            </div>
 
-              <div className={styles.main}>
-                <TextareaAutosize
-                  {...register("content", {
-                    maxLength: {
-                      value: CONTENT_MAX_LENGTH,
-                      message: `Content is less that ${CONTENT_MAX_LENGTH} character`,
-                    },
-                  })}
-                  placeholder="Write something ..."
-                  className={classNames(
-                    styles.textarea,
-                    parentPost?.id && styles.reply,
-                  )}
-                  name="content"
-                />
-                <AttachmentPreview
-                  onClickRemoveButton={removeAttachmentPreview}
-                  image={attachmentPreview}
-                />
-              </div>
-              <div className={styles.footer}>
-                {!attachmentPreview && (
-                  <Button
-                    onClick={() => inputFileRef.current?.click()}
-                    className={styles.attachmentButton}
-                  >
-                    <Icon name="Photo" className={styles.icon} />
-                  </Button>
-                )}
-                <div className={styles.buttonContainer}>
-                  <Counter
-                    length={watch("content")?.length || 0}
-                    maxLength={CONTENT_MAX_LENGTH}
+            <div className={styles.main}>
+              <Controller
+                name="content"
+                control={control}
+                rules={{
+                  maxLength: {
+                    value: CONTENT_MAX_LENGTH,
+                    message: `Content should be less than ${CONTENT_MAX_LENGTH} character`,
+                  },
+                }}
+                render={({ field }) => (
+                  <TextareaAutosize
+                    {...field}
+                    placeholder="Write something ..."
+                    className={classNames(
+                      styles.textarea,
+                      parentPost?.id && styles.reply,
+                    )}
                   />
-
-                  <Button
-                    className={styles.submit}
-                    loading={loading || uploadFileLoading}
-                    disabled={!watch("content") && !attachmentPreview}
-                    type="submit"
-                  >
-                    {parentPost ? t("buttons.reply") : t("buttons.addPost")}
-                  </Button>
-                </div>
-              </div>
-              <CropImage
-                type={CropImageTypeKey.POST}
-                inputFileRef={inputFileRef}
-                setImagePreview={setAttachmentPreview}
+                )}
               />
-            </>
-          )}
-        </form>
+
+              <AttachmentPreview
+                showRemoveButton={!isEditMode}
+                onClickRemoveButton={removeAttachmentPreview}
+                image={attachmentPreview}
+              />
+            </div>
+
+            <div className={styles.footer}>
+              {!attachmentPreview && (
+                <Button
+                  onClick={() => inputFileRef.current?.click()}
+                  className={styles.attachmentButton}
+                >
+                  <Icon name="Photo" className={styles.icon} />
+                </Button>
+              )}
+              <div className={styles.buttonContainer}>
+                <Counter
+                  length={watch("content")?.length || 0}
+                  maxLength={CONTENT_MAX_LENGTH}
+                />
+
+                <Button
+                  className={styles.submit}
+                  loading={isLoading}
+                  disabled={
+                    !watch("content")?.length && !watch("attachment")?.length
+                  }
+                  type="submit"
+                >
+                  {buttonTitle}
+                </Button>
+              </div>
+            </div>
+
+            <CropImage
+              type={CropImageTypeKey.POST}
+              inputFileRef={inputFileRef}
+              setImagePreview={setAttachmentPreview}
+            />
+          </form>
+        )}
       </Card>
     </>
   );

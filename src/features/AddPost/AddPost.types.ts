@@ -1,7 +1,17 @@
+import type { InternalRefetchQueriesInclude } from "@apollo/client/core/types";
 import type { Post } from "@t/post";
 
+export interface AddPostProps {
+  isEditMode?: boolean;
+}
+export interface UseAddPostProps {
+  isEditMode?: boolean;
+}
+export interface UseEditPostProps {
+  refetchQueries: InternalRefetchQueriesInclude;
+}
 export interface AddPostForm {
-  postId?: string;
+  parentId?: string;
   content?: Post["content"];
   attachment?: string[];
 }
@@ -9,6 +19,7 @@ export interface AddPostForm {
 export interface AttachmentPreviewProps {
   image?: Blob;
   onClickRemoveButton: () => void;
+  showRemoveButton?: boolean;
 }
 
 export interface ContentProps {
