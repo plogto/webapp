@@ -23,6 +23,7 @@ import Link from "./svg/link.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
 import LockClosed from "./svg/lock-closed.svg";
 import Mail from "./svg/mail.svg";
+import Pencil from "./svg/pencil.svg";
 import Photo from "./svg/photo.svg";
 import PlogFill from "./svg/plog-fill.svg";
 import PlusCircleFill from "./svg/plus-circle-fill.svg";
@@ -67,6 +68,7 @@ export const iconsList = {
   LockClosed,
   LockClosedFill,
   Mail,
+  Pencil,
   Photo,
   PlogFill,
   PlusCircleFill,
