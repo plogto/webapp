@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Avatar } from "@components/Avatar";
 import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
@@ -28,15 +29,17 @@ export function Header(props: HeaderPostProps) {
     showMoreButton,
   } = props;
 
+  const { push } = useRouter();
   const { openModal, isOpen } = useModalContext();
   const { formatPostUrl } = useUrls();
+  const { formatEditPostPageRoute } = useNavigator();
   const { t } = useTranslation("post");
   const { deletePost } = useDeletePost({ postId });
 
   const MENU_ITEMS: MenuProps["items"] = [
     {
       key: "copy",
-      title: t("texts.copyLink"),
+      title: t("buttons.copyLink"),
       icon: "Link",
       onClick: () =>
         copyTextToClipboard(formatPostUrl(url)).then(() => {
@@ -44,8 +47,14 @@ export function Header(props: HeaderPostProps) {
         }),
     },
     {
+      key: "edit",
+      title: t("buttons.editPost"),
+      icon: "Pencil",
+      onClick: () => push(formatEditPostPageRoute(url)),
+    },
+    {
       key: "delete",
-      title: t("texts.deletePost"),
+      title: t("buttons.deletePost"),
       icon: "Trash",
       type: "delete",
       onClick: openModal,

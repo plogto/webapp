@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { MENU_KEYS } from "@constants";
 import { PostTypeKey, RepliesView } from "@enums";
 import type { MenuProps } from "@components/Menu/Menu.types";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -41,7 +42,7 @@ export function usePost(props: UsePostProps) {
   const filterMenuItems = useCallback(
     (items: MenuProps["items"]) => {
       return items.filter(({ key }) => {
-        if (id !== user?.id && key === "delete") {
+        if (id !== user?.id && MENU_KEYS.includes(key)) {
           return false;
         }
         return true;

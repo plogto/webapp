@@ -70,3 +70,5 @@ export const ID = {
   PROFILE_CARDS: "profileCards",
   TAG_POSTS: "tagPosts",
 };
+
+export const MENU_KEYS = ["normal", "delete", "edit"];

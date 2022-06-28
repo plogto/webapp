@@ -34,6 +34,10 @@ export function useNavigator() {
     return `${PageUrls.ADD_POST}?parentUrl=${url}`;
   }
 
+  function formatEditPostPageRoute(url: Post["url"]) {
+    return `/p/${url}${PageUrls.EDIT_POST}`;
+  }
+
   const isSettingsRoute = useMemo(
     () => pathname === PageUrls.SETTINGS,
     [pathname],
@@ -47,6 +51,7 @@ export function useNavigator() {
     formatFollowersPageRoute,
     formatFollowingPageRoute,
     formatAddPostPageRoute,
+    formatEditPostPageRoute,
     isSettingsRoute,
   };
 }
