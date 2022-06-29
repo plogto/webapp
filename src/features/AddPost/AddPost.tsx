@@ -96,7 +96,7 @@ export function AddPost(props: AddPostProps) {
             </div>
 
             <div className={styles.footer}>
-              {!attachmentPreview && (
+              {!attachmentPreview && !isEditMode && (
                 <Button
                   onClick={() => inputFileRef.current?.click()}
                   className={styles.attachmentButton}
