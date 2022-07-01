@@ -15,7 +15,7 @@
   @apply flex items-start justify-around space-x-4 px-0 md:px-4;
 
   & .items {
-    @apply z-40 w-full overflow-hidden bg-background-pure md:-mt-12 md:w-[40%];
+    @apply z-30 w-full overflow-hidden bg-background-pure md:-mt-12 md:w-[40%];
     & .item {
       @apply flex items-center space-x-3 hover:bg-background-light;
       @apply whitespace-nowrap border-b border-background-dark p-3;

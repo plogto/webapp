@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { CropImageTypeKey } from "@enums";
 import { ChangeImageProfileModal } from "@components/ChangeImageProfileModal";
 import { CropImage } from "@components/CropImage";
+import { DefaultBackground } from "@components/DefaultBackground/DefaultBackground";
 import { Icon } from "@components/Icon";
 import { Img } from "@components/Img";
 import type { BackgroundProfileProps } from "@features/Settings/Settings.types";
@@ -41,7 +42,11 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
             : "",
         }}
       >
-        {background && <Img image={background} alt="background" />}
+        {background ? (
+          <Img image={background} alt="background" />
+        ) : (
+          <DefaultBackground />
+        )}
         <button
           className={styles.uploadBackground}
           type="button"
