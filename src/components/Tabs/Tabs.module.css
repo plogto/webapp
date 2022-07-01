@@ -4,7 +4,7 @@
   @apply border-b border-background-medium px-2;
 
   & .tab {
-    @apply w-full px-2.5 py-3 text-center font-medium text-gray-400 md:w-fit;
+    @apply w-fit px-2.5 py-3 text-center font-medium text-gray-400;
 
     &.active {
       @apply text-foreground !important;
