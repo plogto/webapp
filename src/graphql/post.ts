@@ -122,6 +122,28 @@ export const GET_POSTS_BY_TAG_NAME = gql`
   }
 `;
 
+export const GET_TIMELINE_POSTS = gql`
+  ${UserFragment.default}
+  ${FileFragment.complete}
+  ${PaginationFragment.complete}
+  ${PostFragment.default}
+  query getTimelinePosts($page: Int, $limit: Int) {
+    getTimelinePosts(input: { page: $page, limit: $limit }) {
+      posts {
+        ...PostFragment
+        replies {
+          pagination {
+            totalDocs
+          }
+        }
+      }
+      pagination {
+        ...PaginationFragmentComplete
+      }
+    }
+  }
+`;
+
 export const ADD_POST = gql`
   ${UserFragment.short}
   ${FileFragment.complete}

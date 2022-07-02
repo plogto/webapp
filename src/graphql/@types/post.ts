@@ -29,6 +29,17 @@ export interface GetPostsByTagNameQuery {
     pagination: Pagination;
   };
 }
+
+export interface GetTimelinePostsQueryRequest {
+  page?: number;
+  limit?: number;
+}
+export interface GetTimelinePostsQuery {
+  getTimelinePosts: {
+    posts: Post[];
+    pagination: Pagination;
+  };
+}
 export interface GetSavedPostsQuery {
   getSavedPosts: {
     posts: Post[];
