@@ -14,12 +14,6 @@
     }
   }
 
-  & .unreadNotificationsCount {
-    @apply flex items-center justify-center;
-    @apply min-w-[1.5rem] rounded-md px-1.5 py-0.5;
-    @apply bg-danger text-sm text-white;
-  }
-
   & .notifications {
     @apply mt-12 mb-14 w-full overflow-hidden bg-background md:mt-4 md:p-0;
 

@@ -9,31 +9,19 @@ import styles from "./Notifications.module.css";
 import { useNotifications } from "./hooks/useNotifications";
 
 export function Notifications() {
-  const {
-    followRequestsCount = 0,
-    notifications,
-    unreadNotificationsCount,
-  } = useNotifications();
+  const { followRequestsCount = 0, notifications } = useNotifications();
   const { t } = useTranslation("notifications");
-
-  const UnreadNotificationCount = !!unreadNotificationsCount && (
-    <span className={styles.unreadNotificationsCount}>
-      {unreadNotificationsCount}
-    </span>
-  );
 
   return (
     <div className={styles.wrapper}>
       {isMobile ? (
         <PageHeader
           title={t("texts.notifications")}
-          rightSide={UnreadNotificationCount}
           className={styles.mobileHeader}
         />
       ) : (
         <div className={styles.header}>
           <span className={styles.title}>{t("texts.notifications")}</span>
-          {UnreadNotificationCount}
         </div>
       )}
       <Card
@@ -43,7 +31,9 @@ export function Notifications() {
       >
         {followRequestsCount > 0 && (
           <Link href={PageUrls.FOLLOW_REQUESTS}>
-            <a className={styles.followRequests}>{t("texts.followRequests")}</a>
+            <a className={styles.followRequests}>
+              {t("texts.followRequests")}({followRequestsCount})
+            </a>
           </Link>
         )}
 
