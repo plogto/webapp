@@ -5,7 +5,7 @@ import { PrimaryColor, BackgroundColor } from "@enums";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { EditUserMutation } from "@graphql/@types/user";
-import { EDIT_USER } from "@graphql/user";
+import { EDIT_USER, GET_USER_INFO } from "@graphql/user";
 
 export function useThemes() {
   const { user } = useAccountContext();
@@ -24,6 +24,7 @@ export function useThemes() {
         backgroundColor,
         primaryColor,
       },
+      refetchQueries: [{ query: GET_USER_INFO }],
     });
   }, [editUser, primaryColor, setTheme, backgroundColor]);
 
