@@ -9,12 +9,5 @@
     & .navbar {
       @apply max-w-2xl;
     }
-
-    & .logoWrapper {
-      @apply pl-2.5;
-      & .logo {
-        @apply h-7 w-7 text-foreground-pure;
-      }
-    }
   }
 }
