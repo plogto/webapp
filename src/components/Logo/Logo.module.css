@@ -1,5 +1,7 @@
 .logoWrapper {
-  @apply pl-2.5;
+  @apply flex items-center space-x-2;
+  @apply ml-1.5 px-1.5 font-brand text-3xl uppercase text-foreground;
+
   & .logo {
     @apply h-7 w-7 text-foreground-pure;
   }

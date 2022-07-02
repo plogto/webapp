@@ -1,5 +1,4 @@
 import { isMobile } from "react-device-detect";
-import { useTranslation } from "react-i18next";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
 import { Logo } from "@components/Logo";
@@ -9,14 +8,12 @@ import { useHome } from "./useHome";
 
 export function Home() {
   const { isLoading, posts, pagination, emptyStatus, getMoreData } = useHome();
-  const { t } = useTranslation("common");
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.home}>
       {isMobile && (
         <div className={styles.mobileHeader}>
           <Logo isClickable={false} />
-          <span>{t("logoName")}</span>
         </div>
       )}
       <Posts

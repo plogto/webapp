@@ -2,7 +2,6 @@
   @apply mb-14 w-full overflow-hidden md:mt-4;
 
   & .mobileHeader {
-    @apply flex items-center space-x-2;
-    @apply px-1.5 pt-3.5 pb-2 font-brand text-3xl uppercase text-foreground;
+    @apply px-1 pt-3.5 pb-2;
   }
 }
