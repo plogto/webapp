@@ -8,6 +8,10 @@ export const typePolicies: TypePolicies = {
         keyArgs: ["username"],
         merge: mergePosts,
       },
+      getTimelinePosts: {
+        keyArgs: false,
+        merge: mergePosts,
+      },
       getSavedPosts: {
         keyArgs: false,
         merge: mergePosts,
