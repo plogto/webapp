@@ -3,7 +3,7 @@
 
   & .header {
     @apply fixed top-0 left-0 right-0 bg-background-pure;
-    @apply z-40 md:hidden;
+    @apply z-30 md:hidden;
   }
 
   & .images {
