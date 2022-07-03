@@ -24,7 +24,12 @@ export function Button(props: ButtonProps) {
   );
 
   return (
-    <button onClick={onClick} type={type} className={classes}>
+    <button
+      onClick={onClick}
+      type={type}
+      className={classes}
+      disabled={disabled}
+    >
       {loading ? <Loader className={loadingClassName} /> : children}
     </button>
   );
