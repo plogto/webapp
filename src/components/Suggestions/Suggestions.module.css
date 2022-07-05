@@ -1,0 +1,18 @@
+.tags {
+  @apply flex items-center space-x-2;
+  @apply mb-2 w-full overflow-scroll;
+
+  & .tag {
+    @apply inline-flex flex-col items-start space-y-1;
+    @apply cursor-pointer px-2 py-0.5 hover:bg-primary-light;
+    @apply select-none rounded-lg border border-primary-light;
+    @apply transition-all duration-300;
+
+    & .name {
+      @apply -mb-1.5 font-bold text-primary;
+    }
+    & .count {
+      @apply whitespace-nowrap text-gray-400;
+    }
+  }
+}
