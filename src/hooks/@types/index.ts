@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { DateType } from "@enums";
+import { EditorState } from "draft-js";
 
 export type ActiveClass = (props: {
   href: string;
@@ -30,4 +31,9 @@ export interface IsEditProps {
 
 export interface UseImageProfileProps {
   key: "avatar" | "background";
+}
+
+export interface HandleCompleteTagProps {
+  editorState: EditorState;
+  tagName: string;
 }
