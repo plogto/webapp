@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.32.0](https://github.com/mahdineer/plog-fe/compare/v0.31.0...v0.32.0) (2022-07-06)
+
+
+### Features
+
+* add getTimelinePosts graphql query for Home feature ([84a2c4d](https://github.com/mahdineer/plog-fe/commit/84a2c4d1beda9bcbbd0ba2b2b286535425cc98ed))
+* add useSuggestions hook ([8bf81d3](https://github.com/mahdineer/plog-fe/commit/8bf81d30a3e3381682d4f86f0a2ec8bd4375f6ef))
+* implement DefaultBackground component ([e499400](https://github.com/mahdineer/plog-fe/commit/e499400932064b237c838f6948a20664a727e247))
+* implement Logo component ([9637a3c](https://github.com/mahdineer/plog-fe/commit/9637a3ca643250235b479eb71679e840e2fb9f7b))
+* implement Suggestions component ([97fcde7](https://github.com/mahdineer/plog-fe/commit/97fcde78ecf4e897a3c77ae24ba32ac86e1f9c7a))
+* implement TextEditor component ([f3a9c18](https://github.com/mahdineer/plog-fe/commit/f3a9c18f320bb3e53af72e6dc14b137e6e64918e))
+
+
+### Bug Fixes
+
+* add refetchQueries for editUser query on useThemes ([2da8513](https://github.com/mahdineer/plog-fe/commit/2da85135882b75df67a1a4678d83664f655368bc))
+* handle disabled prop for Button component ([a866ffa](https://github.com/mahdineer/plog-fe/commit/a866ffa3d8770d160f143f05eb3e3cfe4972d156))
+* improve styles on CropImage component ([5f013bf](https://github.com/mahdineer/plog-fe/commit/5f013bf7da00e81e9f9b04be4b6f548349365b11))
+* remove unread notification count from Notifications feature ([8c40fa5](https://github.com/mahdineer/plog-fe/commit/8c40fa5e38b4908f11aa89c41bfbf334bb6ba96a))
+* set left align for Tabs component ([410172a](https://github.com/mahdineer/plog-fe/commit/410172a42a90fc2d9f1b89cdeab49ad02af5ba29))
+
 ## [0.31.0](https://github.com/mahdineer/plog-fe/compare/v0.30.1...v0.31.0) (2022-06-28)
 
 
