@@ -20,7 +20,7 @@
     @apply overflow-hidden hover:bg-background-light;
 
     & .tagName {
-      @apply text-xl font-bold text-primary;
+      @apply w-11/12 truncate text-xl font-bold text-primary;
     }
 
     & .tagCount {

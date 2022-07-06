@@ -1,3 +1,4 @@
+import type { EditorState } from "draft-js";
 import type { InternalRefetchQueriesInclude } from "@apollo/client/core/types";
 import type { Post } from "@t/post";
 
@@ -12,7 +13,7 @@ export interface UseEditPostProps {
 }
 export interface AddPostForm {
   parentId?: string;
-  content?: Post["content"];
+  content: EditorState;
   attachment?: string[];
 }
 

@@ -2,8 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import { EditorState } from "draft-js";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
+import { createEditorStateWithText } from "@draft-js-plugins/editor";
 import type {
   AddPostMutation,
   AddPostMutationRequest,
@@ -16,6 +18,7 @@ import {
 import { GET_TRENDS } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
 import { usePost } from "@hooks/usePost";
+import { useSuggestions } from "@hooks/useSuggestions";
 import { useUploadFile } from "@hooks/useUploadFile";
 import { useUrls } from "@hooks/useUrls";
 import type { AddPostForm, UseAddPostProps } from "../AddPost.types";
@@ -31,6 +34,7 @@ export function useAddPost(props: UseAddPostProps) {
     AddPostMutation,
     AddPostMutationRequest
   >(ADD_POST);
+  const { handleCompleteTag } = useSuggestions();
 
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
   const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
@@ -39,10 +43,10 @@ export function useAddPost(props: UseAddPostProps) {
   const formMethods = useForm<AddPostForm>({
     mode: "all",
     defaultValues: {
-      content: post?.content,
+      content: createEditorStateWithText(post?.content || ""),
     },
   });
-  const { setValue } = formMethods;
+  const { getValues, setValue } = formMethods;
   const inputFileRef = useRef<HTMLInputElement>(null);
   const { formatPostPageRoute, formatProfilePageRoute } = useNavigator();
   const { t } = useTranslation("addPost");
@@ -84,7 +88,7 @@ export function useAddPost(props: UseAddPostProps) {
         push(formatProfilePageRoute(user.username));
       } else {
         if (post?.content) {
-          setValue("content", post.content);
+          setValue("content", createEditorStateWithText(post.content));
         }
 
         if (post?.attachment) {
@@ -132,9 +136,13 @@ export function useAddPost(props: UseAddPostProps) {
 
   const handleAddPost = useCallback(
     (variables: AddPostForm) => {
+      const content = variables.content?.getCurrentContent().getPlainText();
       if (!attachmentPreview) {
         addPost({
-          variables,
+          variables: {
+            ...variables,
+            content,
+          },
           refetchQueries,
         });
       } else {
@@ -150,6 +158,7 @@ export function useAddPost(props: UseAddPostProps) {
               attachment: data?.singleUploadFile?.id
                 ? [data.singleUploadFile.id]
                 : [],
+              content,
             },
             refetchQueries,
           });
@@ -170,7 +179,19 @@ export function useAddPost(props: UseAddPostProps) {
     [isEditMode, handleAddPost, handleEditPost],
   );
 
+  const handleClickOnTag = (tagName: string) => {
+    const { newEditorState, forceSelection } = handleCompleteTag({
+      editorState: getValues("content"),
+      tagName,
+    });
+    setValue(
+      "content",
+      EditorState.forceSelection(newEditorState, forceSelection),
+    );
+  };
+
   return {
+    handleClickOnTag,
     buttonTitle,
     isLoading,
     parentPost,

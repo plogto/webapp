@@ -38,7 +38,7 @@ export function useEditPost(props: UseEditPostProps) {
       editPost({
         variables: {
           postId: post?.id,
-          content,
+          content: content?.getCurrentContent().getPlainText(),
         },
         refetchQueries,
       });

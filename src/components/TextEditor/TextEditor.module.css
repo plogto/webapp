@@ -1,0 +1,15 @@
+.textEditor {
+  @apply mb-1.5;
+  & :global(.public-DraftEditorPlaceholder-root) {
+    @apply absolute text-gray-400;
+  }
+
+  &.isReply {
+    & :global(.public-DraftEditorPlaceholder-root) {
+      @apply text-sm;
+    }
+    & :global(.DraftEditor-editorContainer) {
+      @apply text-sm;
+    }
+  }
+}

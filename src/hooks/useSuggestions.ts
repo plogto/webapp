@@ -71,7 +71,6 @@ export function useSuggestions() {
     });
 
     return {
-      content: newEditorState.getCurrentContent().getPlainText(),
       newEditorState,
       forceSelection,
     };

@@ -31,18 +31,6 @@
           @apply bg-gray-800 bg-opacity-50 px-2 py-1 text-white;
         }
       }
-
-      & .textarea {
-        @apply m-0 w-full resize-none border-none bg-background-pure p-0 pb-2 text-lg ring-0 focus:ring-0;
-
-        &::placeholder {
-          @apply text-gray-400;
-        }
-
-        &.reply {
-          @apply text-sm;
-        }
-      }
     }
 
     & .footer {

@@ -1,8 +1,10 @@
 import { gql } from "@apollo/client";
+import { TagFragment } from "./fragments/tag";
 import { UserFragment } from "./fragments/user";
 
 export const SEARCH = gql`
   ${UserFragment.short}
+  ${TagFragment.default}
   query search($expression: String!) {
     search(expression: $expression) {
       user {
@@ -12,9 +14,20 @@ export const SEARCH = gql`
       }
       tag {
         tags {
-          id
-          name
-          count
+          ...TagFragment
+        }
+      }
+    }
+  }
+`;
+
+export const SEARCH_TAGS = gql`
+  ${TagFragment.default}
+  query search($expression: String!) {
+    search(expression: $expression) {
+      tag {
+        tags {
+          ...TagFragment
         }
       }
     }
