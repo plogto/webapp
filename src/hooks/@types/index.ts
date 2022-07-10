@@ -2,11 +2,6 @@ import type { ReactNode } from "react";
 import { DateType } from "@enums";
 import { EditorState } from "draft-js";
 
-export type ActiveClass = (props: {
-  href: string;
-  className: string;
-}) => string;
-
 export interface ParsePostProps {
   content: string;
   hashtagComponent: ReactNode;

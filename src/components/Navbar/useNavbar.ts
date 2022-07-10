@@ -13,7 +13,6 @@ export function useNavbar() {
   const { unreadNotificationsCount } = useNotifications();
 
   useEffect(() => {
-    console.log({ data });
     if (data?.getNotification) {
       pushNotifications(data.getNotification);
     }
