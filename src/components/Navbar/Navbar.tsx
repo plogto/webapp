@@ -1,9 +1,10 @@
+import classNames from "classnames";
 import { v4 as uuid } from "uuid";
 import Link from "next/link";
 import { Avatar } from "@components/Avatar";
 import { Icon } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
-import { useClassName } from "@hooks/useClassName";
+import { useNavigator } from "@hooks/useNavigator";
 import { NavigationItem } from "@t/navigation";
 import styles from "./Navbar.module.css";
 import { NavbarProps } from "./Navbar.types";
@@ -11,7 +12,7 @@ import { NotificationIcon } from "./components/NotificationIcon";
 
 export function Navbar(props: NavbarProps) {
   const { user } = props;
-  const { activeClass } = useClassName();
+  const { isRouteActive } = useNavigator();
 
   const NAVIGATION_ITEMS: NavigationItem[] = [
     {
@@ -49,10 +50,10 @@ export function Navbar(props: NavbarProps) {
         {NAVIGATION_ITEMS.map(({ href, icon }) => (
           <Link key={uuid()} href={href}>
             <a
-              className={`${styles.navLink} ${activeClass({
-                href,
-                className: styles.active,
-              })}`}
+              className={classNames(
+                styles.navLink,
+                isRouteActive(href) && styles.active,
+              )}
             >
               {icon}
             </a>

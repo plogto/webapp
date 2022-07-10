@@ -43,6 +43,10 @@ export function useNavigator() {
     [pathname],
   );
 
+  function isRouteActive(href: string) {
+    return pathname === href;
+  }
+
   return {
     formatProfilePageRoute,
     formatSavedPostsPageRoute,
@@ -53,5 +57,6 @@ export function useNavigator() {
     formatAddPostPageRoute,
     formatEditPostPageRoute,
     isSettingsRoute,
+    isRouteActive,
   };
 }
