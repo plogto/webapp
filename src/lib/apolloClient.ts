@@ -6,21 +6,18 @@ import {
   InMemoryCache,
   NormalizedCacheObject,
   RequestHandler,
+  split,
 } from "@apollo/client";
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { getMainDefinition } from "@apollo/client/utilities";
 import { typePolicies } from "@graphql/typePolicies";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
 const authLink = new ApolloLink((operation, forward) => {
-  const token =
-    typeof window !== "undefined"
-      ? localStorage.getItem("authorization")
-      : "null";
-  const authorization = `Bearer ${token}`;
-
   operation.setContext({
     headers: {
-      authorization,
+      authorization: getAuthorization(),
     },
   });
   return forward(operation);
@@ -32,15 +29,34 @@ const httpLink = authLink.concat(
   }) as unknown as ApolloLink | RequestHandler,
 );
 
-const link = httpLink;
+const link =
+  typeof window !== "undefined"
+    ? split(
+        ({ query }) => {
+          const definition = getMainDefinition(query);
+          return (
+            definition.kind === "OperationDefinition" &&
+            definition.operation === "subscription"
+          );
+        },
+        new WebSocketLink({
+          uri: process.env.NEXT_PUBLIC_SUBSCRIPTIONS_API + "/query",
+          options: {
+            reconnect: true,
+            connectionParams: () => ({
+              authorization: getAuthorization(),
+            }),
+          },
+        }),
+        httpLink,
+      )
+    : httpLink;
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // set to true for SSR
     link,
-    cache: new InMemoryCache({
-      typePolicies,
-    }),
+    cache: new InMemoryCache({ typePolicies }),
   });
 }
 
@@ -73,4 +89,15 @@ export function useApollo(
 ): ApolloClient<NormalizedCacheObject> {
   const store = useMemo(() => initializeApollo(initialState), [initialState]);
   return store;
+}
+
+function getAuthorization() {
+  const token =
+    typeof window !== "undefined"
+      ? localStorage.getItem("authorization")
+      : "null";
+
+  const authorization = `Bearer ${token}`;
+
+  return authorization;
 }
