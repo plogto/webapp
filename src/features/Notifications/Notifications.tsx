@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Card } from "@components/Card";
 import { PageHeader } from "@components/PageHeader";
 import { PageUrls } from "@enums/pages";
+import { useNotifications } from "@hooks/useNotifications";
 import { Notification } from "./Notification";
 import styles from "./Notifications.module.css";
-import { useNotifications } from "./hooks/useNotifications";
 
 export function Notifications() {
   const { followRequestsCount = 0, notifications } = useNotifications();

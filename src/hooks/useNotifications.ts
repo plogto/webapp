@@ -1,18 +1,55 @@
-import { useEffect } from "react";
-import { useSubscription } from "@apollo/client";
+import { useEffect, useMemo } from "react";
+import { useLazyQuery } from "@apollo/client";
+import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
-import type { GetNotificationSubscription } from "@graphql/@types/notification";
-import { GET_NOTIFICATION } from "@graphql/notification";
+import type {
+  GetNotificationsQuery,
+  GetNotificationsQueryRequest,
+} from "@graphql/@types/notification";
+import { GET_NOTIFICATIONS } from "@graphql/notification";
 
 export function useNotifications() {
-  const { data, loading } =
-    useSubscription<GetNotificationSubscription>(GET_NOTIFICATION);
+  const { user } = useAccountContext();
+  const [getNotifications, getNotificationsResponse] = useLazyQuery<
+    GetNotificationsQuery,
+    GetNotificationsQueryRequest
+  >(GET_NOTIFICATIONS);
 
-  const { pushNotifications } = useNotificationsContext();
+  const {
+    notifications,
+    unreadNotificationsCount,
+    setNotifications,
+    setUnreadNotificationsCount,
+  } = useNotificationsContext();
 
   useEffect(() => {
-    if (data?.getNotification) {
-      pushNotifications(data.getNotification);
+    getNotifications({
+      variables: {
+        limit: 15,
+      },
+    });
+  }, [getNotifications]);
+
+  useEffect(() => {
+    if (getNotificationsResponse.data?.getNotifications) {
+      setNotifications(
+        getNotificationsResponse.data?.getNotifications.notifications,
+      );
+      setUnreadNotificationsCount(
+        getNotificationsResponse.data?.getNotifications
+          .unreadNotificationsCount,
+      );
     }
-  }, [data, loading, pushNotifications]);
+  }, [
+    getNotificationsResponse.data,
+    setNotifications,
+    setUnreadNotificationsCount,
+  ]);
+
+  const followRequestsCount = useMemo(
+    () => user?.followRequestsCount,
+    [user?.followRequestsCount],
+  );
+
+  return { followRequestsCount, notifications, unreadNotificationsCount };
 }
