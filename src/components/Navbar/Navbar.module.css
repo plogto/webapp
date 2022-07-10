@@ -10,6 +10,17 @@
       @apply text-gray-400 hover:text-foreground;
       @apply inline-flex items-center justify-center;
 
+      & .notificationBadgeWrapper {
+        @apply absolute top-0 right-0;
+        & .notificationBadge {
+          @apply inline-flex items-center justify-center;
+          @apply absolute -left-3.5 -top-1 md:-left-3;
+          @apply h-4 w-fit rounded-full py-1 px-1;
+          @apply bg-primary text-foreground;
+          @apply select-none text-xs font-medium;
+        }
+      }
+
       & svg {
         @apply h-8 w-8 stroke-2 md:h-7 md:w-7;
       }

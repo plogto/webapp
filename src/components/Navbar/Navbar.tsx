@@ -7,6 +7,7 @@ import { useClassName } from "@hooks/useClassName";
 import { NavigationItem } from "@t/navigation";
 import styles from "./Navbar.module.css";
 import { NavbarProps } from "./Navbar.types";
+import { NotificationIcon } from "./components/NotificationIcon";
 
 export function Navbar(props: NavbarProps) {
   const { user } = props;
@@ -14,7 +15,7 @@ export function Navbar(props: NavbarProps) {
 
   const NAVIGATION_ITEMS: NavigationItem[] = [
     {
-      icon: <Icon name="BellFill" />,
+      icon: <NotificationIcon />,
       href: PageUrls.NOTIFICATIONS,
     },
     {
