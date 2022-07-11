@@ -7,7 +7,7 @@ import styles from "./Home.module.css";
 import { useHome } from "./useHome";
 
 export function Home() {
-  const { isLoading, posts, pagination, emptyStatus, getMoreData } = useHome();
+  const { loading, posts, pagination, emptyStatus, getMoreData } = useHome();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.home}>
@@ -18,7 +18,7 @@ export function Home() {
       )}
       <Posts
         scrollableTarget={ID.HOME_CARDS}
-        isLoading={isLoading}
+        isLoading={loading}
         pagination={pagination}
         getMoreData={getMoreData}
         posts={posts}

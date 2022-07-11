@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { useLazyQuery } from "@apollo/client";
@@ -9,18 +9,15 @@ import type {
   GetTimelinePostsQueryRequest,
 } from "@graphql/@types/post";
 import { GET_TIMELINE_POSTS } from "@graphql/post";
-import type { Post } from "@t/post";
 import type { Status } from "@t/status";
 
 export function useHome() {
   const { push } = useRouter();
   const { user, isAuthenticated } = useAccountContext();
-  const [isLoading, setIsLoading] = useState(true);
   const [getTimelinePosts, { loading, data, fetchMore }] = useLazyQuery<
     GetTimelinePostsQuery,
     GetTimelinePostsQueryRequest
   >(GET_TIMELINE_POSTS);
-  const [posts, setPosts] = useState<Post[]>([]);
   const { t } = useTranslation("post");
 
   // TODO: improve this part
@@ -35,13 +32,6 @@ export function useHome() {
       getTimelinePosts();
     }
   }, [user, getTimelinePosts]);
-
-  useEffect(() => {
-    if (data) {
-      setPosts(data.getTimelinePosts.posts);
-      setIsLoading(loading);
-    }
-  }, [data, loading]);
 
   const emptyStatus: Status = useMemo(
     () => ({
@@ -64,8 +54,8 @@ export function useHome() {
     });
 
   return {
-    isLoading,
-    posts,
+    loading,
+    posts: data?.getTimelinePosts?.posts,
     pagination,
     emptyStatus,
     getMoreData,
