@@ -24,7 +24,7 @@ export interface Notification {
 }
 
 export interface NotificationsWithPagination {
-  notifications?: Notification[];
+  notifications: Notification[];
   unreadNotificationsCount?: number;
   pagination?: Pagination;
 }

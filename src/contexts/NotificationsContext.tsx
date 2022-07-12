@@ -1,7 +1,21 @@
+import { useEffect } from "react";
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useLazyQuery } from "@apollo/client";
+import type {
+  GetNotificationsQuery,
+  GetNotificationsQueryRequest,
+} from "@graphql/@types/notification";
+import { GET_NOTIFICATIONS } from "@graphql/notification";
 import type { Notification } from "@t/notification";
+import { useAccountContext } from "./AccountContext";
 
-const NotificationsContext = createContext<NotificationsContext>({});
+const initialNotifications = {
+  notifications: [],
+};
+
+const NotificationsContext =
+  createContext<NotificationsContext>(initialNotifications);
+
 const NotificationsContextSetState = createContext<SetNotificationsContext>({
   setNotifications: () => {},
   setUnreadNotificationsCount: () => {},
@@ -11,11 +25,11 @@ const NotificationsContextSetState = createContext<SetNotificationsContext>({
 interface Props {
   children: ReactNode;
 }
-
+// TODO: refactor this context
 export function NotificationsProvider({ children }: Props) {
   const [notifications, setNotifications] = useState<
     NotificationsContext["notifications"]
-  >([]);
+  >(initialNotifications.notifications);
   const [unreadNotificationsCount, setUnreadNotificationsCount] =
     useState<NotificationsContext["unreadNotificationsCount"]>();
   const [pagination, setPagination] =
@@ -38,27 +52,51 @@ export function NotificationsProvider({ children }: Props) {
   );
 }
 
-function useNotificationsState() {
-  const { notifications, unreadNotificationsCount, pagination } =
-    useContext(NotificationsContext);
-
-  return { notifications, unreadNotificationsCount, pagination };
-}
-
-function useNotificationsSetState() {
-  const { setNotifications, setUnreadNotificationsCount, setPagination } =
-    useContext(NotificationsContextSetState);
-
-  return { setNotifications, setUnreadNotificationsCount, setPagination };
-}
-
 export function useNotificationsContext() {
   const { notifications, unreadNotificationsCount, pagination } =
-    useNotificationsState();
+    useContext(NotificationsContext);
   const { setNotifications, setUnreadNotificationsCount, setPagination } =
-    useNotificationsSetState();
+    useContext(NotificationsContextSetState);
+  const { user } = useAccountContext();
 
-  const pushNotifications = (notification: Notification) => {
+  const [getNotifications, { data, fetchMore }] = useLazyQuery<
+    GetNotificationsQuery,
+    GetNotificationsQueryRequest
+  >(GET_NOTIFICATIONS);
+
+  useEffect(() => {
+    if (user) {
+      getNotifications().then(({ data }) => {
+        setNotifications(data?.getNotifications?.notifications || []);
+        setPagination(data?.getNotifications.pagination);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (data?.getNotifications?.unreadNotificationsCount) {
+      setUnreadNotificationsCount(
+        data.getNotifications.unreadNotificationsCount,
+      );
+    }
+  }, [data?.getNotifications?.unreadNotificationsCount]);
+
+  const getMoreData = () =>
+    fetchMore({
+      variables: {
+        page: pagination?.nextPage,
+      },
+    }).then(({ data }) => {
+      const newNotifications = data?.getNotifications?.notifications || [];
+      setNotifications(prevNotifications =>
+        prevNotifications.length
+          ? prevNotifications.concat(newNotifications)
+          : newNotifications,
+      );
+      setPagination(data?.getNotifications.pagination);
+    });
+
+  const pushNotification = (notification: Notification) => {
     setNotifications(prevNotifications =>
       prevNotifications ? [notification, ...prevNotifications] : [notification],
     );
@@ -69,9 +107,7 @@ export function useNotificationsContext() {
     notifications,
     unreadNotificationsCount,
     pagination,
-    setNotifications,
-    setUnreadNotificationsCount,
-    setPagination,
-    pushNotifications,
+    getMoreData,
+    pushNotification,
   };
 }

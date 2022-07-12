@@ -1,8 +1,10 @@
 import { gql } from "@apollo/client";
+import { PaginationFragment } from "./fragments/pagination";
 import { UserFragment } from "./fragments/user";
 
 export const GET_NOTIFICATIONS = gql`
   ${UserFragment.short}
+  ${PaginationFragment.complete}
   query getNotifications($page: Int, $limit: Int) {
     getNotifications(input: { page: $page, limit: $limit }) {
       notifications {
@@ -31,7 +33,7 @@ export const GET_NOTIFICATIONS = gql`
       }
       unreadNotificationsCount
       pagination {
-        totalDocs
+        ...PaginationFragmentComplete
       }
     }
   }

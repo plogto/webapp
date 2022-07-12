@@ -136,6 +136,11 @@
     }
   },
   "notifications": {
+    "status": {
+      "noNotifications": {
+        "title": "No Notifications Yet"
+      }
+    },
     "texts": {
       "followRequests": "Follow Requests",
       "notifications": "Notifications"
