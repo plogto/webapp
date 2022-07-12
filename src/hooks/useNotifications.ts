@@ -1,55 +1,35 @@
-import { useEffect, useMemo } from "react";
-import { useLazyQuery } from "@apollo/client";
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
-import type {
-  GetNotificationsQuery,
-  GetNotificationsQueryRequest,
-} from "@graphql/@types/notification";
-import { GET_NOTIFICATIONS } from "@graphql/notification";
+import type { Status } from "@t/status";
 
 export function useNotifications() {
   const { user } = useAccountContext();
-  const [getNotifications, getNotificationsResponse] = useLazyQuery<
-    GetNotificationsQuery,
-    GetNotificationsQueryRequest
-  >(GET_NOTIFICATIONS);
+  const { notifications, pagination, unreadNotificationsCount, getMoreData } =
+    useNotificationsContext();
 
-  const {
-    notifications,
-    unreadNotificationsCount,
-    setNotifications,
-    setUnreadNotificationsCount,
-  } = useNotificationsContext();
-
-  useEffect(() => {
-    getNotifications({
-      variables: {
-        limit: 15,
-      },
-    });
-  }, [getNotifications]);
-
-  useEffect(() => {
-    if (getNotificationsResponse.data?.getNotifications) {
-      setNotifications(
-        getNotificationsResponse.data?.getNotifications.notifications,
-      );
-      setUnreadNotificationsCount(
-        getNotificationsResponse.data?.getNotifications
-          .unreadNotificationsCount,
-      );
-    }
-  }, [
-    getNotificationsResponse.data,
-    setNotifications,
-    setUnreadNotificationsCount,
-  ]);
+  const { t } = useTranslation("notifications");
 
   const followRequestsCount = useMemo(
     () => user?.followRequestsCount,
     [user?.followRequestsCount],
   );
 
-  return { followRequestsCount, notifications, unreadNotificationsCount };
+  const emptyStatus: Status = useMemo(
+    () => ({
+      title: t("status.noNotifications.title"),
+      icon: "BellFill",
+    }),
+    [t],
+  );
+
+  return {
+    notifications,
+    pagination,
+    followRequestsCount,
+    unreadNotificationsCount,
+    getMoreData,
+    emptyStatus,
+  };
 }
