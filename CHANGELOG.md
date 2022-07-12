@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.33.0](https://github.com/mahdineer/plog-fe/compare/v0.32.0...v0.33.0) (2022-07-12)
+
+
+### Features
+
+* implement isRouteActive ([4c98259](https://github.com/mahdineer/plog-fe/commit/4c9825971a95cf3c60251b67d171fc9a658052a5))
+* implement isRouteActive ([983d4c6](https://github.com/mahdineer/plog-fe/commit/983d4c6d5e4ebaad526fe17ee7b6b0c1e137c90d))
+* implement Notification component ([b2ccc86](https://github.com/mahdineer/plog-fe/commit/b2ccc861b9a0623bd1902f0e84c164960f43f3d2))
+* implement NotificationsList component ([af7253a](https://github.com/mahdineer/plog-fe/commit/af7253a0abdc7313bdb3b351dfbf0ca14fe9fdf2))
+
 ## [0.32.0](https://github.com/mahdineer/plog-fe/compare/v0.31.0...v0.32.0) (2022-07-06)
 
 
