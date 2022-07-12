@@ -1,0 +1,16 @@
+.notificationsList {
+  @apply w-full;
+
+  & .emptyStatus {
+    @apply mx-10 mt-20 md:m-32;
+  }
+
+  & .loadingWrapper {
+    @apply flex items-center justify-center text-foreground;
+    @apply w-full p-6;
+
+    & .loading {
+      @apply h-8 w-8;
+    }
+  }
+}

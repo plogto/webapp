@@ -69,6 +69,7 @@ export const ID = {
   HOME_CARDS: "homeCards",
   PROFILE_CARDS: "profileCards",
   TAG_POSTS: "tagPosts",
+  NOTIFICATIONS: "notifications",
 };
 
 export const MENU_KEYS = ["normal", "delete", "edit"];
