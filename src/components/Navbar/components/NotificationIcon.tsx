@@ -1,9 +1,9 @@
 import { Icon } from "@components/Icon";
+import { useNotificationsContext } from "@contexts/NotificationsContext";
 import styles from "../Navbar.module.css";
-import { useNavbar } from "../useNavbar";
 
 export function NotificationIcon() {
-  const { unreadNotificationsCount } = useNavbar();
+  const { unreadNotificationsCount } = useNotificationsContext();
 
   return (
     <div className="relative">
