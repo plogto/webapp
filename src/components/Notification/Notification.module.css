@@ -1,0 +1,24 @@
+.notification {
+  @apply flex items-start p-3;
+  @apply w-full border-b border-background-medium last:border-none;
+
+  &.unreadNotification {
+    @apply bg-background-pure;
+  }
+
+  & .avatar {
+    @apply mr-1.5 h-10 w-10 md:mr-2 md:h-11 md:w-11;
+  }
+
+  & .content {
+    @apply text-sm text-foreground;
+
+    & .reply {
+      @apply text-foreground-medium;
+    }
+
+    & .date {
+      @apply mt-1 text-xs text-foreground-dark;
+    }
+  }
+}
