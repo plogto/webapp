@@ -1,5 +1,5 @@
 /* Desktop */
-.card {
+.trends {
   @apply flex flex-col;
 
   & .header {

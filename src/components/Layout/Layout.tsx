@@ -1,4 +1,5 @@
 import { isMobile } from "react-device-detect";
+import classNames from "classnames";
 import { Navbar } from "@components/Navbar";
 import { useAccountContext } from "@contexts/AccountContext";
 import { DesktopTrends } from "@features/Trends";
@@ -13,25 +14,23 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Header user={user} />
-      {user ? (
-        <div className={styles.layout}>
-          <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
+      <div className={styles.layout}>
+        <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
+          <div className={classNames(showTrends ? "w-[60%]" : "w-full")}>
             {children}
-            {showTrends && (
-              <div className="hidden md:block w-[40%] max-w-[40%] mt-4">
-                <div className="sticky top-[4.5rem] flex flex-col space-y-4 mb-4">
-                  <DesktopTrends />
-                </div>
+          </div>
+          {showTrends && (
+            <div className="hidden md:block w-[40%] mt-4">
+              <div className="sticky top-[4.5rem] flex flex-col space-y-4 mb-4">
+                <DesktopTrends />
               </div>
-            )}
-          </div>
-          <div className={styles.footer}>
-            {isMobile && <Navbar user={user} />}
-          </div>
+            </div>
+          )}
         </div>
-      ) : (
-        <div className={styles.layout}>{children}</div>
-      )}
+        <div className={styles.footer}>
+          {user && isMobile && <Navbar user={user} />}
+        </div>
+      </div>
     </>
   );
 }

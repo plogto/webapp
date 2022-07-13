@@ -12,7 +12,7 @@ export function DesktopTrends() {
   const { t } = useTranslation("common");
   const { formatTagPageRoute } = useNavigator();
   return (
-    <Card className={styles.card} shadow rounded>
+    <Card className={styles.trends} shadow rounded>
       <span className={styles.header}>
         <span className={styles.title}>{t("trends")}</span>
         <Icon name="TrendingUp" />
