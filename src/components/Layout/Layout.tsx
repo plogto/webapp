@@ -16,7 +16,11 @@ export function Layout(props: LayoutProps) {
       <Header user={user} />
       <div className={styles.layout}>
         <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
-          <div className={classNames(showTrends ? "w-[60%]" : "w-full")}>
+          <div
+            className={classNames(
+              showTrends && !isMobile ? "w-[60%]" : "w-full",
+            )}
+          >
             {children}
           </div>
           {showTrends && (

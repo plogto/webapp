@@ -76,8 +76,6 @@ export const GET_POSTS_BY_USERNAME = gql`
 `;
 
 export const GET_SAVED_POSTS = gql`
-  ${UserFragment.default}
-  ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
   query getSavedPosts($page: Int, $limit: Int) {
@@ -98,8 +96,6 @@ export const GET_SAVED_POSTS = gql`
 `;
 
 export const GET_POSTS_BY_TAG_NAME = gql`
-  ${UserFragment.default}
-  ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
   query getPostsByTagName($tagName: String!, $page: Int, $limit: Int) {
@@ -123,8 +119,6 @@ export const GET_POSTS_BY_TAG_NAME = gql`
 `;
 
 export const GET_TIMELINE_POSTS = gql`
-  ${UserFragment.default}
-  ${FileFragment.complete}
   ${PaginationFragment.complete}
   ${PostFragment.default}
   query getTimelinePosts($page: Int, $limit: Int) {
