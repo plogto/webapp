@@ -58,6 +58,7 @@ export function AddPost(props: AddPostProps) {
               dateType={DateType.LONG}
               content={parentPost.content}
               attachment={parentPost.attachment}
+              likes={parentPost.likes}
               createdAt={parentPost.createdAt}
               updatedAt={parentPost.updatedAt}
             />

@@ -7,6 +7,7 @@ import { UserFragment } from "./fragments/user";
 export const GET_SHORT_POST_BY_URL = gql`
   ${UserFragment.short}
   ${FileFragment.complete}
+  ${PaginationFragment.complete}
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
       id
@@ -17,6 +18,11 @@ export const GET_SHORT_POST_BY_URL = gql`
       content
       attachment {
         ...FileFragmentComplete
+      }
+      likes {
+        pagination {
+          ...PaginationFragmentComplete
+        }
       }
       createdAt
       updatedAt
