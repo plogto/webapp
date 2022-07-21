@@ -1,0 +1,11 @@
+.likes {
+  @apply block pl-1 text-sm text-foreground;
+
+  & .separate {
+    @apply pl-0.5 pr-1.5 text-gray-400;
+  }
+
+  &.small {
+    @apply text-xs;
+  }
+}

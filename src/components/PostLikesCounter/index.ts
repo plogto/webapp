@@ -1,0 +1,1 @@
+export { PostLikesCounter } from "./PostLikesCounter";
