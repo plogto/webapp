@@ -29,7 +29,7 @@ export function Notification(props: NotificationProps) {
   );
 
   return (
-    <Link href={`/${url}`}>
+    <Link href={url}>
       <a className={notificationClasses}>
         <div>
           <Avatar
