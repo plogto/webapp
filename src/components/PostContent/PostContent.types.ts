@@ -14,6 +14,7 @@ export interface PostContentProps {
   size?: ContentSize;
   content: Post["content"];
   attachment?: Post["attachment"];
+  likes: Post["likes"];
   showHeader?: boolean;
   dateSize?: DateSize;
   dateType: DateType;

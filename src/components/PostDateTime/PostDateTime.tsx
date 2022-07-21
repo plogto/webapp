@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { DateType } from "@enums";
 import { useDate } from "@hooks/useDate";
-import { PostDateTimeProps } from "./@types";
 import styles from "./PostDateTime.module.css";
+import type { PostDateTimeProps } from "./PostDateTime.types";
 
 export function PostDateTime(props: PostDateTimeProps) {
   const { formatFromNow, isEdited } = useDate();

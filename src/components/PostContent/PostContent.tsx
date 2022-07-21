@@ -5,6 +5,7 @@ import { FullName } from "@components/FullName";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
 import { PostDateTime } from "@components/PostDateTime";
+import { PostLikesCounter } from "@components/PostLikesCounter";
 import { useNavigator } from "@hooks/useNavigator";
 import { usePostParser } from "@hooks/usePostParser";
 import styles from "./PostContent.module.css";
@@ -18,6 +19,7 @@ export function PostContent(props: PostContentProps) {
     showHeader = false,
     content = "",
     attachment = [],
+    likes,
     className,
     user,
     dateSize,
@@ -53,12 +55,15 @@ export function PostContent(props: PostContentProps) {
         </div>
       )}
       {dateSize && (
-        <PostDateTime
-          type={dateType}
-          createdAt={createdAt}
-          updatedAt={updatedAt}
-          size={dateSize}
-        />
+        <div className="flex flex-row">
+          <PostDateTime
+            type={dateType}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+            size={dateSize}
+          />
+          <PostLikesCounter size={dateSize} likes={likes} />
+        </div>
       )}
     </span>
   );
