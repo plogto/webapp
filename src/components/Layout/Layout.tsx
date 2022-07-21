@@ -15,16 +15,16 @@ export function Layout(props: LayoutProps) {
     <>
       <Header user={user} />
       <div className={styles.layout}>
-        <div className="flex items-start md:space-x-4 w-full md:mx-2.5">
+        <div className="grid grid-cols-5 gap-4 w-full md:mx-2.5">
           <div
             className={classNames(
-              showTrends && !isMobile ? "w-[60%]" : "w-full",
+              showTrends && !isMobile ? "col-span-3" : "col-span-5",
             )}
           >
             {children}
           </div>
           {showTrends && (
-            <div className="hidden md:block w-[40%] mt-4">
+            <div className="hidden md:block col-span-2 mt-4">
               <div className="sticky top-[4.5rem] flex flex-col space-y-4 mb-4">
                 <DesktopTrends />
               </div>
