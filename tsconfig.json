@@ -17,6 +17,7 @@
     "paths": {
       "@enums": ["src/@enums"],
       "@enums/*": ["src/@enums/*"],
+      "@t": ["src/@types"],
       "@t/*": ["src/@types/*"],
       "@components/*": ["src/components/*"],
       "@constants": ["src/constants"],
