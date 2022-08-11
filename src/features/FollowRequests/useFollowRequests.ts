@@ -12,8 +12,8 @@ export function useFollowRequests() {
   }, [getFollowRequests]);
 
   const followRequests = useMemo(
-    () => data?.getFollowRequests.connections,
-    [data?.getFollowRequests.connections],
+    () => data?.getFollowRequests,
+    [data?.getFollowRequests],
   );
 
   return { followRequests };

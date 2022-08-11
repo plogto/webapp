@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { PaginationFragment } from "./fragments/pagination";
+import { PageInfoFragment } from "./fragments/pageInfo";
 import { UserFragment } from "./fragments/user";
 
 export const FOLLOW_USER = gql`
@@ -75,20 +75,23 @@ export const REJECT_USER = gql`
 `;
 
 export const GET_FOLLOW_REQUESTS = gql`
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   query getFollowRequests {
     getFollowRequests {
-      connections {
-        id
-        status
-        follower {
+      totalCount
+      edges {
+        node {
           id
-          username
-          fullName
+          status
+          follower {
+            id
+            username
+            fullName
+          }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }
@@ -96,18 +99,21 @@ export const GET_FOLLOW_REQUESTS = gql`
 
 export const GET_FOLLOWING_BY_USERNAME = gql`
   ${UserFragment.default}
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   query getFollowingByUsername($username: String!) {
     getFollowingByUsername(username: $username) {
-      connections {
-        id
-        status
-        following {
-          ...UserFragment
+      totalCount
+      edges {
+        node {
+          id
+          status
+          following {
+            ...UserFragment
+          }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }
@@ -115,18 +121,21 @@ export const GET_FOLLOWING_BY_USERNAME = gql`
 
 export const GET_FOLLOWERS_BY_USERNAME = gql`
   ${UserFragment.default}
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   query getFollowersByUsername($username: String!) {
     getFollowersByUsername(username: $username) {
-      connections {
-        id
-        status
-        follower {
-          ...UserFragment
+      totalCount
+      edges {
+        node {
+          id
+          status
+          follower {
+            ...UserFragment
+          }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }

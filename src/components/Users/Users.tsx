@@ -12,7 +12,6 @@ export function Users(props: UsersProps) {
     dataKey,
     scrollableTarget,
     className,
-    pagination,
     getMoreData,
     emptyStatus: { title, description, icon },
   } = props;
@@ -22,16 +21,16 @@ export function Users(props: UsersProps) {
     <InfiniteScroll
       scrollableTarget={scrollableTarget}
       className={wrapperClasses}
-      dataLength={data?.length || 0}
+      dataLength={data?.totalCount || 0}
       next={getMoreData}
-      hasMore={!!pagination?.nextPage}
+      hasMore={!!data?.pageInfo.hasNextPage}
       loader={
         <div className={styles.loadingWrapper}>
           <Loader className={styles.loading} />
         </div>
       }
     >
-      {!data || data?.length < 1 ? (
+      {!data || data?.edges.length < 1 ? (
         <ContentStatus
           title={title}
           description={description}
@@ -39,8 +38,8 @@ export function Users(props: UsersProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        data?.map(item => (
-          <User key={item[dataKey].id} user={item[dataKey]} showFollow />
+        data?.edges.map(({ node }) => (
+          <User key={node[dataKey].id} user={node[dataKey]} showFollow />
         ))
       )}
     </InfiniteScroll>

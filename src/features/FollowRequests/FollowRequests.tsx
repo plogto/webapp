@@ -27,13 +27,8 @@ export function FollowRequests() {
         shadow={!isMobile}
         rounded={!isMobile}
       >
-        {followRequests?.map(followRequest => (
-          <User
-            key={followRequest.id}
-            user={followRequest.follower}
-            showAccept
-            showDelete
-          />
+        {followRequests?.edges?.map(({ node }) => (
+          <User key={node.id} user={node.follower} showAccept showDelete />
         ))}
       </Card>
     </div>
