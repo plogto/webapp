@@ -6,7 +6,7 @@ import type { Status } from "@t/status";
 
 export function useNotifications() {
   const { user } = useAccountContext();
-  const { notifications, pagination, unreadNotificationsCount, getMoreData } =
+  const { totalCount, edges, pageInfo, unreadNotificationsCount, getMoreData } =
     useNotificationsContext();
 
   const { t } = useTranslation("notifications");
@@ -24,9 +24,17 @@ export function useNotifications() {
     [t],
   );
 
+  const data = useMemo(
+    () => ({
+      edges,
+      pageInfo,
+      totalCount,
+    }),
+    [edges, pageInfo, totalCount],
+  );
+
   return {
-    notifications,
-    pagination,
+    data,
     followRequestsCount,
     unreadNotificationsCount,
     getMoreData,

@@ -1,7 +1,6 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { ID } from "@constants";
 import { Card } from "@components/Card";
 import { NotificationsList } from "@components/NotificationsList";
 import { PageHeader } from "@components/PageHeader";
@@ -12,8 +11,7 @@ import styles from "./Notifications.module.css";
 export function Notifications() {
   const {
     followRequestsCount = 0,
-    notifications,
-    pagination,
+    data,
     getMoreData,
     emptyStatus,
   } = useNotifications();
@@ -45,10 +43,8 @@ export function Notifications() {
         )}
 
         <NotificationsList
-          notifications={notifications}
-          pagination={pagination}
+          data={data}
           getMoreData={getMoreData}
-          scrollableTarget={ID.NOTIFICATIONS}
           emptyStatus={emptyStatus}
         />
       </Card>

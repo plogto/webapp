@@ -1,5 +1,7 @@
-import InfiniteScroll from "react-infinite-scroll-component";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import classNames from "classnames";
+import { Button } from "@components/Buttons/Button";
 import { ContentStatus } from "@components/ContentStatus";
 import { Loader } from "@components/Loader";
 import { Notification } from "@components/Notification";
@@ -9,35 +11,39 @@ import type { NotificationsListProps } from "./NotificationsList.types";
 export function NotificationsList(props: NotificationsListProps) {
   const {
     isLoading,
-    notifications,
-    scrollableTarget,
+    data,
     className,
-    pagination,
     getMoreData,
     emptyStatus: { title, description, icon },
   } = props;
   const wrapperClasses = classNames(styles.notificationsList, className);
+  const { t } = useTranslation("notifications");
+
+  // TODO: move it to hook
+  const [isShowMoreLoading, setIsShowMoreLoading] = useState(false);
+
+  const handleShowMoreButton = () => {
+    setIsShowMoreLoading(true);
+    getMoreData();
+  };
+
+  useEffect(() => {
+    setIsShowMoreLoading(false);
+  }, [data?.edges]);
+
+  const loader = (
+    <div className={styles.loadingWrapper}>
+      <span className="relative">
+        <Loader className={styles.loading} />
+      </span>
+    </div>
+  );
 
   return (
-    <InfiniteScroll
-      scrollableTarget={scrollableTarget}
-      className={wrapperClasses}
-      dataLength={notifications?.length || 0}
-      next={getMoreData}
-      hasMore={!!pagination?.nextPage}
-      loader={
-        <div className={styles.loadingWrapper}>
-          <Loader className={styles.loading} />
-        </div>
-      }
-    >
+    <div className={wrapperClasses}>
       {isLoading ? (
-        <div className={styles.loadingWrapper}>
-          <span className="relative">
-            <Loader className={styles.loading} />
-          </span>
-        </div>
-      ) : !notifications || notifications?.length < 1 ? (
+        loader
+      ) : !data?.edges || data?.edges?.length < 1 ? (
         <ContentStatus
           title={title}
           description={description}
@@ -45,10 +51,20 @@ export function NotificationsList(props: NotificationsListProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        notifications?.map(notification => (
-          <Notification key={notification.id} notification={notification} />
+        data.edges?.map(({ node }) => (
+          <Notification key={node.id} notification={node} />
         ))
       )}
-    </InfiniteScroll>
+      {data?.pageInfo.hasNextPage &&
+        (isShowMoreLoading ? (
+          loader
+        ) : (
+          <div className={styles.showMore}>
+            <Button onClick={handleShowMoreButton}>
+              {t("buttons.showMore")}
+            </Button>
+          </div>
+        ))}
+    </div>
   );
 }
