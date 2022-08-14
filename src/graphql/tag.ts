@@ -12,10 +12,12 @@ export const GET_TAG_BY_TAG_NAME = gql`
 
 export const GET_TRENDS = gql`
   ${TagFragment.default}
-  query getTrends($limit: Int) {
-    getTrends(input: { limit: $limit }) {
-      tags {
-        ...TagFragment
+  query getTrends($first: Int) {
+    getTrends(first: $first) {
+      edges {
+        node {
+          ...TagFragment
+        }
       }
     }
   }

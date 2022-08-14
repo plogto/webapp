@@ -1,4 +1,4 @@
-import type { Pagination } from "./pagination";
+import type { WithPageInfo } from ".";
 
 export interface Tag {
   id: string;
@@ -8,7 +8,4 @@ export interface Tag {
   updatedAt: string;
 }
 
-export interface TagsWithPagination {
-  tags: Tag[];
-  pagination: Pagination;
-}
+export type TagsWithPageInfo = WithPageInfo<Tag>;

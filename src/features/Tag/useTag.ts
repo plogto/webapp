@@ -52,7 +52,7 @@ export function useTag() {
     return getPostsResponse.fetchMore({
       variables: {
         ...variables,
-        page: getPostsResponse.data?.getPostsByTagName?.pagination?.nextPage,
+        after: getPostsResponse.data?.getPostsByTagName.pageInfo.endCursor,
       },
     });
   }, [getPostsResponse, variables]);
@@ -64,8 +64,7 @@ export function useTag() {
         href: formatTagPageRoute(tagName),
         data: {
           isLoading: getPostsResponse.loading,
-          data: getPostsResponse.data?.getPostsByTagName.posts,
-          pagination: getPostsResponse.data?.getPostsByTagName.pagination,
+          data: getPostsResponse.data?.getPostsByTagName,
         },
         getMoreData,
         emptyStatus: {
@@ -80,8 +79,7 @@ export function useTag() {
   }, [
     formatTagPageRoute,
     getMoreData,
-    getPostsResponse.data?.getPostsByTagName.pagination,
-    getPostsResponse.data?.getPostsByTagName.posts,
+    getPostsResponse.data?.getPostsByTagName,
     getPostsResponse.loading,
     t,
     tagName,

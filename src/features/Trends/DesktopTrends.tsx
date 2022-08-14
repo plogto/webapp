@@ -17,7 +17,7 @@ export function DesktopTrends() {
         <span className={styles.title}>{t("trends")}</span>
         <Icon name="TrendingUp" />
       </span>
-      {tags?.map(({ id, name, count }) => (
+      {tags?.map(({ node: { id, name, count } }) => (
         <Link key={id} href={formatTagPageRoute(name)}>
           <a className={styles.tag}>
             <span className={styles.tagName}>#{name}</span>
