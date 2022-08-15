@@ -1,14 +1,6 @@
 import type { IconNames } from "@components/Icon";
-import type { Tag } from "@t/tag";
-import type { User } from "@t/user";
-
-interface SearchUser {
-  users: User[];
-}
-
-interface SearchTag {
-  tags: Tag[];
-}
+import type { TagsWithPageInfo } from "@t/tag";
+import type { UsersWithPageInfo } from "@t/user";
 
 export interface Filter {
   title: string;
@@ -24,6 +16,6 @@ export interface SearchForm {
 }
 
 export interface SearchResult {
-  user: SearchUser;
-  tag: SearchTag;
+  user: UsersWithPageInfo;
+  tag: TagsWithPageInfo;
 }

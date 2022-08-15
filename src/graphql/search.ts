@@ -8,13 +8,17 @@ export const SEARCH = gql`
   query search($expression: String!) {
     search(expression: $expression) {
       user {
-        users {
-          ...UserFragmentShort
+        edges {
+          node {
+            ...UserFragmentShort
+          }
         }
       }
       tag {
-        tags {
-          ...TagFragment
+        edges {
+          node {
+            ...TagFragment
+          }
         }
       }
     }
