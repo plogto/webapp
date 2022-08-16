@@ -13,7 +13,6 @@ export function Posts(props: PostsProps) {
     posts,
     scrollableTarget,
     className,
-    pagination,
     getMoreData,
     emptyStatus: { title, description, icon },
   } = props;
@@ -23,9 +22,9 @@ export function Posts(props: PostsProps) {
     <InfiniteScroll
       scrollableTarget={scrollableTarget}
       className={wrapperClasses}
-      dataLength={posts?.length || 0}
+      dataLength={posts?.totalCount || 0}
       next={getMoreData}
-      hasMore={!!pagination?.nextPage}
+      hasMore={!!posts?.pageInfo?.hasNextPage}
       loader={
         <div className={styles.loadingWrapper}>
           <Loader className={styles.loading} />
@@ -38,7 +37,7 @@ export function Posts(props: PostsProps) {
             <Loader className={styles.loading} />
           </span>
         </div>
-      ) : !posts || posts?.length < 1 ? (
+      ) : !posts?.edges || posts?.edges?.length < 1 ? (
         <ContentStatus
           title={title}
           description={description}
@@ -46,10 +45,10 @@ export function Posts(props: PostsProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        posts?.map(post => (
+        posts.edges?.map(({ node }) => (
           <Post
-            key={post.id}
-            post={post}
+            key={node.id}
+            post={node}
             className={styles.post}
             type={POST_TYPES.CARD}
           />

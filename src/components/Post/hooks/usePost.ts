@@ -31,7 +31,7 @@ export function usePost(props: UsePostProps) {
   const repliesCounter = formatCountTitle({
     singular: "reply",
     plural: "replies",
-    count: replies?.pagination?.totalDocs,
+    count: replies?.totalCount,
   });
 
   const hasReplies = !!repliesCounter.count;

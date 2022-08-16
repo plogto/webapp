@@ -19,9 +19,7 @@ export const PostFragment = {
         id
       }
       likes {
-        pagination {
-          totalDocs
-        }
+        totalCount
       }
       content
       attachment {

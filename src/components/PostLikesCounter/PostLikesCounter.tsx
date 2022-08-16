@@ -11,7 +11,7 @@ export function PostLikesCounter(props: PostLikesCounterProps) {
   const { title, count } = formatCountTitle({
     singular: "Like",
     plural: "Likes",
-    count: likes?.pagination.totalDocs,
+    count: likes?.totalCount,
   });
 
   return count ? (

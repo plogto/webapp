@@ -41,22 +41,16 @@ export function useHome() {
     [t],
   );
 
-  const pagination = useMemo(
-    () => data?.getTimelinePosts.pagination,
-    [data?.getTimelinePosts.pagination],
-  );
-
   const getMoreData = () =>
     fetchMore({
       variables: {
-        page: data?.getTimelinePosts?.pagination?.nextPage,
+        after: data?.getTimelinePosts?.pageInfo.endCursor,
       },
     });
 
   return {
     loading,
-    posts: data?.getTimelinePosts?.posts,
-    pagination,
+    posts: data?.getTimelinePosts,
     emptyStatus,
     getMoreData,
   };
