@@ -15,7 +15,8 @@ export function ProfileContent(props: ProfileContentProps) {
   const { user: userAccount } = useAccountContext();
   const { t } = useTranslation("profile");
 
-  const isPosts = tabs[0]?.data?.data && tabs[0]?.data?.data?.length > 0;
+  const isPosts =
+    tabs[0]?.data?.data?.edges && tabs[0]?.data?.data.edges?.length > 0;
   const isPrivate = user?.isPrivate;
   const isYourProfile = user?.id == userAccount?.id;
 
@@ -38,17 +39,11 @@ export function ProfileContent(props: ProfileContentProps) {
           />
         ) : (
           tabs.map(
-            ({
-              href,
-              data: { data, isLoading, pagination },
-              getMoreData,
-              emptyStatus,
-            }) =>
+            ({ href, data: { data, isLoading }, getMoreData, emptyStatus }) =>
               asPath === href && (
                 <Posts
-                  key={JSON.stringify(pagination)}
+                  key={JSON.stringify(data?.pageInfo.endCursor)}
                   posts={data}
-                  pagination={pagination}
                   isLoading={isLoading}
                   getMoreData={getMoreData}
                   emptyStatus={emptyStatus}

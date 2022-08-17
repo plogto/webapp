@@ -19,8 +19,8 @@ export function Replies(props: RepliesProps) {
 
   const { t } = useTranslation("post");
 
-  const repliesComponent = replies?.posts?.map(post => (
-    <Post key={post.id} post={post} type={type} />
+  const repliesComponent = replies?.edges?.map(({ node }) => (
+    <Post key={node.id} post={node} type={type} />
   ));
 
   const repliesClasses = classNames(styles.replies, isChild && styles.isChild);
@@ -30,7 +30,7 @@ export function Replies(props: RepliesProps) {
       {(isParent || showReplies) && (
         <div className={repliesClasses}>{repliesComponent}</div>
       )}
-      {!isParent && !showReplies && replies?.posts?.length && (
+      {!isParent && !showReplies && !!replies?.totalCount && (
         <button className={styles.showReplies} onClick={openReplies}>
           {t("buttons.viewReplies")}
         </button>

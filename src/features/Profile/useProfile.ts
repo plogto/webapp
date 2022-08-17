@@ -13,6 +13,7 @@ import { GET_POSTS_BY_USERNAME, GET_SAVED_POSTS } from "@graphql/post";
 import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import type { PostTab } from "@t/post";
+import { transformSavedPostsToPosts } from "./Profile.utils";
 
 export function useProfile() {
   const { username, userResponse, variables } = useUserProfile();
@@ -58,15 +59,15 @@ export function useProfile() {
         return getPostsResponse.fetchMore({
           variables: {
             ...variables,
-            page: getPostsResponse?.data?.getPostsByUsername?.pagination
-              ?.nextPage,
+            after:
+              getPostsResponse?.data?.getPostsByUsername?.pageInfo.endCursor,
           },
         });
 
       case ProfileActiveTab.SAVED:
         return getSavedResponse.fetchMore({
           variables: {
-            page: getSavedResponse?.data?.getSavedPosts.pagination?.nextPage,
+            after: getSavedResponse?.data?.getSavedPosts?.pageInfo.endCursor,
           },
         });
     }
@@ -79,8 +80,7 @@ export function useProfile() {
         href: formatProfilePageRoute(username),
         data: {
           isLoading: getPostsResponse.loading,
-          data: getPostsResponse.data?.getPostsByUsername.posts,
-          pagination: getPostsResponse.data?.getPostsByUsername.pagination,
+          data: getPostsResponse.data?.getPostsByUsername,
         },
         getMoreData: () => getMoreData(ProfileActiveTab.POSTS),
         emptyStatus: {
@@ -96,8 +96,9 @@ export function useProfile() {
         href: formatSavedPostsPageRoute(username),
         data: {
           isLoading: getSavedResponse.loading,
-          data: getSavedResponse.data?.getSavedPosts.posts,
-          pagination: getSavedResponse.data?.getSavedPosts.pagination,
+          data: transformSavedPostsToPosts(
+            getSavedResponse.data?.getSavedPosts,
+          ),
         },
         getMoreData: () => getMoreData(ProfileActiveTab.SAVED),
         emptyStatus: {
@@ -112,11 +113,9 @@ export function useProfile() {
     formatProfilePageRoute,
     formatSavedPostsPageRoute,
     getMoreData,
-    getPostsResponse.data?.getPostsByUsername.pagination,
-    getPostsResponse.data?.getPostsByUsername.posts,
+    getPostsResponse.data?.getPostsByUsername,
     getPostsResponse.loading,
-    getSavedResponse.data?.getSavedPosts.pagination,
-    getSavedResponse.data?.getSavedPosts.posts,
+    getSavedResponse.data?.getSavedPosts,
     getSavedResponse.loading,
     isYourAccount,
     t,
