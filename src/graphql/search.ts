@@ -30,8 +30,10 @@ export const SEARCH_TAGS = gql`
   query search($expression: String!) {
     search(expression: $expression) {
       tag {
-        tags {
-          ...TagFragment
+        edges {
+          node {
+            ...TagFragment
+          }
         }
       }
     }

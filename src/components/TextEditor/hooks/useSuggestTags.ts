@@ -14,7 +14,7 @@ export function useSuggestTags() {
 
   useEffect(() => {
     if (searchTagsResponse?.data?.search) {
-      setTagSuggestions(searchTagsResponse?.data?.search?.tag?.tags);
+      setTagSuggestions(searchTagsResponse?.data?.search?.tag);
     }
   }, [searchTagsResponse, setTagSuggestions]);
 

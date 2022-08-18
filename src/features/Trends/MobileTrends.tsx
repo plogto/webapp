@@ -18,21 +18,23 @@ export function MobileTrends() {
       </span>
       {tags && tags.length > 0 && (
         <div className={styles.mobileTags}>
-          <Link href={formatTagPageRoute(tags[0]?.name)}>
+          <Link href={formatTagPageRoute(tags[0]?.node.name)}>
             <a className={styles.mobileFirstTag}>
-              <span className={styles.mobileFirstTagName}>#{tags[0].name}</span>
+              <span className={styles.mobileFirstTagName}>
+                #{tags[0].node.name}
+              </span>
               <span className={styles.mobileFirstTagCount}>
                 {
                   formatCountTitle({
                     singular: t("post"),
                     plural: t("posts"),
-                    count: tags[0].count,
+                    count: tags[0].node.count,
                   }).text
                 }
               </span>
             </a>
           </Link>
-          {[...tags].splice(1).map(({ id, name, count }) => (
+          {[...tags].splice(1).map(({ node: { id, name, count } }) => (
             <Link key={id} href={formatTagPageRoute(name)}>
               <a className={styles.mobileTag}>
                 <span className={styles.mobileTagName}>#{name}</span>
