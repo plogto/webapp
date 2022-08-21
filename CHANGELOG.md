@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.34.0](https://github.com/mahdineer/plog-fe/compare/v0.33.0...v0.34.0) (2022-08-21)
+
+
+### Features
+
+* add Edge, WithPageInfo, PageInfo and PageInfoRequest types ([cefd001](https://github.com/mahdineer/plog-fe/commit/cefd001d47af93a550e43cce582c1cc51a131373))
+* implement PostLikesCounter component ([a699cd0](https://github.com/mahdineer/plog-fe/commit/a699cd09b87ab98de330d8349cc78fb27c420e95))
+
+
+### Bug Fixes
+
+* add likes counter for AddPost component ([a37a436](https://github.com/mahdineer/plog-fe/commit/a37a4367c2cf903ddee5d042ffb408a593754a6d))
+* improve Layout styles ([2fdaca1](https://github.com/mahdineer/plog-fe/commit/2fdaca1ec526f2417e02e7388cf10bdd5cbc8ea1))
+* remove `/` from url on Notification component ([c4dabc1](https://github.com/mahdineer/plog-fe/commit/c4dabc16789a2ef42d20b37a03bd8f0d2413fd40))
+
 ## [0.33.0](https://github.com/mahdineer/plog-fe/compare/v0.32.0...v0.33.0) (2022-07-12)
 
 
