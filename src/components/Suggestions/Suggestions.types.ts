@@ -1,12 +1,12 @@
-import type { Tag } from "@t/tag";
-import type { User } from "@t/user";
+import type { TagsWithPageInfo } from "@t/tag";
+import type { UsersWithPageInfo } from "@t/user";
 
 export interface TagsSuggestionsProps {
-  tags: Tag[];
+  tags: TagsWithPageInfo;
   handleClickOnTag: (tagName: string) => void;
 }
 
 export interface SuggestionsProps extends TagsSuggestionsProps {
   active: "users" | "tags" | "none";
-  users: User[];
+  users: UsersWithPageInfo;
 }

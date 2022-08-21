@@ -9,10 +9,10 @@ interface Props {
 }
 
 export function Users({ user }: Props) {
-  return user?.users?.length ? (
+  return user?.edges?.length ? (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.users}>
-      {user.users?.map(user => (
-        <User key={user.id} user={user} />
+      {user.edges?.map(({ node }) => (
+        <User key={node.id} user={node} />
       ))}
     </Card>
   ) : null;

@@ -5,6 +5,16 @@
     @apply mx-10 mt-20 md:m-32;
   }
 
+  & .showMore {
+    @apply flex w-full items-center justify-center;
+
+    & button {
+      @apply m-3 px-2 py-1;
+      @apply rounded-md text-sm text-primary hover:bg-primary-light;
+      @apply transition-all duration-300;
+    }
+  }
+
   & .loadingWrapper {
     @apply flex items-center justify-center text-foreground;
     @apply w-full p-6;

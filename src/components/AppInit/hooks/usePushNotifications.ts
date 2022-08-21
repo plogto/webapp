@@ -14,5 +14,5 @@ export function usePushNotification() {
     if (newNotification?.getNotification) {
       pushNotification(newNotification?.getNotification);
     }
-  }, [newNotification?.getNotification]);
+  }, [newNotification?.getNotification, pushNotification]);
 }

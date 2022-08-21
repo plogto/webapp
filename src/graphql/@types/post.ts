@@ -1,5 +1,6 @@
-import type { Pagination } from "@t/pagination";
-import type { Post, NewReply } from "@t/post";
+import type { PageInfoRequest } from "@t/pageInfo";
+import type { Post, NewReply, PostsWithPageInfo } from "@t/post";
+import type { SavedPostsWithPageInfo } from "@t/savedPost";
 import type { User } from "@t/user";
 
 export interface GetPostByUrlQuery {
@@ -7,49 +8,28 @@ export interface GetPostByUrlQuery {
 }
 
 export interface GetPostsByUsernameQuery {
-  getPostsByUsername: {
-    posts: Post[];
-    pagination: Pagination;
-  };
+  getPostsByUsername: PostsWithPageInfo;
 }
-export interface GetPostsByUsernameQueryRequest {
+export interface GetPostsByUsernameQueryRequest extends PageInfoRequest {
   username: User["username"];
-  page?: number;
-  limit?: number;
 }
 
-export interface GetPostsByTagNameQueryRequest {
+export interface GetPostsByTagNameQueryRequest extends PageInfoRequest {
   tagName: string;
-  page?: number;
-  limit?: number;
 }
 export interface GetPostsByTagNameQuery {
-  getPostsByTagName: {
-    posts: Post[];
-    pagination: Pagination;
-  };
+  getPostsByTagName: PostsWithPageInfo;
 }
 
-export interface GetTimelinePostsQueryRequest {
-  page?: number;
-  limit?: number;
-}
+export type GetTimelinePostsQueryRequest = PageInfoRequest;
+
 export interface GetTimelinePostsQuery {
-  getTimelinePosts: {
-    posts: Post[];
-    pagination: Pagination;
-  };
+  getTimelinePosts: PostsWithPageInfo;
 }
 export interface GetSavedPostsQuery {
-  getSavedPosts: {
-    posts: Post[];
-    pagination: Pagination;
-  };
+  getSavedPosts: SavedPostsWithPageInfo;
 }
-export interface GetSavedPostsQueryRequest {
-  page?: number;
-  limit?: number;
-}
+export type GetSavedPostsQueryRequest = PageInfoRequest;
 
 export interface AddPostMutationRequest {
   parentId?: string;

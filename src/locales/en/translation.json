@@ -136,6 +136,9 @@
     }
   },
   "notifications": {
+    "buttons": {
+      "showMore": "Show more"
+    },
     "status": {
       "noNotifications": {
         "title": "No Notifications Yet"

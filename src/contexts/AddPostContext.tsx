@@ -5,14 +5,20 @@ import {
   useContext,
   useState,
 } from "react";
-import type { Tag } from "@t/tag";
-import type { User } from "@t/user";
+import type { TagsWithPageInfo } from "@t/tag";
+import type { UsersWithPageInfo } from "@t/user";
 
 const initialAddPost: AddPostContext = {
   suggestions: {
     active: "none",
-    users: [],
-    tags: [],
+    users: {
+      pageInfo: {},
+      edges: [],
+    },
+    tags: {
+      pageInfo: {},
+      edges: [],
+    },
   },
 };
 
@@ -52,7 +58,7 @@ export function useAddPostContext() {
   const { setSuggestions } = useContext(AddPostContextSetState);
 
   const setUserSuggestions = useCallback(
-    (users: User[]) => {
+    (users: UsersWithPageInfo) => {
       setSuggestions(prevState => ({
         ...prevState,
         active: "users",
@@ -63,7 +69,7 @@ export function useAddPostContext() {
   );
 
   const setTagSuggestions = useCallback(
-    (tags: Tag[]) => {
+    (tags: TagsWithPageInfo) => {
       setSuggestions(prevState => ({
         ...prevState,
         active: "tags",

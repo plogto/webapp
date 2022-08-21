@@ -9,7 +9,7 @@ export function TagsSuggestions(props: TagsSuggestionsProps) {
 
   return (
     <div className={styles.tags}>
-      {tags.map(({ id, name, count }) => (
+      {tags.edges?.map(({ node: { id, name, count } }) => (
         <button
           type="button"
           onClick={() => handleClickOnTag(`#${name}`)}

@@ -1,4 +1,4 @@
-import type { Pagination } from "./pagination";
+import { WithPageInfo } from "@t";
 import type { Post } from "./post";
 import type { User } from "./user";
 
@@ -23,8 +23,6 @@ export interface Notification {
   updatedAt: string;
 }
 
-export interface NotificationsWithPagination {
-  notifications: Notification[];
+export interface NotificationsWithPageInfo extends WithPageInfo<Notification> {
   unreadNotificationsCount?: number;
-  pagination?: Pagination;
 }

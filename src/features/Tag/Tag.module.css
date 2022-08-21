@@ -54,3 +54,8 @@
   @apply flex flex-col items-center;
   @apply h-screen w-full text-foreground-medium;
 }
+
+.noPosts {
+  @apply my-20 flex flex-col items-center;
+  @apply w-full text-foreground-medium;
+}

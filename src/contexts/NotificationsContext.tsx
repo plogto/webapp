@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { createContext, ReactNode, useContext, useState } from "react";
+import { Edge } from "@t";
 import { useLazyQuery } from "@apollo/client";
 import type {
   GetNotificationsQuery,
@@ -9,17 +10,19 @@ import { GET_NOTIFICATIONS } from "@graphql/notification";
 import type { Notification } from "@t/notification";
 import { useAccountContext } from "./AccountContext";
 
-const initialNotifications = {
-  notifications: [],
+const initialNotifications: NotificationsContext = {
+  edges: [],
+  pageInfo: {},
 };
 
 const NotificationsContext =
   createContext<NotificationsContext>(initialNotifications);
 
 const NotificationsContextSetState = createContext<SetNotificationsContext>({
-  setNotifications: () => {},
+  setEdges: () => {},
   setUnreadNotificationsCount: () => {},
-  setPagination: () => {},
+  setPageInfo: () => {},
+  setTotalCount: () => {},
 });
 
 interface Props {
@@ -27,23 +30,28 @@ interface Props {
 }
 // TODO: refactor this context
 export function NotificationsProvider({ children }: Props) {
-  const [notifications, setNotifications] = useState<
-    NotificationsContext["notifications"]
-  >(initialNotifications.notifications);
+  const [edges, setEdges] = useState<NotificationsContext["edges"]>(
+    initialNotifications.edges,
+  );
+  const [pageInfo, setPageInfo] = useState<NotificationsContext["pageInfo"]>(
+    initialNotifications.pageInfo,
+  );
+  const [totalCount, setTotalCount] = useState<
+    NotificationsContext["totalCount"]
+  >(initialNotifications.totalCount);
   const [unreadNotificationsCount, setUnreadNotificationsCount] =
     useState<NotificationsContext["unreadNotificationsCount"]>();
-  const [pagination, setPagination] =
-    useState<NotificationsContext["pagination"]>();
 
   return (
     <NotificationsContext.Provider
-      value={{ notifications, unreadNotificationsCount, pagination }}
+      value={{ edges, pageInfo, unreadNotificationsCount, totalCount }}
     >
       <NotificationsContextSetState.Provider
         value={{
-          setNotifications,
+          setEdges,
+          setPageInfo,
           setUnreadNotificationsCount,
-          setPagination,
+          setTotalCount,
         }}
       >
         {children}
@@ -53,9 +61,9 @@ export function NotificationsProvider({ children }: Props) {
 }
 
 export function useNotificationsContext() {
-  const { notifications, unreadNotificationsCount, pagination } =
+  const { edges, pageInfo, unreadNotificationsCount, totalCount } =
     useContext(NotificationsContext);
-  const { setNotifications, setUnreadNotificationsCount, setPagination } =
+  const { setEdges, setPageInfo, setUnreadNotificationsCount, setTotalCount } =
     useContext(NotificationsContextSetState);
   const { user } = useAccountContext();
 
@@ -67,8 +75,9 @@ export function useNotificationsContext() {
   useEffect(() => {
     if (user) {
       getNotifications().then(({ data }) => {
-        setNotifications(data?.getNotifications?.notifications || []);
-        setPagination(data?.getNotifications.pagination);
+        setEdges(data?.getNotifications?.edges || []);
+        setPageInfo(data?.getNotifications?.pageInfo || {});
+        setTotalCount(data?.getNotifications?.totalCount);
       });
     }
   }, []);
@@ -79,35 +88,40 @@ export function useNotificationsContext() {
         data.getNotifications.unreadNotificationsCount,
       );
     }
-  }, [data?.getNotifications?.unreadNotificationsCount]);
+  }, [
+    data?.getNotifications.unreadNotificationsCount,
+    setUnreadNotificationsCount,
+  ]);
 
-  const getMoreData = () =>
-    fetchMore({
+  const getMoreData = () => {
+    return fetchMore({
       variables: {
-        page: pagination?.nextPage,
+        after: pageInfo.endCursor,
       },
     }).then(({ data }) => {
-      const newNotifications = data?.getNotifications?.notifications || [];
-      setNotifications(prevNotifications =>
+      const newNotifications = data?.getNotifications?.edges || [];
+      setEdges(prevNotifications =>
         prevNotifications.length
           ? prevNotifications.concat(newNotifications)
           : newNotifications,
       );
-      setPagination(data?.getNotifications.pagination);
+      setPageInfo(data.getNotifications.pageInfo);
     });
+  };
 
-  const pushNotification = (notification: Notification) => {
-    setNotifications(prevNotifications =>
+  const pushNotification = (notification: Edge<Notification>) => {
+    setEdges(prevNotifications =>
       prevNotifications ? [notification, ...prevNotifications] : [notification],
     );
     setUnreadNotificationsCount(prevCount => (prevCount ? prevCount + 1 : 1));
   };
 
   return {
-    notifications,
     unreadNotificationsCount,
-    pagination,
     getMoreData,
     pushNotification,
+    totalCount,
+    edges,
+    pageInfo,
   };
 }

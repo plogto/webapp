@@ -1,16 +1,12 @@
-import type {
-  Notification,
-  NotificationsWithPagination,
-} from "@t/notification";
+import type { Edge } from "@t";
+import type { Notification, NotificationsWithPageInfo } from "@t/notification";
+import type { PageInfoRequest } from "@t/pageInfo";
 
 export interface GetNotificationsQuery {
-  getNotifications: NotificationsWithPagination;
+  getNotifications: NotificationsWithPageInfo;
 }
-export interface GetNotificationsQueryRequest {
-  page?: number;
-  limit?: number;
-}
+export type GetNotificationsQueryRequest = PageInfoRequest;
 
 export interface GetNotificationSubscription {
-  getNotification: Notification;
+  getNotification: Edge<Notification>;
 }

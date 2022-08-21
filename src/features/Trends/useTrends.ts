@@ -10,7 +10,7 @@ export function useTrends() {
   const { data } = useQuery<GetTrendsQuery, GetTrendsQueryRequest>(GET_TRENDS, {
     variables: { limit: 8 },
   });
-  const tags = useMemo(() => data?.getTrends.tags || [], [data]);
+  const tags = useMemo(() => data?.getTrends.edges || [], [data]);
 
   return { tags };
 }

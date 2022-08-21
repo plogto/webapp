@@ -1,6 +1,6 @@
 import { PrimaryColor, BackgroundColor } from "@enums";
+import type { WithPageInfo } from "@t";
 import type { Attachment } from "./attachment";
-import type { Pagination } from "./pagination";
 
 export interface User {
   id: string;
@@ -23,7 +23,4 @@ export interface User {
   updatedAt?: string;
 }
 
-export interface UsersWithPagination {
-  users: User[];
-  pagination: Pagination;
-}
+export type UsersWithPageInfo = WithPageInfo<User>;

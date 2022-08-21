@@ -1,4 +1,4 @@
-import type { Tag } from "@t/tag";
+import type { Tag, TagsWithPageInfo } from "@t/tag";
 
 export interface GetTagByTagNameQuery {
   getTagByTagName: Tag;
@@ -8,9 +8,7 @@ export interface GetTagByTagNameQueryRequest {
 }
 
 export interface GetTrendsQuery {
-  getTrends: {
-    tags: Tag[];
-  };
+  getTrends: TagsWithPageInfo;
 }
 export interface GetTrendsQueryRequest {
   limit: number;

@@ -1,16 +1,10 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { Connection } from "@t/connection";
-import type { Pagination } from "@t/pagination";
+import type { ConnectionsWithPageInfo } from "@t/connection";
 
 declare global {
-  export interface ConnectionAndPagination {
-    connections?: Connection[];
-    pagination?: Pagination;
-  }
-
   export interface ConnectionsContext {
-    followers?: ConnectionAndPagination;
-    following?: ConnectionAndPagination;
+    followers?: ConnectionsWithPageInfo;
+    following?: ConnectionsWithPageInfo;
   }
 
   export interface SetConnectionsContext {

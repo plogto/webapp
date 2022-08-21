@@ -1,13 +1,10 @@
-import type { Notification } from "@t/notification";
-import type { Pagination } from "@t/pagination";
+import type { NotificationsWithPageInfo } from "@t/notification";
 import type { Status } from "@t/status";
 
 export interface NotificationsListProps {
-  notifications?: Notification[];
-  scrollableTarget: string;
+  data?: NotificationsWithPageInfo;
   className?: string;
   isLoading?: boolean;
-  pagination?: Pagination;
   getMoreData: () => void;
   emptyStatus: Status;
 }

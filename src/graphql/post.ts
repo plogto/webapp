@@ -1,13 +1,13 @@
 import { gql } from "@apollo/client";
 import { FileFragment } from "./fragments/file";
-import { PaginationFragment } from "./fragments/pagination";
+import { PageInfoFragment } from "./fragments/pageInfo";
 import { PostFragment } from "./fragments/post";
 import { UserFragment } from "./fragments/user";
 
 export const GET_SHORT_POST_BY_URL = gql`
   ${UserFragment.short}
   ${FileFragment.complete}
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
       id
@@ -20,8 +20,9 @@ export const GET_SHORT_POST_BY_URL = gql`
         ...FileFragmentComplete
       }
       likes {
-        pagination {
-          ...PaginationFragmentComplete
+        totalCount
+        pageInfo {
+          ...PageInfoFragmentComplete
         }
       }
       createdAt
@@ -32,6 +33,7 @@ export const GET_SHORT_POST_BY_URL = gql`
 
 export const GET_POST_BY_URL = gql`
   ${PostFragment.default}
+  ${PageInfoFragment.complete}
   query getPostByUrl($url: String!) {
     getPostByUrl(url: $url) {
       ...PostFragment
@@ -39,19 +41,27 @@ export const GET_POST_BY_URL = gql`
         ...PostFragment
       }
       replies {
-        posts {
-          ...PostFragment
-          replies {
-            posts {
-              ...PostFragment
-            }
-            pagination {
-              totalDocs
+        totalCount
+        edges {
+          cursor
+          node {
+            ...PostFragment
+            replies {
+              totalCount
+              edges {
+                cursor
+                node {
+                  ...PostFragment
+                }
+              }
+              pageInfo {
+                ...PageInfoFragmentComplete
+              }
             }
           }
         }
-        pagination {
-          totalDocs
+        pageInfo {
+          ...PageInfoFragmentComplete
         }
       }
     }
@@ -59,86 +69,96 @@ export const GET_POST_BY_URL = gql`
 `;
 
 export const GET_POSTS_BY_USERNAME = gql`
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   ${PostFragment.default}
-  query getPostsByUsername($username: String!, $page: Int, $limit: Int) {
+  query getPostsByUsername($username: String!, $first: Int, $after: String) {
     getPostsByUsername(
       username: $username
-      input: { page: $page, limit: $limit }
+      pageInfoInput: { first: $first, after: $after }
     ) {
-      posts {
-        ...PostFragment
-        replies {
-          pagination {
-            totalDocs
+      totalCount
+      edges {
+        cursor
+        node {
+          ...PostFragment
+          replies {
+            totalCount
           }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }
 `;
 
 export const GET_SAVED_POSTS = gql`
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   ${PostFragment.default}
-  query getSavedPosts($page: Int, $limit: Int) {
-    getSavedPosts(input: { page: $page, limit: $limit }) {
-      posts {
-        ...PostFragment
-        replies {
-          pagination {
-            totalDocs
+  query getSavedPosts($first: Int, $after: String) {
+    getSavedPosts(pageInfoInput: { first: $first, after: $after }) {
+      totalCount
+      edges {
+        cursor
+        node {
+          post {
+            ...PostFragment
+            replies {
+              totalCount
+            }
           }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }
 `;
 
 export const GET_POSTS_BY_TAG_NAME = gql`
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   ${PostFragment.default}
-  query getPostsByTagName($tagName: String!, $page: Int, $limit: Int) {
+  query getPostsByTagName($tagName: String!, $first: Int, $after: String) {
     getPostsByTagName(
       tagName: $tagName
-      input: { page: $page, limit: $limit }
+      pageInfoInput: { first: $first, after: $after }
     ) {
-      posts {
-        ...PostFragment
-        replies {
-          pagination {
-            totalDocs
+      totalCount
+      edges {
+        cursor
+        node {
+          ...PostFragment
+          replies {
+            totalCount
           }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }
 `;
 
 export const GET_TIMELINE_POSTS = gql`
-  ${PaginationFragment.complete}
+  ${PageInfoFragment.complete}
   ${PostFragment.default}
-  query getTimelinePosts($page: Int, $limit: Int) {
-    getTimelinePosts(input: { page: $page, limit: $limit }) {
-      posts {
-        ...PostFragment
-        replies {
-          pagination {
-            totalDocs
+  query getTimelinePosts($first: Int, $after: String) {
+    getTimelinePosts(pageInfoInput: { first: $first, after: $after }) {
+      totalCount
+      edges {
+        cursor
+        node {
+          ...PostFragment
+          replies {
+            totalCount
           }
         }
       }
-      pagination {
-        ...PaginationFragmentComplete
+      pageInfo {
+        ...PageInfoFragmentComplete
       }
     }
   }

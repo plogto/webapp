@@ -68,16 +68,18 @@ export function useConnections({ type }: ConnectionsProps) {
         return getFollowingByUsernameResponse.fetchMore({
           variables: {
             ...variables,
-            page: getFollowingByUsernameResponse?.data?.getFollowingByUsername
-              ?.pagination?.nextPage,
+            after:
+              getFollowingByUsernameResponse?.data?.getFollowingByUsername
+                ?.pageInfo.endCursor,
           },
         });
 
       case ConnectionsActiveTab.FOLLOWERS:
         return getFollowersByUsernameResponse.fetchMore({
           variables: {
-            page: getFollowersByUsernameResponse?.data?.getFollowersByUsername
-              ?.pagination?.nextPage,
+            after:
+              getFollowersByUsernameResponse?.data?.getFollowersByUsername
+                ?.pageInfo.endCursor,
           },
         });
     }
@@ -99,11 +101,7 @@ export function useConnections({ type }: ConnectionsProps) {
         href: formatFollowingPageRoute(username),
         data: {
           isLoading: getFollowingByUsernameResponse.loading,
-          data: getFollowingByUsernameResponse.data?.getFollowingByUsername
-            ?.connections,
-          pagination:
-            getFollowingByUsernameResponse.data?.getFollowingByUsername
-              ?.pagination,
+          data: getFollowingByUsernameResponse.data?.getFollowingByUsername,
         },
         getMoreData: () => getMoreData(ConnectionsActiveTab.FOLLOWING),
         emptyStatus,
@@ -114,11 +112,7 @@ export function useConnections({ type }: ConnectionsProps) {
         href: formatFollowersPageRoute(username),
         data: {
           isLoading: getFollowersByUsernameResponse.loading,
-          data: getFollowersByUsernameResponse.data?.getFollowersByUsername
-            ?.connections,
-          pagination:
-            getFollowersByUsernameResponse.data?.getFollowersByUsername
-              ?.pagination,
+          data: getFollowersByUsernameResponse.data?.getFollowersByUsername,
         },
         getMoreData: () => getMoreData(ConnectionsActiveTab.FOLLOWERS),
         emptyStatus,
@@ -130,11 +124,9 @@ export function useConnections({ type }: ConnectionsProps) {
     emptyStatus,
     formatFollowersPageRoute,
     formatFollowingPageRoute,
-    getFollowersByUsernameResponse.data?.getFollowersByUsername?.connections,
-    getFollowersByUsernameResponse.data?.getFollowersByUsername?.pagination,
+    getFollowersByUsernameResponse.data?.getFollowersByUsername,
     getFollowersByUsernameResponse.loading,
-    getFollowingByUsernameResponse.data?.getFollowingByUsername?.connections,
-    getFollowingByUsernameResponse.data?.getFollowingByUsername?.pagination,
+    getFollowingByUsernameResponse.data?.getFollowingByUsername,
     getFollowingByUsernameResponse.loading,
     getMoreData,
     t,

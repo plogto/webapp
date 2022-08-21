@@ -1,4 +1,4 @@
-import type { Pagination } from "./pagination";
+import type { WithPageInfo } from ".";
 import type { Status } from "./status";
 import type { User } from "./user";
 
@@ -11,14 +11,10 @@ export interface Connection {
   updatedAt: string;
 }
 
-export interface ConnectionsWithPagination {
-  connections: Connection[];
-  pagination: Pagination;
-}
+export type ConnectionsWithPageInfo = WithPageInfo<Connection>;
 
 export interface ConnectionData {
-  data?: Connection[];
-  pagination?: Pagination;
+  data?: ConnectionsWithPageInfo;
   isLoading?: boolean;
 }
 

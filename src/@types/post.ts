@@ -1,8 +1,8 @@
+import type { WithPageInfo } from ".";
 import { DateType, RepliesView, PostTypeKey } from "@enums";
 import type { Attachment } from "./attachment";
-import type { Pagination } from "./pagination";
-import type { PostLike, PostLikesWithPagination } from "./postLike";
-import type { PostSave } from "./postSave";
+import type { LikedPost, LikedPostsWithPageInfo } from "./likedPost";
+import type { SavedPost } from "./savedPost";
 import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
 import type { Status } from "./status";
 import type { User } from "./user";
@@ -14,18 +14,15 @@ export interface Post {
   user: User;
   content: string;
   attachment?: Attachment[];
-  isLiked?: PostLike;
-  isSaved?: PostSave;
-  likes?: PostLikesWithPagination;
-  replies?: PostsWithPagination;
+  isLiked?: LikedPost;
+  isSaved?: SavedPost;
+  likes?: LikedPostsWithPageInfo;
+  replies?: PostsWithPageInfo;
   createdAt: string;
   updatedAt: string;
 }
 
-export interface PostsWithPagination {
-  posts: Post[];
-  pagination: Pagination;
-}
+export type PostsWithPageInfo = WithPageInfo<Post>;
 
 export interface NewReply {
   postId: string;
@@ -51,8 +48,7 @@ export type PostTypes = {
 };
 
 export interface PostData {
-  data?: Post[];
-  pagination?: Pagination;
+  data?: PostsWithPageInfo;
   isLoading?: boolean;
 }
 

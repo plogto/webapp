@@ -9,10 +9,10 @@ interface Props {
 }
 
 export function Tags({ tag }: Props) {
-  return tag?.tags?.length ? (
+  return tag?.edges?.length ? (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.tags}>
-      {tag.tags?.map(tag => (
-        <TagInfo key={tag.id} tag={tag} />
+      {tag.edges?.map(({ node }) => (
+        <TagInfo key={node.id} tag={node} />
       ))}
     </Card>
   ) : null;

@@ -1,16 +1,15 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { NotificationsWithPagination } from "@t/notification";
+import type { NotificationsWithPageInfo } from "@t/notification";
 
 declare global {
-  export type NotificationsContext = NotificationsWithPagination;
+  export type NotificationsContext = NotificationsWithPageInfo;
 
   export interface SetNotificationsContext {
-    setNotifications: Dispatch<
-      SetStateAction<NotificationsContext["notifications"]>
-    >;
+    setEdges: Dispatch<SetStateAction<NotificationsContext["edges"]>>;
     setUnreadNotificationsCount: Dispatch<
       SetStateAction<NotificationsContext["unreadNotificationsCount"]>
     >;
-    setPagination: Dispatch<SetStateAction<NotificationsContext["pagination"]>>;
+    setPageInfo: Dispatch<SetStateAction<NotificationsContext["pageInfo"]>>;
+    setTotalCount: Dispatch<SetStateAction<NotificationsContext["totalCount"]>>;
   }
 }

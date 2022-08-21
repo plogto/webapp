@@ -1,7 +1,7 @@
-import type { PostsWithPagination, PostType } from "@t/post";
+import type { PostsWithPageInfo, PostType } from "@t/post";
 
 export interface RepliesProps {
   type: PostType;
-  replies?: PostsWithPagination;
+  replies?: PostsWithPageInfo;
   isThread?: boolean;
 }

@@ -1,13 +1,13 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { Tag } from "@t/tag";
-import type { User } from "@t/user";
+import type { TagsWithPageInfo } from "@t/tag";
+import type { UsersWithPageInfo } from "@t/user";
 
 declare global {
   export interface AddPostContext {
     suggestions: {
       active: "users" | "tags" | "none";
-      users: User[];
-      tags: Tag[];
+      users: UsersWithPageInfo;
+      tags: TagsWithPageInfo;
     };
   }
 

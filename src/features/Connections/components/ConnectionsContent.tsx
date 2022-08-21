@@ -16,8 +16,8 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
   const { t } = useTranslation("profile");
 
   const isConnections =
-    (tabs[0]?.data?.data && tabs[0]?.data?.data?.length > 0) ||
-    (tabs[1]?.data?.data && tabs[1]?.data?.data?.length > 0);
+    (tabs[0]?.data?.data?.edges && tabs[0]?.data?.data?.edges?.length > 0) ||
+    (tabs[1]?.data?.data?.edges && tabs[1]?.data?.data?.edges?.length > 0);
 
   const isPrivate = user?.isPrivate;
   const isYourProfile = user?.id === userAccount?.id;
@@ -44,16 +44,15 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
             ({
               dataKey,
               href,
-              data: { data, isLoading, pagination },
+              data: { data, isLoading },
               getMoreData,
               emptyStatus,
             }) =>
               asPath === href && (
                 <Users
-                  key={JSON.stringify(pagination)}
+                  key={JSON.stringify(data?.pageInfo.endCursor)}
                   data={data}
                   dataKey={dataKey}
-                  pagination={pagination}
                   isLoading={isLoading}
                   getMoreData={getMoreData}
                   emptyStatus={emptyStatus}

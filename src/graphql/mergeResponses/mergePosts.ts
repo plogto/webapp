@@ -1,17 +1,15 @@
-import type { PostsWithPagination } from "@t/post";
+import type { PostsWithPageInfo } from "@t/post";
 
 export function mergePosts(
-  existing: PostsWithPagination,
-  incoming: PostsWithPagination,
+  existing: PostsWithPageInfo,
+  incoming: PostsWithPageInfo,
 ) {
-  const isNewPage = existing?.pagination?.page !== incoming?.pagination?.page;
-  const posts =
-    isNewPage && existing?.posts?.length
-      ? [...existing?.posts, ...incoming?.posts]
-      : incoming.posts || [];
+  const edges = existing
+    ? [...existing?.edges, ...incoming?.edges]
+    : incoming.edges;
 
   return {
-    pagination: incoming.pagination,
-    posts,
+    ...incoming,
+    edges,
   };
 }

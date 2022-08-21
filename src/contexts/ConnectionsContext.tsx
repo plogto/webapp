@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import type { ConnectionsWithPageInfo } from "@t/connection";
 
 const initialConnections = {};
 
@@ -14,8 +15,8 @@ interface Props {
 }
 
 export function ConnectionsProvider({ children }: Props) {
-  const [followers, setFollowers] = useState<ConnectionAndPagination>();
-  const [following, setFollowing] = useState<ConnectionAndPagination>();
+  const [followers, setFollowers] = useState<ConnectionsWithPageInfo>();
+  const [following, setFollowing] = useState<ConnectionsWithPageInfo>();
 
   return (
     <ConnectionsContext.Provider

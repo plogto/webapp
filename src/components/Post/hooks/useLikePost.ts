@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useMutation } from "@apollo/client";
-import type { LikePostMutation } from "@graphql/@types/postLike";
-import { LIKE_POST } from "@graphql/postLike";
+import type { LikePostMutation } from "@graphql/@types/likedPost";
+import { LIKE_POST } from "@graphql/likedPost";
 import type { UseLikePostProps } from "../Post.types";
 
 export function useLikePost(props: UseLikePostProps) {

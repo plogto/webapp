@@ -1,5 +1,4 @@
-import type { Connection } from "@t/connection";
-import type { Pagination } from "@t/pagination";
+import type { Connection, ConnectionsWithPageInfo } from "@t/connection";
 
 export interface FollowUserMutation {
   followUser: Connection;
@@ -18,27 +17,18 @@ export interface RejectUserMutation {
 }
 
 export interface GetFollowRequestsQuery {
-  getFollowRequests: {
-    connections: Connection[];
-    pagination: Pagination;
-  };
+  getFollowRequests: ConnectionsWithPageInfo;
 }
 
 export interface GetFollowingByUsernameQuery {
-  getFollowingByUsername: {
-    connections: Connection[];
-    pagination: Pagination;
-  };
+  getFollowingByUsername: ConnectionsWithPageInfo;
 }
 export interface GetFollowingByUsernameQueryRequest {
   username: string;
 }
 
 export interface GetFollowersByUsernameQuery {
-  getFollowersByUsername: {
-    connections: Connection[];
-    pagination: Pagination;
-  };
+  getFollowersByUsername: ConnectionsWithPageInfo;
 }
 
 export interface GetFollowersByUsernameQueryRequest {
