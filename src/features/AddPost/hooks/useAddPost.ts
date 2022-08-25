@@ -14,6 +14,7 @@ import {
   ADD_POST,
   GET_POSTS_BY_USERNAME,
   GET_POST_BY_URL,
+  GET_TIMELINE_POSTS,
 } from "@graphql/post";
 import { GET_TRENDS } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
@@ -57,6 +58,9 @@ export function useAddPost(props: UseAddPostProps) {
 
   const refetchQueries = useMemo(
     () => [
+      {
+        query: GET_TIMELINE_POSTS,
+      },
       {
         query: GET_TRENDS,
       },
