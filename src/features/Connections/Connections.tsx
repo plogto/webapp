@@ -1,5 +1,6 @@
 import { isMobile } from "react-device-detect";
 import { ID } from "@constants";
+import { DefaultBackground } from "@components/DefaultBackground/DefaultBackground";
 import { Img } from "@components/Img";
 import { NotFound } from "@components/NotFound";
 import { PageHeader } from "@components/PageHeader";
@@ -30,11 +31,13 @@ export function Connections({ type }: ConnectionsProps) {
         )}
         {!isMobile && (
           <div className={styles.background}>
-            {userData?.background && (
+            {userData?.background ? (
               <Img
                 alt={`${userData.username}'s background`}
                 image={userData.background}
               />
+            ) : (
+              <DefaultBackground />
             )}
           </div>
         )}
