@@ -30,7 +30,7 @@ export function Users(props: UsersProps) {
         </div>
       }
     >
-      {!data || data?.edges.length < 1 ? (
+      {!data?.edges || data?.edges.length < 1 ? (
         <ContentStatus
           title={title}
           description={description}

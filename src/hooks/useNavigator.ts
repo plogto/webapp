@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useRouter } from "next/router";
+import { PROTECTED_PAGES } from "@constants";
 import { PageUrls } from "@enums/pages";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
@@ -38,8 +39,15 @@ export function useNavigator() {
     return `/p/${url}${PageUrls.EDIT_POST}`;
   }
 
-  const isSettingsRoute = useMemo(
+  const isSettingsPage = useMemo(
     () => pathname === PageUrls.SETTINGS,
+    [pathname],
+  );
+
+  const isHomePage = useMemo(() => pathname === PageUrls.HOME, [pathname]);
+
+  const isProtectedPage = useMemo(
+    () => PROTECTED_PAGES.includes(pathname as PageUrls),
     [pathname],
   );
 
@@ -56,7 +64,9 @@ export function useNavigator() {
     formatFollowingPageRoute,
     formatAddPostPageRoute,
     formatEditPostPageRoute,
-    isSettingsRoute,
+    isSettingsPage,
+    isHomePage,
+    isProtectedPage,
     isRouteActive,
   };
 }

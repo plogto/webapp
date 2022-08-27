@@ -18,7 +18,7 @@ export function Settings(props: SettingsProps) {
   const { title, children } = props;
   const { user } = useSettings();
   const { t } = useTranslation("settings");
-  const { isSettingsRoute } = useNavigator();
+  const { isSettingsPage } = useNavigator();
 
   return (
     <div className={styles.settings}>
@@ -29,7 +29,7 @@ export function Settings(props: SettingsProps) {
             className={styles.header}
           />
         )}
-        {!(isMobile && !isSettingsRoute && children) && (
+        {!(isMobile && !isSettingsPage && children) && (
           <div className={styles.images}>
             <ModalProvider>
               <BackgroundProfile background={user?.background} />
@@ -38,7 +38,7 @@ export function Settings(props: SettingsProps) {
         )}
       </div>
       <div className={styles.cards}>
-        {!(isMobile && !isSettingsRoute && children) && (
+        {!(isMobile && !isSettingsPage && children) && (
           <Card shadow={!isMobile} rounded={!isMobile} className={styles.items}>
             {SETTINGS_ITEMS.map(({ title, icon, href, className }) => (
               <Link key={`settings-${title}`} href={href}>

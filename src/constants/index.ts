@@ -1,4 +1,5 @@
 import { DateType, PostTypeKey, RepliesView } from "@enums";
+import { PageUrls } from "@enums/pages";
 import type { PostTypes } from "@t/post";
 
 export const CONTENT_MAX_LENGTH = 999;
@@ -73,3 +74,17 @@ export const ID = {
 };
 
 export const MENU_KEYS = ["normal", "delete", "edit"];
+
+export const PROTECTED_PAGES = [
+  PageUrls.SEARCH,
+  PageUrls.ADD_POST,
+  PageUrls.EDIT_POST,
+  PageUrls.SETTINGS,
+  PageUrls.CHANGE_PASSWORD,
+  PageUrls.EDIT_PROFILE,
+  PageUrls.THEMES,
+  PageUrls.NOTIFICATIONS,
+  PageUrls.FOLLOW_REQUESTS,
+  PageUrls.FOLLOWERS,
+  PageUrls.FOLLOWING,
+];
