@@ -76,6 +76,7 @@ export const ID = {
 export const MENU_KEYS = ["normal", "delete", "edit"];
 
 export const PROTECTED_PAGES = [
+  PageUrls.HOME,
   PageUrls.SEARCH,
   PageUrls.ADD_POST,
   PageUrls.EDIT_POST,
