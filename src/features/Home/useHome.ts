@@ -9,7 +9,7 @@ import type {
   GetTimelinePostsQueryRequest,
 } from "@graphql/@types/post";
 import { GET_TIMELINE_POSTS } from "@graphql/post";
-import type { Status } from "@t/status";
+import type { Placeholder } from "@t/status";
 
 export function useHome() {
   const { push } = useRouter();
@@ -33,7 +33,7 @@ export function useHome() {
     }
   }, [user, getTimelinePosts]);
 
-  const emptyStatus: Status = useMemo(
+  const emptyStatus: Placeholder = useMemo(
     () => ({
       title: t("status.noPosts.title"),
       icon: "Photo",

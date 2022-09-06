@@ -1,8 +1,8 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import classNames from "classnames";
 import { POST_TYPES } from "@constants";
-import { ContentStatus } from "@components/ContentStatus";
 import { Loader } from "@components/Loader";
+import { Placeholder } from "@components/Placeholder";
 import { Post } from "@components/Post";
 import styles from "./Posts.module.css";
 import type { PostsProps } from "./Posts.types";
@@ -38,7 +38,7 @@ export function Posts(props: PostsProps) {
           </span>
         </div>
       ) : !posts?.edges || posts?.edges?.length < 1 ? (
-        <ContentStatus
+        <Placeholder
           title={title}
           description={description}
           icon={icon}

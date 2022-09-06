@@ -15,7 +15,7 @@ import {
 import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import { ConnectionTab } from "@t/connection";
-import { Status } from "@t/status";
+import { Placeholder } from "@t/status";
 import type { ConnectionsProps } from "./Connections.types";
 
 export function useConnections({ type }: ConnectionsProps) {
@@ -85,7 +85,7 @@ export function useConnections({ type }: ConnectionsProps) {
     }
   };
 
-  const emptyStatus: Status = useMemo(
+  const emptyStatus: Placeholder = useMemo(
     () => ({
       title: t("connection:status.noConnections.title"),
       icon: "User",

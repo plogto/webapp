@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { Icon } from "@components/Icon";
-import styles from "./ContentStatus.module.css";
-import type { ContentStatusProps } from "./ContentStatus.types";
+import styles from "./Placeholder.module.css";
+import type { PlaceholderProps } from "./Placeholder.types";
 
-export function ContentStatus(props: ContentStatusProps) {
+export function Placeholder(props: PlaceholderProps) {
   const { title, icon, description, className } = props;
   const wrapperClasses = classNames(styles.wrapper, className);
 
