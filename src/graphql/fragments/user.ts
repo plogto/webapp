@@ -73,6 +73,7 @@ export const UserFragment = {
       followingCount
       followRequestsCount
       postsCount
+      credits
     }
   `,
 };

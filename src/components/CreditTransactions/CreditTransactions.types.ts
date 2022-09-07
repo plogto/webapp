@@ -1,8 +1,8 @@
+import type { CreditTransactionsWithPageInfo } from "@t/creditTransaction";
 import type { Placeholder } from "@t/placeholder";
-import type { PostsWithPageInfo } from "@t/post";
 
-export interface PostsProps {
-  posts?: PostsWithPageInfo;
+export interface CreditTransactionsProps {
+  data?: CreditTransactionsWithPageInfo;
   scrollableTarget?: string;
   className?: string;
   isLoading?: boolean;

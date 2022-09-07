@@ -9,7 +9,7 @@ import type {
   GetTimelinePostsQueryRequest,
 } from "@graphql/@types/post";
 import { GET_TIMELINE_POSTS } from "@graphql/post";
-import type { Placeholder } from "@t/status";
+import type { Placeholder } from "@t/placeholder";
 
 export function useHome() {
   const { push } = useRouter();

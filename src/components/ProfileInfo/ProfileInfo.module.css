@@ -8,7 +8,7 @@
   }
 
   & .names {
-    @apply flex flex-col items-start justify-center pt-1 pl-4 md:pt-3;
+    @apply flex flex-col items-start justify-center pt-1.5 pl-4 md:pt-3;
 
     & .fullName {
       @apply w-8/12;
@@ -19,7 +19,14 @@
   }
 
   & .bio {
-    @apply my-1.5 w-full break-all px-4 text-sm text-foreground-pure md:my-2;
+    @apply mt-1.5 w-full break-all px-4 text-sm text-foreground-pure;
+  }
+
+  & .credits {
+    @apply inline-flex items-center justify-center space-x-2;
+    @apply mt-1.5 ml-4 rounded-full py-1.5 px-2 text-sm font-bold;
+    @apply border border-background-medium text-amber-400;
+    @apply transition-all duration-300 hover:bg-amber-300 hover:bg-opacity-5;
   }
 
   & .buttonWrapper {

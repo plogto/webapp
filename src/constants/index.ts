@@ -1,11 +1,14 @@
 import { DateType, PostTypeKey, RepliesView } from "@enums";
 import { PageUrls } from "@enums/pages";
 import type { PostTypes } from "@t/post";
+import { prepareKeyPattern } from "@utils/pattern";
 
 export const CONTENT_MAX_LENGTH = 999;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
-export const SENDER_USERNAME = "$$$___sender.username___$$$";
-export const POST_CONTENT = "$$$___post.content___$$$";
+export const SENDER_USERNAME = prepareKeyPattern("sender.username");
+export const POST_CONTENT = prepareKeyPattern("post.content");
+export const INVITED_USER = prepareKeyPattern("invited_user");
+export const INVITER_USER = prepareKeyPattern("inviter_user");
 
 export const POST_PARSER = {
   KEY_PATTERN: /(\$\$\$___[0123456789abcdefg-]+___\$\$\$)(?!;)/gim,
@@ -15,6 +18,10 @@ export const POST_PARSER = {
 
 export const NOTIFICATION_PARSER = {
   KEY_PATTERN: /(\$\$\$___[a-z.]+___\$\$\$)(?!;)/gim,
+};
+
+export const CREDIT_TRANSACTION_PARSER = {
+  KEY_PATTERN: /(\$\$\$___[a-z._]+___\$\$\$)(?!;)/gim,
 };
 
 export const POST_TYPES: PostTypes = {
@@ -71,6 +78,7 @@ export const ID = {
   PROFILE_CARDS: "profileCards",
   TAG_POSTS: "tagPosts",
   NOTIFICATIONS: "notifications",
+  CREDIT_TRANSACTIONS: "creditTransactions",
 };
 
 export const MENU_KEYS = ["normal", "delete", "edit"];

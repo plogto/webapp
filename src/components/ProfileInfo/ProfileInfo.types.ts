@@ -10,6 +10,7 @@ interface ConnectionButton {
 
 export interface ProfileInfoProps {
   user: User;
+  isShowCredit?: boolean;
 }
 
 export interface ConnectionButtons {
@@ -20,4 +21,8 @@ export interface ConnectionButtons {
 
 export interface UseConnectionProps {
   userId: User["id"];
+}
+
+export interface UseProfileInfo {
+  user?: User;
 }

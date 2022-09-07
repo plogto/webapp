@@ -1,19 +1,19 @@
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import { Layout } from "@components/Layout";
-import { FollowRequests } from "@features/FollowRequests";
+import { Credits } from "@features/Credits";
 
-export default function FollowRequestsPage() {
+export default function EditProfilePage() {
   const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("pages:followRequests")} | {t("common:logoName")}
+          {t("pages:credits")} | {t("common:logoName")}
         </title>
       </Head>
-      <Layout showTrends>
-        <FollowRequests />
+      <Layout>
+        <Credits />
       </Layout>
     </>
   );

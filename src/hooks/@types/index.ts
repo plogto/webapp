@@ -6,8 +6,7 @@ export interface ParsePostProps {
   content: string;
   hashtagComponent: ReactNode;
 }
-
-export interface PostStore {
+export interface ContentStore {
   [key: string]: {
     key: string;
     component?: ReactNode;
@@ -31,4 +30,8 @@ export interface UseImageProfileProps {
 export interface HandleCompleteTagProps {
   editorState: EditorState;
   tagName: string;
+}
+
+export interface FormatCreditAmountOptions {
+  sign?: boolean;
 }

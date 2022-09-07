@@ -48,3 +48,32 @@ export enum ConnectionsActiveTab {
   FOLLOWING = "FOLLOWING",
   FOLLOWERS = "FOLLOWERS",
 }
+
+export enum CreditTransactionStatusType {
+  APPROVED = "APPROVED",
+  PENDING = "PENDING",
+  FAILED = "FAILED",
+  CANCELED = "CANCELED",
+}
+
+export enum CreditTransactionDescriptionVariableType {
+  USER = "USER",
+  TAG = "TAG",
+}
+
+export enum CreditTransactionTypeName {
+  INVITE_USER = "INVITE_USER",
+  REGISTER_BY_INVITATION_CODE = "REGISTER_BY_INVITATION_CODE",
+}
+
+export enum CreditTransactionType {
+  ORDER = "ORDER",
+  TRANSFER = "TRANSFER",
+  COMMISSION = "COMMISSION",
+  FUND = "FUND",
+}
+
+export enum CreditTransactionAmountType {
+  DEPOSIT = "DEPOSIT",
+  WITHDRAW = "WITHDRAW",
+}

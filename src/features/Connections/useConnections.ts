@@ -15,7 +15,7 @@ import {
 import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import { ConnectionTab } from "@t/connection";
-import { Placeholder } from "@t/status";
+import { Placeholder } from "@t/placeholder";
 import type { ConnectionsProps } from "./Connections.types";
 
 export function useConnections({ type }: ConnectionsProps) {

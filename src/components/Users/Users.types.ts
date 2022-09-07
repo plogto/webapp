@@ -1,5 +1,5 @@
 import type { ConnectionsWithPageInfo } from "@t/connection";
-import type { Status } from "@t/status";
+import type { Placeholder } from "@t/placeholder";
 
 // TODO: improve data and dataKey types
 export interface UsersProps {
@@ -9,5 +9,5 @@ export interface UsersProps {
   className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Status;
+  emptyStatus: Placeholder;
 }

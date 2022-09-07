@@ -1,11 +1,10 @@
-import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigator } from "@hooks/useNavigator";
-import { useUserProfile } from "@hooks/useUserProfile";
 import { formatCountTitle } from "@utils/formatter";
+import type { UseProfileInfo } from "../ProfileInfo.types";
 
-export function useProfileInfo() {
-  const { userResponse } = useUserProfile();
+export function useProfileInfo(props: UseProfileInfo) {
+  const { user } = props;
   const {
     formatFollowingPageRoute,
     formatFollowersPageRoute,
@@ -13,36 +12,31 @@ export function useProfileInfo() {
   } = useNavigator();
   const { t } = useTranslation(["profile", "common"]);
 
-  const userData = useMemo(
-    () => userResponse.data?.getUserByUsername,
-    [userResponse.data?.getUserByUsername],
-  );
-
   // TODO: refactor this counts
   const COUNTS = [
     {
       ...formatCountTitle({
         singular: t("common:post"),
         plural: t("common:posts"),
-        count: userData?.postsCount,
+        count: user?.postsCount,
       }),
-      href: userData && formatProfilePageRoute(userData?.username),
+      href: user && formatProfilePageRoute(user?.username),
     },
     {
       ...formatCountTitle({
         singular: t("common:follower"),
         plural: t("common:followers"),
-        count: userData?.followersCount,
+        count: user?.followersCount,
       }),
-      href: userData && formatFollowersPageRoute(userData.username),
+      href: user && formatFollowersPageRoute(user.username),
     },
     {
       ...formatCountTitle({
         singular: t("common:following"),
         plural: t("common:following"),
-        count: userData?.followingCount,
+        count: user?.followingCount,
       }),
-      href: userData && formatFollowingPageRoute(userData.username),
+      href: user && formatFollowingPageRoute(user.username),
     },
   ];
 

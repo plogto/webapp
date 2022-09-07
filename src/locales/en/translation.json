@@ -55,6 +55,7 @@
     }
   },
   "common": {
+    "credits": "Credits",
     "follower": "Follower",
     "followers": "Followers",
     "following": "Following",
@@ -84,6 +85,13 @@
     "tabs": {
       "followers": "Followers",
       "following": "Following"
+    }
+  },
+  "credits": {
+    "status": {
+      "noTransactions": {
+        "title": "No Transactions Yet."
+      }
     }
   },
   "cropImage": {
@@ -152,6 +160,7 @@
   "pages": {
     "addPost": "Add Post",
     "changePassword": "Change Password",
+    "credits": "Credits",
     "editProfile": "Edit Profile",
     "followRequests": "Follow Requests",
     "followers": "Followers",
@@ -197,6 +206,7 @@
   },
   "profile": {
     "buttons": {
+      "credits": "Credits",
       "settings": "Settings"
     },
     "status": {

@@ -1,5 +1,5 @@
 .wrapper {
-  @apply text-foreground-pure inline-flex items-end space-x-1;
+  @apply inline-flex items-end space-x-1 text-foreground-pure;
 
   & .fullName {
     @apply font-bold;
@@ -18,7 +18,7 @@
       @apply text-sm;
     }
     & .verified {
-      @apply w-[15px] mb-[3px];
+      @apply mb-[3px] w-[15px];
     }
   }
 
@@ -27,7 +27,7 @@
       @apply text-base;
     }
     & .verified {
-      @apply w-4 mb-[3px];
+      @apply mb-[3px] w-4;
     }
   }
 
@@ -36,7 +36,7 @@
       @apply text-xl md:text-2xl;
     }
     & .verified {
-      @apply w-5 mb-[2px] md:w-6 md:mb-[3px];
+      @apply mb-[2px] w-5 md:mb-[3px] md:w-6;
     }
   }
 }

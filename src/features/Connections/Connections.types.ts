@@ -1,5 +1,5 @@
-import { ConnectionTab } from "@t/connection";
-import { User } from "@t/user";
+import type { ConnectionTab } from "@t/connection";
+import type { User } from "@t/user";
 
 export interface ConnectionsProps {
   type: "followers" | "following";

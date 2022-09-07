@@ -1,4 +1,4 @@
-import type { Placeholder } from "@t/status";
+import type { Placeholder } from "@t/placeholder";
 
 export interface PlaceholderProps extends Placeholder {
   className?: string;

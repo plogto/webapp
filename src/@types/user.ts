@@ -19,6 +19,7 @@ export interface User {
   followingCount?: number;
   postsCount?: number;
   followRequestsCount?: number;
+  credits?: number;
   createdAt?: string;
   updatedAt?: string;
 }

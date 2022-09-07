@@ -1,10 +1,10 @@
 import type { NotificationsWithPageInfo } from "@t/notification";
-import type { Status } from "@t/status";
+import type { Placeholder } from "@t/placeholder";
 
 export interface NotificationsListProps {
   data?: NotificationsWithPageInfo;
   className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Status;
+  emptyStatus: Placeholder;
 }

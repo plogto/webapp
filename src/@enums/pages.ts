@@ -12,6 +12,7 @@ export enum PageUrls {
   THEMES = "/accounts/settings/themes",
   NOTIFICATIONS = "/accounts/notifications",
   FOLLOW_REQUESTS = "/accounts/follow-requests",
+  CREDITS = "/accounts/credits",
   FOLLOWERS = "/followers",
   FOLLOWING = "/following",
 }
