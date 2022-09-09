@@ -1,6 +1,14 @@
 import type { User } from "@t/user";
 import type { AuthToken } from "./auth";
 
+export interface GetUserByInvitationCodeQuery {
+  getUserByInvitationCode: User;
+}
+
+export interface GetUserByInvitationCodeQueryRequest {
+  invitationCode: string;
+}
+
 export interface GetUserInfoQuery {
   getUserInfo: User;
 }

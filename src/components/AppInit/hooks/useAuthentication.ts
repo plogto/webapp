@@ -19,8 +19,10 @@ export function useAuthentication(props: UseAuthenticationProps) {
     if (getToken()) {
       getUserInfo()
         .then(({ data }) => {
-          if (data) {
+          if (data?.getUserInfo) {
             setUser(data?.getUserInfo);
+          } else {
+            push(PageUrls.LOGOUT);
           }
         })
         .catch(() => {

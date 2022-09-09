@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
+import { LocalStorageKeys } from "@enums";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -9,7 +11,6 @@ import type { RegisterMutation } from "@graphql/@types/auth";
 import { REGISTER } from "@graphql/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { RegisterForm } from "../Auth.types";
-import { useRouter } from "next/router";
 
 export function useRegister() {
   const { push } = useRouter();
@@ -38,7 +39,8 @@ export function useRegister() {
         authToken: { token },
         user,
       } = data.register;
-      localStorage.setItem("authorization", token);
+      localStorage.setItem(LocalStorageKeys.AUTHORIZATION, token);
+      localStorage.removeItem(LocalStorageKeys.INVITATION_CODE);
       setToken(token);
       setUser(user);
       setIsAuthenticated(true);

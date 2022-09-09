@@ -21,7 +21,7 @@
   & .amountWrapper {
     @apply flex items-center;
     & .amount {
-      @apply rounded-lg px-2 py-1 text-xl font-medium;
+      @apply rounded-lg px-2.5 py-1 text-xl font-medium;
 
       &.deposit {
         @apply bg-amber-300 bg-opacity-20 text-amber-500;

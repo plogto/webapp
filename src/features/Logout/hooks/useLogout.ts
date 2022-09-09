@@ -1,7 +1,8 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { LocalStorageKeys } from "@enums";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { useRouter } from "next/router";
 
 export function useLogout() {
   const { push } = useRouter();
@@ -12,7 +13,7 @@ export function useLogout() {
     setToken(undefined);
     setUser(undefined);
     typeof window !== "undefined"
-      ? localStorage.removeItem("authorization")
+      ? localStorage.removeItem(LocalStorageKeys.AUTHORIZATION)
       : undefined;
     push(PageUrls.LOGIN);
   }, [setIsAuthenticated, setToken, setUser]);

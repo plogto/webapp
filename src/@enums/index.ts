@@ -77,3 +77,8 @@ export enum CreditTransactionAmountType {
   DEPOSIT = "DEPOSIT",
   WITHDRAW = "WITHDRAW",
 }
+
+export enum LocalStorageKeys {
+  AUTHORIZATION = "authorization",
+  INVITATION_CODE = "invitationCode",
+}

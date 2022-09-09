@@ -1,7 +1,7 @@
 .wrapper {
   & .textarea {
-    @apply shadow-sm py-2.5 resize-none text-foreground bg-background-pure;
-    @apply block w-full text-sm border-background-dark rounded-lg;
+    @apply resize-none bg-background-pure py-2.5 text-foreground shadow-sm;
+    @apply block w-full rounded-xl border-background-dark text-sm;
     @apply focus:ring-0;
 
     & .message {
@@ -14,12 +14,12 @@
   }
 
   & .label {
-    @apply block text-sm font-medium text-foreground mb-1;
+    @apply mb-1 block text-sm font-medium text-foreground;
   }
 
   &.success {
     & .textarea {
-      @apply focus:ring-primary focus:border-primary border-primary;
+      @apply border-primary focus:border-primary focus:ring-primary;
     }
 
     & .message {
@@ -29,7 +29,7 @@
 
   &.error {
     & .textarea {
-      @apply focus:ring-danger focus:border-danger bg-danger-light border-danger;
+      @apply border-danger bg-danger-light focus:border-danger focus:ring-danger;
     }
 
     & .message {

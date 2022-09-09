@@ -10,7 +10,7 @@
 
     & button {
       @apply m-3 px-2 py-1;
-      @apply rounded-md text-sm text-primary hover:bg-primary-light;
+      @apply rounded-lg text-sm text-primary hover:bg-primary-light;
       @apply transition-all duration-300;
     }
   }

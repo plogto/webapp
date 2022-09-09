@@ -1,20 +1,24 @@
 .avatar {
-  @apply relative text-foreground-light bg-background-pure;
-  @apply rounded-full shadow-sm border border-background-dark z-20 overflow-hidden;
+  @apply relative bg-background-pure text-foreground-light;
+  @apply z-20 overflow-hidden rounded-full border border-background-dark shadow-sm;
 
   &.large {
-    @apply w-20 h-20 md:w-24 md:h-24;
+    @apply h-20 w-20 md:h-24 md:w-24;
   }
 
   &.normal {
-    @apply w-12 h-12;
+    @apply h-12 w-12;
   }
 
   &.small {
-    @apply w-9 h-9;
+    @apply h-9 w-9;
   }
 
   &.tiny {
-    @apply w-7 h-7;
+    @apply h-7 w-7;
+  }
+
+  &.miniature {
+    @apply h-5 w-5;
   }
 }

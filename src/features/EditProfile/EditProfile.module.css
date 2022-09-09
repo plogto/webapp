@@ -33,14 +33,14 @@
 
     & .toggle {
       @apply py-2.5 px-3;
-      @apply rounded-lg border border-background-dark shadow-sm;
+      @apply rounded-xl border border-background-dark shadow-sm;
     }
 
     & .footer {
       @apply flex justify-end space-x-3;
 
       & .button {
-        @apply w-full rounded-lg py-2.5 text-sm font-medium md:w-[6rem] md:py-2;
+        @apply w-full rounded-xl py-2.5 text-sm font-medium md:w-[6rem] md:py-2;
       }
     }
   }

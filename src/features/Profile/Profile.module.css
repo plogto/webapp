@@ -18,7 +18,7 @@
     @apply h-[calc(100vh-3rem)];
 
     & .profileContent {
-      @apply sticky w-full md:rounded-xl;
+      @apply sticky w-full;
     }
 
     & .profileContent {

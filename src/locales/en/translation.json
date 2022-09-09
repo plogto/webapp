@@ -30,6 +30,7 @@
       "username": "Username"
     },
     "texts": {
+      "invitedBy": "Invited by",
       "loginFooter": "Don't have an account?",
       "registerFooter": "Have an account already?"
     }

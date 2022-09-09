@@ -1,5 +1,5 @@
 .profileInfo {
-  @apply sticky w-full md:rounded-xl;
+  @apply sticky w-full;
   @apply top-[8.5rem] mt-20 md:top-5 md:mt-[12.5rem] md:w-[35%];
 
   & .avatar {

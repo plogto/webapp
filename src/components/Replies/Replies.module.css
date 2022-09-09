@@ -1,5 +1,5 @@
 .replies {
-  @apply flex flex-col items-start relative;
+  @apply relative flex flex-col items-start;
 
   &.isChild {
     @apply ml-10 mt-1;
@@ -7,7 +7,7 @@
 
   & .showReplies {
     @apply ml-11 mt-1 mb-2 px-2 py-1;
-    @apply text-primary text-xs hover:bg-primary-light rounded-md;
+    @apply rounded-lg text-xs text-primary hover:bg-primary-light;
     @apply transition-all duration-300;
   }
 }

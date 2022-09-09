@@ -37,7 +37,7 @@
 
       & .aspectMenu {
         & .menuItems {
-          @apply flex flex-col overflow-hidden rounded-lg bg-gray-900 opacity-80;
+          @apply flex flex-col overflow-hidden rounded-xl bg-gray-900 opacity-80;
           @apply absolute bottom-14;
 
           & .menuItem {

@@ -5,10 +5,11 @@ import {
   useContext,
   useState,
 } from "react";
+import { LocalStorageKeys } from "@enums";
 
 const token =
   typeof window !== "undefined"
-    ? localStorage.getItem("authorization")
+    ? localStorage.getItem(LocalStorageKeys.AUTHORIZATION)
     : undefined;
 
 const initialAccount: AccountContext = {

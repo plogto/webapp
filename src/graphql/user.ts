@@ -18,6 +18,15 @@ export const CHECK_USERNAME = gql`
   }
 `;
 
+export const GET_USER_BY_INVITATION_CODE = gql`
+  ${UserFragment.short}
+  query getUserByInvitationCode($invitationCode: String!) {
+    getUserByInvitationCode(invitationCode: $invitationCode) {
+      ...UserFragmentShort
+    }
+  }
+`;
+
 export const CHECK_EMAIL = gql`
   query checkEmail($email: String!) {
     checkEmail(email: $email) {

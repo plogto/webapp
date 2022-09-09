@@ -7,7 +7,7 @@
   }
 
   &.isRounded {
-    @apply rounded-xl;
+    @apply rounded-2xl;
   }
 }
 
