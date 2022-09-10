@@ -1,4 +1,4 @@
-import { WithPageInfo } from "@t";
+import type { WithPageInfo } from "@t";
 import type { Post } from "./post";
 import type { User } from "./user";
 

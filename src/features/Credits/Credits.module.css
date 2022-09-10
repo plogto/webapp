@@ -1,0 +1,37 @@
+.wrapper {
+  @apply relative w-full;
+
+  & .header {
+    @apply fixed top-0 left-0 right-0 bg-background-pure;
+    @apply z-30 md:hidden;
+  }
+
+  & .background {
+    @apply fixed top-12 z-0 bg-cover bg-center md:absolute md:top-0;
+    @apply h-auto w-full overflow-hidden;
+    @apply bg-background-pure md:rounded-b-xl;
+  }
+
+  & .cards {
+    @apply flex flex-col items-start md:flex-row md:space-x-4;
+    @apply relative overflow-x-hidden pb-14 md:px-4 md:pb-20;
+    @apply h-[calc(100vh-3rem)];
+
+    & .profileContent {
+      @apply sticky w-full md:rounded-xl;
+    }
+
+    & .profileContent {
+      @apply sticky mt-12 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
+
+      & .credits {
+        @apply flex items-center justify-center space-x-2 font-medium md:justify-start;
+        @apply m-3 rounded-lg px-3 py-2 text-6xl text-amber-500;
+      }
+    }
+  }
+
+  & .privateStatus {
+    @apply mx-10 mt-16 md:m-32;
+  }
+}

@@ -1,6 +1,6 @@
 .wrapper {
-  @apply flex flex-col justify-center items-center;
-  @apply w-full h-screen;
+  @apply flex flex-col items-center justify-center;
+  @apply h-screen w-full;
 
   & .header {
     @apply flex flex-col items-center pt-10;
@@ -10,33 +10,33 @@
     }
 
     & .logo {
-      @apply h-32 text-foreground mb-5;
+      @apply mb-5 h-32 text-foreground;
     }
 
     & .logoTitle {
-      @apply font-bold font-brand text-5xl text-foreground uppercase;
+      @apply font-brand text-5xl font-bold uppercase text-foreground;
     }
 
     & .description {
-      @apply font-light md:text-lg text-lg mt-4;
+      @apply mt-4 text-lg font-light md:text-lg;
       @apply text-center text-foreground;
     }
   }
 
   & .authButtons {
-    @apply flex justify-center space-x-4 mt-8;
+    @apply mt-8 flex justify-center space-x-4;
 
     & .loginButton,
     & .registerButton {
-      @apply px-5 py-2.5 w-32 rounded-xl font-bold;
+      @apply w-32 rounded-2xl px-5 py-3 font-bold;
     }
 
     & .loginButton {
-      @apply text-foreground border border-background-medium;
+      @apply border border-background-medium text-foreground;
     }
 
     & .registerButton {
-      @apply text-background-pure bg-foreground;
+      @apply bg-foreground text-background-pure;
     }
   }
 }

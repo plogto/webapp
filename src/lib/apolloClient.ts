@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { LocalStorageKeys } from "@enums";
 import { createUploadLink } from "apollo-upload-client";
 import {
   ApolloClient,
@@ -94,7 +95,7 @@ export function useApollo(
 function getAuthorization() {
   const token =
     typeof window !== "undefined"
-      ? localStorage.getItem("authorization")
+      ? localStorage.getItem(LocalStorageKeys.AUTHORIZATION)
       : "null";
 
   const authorization = `Bearer ${token}`;

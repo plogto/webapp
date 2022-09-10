@@ -1,7 +1,7 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import classNames from "classnames";
-import { ContentStatus } from "@components/ContentStatus";
 import { Loader } from "@components/Loader";
+import { Placeholder } from "@components/Placeholder";
 import { User } from "@components/User";
 import styles from "./Users.module.css";
 import type { UsersProps } from "./Users.types";
@@ -31,7 +31,7 @@ export function Users(props: UsersProps) {
       }
     >
       {!data?.edges || data?.edges.length < 1 ? (
-        <ContentStatus
+        <Placeholder
           title={title}
           description={description}
           icon={icon}

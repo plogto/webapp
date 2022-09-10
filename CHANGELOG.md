@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.35.0](https://github.com/mahdineer/plog-fe/compare/v0.34.0...v0.35.0) (2022-09-10)
+
+
+### Features
+
+* implement Credits feature ([92baa21](https://github.com/mahdineer/plog-fe/commit/92baa219f3b56e7f19acdc31c20eb2e9df821e71))
+* implement InvitedUser ([7219e76](https://github.com/mahdineer/plog-fe/commit/7219e769fff6cd47d838124b2b5bd3ffa4e1bf41))
+
+
+### Bug Fixes
+
+* **Connections:** use DefaultBackground if user background is empty ([ab9f559](https://github.com/mahdineer/plog-fe/commit/ab9f5598b59fd4a9bbd564c6d82c016bc2c99ab9))
+* **pages:** revert deleted pages ([341c58a](https://github.com/mahdineer/plog-fe/commit/341c58a33a0bceffc02a84f2c5d38fe2f30dab86))
+* **useAuthentication:** handle protected pages ([d6a5ce2](https://github.com/mahdineer/plog-fe/commit/d6a5ce2c24cff45a291143e580774de9c62c3bb7))
+
 ## [0.34.0](https://github.com/mahdineer/plog-fe/compare/v0.33.0...v0.34.0) (2022-08-21)
 
 

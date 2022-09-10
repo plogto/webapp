@@ -37,7 +37,7 @@ export function useProfile() {
       getPosts({
         variables,
       });
-      isYourAccount && getSavedPosts();
+      isYourAccount(username) && getSavedPosts();
     }
   }, [getPosts, getSavedPosts, isYourAccount, username, variables]);
 
@@ -90,7 +90,7 @@ export function useProfile() {
         },
       },
     ];
-    if (isYourAccount) {
+    if (isYourAccount(username)) {
       tabs.push({
         title: t("profile:tabs.saved"),
         href: formatSavedPostsPageRoute(username),

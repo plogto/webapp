@@ -1,7 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { ID } from "@constants";
-import { ContentStatus } from "@components/ContentStatus";
 import { PageHeader } from "@components/PageHeader";
+import { Placeholder } from "@components/Placeholder";
 import styles from "./Tag.module.css";
 import { TagContent } from "./components/TagContent";
 import { TagInfo } from "./components/TagInfo";
@@ -12,7 +12,7 @@ export function Tag() {
 
   return !tagData.isLoading && !tagData.data ? (
     // TODO: implement a not found page for this part
-    <ContentStatus
+    <Placeholder
       title={t("status.notFound.title")}
       icon="Hashtag"
       className={styles.notFound}

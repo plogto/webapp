@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
-import { ContentStatus } from "@components/ContentStatus";
+import { Placeholder } from "@components/Placeholder";
 import { Tabs } from "@components/Tabs/Tabs";
 import { Users } from "@components/Users";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -33,7 +33,7 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
       <Tabs tabs={tabs} />
       <div>
         {!isConnections && !isYourProfile && isPrivate ? (
-          <ContentStatus
+          <Placeholder
             title={t("status.private.title")}
             description={t("status.private.description")}
             icon="LockClosed"

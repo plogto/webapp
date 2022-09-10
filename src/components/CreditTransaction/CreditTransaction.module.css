@@ -1,0 +1,35 @@
+.creditTransaction {
+  @apply flex items-stretch p-3;
+  @apply w-full border-t border-background-medium;
+
+  & .avatar {
+    @apply mr-1.5 h-10 w-10 md:mr-2 md:h-11 md:w-11;
+  }
+
+  & .content {
+    @apply w-full text-sm text-foreground;
+
+    & .description {
+      @apply mt-1 text-[13px];
+    }
+
+    & .date {
+      @apply mt-1 text-xs text-foreground-dark;
+    }
+  }
+
+  & .amountWrapper {
+    @apply flex items-center;
+    & .amount {
+      @apply rounded-lg px-2.5 py-1 text-xl font-medium;
+
+      &.deposit {
+        @apply bg-amber-300 bg-opacity-20 text-amber-500;
+      }
+
+      &.withdraw {
+        @apply bg-rose-300 bg-opacity-20 text-rose-500;
+      }
+    }
+  }
+}

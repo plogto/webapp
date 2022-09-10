@@ -1,9 +1,15 @@
-import { createContext, ReactNode, useContext, useMemo, useState } from "react";
-import { useRouter } from "next/router";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
+import { LocalStorageKeys } from "@enums";
 
 const token =
   typeof window !== "undefined"
-    ? localStorage.getItem("authorization")
+    ? localStorage.getItem(LocalStorageKeys.AUTHORIZATION)
     : undefined;
 
 const initialAccount: AccountContext = {
@@ -68,12 +74,10 @@ function useAccountSetState() {
 export function useAccountContext() {
   const { isAuthenticated, token, user } = useAccountState();
   const { setIsAuthenticated, setToken, setUser } = useAccountSetState();
-  const { query } = useRouter();
-  const username = query?.username as string;
 
-  const isYourAccount = useMemo(
-    () => username === user?.username,
-    [user?.username, username],
+  const isYourAccount = useCallback(
+    (username?: string) => username && username === user?.username,
+    [user?.username],
   );
 
   return {

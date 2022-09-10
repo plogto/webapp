@@ -5,6 +5,7 @@ import { Icon } from "@components/Icon";
 import { Input } from "@components/Input";
 import { PageUrls } from "@enums/pages";
 import styles from "./Auth.module.css";
+import { InviterUser } from "./InviterUser";
 import { useLogin } from "./hooks/useLogin";
 
 export function Login() {
@@ -32,6 +33,7 @@ export function Login() {
             </div>
           )}
           <div className="mt-2">
+            <InviterUser className="ml-2 mb-3" />
             <Input
               type="text"
               name="username"
@@ -40,7 +42,7 @@ export function Login() {
               register={register("username")}
             />
           </div>
-          <div className="mt-4">
+          <div className="mt-5">
             <Input
               type="password"
               name="password"
@@ -49,7 +51,7 @@ export function Login() {
               register={register("password")}
             />
           </div>
-          <div className="mt-6">
+          <div className="mt-5">
             <Button
               loading={loading}
               type="submit"

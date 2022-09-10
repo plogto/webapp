@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { Button } from "@components/Buttons/Button";
-import { ContentStatus } from "@components/ContentStatus";
 import { Loader } from "@components/Loader";
 import { Notification } from "@components/Notification";
+import { Placeholder } from "@components/Placeholder";
 import styles from "./NotificationsList.module.css";
 import type { NotificationsListProps } from "./NotificationsList.types";
 
@@ -44,7 +44,7 @@ export function NotificationsList(props: NotificationsListProps) {
       {isLoading ? (
         loader
       ) : !data?.edges || data?.edges?.length < 1 ? (
-        <ContentStatus
+        <Placeholder
           title={title}
           description={description}
           icon={icon}

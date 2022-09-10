@@ -2,9 +2,9 @@ import type { WithPageInfo } from ".";
 import { DateType, RepliesView, PostTypeKey } from "@enums";
 import type { Attachment } from "./attachment";
 import type { LikedPost, LikedPostsWithPageInfo } from "./likedPost";
+import type { Placeholder } from "./placeholder";
 import type { SavedPost } from "./savedPost";
 import type { ContentSize, DateSize, FooterSize, HeaderSize } from "./size";
-import type { Status } from "./status";
 import type { User } from "./user";
 
 export interface Post {
@@ -57,5 +57,5 @@ export interface PostTab {
   href: string;
   data: PostData;
   getMoreData: () => void;
-  emptyStatus: Status;
+  emptyStatus: Placeholder;
 }

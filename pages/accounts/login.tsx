@@ -1,17 +1,17 @@
 import { useTranslation } from "react-i18next";
-import { Register } from "@features/Auth";
 import Head from "next/head";
+import { Login } from "@features/Auth";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const { t } = useTranslation(["common", "pages"]);
   return (
     <>
       <Head>
         <title>
-          {t("pages:register")} | {t("common:logoName")}
+          {t("pages:login")} | {t("common:logoName")}
         </title>
       </Head>
-      <Register />
+      <Login />
     </>
   );
 }

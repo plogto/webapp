@@ -8,3 +8,7 @@ export interface LoginForm {
   username: string;
   password: string;
 }
+
+export interface InviterUserProps {
+  className?: string;
+}

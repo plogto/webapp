@@ -1,36 +1,40 @@
 .wrapper {
-  @apply flex flex-col justify-center items-center;
+  @apply flex flex-col items-center justify-center;
   @apply h-screen w-screen;
 
   & .card {
-    @apply flex flex-col w-80 m-auto justify-center md:bg-background-pure;
-    @apply rounded-xl md:shadow-sm md:border md:border-background-dark;
+    @apply m-auto flex w-80 flex-col justify-center md:bg-background-pure;
+    @apply rounded-3xl md:border md:border-background-dark md:shadow-sm;
 
     & form {
-      @apply flex flex-col space-y-4;
-      @apply pt-8 px-5 pb-6;
+      @apply flex flex-col;
+      @apply px-5 pt-8 pb-6;
 
       & .logoContainer {
-        @apply flex items-center justify-center mb-6 space-x-2;
+        @apply mb-6 flex flex-col items-center justify-center space-y-2 space-x-2;
 
         & .logo {
-          @apply h-8 text-foreground;
+          @apply h-36 text-foreground;
         }
 
         & .logoTitle {
-          @apply font-brand font-bold tracking-wider;
-          @apply text-4xl text-foreground text-center uppercase;
+          @apply pt-1 font-brand font-bold tracking-wider;
+          @apply text-center text-5xl uppercase text-foreground;
         }
       }
 
       & .error {
-        @apply text-sm text-danger text-center bg-danger-light rounded-lg;
-        @apply py-2.5 w-full;
+        @apply rounded-lg bg-danger-light text-center text-sm text-danger;
+        @apply w-full py-2.5;
+      }
+
+      & .inviterUser {
+        @apply flex items-center text-sm text-foreground;
       }
 
       & .submitButton {
-        @apply text-background-pure bg-foreground;
-        @apply w-full px-4 py-2.5 mt-2;
+        @apply bg-foreground text-background-pure;
+        @apply w-full px-4 py-3;
       }
 
       & .submitButtonLoading {
@@ -39,11 +43,11 @@
     }
 
     & .footer {
-      @apply border-t border-background-dark;
-      @apply flex justify-center space-x-1 text-foreground-light py-5 text-sm;
+      @apply md:border-t md:border-background-dark;
+      @apply flex justify-center space-x-1 pt-2 pb-5 text-sm text-foreground-light md:pt-5;
 
       & .link {
-        @apply text-primary font-medium;
+        @apply font-medium text-primary;
       }
     }
   }

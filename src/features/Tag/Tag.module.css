@@ -13,7 +13,7 @@
 
     & .tagInfo,
     & .tagContent {
-      @apply sticky w-full md:rounded-xl;
+      @apply sticky w-full;
     }
 
     & .tagInfo {

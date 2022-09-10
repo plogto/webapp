@@ -1,5 +1,5 @@
 import type { WithPageInfo } from ".";
-import type { Status } from "./status";
+import type { Placeholder } from "./placeholder";
 import type { User } from "./user";
 
 export interface Connection {
@@ -24,5 +24,5 @@ export interface ConnectionTab {
   href: string;
   data: ConnectionData;
   getMoreData: () => void;
-  emptyStatus: Status;
+  emptyStatus: Placeholder;
 }

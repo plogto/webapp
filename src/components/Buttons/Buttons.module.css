@@ -1,7 +1,7 @@
 .button {
   @apply inline-flex items-center justify-center;
   @apply select-none transition-all duration-300;
-  @apply cursor-pointer ring-0 focus:ring-0 rounded-lg;
+  @apply cursor-pointer rounded-xl ring-0 focus:ring-0;
 
   &.disabled {
     @apply bg-background-dark text-foreground-medium !important;
@@ -14,11 +14,11 @@
 
   &.outline {
     @apply border border-transparent text-foreground;
-    @apply hover:shadow hover:border-background-medium;
+    @apply hover:border-background-medium hover:shadow;
   }
 
   &.remove {
-    @apply text-danger border border-danger;
+    @apply border border-danger text-danger;
     @apply hover:bg-danger-light;
   }
 

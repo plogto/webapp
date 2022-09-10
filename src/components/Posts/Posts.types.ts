@@ -1,5 +1,5 @@
+import type { Placeholder } from "@t/placeholder";
 import type { PostsWithPageInfo } from "@t/post";
-import type { Status } from "@t/status";
 
 export interface PostsProps {
   posts?: PostsWithPageInfo;
@@ -7,5 +7,5 @@ export interface PostsProps {
   className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Status;
+  emptyStatus: Placeholder;
 }

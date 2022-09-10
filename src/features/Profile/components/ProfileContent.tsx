@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
-import { ContentStatus } from "@components/ContentStatus";
+import { Placeholder } from "@components/Placeholder";
 import { Posts } from "@components/Posts";
 import { Tabs } from "@components/Tabs";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -31,7 +31,7 @@ export function ProfileContent(props: ProfileContentProps) {
       <Tabs tabs={tabs} />
       <div>
         {!isPosts && !isYourProfile && isPrivate ? (
-          <ContentStatus
+          <Placeholder
             title={t("status.private.title")}
             description={t("status.private.description")}
             icon="LockClosed"

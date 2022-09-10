@@ -1,5 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
+import Link from "next/link";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
@@ -13,6 +15,7 @@ import { useProfileInfo } from "./hooks/useProfileInfo";
 
 export function ProfileInfo(props: ProfileInfoProps) {
   const {
+    user,
     user: {
       id,
       username,
@@ -23,13 +26,17 @@ export function ProfileInfo(props: ProfileInfoProps) {
       isPrivate,
       isVerified,
     },
+    isShowCredit = true,
   } = props;
-  const { user } = useAccountContext();
-  const { COUNTS } = useProfileInfo();
+  const { isYourAccount } = useAccountContext();
+  const { COUNTS } = useProfileInfo({ user });
   const { t } = useTranslation("profile");
 
-  const clickable =
-    id == user?.id ? true : isPrivate && connectionStatus !== 2 ? false : true;
+  const clickable = isYourAccount(username)
+    ? true
+    : isPrivate && connectionStatus !== 2
+    ? false
+    : true;
 
   return (
     <Card className={styles.profileInfo} shadow={!isMobile} rounded={!isMobile}>
@@ -52,8 +59,22 @@ export function ProfileInfo(props: ProfileInfoProps) {
           <p className={styles.bio}>{bio}</p>
         </div>
       )}
+
+      {isYourAccount(username) && isShowCredit && (
+        <Link href={PageUrls.CREDITS}>
+          <a className={styles.credits}>
+            <Image
+              src="/static/images/credit.png"
+              width={20}
+              height={20}
+              alt="credit"
+            />
+            <span>{t("buttons.credits")}</span>
+          </a>
+        </Link>
+      )}
       <div className={styles.buttonWrapper}>
-        {user?.id !== id ? (
+        {!isYourAccount(username) ? (
           <ConnectionStatus user={{ id, connectionStatus }} />
         ) : (
           <LinkButton

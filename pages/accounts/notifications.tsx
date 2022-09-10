@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Layout } from "@components/Layout";
 import { Notifications } from "@features/Notifications";
 
-export default function NotificationsPage() {
+export default function FollowRequestsPage() {
   const { t } = useTranslation(["common", "pages"]);
   return (
     <>

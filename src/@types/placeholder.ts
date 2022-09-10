@@ -1,6 +1,6 @@
 import type { IconNames } from "@components/Icon";
 
-export interface Status {
+export interface Placeholder {
   title: string;
   description?: string;
   icon: IconNames;

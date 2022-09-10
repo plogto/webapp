@@ -1,0 +1,19 @@
+.status {
+  @apply rounded-full px-1.5 text-[11px] font-medium;
+
+  &.approved {
+    @apply bg-emerald-300 bg-opacity-20 text-emerald-500;
+  }
+
+  &.pending {
+    @apply bg-amber-300 bg-opacity-20 text-amber-500;
+  }
+
+  &.failed {
+    @apply bg-rose-300 bg-opacity-20 text-rose-500;
+  }
+
+  &.canceled {
+    @apply bg-gray-300 bg-opacity-20 text-gray-500;
+  }
+}

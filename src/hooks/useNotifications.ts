@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
-import type { Status } from "@t/status";
+import type { Placeholder } from "@t/placeholder";
 
 export function useNotifications() {
   const { user } = useAccountContext();
@@ -16,7 +16,7 @@ export function useNotifications() {
     [user?.followRequestsCount],
   );
 
-  const emptyStatus: Status = useMemo(
+  const emptyStatus: Placeholder = useMemo(
     () => ({
       title: t("status.noNotifications.title"),
       icon: "BellFill",

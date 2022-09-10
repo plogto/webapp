@@ -27,7 +27,7 @@
           @apply w-full;
         }
         & .removeButton {
-          @apply absolute top-3 right-3 rounded-md text-xs font-medium;
+          @apply absolute top-3 right-3 rounded-lg text-xs font-medium;
           @apply bg-gray-800 bg-opacity-50 px-2 py-1 text-white;
         }
       }
@@ -37,7 +37,7 @@
       @apply flex justify-between p-3;
 
       & .attachmentButton {
-        @apply border border-background-medium p-1 shadow-sm;
+        @apply rounded-lg border border-background-medium p-1 shadow-sm;
 
         & .icon {
           @apply w-6 stroke-2 text-foreground;
@@ -49,7 +49,7 @@
 
         & .counter {
           @apply flex w-24 items-center justify-center text-foreground-light;
-          @apply rounded-lg border border-background-dark duration-300;
+          @apply rounded-xl border border-background-dark duration-300;
 
           & .number {
             @apply inline-flex items-center justify-center;
@@ -68,7 +68,7 @@
 
         & .submit {
           @apply bg-foreground py-2 px-3 text-background-pure outline-none ring-0 focus:ring-0;
-          @apply w-24 rounded-lg text-sm font-bold;
+          @apply w-24 rounded-xl text-sm font-bold;
         }
       }
     }
