@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -11,8 +11,10 @@ import type { LoginQuery } from "@graphql/@types/auth";
 import { LOGIN } from "@graphql/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { LoginForm } from "../Auth.types";
+import { useGoogle } from "./useGoogle";
 
 export function useLogin() {
+  const { oAuthGoogleLoading } = useGoogle();
   const { push } = useRouter();
   const { t } = useTranslation("auth");
   const validationSchema = Yup.object().shape({
@@ -24,7 +26,8 @@ export function useLogin() {
     mode: "all",
     resolver: yupResolver(validationSchema),
   });
-  const [login, { error, loading, data }] = useLazyQuery<LoginQuery>(LOGIN);
+  const [login, { error, loading: loginLoading, data }] =
+    useLazyQuery<LoginQuery>(LOGIN);
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   useEffect(() => {
@@ -45,6 +48,11 @@ export function useLogin() {
   const onSubmit = (variables: LoginForm) => {
     login({ variables });
   };
+
+  const loading = useMemo(
+    () => loginLoading || oAuthGoogleLoading,
+    [loginLoading, oAuthGoogleLoading],
+  );
 
   return { formMethods, onSubmit, error, loading };
 }

@@ -10,9 +10,11 @@ import type {
   OAuthGoogleMutationRequest,
 } from "@graphql/@types/auth";
 import { O_AUTH_GOOGLE } from "@graphql/auth";
+import { useInvitation } from "./useInvitation";
 
 export function useGoogle() {
   const { push } = useRouter();
+  const { invitationCode } = useInvitation();
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
   const [oAuthGoogle, { loading: oAuthGoogleLoading, data }] = useMutation<
@@ -25,7 +27,9 @@ export function useGoogle() {
       google.accounts.id.initialize({
         client_id: process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID,
         callback: (res: CredentialResponse) => {
-          oAuthGoogle({ variables: { credential: res.credential } });
+          oAuthGoogle({
+            variables: { credential: res.credential, invitationCode },
+          });
         },
       });
 

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
-import {
+import type {
   GetUserByInvitationCodeQuery,
   GetUserByInvitationCodeQueryRequest,
 } from "@graphql/@types/user";
 import { GET_USER_BY_INVITATION_CODE } from "@graphql/user";
-import { User } from "@t/user";
+import type { User } from "@t/user";
 
 export function useInvitation() {
   const [inviterUser, setInviterUser] = useState<User>();
@@ -14,7 +14,7 @@ export function useInvitation() {
     GetUserByInvitationCodeQueryRequest
   >(GET_USER_BY_INVITATION_CODE);
 
-  const invitationCode = localStorage.getItem("invitationCode");
+  const invitationCode = localStorage.getItem("invitationCode") || undefined;
 
   useEffect(() => {
     if (invitationCode) {
@@ -26,5 +26,5 @@ export function useInvitation() {
     }
   }, [getUserByInvitationCode, invitationCode]);
 
-  return { inviterUser };
+  return { inviterUser, invitationCode };
 }

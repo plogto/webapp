@@ -40,6 +40,8 @@ export function Login() {
               icon="User"
               placeholder={t("auth:labels.username")}
               register={register("username")}
+              autoFocus
+              autoComplete="off"
             />
           </div>
           <div className="mt-5">
@@ -51,7 +53,7 @@ export function Login() {
               register={register("password")}
             />
           </div>
-          <div className="mt-5">
+          <div className={styles.buttons}>
             <Button
               loading={loading}
               type="submit"
@@ -61,6 +63,7 @@ export function Login() {
             >
               {t("auth:buttons.login")}
             </Button>
+            <div id="googleButton" className={styles.googleButton}></div>
           </div>
         </form>
         <div className={styles.footer}>

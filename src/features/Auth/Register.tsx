@@ -42,6 +42,7 @@ export function Register() {
               register={register("fullName")}
               messageType={errors.fullName && "error"}
               message={errors.fullName?.message}
+              autoComplete="off"
             />
           </div>
           <div className="mt-5">
@@ -67,7 +68,7 @@ export function Register() {
             />
           </div>
 
-          <div className="mt-5">
+          <div className={styles.buttons}>
             <Button
               loading={loading}
               type="submit"
@@ -77,6 +78,7 @@ export function Register() {
             >
               {t("auth:buttons.register")}
             </Button>
+            <div id="googleButton" className={styles.googleButton}></div>
           </div>
         </form>
         <div className={styles.footer}>

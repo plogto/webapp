@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -11,8 +11,12 @@ import type { RegisterMutation } from "@graphql/@types/auth";
 import { REGISTER } from "@graphql/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import type { RegisterForm } from "../Auth.types";
+import { useGoogle } from "./useGoogle";
+import { useInvitation } from "./useInvitation";
 
 export function useRegister() {
+  const { oAuthGoogleLoading } = useGoogle();
+  const { invitationCode } = useInvitation();
   const { push } = useRouter();
   const { t } = useTranslation("auth");
   const validationSchema = Yup.object().shape({
@@ -29,7 +33,7 @@ export function useRegister() {
     mode: "all",
     resolver: yupResolver(validationSchema),
   });
-  const [register, { error, loading, data }] =
+  const [register, { error, loading: registerLoading, data }] =
     useMutation<RegisterMutation>(REGISTER);
   const { setIsAuthenticated, setToken, setUser } = useAccountContext();
 
@@ -49,8 +53,18 @@ export function useRegister() {
   }, [data, setToken, setUser, setIsAuthenticated]);
 
   const onSubmit = (variables: RegisterForm) => {
-    register({ variables });
+    register({
+      variables: {
+        ...variables,
+        invitationCode,
+      },
+    });
   };
+
+  const loading = useMemo(
+    () => registerLoading || oAuthGoogleLoading,
+    [oAuthGoogleLoading, registerLoading],
+  );
 
   return { formMethods, onSubmit, error, loading };
 }

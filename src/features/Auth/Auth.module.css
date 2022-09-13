@@ -3,15 +3,17 @@
   @apply h-screen w-screen;
 
   & .card {
-    @apply m-auto flex w-80 flex-col justify-center md:bg-background-pure;
-    @apply rounded-3xl md:border md:border-background-dark md:shadow-sm;
+    @apply flex flex-col justify-center;
+    @apply m-auto w-80 rounded-3xl;
+    @apply md:border md:border-background-dark md:bg-background-pure md:shadow-sm;
 
     & form {
       @apply flex flex-col;
-      @apply px-5 pt-8 pb-6;
+      @apply px-5 pt-8 pb-5;
 
       & .logoContainer {
-        @apply mb-6 flex flex-col items-center justify-center space-y-2 space-x-2;
+        @apply inline-flex flex-col items-center justify-center space-y-2 space-x-2;
+        @apply mx-auto mb-6;
 
         & .logo {
           @apply h-36 text-foreground;
@@ -32,19 +34,31 @@
         @apply flex items-center text-sm text-foreground;
       }
 
-      & .submitButton {
-        @apply bg-foreground text-background-pure;
-        @apply w-full px-4 py-3;
-      }
+      & .buttons {
+        @apply mt-5 flex items-stretch space-x-3;
+        & .submitButton {
+          @apply bg-foreground text-background-pure;
+          @apply w-full px-4 py-3;
+        }
 
-      & .submitButtonLoading {
-        @apply w-6;
+        & .googleButton {
+          @apply flex items-center justify-center;
+          @apply w-16 overflow-hidden;
+          @apply rounded-xl border border-background-dark shadow;
+          & div {
+            @apply m-0 scale-[1.4] !important;
+          }
+        }
+
+        & .submitButtonLoading {
+          @apply w-6;
+        }
       }
     }
 
     & .footer {
       @apply md:border-t md:border-background-dark;
-      @apply flex justify-center space-x-1 pt-2 pb-5 text-sm text-foreground-light md:pt-5;
+      @apply flex justify-center space-x-1 pb-5 text-sm text-foreground-light md:pt-5;
 
       & .link {
         @apply font-medium text-primary;
