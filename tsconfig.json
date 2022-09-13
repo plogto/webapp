@@ -34,7 +34,7 @@
       "@stories/*": ["src/stories/*"],
       "@utils/*": ["src/utils/*"]
     },
-    "types": ["jest", "@testing-library/jest-dom", "google.accounts"],
+    "types": ["jest", "@testing-library/jest-dom"],
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.ts"],
