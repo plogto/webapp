@@ -165,13 +165,13 @@
 
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: theme("colors.stone.900");
-  --background-medium: #332e2d;
-  --background-dark: theme("colors.stone.700");
+  --background-light: theme("colors.neutral.900");
+  --background-medium: #262626;
+  --background-dark: theme("colors.neutral.700");
 
   --foreground-light: theme("colors.gray.300");
   --foreground-medium: theme("colors.gray.400");
   --foreground-dark: theme("colors.gray.500");
-  --foreground: theme("colors.stone.50");
+  --foreground: theme("colors.neutral.50");
   --foreground-pure: theme("colors.white");
 }

@@ -65,8 +65,8 @@ export function ProfileInfo(props: ProfileInfoProps) {
           <a className={styles.credits}>
             <Image
               src="/static/images/credit.png"
-              width={20}
-              height={20}
+              width={18}
+              height={18}
               alt="credit"
             />
             <span>{t("buttons.credits")}</span>

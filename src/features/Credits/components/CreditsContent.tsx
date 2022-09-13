@@ -20,8 +20,8 @@ export function CreditsContent(props: CreditsContentProps) {
       <div className={styles.credits}>
         <Image
           src="/static/images/credit.png"
-          height={64}
-          width={64}
+          height={52}
+          width={52}
           alt="credit"
         />
         <span>{formatCreditAmount(user?.credits)}</span>

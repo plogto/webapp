@@ -20,6 +20,7 @@ export const LOGIN = gql`
           height
         }
         email
+        credits
       }
       authToken {
         token
@@ -51,6 +52,7 @@ export const REGISTER = gql`
           height
         }
         email
+        credits
       }
       authToken {
         token
@@ -82,6 +84,7 @@ export const O_AUTH_GOOGLE = gql`
           height
         }
         email
+        credits
       }
       authToken {
         token
