@@ -10,3 +10,7 @@ export interface WithPageInfo<T> {
   edges: Edge<T>[];
   pageInfo: PageInfo;
 }
+
+declare global {
+  const google: typeof import("google-one-tap");
+}

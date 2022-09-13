@@ -34,6 +34,11 @@ class MyDocument extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content="Plog" />
+          <script
+            src="https://accounts.google.com/gsi/client"
+            async
+            defer
+          ></script>
         </Head>
         <body>
           <Main />

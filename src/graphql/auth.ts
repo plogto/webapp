@@ -59,3 +59,34 @@ export const REGISTER = gql`
     }
   }
 `;
+
+export const O_AUTH_GOOGLE = gql`
+  mutation oAuthGoogle($credential: String!, $invitationCode: String) {
+    oAuthGoogle(
+      input: { credential: $credential, invitationCode: $invitationCode }
+    ) {
+      user {
+        id
+        username
+        backgroundColor
+        primaryColor
+        fullName
+        avatar {
+          id
+          name
+        }
+        background {
+          id
+          name
+          width
+          height
+        }
+        email
+      }
+      authToken {
+        token
+        expiredAt
+      }
+    }
+  }
+`;

@@ -5,16 +5,24 @@ export interface AuthToken {
   expiredAt: string;
 }
 
+export interface AuthResponse {
+  user: User;
+  authToken: AuthToken;
+}
+
 export interface LoginQuery {
-  login: {
-    user: User;
-    authToken: AuthToken;
-  };
+  login: AuthResponse;
 }
 
 export interface RegisterMutation {
-  register: {
-    user: User;
-    authToken: AuthToken;
-  };
+  register: AuthResponse;
+}
+
+export interface OAuthGoogleMutation {
+  oAuthGoogle: AuthResponse;
+}
+
+export interface OAuthGoogleMutationRequest {
+  credential: string;
+  invitationCode?: string;
 }
