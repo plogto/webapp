@@ -43,10 +43,10 @@
 
         & .googleButton {
           @apply flex items-center justify-center;
-          @apply w-16 overflow-hidden;
+          @apply h-full w-16 overflow-hidden;
           @apply rounded-xl border border-background-dark shadow;
           & div {
-            @apply m-0 scale-[1.4] !important;
+            @apply m-0 scale-[1.15] md:scale-[1.4] !important;
           }
         }
 
