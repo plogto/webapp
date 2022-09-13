@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.36.0](https://github.com/mahdineer/plog-fe/compare/v0.35.0...v0.36.0) (2022-09-13)
+
+
+### Features
+
+* **Auth:** add oAuthGoogle button ([5ad9a83](https://github.com/mahdineer/plog-fe/commit/5ad9a83691c1d8385a0b98db3a261db2744ad655))
+* implement oAuthGoogle ([809a1bf](https://github.com/mahdineer/plog-fe/commit/809a1bf8e4c0751e22b827e21f1ba58cd427f4de))
+
+
+### Bug Fixes
+
+* **ProfileInfo:** improve ConnectionStatus button ([528b57c](https://github.com/mahdineer/plog-fe/commit/528b57c17634f948d61d2b0abd9bad971d419597))
+
 ## [0.35.0](https://github.com/mahdineer/plog-fe/compare/v0.34.0...v0.35.0) (2022-09-10)
 
 
