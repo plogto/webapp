@@ -5,8 +5,9 @@ import { Card } from "@components/Card";
 import { NotificationsList } from "@components/NotificationsList";
 import { PageHeader } from "@components/PageHeader";
 import { PageUrls } from "@enums/pages";
-import { useNotifications } from "@hooks/useNotifications";
+import { useCounters } from "@hooks/useCounters";
 import styles from "./Notifications.module.css";
+import { useNotifications } from "./useNotifications";
 
 export function Notifications() {
   const {
@@ -14,7 +15,8 @@ export function Notifications() {
     data,
     getMoreData,
     emptyStatus,
-  } = useNotifications();
+  } = useCounters();
+  useNotifications();
   const { t } = useTranslation("notifications");
 
   return (

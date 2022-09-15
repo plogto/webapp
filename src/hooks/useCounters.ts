@@ -4,7 +4,7 @@ import { useAccountContext } from "@contexts/AccountContext";
 import { useNotificationsContext } from "@contexts/NotificationsContext";
 import type { Placeholder } from "@t/placeholder";
 
-export function useNotifications() {
+export function useCounters() {
   const { user } = useAccountContext();
   const { totalCount, edges, pageInfo, unreadNotificationsCount, getMoreData } =
     useNotificationsContext();

@@ -2,11 +2,11 @@
   @apply w-full;
 
   & .emptyStatus {
-    @apply mx-10 mt-20 md:m-32;
+    @apply mx-10 h-[calc(100vh-3rem)] md:m-32 md:h-auto;
   }
 
   & .showMore {
-    @apply flex w-full items-center justify-center;
+    @apply flex w-full items-center justify-center bg-background-pure;
 
     & button {
       @apply m-3 px-2 py-1;

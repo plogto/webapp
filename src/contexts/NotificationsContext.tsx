@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { createContext, ReactNode, useContext, useState } from "react";
-import { Edge } from "@t";
+import type { ReactNode } from "react";
+import { createContext, useContext, useState } from "react";
+import type { Edge } from "@t";
 import { useLazyQuery } from "@apollo/client";
 import type {
   GetNotificationsQuery,
@@ -67,7 +68,7 @@ export function useNotificationsContext() {
     useContext(NotificationsContextSetState);
   const { user } = useAccountContext();
 
-  const [getNotifications, { data, fetchMore }] = useLazyQuery<
+  const [getNotifications, { fetchMore }] = useLazyQuery<
     GetNotificationsQuery,
     GetNotificationsQueryRequest
   >(GET_NOTIFICATIONS);
@@ -78,20 +79,14 @@ export function useNotificationsContext() {
         setEdges(data?.getNotifications?.edges || []);
         setPageInfo(data?.getNotifications?.pageInfo || {});
         setTotalCount(data?.getNotifications?.totalCount);
+        if (data?.getNotifications?.unreadNotificationsCount) {
+          setUnreadNotificationsCount(
+            data.getNotifications.unreadNotificationsCount,
+          );
+        }
       });
     }
-  }, []);
-
-  useEffect(() => {
-    if (data?.getNotifications?.unreadNotificationsCount) {
-      setUnreadNotificationsCount(
-        data.getNotifications.unreadNotificationsCount,
-      );
-    }
-  }, [
-    data?.getNotifications.unreadNotificationsCount,
-    setUnreadNotificationsCount,
-  ]);
+  }, [user]);
 
   const getMoreData = () => {
     return fetchMore({
@@ -118,6 +113,7 @@ export function useNotificationsContext() {
 
   return {
     unreadNotificationsCount,
+    setUnreadNotificationsCount,
     getMoreData,
     pushNotification,
     totalCount,

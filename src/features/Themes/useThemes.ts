@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { PrimaryColor, BackgroundColor } from "@enums";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
-import { EditUserMutation } from "@graphql/@types/user";
+import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER, GET_USER_INFO } from "@graphql/user";
 
 export function useThemes() {

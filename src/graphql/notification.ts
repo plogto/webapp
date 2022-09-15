@@ -71,3 +71,9 @@ export const GET_NOTIFICATION = gql`
     }
   }
 `;
+
+export const READ_NOTIFICATIONS = gql`
+  mutation readNotifications {
+    readNotifications
+  }
+`;

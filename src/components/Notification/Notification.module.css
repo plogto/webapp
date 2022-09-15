@@ -1,9 +1,9 @@
 .notification {
-  @apply flex items-start p-3;
+  @apply flex items-start bg-background-pure p-3;
   @apply w-full border-b border-background-medium last:border-none;
 
   &.unreadNotification {
-    @apply bg-background-pure;
+    @apply bg-background;
   }
 
   & .avatar {
