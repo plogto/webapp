@@ -1,9 +1,9 @@
-import type { Size } from "@t/size";
+import type { FullNameSize } from "@t/size";
 
 export interface FullNameProps {
   fullName: string;
   isVerified?: boolean;
-  size?: Size;
+  size?: FullNameSize;
   className?: string;
   type?: "short" | "complete";
 }

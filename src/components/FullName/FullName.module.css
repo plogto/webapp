@@ -13,6 +13,15 @@
     @apply text-current;
   }
 
+  &.tiny {
+    & .fullName {
+      @apply text-xs;
+    }
+    & .verified {
+      @apply mb-[2px] w-[12px];
+    }
+  }
+
   &.small {
     & .fullName {
       @apply text-sm;
