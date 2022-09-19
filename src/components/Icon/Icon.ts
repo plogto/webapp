@@ -18,6 +18,7 @@ import Globe from "./svg/globe.svg";
 import Hashtag from "./svg/hashtag.svg";
 import HeartFill from "./svg/heart-fill.svg";
 import Heart from "./svg/heart.svg";
+import Inbox from "./svg/inbox.svg";
 import Key from "./svg/key.svg";
 import Link from "./svg/link.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
@@ -35,6 +36,7 @@ import RectangleVerticalFill from "./svg/rectangle-vertical-fill.svg";
 import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
+import Support from "./svg/support.svg";
 import TrashFill from "./svg/trash-fill.svg";
 import Trash from "./svg/trash.svg";
 import TrendingUp from "./svg/trending-up.svg";
@@ -63,6 +65,7 @@ export const iconsList = {
   Hashtag,
   Heart,
   HeartFill,
+  Inbox,
   Key,
   Link,
   LockClosed,
@@ -80,6 +83,7 @@ export const iconsList = {
   RectangleVerticalFill,
   Square,
   SquareFill,
+  Support,
   Trash,
   TrashFill,
   TrendingUp,
