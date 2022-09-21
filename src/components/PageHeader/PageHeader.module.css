@@ -1,16 +1,23 @@
-.header {
-  @apply flex items-center justify-between;
+.wrapper {
   @apply py-2 px-3 text-foreground;
 
-  & .title {
-    @apply mx-0 max-w-[66%] truncate text-center text-xl font-medium;
-  }
+  & .header {
+    @apply flex items-center justify-between;
 
-  & .back {
-    @apply py-1;
-  }
+    & .title {
+      @apply mx-0 max-w-[90%] text-xl font-medium;
 
-  & .icon {
-    @apply h-[1.5rem] w-[1.5rem] stroke-2 md:h-6 md:w-6;
+      &.isTitleCompact {
+        @apply max-w-[66%] truncate text-center;
+      }
+    }
+
+    & .back {
+      @apply py-1;
+    }
+
+    & .icon {
+      @apply h-[1.5rem] w-[1.5rem] stroke-2 md:h-6 md:w-6;
+    }
   }
 }
