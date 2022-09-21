@@ -107,7 +107,7 @@ export function Header(props: HeaderPostProps) {
             className="absolute right-0"
             itemsClassName="absolute right-2 w-60"
             buttonIcon={
-              <span className={styles.more}>
+              <span className="more-button">
                 <Icon
                   name="DotsHorizontal"
                   className={classNames(styles.icon)}

@@ -1,0 +1,33 @@
+.ticket {
+  @apply flex flex-col bg-background-pure p-3;
+  @apply w-full border-b border-background-medium last:border-none;
+
+  &.isActive {
+    @apply bg-background-medium;
+  }
+
+  & .headerWrapper {
+    @apply inline-flex items-center space-x-1;
+  }
+
+  & .subject {
+    @apply max-w-[80%] truncate text-lg font-bold text-foreground;
+  }
+
+  & .message {
+    @apply text-sm text-foreground-medium;
+  }
+
+  & .footer {
+    @apply flex items-center;
+    @apply mt-1 text-xs text-foreground-dark;
+
+    & .separate {
+      @apply mx-1;
+    }
+
+    & .avatar {
+      @apply mx-1.5;
+    }
+  }
+}

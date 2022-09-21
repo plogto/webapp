@@ -32,19 +32,19 @@ export function LogoutButton(props: LogoutButtonProps) {
           <div className="modal-buttons">
             <Button
               type="button"
-              layout="outline"
-              onClick={closeModal}
-              className="modal-button"
-            >
-              {t("buttons.cancel")}
-            </Button>
-            <Button
-              type="button"
               layout="apply"
               onClick={handleLogout}
               className="modal-button"
             >
               {t("buttons.logout")}
+            </Button>
+            <Button
+              type="button"
+              layout="outline"
+              onClick={closeModal}
+              className="modal-button"
+            >
+              {t("buttons.cancel")}
             </Button>
           </div>
         </div>

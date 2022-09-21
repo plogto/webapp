@@ -1,5 +1,13 @@
 .status {
-  @apply rounded-full px-1.5 text-[11px] font-medium;
+  @apply inline-block rounded-full px-1.5 text-[11px] font-medium;
+
+  &.open {
+    @apply border text-foreground;
+  }
+
+  &.solved {
+    @apply bg-blue-300 bg-opacity-20 text-blue-500;
+  }
 
   &.approved {
     @apply bg-emerald-300 bg-opacity-20 text-emerald-500;
@@ -13,7 +21,8 @@
     @apply bg-rose-300 bg-opacity-20 text-rose-500;
   }
 
+  &.closed,
   &.canceled {
-    @apply bg-gray-300 bg-opacity-20 text-gray-500;
+    @apply bg-gray-300 bg-opacity-20 text-gray-400;
   }
 }

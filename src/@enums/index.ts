@@ -1,3 +1,4 @@
+// split this file
 export enum DateType {
   LONG = "LONG",
   SHORT = "SHORT",
@@ -55,6 +56,17 @@ export enum CreditTransactionStatusType {
   FAILED = "FAILED",
   CANCELED = "CANCELED",
 }
+
+export enum TicketStatusType {
+  OPEN = "OPEN",
+  CLOSED = "CLOSED",
+  APPROVED = "APPROVED",
+  SOLVED = "SOLVED",
+}
+
+export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
+
+export type StatusType = typeof Statues;
 
 export enum CreditTransactionDescriptionVariableType {
   USER = "USER",

@@ -44,7 +44,7 @@
         }
       }
 
-      & .buttonContainer {
+      & .buttons {
         @apply flex w-full justify-end space-x-2;
 
         & .counter {

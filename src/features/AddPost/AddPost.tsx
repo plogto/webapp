@@ -102,7 +102,7 @@ export function AddPost(props: AddPostProps) {
                   <Icon name="Photo" className={styles.icon} />
                 </Button>
               )}
-              <div className={styles.buttonContainer}>
+              <div className={styles.buttons}>
                 <Counter
                   length={
                     watch("content").getCurrentContent().getPlainText()

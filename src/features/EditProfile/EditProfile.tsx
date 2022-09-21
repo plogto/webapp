@@ -11,7 +11,6 @@ import styles from "./EditProfile.module.css";
 import { AvatarProfile } from "./components/AvatarProfile";
 import { useEditUserValidations, useEditProfile } from "./hooks";
 
-// TODO: refactor this component
 export function EditProfile() {
   const { formMethods, user, onSubmit, loading } = useEditProfile();
   const {

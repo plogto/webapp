@@ -175,6 +175,7 @@
     "saved": "Saved",
     "search": "Search",
     "settings": "Settings",
+    "support": "Support",
     "tag": "Tag",
     "themes": "Themes"
   },
@@ -256,6 +257,28 @@
       "settings": "Settings"
     }
   },
+  "support": {
+    "buttons": {
+      "cancel": "Cancel",
+      "createTicket": "Create Ticket",
+      "newTicket": "New Ticket"
+    },
+    "labels": {
+      "message": "Message",
+      "subject": "Subject"
+    },
+    "status": {
+      "noTicketMessages": {
+        "title": "No Ticket Message yet"
+      },
+      "noTickets": {
+        "title": "No Tickets Yet"
+      }
+    },
+    "texts": {
+      "tickets": "Tickets"
+    }
+  },
   "tag": {
     "status": {
       "noPosts": {
@@ -278,6 +301,15 @@
     },
     "texts": {
       "themes": "Themes"
+    }
+  },
+  "ticket": {
+    "buttons": {
+      "newMessage": "New Message",
+      "send": "Send"
+    },
+    "texts": {
+      "ticket": "Ticket"
     }
   }
 }

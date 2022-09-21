@@ -1,0 +1,41 @@
+.support {
+  @apply grid w-full grid-cols-1 gap-4 md:mx-2.5 md:grid-cols-5;
+  @apply mt-12 mb-12 w-full overflow-visible md:mt-0;
+
+  & .header {
+    @apply border-b border-background-medium p-3;
+  }
+
+  & .pageHeader {
+    @apply fixed top-0 left-0 right-0 bg-background-pure;
+    @apply z-30 border-b border-background-medium md:hidden;
+  }
+
+  & .ticketsWrapper {
+    @apply col-span-2;
+    @apply w-full overflow-hidden md:mt-4;
+    & .tickets {
+      @apply overflow-hidden;
+
+      & .inputWrapper {
+        @apply flex flex-col space-y-4 md:flex-row md:px-4;
+      }
+
+      & .footer {
+        @apply flex justify-end space-x-3;
+
+        & .button {
+          @apply w-full rounded-xl py-3 text-sm font-medium md:w-[6rem] md:py-2;
+        }
+      }
+    }
+  }
+
+  & .ticketMessagesWrapper {
+    @apply mt-4 w-full overflow-hidden;
+    @apply col-span-3;
+    & .ticketMessages {
+      @apply overflow-hidden;
+    }
+  }
+}

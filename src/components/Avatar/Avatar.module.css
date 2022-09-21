@@ -14,11 +14,11 @@
     @apply h-9 w-9;
   }
 
-  &.tiny {
+  &.mini {
     @apply h-7 w-7;
   }
 
-  &.miniature {
+  &.tiny {
     @apply h-5 w-5;
   }
 }

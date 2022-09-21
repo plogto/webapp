@@ -1,0 +1,11 @@
+.attachmentPreview {
+  @apply relative overflow-hidden rounded-lg;
+
+  & img {
+    @apply w-full;
+  }
+  & .removeButton {
+    @apply absolute top-3 right-3 rounded-lg text-xs font-medium;
+    @apply bg-gray-800 bg-opacity-50 px-2 py-1 text-white;
+  }
+}

@@ -17,4 +17,9 @@ export const SETTINGS_ITEMS: SettingsItem[] = [
     href: PageUrls.CHANGE_PASSWORD,
     icon: "Key",
   },
+  {
+    title: "Support",
+    href: PageUrls.SUPPORT,
+    icon: "Support",
+  },
 ];

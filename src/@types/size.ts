@@ -1,5 +1,5 @@
 export type Size = "small" | "normal" | "large";
-export type AvatarSize = "miniature" | "tiny" | Size;
+export type AvatarSize = "tiny" | "mini" | Size;
 export type FullNameSize = "tiny" | Size;
 export type HeaderSize = Size;
 export type ContentSize = Size;

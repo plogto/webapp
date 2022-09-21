@@ -24,7 +24,7 @@ export function InviterUser(props: InviterUserProps) {
           className="mx-2"
           avatar={inviterUser.avatar}
           alt={inviterUser.fullName}
-          size="miniature"
+          size="tiny"
         />
         <FullName fullName={inviterUser?.fullName} size="small" />
       </a>

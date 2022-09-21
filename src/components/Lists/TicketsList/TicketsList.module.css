@@ -1,0 +1,26 @@
+.listWrapper {
+  @apply w-full;
+
+  & .emptyStatus {
+    @apply mx-10 h-[calc(100vh-3rem)] md:m-32 md:h-auto;
+  }
+
+  & .showMore {
+    @apply flex w-full items-center justify-center bg-background-pure;
+
+    & button {
+      @apply m-3 px-2 py-1;
+      @apply rounded-lg text-sm text-primary hover:bg-primary-light;
+      @apply transition-all duration-300;
+    }
+  }
+
+  & .loadingWrapper {
+    @apply flex items-center justify-center text-foreground;
+    @apply w-full p-6;
+
+    & .loading {
+      @apply h-8 w-8;
+    }
+  }
+}

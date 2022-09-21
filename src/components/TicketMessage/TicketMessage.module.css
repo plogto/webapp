@@ -1,0 +1,17 @@
+.ticketMessage {
+  @apply flex flex-col bg-background-pure p-3;
+  @apply w-full border-b border-background-medium last:border-none;
+
+  & .attachment {
+    @apply mt-1 overflow-hidden rounded-lg;
+  }
+
+  & .message {
+    @apply py-1 text-foreground-medium;
+  }
+
+  & .footer {
+    @apply flex items-center;
+    @apply text-xs text-foreground-dark;
+  }
+}

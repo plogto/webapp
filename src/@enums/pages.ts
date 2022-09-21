@@ -10,6 +10,7 @@ export enum PageUrls {
   CHANGE_PASSWORD = "/accounts/settings/change-password",
   EDIT_PROFILE = "/accounts/settings/edit-profile",
   THEMES = "/accounts/settings/themes",
+  SUPPORT = "/accounts/support",
   NOTIFICATIONS = "/accounts/notifications",
   FOLLOW_REQUESTS = "/accounts/follow-requests",
   CREDITS = "/accounts/credits",

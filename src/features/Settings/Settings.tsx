@@ -10,7 +10,7 @@ import { ModalProvider } from "@contexts/ModalContext";
 import { useNavigator } from "@hooks/useNavigator";
 import { SETTINGS_ITEMS } from "./Settings.constants";
 import styles from "./Settings.module.css";
-import { SettingsProps } from "./Settings.types";
+import type { SettingsProps } from "./Settings.types";
 import { LogoutButton } from "./components/LogoutButton";
 import { useSettings } from "./useSettings";
 

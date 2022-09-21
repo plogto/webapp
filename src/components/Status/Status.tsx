@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import styles from "./CreditTransactionStatus.module.css";
-import type { CreditTransactionStatusProps } from "./CreditTransactionStatus.types";
+import styles from "./Status.module.css";
+import type { StatusProps } from "./Status.types";
 
-export function CreditTransactionStatus(props: CreditTransactionStatusProps) {
+export function Status(props: StatusProps) {
   const { status } = props;
 
   const statusClasses = classNames(

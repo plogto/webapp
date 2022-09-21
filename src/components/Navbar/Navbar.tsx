@@ -34,7 +34,7 @@ export function Navbar(props: NavbarProps) {
     {
       icon: (
         <Avatar
-          size="tiny"
+          size="mini"
           className={styles.avatar}
           avatar={user?.avatar}
           alt={user?.fullName}

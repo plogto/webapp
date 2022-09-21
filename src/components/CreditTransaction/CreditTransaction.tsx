@@ -4,8 +4,8 @@ import Link from "next/link";
 import { CREDIT_TRANSACTION_PARSER } from "@constants";
 import { DateType } from "@enums";
 import { Avatar } from "@components/Avatar";
-import { CreditTransactionStatus } from "@components/CreditTransactionStatus";
 import { FullName } from "@components/FullName";
+import { Status } from "@components/Status";
 import { useDate } from "@hooks/useDate";
 import { useNavigator } from "@hooks/useNavigator";
 import styles from "./CreditTransaction.module.css";
@@ -55,7 +55,7 @@ export function CreditTransaction(props: CreditTransactionProps) {
               <FullName fullName={recipient?.fullName} size="small" />
             </a>
           </Link>
-          <CreditTransactionStatus status={status} />
+          <Status status={status} />
         </div>
         <div className={styles.description}>
           {description}

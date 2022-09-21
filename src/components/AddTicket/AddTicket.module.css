@@ -1,0 +1,41 @@
+.addTicket {
+  @apply w-full border-b border-background-medium;
+  @apply p-3;
+
+  & .main {
+    @apply flex flex-col space-y-3;
+    & .attachmentPreview {
+      @apply relative overflow-hidden rounded-lg;
+
+      & img {
+        @apply w-full;
+      }
+      & .removeButton {
+        @apply absolute top-3 right-3 rounded-lg text-xs font-medium;
+        @apply bg-gray-800 bg-opacity-50 px-2 py-1 text-white;
+      }
+    }
+  }
+
+  & .footer {
+    @apply flex items-center justify-between;
+    @apply mt-3 w-full text-foreground;
+
+    & .attachmentButton {
+      @apply rounded-lg border border-background-dark p-1 shadow-sm;
+
+      & .icon {
+        @apply w-[24px] stroke-2 text-foreground;
+      }
+    }
+
+    & .buttons {
+      @apply flex w-full justify-end space-x-2;
+
+      & .submit {
+        @apply py-1.5 px-3 outline-none ring-0 focus:ring-0;
+        @apply min-w-[5rem] rounded-xl text-sm font-medium;
+      }
+    }
+  }
+}
