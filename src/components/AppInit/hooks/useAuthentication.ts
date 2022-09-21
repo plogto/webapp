@@ -31,5 +31,5 @@ export function useAuthentication(props: UseAuthenticationProps) {
           }
         });
     }
-  }, [getToken, getUserInfo, isProtectedPage, setUser]);
+  }, []);
 }
