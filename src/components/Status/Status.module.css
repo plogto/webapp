@@ -1,28 +1,33 @@
 .status {
-  @apply inline-block rounded-full px-1.5 text-[11px] font-medium;
+  @apply inline-block rounded-full px-1 text-[11px] font-medium;
 
   &.open {
-    @apply border text-foreground;
+    @apply border border-gray-300 border-opacity-30 text-foreground;
   }
 
   &.solved {
+    @apply border border-blue-300 border-opacity-10;
     @apply bg-blue-300 bg-opacity-20 text-blue-500;
   }
 
   &.approved {
+    @apply border border-emerald-300 border-opacity-10;
     @apply bg-emerald-300 bg-opacity-20 text-emerald-500;
   }
 
   &.pending {
+    @apply border border-amber-300 border-opacity-10;
     @apply bg-amber-300 bg-opacity-20 text-amber-500;
   }
 
   &.failed {
+    @apply border border-rose-300 border-opacity-10;
     @apply bg-rose-300 bg-opacity-20 text-rose-500;
   }
 
   &.closed,
   &.canceled {
+    @apply border border-gray-300 border-opacity-10;
     @apply bg-gray-300 bg-opacity-20 text-gray-400;
   }
 }
