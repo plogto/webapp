@@ -4,9 +4,7 @@ import classNames from "classnames";
 import { AddTicket } from "@components/AddTicket";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
-import { TicketsList } from "@components/Lists/TicketsList";
-import { Menu } from "@components/Menu";
-import type { MenuProps } from "@components/Menu/Menu.types";
+import { TicketPreviewsList } from "@components/Lists/TicketPreviewsList";
 import { PageHeader } from "@components/PageHeader";
 import { PageUrls } from "@enums/pages";
 import styles from "../Support.module.css";
@@ -19,39 +17,20 @@ export function Tickets() {
     useCreateTicket();
 
   const { t } = useTranslation("support");
-  const MENU_ITEMS: MenuProps["items"] = [
-    {
-      key: "copy",
-      title: t("buttons.createTicket"),
-      icon: "Plus",
-      onClick: openCreateTicket,
-    },
-  ];
-
-  const menu = (
-    <div className="w-3">
-      <Menu
-        items={MENU_ITEMS}
-        className="absolute top-1.5 md:top-2 right-0.5"
-        itemsClassName="absolute right-2 w-60"
-        buttonIcon={
-          <span className="more-button">
-            <Icon name="DotsHorizontal" className={classNames(styles.icon)} />
-          </span>
-        }
-      />
-    </div>
-  );
 
   return (
-    <div className={styles.ticketsWrapper}>
+    <div className={styles.ticketPreviewsWrapper}>
       <Card shadow={!isMobile} rounded={!isMobile} className={styles.tickets}>
         <PageHeader
           backLink={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
           title={t("texts.tickets")}
           className={classNames(isMobile ? styles.pageHeader : styles.header)}
           isShowBackLink={isMobile}
-          rightSide={menu}
+          rightSide={
+            <button className={styles.addButton} onClick={openCreateTicket}>
+              <Icon name="Plus" className={classNames(styles.icon)} />
+            </button>
+          }
         />
         {isShowCreateTicket && (
           <AddTicket
@@ -60,7 +39,7 @@ export function Tickets() {
             onCloseButton={closeCreateTicket}
           />
         )}
-        <TicketsList
+        <TicketPreviewsList
           tickets={tickets}
           emptyStatus={emptyStatus}
           getMoreData={getMoreData}

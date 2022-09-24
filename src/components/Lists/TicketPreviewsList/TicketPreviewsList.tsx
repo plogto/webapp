@@ -2,11 +2,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import classNames from "classnames";
 import { Loader } from "@components/Loader";
 import { Placeholder } from "@components/Placeholder";
-import { Ticket } from "@components/Ticket";
-import styles from "./TicketsList.module.css";
-import type { TicketsListProps } from "./TicketsList.types";
+import { TicketPreview } from "@components/TicketPreview";
+import styles from "./TicketPreviewsList.module.css";
+import type { TicketPreviewsListProps } from "./TicketPreviewsList.types";
 
-export function TicketsList(props: TicketsListProps) {
+export function TicketPreviewsList(props: TicketPreviewsListProps) {
   const {
     isLoading,
     tickets,
@@ -44,7 +44,9 @@ export function TicketsList(props: TicketsListProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        tickets.edges?.map(({ node }) => <Ticket key={node.id} ticket={node} />)
+        tickets.edges?.map(({ node }) => (
+          <TicketPreview key={node.id} ticket={node} />
+        ))
       )}
     </InfiniteScroll>
   );

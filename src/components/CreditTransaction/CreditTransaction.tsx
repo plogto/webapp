@@ -49,7 +49,7 @@ export function CreditTransaction(props: CreditTransactionProps) {
         </a>
       </Link>
       <div className={styles.content}>
-        <div className="inline-flex space-x-1">
+        <div className="inline-flex items-center space-x-1">
           <Link href={formatProfilePageRoute(recipient.username)}>
             <a className="cursor-pointer">
               <FullName fullName={recipient?.fullName} size="small" />

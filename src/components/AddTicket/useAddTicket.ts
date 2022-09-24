@@ -12,7 +12,6 @@ import {
   ADD_TICKET_MESSAGE,
   CREATE_TICKET,
   GET_TICKETS,
-  GET_TICKET_MESSAGES_BY_TICKET_URL,
 } from "@graphql/ticket";
 import { useNavigator } from "@hooks/useNavigator";
 import { useUploadFile } from "@hooks/useUploadFile";
@@ -61,12 +60,7 @@ export function useAddTicket(props: UseAddTicketProps) {
           message: formData.message,
           attachment: attachment || [],
         },
-        refetchQueries: [
-          {
-            query: GET_TICKET_MESSAGES_BY_TICKET_URL,
-            variables: { ticketUrl: ticket.url },
-          },
-        ],
+        refetchQueries: [{ query: GET_TICKETS }],
       }).finally(() => {
         onCloseButton();
       });

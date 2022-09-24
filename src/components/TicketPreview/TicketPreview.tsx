@@ -7,10 +7,10 @@ import { FullName } from "@components/FullName";
 import { Status } from "@components/Status";
 import { useDate } from "@hooks/useDate";
 import { useNavigator } from "@hooks/useNavigator";
-import styles from "./Ticket.module.css";
-import type { TicketProps } from "./Ticket.types";
+import styles from "./TicketPreview.module.css";
+import type { TicketPreviewProps } from "./TicketPreview.types";
 
-export function Ticket(props: TicketProps) {
+export function TicketPreview(props: TicketPreviewProps) {
   const {
     ticket: {
       url,
@@ -26,11 +26,14 @@ export function Ticket(props: TicketProps) {
 
   const { formatFromNow } = useDate();
   const { formatTicketPageRoute } = useNavigator();
-  const ticketClasses = classNames(styles.ticket, isActive && styles.isActive);
+  const ticketPreviewClasses = classNames(
+    styles.ticketPreview,
+    isActive && styles.isActive,
+  );
 
   return (
     <Link href={formatTicketPageRoute(url)}>
-      <a className={ticketClasses}>
+      <a className={ticketPreviewClasses}>
         <div className={styles.headerWrapper}>
           <div className={styles.subject}>{subject}</div>
           <Status status={status} />

@@ -1,5 +1,5 @@
 import type { Ticket } from "@t/ticket";
 
-export interface TicketProps {
+export interface TicketPreviewProps {
   ticket: Ticket;
 }
