@@ -7,6 +7,7 @@ import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
 import CameraFill from "./svg/camera-fill.svg";
 import Camera from "./svg/camera.svg";
+import CheckCircle from "./svg/check-circle.svg";
 import ColorPalette from "./svg/color-palette.svg";
 import CommentFill from "./svg/comment-square-fill.svg";
 import Comment from "./svg/comment-square.svg";
@@ -37,6 +38,7 @@ import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
 import Support from "./svg/support.svg";
+import ThumbsUp from "./svg/thumbs-up.svg";
 import TrashFill from "./svg/trash-fill.svg";
 import Trash from "./svg/trash.svg";
 import TrendingUp from "./svg/trending-up.svg";
@@ -45,31 +47,33 @@ import Users from "./svg/users.svg";
 import VerifiedFill from "./svg/verified-fill.svg";
 import ViewGridFill from "./svg/view-grid-fill.svg";
 import ViewGrid from "./svg/view-grid.svg";
+import XCircle from "./svg/x-circle.svg";
 import X from "./svg/x.svg";
 
-export const iconsList = {
+export const IconsList = {
   ArrowLeft,
   BellFill,
-  Bookmark,
   BookmarkFill,
-  Camera,
+  Bookmark,
   CameraFill,
+  Camera,
+  CheckCircle,
   ColorPalette,
-  Comment,
   CommentFill,
+  Comment,
   DotsHorizontal,
-  Exclamation,
   ExclamationFill,
-  Globe,
+  Exclamation,
   GlobeFill,
+  Globe,
   Hashtag,
-  Heart,
   HeartFill,
+  Heart,
   Inbox,
   Key,
   Link,
-  LockClosed,
   LockClosedFill,
+  LockClosed,
   Mail,
   Pencil,
   Photo,
@@ -77,25 +81,27 @@ export const iconsList = {
   PlusCircleFill,
   PlusCircle,
   Plus,
-  RectangleHorizontal,
   RectangleHorizontalFill,
-  RectangleVertical,
+  RectangleHorizontal,
   RectangleVerticalFill,
-  Square,
+  RectangleVertical,
   SquareFill,
+  Square,
   Support,
-  Trash,
   TrashFill,
+  Trash,
   TrendingUp,
+  ThumbsUp,
   User,
   Users,
   VerifiedFill,
-  ViewGrid,
   ViewGridFill,
+  ViewGrid,
   X,
+  XCircle,
 };
 
-export type IconNames = keyof typeof iconsList;
+export type IconNames = keyof typeof IconsList;
 
 export interface IconProps extends SVGAttributes<SVGElement> {
   name: IconNames;
@@ -107,7 +113,7 @@ export function Icon({ name, className, ...props }: IconProps) {
     icon: true,
   });
 
-  const icon = iconsList[name];
+  const icon = IconsList[name];
 
   if (!icon) {
     throw Error(`"${name}" is not a valid icon name`);

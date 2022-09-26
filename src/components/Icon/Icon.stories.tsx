@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
-import { Icon, iconsList } from "@components/Icon";
+import { Icon, IconsList } from "@components/Icon";
 import { StoryContainer } from "@stories/StoryContainer";
 
 export default {
@@ -21,7 +21,7 @@ Main.args = {
 
 Main.argTypes = {
   name: {
-    options: Object.keys(iconsList),
+    options: Object.keys(IconsList),
     control: { type: "select" },
   },
   type: {
