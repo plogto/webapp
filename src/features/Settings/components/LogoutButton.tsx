@@ -9,6 +9,7 @@ import { useModalContext } from "@contexts/ModalContext";
 import { PageUrls } from "@enums/pages";
 import type { LogoutButtonProps } from "@features/Settings/Settings.types";
 
+// TODO: split button and modal and move modal part to Modal/components
 export function LogoutButton(props: LogoutButtonProps) {
   const { push } = useRouter();
   const { className } = props;

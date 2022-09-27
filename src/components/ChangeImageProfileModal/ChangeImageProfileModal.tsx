@@ -5,6 +5,7 @@ import { Modal } from "@components/Modal";
 import type { ChangeImageProfileProps } from "./ChangeImageProfile.types";
 import styles from "./ChangeImageProfileModal.module.css";
 
+// TODO: move to Modal/components
 export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
   const {
     title,

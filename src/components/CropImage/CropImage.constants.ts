@@ -24,15 +24,15 @@ const CROP_IMAGES_ASPECTS: CropImageAspects = {
 };
 
 export const CROP_IMAGES_TYPES: CropImageTypes = {
-  AVATAR: {
+  [CropImageTypeKey.AVATAR]: {
     type: CropImageTypeKey.AVATAR,
     aspects: [CROP_IMAGES_ASPECTS["1:1"]],
   },
-  BACKGROUND: {
+  [CropImageTypeKey.BACKGROUND]: {
     type: CropImageTypeKey.BACKGROUND,
     aspects: [CROP_IMAGES_ASPECTS["4:1"]],
   },
-  POST: {
+  [CropImageTypeKey.POST]: {
     type: CropImageTypeKey.POST,
     aspects: [
       CROP_IMAGES_ASPECTS["1:1"],
