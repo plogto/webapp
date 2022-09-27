@@ -1,3 +1,4 @@
+import { TicketStatusType } from "@enums";
 import type { PageInfoRequest } from "@t/pageInfo";
 import type {
   Ticket,
@@ -39,4 +40,13 @@ export interface AddTicketMessageMutationRequest {
   ticketId: string;
   message: string;
   attachment?: string[];
+}
+
+export interface UpdateTicketStatusMutation {
+  updateTicketStatus: Ticket;
+}
+
+export interface UpdateTicketStatusMutationRequest {
+  ticketId: string;
+  status: TicketStatusType;
 }

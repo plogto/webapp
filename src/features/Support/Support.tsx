@@ -1,3 +1,4 @@
+import { ModalProvider } from "@contexts/ModalContext";
 import { Ticket } from "@features/Ticket";
 import styles from "./Support.module.css";
 import type { SupportProps } from "./Support.types";
@@ -8,7 +9,7 @@ export function Support(props: SupportProps) {
   return (
     <div className={styles.support}>
       {isShowTickets && <Tickets />}
-      {isShowTicketMessages && <Ticket />}
+      <ModalProvider>{isShowTicketMessages && <Ticket />}</ModalProvider>
     </div>
   );
 }

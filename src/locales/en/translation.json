@@ -305,10 +305,19 @@
   },
   "ticket": {
     "buttons": {
+      "approveTicket": "Approve Ticket",
+      "approve": "Approve",
+      "closeTicket": "Close Ticket",
+      "close": "Close",
       "newMessage": "New Message",
-      "send": "Send"
+      "openTicket": "Open Ticket",
+      "open": "Open",
+      "send": "Send",
+      "solveTicket": "Solve Ticket",
+      "solve": "Solve"
     },
     "texts": {
+      "areYouSure": "Are you sure?",
       "ticket": "Ticket"
     }
   }

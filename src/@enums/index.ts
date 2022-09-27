@@ -64,6 +64,14 @@ export enum TicketStatusType {
   SOLVED = "SOLVED",
 }
 
+export enum TicketPermissionType {
+  NEW_MESSAGE = "NEW_MESSAGE",
+  OPEN = "OPEN",
+  CLOSE = "CLOSE",
+  APPROVE = "APPROVE",
+  SOLVE = "SOLVE",
+}
+
 export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
 
 export type StatusType = typeof Statues;
@@ -93,4 +101,10 @@ export enum CreditTransactionAmountType {
 export enum LocalStorageKeys {
   AUTHORIZATION = "authorization",
   INVITATION_CODE = "invitationCode",
+}
+
+export enum ConfirmationModalType {
+  DANGER = "DANGER",
+  INFO = "INFO",
+  SUCCESS = "SUCCESS",
 }

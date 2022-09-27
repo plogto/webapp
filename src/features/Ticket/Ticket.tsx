@@ -6,36 +6,37 @@ import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { TicketMessagesList } from "@components/Lists/TicketMessagesList";
 import { Menu } from "@components/Menu";
-import type { MenuProps } from "@components/Menu/Menu.types";
+import { ConfirmationModal } from "@components/Modal/components";
 import { PageHeader } from "@components/PageHeader";
 import { Status } from "@components/Status";
+import { useModalContext } from "@contexts/ModalContext";
 import { PageUrls } from "@enums/pages";
 import styles from "./Ticket.module.css";
 import { useAddTicketMessage } from "./hooks/useAddTicketMessage";
 import { useTicket } from "./hooks/useTicket";
 
 export function Ticket() {
-  const { filterMenuItems, loading, ticketMessages, emptyStatus, getMoreData } =
-    useTicket();
-
   const { isShowAddTicket, openAddTicket, closeAddTicket } =
     useAddTicketMessage();
 
-  const { t } = useTranslation("ticket");
+  const {
+    loading,
+    ticketMessages,
+    emptyStatus,
+    menuItems,
+    getMoreData,
+    confirmationModal,
+  } = useTicket({
+    openAddTicket,
+  });
 
-  const MENU_ITEMS: MenuProps["items"] = [
-    {
-      key: "copy",
-      title: t("buttons.newMessage"),
-      icon: "Plus",
-      onClick: openAddTicket,
-    },
-  ];
+  const { isOpen } = useModalContext();
+  const { t } = useTranslation("ticket");
 
   const menu = (
     <div className="w-3">
       <Menu
-        items={filterMenuItems(MENU_ITEMS)}
+        items={menuItems}
         className="absolute top-1.5 md:top-2.5 right-0.5"
         itemsClassName="absolute right-2 w-60"
         buttonIcon={
@@ -93,6 +94,9 @@ export function Ticket() {
           getMoreData={getMoreData}
         />
       </Card>
+      {confirmationModal && (
+        <ConfirmationModal {...confirmationModal} isOpen={isOpen} />
+      )}
     </div>
   );
 }

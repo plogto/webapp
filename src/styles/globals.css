@@ -39,8 +39,40 @@
       @apply flex flex-grow items-center justify-center;
       @apply my-6 rounded-full p-4;
 
+      &.normal {
+        @apply bg-gray-500 bg-opacity-10;
+      }
+
+      &.success {
+        @apply bg-emerald-500 bg-opacity-10;
+      }
+
+      &.info {
+        @apply bg-blue-500 bg-opacity-10;
+      }
+
+      &.danger {
+        @apply bg-rose-500 bg-opacity-10;
+      }
+
       & .icon {
         @apply h-24 w-24 stroke-1.5;
+
+        &.normal {
+          @apply text-foreground;
+        }
+
+        &.success {
+          @apply text-emerald-500;
+        }
+
+        &.info {
+          @apply text-blue-500;
+        }
+
+        &.danger {
+          @apply text-rose-500;
+        }
       }
     }
 
@@ -50,6 +82,22 @@
 
     & .modal-button {
       @apply w-full rounded-xl px-2.5 py-2.5 md:py-2;
+
+      &.normal {
+        @apply bg-foreground text-background;
+      }
+
+      &.success {
+        @apply bg-emerald-500;
+      }
+
+      &.info {
+        @apply bg-blue-500;
+      }
+
+      &.danger {
+        @apply bg-rose-500;
+      }
     }
   }
 

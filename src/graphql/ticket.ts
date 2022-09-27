@@ -1,28 +1,19 @@
 import { gql } from "@apollo/client";
 import { PageInfoFragment } from "./fragments/pageInfo";
+import { TicketFragment } from "./fragments/ticket";
 import { TicketMessageFragment } from "./fragments/ticketMessage";
 import { UserFragment } from "./fragments/user";
 
 export const GET_TICKETS = gql`
   ${UserFragment.short}
-  ${TicketMessageFragment.default}
+  ${TicketFragment.complete}
   ${PageInfoFragment.complete}
   query getTickets($first: Int, $after: String) {
     getTickets(pageInfo: { first: $first, after: $after }) {
       totalCount
       edges {
         node {
-          id
-          user {
-            ...UserFragmentShort
-          }
-          subject
-          lastMessage {
-            ...TicketMessageFragment
-          }
-          url
-          status
-          createdAt
+          ...TicketFragmentComplete
         }
       }
       pageInfo {
@@ -51,6 +42,7 @@ export const GET_TICKET_MESSAGES_BY_TICKET_URL = gql`
         subject
         status
         url
+        permissions
       }
       edges {
         node {
@@ -78,9 +70,6 @@ export const ADD_TICKET_MESSAGE = gql`
       id
       ticket {
         id
-        lastMessage {
-          ...TicketMessageFragment
-        }
       }
     }
   }
@@ -97,6 +86,16 @@ export const CREATE_TICKET = gql`
     ) {
       id
       url
+    }
+  }
+`;
+
+export const UPDATE_TICKET_STATUS = gql`
+  mutation updateTicketStatus($ticketId: ID!, $status: TicketStatus!) {
+    updateTicketStatus(ticketId: $ticketId, status: $status) {
+      id
+      status
+      permissions
     }
   }
 `;

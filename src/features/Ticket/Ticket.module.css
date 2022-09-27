@@ -13,6 +13,10 @@
     & .header {
       @apply relative border-b border-background-medium p-3 text-foreground;
 
+      & h2 {
+        @apply font-bold;
+      }
+
       & .headerDescription {
         @apply mt-1 flex items-center space-x-2;
 

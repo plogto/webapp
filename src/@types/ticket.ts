@@ -1,4 +1,4 @@
-import { TicketStatusType } from "@enums";
+import { TicketPermissionType, TicketStatusType } from "@enums";
 import type { WithPageInfo } from "@t";
 import type { Attachment } from "./attachment";
 import type { User } from "./user";
@@ -19,6 +19,7 @@ export interface Ticket {
   lastMessage: TicketMessage;
   status: TicketStatusType;
   url: string;
+  permissions: TicketPermissionType[];
   createdAt: string;
 }
 
