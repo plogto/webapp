@@ -57,7 +57,7 @@ export const GET_TICKET_MESSAGES_BY_TICKET_URL = gql`
 `;
 
 export const ADD_TICKET_MESSAGE = gql`
-  ${TicketMessageFragment.default}
+  ${TicketFragment.complete}
   mutation addTicketMessage(
     $ticketId: ID!
     $message: String!
@@ -69,7 +69,7 @@ export const ADD_TICKET_MESSAGE = gql`
     ) {
       id
       ticket {
-        id
+        ...TicketFragmentComplete
       }
     }
   }

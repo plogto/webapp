@@ -25,5 +25,9 @@
   & .ticketPreviewsWrapper {
     @apply col-span-2;
     @apply w-full overflow-hidden md:mt-4;
+
+    & .tickets {
+      @apply overflow-hidden;
+    }
   }
 }

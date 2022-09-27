@@ -7,7 +7,7 @@
   }
 
   & .message {
-    @apply py-1 text-foreground-medium;
+    @apply py-1 text-foreground;
   }
 
   & .footer {
