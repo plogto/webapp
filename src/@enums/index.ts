@@ -77,6 +77,7 @@ export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
 export type StatusType = typeof Statues;
 
 export enum CreditTransactionDescriptionVariableType {
+  TICKET = "TICKET",
   USER = "USER",
   TAG = "TAG",
 }

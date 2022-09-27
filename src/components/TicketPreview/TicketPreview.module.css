@@ -3,7 +3,7 @@
   @apply w-full border-b border-background-medium last:border-none;
 
   &.isActive {
-    @apply bg-background-medium;
+    @apply bg-background-light;
   }
 
   & .headerWrapper {

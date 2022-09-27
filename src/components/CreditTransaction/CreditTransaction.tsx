@@ -35,6 +35,7 @@ export function CreditTransaction(props: CreditTransactionProps) {
   const amountClasses = classNames(
     styles.amount,
     styles[preparedAmount.type.toLowerCase()],
+    styles[status.toLowerCase()],
   );
 
   return (
@@ -49,7 +50,7 @@ export function CreditTransaction(props: CreditTransactionProps) {
         </a>
       </Link>
       <div className={styles.content}>
-        <div className="inline-flex items-center space-x-1">
+        <div className={styles.header}>
           <Link href={formatProfilePageRoute(recipient.username)}>
             <a className="cursor-pointer">
               <FullName fullName={recipient?.fullName} size="small" />

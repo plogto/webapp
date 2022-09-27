@@ -7,8 +7,12 @@ export const CONTENT_MAX_LENGTH = 999;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
 export const SENDER_USERNAME = prepareKeyPattern("sender.username");
 export const POST_CONTENT = prepareKeyPattern("post.content");
-export const INVITED_USER = prepareKeyPattern("invited_user");
-export const INVITER_USER = prepareKeyPattern("inviter_user");
+
+export const CREDIT_TRANSACTION_DESCRIPTION_VARIABLE_KEYS = {
+  INVITED_USER: prepareKeyPattern("invited_user"),
+  INVITER_USER: prepareKeyPattern("inviter_user"),
+  TICKET: prepareKeyPattern("ticket"),
+};
 
 export const POST_PARSER = {
   KEY_PATTERN: /(\$\$\$___[0123456789abcdefg-]+___\$\$\$)(?!;)/gim,

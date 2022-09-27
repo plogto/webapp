@@ -9,6 +9,10 @@
   & .content {
     @apply w-full text-sm text-foreground;
 
+    & .header {
+      @apply inline-flex items-center space-x-1 leading-4;
+    }
+
     & .description {
       @apply mt-1 text-[13px];
     }
@@ -18,16 +22,24 @@
     }
   }
 
+  & .ticket {
+    @apply font-bold;
+  }
+
   & .amountWrapper {
     @apply flex items-center;
     & .amount {
       @apply rounded-lg px-2.5 py-1 text-xl font-medium;
 
-      &.deposit {
+      &:not(.approved) {
+        @apply bg-gray-300 bg-opacity-20 text-gray-500;
+      }
+
+      &.deposit.approved {
         @apply bg-amber-300 bg-opacity-20 text-amber-500;
       }
 
-      &.withdraw {
+      &.withdraw.approved {
         @apply bg-rose-300 bg-opacity-20 text-rose-500;
       }
     }
