@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { DateType } from "@enums";
 import { Avatar } from "@components/Avatar";
 import { FullName } from "@components/FullName";
@@ -20,16 +19,9 @@ export function TicketPreview(props: TicketPreviewProps) {
     },
   } = props;
 
-  const { query } = useRouter();
-  const ticketUrl = query.ticketUrl;
-  const isActive = url === ticketUrl;
-
   const { formatFromNow } = useDate();
   const { formatTicketPageRoute } = useNavigator();
-  const ticketPreviewClasses = classNames(
-    styles.ticketPreview,
-    isActive && styles.isActive,
-  );
+  const ticketPreviewClasses = classNames(styles.ticketPreview);
 
   return (
     <Link href={formatTicketPageRoute(url)}>

@@ -72,7 +72,7 @@ export function AddTicket(props: AddTicketProps) {
         )}
         <div className={styles.buttons}>
           <Button
-            className={styles.submit}
+            className={styles.button}
             layout="outline"
             type="button"
             onClick={onCloseButton}
@@ -80,7 +80,7 @@ export function AddTicket(props: AddTicketProps) {
             {t("buttons.cancel")}
           </Button>
           <Button
-            className={styles.submit}
+            className={styles.button}
             layout="apply"
             type="submit"
             loading={loading}

@@ -1,9 +1,8 @@
 .ticketWrapper {
-  @apply w-full overflow-hidden md:mt-4;
-  @apply col-span-3;
+  @apply w-full;
 
   & .ticket {
-    @apply overflow-hidden;
+    @apply my-12 overflow-hidden md:mt-4;
 
     & .pageHeader {
       @apply fixed top-0 left-0 right-0 bg-background-pure;

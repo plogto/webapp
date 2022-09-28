@@ -2,15 +2,11 @@
   @apply flex flex-col bg-background-pure p-3;
   @apply w-full border-b border-background-medium last:border-none;
 
-  &.isActive {
-    @apply bg-background-light;
-  }
-
   & .headerWrapper {
-    @apply inline-flex items-center space-x-1;
+    @apply inline-flex items-center space-x-2;
 
     & .subject {
-      @apply max-w-[80%] truncate text-lg font-bold text-foreground;
+      @apply max-w-[80%] truncate text-lg font-bold text-foreground md:max-w-[90%];
     }
   }
 

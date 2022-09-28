@@ -1,15 +1,49 @@
-import { ModalProvider } from "@contexts/ModalContext";
-import { Ticket } from "@features/Ticket";
+import { isMobile } from "react-device-detect";
+import { useTranslation } from "react-i18next";
+import classNames from "classnames";
+import { AddTicket } from "@components/AddTicket";
+import { Card } from "@components/Card";
+import { Icon } from "@components/Icon";
+import { TicketPreviewsList } from "@components/Lists/TicketPreviewsList";
+import { PageHeader } from "@components/PageHeader";
+import { PageUrls } from "@enums/pages";
 import styles from "./Support.module.css";
-import type { SupportProps } from "./Support.types";
-import { Tickets } from "./components/Tickets";
+import { useCreateTicket, useSupport } from "./hooks";
 
-export function Support(props: SupportProps) {
-  const { isShowTickets = true, isShowTicketMessages = true } = props;
+export function Support() {
+  const { tickets, emptyStatus, getMoreData } = useSupport();
+  const { isShowCreateTicket, openCreateTicket, closeCreateTicket } =
+    useCreateTicket();
+
+  const { t } = useTranslation("support");
+
   return (
     <div className={styles.support}>
-      {isShowTickets && <Tickets />}
-      <ModalProvider>{isShowTicketMessages && <Ticket />}</ModalProvider>
+      <Card shadow={!isMobile} rounded={!isMobile} className={styles.tickets}>
+        <PageHeader
+          backLink={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
+          title={t("texts.tickets")}
+          className={classNames(isMobile ? styles.pageHeader : styles.header)}
+          isShowBackLink={isMobile}
+          rightSide={
+            <button className={styles.addButton} onClick={openCreateTicket}>
+              <Icon name="Plus" className={classNames(styles.icon)} />
+            </button>
+          }
+        />
+        {isShowCreateTicket && (
+          <AddTicket
+            isShowSubject
+            submitButtonTitle={t("buttons.createTicket")}
+            onCloseButton={closeCreateTicket}
+          />
+        )}
+        <TicketPreviewsList
+          tickets={tickets}
+          emptyStatus={emptyStatus}
+          getMoreData={getMoreData}
+        />
+      </Card>
     </div>
   );
 }

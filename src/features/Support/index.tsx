@@ -1,1 +1,1 @@
-export { Support as Settings } from "./Support";
+export { Support } from "./Support";
