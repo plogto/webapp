@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Icon } from "@components/Icon";
-import { InputProps } from "./@types";
 import styles from "./Input.module.css";
+import type { InputProps } from "./Input.types";
 
 export function Input(props: InputProps) {
   const {

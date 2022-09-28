@@ -2,11 +2,11 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
-import { DeleteModalProps } from "@components/Modal/Modal.types";
+import { DeletionModalProps } from "@components/Modal/Modal.types";
 import { useModalContext } from "@contexts/ModalContext";
-import { Modal } from "../Modal";
+import { Modal } from "./Modal";
 
-export function DeleteModal(props: DeleteModalProps) {
+export function DeletionModal(props: DeletionModalProps) {
   const { isOpen, title, description, onDelete } = props;
   const { t } = useTranslation("modal");
   const { closeModal } = useModalContext();

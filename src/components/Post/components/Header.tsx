@@ -7,7 +7,7 @@ import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { Menu } from "@components/Menu";
 import type { MenuProps } from "@components/Menu/Menu.types";
-import { DeleteModal } from "@components/Modal";
+import { DeletionModal } from "@components/Modal";
 import type { HeaderPostProps } from "@components/Post/Post.types";
 import { useDeletePost } from "@components/Post/hooks/useDeletePost";
 import { useModalContext } from "@contexts/ModalContext";
@@ -95,7 +95,7 @@ export function Header(props: HeaderPostProps) {
 
       {showMoreButton && (
         <>
-          <DeleteModal
+          <DeletionModal
             isOpen={isOpen}
             title={t("modals.delete.title")}
             description={t("modals.delete.description")}

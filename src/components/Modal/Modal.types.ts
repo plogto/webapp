@@ -8,7 +8,7 @@ export interface ModalProps {
   contentClassName?: string;
 }
 
-export interface DeleteModalProps {
+export interface DeletionModalProps {
   title: string;
   description: string;
   onDelete: () => void;

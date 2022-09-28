@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { ToastProps } from "./@types";
 import styles from "./Toast.module.css";
+import { ToastProps } from "./Toast.types";
 
 export function Toast(props: ToastProps) {
   const { title, type = "normal" } = props;

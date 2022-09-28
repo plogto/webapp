@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import { Avatar } from "@components/Avatar";
 import { FullName } from "@components/FullName";
-import type { UserInfoProps } from "./@types";
 import styles from "./UserInfo.module.css";
+import type { UserInfoProps } from "./UserInfo.types";
 
 export function UserInfo(props: UserInfoProps) {
   const { user, showAvatar = true, size = "normal" } = props;

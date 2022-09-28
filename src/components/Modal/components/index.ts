@@ -1,5 +1,5 @@
 import { ConfirmationModal } from "./ConfirmationModal";
-import { DeleteModal } from "./DeleteModal";
+import { DeletionModal } from "./DeletionModal";
 import { Modal } from "./Modal";
 
-export { Modal, DeleteModal, ConfirmationModal };
+export { Modal, DeletionModal, ConfirmationModal };

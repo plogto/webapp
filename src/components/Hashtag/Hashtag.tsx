@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import { useNavigator } from "@hooks/useNavigator";
-import type { HashtagProps } from "./@types";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useNavigator } from "@hooks/useNavigator";
+import type { HashtagProps } from "./Hashtag.types";
 
 export function Hashtag(props: HashtagProps) {
   const { value, isClickable = true } = props;

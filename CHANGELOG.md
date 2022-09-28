@@ -365,7 +365,7 @@ All notable changes to this project will be documented in this file. See [standa
 * add delete button for Comment component ([669a727](https://github.com/favecode/plog-fe/commit/669a727accdb765813ab8e72a208263fd7aba400))
 * add exclamation for Icon component ([fc40160](https://github.com/favecode/plog-fe/commit/fc40160baa83ed2daa9e6f0fb36518a07351582d))
 * add Modal component ([fd99ce0](https://github.com/favecode/plog-fe/commit/fd99ce0925e5339f3e0ce7e0c3d8ebdbf2d1a5bc))
-* implement DeleteModal component ([fea22ec](https://github.com/favecode/plog-fe/commit/fea22ecfe3717de3d039f66032f82b555f703b2c))
+* implement DeletionModal component ([fea22ec](https://github.com/favecode/plog-fe/commit/fea22ecfe3717de3d039f66032f82b555f703b2c))
 
 ## [0.18.0](https://github.com/favecode/plog-fe/compare/v0.17.3...v0.18.0) (2021-10-25)
 

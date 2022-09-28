@@ -11,6 +11,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   placeholder?: string;
   register?: UseFormRegisterReturn;
+  // TODO: add MessageType enum
   messageType?: "error" | "success";
   message?: string;
 }
