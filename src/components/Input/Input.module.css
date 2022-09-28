@@ -18,7 +18,8 @@
     }
 
     & input {
-      @apply absolute w-full border-0 bg-background-pure py-3.5 px-4 text-sm text-current focus:ring-0;
+      @apply absolute w-full border-0 bg-background-pure py-3.5 px-4;
+      @apply text-sm leading-[1.125rem] text-current focus:ring-0;
 
       &::placeholder {
         @apply text-gray-400;
@@ -46,7 +47,7 @@
 
   &.error {
     & .input {
-      @apply border-danger bg-danger-light focus:border-danger focus:ring-danger;
+      @apply border-danger focus:border-danger focus:ring-danger;
 
       & input {
         @apply bg-danger-light;
