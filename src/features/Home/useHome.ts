@@ -1,9 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
-import { PageUrls } from "@enums/pages";
 import type {
   GetTimelinePostsQuery,
   GetTimelinePostsQueryRequest,
@@ -12,20 +10,12 @@ import { GET_TIMELINE_POSTS } from "@graphql/post";
 import type { Placeholder } from "@t/placeholder";
 
 export function useHome() {
-  const { push } = useRouter();
-  const { user, isAuthenticated } = useAccountContext();
+  const { user } = useAccountContext();
   const [getTimelinePosts, { loading, data, fetchMore }] = useLazyQuery<
     GetTimelinePostsQuery,
     GetTimelinePostsQueryRequest
   >(GET_TIMELINE_POSTS);
   const { t } = useTranslation("post");
-
-  // TODO: improve this part
-  useEffect(() => {
-    if (!isAuthenticated) {
-      push(PageUrls.LOGIN);
-    }
-  }, [isAuthenticated, push]);
 
   useEffect(() => {
     if (user) {
