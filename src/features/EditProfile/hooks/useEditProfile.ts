@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
@@ -14,7 +14,13 @@ export function useEditProfile() {
   const { push } = useRouter();
   const formMethods = useForm<SettingsForm>({
     mode: "all",
-    defaultValues: {
+  });
+
+  const { reset } = formMethods;
+
+  useEffect(() => {
+    // TODO: create preparedUser function
+    reset({
       username: user?.username,
       avatar: user?.avatar?.id,
       background: user?.background?.id,
@@ -22,8 +28,8 @@ export function useEditProfile() {
       email: user?.email,
       bio: user?.bio,
       isPrivate: user?.isPrivate,
-    },
-  });
+    });
+  }, [reset, user]);
 
   const [editUser, { loading }] = useMutation<EditUserMutation>(EDIT_USER);
 

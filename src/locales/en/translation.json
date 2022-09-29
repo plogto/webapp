@@ -113,6 +113,7 @@
       "emailRequired": "Email is required",
       "fullnameRequired": "Full Name is required",
       "usernameIsAlreadyTaken": "Username is already taken",
+      "usernameIsNotValid": "Username is not valid",
       "usernameIsTooShort": "Username is too short",
       "usernameRequired": "Username is required"
     },
@@ -305,16 +306,16 @@
   },
   "ticket": {
     "buttons": {
-      "approveTicket": "Approve Ticket",
       "approve": "Approve",
-      "closeTicket": "Close Ticket",
+      "approveTicket": "Approve Ticket",
       "close": "Close",
+      "closeTicket": "Close Ticket",
       "newMessage": "New Message",
-      "openTicket": "Open Ticket",
       "open": "Open",
+      "openTicket": "Open Ticket",
       "send": "Send",
-      "solveTicket": "Solve Ticket",
-      "solve": "Solve"
+      "solve": "Solve",
+      "solveTicket": "Solve Ticket"
     },
     "texts": {
       "areYouSure": "Are you sure?",

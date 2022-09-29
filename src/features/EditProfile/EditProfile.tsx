@@ -1,6 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { USERNAME_PATTERN } from "@constants";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { Input } from "@components/Input";
@@ -70,6 +71,10 @@ export function EditProfile() {
                 required: {
                   value: true,
                   message: t("errors.usernameRequired"),
+                },
+                pattern: {
+                  value: USERNAME_PATTERN,
+                  message: t("errors.usernameIsNotValid"),
                 },
               })}
               messageType={
