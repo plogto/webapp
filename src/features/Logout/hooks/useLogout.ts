@@ -19,5 +19,5 @@ export function useLogout() {
       ? localStorage.removeItem(LocalStorageKeys.AUTHORIZATION)
       : undefined;
     push(PageUrls.LOGIN);
-  }, [setIsAuthenticated, setToken, setUser]);
+  }, [apolloClient.cache, setIsAuthenticated, setToken, setUser]);
 }

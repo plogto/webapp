@@ -5,16 +5,13 @@ import {
   useContext,
   useState,
 } from "react";
-import { LocalStorageKeys } from "@enums";
+import { getToken } from "@utils/localStorage";
 
-const token =
-  typeof window !== "undefined"
-    ? localStorage.getItem(LocalStorageKeys.AUTHORIZATION)
-    : undefined;
+const token = getToken();
 
 const initialAccount: AccountContext = {
   isAuthenticated: !!token,
-  token: token || undefined,
+  token,
 };
 
 const AccountContext = createContext<AccountContext>(initialAccount);

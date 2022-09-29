@@ -32,6 +32,7 @@
       "@locales/*": ["src/locales/*"],
       "@styles/*": ["src/styles/*"],
       "@stories/*": ["src/stories/*"],
+      "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"]
     },
     "types": ["jest", "@testing-library/jest-dom"],

@@ -1,4 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
+import { isDocumentExists, isWindowExists } from "@utils";
 
 interface Props {
   children: ReactNode;
@@ -19,9 +20,7 @@ export function SafeHydrate(props: Props) {
 
   return (
     <div suppressHydrationWarning>
-      {typeof document === "undefined" || typeof window === "undefined"
-        ? null
-        : children}
+      {!isWindowExists() || !isDocumentExists() ? null : children}
     </div>
   );
 }

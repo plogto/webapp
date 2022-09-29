@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { LocalStorageKeys } from "@enums";
+import { isWindowExists } from "@utils";
 import { createUploadLink } from "apollo-upload-client";
 import {
   ApolloClient,
@@ -12,6 +12,7 @@ import {
 import { WebSocketLink } from "@apollo/client/link/ws";
 import { getMainDefinition } from "@apollo/client/utilities";
 import { typePolicies } from "@graphql/typePolicies";
+import { getToken } from "@utils/localStorage";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
@@ -55,7 +56,7 @@ const link =
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === "undefined", // set to true for SSR
+    ssrMode: !isWindowExists(), // set to true for SSR
     link,
     cache: new InMemoryCache({ typePolicies }),
   });
@@ -78,7 +79,7 @@ export function initializeApollo(
   }
 
   // For SSG and SSR always create a new Apollo Client
-  if (typeof window === "undefined") return _apolloClient;
+  if (!isWindowExists()) return _apolloClient;
 
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient;
@@ -93,12 +94,7 @@ export function useApollo(
 }
 
 function getAuthorization() {
-  const token =
-    typeof window !== "undefined"
-      ? localStorage.getItem(LocalStorageKeys.AUTHORIZATION)
-      : "null";
+  const token = getToken();
 
-  const authorization = `Bearer ${token}`;
-
-  return authorization;
+  return token ? `Bearer ${token}` : null;
 }
