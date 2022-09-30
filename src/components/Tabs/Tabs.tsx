@@ -13,7 +13,7 @@ export function Tabs(props: TabsProps) {
   return (
     <div className={styles.tabs}>
       {tabs.map(({ title, href }) => (
-        <Link key={title} href={href}>
+        <Link key={title} href={href} replace>
           <a
             className={classNames(
               styles.tab,
