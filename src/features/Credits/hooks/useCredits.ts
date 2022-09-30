@@ -7,7 +7,7 @@ import {
   GetCreditTransactionsQueryRequest,
 } from "@graphql/@types/creditTransaction";
 import { GET_CREDIT_TRANSACTIONS } from "@graphql/creditTransaction";
-import { Placeholder } from "@t/placeholder";
+import type { Placeholder } from "@t/placeholder";
 
 export function useCredits() {
   const { user } = useAccountContext();

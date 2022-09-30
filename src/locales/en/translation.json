@@ -89,10 +89,24 @@
     }
   },
   "credits": {
+    "buttons": {
+      "inviteFriends": "Invite friends"
+    },
+    "modals": {
+      "inviteFriends": {
+        "description": "Tell your friends about plog. Inviter and the invited account will gain credit.",
+        "title": "Invite your friends"
+      }
+    },
     "status": {
       "noTransactions": {
         "title": "No Transactions Yet."
       }
+    },
+    "texts": {
+      "invitationCode": "Invitation code",
+      "copyLink": "Copy Link",
+      "invitationLinkCopiedToClipboard": "Invitation link copied to clipboard"
     }
   },
   "cropImage": {

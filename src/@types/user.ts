@@ -14,6 +14,7 @@ export interface User {
   bio?: string;
   isPrivate?: boolean;
   isVerified?: boolean;
+  invitationCode?: string;
   connectionStatus?: number;
   followersCount?: number;
   followingCount?: number;

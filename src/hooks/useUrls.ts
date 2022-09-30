@@ -12,5 +12,13 @@ export function useUrls() {
     return `${window.location.origin}/p/${url}`;
   }
 
-  return { getFileUrl, formatPostUrl, getThumbnailUrl };
+  function formatInvitationUrl(invitationCode?: string) {
+    if (!invitationCode) return "";
+
+    return `${
+      window.location.origin
+    }/?invitation_code=${invitationCode.toUpperCase()}`;
+  }
+
+  return { getFileUrl, formatPostUrl, formatInvitationUrl, getThumbnailUrl };
 }

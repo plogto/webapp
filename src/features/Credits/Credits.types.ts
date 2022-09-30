@@ -8,3 +8,11 @@ export interface CreditsContentProps {
   getMoreData: () => void;
   emptyStatus: Placeholder;
 }
+
+export interface InvitationCodeProps {
+  invitationCode?: User["invitationCode"];
+}
+
+export interface UseInviteFriendsProps {
+  user?: User;
+}

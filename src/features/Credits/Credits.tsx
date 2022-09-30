@@ -9,7 +9,7 @@ import { ProfileInfo } from "@components/ProfileInfo";
 import { useNavigator } from "@hooks/useNavigator";
 import styles from "./Credits.module.css";
 import { CreditsContent } from "./components/CreditsContent";
-import { useCredits } from "./useCredits";
+import { useCredits } from "./hooks";
 
 export function Credits() {
   const { userData, getMoreData, emptyStatus, creditTransactions } =

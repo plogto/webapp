@@ -24,14 +24,38 @@
     & .profileContent {
       @apply sticky mt-12 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
 
-      & .credits {
-        @apply flex items-center justify-center space-x-2 font-medium md:justify-start;
-        @apply m-3 rounded-lg px-3 py-2 text-6xl text-amber-400;
+      & .creditsWrapper {
+        @apply flex flex-col items-center space-x-1 md:mx-5 md:flex-row-reverse md:justify-between;
+
+        & .buttons {
+          @apply mt-2 flex items-center justify-center space-x-3 md:mt-0 md:ml-4 md:justify-start;
+
+          & .inviteFriends {
+            @apply flex items-center space-x-1;
+            @apply py-1 px-2 text-sm;
+            @apply rounded-md bg-amber-500 bg-opacity-10  text-amber-500;
+          }
+        }
+
+        & .credits {
+          @apply flex items-center justify-center space-x-2 font-medium md:justify-start;
+          @apply m-5 rounded-lg text-6xl text-amber-400;
+        }
       }
     }
   }
 
   & .privateStatus {
     @apply mx-10 mt-16 md:m-32;
+  }
+}
+
+.invitationCodeWrapper {
+  @apply mt-4 rounded-xl bg-gray-500 bg-opacity-20 py-2 px-3;
+  & .title {
+    @apply text-center text-xs text-gray-400;
+  }
+  & .invitationCode {
+    @apply text-2xl font-bold tracking-widest text-foreground;
   }
 }
