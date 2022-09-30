@@ -23,7 +23,7 @@ export function LogoutButton(props: LogoutButtonProps) {
 
   return (
     <>
-      <Modal isOpen={isOpen}>
+      <Modal isOpen={isOpen} onClose={closeModal}>
         <div className="modal">
           <div className="icon-wrapper bg-background-medium">
             <Icon name="Exclamation" className="icon text-foreground" />

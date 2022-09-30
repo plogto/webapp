@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
+import { ModalColor } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import type { ConfirmationModalProps } from "@components/Modal/Modal.types";
@@ -8,8 +9,15 @@ import { useModalContext } from "@contexts/ModalContext";
 import { Modal } from "./Modal";
 
 export function ConfirmationModal(props: ConfirmationModalProps) {
-  const { isOpen, title, description, icon, onSubmit, type, submitTitle } =
-    props;
+  const {
+    isOpen = false,
+    title,
+    description,
+    icon,
+    onSubmit,
+    color = ModalColor.NORMAL,
+    submitButton,
+  } = props;
   const { t } = useTranslation("modal");
   const { closeModal } = useModalContext();
 
@@ -18,13 +26,13 @@ export function ConfirmationModal(props: ConfirmationModalProps) {
     closeModal();
   }, [closeModal, onSubmit]);
 
-  const typeClassName = type?.toLowerCase() || "normal";
+  const colorClassName = color.toLowerCase();
 
   return (
-    <Modal isOpen={!!isOpen}>
+    <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className={classNames("icon-wrapper", typeClassName)}>
-          <Icon name={icon} className={classNames("icon", typeClassName)} />
+        <div className={classNames("icon-wrapper", colorClassName)}>
+          <Icon name={icon} className={classNames("icon", colorClassName)} />
         </div>
         <div className="modal-title">{title}</div>
         <p className="modal-description">{description}</p>
@@ -32,9 +40,9 @@ export function ConfirmationModal(props: ConfirmationModalProps) {
           <Button
             type="button"
             onClick={handleSubmit}
-            className={classNames("modal-button text-white", typeClassName)}
+            className={classNames("modal-button text-white", colorClassName)}
           >
-            {submitTitle}
+            {submitButton}
           </Button>
           <Button
             type="button"

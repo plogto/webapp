@@ -46,7 +46,7 @@ export function useCreditTransaction(props: UseCreditTransactionProps) {
           return (
             user &&
             user.url && (
-              <Link href={formatProfilePageRoute(user.url)}>
+              <Link key={uuid()} href={formatProfilePageRoute(user.url)}>
                 <a className="cursor-pointer">
                   <FullName
                     key={uuid()}
@@ -64,7 +64,7 @@ export function useCreditTransaction(props: UseCreditTransactionProps) {
           return (
             ticket &&
             ticket.url && (
-              <Link href={formatTicketPageRoute(ticket.url)}>
+              <Link key={uuid()} href={formatTicketPageRoute(ticket.url)}>
                 <a className={styles.ticket}>#{ticket.url}</a>
               </Link>
             )

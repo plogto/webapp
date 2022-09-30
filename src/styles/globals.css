@@ -32,7 +32,7 @@
     }
 
     & .modal-description {
-      @apply pt-2 pb-6 text-center text-sm text-foreground-medium;
+      @apply pt-2 text-center text-sm text-foreground-medium;
     }
 
     & .icon-wrapper {
@@ -43,16 +43,20 @@
         @apply bg-gray-500 bg-opacity-10;
       }
 
-      &.success {
+      &.green {
         @apply bg-emerald-500 bg-opacity-10;
       }
 
-      &.info {
+      &.blue {
         @apply bg-blue-500 bg-opacity-10;
       }
 
-      &.danger {
+      &.red {
         @apply bg-rose-500 bg-opacity-10;
+      }
+
+      &.yellow {
+        @apply bg-amber-500 bg-opacity-10;
       }
 
       & .icon {
@@ -62,41 +66,49 @@
           @apply text-foreground;
         }
 
-        &.success {
+        &.green {
           @apply text-emerald-500;
         }
 
-        &.info {
+        &.blue {
           @apply text-blue-500;
         }
 
-        &.danger {
+        &.red {
           @apply text-rose-500;
+        }
+
+        &.yellow {
+          @apply text-amber-500;
         }
       }
     }
 
     & .modal-buttons {
-      @apply flex w-full items-center space-x-3;
+      @apply mt-6 flex w-full items-center space-x-3;
     }
 
     & .modal-button {
-      @apply w-full rounded-xl px-2.5 py-2.5 md:py-2;
+      @apply w-full rounded-xl px-2.5 py-2.5;
 
       &.normal {
         @apply bg-foreground text-background;
       }
 
-      &.success {
+      &.green {
         @apply bg-emerald-500;
       }
 
-      &.info {
+      &.blue {
         @apply bg-blue-500;
       }
 
-      &.danger {
+      &.red {
         @apply bg-rose-500;
+      }
+
+      &.yellow {
+        @apply bg-amber-500;
       }
     }
   }

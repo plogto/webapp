@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
-import { ConfirmationModalType } from "@enums";
+import { ModalColor } from "@enums";
 import type { IconNames } from "@components/Icon";
 
 export interface ModalProps {
   children: ReactNode;
   isOpen: boolean;
   contentClassName?: string;
+  onClose: () => void;
 }
 
 export interface DeletionModalProps {
@@ -19,7 +20,17 @@ export interface ConfirmationModalProps {
   description: string;
   icon: IconNames;
   onSubmit: () => void;
-  type?: ConfirmationModalType;
-  submitTitle: string;
+  color?: ModalColor;
+  submitButton: ReactNode;
+  isOpen?: boolean;
+}
+export interface InformationModalProps {
+  title: string;
+  description: string;
+  content?: ReactNode;
+  color?: ModalColor;
+  icon: IconNames;
+  onSubmit: () => void;
+  submitButton: ReactNode;
   isOpen?: boolean;
 }

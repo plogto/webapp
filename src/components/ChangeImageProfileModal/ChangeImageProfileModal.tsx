@@ -18,7 +18,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
   const { t } = useTranslation("settings");
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
         <div className="modal-title">{title}</div>
         <div className="icon-wrapper bg-background">

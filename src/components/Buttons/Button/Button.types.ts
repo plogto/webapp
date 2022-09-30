@@ -2,6 +2,7 @@ import type { MouseEventHandler, ReactNode } from "react";
 
 export interface ButtonProps {
   type?: "button" | "submit";
+  // TODO: create layoutButton enum
   layout?: "outline" | "remove" | "apply";
   className?: string;
   loadingClassName?: string;

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
-import { ConfirmationModalType, TicketPermissionType } from "@enums";
+import { ModalColor, TicketPermissionType } from "@enums";
 import { useLazyQuery } from "@apollo/client";
 import type { MenuProps } from "@components/Menu/Menu.types";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -134,26 +134,25 @@ export function useTicket(props: UseTicketProps) {
       description: t("ticket:texts.areYouSure"),
       icon: "Inbox",
       onSubmit: openTicket,
-      submitTitle: t("ticket:buttons.open"),
-      isOpen: true,
+      submitButton: t("ticket:buttons.open"),
     },
     [TicketPermissionType.APPROVE]: {
       key: TicketPermissionType.APPROVE,
       title: t("ticket:buttons.approveTicket"),
       description: t("ticket:texts.areYouSure"),
       icon: "ThumbsUp",
-      type: ConfirmationModalType.SUCCESS,
+      color: ModalColor.GREEN,
       onSubmit: approveTicket,
-      submitTitle: t("ticket:buttons.approve"),
+      submitButton: t("ticket:buttons.approve"),
     },
     [TicketPermissionType.SOLVE]: {
       key: TicketPermissionType.SOLVE,
       title: t("ticket:buttons.solveTicket"),
       description: t("ticket:texts.areYouSure"),
       icon: "CheckCircle",
-      type: ConfirmationModalType.INFO,
+      color: ModalColor.BLUE,
       onSubmit: solveTicket,
-      submitTitle: t("ticket:buttons.solve"),
+      submitButton: t("ticket:buttons.solve"),
     },
     [TicketPermissionType.CLOSE]: {
       key: TicketPermissionType.CLOSE,
@@ -161,7 +160,7 @@ export function useTicket(props: UseTicketProps) {
       description: t("ticket:texts.areYouSure"),
       icon: "XCircle",
       onSubmit: closeTicket,
-      submitTitle: t("ticket:buttons.close"),
+      submitButton: t("ticket:buttons.close"),
     },
   };
 

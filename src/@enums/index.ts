@@ -104,8 +104,10 @@ export enum LocalStorageKeys {
   INVITATION_CODE = "invitationCode",
 }
 
-export enum ConfirmationModalType {
-  DANGER = "DANGER",
-  INFO = "INFO",
-  SUCCESS = "SUCCESS",
+export enum ModalColor {
+  NORMAL = "NORMAL",
+  RED = "RED",
+  BLUE = "BLUE",
+  GREEN = "GREEN",
+  YELLOW = "YELLOW",
 }

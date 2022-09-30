@@ -17,7 +17,7 @@ export function DeletionModal(props: DeletionModalProps) {
   }, [closeModal, onDelete]);
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
         <div className="icon-wrapper bg-danger-light">
           <Icon name="Trash" className="icon text-danger" />

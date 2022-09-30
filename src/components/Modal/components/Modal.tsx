@@ -5,13 +5,13 @@ import styles from "../Modal.module.css";
 import type { ModalProps } from "../Modal.types";
 
 export function Modal(props: ModalProps) {
-  const { children, isOpen, contentClassName } = props;
+  const { children, isOpen, contentClassName, onClose } = props;
 
   const contentClasses = classNames(styles.content, contentClassName);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className={styles.dialogWrapper} onClose={() => {}}>
+      <Dialog as="div" className={styles.dialogWrapper} onClose={onClose}>
         <div className={styles.dialog}>
           <Transition.Child
             as={Fragment}
