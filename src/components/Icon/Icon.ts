@@ -42,6 +42,7 @@ import ThumbsUp from "./svg/thumbs-up.svg";
 import TrashFill from "./svg/trash-fill.svg";
 import Trash from "./svg/trash.svg";
 import TrendingUp from "./svg/trending-up.svg";
+import UserPlus from "./svg/user-plus.svg";
 import User from "./svg/user.svg";
 import Users from "./svg/users.svg";
 import VerifiedFill from "./svg/verified-fill.svg";
@@ -92,6 +93,7 @@ export const IconsList = {
   Trash,
   TrendingUp,
   ThumbsUp,
+  UserPlus,
   User,
   Users,
   VerifiedFill,
