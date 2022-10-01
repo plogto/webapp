@@ -2,7 +2,7 @@ import { isMobile } from "react-device-detect";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
-import { Posts } from "@components/Posts";
+import { PostsList } from "@components/Lists/PostsList";
 import styles from "../Tag.module.css";
 import type { TagContentProps } from "../Tag.types";
 
@@ -16,7 +16,7 @@ export function TagContent(props: TagContentProps) {
         {tabs.map(
           ({ href, data: { data, isLoading }, getMoreData, emptyStatus }) =>
             asPath === href && (
-              <Posts
+              <PostsList
                 key={data?.pageInfo.endCursor}
                 posts={data}
                 isLoading={isLoading}
