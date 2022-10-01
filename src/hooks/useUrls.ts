@@ -17,7 +17,7 @@ export function useUrls() {
 
     return `${
       window.location.origin
-    }/?invitation_code=${invitationCode.toUpperCase()}`;
+    }?invitation_code=${invitationCode.toUpperCase()}`;
   }
 
   return { getFileUrl, formatPostUrl, formatInvitationUrl, getThumbnailUrl };
