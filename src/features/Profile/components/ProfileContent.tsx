@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
+import { PostsList } from "@components/Lists/PostsList";
 import { Placeholder } from "@components/Placeholder";
-import { Posts } from "@components/Posts";
 import { Tabs } from "@components/Tabs";
 import { useAccountContext } from "@contexts/AccountContext";
 import styles from "../Profile.module.css";
@@ -41,7 +41,7 @@ export function ProfileContent(props: ProfileContentProps) {
           tabs.map(
             ({ href, data: { data, isLoading }, getMoreData, emptyStatus }) =>
               asPath === href && (
-                <Posts
+                <PostsList
                   key={JSON.stringify(data?.pageInfo.endCursor)}
                   posts={data}
                   isLoading={isLoading}

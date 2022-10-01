@@ -4,10 +4,10 @@ import { POST_TYPES } from "@constants";
 import { Loader } from "@components/Loader";
 import { Placeholder } from "@components/Placeholder";
 import { Post } from "@components/Post";
-import styles from "./Posts.module.css";
-import type { PostsProps } from "./Posts.types";
+import styles from "./PostsList.module.css";
+import type { PostsListProps } from "./PostsList.types";
 
-export function Posts(props: PostsProps) {
+export function PostsList(props: PostsListProps) {
   const {
     isLoading,
     posts,
@@ -45,7 +45,7 @@ export function Posts(props: PostsProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        posts.edges?.map(({ node }) => (
+        posts?.edges?.map(({ node }) => (
           <Post
             key={node.id}
             post={node}

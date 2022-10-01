@@ -1,7 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { Card } from "@components/Card";
+import { PostsList } from "@components/Lists/PostsList";
 import { Logo } from "@components/Logo";
-import { Posts } from "@components/Posts";
 import styles from "./Home.module.css";
 import { useHome } from "./useHome";
 
@@ -15,7 +15,7 @@ export function Home() {
           <Logo isClickable={false} />
         </div>
       )}
-      <Posts
+      <PostsList
         isLoading={loading}
         getMoreData={getMoreData}
         posts={posts}
