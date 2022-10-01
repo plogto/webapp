@@ -12,6 +12,10 @@ export const typePolicies: TypePolicies = {
         keyArgs: false,
         merge: mergePosts,
       },
+      getExplorePosts: {
+        keyArgs: false,
+        merge: mergePosts,
+      },
       getSavedPosts: {
         keyArgs: false,
         merge: mergePosts,

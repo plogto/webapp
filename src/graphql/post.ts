@@ -164,6 +164,28 @@ export const GET_TIMELINE_POSTS = gql`
   }
 `;
 
+export const GET_EXPLORE_POSTS = gql`
+  ${PageInfoFragment.complete}
+  ${PostFragment.default}
+  query getExplorePosts($first: Int, $after: String) {
+    getExplorePosts(pageInfo: { first: $first, after: $after }) {
+      totalCount
+      edges {
+        cursor
+        node {
+          ...PostFragment
+          replies {
+            totalCount
+          }
+        }
+      }
+      pageInfo {
+        ...PageInfoFragmentComplete
+      }
+    }
+  }
+`;
+
 export const ADD_POST = gql`
   ${UserFragment.short}
   ${FileFragment.complete}

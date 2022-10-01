@@ -1,47 +1,56 @@
 .search {
-  @apply w-full;
-  & .form {
-    @apply w-full overflow-hidden md:mt-4;
+  & .header {
+    @apply sticky z-30 rounded-b-2xl bg-background md:top-14 md:pt-px;
+    & .card {
+      @apply w-full overflow-hidden md:mt-4;
 
-    & .header {
-      @apply fixed top-0 left-0 right-0 md:relative;
-      @apply flex items-center bg-background-pure p-2;
-      @apply border-b border-background-medium md:border-none;
+      & .inputWrapper {
+        @apply fixed top-0 left-0 right-0 md:relative;
+        @apply flex items-center bg-background-pure p-2;
+        @apply border-b border-background-medium md:border-none;
 
-      & .searchInput {
-        @apply w-full border-0 bg-background-pure p-2 text-foreground ring-0 focus:ring-0 md:py-1 md:px-2;
-      }
+        & .searchInput {
+          @apply w-full border-0 bg-background-pure p-2 text-foreground ring-0 focus:ring-0 md:py-1 md:px-2;
+        }
 
-      & .filters {
-        @apply ml-2 flex justify-end;
+        & .filters {
+          @apply ml-2 flex justify-end;
 
-        & .filterButton {
-          @apply rounded-lg p-0;
-          @apply h-8 w-8 bg-background-pure font-medium;
-          @apply text-foreground shadow;
+          & .filterButton {
+            @apply rounded-lg p-0;
+            @apply h-8 w-8 bg-background-pure font-medium;
+            @apply text-foreground shadow;
 
-          &:first-child {
-            @apply mr-3;
-          }
+            &:first-child {
+              @apply mr-3;
+            }
 
-          &.active {
-            @apply bg-foreground text-background-pure;
-          }
+            &.active {
+              @apply bg-foreground text-background-pure;
+            }
 
-          &:not(.active) {
-            @apply border border-background-medium;
-          }
+            &:not(.active) {
+              @apply border border-background-medium;
+            }
 
-          & svg {
-            @apply h-5 w-5;
+            & svg {
+              @apply h-5 w-5;
+            }
           }
         }
       }
     }
   }
 
-  & .users,
-  & .tags {
-    @apply mb-14 mt-3 w-full overflow-hidden;
+  & .content {
+    @apply md:-mt-8;
+    & .users,
+    & .tags {
+      @apply my-14 w-full overflow-hidden md:mt-12;
+    }
+
+    & .posts {
+      @apply mt-4 mb-14 overflow-hidden md:mt-12;
+    }
   }
 }

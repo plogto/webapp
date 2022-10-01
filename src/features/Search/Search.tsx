@@ -8,11 +8,13 @@ import { MobileTrends } from "../Trends";
 import styles from "./Search.module.css";
 import type { Filter } from "./Search.types";
 import { Tags, Users } from "./components";
-import { useSearch } from "./useSearch";
+import { Posts } from "./components/Posts";
+import { useSearch } from "./hooks";
+import isEmpty from "lodash/isEmpty";
 
 export function Search() {
   const { formMethods, onSubmit, result, filter, setFilter } = useSearch();
-  const { register, handleSubmit, watch } = formMethods;
+  const { register, handleSubmit, watch, getValues } = formMethods;
 
   const { t } = useTranslation(["common", "search"]);
   const filters: Filter[] = [
@@ -32,42 +34,52 @@ export function Search() {
 
   return (
     <div className={styles.search}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Card shadow={!isMobile} rounded={!isMobile} className={styles.form}>
-          <div className={styles.header}>
-            <input
-              {...register("expression")}
-              onInput={handleSubmit(() => onSubmit(watch()))}
-              placeholder={t("search:placeholders.search")}
-              name="expression"
-              type="text"
-              autoComplete="off"
-              className={styles.searchInput}
-            />
-            <div className={styles.filters}>
-              {filters.map(({ title, active, onClick, icon }) => (
-                <Button
-                  key={title}
-                  className={classNames(
-                    styles.filterButton,
-                    active && styles.active,
-                  )}
-                  onClick={onClick}
-                >
-                  <Icon name={icon} className="stroke-2" />
-                </Button>
-              ))}
+      <div className={styles.header}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Card shadow={!isMobile} rounded={!isMobile} className={styles.card}>
+            <div className={styles.inputWrapper}>
+              <input
+                {...register("expression")}
+                onInput={handleSubmit(() => onSubmit(getValues()))}
+                placeholder={t("search:placeholders.search")}
+                name="expression"
+                type="text"
+                autoComplete="off"
+                className={styles.searchInput}
+              />
+              <div className={styles.filters}>
+                {filters.map(({ title, active, onClick, icon }) => (
+                  <Button
+                    key={title}
+                    className={classNames(
+                      styles.filterButton,
+                      active && styles.active,
+                    )}
+                    onClick={onClick}
+                  >
+                    <Icon name={icon} className="stroke-2" />
+                  </Button>
+                ))}
+              </div>
             </div>
+          </Card>
+        </form>
+      </div>
+      <div className={styles.content}>
+        {isEmpty(watch("expression")) ? (
+          <>
+            <MobileOnlyView className="w-full">
+              <MobileTrends />
+            </MobileOnlyView>
+            <Posts />
+          </>
+        ) : (
+          <div>
+            {filter === "users" && <Users user={result?.user} />}
+            {filter === "tags" && <Tags tag={result?.tag} />}
           </div>
-        </Card>
-      </form>
-
-      <MobileOnlyView className="w-full">
-        <MobileTrends />
-      </MobileOnlyView>
-
-      {filter === "users" && <Users user={result?.user} />}
-      {filter === "tags" && <Tags tag={result?.tag} />}
+        )}
+      </div>
     </div>
   );
 }

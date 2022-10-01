@@ -26,6 +26,12 @@ export type GetTimelinePostsQueryRequest = PageInfoRequest;
 export interface GetTimelinePostsQuery {
   getTimelinePosts: PostsWithPageInfo;
 }
+
+export type GetExplorePostsQueryRequest = PageInfoRequest;
+
+export interface GetExplorePostsQuery {
+  getExplorePosts: PostsWithPageInfo;
+}
 export interface GetSavedPostsQuery {
   getSavedPosts: SavedPostsWithPageInfo;
 }
