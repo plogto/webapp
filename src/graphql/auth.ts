@@ -3,25 +3,6 @@ import { gql } from "@apollo/client";
 export const LOGIN = gql`
   query login($username: String!, $password: String!) {
     login(input: { username: $username, password: $password }) {
-      user {
-        id
-        username
-        backgroundColor
-        primaryColor
-        fullName
-        avatar {
-          id
-          name
-        }
-        background {
-          id
-          name
-          width
-          height
-        }
-        email
-        credits
-      }
       authToken {
         token
         expiredAt
@@ -35,25 +16,6 @@ export const REGISTER = gql`
     register(
       input: { fullName: $fullName, email: $email, password: $password }
     ) {
-      user {
-        id
-        username
-        backgroundColor
-        primaryColor
-        fullName
-        avatar {
-          id
-          name
-        }
-        background {
-          id
-          name
-          width
-          height
-        }
-        email
-        credits
-      }
       authToken {
         token
         expiredAt
@@ -67,25 +29,6 @@ export const O_AUTH_GOOGLE = gql`
     oAuthGoogle(
       input: { credential: $credential, invitationCode: $invitationCode }
     ) {
-      user {
-        id
-        username
-        backgroundColor
-        primaryColor
-        fullName
-        avatar {
-          id
-          name
-        }
-        background {
-          id
-          name
-          width
-          height
-        }
-        email
-        credits
-      }
       authToken {
         token
         expiredAt

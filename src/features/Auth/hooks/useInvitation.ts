@@ -6,6 +6,7 @@ import type {
 } from "@graphql/@types/user";
 import { GET_USER_BY_INVITATION_CODE } from "@graphql/user";
 import type { User } from "@t/user";
+import { getInvitationCode } from "@utils/localStorage";
 
 export function useInvitation() {
   const [inviterUser, setInviterUser] = useState<User>();
@@ -14,7 +15,7 @@ export function useInvitation() {
     GetUserByInvitationCodeQueryRequest
   >(GET_USER_BY_INVITATION_CODE);
 
-  const invitationCode = localStorage.getItem("invitationCode") || undefined;
+  const invitationCode = getInvitationCode();
 
   useEffect(() => {
     if (invitationCode) {

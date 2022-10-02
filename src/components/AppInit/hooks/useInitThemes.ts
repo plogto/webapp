@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
-import { UseInitThemesProps } from "../AppInit.types";
+import { useAccountContext } from "@contexts/AccountContext";
 
-export function useInitThemes(props: UseInitThemesProps) {
-  const { user } = props;
+export function useInitThemes() {
+  const { user } = useAccountContext();
   const { setTheme } = useTheme();
 
   useEffect(() => {

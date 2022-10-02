@@ -1,23 +1,22 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { LocalStorageKeys } from "@enums";
 import type { CredentialResponse } from "google-one-tap";
 import { useMutation } from "@apollo/client";
-import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
 import type {
   OAuthGoogleMutation,
   OAuthGoogleMutationRequest,
 } from "@graphql/@types/auth";
 import { O_AUTH_GOOGLE } from "@graphql/auth";
+import { useAuth } from "@hooks/useAuth";
 import { useInvitation } from "./useInvitation";
 
 export function useGoogle() {
   const { push } = useRouter();
   const { invitationCode } = useInvitation();
-  const { setIsAuthenticated, setToken, setUser } = useAccountContext();
+  const { handleToken } = useAuth();
 
-  const [oAuthGoogle, { loading: oAuthGoogleLoading, data }] = useMutation<
+  const [oAuthGoogle, { loading: oAuthGoogleLoading }] = useMutation<
     OAuthGoogleMutation,
     OAuthGoogleMutationRequest
   >(O_AUTH_GOOGLE);
@@ -29,6 +28,14 @@ export function useGoogle() {
         callback: (res: CredentialResponse) => {
           oAuthGoogle({
             variables: { credential: res.credential, invitationCode },
+          }).then(({ data }) => {
+            if (data?.oAuthGoogle) {
+              const {
+                authToken: { token },
+              } = data.oAuthGoogle;
+              token && handleToken(token);
+              push(PageUrls.HOME);
+            }
           });
         },
       });
@@ -40,22 +47,7 @@ export function useGoogle() {
         type: "icon",
         size: "large",
       });
-  }, []);
-
-  useEffect(() => {
-    if (data?.oAuthGoogle) {
-      const {
-        authToken: { token },
-        user,
-      } = data.oAuthGoogle;
-      localStorage.setItem(LocalStorageKeys.AUTHORIZATION, token);
-      localStorage.removeItem(LocalStorageKeys.INVITATION_CODE);
-      setToken(token);
-      setUser(user);
-      setIsAuthenticated(true);
-      push(PageUrls.HOME);
-    }
-  }, [data, setToken, setUser, setIsAuthenticated]);
+  }, [handleToken, invitationCode, oAuthGoogle]);
 
   return { oAuthGoogleLoading };
 }
