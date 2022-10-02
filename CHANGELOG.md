@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.37.0](https://github.com/mahdineer/plog-fe/compare/v0.36.0...v0.37.0) (2022-10-02)
+
+
+### Features
+
+* **Credits:** implement invitation code ([3acb4d4](https://github.com/mahdineer/plog-fe/commit/3acb4d4675457017f7b539fdda78a831bb6871dc))
+* **CreditTransaction:** implement TICKET transaction ([2f6a4fa](https://github.com/mahdineer/plog-fe/commit/2f6a4fa9c8e47cd0a8c32486ec81e1d680d3a64a))
+* **Icon:** add icons for ticket menu ([0f67fdc](https://github.com/mahdineer/plog-fe/commit/0f67fdc02f640a0142ed449357a9a0d98703afc9))
+* **Icon:** add support and inbox icon ([3ec5830](https://github.com/mahdineer/plog-fe/commit/3ec5830d203d91ff56c0a432d410b072c0eb5def))
+* **Icons:** add UserPlus icon ([9bf872b](https://github.com/mahdineer/plog-fe/commit/9bf872be3aa98e746ce281e5e3c57983d09726c9))
+* implement Support feature ([3e8dae8](https://github.com/mahdineer/plog-fe/commit/3e8dae82d64e493f1a19f910d39d3c9373190745))
+* implement useAuth ([a160923](https://github.com/mahdineer/plog-fe/commit/a160923a4b3edc421b6c40569c7bf6226c6e34ef))
+* **Search:** implement Posts and handle getExplorePosts ([6e6c682](https://github.com/mahdineer/plog-fe/commit/6e6c6826ced5d9b6d20c9d8ef8929e8f75ecd414))
+* **Ticket:** implement ConfirmationModal ([adecdc3](https://github.com/mahdineer/plog-fe/commit/adecdc30eac520db0dde6509e4ce714f4953e6d3))
+* **utils:** add getToken, getInvitationCode, isWindowExists and isDocumentExists ([0118217](https://github.com/mahdineer/plog-fe/commit/01182172c520db141580b36861d14795cbf9ab77))
+
+
+### Bug Fixes
+
+* **AddTicket:** handle addTicketMessage query ([a8c0265](https://github.com/mahdineer/plog-fe/commit/a8c0265a5baf4025f34c9f83776b624d401d083d))
+* **Auth:** reduce size of google button for mobile ([5c524e7](https://github.com/mahdineer/plog-fe/commit/5c524e756a4467283b74353ca909f261f16e3aab))
+* improve Profile styles ([704f2b1](https://github.com/mahdineer/plog-fe/commit/704f2b101dbd136cfed0426b3cfa30bb3f55707b))
+* increase size of apply buttons ([a8f196c](https://github.com/mahdineer/plog-fe/commit/a8f196c231bae52a4cb66e1b02819a0f89ed676b))
+* **Input:** improve styles ([fb5810c](https://github.com/mahdineer/plog-fe/commit/fb5810cb2c0da98d41a1b9da40f3fe900f5db048))
+* remove unused type from tsconfig.json ([fe442ae](https://github.com/mahdineer/plog-fe/commit/fe442ae8dd292a3e590800811dcfac657556e085))
+* **Status:** improve Status component ([2471435](https://github.com/mahdineer/plog-fe/commit/24714356658161073047943a545fc74a5f85f5ea))
+* **Tabs:** add `replace` for Link ([3016fe7](https://github.com/mahdineer/plog-fe/commit/3016fe7d8f706f640ff009cc2eff8e1a6be7c744))
+* **TagContent:** use PostsList ([fbaac39](https://github.com/mahdineer/plog-fe/commit/fbaac39fbea303a8f1504e7bc2cfd42907d64a9a))
+* **useLogout:** reset apollo cache after logout ([2d3ada8](https://github.com/mahdineer/plog-fe/commit/2d3ada854b325aae67aa28d6998061225ff6c93d))
+* **useUrls:** fix formatInvitationUrl ([9420b88](https://github.com/mahdineer/plog-fe/commit/9420b8897ed54127d4d2ba83de7da4bfce319252))
+
 ## [0.36.0](https://github.com/mahdineer/plog-fe/compare/v0.35.0...v0.36.0) (2022-09-13)
 
 
