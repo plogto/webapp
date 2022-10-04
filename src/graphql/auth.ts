@@ -12,9 +12,19 @@ export const LOGIN = gql`
 `;
 
 export const REGISTER = gql`
-  mutation register($fullName: String!, $email: String!, $password: String!) {
+  mutation register(
+    $fullName: String!
+    $email: String!
+    $password: String!
+    $invitationCode: String
+  ) {
     register(
-      input: { fullName: $fullName, email: $email, password: $password }
+      input: {
+        fullName: $fullName
+        email: $email
+        password: $password
+        invitationCode: $invitationCode
+      }
     ) {
       authToken {
         token

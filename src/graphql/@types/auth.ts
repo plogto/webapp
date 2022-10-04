@@ -18,6 +18,13 @@ export interface RegisterMutation {
   register: AuthResponse;
 }
 
+export interface RegisterMutationRequest {
+  fullName: string;
+  email: string;
+  password: string;
+  invitationCode?: string;
+}
+
 export interface OAuthGoogleMutation {
   oAuthGoogle: AuthResponse;
 }

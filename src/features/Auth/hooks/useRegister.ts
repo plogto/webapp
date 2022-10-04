@@ -5,7 +5,10 @@ import * as Yup from "yup";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { PageUrls } from "@enums/pages";
-import type { RegisterMutation } from "@graphql/@types/auth";
+import type {
+  RegisterMutation,
+  RegisterMutationRequest,
+} from "@graphql/@types/auth";
 import { REGISTER } from "@graphql/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "@hooks/useAuth";
@@ -33,8 +36,10 @@ export function useRegister() {
     mode: "all",
     resolver: yupResolver(validationSchema),
   });
-  const [register, { error, loading: registerLoading }] =
-    useMutation<RegisterMutation>(REGISTER);
+  const [register, { error, loading: registerLoading }] = useMutation<
+    RegisterMutation,
+    RegisterMutationRequest
+  >(REGISTER);
 
   const onSubmit = (variables: RegisterForm) => {
     register({
