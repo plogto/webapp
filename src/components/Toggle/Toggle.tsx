@@ -1,12 +1,16 @@
 import { Switch } from "@headlessui/react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 import styles from "./Toggle.module.css";
 import type { ToggleProps } from "./Toggle.types";
 
 export function Toggle(props: ToggleProps) {
   const { label, className, checked, onChange } = props;
-  const [enabled, setEnabled] = useState(checked || false);
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    setEnabled(!!checked);
+  }, [checked]);
 
   const wrapperClasses = classNames(styles.wrapper, className);
 
