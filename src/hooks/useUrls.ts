@@ -15,9 +15,7 @@ export function useUrls() {
   function formatInvitationUrl(invitationCode?: string) {
     if (!invitationCode) return "";
 
-    return `${
-      window.location.origin
-    }?invitation_code=${invitationCode.toUpperCase()}`;
+    return `${window.location.origin}?invitation_code=${invitationCode}`;
   }
 
   return { getFileUrl, formatPostUrl, formatInvitationUrl, getThumbnailUrl };
