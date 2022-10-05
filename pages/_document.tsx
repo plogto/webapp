@@ -34,6 +34,12 @@ class MyDocument extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content="Plog" />
+
+          <meta property="og:title" content="Plog" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="/android-chrome-512x512" />
+          <meta property="og:site_name" content="Plog" />
+
           <script
             src="https://accounts.google.com/gsi/client"
             async
