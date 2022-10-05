@@ -39,8 +39,11 @@ export function useEditProfile() {
         editUser({
           variables: { ...settingsFormData },
           refetchQueries: [{ query: GET_USER_INFO }],
+        }).then(({ data }) => {
+          if (data?.editUser) {
+            push(formatProfilePageRoute(data?.editUser?.username));
+          }
         });
-        push(formatProfilePageRoute(user?.username));
       }
     },
     [editUser, formatProfilePageRoute, push, user],
