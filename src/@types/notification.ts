@@ -1,10 +1,11 @@
+import { NotificationTypeName } from "@enums";
 import type { WithPageInfo } from "@t";
 import type { Post } from "./post";
 import type { User } from "./user";
 
 export interface NotificationType {
   id: string;
-  name: string;
+  name: NotificationTypeName;
   template: string;
   createdAt: string;
   updatedAt: string;

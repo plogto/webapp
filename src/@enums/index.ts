@@ -111,3 +111,12 @@ export enum ModalColor {
   GREEN = "GREEN",
   YELLOW = "YELLOW",
 }
+
+export enum NotificationTypeName {
+  WELCOME = "WELCOME",
+  LIKE_POST = "LIKE_POST",
+  REPLY_POST = "REPLY_POST",
+  LIKE_REPLY = "LIKE_REPLY",
+  FOLLOW_USER = "FOLLOW_USER",
+  ACCEPT_USER = "ACCEPT_USER",
+}

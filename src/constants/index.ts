@@ -6,7 +6,8 @@ import { prepareKeyPattern } from "@utils/pattern";
 export const CONTENT_MAX_LENGTH = 999;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
 export const USERNAME_PATTERN = /^[a-zA-Z0-9._]+$/;
-export const SENDER_USERNAME = prepareKeyPattern("sender.username");
+export const SENDER_FULL_NAME = prepareKeyPattern("sender.fullName");
+export const RECEIVER_FULL_NAME = prepareKeyPattern("receiver.fullName");
 export const POST_CONTENT = prepareKeyPattern("post.content");
 
 export const CREDIT_TRANSACTION_DESCRIPTION_VARIABLE_KEYS = {
