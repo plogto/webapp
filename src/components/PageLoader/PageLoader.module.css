@@ -1,0 +1,11 @@
+.wrapper {
+  @apply flex w-full items-center justify-center;
+
+  &.isFullHeight {
+    @apply h-[75vh];
+  }
+
+  &.isNormalHeight {
+    @apply h-[18rem];
+  }
+}
