@@ -8,6 +8,7 @@ import { Card } from "@components/Card";
 import { FullName } from "@components/FullName";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
+import { formatCountTitle } from "@utils/formatter";
 import styles from "./ProfileInfo.module.css";
 import type { ProfileInfoProps } from "./ProfileInfo.types";
 import { ConnectionStatus, Count } from "./components";
@@ -25,6 +26,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
       connectionStatus,
       isPrivate,
       isVerified,
+      credits,
     },
     isShowCredit = true,
   } = props;
@@ -69,7 +71,15 @@ export function ProfileInfo(props: ProfileInfoProps) {
               height={18}
               alt="credit"
             />
-            <span>{t("buttons.credits")}</span>
+            <span>
+              {credits
+                ? formatCountTitle({
+                    singular: t("buttons.credit"),
+                    plural: t("buttons.credits"),
+                    count: credits,
+                  }).text
+                : t("buttons.credits")}
+            </span>
           </a>
         </Link>
       )}

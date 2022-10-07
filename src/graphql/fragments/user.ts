@@ -48,6 +48,7 @@ export const UserFragment = {
       followersCount
       followingCount
       postsCount
+      credits
     }
   `,
   complete: gql`

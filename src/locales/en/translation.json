@@ -104,8 +104,8 @@
       }
     },
     "texts": {
-      "invitationCode": "Invitation code",
       "copyLink": "Copy Link",
+      "invitationCode": "Invitation code",
       "invitationLinkCopiedToClipboard": "Invitation link copied to clipboard"
     }
   },
@@ -223,6 +223,7 @@
   },
   "profile": {
     "buttons": {
+      "credit": "Credit",
       "credits": "Credits",
       "settings": "Settings"
     },
