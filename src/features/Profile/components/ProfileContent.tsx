@@ -43,7 +43,7 @@ export function ProfileContent(props: ProfileContentProps) {
               asPath === href && (
                 <PostsList
                   key={JSON.stringify(data?.pageInfo.endCursor)}
-                  posts={data}
+                  data={data}
                   isLoading={isLoading}
                   getMoreData={getMoreData}
                   emptyStatus={emptyStatus}

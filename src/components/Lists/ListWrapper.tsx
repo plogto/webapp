@@ -1,20 +1,24 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import classNames from "classnames";
-import { CreditTransaction } from "@components/CreditTransaction";
+import { PageLoaderHeightType } from "@enums";
 import { Loader } from "@components/Loader";
+import { PageLoader } from "@components/PageLoader";
 import { Placeholder } from "@components/Placeholder";
-import styles from "./CreditTransactions.module.css";
-import type { CreditTransactionsProps } from "./CreditTransactions.types";
+import styles from "./ListWrapper.module.css";
+import type { ListWrapperProps } from "./ListWrapper.types";
 
-export function CreditTransactions(props: CreditTransactionsProps) {
+export function ListWrapper(props: ListWrapperProps) {
   const {
     data,
+    isEdgesExists,
+    children,
     scrollableTarget,
     className,
     getMoreData,
+    isLoading,
     emptyStatus: { title, description, icon },
   } = props;
-  const wrapperClasses = classNames(styles.creditTransaction, className);
+  const wrapperClasses = classNames(styles.wrapper, className);
 
   return (
     <InfiniteScroll
@@ -29,7 +33,9 @@ export function CreditTransactions(props: CreditTransactionsProps) {
         </div>
       }
     >
-      {!data?.edges || data?.edges.length < 1 ? (
+      {isLoading ? (
+        <PageLoader heightType={PageLoaderHeightType.NORMAL} />
+      ) : !isEdgesExists ? (
         <Placeholder
           title={title}
           description={description}
@@ -37,9 +43,7 @@ export function CreditTransactions(props: CreditTransactionsProps) {
           className={styles.emptyStatus}
         />
       ) : (
-        data?.edges.map(({ node }) => (
-          <CreditTransaction key={node.id} creditTransaction={node} />
-        ))
+        children
       )}
     </InfiniteScroll>
   );

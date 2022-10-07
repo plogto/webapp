@@ -1,10 +1,9 @@
 import type { CreditTransactionsWithPageInfo } from "@t/creditTransaction";
 import type { Placeholder } from "@t/placeholder";
 
-export interface CreditTransactionsProps {
+export interface CreditTransactionsListProps {
   data?: CreditTransactionsWithPageInfo;
   scrollableTarget?: string;
-  className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
   emptyStatus: Placeholder;

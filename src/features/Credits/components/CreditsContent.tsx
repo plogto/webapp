@@ -4,8 +4,8 @@ import Image from "next/image";
 import { ID } from "@constants";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
-import { CreditTransactions } from "@components/CreditTransactions/CreditTransactions";
 import { Icon } from "@components/Icon";
+import { CreditTransactionsList } from "@components/Lists/CreditTransactionsList";
 import { InformationModal } from "@components/Modal/components";
 import { useModalContext } from "@contexts/ModalContext";
 import { useCredit } from "@hooks/useCredit";
@@ -14,7 +14,8 @@ import type { CreditsContentProps } from "../Credits.types";
 import { useInviteFriends } from "../hooks";
 
 export function CreditsContent(props: CreditsContentProps) {
-  const { user, creditTransactions, getMoreData, emptyStatus } = props;
+  const { user, creditTransactions, getMoreData, emptyStatus, isLoading } =
+    props;
   const { formatCreditAmount } = useCredit();
   const { inviteFriendsModalData } = useInviteFriends({ user });
   const { isOpen, openModal } = useModalContext();
@@ -45,7 +46,8 @@ export function CreditsContent(props: CreditsContentProps) {
           </div>
         </div>
         <div>
-          <CreditTransactions
+          <CreditTransactionsList
+            isLoading={isLoading}
             data={creditTransactions}
             getMoreData={getMoreData}
             emptyStatus={emptyStatus}

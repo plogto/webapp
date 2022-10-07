@@ -10,7 +10,7 @@ import { GET_CREDIT_TRANSACTIONS } from "@graphql/creditTransaction";
 import type { Placeholder } from "@t/placeholder";
 
 export function useCredits() {
-  const { user } = useAccountContext();
+  const { user, isUserLoading } = useAccountContext();
   const { t } = useTranslation(["common", "credits"]);
 
   const [getCreditTransactions, getCreditTransactionsResponse] = useLazyQuery<
@@ -25,6 +25,11 @@ export function useCredits() {
   const creditTransactions = useMemo(
     () => getCreditTransactionsResponse.data?.getCreditTransactions,
     [getCreditTransactionsResponse.data?.getCreditTransactions],
+  );
+
+  const isLoading = useMemo(
+    () => getCreditTransactionsResponse.loading,
+    [getCreditTransactionsResponse.loading],
   );
 
   const getMoreData = useCallback(() => {
@@ -47,6 +52,8 @@ export function useCredits() {
 
   return {
     userData: user,
+    isUserLoading,
+    isLoading,
     creditTransactions,
     getMoreData,
     emptyStatus,

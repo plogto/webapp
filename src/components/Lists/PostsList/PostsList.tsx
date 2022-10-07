@@ -1,59 +1,30 @@
-import InfiniteScroll from "react-infinite-scroll-component";
-import classNames from "classnames";
 import { POST_TYPES } from "@constants";
-import { Loader } from "@components/Loader";
-import { Placeholder } from "@components/Placeholder";
 import { Post } from "@components/Post";
+import { ListWrapper } from "../ListWrapper";
 import styles from "./PostsList.module.css";
 import type { PostsListProps } from "./PostsList.types";
+import isEmpty from "lodash/isEmpty";
 
 export function PostsList(props: PostsListProps) {
-  const {
-    isLoading,
-    posts,
-    scrollableTarget,
-    className,
-    getMoreData,
-    emptyStatus: { title, description, icon },
-  } = props;
-  const wrapperClasses = classNames(styles.posts, className);
+  const { isLoading, data, scrollableTarget, getMoreData, emptyStatus } = props;
 
   return (
-    <InfiniteScroll
+    <ListWrapper
+      data={data}
+      isEdgesExists={!isEmpty(data?.edges)}
+      isLoading={isLoading}
+      emptyStatus={emptyStatus}
       scrollableTarget={scrollableTarget}
-      className={wrapperClasses}
-      dataLength={posts?.totalCount || 0}
-      next={getMoreData}
-      hasMore={!!posts?.pageInfo?.hasNextPage}
-      loader={
-        <div className={styles.loadingWrapper}>
-          <Loader className={styles.loading} />
-        </div>
-      }
+      getMoreData={getMoreData}
     >
-      {isLoading ? (
-        <div className={styles.loadingWrapper}>
-          <span className="relative">
-            <Loader className={styles.loading} />
-          </span>
-        </div>
-      ) : !posts?.edges || posts?.edges?.length < 1 ? (
-        <Placeholder
-          title={title}
-          description={description}
-          icon={icon}
-          className={styles.emptyStatus}
+      {data?.edges?.map(({ node }) => (
+        <Post
+          key={node.id}
+          post={node}
+          className={styles.post}
+          type={POST_TYPES.CARD}
         />
-      ) : (
-        posts?.edges?.map(({ node }) => (
-          <Post
-            key={node.id}
-            post={node}
-            className={styles.post}
-            type={POST_TYPES.CARD}
-          />
-        ))
-      )}
-    </InfiniteScroll>
+      ))}
+    </ListWrapper>
   );
 }

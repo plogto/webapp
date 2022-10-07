@@ -3,7 +3,10 @@ import type { LoaderProps } from "./Loader.types";
 
 export function Loader(props: LoaderProps) {
   const { className } = props;
-  const classes = classNames("animate-spin text-current w-10 h-10", className);
+  const classes = classNames(
+    "animate-spin text-foreground w-10 h-10",
+    className,
+  );
 
   return (
     <svg

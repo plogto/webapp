@@ -88,7 +88,7 @@ export function Ticket() {
           />
         )}
         <TicketMessagesList
-          ticketMessages={ticketMessages}
+          data={ticketMessages}
           isLoading={loading}
           emptyStatus={emptyStatus}
           getMoreData={getMoreData}

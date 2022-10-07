@@ -4,6 +4,7 @@ import type { User } from "@t/user";
 
 export interface CreditsContentProps {
   user?: User;
+  isLoading?: boolean;
   creditTransactions?: CreditTransactionsWithPageInfo;
   getMoreData: () => void;
   emptyStatus: Placeholder;

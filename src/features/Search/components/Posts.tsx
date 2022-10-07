@@ -12,7 +12,7 @@ export function Posts() {
       <PostsList
         isLoading={loading}
         getMoreData={getMoreData}
-        posts={posts}
+        data={posts}
         emptyStatus={emptyStatus}
       />
     </Card>

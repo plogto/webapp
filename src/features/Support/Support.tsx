@@ -39,7 +39,7 @@ export function Support() {
           />
         )}
         <TicketPreviewsList
-          tickets={tickets}
+          data={tickets}
           emptyStatus={emptyStatus}
           getMoreData={getMoreData}
         />

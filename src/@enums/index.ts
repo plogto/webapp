@@ -120,3 +120,8 @@ export enum NotificationTypeName {
   FOLLOW_USER = "FOLLOW_USER",
   ACCEPT_USER = "ACCEPT_USER",
 }
+
+export enum PageLoaderHeightType {
+  FULL = "FULL",
+  NORMAL = "NORMAL",
+}

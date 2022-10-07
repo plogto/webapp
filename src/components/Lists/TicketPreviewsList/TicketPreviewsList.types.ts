@@ -2,9 +2,8 @@ import type { Placeholder } from "@t/placeholder";
 import type { TicketsWithPageInfo } from "@t/ticket";
 
 export interface TicketPreviewsListProps {
-  tickets?: TicketsWithPageInfo;
+  data?: TicketsWithPageInfo;
   scrollableTarget?: string;
-  className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
   emptyStatus: Placeholder;

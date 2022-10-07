@@ -18,7 +18,7 @@ export function TagContent(props: TagContentProps) {
             asPath === href && (
               <PostsList
                 key={data?.pageInfo.endCursor}
-                posts={data}
+                data={data}
                 isLoading={isLoading}
                 getMoreData={getMoreData}
                 emptyStatus={emptyStatus}

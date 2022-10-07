@@ -18,7 +18,7 @@ export function Home() {
       <PostsList
         isLoading={loading}
         getMoreData={getMoreData}
-        posts={posts}
+        data={posts}
         emptyStatus={emptyStatus}
       />
     </Card>
