@@ -19,6 +19,7 @@ const AccountContextSetState = createContext<SetAccountContext>({
   setIsAuthenticated: () => {},
   setToken: () => {},
   setUser: () => {},
+  setIsUserLoading: () => {},
 });
 
 interface Props {
@@ -32,6 +33,9 @@ export function AccountProvider({ children }: Props) {
     initialAccount.token,
   );
   const [user, setUser] = useState<AccountContext["user"]>(initialAccount.user);
+  const [isUserLoading, setIsUserLoading] = useState<
+    AccountContext["isUserLoading"]
+  >(!!user);
 
   return (
     <AccountContext.Provider
@@ -39,6 +43,7 @@ export function AccountProvider({ children }: Props) {
         isAuthenticated,
         token,
         user,
+        isUserLoading,
       }}
     >
       <AccountContextSetState.Provider
@@ -46,6 +51,7 @@ export function AccountProvider({ children }: Props) {
           setIsAuthenticated,
           setToken,
           setUser,
+          setIsUserLoading,
         }}
       >
         {children}
@@ -54,23 +60,11 @@ export function AccountProvider({ children }: Props) {
   );
 }
 
-function useAccountState() {
-  const { isAuthenticated, token, user } = useContext(AccountContext);
-
-  return { isAuthenticated, token, user };
-}
-
-function useAccountSetState() {
-  const { setIsAuthenticated, setToken, setUser } = useContext(
-    AccountContextSetState,
-  );
-
-  return { setIsAuthenticated, setToken, setUser };
-}
-
 export function useAccountContext() {
-  const { isAuthenticated, token, user } = useAccountState();
-  const { setIsAuthenticated, setToken, setUser } = useAccountSetState();
+  const { isAuthenticated, token, user, isUserLoading } =
+    useContext(AccountContext);
+  const { setIsAuthenticated, setToken, setUser, setIsUserLoading } =
+    useContext(AccountContextSetState);
 
   const isYourAccount = useCallback(
     (username?: string) => username && username === user?.username,
@@ -85,5 +79,7 @@ export function useAccountContext() {
     setIsAuthenticated,
     setToken,
     setUser,
+    isUserLoading,
+    setIsUserLoading,
   };
 }

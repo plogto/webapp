@@ -6,6 +6,7 @@ declare global {
     isAuthenticated: boolean;
     token?: string;
     user?: User;
+    isUserLoading?: boolean;
   }
 
   export interface SetAccountContext {
@@ -14,5 +15,6 @@ declare global {
     >;
     setToken: Dispatch<SetStateAction<AccountContext["token"]>>;
     setUser: Dispatch<SetStateAction<AccountContext["user"]>>;
+    setIsUserLoading: Dispatch<SetStateAction<AccountContext["boolean"]>>;
   }
 }

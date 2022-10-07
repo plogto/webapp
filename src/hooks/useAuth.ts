@@ -10,10 +10,16 @@ import { useNavigator } from "@hooks/useNavigator";
 import { getToken } from "@utils/localStorage";
 
 export function useAuth() {
-  const { setToken, setIsAuthenticated, setUser } = useAccountContext();
-  const [getUserInfo] = useLazyQuery<GetUserInfoQuery>(GET_USER_INFO);
+  const { setToken, setIsAuthenticated, setUser, setIsUserLoading } =
+    useAccountContext();
+  const [getUserInfo, { loading }] =
+    useLazyQuery<GetUserInfoQuery>(GET_USER_INFO);
   const { push } = useRouter();
   const { isProtectedPage } = useNavigator();
+
+  useEffect(() => {
+    setIsUserLoading(loading);
+  }, [loading, setIsUserLoading]);
 
   const handleGetUserInfo = () => {
     getUserInfo().then(({ data }) => {
