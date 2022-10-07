@@ -5,6 +5,9 @@
       "editPost": "Edit Post",
       "reply": "Reply"
     },
+    "placeholders": {
+      "writeSomething": "Write something ..."
+    },
     "texts": {
       "newPost": "New Post",
       "replyPost": "Reply Post"

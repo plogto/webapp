@@ -1,5 +1,4 @@
 import { isMobile } from "react-device-detect";
-import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { CONTENT_MAX_LENGTH } from "@constants";
 import { CropImageTypeKey, DateType } from "@enums";
@@ -35,7 +34,7 @@ export function AddPost(props: AddPostProps) {
     inputFileRef,
     parentPost,
   } = useAddPost({ isEditMode });
-  const { control, handleSubmit, watch, setValue } = formMethods;
+  const { handleSubmit, watch, setValue } = formMethods;
   const { t } = useTranslation("addPost");
 
   return (
@@ -74,17 +73,11 @@ export function AddPost(props: AddPostProps) {
                 {...suggestions}
                 handleClickOnTag={handleClickOnTag}
               />
-              <Controller
-                name="content"
-                control={control}
-                render={({ field: { value } }) => (
-                  <TextEditor
-                    editorState={value}
-                    setValue={setValue}
-                    placeholder="Write something ..."
-                    isReply={!!parentPost?.id}
-                  />
-                )}
+              <TextEditor
+                editorState={watch("content")}
+                setValue={setValue}
+                placeholder={t("placeholders.writeSomething")}
+                isReply={!!parentPost?.id}
               />
               <AttachmentPreview
                 showRemoveButton={!isEditMode}
