@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { PostTypeKey } from "@enums";
 import { Post } from "@components/Post";
+import { formatCountTitle } from "@utils/formatter";
 import styles from "./Replies.module.css";
 import type { RepliesProps } from "./Replies.types";
 
@@ -24,6 +25,7 @@ export function Replies(props: RepliesProps) {
   ));
 
   const repliesClasses = classNames(styles.replies, isChild && styles.isChild);
+  const repliesCount = replies?.totalCount;
 
   return (
     <>
@@ -32,7 +34,13 @@ export function Replies(props: RepliesProps) {
       )}
       {!isParent && !showReplies && !!replies?.totalCount && (
         <button className={styles.showReplies} onClick={openReplies}>
-          {t("buttons.viewReplies")}
+          {
+            formatCountTitle({
+              singular: t("buttons.viewReply", { repliesCount }),
+              plural: t("buttons.viewReplies", { repliesCount }),
+              count: repliesCount,
+            }).title
+          }
         </button>
       )}
     </>

@@ -205,7 +205,8 @@
       "post": "Post",
       "reply": "Reply",
       "viewParentPost": "View parent post",
-      "viewReplies": "View replies"
+      "viewReply": "View {{ repliesCount }} reply",
+      "viewReplies": "View {{ repliesCount }} replies"
     },
     "modals": {
       "delete": {
