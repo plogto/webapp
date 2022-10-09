@@ -33,7 +33,7 @@ export function usePostParser() {
       if (item.match(POST_PARSER.KEY_PATTERN)) {
         let key = item.replace(POST_PARSER.LEFT_TRIM_PATTERN, "");
         key = key.replace(POST_PARSER.RIGHT_TRIM_PATTERN, "");
-        return store[`${key}`].component;
+        return store[key]?.component;
       } else {
         return item;
       }
