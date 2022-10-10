@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FullName } from "@components/FullName";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
+import { Mention } from "@components/Mention";
 import { PostDateTime } from "@components/PostDateTime";
 import { PostLikesCounter } from "@components/PostLikesCounter";
 import { useNavigator } from "@hooks/useNavigator";
@@ -45,6 +46,9 @@ export function PostContent(props: PostContentProps) {
             content,
             hashtagComponent: (value: string) => (
               <Hashtag key={uuid()} value={value} />
+            ),
+            mentionComponent: (value: string) => (
+              <Mention key={uuid()} value={value} />
             ),
           })}
         </p>

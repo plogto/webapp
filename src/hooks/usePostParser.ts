@@ -1,12 +1,16 @@
 import type { ReactNode } from "react";
 import anchorme from "anchorme";
 import { v4 as uuid } from "uuid";
-import { HASHTAG_PATTERN, POST_PARSER } from "@constants";
+import { HASHTAG_PATTERN, MENTION_PATTERN, POST_PARSER } from "@constants";
 import { prepareKeyPattern } from "@utils/pattern";
 import type { ParsePostProps, ContentStore } from "./@types";
 
 export function usePostParser() {
-  function parsePost({ content, hashtagComponent }: ParsePostProps): ReactNode {
+  function parsePost({
+    content,
+    hashtagComponent,
+    mentionComponent,
+  }: ParsePostProps): ReactNode {
     const store: ContentStore = {};
     const result = anchorme({
       input: content,
@@ -20,6 +24,19 @@ export function usePostParser() {
               // TODO: fix type error
               // @ts-expect-error ignore
               component: hashtagComponent(value),
+            };
+            return prepareKeyPattern(key);
+          },
+        },
+        {
+          test: MENTION_PATTERN,
+          transform: value => {
+            const key = uuid();
+            store[key] = {
+              key,
+              // TODO: fix type error
+              // @ts-expect-error ignore
+              component: mentionComponent(value),
             };
             return prepareKeyPattern(key);
           },

@@ -5,6 +5,7 @@ import { EditorState } from "draft-js";
 export interface ParsePostProps {
   content: string;
   hashtagComponent: ReactNode;
+  mentionComponent: ReactNode;
 }
 export interface ContentStore {
   [key: string]: {
