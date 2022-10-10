@@ -15,7 +15,7 @@ export function CreditTransactionsList(props: CreditTransactionsListProps) {
       scrollableTarget={scrollableTarget}
       getMoreData={getMoreData}
     >
-      {data?.edges.map(({ node }) => (
+      {data?.edges?.map(({ node }) => (
         <CreditTransaction key={node.id} creditTransaction={node} />
       ))}
     </ListWrapper>
