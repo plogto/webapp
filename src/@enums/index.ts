@@ -61,6 +61,8 @@ export enum TicketStatusType {
   OPEN = "OPEN",
   CLOSED = "CLOSED",
   ACCEPTED = "ACCEPTED",
+  APPROVED = "APPROVED",
+  REJECTED = "REJECTED",
   SOLVED = "SOLVED",
 }
 
@@ -69,6 +71,8 @@ export enum TicketPermissionType {
   OPEN = "OPEN",
   CLOSE = "CLOSE",
   ACCEPT = "ACCEPT",
+  APPROVE = "APPROVE",
+  REJECT = "REJECT",
   SOLVE = "SOLVE",
 }
 

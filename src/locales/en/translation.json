@@ -205,8 +205,8 @@
       "post": "Post",
       "reply": "Reply",
       "viewParentPost": "View parent post",
-      "viewReply": "View {{ repliesCount }} reply",
-      "viewReplies": "View {{ repliesCount }} replies"
+      "viewReplies": "View {{ repliesCount }} replies",
+      "viewReply": "View {{ repliesCount }} reply"
     },
     "modals": {
       "delete": {
@@ -327,11 +327,15 @@
     "buttons": {
       "accept": "Accept",
       "acceptTicket": "Accept Ticket",
+      "approve": "Approve",
+      "approveTicket": "Approve Ticket",
       "close": "Close",
       "closeTicket": "Close Ticket",
       "newMessage": "New Message",
       "open": "Open",
       "openTicket": "Open Ticket",
+      "reject": "Reject",
+      "rejectTicket": "Reject Ticket",
       "send": "Send",
       "solve": "Solve",
       "solveTicket": "Solve Ticket"

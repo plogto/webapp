@@ -22,12 +22,13 @@
   }
 
   &.failed,
-  &.canceled {
+  &.rejected {
     @apply border border-rose-300 border-opacity-10;
     @apply bg-rose-300 bg-opacity-20 text-rose-500;
   }
 
-  &.closed {
+  &.closed,
+  &.canceled {
     @apply border border-gray-300 border-opacity-10;
     @apply bg-gray-300 bg-opacity-20 text-gray-400;
   }

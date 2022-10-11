@@ -82,8 +82,14 @@ export function useTicket(props: UseTicketProps) {
     [ticketMessages?.ticket.permissions],
   );
 
-  const { openTicket, closeTicket, acceptTicket, solveTicket } =
-    useUpdateTicketStatus({ ticketId: ticketMessages?.ticket.id });
+  const {
+    openTicket,
+    closeTicket,
+    acceptTicket,
+    approveTicket,
+    rejectTicket,
+    solveTicket,
+  } = useUpdateTicketStatus({ ticketId: ticketMessages?.ticket.id });
 
   const { openModal } = useModalContext();
 
@@ -111,6 +117,20 @@ export function useTicket(props: UseTicketProps) {
       icon: "ThumbsUp",
       type: "success",
       onClick: () => openConfirmationModal(CONFIRMATION_MODALS.ACCEPT),
+    },
+    {
+      key: TicketPermissionType.APPROVE,
+      title: t("ticket:buttons.approveTicket"),
+      icon: "CheckCircle",
+      type: "success",
+      onClick: () => openConfirmationModal(CONFIRMATION_MODALS.APPROVE),
+    },
+    {
+      key: TicketPermissionType.REJECT,
+      title: t("ticket:buttons.rejectTicket"),
+      icon: "ThumbsDown",
+      type: "delete",
+      onClick: () => openConfirmationModal(CONFIRMATION_MODALS.REJECT),
     },
     {
       key: TicketPermissionType.SOLVE,
@@ -144,6 +164,24 @@ export function useTicket(props: UseTicketProps) {
       color: ModalColor.GREEN,
       onSubmit: acceptTicket,
       submitButton: t("ticket:buttons.accept"),
+    },
+    [TicketPermissionType.APPROVE]: {
+      key: TicketPermissionType.APPROVE,
+      title: t("ticket:buttons.approveTicket"),
+      description: t("ticket:texts.areYouSure"),
+      icon: "CheckCircle",
+      color: ModalColor.GREEN,
+      onSubmit: approveTicket,
+      submitButton: t("ticket:buttons.approve"),
+    },
+    [TicketPermissionType.REJECT]: {
+      key: TicketPermissionType.REJECT,
+      title: t("ticket:buttons.rejectTicket"),
+      description: t("ticket:texts.areYouSure"),
+      icon: "ThumbsDown",
+      color: ModalColor.RED,
+      onSubmit: rejectTicket,
+      submitButton: t("ticket:buttons.reject"),
     },
     [TicketPermissionType.SOLVE]: {
       key: TicketPermissionType.SOLVE,
