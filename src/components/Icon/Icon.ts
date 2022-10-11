@@ -38,6 +38,7 @@ import RectangleVertical from "./svg/rectangle-vertical.svg";
 import SquareFill from "./svg/square-fill.svg";
 import Square from "./svg/square.svg";
 import Support from "./svg/support.svg";
+import ThumbsDown from "./svg/thumbs-down.svg";
 import ThumbsUp from "./svg/thumbs-up.svg";
 import TrashFill from "./svg/trash-fill.svg";
 import Trash from "./svg/trash.svg";
@@ -92,6 +93,7 @@ export const IconsList = {
   TrashFill,
   Trash,
   TrendingUp,
+  ThumbsDown,
   ThumbsUp,
   UserPlus,
   User,
