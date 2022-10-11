@@ -60,7 +60,7 @@ export enum CreditTransactionStatusType {
 export enum TicketStatusType {
   OPEN = "OPEN",
   CLOSED = "CLOSED",
-  APPROVED = "APPROVED",
+  ACCEPTED = "ACCEPTED",
   SOLVED = "SOLVED",
 }
 
@@ -68,7 +68,7 @@ export enum TicketPermissionType {
   NEW_MESSAGE = "NEW_MESSAGE",
   OPEN = "OPEN",
   CLOSE = "CLOSE",
-  APPROVE = "APPROVE",
+  ACCEPT = "ACCEPT",
   SOLVE = "SOLVE",
 }
 

@@ -82,7 +82,7 @@ export function useTicket(props: UseTicketProps) {
     [ticketMessages?.ticket.permissions],
   );
 
-  const { openTicket, closeTicket, approveTicket, solveTicket } =
+  const { openTicket, closeTicket, acceptTicket, solveTicket } =
     useUpdateTicketStatus({ ticketId: ticketMessages?.ticket.id });
 
   const { openModal } = useModalContext();
@@ -106,11 +106,11 @@ export function useTicket(props: UseTicketProps) {
       onClick: () => openConfirmationModal(CONFIRMATION_MODALS.OPEN),
     },
     {
-      key: TicketPermissionType.APPROVE,
-      title: t("ticket:buttons.approveTicket"),
+      key: TicketPermissionType.ACCEPT,
+      title: t("ticket:buttons.acceptTicket"),
       icon: "ThumbsUp",
       type: "success",
-      onClick: () => openConfirmationModal(CONFIRMATION_MODALS.APPROVE),
+      onClick: () => openConfirmationModal(CONFIRMATION_MODALS.ACCEPT),
     },
     {
       key: TicketPermissionType.SOLVE,
@@ -136,14 +136,14 @@ export function useTicket(props: UseTicketProps) {
       onSubmit: openTicket,
       submitButton: t("ticket:buttons.open"),
     },
-    [TicketPermissionType.APPROVE]: {
-      key: TicketPermissionType.APPROVE,
-      title: t("ticket:buttons.approveTicket"),
+    [TicketPermissionType.ACCEPT]: {
+      key: TicketPermissionType.ACCEPT,
+      title: t("ticket:buttons.acceptTicket"),
       description: t("ticket:texts.areYouSure"),
       icon: "ThumbsUp",
       color: ModalColor.GREEN,
-      onSubmit: approveTicket,
-      submitButton: t("ticket:buttons.approve"),
+      onSubmit: acceptTicket,
+      submitButton: t("ticket:buttons.accept"),
     },
     [TicketPermissionType.SOLVE]: {
       key: TicketPermissionType.SOLVE,

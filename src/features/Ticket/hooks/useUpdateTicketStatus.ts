@@ -32,8 +32,8 @@ export function useUpdateTicketStatus(props: UseUpdateTicketStatusProps) {
 
   const openTicket = () => updateTicket(TicketStatusType.OPEN);
   const closeTicket = () => updateTicket(TicketStatusType.CLOSED);
-  const approveTicket = () => updateTicket(TicketStatusType.APPROVED);
+  const acceptTicket = () => updateTicket(TicketStatusType.ACCEPTED);
   const solveTicket = () => updateTicket(TicketStatusType.SOLVED);
 
-  return { openTicket, closeTicket, approveTicket, solveTicket, loading };
+  return { openTicket, closeTicket, acceptTicket, solveTicket, loading };
 }

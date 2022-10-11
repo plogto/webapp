@@ -325,8 +325,8 @@
   },
   "ticket": {
     "buttons": {
-      "approve": "Approve",
-      "approveTicket": "Approve Ticket",
+      "accept": "Accept",
+      "acceptTicket": "Accept Ticket",
       "close": "Close",
       "closeTicket": "Close Ticket",
       "newMessage": "New Message",
