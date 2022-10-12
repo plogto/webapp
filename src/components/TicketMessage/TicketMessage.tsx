@@ -15,7 +15,7 @@ export function TicketMessage(props: TicketMessageProps) {
   const ticketClasses = classNames(styles.ticketMessage);
 
   return (
-    <a className={ticketClasses}>
+    <div className={ticketClasses}>
       <div className={styles.headerWrapper}>
         <UserInfo size="small" user={sender} />
       </div>
@@ -30,6 +30,6 @@ export function TicketMessage(props: TicketMessageProps) {
           {formatFromNow({ date: createdAt, type: DateType.SHORT })}
         </div>
       </div>
-    </a>
+    </div>
   );
 }

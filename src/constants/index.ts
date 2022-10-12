@@ -7,6 +7,10 @@ export const CONTENT_MAX_LENGTH = 999;
 export const HASHTAG_PATTERN = /#(\w|_)+/gi;
 export const MENTION_PATTERN = /@(\w|_)+/gi;
 export const USERNAME_PATTERN = /^[a-zA-Z0-9._]+$/;
+export const LINK_PATTERN = new RegExp(
+  "([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?",
+  "igm",
+);
 export const SENDER_FULL_NAME = prepareKeyPattern("sender.fullName");
 export const RECEIVER_FULL_NAME = prepareKeyPattern("receiver.fullName");
 export const POST_CONTENT = prepareKeyPattern("post.content");

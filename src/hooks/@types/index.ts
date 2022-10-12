@@ -6,6 +6,7 @@ export interface ParsePostProps {
   content: string;
   hashtagComponent: ReactNode;
   mentionComponent: ReactNode;
+  linkComponent: ReactNode;
 }
 export interface ContentStore {
   [key: string]: {

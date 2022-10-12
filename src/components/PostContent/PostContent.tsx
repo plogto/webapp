@@ -1,4 +1,6 @@
+import anchorme from "anchorme";
 import classNames from "classnames";
+import { isEmpty } from "lodash";
 import { v4 as uuid } from "uuid";
 import Link from "next/link";
 import { FullName } from "@components/FullName";
@@ -50,6 +52,24 @@ export function PostContent(props: PostContentProps) {
             mentionComponent: (value: string) => (
               <Mention key={uuid()} value={value} />
             ),
+            linkComponent: (link: string) => {
+              const protocol =
+                !isEmpty(anchorme.list(link)) && anchorme.list(link)[0].protocol
+                  ? ""
+                  : "https://";
+
+              return (
+                <Link key={uuid()} href={`${protocol}${link}`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    {link}
+                  </a>
+                </Link>
+              );
+            },
           })}
         </p>
       )}
@@ -75,7 +95,7 @@ export function PostContent(props: PostContentProps) {
   return (
     <span className={wrapperClasses}>
       {showHeader && user && (
-        <a className={classNames(styles.profile)}>
+        <div className={classNames(styles.profile)}>
           <div className="flex flex-col justify-center">
             <Link href={formatProfilePageRoute(user.username)}>
               <a>
@@ -87,7 +107,7 @@ export function PostContent(props: PostContentProps) {
               </a>
             </Link>
           </div>
-        </a>
+        </div>
       )}
       <span className="w-full">
         {isClickable && url ? (
