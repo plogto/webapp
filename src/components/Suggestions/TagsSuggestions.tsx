@@ -4,7 +4,7 @@ import styles from "./Suggestions.module.css";
 import type { TagsSuggestionsProps } from "./Suggestions.types";
 
 export function TagsSuggestions(props: TagsSuggestionsProps) {
-  const { tags, handleClickOnTag } = props;
+  const { tags, handleClickOnSuggestionItem } = props;
   const { t } = useTranslation("common");
 
   return (
@@ -12,7 +12,7 @@ export function TagsSuggestions(props: TagsSuggestionsProps) {
       {tags.edges?.map(({ node: { id, name, count } }) => (
         <button
           type="button"
-          onClick={() => handleClickOnTag(`#${name}`)}
+          onClick={() => handleClickOnSuggestionItem(`#${name}`)}
           key={id}
           className={styles.tag}
         >

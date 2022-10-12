@@ -1,22 +1,31 @@
 import { useMemo } from "react";
 import type { SuggestionsProps } from "./Suggestions.types";
 import { TagsSuggestions } from "./TagsSuggestions";
+import { UsersSuggestions } from "./UsersSuggestions";
 
 export function Suggestions(props: SuggestionsProps) {
-  const { active, tags, handleClickOnTag } = props;
+  const { active, tags, users, handleClickOnSuggestionItem } = props;
 
   const component = useMemo(() => {
     switch (active) {
       case "tags":
         return (
-          <TagsSuggestions tags={tags} handleClickOnTag={handleClickOnTag} />
+          <TagsSuggestions
+            tags={tags}
+            handleClickOnSuggestionItem={handleClickOnSuggestionItem}
+          />
         );
       case "users":
-        return <></>;
+        return (
+          <UsersSuggestions
+            users={users}
+            handleClickOnSuggestionItem={handleClickOnSuggestionItem}
+          />
+        );
       case "none":
         return <></>;
     }
-  }, [active, handleClickOnTag, tags]);
+  }, [active, handleClickOnSuggestionItem, tags, users]);
 
   return component;
 }
