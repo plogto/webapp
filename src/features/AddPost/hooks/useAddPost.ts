@@ -35,7 +35,7 @@ export function useAddPost(props: UseAddPostProps) {
     AddPostMutation,
     AddPostMutationRequest
   >(ADD_POST);
-  const { handleCompleteTag } = useSuggestions();
+  const { handleCompleteSuggestion } = useSuggestions();
 
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
   const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
@@ -183,10 +183,10 @@ export function useAddPost(props: UseAddPostProps) {
     [isEditMode, handleAddPost, handleEditPost],
   );
 
-  const handleClickOnTag = (tagName: string) => {
-    const { newEditorState, forceSelection } = handleCompleteTag({
+  const handleClickOnSuggestionItem = (value: string) => {
+    const { newEditorState, forceSelection } = handleCompleteSuggestion({
       editorState: getValues("content"),
-      tagName,
+      value,
     });
     setValue(
       "content",
@@ -195,7 +195,7 @@ export function useAddPost(props: UseAddPostProps) {
   };
 
   return {
-    handleClickOnTag,
+    handleClickOnSuggestionItem,
     buttonTitle,
     isLoading,
     parentPost,

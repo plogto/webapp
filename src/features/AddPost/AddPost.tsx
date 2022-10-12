@@ -22,7 +22,7 @@ export function AddPost(props: AddPostProps) {
   const { isEditMode } = props;
   const { suggestions } = useAddPostContext();
   const {
-    handleClickOnTag,
+    handleClickOnSuggestionItem,
     buttonTitle,
     isLoading,
     user,
@@ -71,7 +71,7 @@ export function AddPost(props: AddPostProps) {
             <div className={styles.main}>
               <Suggestions
                 {...suggestions}
-                handleClickOnTag={handleClickOnTag}
+                handleClickOnSuggestionItem={handleClickOnSuggestionItem}
               />
               <TextEditor
                 editorState={watch("content")}
