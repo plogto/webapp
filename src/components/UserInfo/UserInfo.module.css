@@ -1,23 +1,26 @@
 .userInfo {
-  @apply inline-flex items-center flex-grow;
+  @apply inline-flex flex-grow items-center;
 
   & .avatar {
     @apply mr-2;
   }
 
-  & .username {
-    @apply text-foreground-medium text-sm pr-1;
-  }
-
-  &.large {
+  & .content {
+    @apply flex flex-col items-start;
     & .username {
-      @apply -mt-1 text-[13px];
+      @apply pr-1 text-sm text-foreground-medium;
     }
-  }
 
-  &.small {
-    & .username {
-      @apply -mt-1 text-[13px];
+    &.large {
+      & .username {
+        @apply -mt-1 text-[13px];
+      }
+    }
+
+    &.small {
+      & .username {
+        @apply -mt-1 text-[13px];
+      }
     }
   }
 }

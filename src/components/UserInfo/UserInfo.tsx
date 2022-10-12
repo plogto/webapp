@@ -18,7 +18,7 @@ export function UserInfo(props: UserInfoProps) {
           alt={user.fullName}
         />
       )}
-      <div>
+      <div className={styles.content}>
         <FullName
           fullName={user.fullName}
           isVerified={user.isVerified}
