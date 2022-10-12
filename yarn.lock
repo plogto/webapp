@@ -1551,12 +1551,14 @@
     immutable "~3.7.4"
     prop-types "^15.8.1"
 
-"@draft-js-plugins/hashtag@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@draft-js-plugins/hashtag/-/hashtag-4.2.2.tgz#c84625deb05330b115d30a75cb063b168ef81600"
-  integrity sha512-iSKrZw5hwU7ME5cT6p9P71Mcz2BKnRhNjvNvwt4EUUkneou8z/sRkjKTv15hXizIamKv+BI68N5IfiIQH6WWvw==
+"@draft-js-plugins/linkify@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@draft-js-plugins/linkify/-/linkify-4.2.1.tgz#a6b62a6c9ee3bb0bd164ea5a43e78cc9974fbe42"
+  integrity sha512-xB6J+HrGEbteyBrwQ8u0r+YrjQK6fNDfVBG14A89Ger+o/OiYqwmJs8GAM0C5riqYEJzQqK2mW+UUQCagD+gUQ==
   dependencies:
     clsx "^1.0.4"
+    linkify-it "^3.0.3"
+    tlds "^1.231.0"
 
 "@emotion/cache@^10.0.27":
   version "10.0.29"
@@ -9701,6 +9703,13 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
+linkify-it@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-3.0.3.tgz#a98baf44ce45a550efb4d49c769d07524cc2fa2e"
+  integrity sha512-ynTsyrFSdE5oZ/O9GEf00kPngmOfVwazR5GKDq6EYfhlpFug3J2zybX56a2PRRpc9P+FuSoGNAwjlbDs9jJBPQ==
+  dependencies:
+    uc.micro "^1.0.1"
+
 lint-staged@^12.4.1:
   version "12.4.1"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.4.1.tgz#63fa27bfc8a33515f6902f63f6670864f1fb233c"
@@ -13328,6 +13337,11 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tlds@^1.231.0:
+  version "1.233.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.233.0.tgz#decfed234c293a20548bdb5e468909766e5e1c15"
+  integrity sha512-K05dY1r4lkXk+eE/j2UqHhGWp1bFn+17eYcJP7OepkmI3obLOgan3ZIpmml++wZ4LTIx4r9var373ztO2xb27A==
+
 tmpl@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
@@ -13644,6 +13658,11 @@ ua-parser-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.2.tgz#e2976c34dbfb30b15d2c300b2a53eac87c57a775"
   integrity sha512-00y/AXhx0/SsnI51fTc0rLRmafiGOM4/O+ny10Ps7f+j/b8p/ZY11ytMgznXkOVo4GQ+KwQG5UQLkLGirsACRg==
+
+uc.micro@^1.0.1:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
+  integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
 
 uglify-js@^3.1.4:
   version "3.15.2"
