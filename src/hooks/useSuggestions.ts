@@ -1,5 +1,5 @@
 import { EditorState, Modifier, SelectionState } from "draft-js";
-import type { HandleCompleteTagProps } from "./@types";
+import type { HandleCompleteSuggestionProps } from "./@types";
 
 export function useSuggestions() {
   // TODO: rename function
@@ -41,8 +41,8 @@ export function useSuggestions() {
     };
   };
 
-  const handleCompleteTag = (props: HandleCompleteTagProps) => {
-    const { editorState, tagName } = props;
+  const handleCompleteSuggestion = (props: HandleCompleteSuggestionProps) => {
+    const { editorState, value } = props;
     const selection = editorState.getSelection();
     const { begin, end } = getSearchText(editorState, selection);
 
@@ -56,7 +56,7 @@ export function useSuggestions() {
     const mentionReplacedContent = Modifier.replaceText(
       contentState,
       newSelectionState,
-      tagName,
+      value,
     );
 
     const newEditorState = EditorState.push(
@@ -66,8 +66,8 @@ export function useSuggestions() {
     );
 
     const forceSelection = selection.merge({
-      anchorOffset: begin + tagName.length,
-      focusOffset: begin + tagName.length,
+      anchorOffset: begin + value.length,
+      focusOffset: begin + value.length,
     });
 
     return {
@@ -76,5 +76,5 @@ export function useSuggestions() {
     };
   };
 
-  return { handleCompleteTag };
+  return { handleCompleteSuggestion };
 }

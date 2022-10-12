@@ -39,3 +39,18 @@ export const SEARCH_TAGS = gql`
     }
   }
 `;
+
+export const SEARCH_USERS = gql`
+  ${UserFragment.short}
+  query search($expression: String!) {
+    search(expression: $expression) {
+      user {
+        edges {
+          node {
+            ...UserFragmentShort
+          }
+        }
+      }
+    }
+  }
+`;

@@ -28,9 +28,9 @@ export interface UseImageProfileProps {
   key: "avatar" | "background";
 }
 
-export interface HandleCompleteTagProps {
+export interface HandleCompleteSuggestionProps {
   editorState: EditorState;
-  tagName: string;
+  value: string;
 }
 
 export interface FormatCreditAmountOptions {
