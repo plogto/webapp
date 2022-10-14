@@ -11,7 +11,7 @@ import { useApollo } from "@lib/apolloClient";
 import "@styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const apolloClient = useApollo(pageProps.initialApolloState);
+  const apolloClient = useApollo();
 
   return (
     <SafeHydrate>
