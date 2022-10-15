@@ -24,7 +24,7 @@ export function useCropImage(props: UseCropImageProps) {
   const [zoom, setZoom] = useState(1);
   const [pixelCrop, setPixelCrop] = useState<PixelCrop>();
 
-  const onCropComplete = useCallback((_, pixelCrop) => {
+  const onCropComplete = useCallback((_: unknown, pixelCrop: PixelCrop) => {
     setPixelCrop(pixelCrop);
   }, []);
 
