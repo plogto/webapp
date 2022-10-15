@@ -15,7 +15,7 @@ export function PageLoader(props: PageLoaderProps) {
 
   return (
     <div className={wrapperClasses}>
-      <Loader className="w-10 h-10 text-foreground" />
+      <Loader className="w-10 h-10" />
     </div>
   );
 }

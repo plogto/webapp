@@ -1,4 +1,4 @@
-// split this file
+// TODO: split this file
 export enum DateType {
   LONG = "LONG",
   SHORT = "SHORT",
@@ -128,4 +128,9 @@ export enum NotificationTypeName {
 export enum PageLoaderHeightType {
   FULL = "FULL",
   NORMAL = "NORMAL",
+}
+
+export enum UsersListDataKey {
+  FOLLOWING = "following",
+  FOLLOWER = "follower",
 }

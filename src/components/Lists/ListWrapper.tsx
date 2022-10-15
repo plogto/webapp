@@ -1,7 +1,6 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 import classNames from "classnames";
 import { PageLoaderHeightType } from "@enums";
-import { Loader } from "@components/Loader";
 import { PageLoader } from "@components/PageLoader";
 import { Placeholder } from "@components/Placeholder";
 import styles from "./ListWrapper.module.css";
@@ -20,6 +19,8 @@ export function ListWrapper(props: ListWrapperProps) {
   } = props;
   const wrapperClasses = classNames(styles.wrapper, className);
 
+  const loader = <PageLoader heightType={PageLoaderHeightType.NORMAL} />;
+
   return (
     <InfiniteScroll
       scrollableTarget={scrollableTarget}
@@ -27,14 +28,10 @@ export function ListWrapper(props: ListWrapperProps) {
       dataLength={data?.totalCount || 0}
       next={getMoreData}
       hasMore={!!data?.pageInfo.hasNextPage}
-      loader={
-        <div className={styles.loadingWrapper}>
-          <Loader className={styles.loading} />
-        </div>
-      }
+      loader={loader}
     >
       {isLoading ? (
-        <PageLoader heightType={PageLoaderHeightType.NORMAL} />
+        loader
       ) : !isEdgesExists ? (
         <Placeholder
           title={title}

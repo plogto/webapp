@@ -10,12 +10,3 @@
     @apply rounded-2xl;
   }
 }
-
-.loadingContainer {
-  @apply flex items-center justify-center;
-  @apply absolute inset-0 z-50 bg-background-pure;
-
-  &.loading {
-    @apply w-10 text-foreground-medium;
-  }
-}

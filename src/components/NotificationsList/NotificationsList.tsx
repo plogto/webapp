@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
+import { PageLoaderHeightType } from "@enums";
 import { Button } from "@components/Buttons/Button";
-import { Loader } from "@components/Loader";
 import { Notification } from "@components/Notification";
+import { PageLoader } from "@components/PageLoader";
 import { Placeholder } from "@components/Placeholder";
 import styles from "./NotificationsList.module.css";
 import type { NotificationsListProps } from "./NotificationsList.types";
@@ -31,13 +32,7 @@ export function NotificationsList(props: NotificationsListProps) {
     setIsShowMoreLoading(false);
   }, [data?.edges]);
 
-  const loader = (
-    <div className={styles.loadingWrapper}>
-      <span className="relative">
-        <Loader className={styles.loading} />
-      </span>
-    </div>
-  );
+  const loader = <PageLoader heightType={PageLoaderHeightType.NORMAL} />;
 
   return (
     <div className={wrapperClasses}>
