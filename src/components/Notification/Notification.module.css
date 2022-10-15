@@ -11,14 +11,14 @@
   }
 
   & .content {
-    @apply text-sm text-foreground;
+    @apply my-auto text-sm text-foreground;
 
     & .reply {
       @apply text-foreground-medium;
     }
 
     & .date {
-      @apply mt-1 text-xs text-foreground-dark;
+      @apply mt-0.5 text-xs text-foreground-dark;
     }
   }
 }
