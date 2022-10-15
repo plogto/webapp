@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
-import { DateType } from "@enums";
-import { EditorState } from "draft-js";
+import { DateType, ImageProfileKey } from "@enums";
+import type { EditorState } from "draft-js";
 
 export interface ParsePostProps {
   content: string;
-  hashtagComponent: ReactNode;
-  mentionComponent: ReactNode;
-  linkComponent: ReactNode;
+  hashtagComponent: (value: string) => JSX.Element;
+  mentionComponent: (value: string) => JSX.Element;
+  linkComponent: (value: string) => JSX.Element;
 }
 export interface ContentStore {
   [key: string]: {
@@ -26,7 +26,7 @@ export interface IsEditProps {
 }
 
 export interface UseImageProfileProps {
-  key: "avatar" | "background";
+  key: ImageProfileKey;
 }
 
 export interface HandleCompleteSuggestionProps {

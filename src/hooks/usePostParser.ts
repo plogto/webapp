@@ -11,6 +11,15 @@ import { prepareKeyPattern } from "@utils/pattern";
 import type { ParsePostProps, ContentStore } from "./@types";
 
 export function usePostParser() {
+  function transformComponent(component: ReactNode, store: ContentStore) {
+    const key = uuid();
+    store[key] = {
+      key,
+      component,
+    };
+    return prepareKeyPattern(key);
+  }
+
   function parsePost({
     content,
     hashtagComponent,
@@ -23,42 +32,17 @@ export function usePostParser() {
       extensions: [
         {
           test: HASHTAG_PATTERN,
-          transform: value => {
-            const key = uuid();
-            store[key] = {
-              key,
-              // TODO: fix type error
-              // @ts-expect-error ignore
-              component: hashtagComponent(value),
-            };
-            return prepareKeyPattern(key);
-          },
+          transform: value =>
+            transformComponent(hashtagComponent(value), store),
         },
         {
           test: MENTION_PATTERN,
-          transform: value => {
-            const key = uuid();
-            store[key] = {
-              key,
-              // TODO: fix type error
-              // @ts-expect-error ignore
-              component: mentionComponent(value),
-            };
-            return prepareKeyPattern(key);
-          },
+          transform: value =>
+            transformComponent(mentionComponent(value), store),
         },
         {
           test: LINK_PATTERN,
-          transform: link => {
-            const key = uuid();
-            store[key] = {
-              key,
-              // TODO: fix type error
-              // @ts-expect-error ignore
-              component: linkComponent(link),
-            };
-            return prepareKeyPattern(key);
-          },
+          transform: value => transformComponent(linkComponent(value), store),
         },
       ],
     });
