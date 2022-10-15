@@ -1,4 +1,4 @@
 export interface SupportProps {
-  isShowTickets?: boolean;
-  isShowTicketMessages?: boolean;
+  showTickets?: boolean;
+  showTicketMessages?: boolean;
 }

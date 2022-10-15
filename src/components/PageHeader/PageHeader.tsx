@@ -12,7 +12,7 @@ export function PageHeader(props: PageHeaderProps) {
     description,
     className,
     backLink,
-    isShowBackLink = true,
+    showBackLink = true,
     isTitleCompact = true,
   } = props;
   const { handleBack } = usePageHeader({ backLink });
@@ -28,7 +28,7 @@ export function PageHeader(props: PageHeaderProps) {
   return (
     <div className={wrapperClasses}>
       <div className={headerClasses}>
-        {isShowBackLink && (
+        {showBackLink && (
           <Button onClick={handleBack} className={styles.back}>
             {backIcon}
           </Button>

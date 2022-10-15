@@ -10,7 +10,7 @@ interface ConnectionButton {
 
 export interface ProfileInfoProps {
   user: User;
-  isShowCredit?: boolean;
+  showCredit?: boolean;
 }
 
 export interface ConnectionButtons {

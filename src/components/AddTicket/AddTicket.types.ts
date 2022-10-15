@@ -8,13 +8,13 @@ export interface AddTicketFormProps {
 
 export interface AddTicketProps {
   ticket?: Ticket;
-  isShowSubject?: boolean;
+  showSubject?: boolean;
   submitButtonTitle: string;
   onCloseButton: () => void;
 }
 
 export interface UseAddTicketProps {
-  isShowSubject?: boolean;
+  showSubject?: boolean;
   ticket?: Ticket;
   onCloseButton: () => void;
 }

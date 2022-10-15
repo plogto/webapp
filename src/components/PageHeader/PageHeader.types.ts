@@ -6,7 +6,7 @@ export interface PageHeaderProps {
   description?: ReactNode;
   className?: string;
   backLink?: string;
-  isShowBackLink?: boolean;
+  showBackLink?: boolean;
   isTitleCompact?: boolean;
 }
 

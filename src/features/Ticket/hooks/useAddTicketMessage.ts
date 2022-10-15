@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export function useAddTicketMessage() {
-  const [isShowAddTicket, setIsShowAddTicket] = useState(false);
+  const [showAddTicket, setIsShowAddTicket] = useState(false);
 
   const openAddTicket = () => setIsShowAddTicket(true);
   const closeAddTicket = () => setIsShowAddTicket(false);
@@ -9,6 +9,6 @@ export function useAddTicketMessage() {
   return {
     openAddTicket,
     closeAddTicket,
-    isShowAddTicket,
+    showAddTicket,
   };
 }

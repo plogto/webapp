@@ -50,7 +50,7 @@ export function Credits() {
         </div>
       )}
       <div className={styles.cards} id={ID.CREDIT_TRANSACTIONS}>
-        {!isMobile && <ProfileInfo user={userData} isShowCredit={false} />}
+        {!isMobile && <ProfileInfo user={userData} showCredit={false} />}
         <CreditsContent
           isLoading={isLoading}
           creditTransactions={creditTransactions}

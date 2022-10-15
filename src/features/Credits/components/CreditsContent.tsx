@@ -24,7 +24,7 @@ export function CreditsContent(props: CreditsContentProps) {
   return (
     <>
       <Card
-        className={styles.profileContent}
+        className={styles.creditContent}
         shadow={!isMobile}
         rounded={!isMobile}
       >

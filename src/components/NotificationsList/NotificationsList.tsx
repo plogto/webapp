@@ -21,7 +21,7 @@ export function NotificationsList(props: NotificationsListProps) {
   const { t } = useTranslation("notifications");
 
   // TODO: move it to hook
-  const [isShowMoreLoading, setIsShowMoreLoading] = useState(false);
+  const [showMoreLoading, setIsShowMoreLoading] = useState(false);
 
   const handleShowMoreButton = () => {
     setIsShowMoreLoading(true);
@@ -51,7 +51,7 @@ export function NotificationsList(props: NotificationsListProps) {
         ))
       )}
       {data?.pageInfo.hasNextPage &&
-        (isShowMoreLoading ? (
+        (showMoreLoading ? (
           loader
         ) : (
           <div className={styles.showMore}>

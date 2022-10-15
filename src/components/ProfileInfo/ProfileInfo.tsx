@@ -28,7 +28,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
       isVerified,
       credits,
     },
-    isShowCredit = true,
+    showCredit = true,
   } = props;
   const { isYourAccount } = useAccountContext();
   const { COUNTS } = useProfileInfo({ user });
@@ -62,7 +62,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
         </div>
       )}
 
-      {isYourAccount(username) && isShowCredit && (
+      {isYourAccount(username) && showCredit && (
         <Link href={PageUrls.CREDITS}>
           <a className={styles.credits}>
             <Image

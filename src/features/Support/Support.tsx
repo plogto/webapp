@@ -12,7 +12,7 @@ import { useCreateTicket, useSupport } from "./hooks";
 
 export function Support() {
   const { tickets, emptyStatus, getMoreData } = useSupport();
-  const { isShowCreateTicket, openCreateTicket, closeCreateTicket } =
+  const { showCreateTicket, openCreateTicket, closeCreateTicket } =
     useCreateTicket();
 
   const { t } = useTranslation("support");
@@ -24,16 +24,16 @@ export function Support() {
           backLink={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
           title={t("texts.tickets")}
           className={classNames(isMobile ? styles.pageHeader : styles.header)}
-          isShowBackLink={isMobile}
+          showBackLink={isMobile}
           rightSide={
             <button className={styles.addButton} onClick={openCreateTicket}>
               <Icon name="Plus" className={classNames(styles.icon)} />
             </button>
           }
         />
-        {isShowCreateTicket && (
+        {showCreateTicket && (
           <AddTicket
-            isShowSubject
+            showSubject
             submitButtonTitle={t("buttons.createTicket")}
             onCloseButton={closeCreateTicket}
           />

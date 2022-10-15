@@ -17,11 +17,11 @@
     @apply relative overflow-x-hidden pb-14 md:px-4 md:pb-20;
     @apply h-[calc(100vh-3rem)];
 
-    & .profileContent {
-      @apply sticky w-full md:rounded-xl;
+    & .creditContent {
+      @apply sticky w-full;
     }
 
-    & .profileContent {
+    & .creditContent {
       @apply sticky mt-12 md:mt-[12.5rem] md:w-[65%] md:overflow-y-scroll;
 
       & .creditsWrapper {

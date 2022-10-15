@@ -19,7 +19,7 @@ import { useUploadFile } from "@hooks/useUploadFile";
 import type { AddTicketFormProps, UseAddTicketProps } from "./AddTicket.types";
 
 export function useAddTicket(props: UseAddTicketProps) {
-  const { isShowSubject, ticket, onCloseButton } = props;
+  const { showSubject, ticket, onCloseButton } = props;
   const formMethods = useForm<AddTicketFormProps>({ mode: "all" });
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
   const {
@@ -97,7 +97,7 @@ export function useAddTicket(props: UseAddTicketProps) {
     formData: AddTicketFormProps,
     attachment?: string[],
   ) => {
-    if (isShowSubject) {
+    if (showSubject) {
       handleCreateTicket(formData, attachment);
     } else {
       handleAddTicketMessage(formData, attachment);

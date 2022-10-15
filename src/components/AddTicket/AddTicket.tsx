@@ -11,7 +11,7 @@ import { AddTicketProps } from "./AddTicket.types";
 import { useAddTicket } from "./useAddTicket";
 
 export function AddTicket(props: AddTicketProps) {
-  const { isShowSubject, submitButtonTitle, onCloseButton, ticket } = props;
+  const { showSubject, submitButtonTitle, onCloseButton, ticket } = props;
   const {
     formMethods,
     onSubmit,
@@ -20,7 +20,7 @@ export function AddTicket(props: AddTicketProps) {
     inputFileRef,
     removeAttachmentPreview,
     loading,
-  } = useAddTicket({ isShowSubject, ticket, onCloseButton });
+  } = useAddTicket({ showSubject, ticket, onCloseButton });
   const {
     handleSubmit,
     register,
@@ -37,7 +37,7 @@ export function AddTicket(props: AddTicketProps) {
           image={attachmentPreview}
         />
         <div className="flex flex-col space-y-4 w-full">
-          {isShowSubject && (
+          {showSubject && (
             <Input
               autoComplete="off"
               type="text"

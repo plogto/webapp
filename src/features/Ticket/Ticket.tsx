@@ -16,7 +16,7 @@ import { useAddTicketMessage } from "./hooks/useAddTicketMessage";
 import { useTicket } from "./hooks/useTicket";
 
 export function Ticket() {
-  const { isShowAddTicket, openAddTicket, closeAddTicket } =
+  const { showAddTicket, openAddTicket, closeAddTicket } =
     useAddTicketMessage();
 
   const {
@@ -74,13 +74,13 @@ export function Ticket() {
           <PageHeader
             className={styles.header}
             isTitleCompact={false}
-            isShowBackLink={false}
+            showBackLink={false}
             title={ticketMessages.ticket.subject}
             rightSide={!isMobile && menu}
             description={headerDescription}
           />
         )}
-        {isShowAddTicket && (
+        {showAddTicket && (
           <AddTicket
             ticket={ticketMessages?.ticket}
             onCloseButton={closeAddTicket}

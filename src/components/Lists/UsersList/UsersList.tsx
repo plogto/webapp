@@ -23,7 +23,7 @@ export function UsersList(props: UsersListProps) {
       getMoreData={getMoreData}
     >
       {data?.edges?.map(({ node }) => (
-        <User key={node[dataKey].id} user={node[dataKey]} isShowFollow />
+        <User key={node[dataKey].id} user={node[dataKey]} showFollow />
       ))}
     </ListWrapper>
   );
