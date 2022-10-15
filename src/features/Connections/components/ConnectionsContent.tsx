@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ID } from "@constants";
 import { Card } from "@components/Card";
+import { UsersList } from "@components/Lists/UsersList";
 import { Placeholder } from "@components/Placeholder";
 import { Tabs } from "@components/Tabs/Tabs";
-import { Users } from "@components/Users";
 import { useAccountContext } from "@contexts/AccountContext";
 import styles from "../Connections.module.css";
 import type { ConnectionsContentProps } from "../Connections.types";
@@ -49,7 +49,7 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
               emptyStatus,
             }) =>
               asPath === href && (
-                <Users
+                <UsersList
                   key={JSON.stringify(data?.pageInfo.endCursor)}
                   data={data}
                   dataKey={dataKey}

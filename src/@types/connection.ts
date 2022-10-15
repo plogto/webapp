@@ -1,4 +1,5 @@
 import type { WithPageInfo } from ".";
+import { UsersListDataKey } from "@enums";
 import type { Placeholder } from "./placeholder";
 import type { User } from "./user";
 
@@ -19,7 +20,7 @@ export interface ConnectionData {
 }
 
 export interface ConnectionTab {
-  dataKey: "follower" | "following";
+  dataKey: UsersListDataKey;
   title: string;
   href: string;
   data: ConnectionData;

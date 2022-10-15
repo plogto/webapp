@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { ConnectionsActiveTab } from "@enums";
+import { ConnectionsActiveTab, UsersListDataKey } from "@enums";
 import { useLazyQuery } from "@apollo/client";
 import {
   GetFollowersByUsernameQuery,
@@ -96,7 +96,7 @@ export function useConnections({ type }: ConnectionsProps) {
   const TABS = useMemo(() => {
     const tabs: ConnectionTab[] = [
       {
-        dataKey: "following",
+        dataKey: UsersListDataKey.FOLLOWING,
         title: t("connection:tabs.following"),
         href: formatFollowingPageRoute(username),
         data: {
@@ -107,7 +107,7 @@ export function useConnections({ type }: ConnectionsProps) {
         emptyStatus,
       },
       {
-        dataKey: "follower",
+        dataKey: UsersListDataKey.FOLLOWER,
         title: t("connection:tabs.followers"),
         href: formatFollowersPageRoute(username),
         data: {
