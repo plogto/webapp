@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { CropImageTypeKey } from "@enums";
+import { CropImageTypeKey, ImageProfileKey } from "@enums";
 import { Avatar } from "@components/Avatar";
 import { ChangeImageProfileModal } from "@components/ChangeImageProfileModal";
 import { CropImage } from "@components/CropImage";
@@ -18,7 +18,7 @@ export function AvatarProfile(props: AvatarProfileProps) {
     openModal,
     isOpen,
     removeImage,
-  } = useImageProfile({ key: "avatar" });
+  } = useImageProfile({ key: ImageProfileKey.AVATAR });
   const { t } = useTranslation("settings");
 
   return (

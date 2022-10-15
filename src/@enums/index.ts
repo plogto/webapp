@@ -134,3 +134,8 @@ export enum UsersListDataKey {
   FOLLOWING = "following",
   FOLLOWER = "follower",
 }
+
+export enum ImageProfileKey {
+  AVATAR = "avatar",
+  BACKGROUND = "background",
+}

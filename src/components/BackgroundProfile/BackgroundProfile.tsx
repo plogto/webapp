@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { CropImageTypeKey } from "@enums";
+import { CropImageTypeKey, ImageProfileKey } from "@enums";
 import { ChangeImageProfileModal } from "@components/ChangeImageProfileModal";
 import { CropImage } from "@components/CropImage";
 import { DefaultBackground } from "@components/DefaultBackground/DefaultBackground";
@@ -21,7 +21,7 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
     openModal,
     isOpen,
     removeImage,
-  } = useImageProfile({ key: "background" });
+  } = useImageProfile({ key: ImageProfileKey.BACKGROUND });
   const { t } = useTranslation("settings");
 
   return (
