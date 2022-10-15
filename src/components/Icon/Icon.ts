@@ -22,6 +22,7 @@ import Heart from "./svg/heart.svg";
 import Inbox from "./svg/inbox.svg";
 import Key from "./svg/key.svg";
 import Link from "./svg/link.svg";
+import Loader from "./svg/loader.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
 import LockClosed from "./svg/lock-closed.svg";
 import Mail from "./svg/mail.svg";
@@ -74,6 +75,7 @@ export const IconsList = {
   Inbox,
   Key,
   Link,
+  Loader,
   LockClosedFill,
   LockClosed,
   Mail,
