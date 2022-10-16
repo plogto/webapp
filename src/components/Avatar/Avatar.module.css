@@ -3,7 +3,7 @@
   @apply z-20 overflow-hidden rounded-full border border-background-dark shadow-sm;
 
   &.large {
-    @apply h-20 w-20 md:h-24 md:w-24;
+    @apply h-16 w-16 md:h-24 md:w-24;
   }
 
   &.normal {
