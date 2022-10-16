@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NOTIFICATION_PARSER } from "@constants";
 import { DateType } from "@enums";
 import { Avatar } from "@components/Avatar";
+import { Icon } from "@components/Icon";
 import { useDate } from "@hooks/useDate";
 import styles from "./Notification.module.css";
 import type { NotificationProps } from "./Notification.types";
@@ -15,7 +16,7 @@ export function Notification(props: NotificationProps) {
     notification: { url, notificationType, createdAt, read, sender },
   } = props;
 
-  const { parseNotification } = useNotification();
+  const { parseNotification, getNotificationIcon } = useNotification();
   const { formatFromNow } = useDate();
 
   const template = useMemo(
@@ -43,6 +44,14 @@ export function Notification(props: NotificationProps) {
           <div className={styles.date}>
             {formatFromNow({ date: createdAt, type: DateType.SHORT })}
           </div>
+        </div>
+        <div className={styles.iconWrapper}>
+          <span className={styles.iconRing}>
+            <Icon
+              className={styles.icon}
+              name={getNotificationIcon(notificationType.name)}
+            />
+          </span>
         </div>
       </a>
     </Link>

@@ -123,6 +123,7 @@ export enum NotificationTypeName {
   LIKE_REPLY = "LIKE_REPLY",
   FOLLOW_USER = "FOLLOW_USER",
   ACCEPT_USER = "ACCEPT_USER",
+  MENTION_IN_POST = "MENTION_IN_POST",
 }
 
 export enum PageLoaderHeightType {

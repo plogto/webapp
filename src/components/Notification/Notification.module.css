@@ -11,7 +11,7 @@
   }
 
   & .content {
-    @apply my-auto text-sm text-foreground;
+    @apply my-auto w-full text-sm text-foreground;
 
     & .reply {
       @apply text-foreground-medium;
@@ -19,6 +19,16 @@
 
     & .date {
       @apply mt-0.5 text-xs text-foreground-dark;
+    }
+  }
+
+  & .iconWrapper {
+    @apply flex h-full;
+    & .iconRing {
+      @apply rounded-full border border-gray-400 p-2.5;
+      & .icon {
+        @apply h-5 w-5 stroke-1.5 text-gray-400;
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 import { useCallback } from "react";
 import { v4 as uuid } from "uuid";
 import { POST_CONTENT, RECEIVER_FULL_NAME, SENDER_FULL_NAME } from "@constants";
+import { NotificationTypeName } from "@enums";
 import { FullName } from "@components/FullName";
+import type { IconNames } from "@components/Icon";
 import { useAccountContext } from "@contexts/AccountContext";
 import type { Notification } from "@t/notification";
 import styles from "./Notification.module.css";
@@ -43,8 +45,31 @@ export function useNotification() {
           return <span key={uuid()}>{element}</span>;
       }
     },
-    [],
+    [user],
   );
 
-  return { parseNotification };
+  function getNotificationIcon(
+    notificationTypeName: NotificationTypeName,
+  ): IconNames {
+    switch (notificationTypeName) {
+      case NotificationTypeName.WELCOME:
+        return "Inbox";
+      case NotificationTypeName.LIKE_POST:
+        return "Heart";
+      case NotificationTypeName.REPLY_POST:
+        return "Comment";
+      case NotificationTypeName.LIKE_REPLY:
+        return "Heart";
+      case NotificationTypeName.FOLLOW_USER:
+        return "Plus";
+      case NotificationTypeName.ACCEPT_USER:
+        return "ThumbsUp";
+      case NotificationTypeName.MENTION_IN_POST:
+        return "At";
+      default:
+        return "Inbox";
+    }
+  }
+
+  return { parseNotification, getNotificationIcon };
 }
