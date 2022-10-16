@@ -2,6 +2,7 @@ import { createElement, SVGAttributes } from "react";
 import classNames from "classnames";
 // icons
 import ArrowLeft from "./svg/arrow-left.svg";
+import At from "./svg/at.svg";
 import BellFill from "./svg/bell-fill.svg";
 import BookmarkFill from "./svg/bookmark-fill.svg";
 import Bookmark from "./svg/bookmark.svg";
@@ -55,6 +56,7 @@ import X from "./svg/x.svg";
 
 export const IconsList = {
   ArrowLeft,
+  At,
   BellFill,
   BookmarkFill,
   Bookmark,
