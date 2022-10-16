@@ -42,8 +42,46 @@ export function ProfileInfo(props: ProfileInfoProps) {
 
   return (
     <Card className={styles.profileInfo} shadow={!isMobile} rounded={!isMobile}>
-      <div className={styles.avatar}>
-        <Avatar size="large" avatar={avatar} alt={fullName} />
+      <div className={styles.header}>
+        <div className={styles.avatar}>
+          <Avatar size="large" avatar={avatar} alt={fullName} />
+        </div>
+        <div className={styles.buttonWrapper}>
+          {!isYourAccount(username) ? (
+            <ConnectionStatus user={{ id, connectionStatus }} />
+          ) : (
+            <>
+              {showCredit && (
+                <Link href={PageUrls.CREDITS}>
+                  <a className={styles.credits}>
+                    <Image
+                      src="/static/images/credit.png"
+                      width={18}
+                      height={18}
+                      alt="credit"
+                    />
+                    <span>
+                      {credits
+                        ? formatCountTitle({
+                            singular: t("buttons.credit"),
+                            plural: t("buttons.credits"),
+                            count: credits,
+                          }).text
+                        : t("buttons.credits")}
+                    </span>
+                  </a>
+                </Link>
+              )}
+              <LinkButton
+                layout="apply"
+                href={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
+                className={styles.settings}
+              >
+                {t("buttons.settings")}
+              </LinkButton>
+            </>
+          )}
+        </div>
       </div>
 
       <div className={styles.names}>
@@ -62,40 +100,6 @@ export function ProfileInfo(props: ProfileInfoProps) {
         </div>
       )}
 
-      {isYourAccount(username) && showCredit && (
-        <Link href={PageUrls.CREDITS}>
-          <a className={styles.credits}>
-            <Image
-              src="/static/images/credit.png"
-              width={18}
-              height={18}
-              alt="credit"
-            />
-            <span>
-              {credits
-                ? formatCountTitle({
-                    singular: t("buttons.credit"),
-                    plural: t("buttons.credits"),
-                    count: credits,
-                  }).text
-                : t("buttons.credits")}
-            </span>
-          </a>
-        </Link>
-      )}
-      <div className={styles.buttonWrapper}>
-        {!isYourAccount(username) ? (
-          <ConnectionStatus user={{ id, connectionStatus }} />
-        ) : (
-          <LinkButton
-            layout="apply"
-            href={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
-            className={styles.settings}
-          >
-            {t("buttons.settings")}
-          </LinkButton>
-        )}
-      </div>
       <div className={styles.counts}>
         {COUNTS.map(count => (
           <Count key={count.title} {...count} clickable={clickable} />

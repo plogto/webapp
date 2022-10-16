@@ -2,9 +2,42 @@
   @apply sticky w-full;
   @apply top-[8.5rem] mt-20 md:top-5 md:mt-[12.5rem] md:w-[35%];
 
-  & .avatar {
-    @apply flex items-center justify-center md:justify-start;
-    @apply relative z-30 -mt-10 md:mt-5 md:ml-5;
+  & .header {
+    @apply flex items-center justify-between;
+    & .avatar {
+      @apply flex items-center justify-start;
+      @apply relative z-30 -mt-5 ml-4 md:mt-5 md:ml-5;
+    }
+
+    & .buttonWrapper {
+      @apply flex items-start justify-end space-x-2;
+      @apply md:flex-col-reverse md:items-center md:space-x-0 md:space-y-3;
+      @apply mr-1.5 mt-2.5 w-full md:mr-0 md:mt-3;
+
+      & .follow,
+      & .following,
+      & .credits,
+      & .settings {
+        @apply w-28 rounded-xl px-2 py-2 md:w-40 md:py-2.5;
+        @apply border border-transparent text-sm font-medium;
+      }
+
+      & .following {
+        @apply border-background-dark text-foreground shadow-sm hover:bg-background;
+        @apply font-bold;
+      }
+
+      & .follow {
+        @apply bg-foreground text-background-pure;
+      }
+
+      & .credits {
+        @apply inline-flex items-center justify-center space-x-2;
+        @apply px-2 text-sm font-bold md:mt-2;
+        @apply border-background-medium text-amber-400;
+        @apply transition-all duration-300 hover:bg-amber-300 hover:bg-opacity-5;
+      }
+    }
   }
 
   & .names {
@@ -20,34 +53,6 @@
 
   & .bio {
     @apply mt-1.5 w-full break-all px-4 text-sm text-foreground-pure;
-  }
-
-  & .credits {
-    @apply inline-flex items-center justify-center space-x-2;
-    @apply mt-1.5 ml-4 rounded-full py-1.5 px-2 text-sm font-bold;
-    @apply border border-background-medium text-amber-400;
-    @apply transition-all duration-300 hover:bg-amber-300 hover:bg-opacity-5;
-  }
-
-  & .buttonWrapper {
-    @apply z-50 flex flex-col items-start justify-center;
-    @apply absolute right-2.5 top-2.5 md:left-[9rem] md:top-12;
-
-    & .follow,
-    & .following,
-    & .settings {
-      @apply w-28 px-2 py-2 md:w-40 md:py-2.5;
-      @apply border border-transparent text-sm font-medium;
-    }
-
-    & .following {
-      @apply rounded-xl border-background-dark text-foreground shadow-sm hover:bg-background;
-      @apply font-bold;
-    }
-
-    & .follow {
-      @apply bg-foreground text-background-pure;
-    }
   }
 
   & .counts {
