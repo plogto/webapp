@@ -1,53 +1,54 @@
 .wrapper {
-  @apply flex justify-between items-center;
-  @apply text-foreground bg-background-pure w-full p-2 pr-4;
+  @apply flex items-center justify-between;
+  @apply w-full bg-background-pure p-2 pr-4 text-foreground;
 
   & .userInfo {
-    @apply flex items-center flex-grow;
+    @apply flex flex-grow items-center;
 
     & .avatar {
-      @apply text-foreground-light mr-2;
-      @apply rounded-full shadow-sm border;
+      @apply mr-2 text-foreground-light;
+      @apply rounded-full border shadow-sm;
     }
 
     & .username {
-      @apply text-foreground-medium text-sm pr-1;
+      @apply pr-1 text-sm text-foreground-medium;
     }
   }
 
   & .content {
-    @apply text-sm py-2 p-3;
+    @apply p-3 py-2 text-sm;
   }
 
   & .requested,
   & .following,
   & .accept,
   & .reject {
-    @apply p-2 ml-3 w-20;
-    @apply font-bold text-xs;
+    @apply ml-3 w-20 p-2;
+    @apply text-xs font-bold;
+  }
+
+  & .following {
+    @apply rounded-lg border border-background-medium text-foreground shadow-sm;
   }
 
   & .accept svg,
   & .requested svg,
+  & .following svg,
   & .reject svg {
-    @apply w-4 h-4;
-  }
-
-  & .following {
-    @apply border border-background-medium shadow-sm text-foreground rounded-lg;
+    @apply h-4 w-4;
   }
 
   & .accept,
   & .requested {
-    @apply bg-foreground text-background-pure rounded-lg;
+    @apply rounded-lg bg-foreground text-background-pure;
   }
 
   & .reject {
-    @apply border border-gray-400 text-gray-400 rounded-lg;
-    @apply w-8 h-8 p-1;
+    @apply rounded-lg border border-gray-400 text-gray-400;
+    @apply h-8 w-8 p-1;
 
     & .rejectIcon {
-      @apply text-gray-400 w-10 h-10 stroke-1.5;
+      @apply h-10 w-10 stroke-1.5 text-gray-400;
     }
   }
 }
