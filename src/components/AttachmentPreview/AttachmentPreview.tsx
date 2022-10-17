@@ -6,17 +6,19 @@ export function AttachmentPreview(props: AttachmentPreviewProps) {
   const { image, onClickRemoveButton, showRemoveButton = true } = props;
   const src = image ? URL.createObjectURL(image) : null;
 
-  return src ? (
-    <div className={styles.attachmentPreview}>
-      {showRemoveButton && (
-        <Button onClick={onClickRemoveButton} className={styles.removeButton}>
-          Remove
-        </Button>
-      )}
-      {/* TODO: use next image */}
-      <img src={src} />
-    </div>
-  ) : (
-    <></>
-  );
+  if (src) {
+    return (
+      <div className={styles.attachmentPreview}>
+        {showRemoveButton && (
+          <Button onClick={onClickRemoveButton} className={styles.removeButton}>
+            Remove
+          </Button>
+        )}
+        {/* TODO: use next image */}
+        <img src={src} />
+      </div>
+    );
+  }
+
+  return null;
 }

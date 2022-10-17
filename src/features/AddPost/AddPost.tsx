@@ -2,6 +2,7 @@ import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { CONTENT_MAX_LENGTH } from "@constants";
 import { CropImageTypeKey, DateType } from "@enums";
+import { AttachmentPreview } from "@components/AttachmentPreview";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { CropImage } from "@components/CropImage";
@@ -14,7 +15,6 @@ import { UserInfo } from "@components/UserInfo";
 import { useAddPostContext } from "@contexts/AddPostContext";
 import styles from "./AddPost.module.css";
 import type { AddPostProps } from "./AddPost.types";
-import { AttachmentPreview } from "./components/AttachmentPreview";
 import { Counter } from "./components/Counter";
 import { useAddPost } from "./hooks/useAddPost";
 

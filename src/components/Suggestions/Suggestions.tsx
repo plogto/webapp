@@ -23,7 +23,7 @@ export function Suggestions(props: SuggestionsProps) {
           />
         );
       case "none":
-        return <></>;
+        return null;
     }
   }, [active, handleClickOnSuggestionItem, tags, users]);
 

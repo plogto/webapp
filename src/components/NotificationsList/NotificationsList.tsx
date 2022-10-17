@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-import { PageLoaderHeightType } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Notification } from "@components/Notification";
 import { PageLoader } from "@components/PageLoader";
@@ -32,7 +31,7 @@ export function NotificationsList(props: NotificationsListProps) {
     setIsShowMoreLoading(false);
   }, [data?.edges]);
 
-  const loader = <PageLoader heightType={PageLoaderHeightType.NORMAL} />;
+  const loader = <PageLoader />;
 
   return (
     <div className={wrapperClasses}>

@@ -1,6 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { ID } from "@constants";
+import { PageLoaderHeightType } from "@enums";
 import { DefaultBackground } from "@components/DefaultBackground/DefaultBackground";
 import { Img } from "@components/Img";
 import { NotFound } from "@components/NotFound";
@@ -25,7 +26,7 @@ export function Credits() {
   const { t } = useTranslation("common");
 
   return isUserLoading ? (
-    <PageLoader />
+    <PageLoader heightType={PageLoaderHeightType.FULL} />
   ) : !userData ? (
     <NotFound />
   ) : (

@@ -5,7 +5,7 @@ import styles from "./PageLoader.module.css";
 import type { PageLoaderProps } from "./PageLoader.types";
 
 export function PageLoader(props: PageLoaderProps) {
-  const { heightType = PageLoaderHeightType.FULL, className } = props;
+  const { heightType = PageLoaderHeightType.NORMAL, className } = props;
   const wrapperClasses = classNames(
     styles.wrapper,
     heightType === PageLoaderHeightType.FULL && styles.isFullHeight,

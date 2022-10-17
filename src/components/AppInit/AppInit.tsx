@@ -7,5 +7,5 @@ export function AppInit() {
   usePushNotification();
   useAuth();
 
-  return <></>;
+  return null;
 }

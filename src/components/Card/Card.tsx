@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { PageLoaderHeightType } from "@enums";
 import { PageLoader } from "@components/PageLoader";
 import styles from "./Card.module.css";
 import type { CardProps } from "./Card.types";
@@ -21,7 +20,7 @@ export function Card(props: CardProps) {
 
   return (
     <div className={wrapperClasses}>
-      {loading && <PageLoader heightType={PageLoaderHeightType.NORMAL} />}
+      {loading && <PageLoader />}
       {children}
     </div>
   );

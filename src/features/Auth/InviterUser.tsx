@@ -16,20 +16,22 @@ export function InviterUser(props: InviterUserProps) {
 
   const wrapperClasses = classNames(styles.inviterUser, className);
 
-  return inviterUser ? (
-    <Link href={formatProfilePageRoute(inviterUser.username)}>
-      <a className={wrapperClasses}>
-        {t("auth:texts.invitedBy")}
-        <Avatar
-          className="mx-2"
-          avatar={inviterUser.avatar}
-          alt={inviterUser.fullName}
-          size="tiny"
-        />
-        <FullName fullName={inviterUser?.fullName} size="small" />
-      </a>
-    </Link>
-  ) : (
-    <></>
-  );
+  if (inviterUser) {
+    return (
+      <Link href={formatProfilePageRoute(inviterUser.username)}>
+        <a className={wrapperClasses}>
+          {t("auth:texts.invitedBy")}
+          <Avatar
+            className="mx-2"
+            avatar={inviterUser.avatar}
+            alt={inviterUser.fullName}
+            size="tiny"
+          />
+          <FullName fullName={inviterUser?.fullName} size="small" />
+        </a>
+      </Link>
+    );
+  }
+
+  return null;
 }

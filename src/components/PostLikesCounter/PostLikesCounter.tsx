@@ -14,12 +14,14 @@ export function PostLikesCounter(props: PostLikesCounterProps) {
     count: likes?.totalCount,
   });
 
-  return count ? (
-    <span className={wrapperClasses}>
-      <span className={styles.separate}>&middot;</span>
-      <strong>{count}</strong> {title}
-    </span>
-  ) : (
-    <></>
-  );
+  if (count) {
+    return (
+      <span className={wrapperClasses}>
+        <span className={styles.separate}>&middot;</span>
+        <strong>{count}</strong> {title}
+      </span>
+    );
+  }
+
+  return null;
 }

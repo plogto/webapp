@@ -17,10 +17,12 @@ export function Connections({ type }: ConnectionsProps) {
   });
   const { formatProfilePageRoute } = useNavigator();
 
-  return !userData && !isUserLoading ? (
-    <NotFound />
-  ) : userData ? (
-    <>
+  if (!userData && !isUserLoading) {
+    return <NotFound />;
+  }
+
+  if (userData) {
+    return (
       <div className={styles.wrapper}>
         {isMobile && (
           <PageHeader
@@ -46,8 +48,8 @@ export function Connections({ type }: ConnectionsProps) {
           <ConnectionsContent tabs={TABS} user={userData} />
         </div>
       </div>
-    </>
-  ) : (
-    <></>
-  );
+    );
+  }
+
+  return null;
 }
