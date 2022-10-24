@@ -33,7 +33,7 @@
 
       & .credits {
         @apply inline-flex items-center justify-center space-x-2;
-        @apply px-2 text-sm font-bold md:mt-2;
+        @apply min-w-[8rem] px-2 text-sm font-bold md:mt-2;
         @apply border-background-medium text-amber-400;
         @apply transition-all duration-300 hover:bg-amber-300 hover:bg-opacity-5;
       }
