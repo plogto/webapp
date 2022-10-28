@@ -1,7 +1,7 @@
 {
   "name": "webapp",
   "version": "0.37.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "next build",
     "build-storybook": "build-storybook",
@@ -10,9 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
-    "release:breaking": "standard-version --release-as major",
-    "release:hotfix": "standard-version --release-as patch",
-    "release:non-breaking": "standard-version --release-as minor",
+    "release:major": "standard-version --tag-prefix='' --release-as major",
+    "release:minor": "standard-version --tag-prefix='' --release-as minor",
+    "release:patch": "standard-version --tag-prefix='' --release-as patch",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "test": "jest --passWithNoTests",
