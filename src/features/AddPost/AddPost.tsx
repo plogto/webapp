@@ -108,8 +108,11 @@ export function AddPost(props: AddPostProps) {
                   className={styles.submit}
                   loading={isLoading}
                   disabled={
-                    !watch("content").getCurrentContent().getPlainText()
-                      .length && !watch("attachment")?.length
+                    watch("content").getCurrentContent().getPlainText().length >
+                      CONTENT_MAX_LENGTH ||
+                    (!watch("content").getCurrentContent().getPlainText()
+                      .length &&
+                      !watch("attachment")?.length)
                   }
                   type="submit"
                 >
