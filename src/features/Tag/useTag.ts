@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import type {
   GetPostsByTagNameQuery,
@@ -87,7 +88,10 @@ export function useTag() {
 
   return {
     tagData: {
-      isLoading: getTagDataResponse.loading,
+      isLoading: isDataLoading(
+        getTagDataResponse.called,
+        getTagDataResponse.loading,
+      ),
       data: getTagDataResponse.data?.getTagByTagName,
     },
     TABS,

@@ -1,6 +1,8 @@
 import { isMobile } from "react-device-detect";
 import { ID } from "@constants";
+import { PageLoaderHeightType } from "@enums";
 import { PageHeader } from "@components/PageHeader";
+import { PageLoader } from "@components/PageLoader";
 import { Placeholder } from "@components/Placeholder";
 import styles from "./Tag.module.css";
 import { TagContent } from "./components/TagContent";
@@ -10,8 +12,9 @@ import { useTag } from "./useTag";
 export function Tag() {
   const { tagData, TABS, t } = useTag();
 
-  return !tagData.isLoading && !tagData.data ? (
-    // TODO: implement a not found page for this part
+  return tagData.isLoading ? (
+    <PageLoader heightType={PageLoaderHeightType.FULL} />
+  ) : !tagData.data ? (
     <Placeholder
       title={t("status.notFound.title")}
       icon="Hashtag"
