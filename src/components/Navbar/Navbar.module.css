@@ -15,7 +15,7 @@
         & .notificationBadge {
           @apply inline-flex items-center justify-center;
           @apply absolute -left-3.5 -top-1;
-          @apply h-4 w-fit rounded-full py-1 px-1;
+          @apply h-4 w-fit min-w-[1rem] rounded-full py-1 px-1;
           @apply bg-primary text-white;
           @apply select-none text-xs font-medium;
         }
