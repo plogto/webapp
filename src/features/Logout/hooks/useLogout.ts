@@ -4,19 +4,20 @@ import { LocalStorageKeys } from "@enums";
 import { isWindowExists } from "@utils";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
-import { useApollo } from "@lib/apolloClient";
 
 export function useLogout() {
   const { push } = useRouter();
-  const { setIsAuthenticated, setToken, setUser } = useAccountContext();
-  const apolloClient = useApollo({});
+  const { isAuthenticated, setIsAuthenticated, setToken, setUser } =
+    useAccountContext();
 
   useEffect(() => {
     setIsAuthenticated(false);
     setToken(undefined);
     setUser(undefined);
-    apolloClient.cache.restore({});
     isWindowExists() && localStorage.removeItem(LocalStorageKeys.AUTHORIZATION);
+    if (isAuthenticated) {
+      window.location.reload();
+    }
     push(PageUrls.LOGIN);
-  }, [apolloClient.cache, setIsAuthenticated, setToken, setUser]);
+  }, [setIsAuthenticated, setToken, setUser]);
 }
