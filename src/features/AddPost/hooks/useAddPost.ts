@@ -12,6 +12,7 @@ import type {
 } from "@graphql/@types/post";
 import {
   ADD_POST,
+  GET_EXPLORE_POSTS,
   GET_POSTS_BY_USERNAME,
   GET_POST_BY_URL,
   GET_TIMELINE_POSTS,
@@ -58,6 +59,9 @@ export function useAddPost(props: UseAddPostProps) {
 
   const refetchQueries = useMemo(
     () => [
+      {
+        query: GET_EXPLORE_POSTS,
+      },
       {
         query: GET_TIMELINE_POSTS,
       },
