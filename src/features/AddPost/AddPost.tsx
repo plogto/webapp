@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { CONTENT_MAX_LENGTH } from "@constants";
@@ -36,6 +37,17 @@ export function AddPost(props: AddPostProps) {
   } = useAddPost({ isEditMode });
   const { handleSubmit, watch, setValue } = formMethods;
   const { t } = useTranslation("addPost");
+
+  const attachmentComponent = useMemo(
+    () => (
+      <AttachmentPreview
+        showRemoveButton={!isEditMode}
+        onClickRemoveButton={removeAttachmentPreview}
+        image={attachmentPreview}
+      />
+    ),
+    [attachmentPreview, isEditMode, removeAttachmentPreview],
+  );
 
   return (
     <>
@@ -79,11 +91,7 @@ export function AddPost(props: AddPostProps) {
                 placeholder={t("placeholders.writeSomething")}
                 isReply={!!parentPost?.id}
               />
-              <AttachmentPreview
-                showRemoveButton={!isEditMode}
-                onClickRemoveButton={removeAttachmentPreview}
-                image={attachmentPreview}
-              />
+              {attachmentComponent}
             </div>
 
             <div className={styles.footer}>
