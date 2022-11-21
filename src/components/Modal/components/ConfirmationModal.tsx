@@ -39,18 +39,18 @@ export function ConfirmationModal(props: ConfirmationModalProps) {
         <div className="modal-buttons">
           <Button
             type="button"
-            onClick={handleSubmit}
-            className={classNames("modal-button text-white", colorClassName)}
-          >
-            {submitButton}
-          </Button>
-          <Button
-            type="button"
             layout="outline"
             onClick={closeModal}
             className="modal-button"
           >
             {t("buttons.cancel")}
+          </Button>
+          <Button
+            type="button"
+            onClick={handleSubmit}
+            className={classNames("modal-button text-white", colorClassName)}
+          >
+            {submitButton}
           </Button>
         </div>
       </div>
