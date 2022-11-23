@@ -14,7 +14,7 @@
   }
 
   & .label {
-    @apply ml-0.5 mb-1 block text-sm font-medium text-foreground;
+    @apply ml-0.5 mb-1 block text-sm font-medium text-gray-400;
   }
 
   &.success {
