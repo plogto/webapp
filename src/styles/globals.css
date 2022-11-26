@@ -25,7 +25,7 @@
 
 @layer components {
   .modal {
-    @apply flex flex-col items-center border border-background-medium px-5 py-5;
+    @apply flex flex-col items-center rounded-2xl border border-background-medium px-5 py-5;
 
     & .modal-title {
       @apply text-center text-xl font-bold text-foreground;
