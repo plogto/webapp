@@ -36,6 +36,18 @@
       @apply rounded-xl border border-background-dark shadow-sm;
     }
 
+    & .username {
+      @apply w-full;
+      & button {
+        @apply w-full justify-start py-3.5 px-4 text-sm leading-[16px] text-foreground;
+        @apply rounded-xl border border-background-dark shadow-sm;
+      }
+
+      & label {
+        @apply ml-0.5 mb-1 block text-sm font-medium text-gray-400;
+      }
+    }
+
     & .footer {
       @apply flex justify-end space-x-3;
 

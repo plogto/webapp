@@ -24,6 +24,14 @@ export interface ConfirmationModalProps {
   submitButton: ReactNode;
   isOpen?: boolean;
 }
+export interface ChangeUsernameModalProps {
+  title: string;
+  description?: string;
+  closeModal: () => void;
+  isSubmitDisabled?: boolean;
+  isOpen?: boolean;
+  children: ReactNode;
+}
 export interface InformationModalProps {
   title: string;
   description: string;

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   UseFormClearErrors,
   UseFormReturn,
@@ -20,8 +21,27 @@ export interface SettingsProps {
   formMethods: UseFormReturn<SettingsForm>;
 }
 
+export interface ChangeUsernameForm {
+  username: User["username"];
+}
+
+export interface ChangeUsernameProps {
+  username: User["username"];
+  isOpen?: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}
+
+export interface UseChangeUsernameProps {
+  closeModal: () => void;
+}
+
 export interface UseEditUser {
   user?: User;
+}
+
+export interface ModalPortalProps {
+  children: ReactNode;
 }
 
 export interface UseEditUserValidations {

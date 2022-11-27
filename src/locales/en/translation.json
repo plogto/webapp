@@ -142,7 +142,8 @@
       "username": "Username"
     },
     "texts": {
-      "editProfile": "Edit Profile"
+      "editProfile": "Edit Profile",
+      "changeUsername": "Change Username"
     }
   },
   "logout": {
@@ -158,6 +159,7 @@
   },
   "modal": {
     "buttons": {
+      "apply": "Apply",
       "cancel": "Cancel",
       "delete": "Delete"
     }

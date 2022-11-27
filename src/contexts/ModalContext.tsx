@@ -11,15 +11,16 @@ const ModalContextSetState = createContext<SetModalContext>({
 
 interface Props {
   children: ReactNode;
+  initialIsOpen?: boolean;
 }
 
-export function ModalProvider({ children }: Props) {
+export function ModalProvider({ children, initialIsOpen }: Props) {
   const [isOpen, setIsOpen] = useState<ModalContext["isOpen"]>(
     initialModal.isOpen,
   );
 
   return (
-    <ModalContext.Provider value={{ isOpen }}>
+    <ModalContext.Provider value={{ isOpen: initialIsOpen || isOpen }}>
       <ModalContextSetState.Provider
         value={{
           setIsOpen,
