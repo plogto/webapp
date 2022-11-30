@@ -36,7 +36,7 @@ export function ChangePassword() {
       <Card
         shadow={!isMobile}
         rounded={!isMobile}
-        loading={!user}
+        isLoading={!user}
         className={styles.changePassword}
       >
         {inputs.map(({ name, label }) => (

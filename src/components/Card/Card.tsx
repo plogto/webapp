@@ -7,7 +7,7 @@ export function Card(props: CardProps) {
   const {
     shadow = false,
     rounded = false,
-    loading,
+    isLoading,
     children,
     className,
   } = props;
@@ -20,8 +20,7 @@ export function Card(props: CardProps) {
 
   return (
     <div className={wrapperClasses}>
-      {loading && <PageLoader />}
-      {children}
+      {isLoading ? <PageLoader /> : children}
     </div>
   );
 }

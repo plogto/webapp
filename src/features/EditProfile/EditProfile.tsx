@@ -48,7 +48,7 @@ export function EditProfile() {
         <Card
           shadow={!isMobile}
           rounded={!isMobile}
-          loading={!user}
+          isLoading={!user}
           className={styles.editProfile}
         >
           <div className="flex flex-col md:flex-row md:space-x-4 w-full">
