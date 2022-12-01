@@ -9,8 +9,6 @@ export interface Filter {
   onClick: () => void;
 }
 
-export type SearchFilters = "users" | "tags";
-
 export interface SearchForm {
   expression: string;
 }

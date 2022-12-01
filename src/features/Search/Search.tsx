@@ -1,36 +1,19 @@
 import { isMobile, MobileOnlyView } from "react-device-detect";
 import { useTranslation } from "react-i18next";
-import classNames from "classnames";
-import { Button } from "@components/Buttons/Button";
+import { SearchFilters } from "@enums";
 import { Card } from "@components/Card";
-import { Icon } from "@components/Icon";
 import { MobileTrends } from "../Trends";
 import styles from "./Search.module.css";
-import type { Filter } from "./Search.types";
 import { Tags, Users } from "./components";
 import { Posts } from "./components/Posts";
 import { useSearch } from "./hooks";
 import isEmpty from "lodash/isEmpty";
 
 export function Search() {
-  const { formMethods, onSubmit, result, filter, setFilter } = useSearch();
+  const { formMethods, onSubmit, result, filter } = useSearch();
   const { register, handleSubmit, watch, getValues } = formMethods;
 
   const { t } = useTranslation(["common", "search"]);
-  const filters: Filter[] = [
-    {
-      title: t("common:users"),
-      active: filter === "users",
-      icon: "Users",
-      onClick: () => setFilter("users"),
-    },
-    {
-      title: t("common:tags"),
-      active: filter === "tags",
-      icon: "Hashtag",
-      onClick: () => setFilter("tags"),
-    },
-  ];
 
   return (
     <div className={styles.search}>
@@ -47,20 +30,6 @@ export function Search() {
                 autoComplete="off"
                 className={styles.searchInput}
               />
-              <div className={styles.filters}>
-                {filters.map(({ title, active, onClick, icon }) => (
-                  <Button
-                    key={title}
-                    className={classNames(
-                      styles.filterButton,
-                      active && styles.active,
-                    )}
-                    onClick={onClick}
-                  >
-                    <Icon name={icon} className="stroke-2" />
-                  </Button>
-                ))}
-              </div>
             </div>
           </Card>
         </form>
@@ -75,8 +44,8 @@ export function Search() {
           </>
         ) : (
           <div>
-            {filter === "users" && <Users user={result?.user} />}
-            {filter === "tags" && <Tags tag={result?.tag} />}
+            {filter === SearchFilters.USERS && <Users user={result?.user} />}
+            {filter === SearchFilters.TAGS && <Tags tag={result?.tag} />}
           </div>
         )}
       </div>

@@ -140,3 +140,8 @@ export enum ImageProfileKey {
   AVATAR = "avatar",
   BACKGROUND = "background",
 }
+
+export enum SearchFilters {
+  USERS = "USERS",
+  TAGS = "TAGS",
+}

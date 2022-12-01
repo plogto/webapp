@@ -12,32 +12,6 @@
         & .searchInput {
           @apply w-full border-0 bg-background-pure p-2 text-foreground ring-0 focus:ring-0 md:py-1 md:px-2;
         }
-
-        & .filters {
-          @apply ml-2 flex justify-end;
-
-          & .filterButton {
-            @apply rounded-lg p-0;
-            @apply h-8 w-8 bg-background-pure font-medium;
-            @apply text-foreground shadow;
-
-            &:first-child {
-              @apply mr-3;
-            }
-
-            &.active {
-              @apply bg-foreground text-background-pure;
-            }
-
-            &:not(.active) {
-              @apply border border-background-medium;
-            }
-
-            & svg {
-              @apply h-5 w-5;
-            }
-          }
-        }
       }
     }
   }
