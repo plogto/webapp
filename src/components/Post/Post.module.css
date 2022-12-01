@@ -1,5 +1,5 @@
 .post {
-  @apply relative w-full overflow-visible bg-background-pure pb-1 text-foreground;
+  @apply relative w-full overflow-visible pb-1 text-foreground;
 
   & .showParentButton {
     @apply flex w-full justify-start p-2;

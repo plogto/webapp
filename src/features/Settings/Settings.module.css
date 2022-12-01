@@ -12,7 +12,7 @@
 }
 
 .cards {
-  @apply flex items-start justify-around space-x-4 px-0 md:px-4;
+  @apply flex items-start justify-around px-0 md:space-x-4 md:px-4;
 
   & .items {
     @apply z-30 w-full overflow-hidden bg-background-pure md:-mt-12 md:w-[40%];
