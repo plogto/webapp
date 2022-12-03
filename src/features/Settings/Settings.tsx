@@ -17,8 +17,11 @@ import { useSettings } from "./useSettings";
 export function Settings(props: SettingsProps) {
   const { title, children } = props;
   const { user } = useSettings();
+
+  const { isSettingsPage, formatProfilePageRoute } = useNavigator();
   const { t } = useTranslation("settings");
-  const { isSettingsPage } = useNavigator();
+  const backLink =
+    isSettingsPage && user ? formatProfilePageRoute(user?.username) : undefined;
 
   return (
     <div className={styles.settings}>
@@ -27,6 +30,7 @@ export function Settings(props: SettingsProps) {
           <PageHeader
             title={title || t("texts.settings")}
             className={styles.header}
+            backLink={backLink}
           />
         )}
         {!(isMobile && !isSettingsPage && children) && (
