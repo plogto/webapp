@@ -11,10 +11,14 @@
   }
 
   & .title {
-    @apply mt-4 mb-2 font-medium;
+    @apply mt-4 mb-2 text-3xl font-bold;
   }
 
   & .description {
-    @apply text-center text-sm;
+    @apply mb-4 text-center text-sm;
+  }
+
+  & .backButton {
+    @apply border border-background-dark py-1.5 px-3 text-sm shadow-sm;
   }
 }

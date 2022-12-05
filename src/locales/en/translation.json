@@ -142,8 +142,8 @@
       "username": "Username"
     },
     "texts": {
-      "editProfile": "Edit Profile",
-      "changeUsername": "Change Username"
+      "changeUsername": "Change Username",
+      "editProfile": "Edit Profile"
     }
   },
   "logout": {
@@ -163,6 +163,11 @@
       "cancel": "Cancel",
       "delete": "Delete"
     }
+  },
+  "notFound": {
+    "backLink": "Take me home",
+    "description": "Sorry, the page you are looking for does not exist",
+    "title": "Ooops"
   },
   "notifications": {
     "buttons": {

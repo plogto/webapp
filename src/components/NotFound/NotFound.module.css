@@ -1,4 +1,16 @@
 .notFound {
   @apply flex flex-col items-center justify-center;
   @apply h-[calc(100vh-3.5rem)] w-full text-foreground-medium md:h-auto;
+
+  & .placeholder {
+    @apply w-2/5 md:pt-40;
+
+    & .iconWrapper {
+      @apply border-none;
+
+      & svg {
+        @apply w-24;
+      }
+    }
+  }
 }

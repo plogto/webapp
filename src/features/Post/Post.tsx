@@ -2,6 +2,7 @@ import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { POST_TYPES } from "@constants";
 import { Card } from "@components/Card";
+import { NotFound } from "@components/NotFound";
 import { PageHeader } from "@components/PageHeader";
 import { PageLoader } from "@components/PageLoader";
 import { Post } from "@components/Post";
@@ -29,5 +30,6 @@ export function PostContainer() {
       </Card>
     );
   }
-  return null;
+
+  return <NotFound />;
 }

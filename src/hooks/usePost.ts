@@ -19,7 +19,6 @@ export function usePost() {
   }, [getPost, url]);
 
   const post = data?.getPostByUrl;
-
   const isLoading = useMemo(() => loading, [loading]);
 
   return { post, isLoading };

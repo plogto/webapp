@@ -88,7 +88,7 @@ export function useConnections({ type }: ConnectionsProps) {
   const emptyStatus: Placeholder = useMemo(
     () => ({
       title: t("connection:status.noConnections.title"),
-      icon: "User",
+      icon: "Users",
     }),
     [t],
   );
