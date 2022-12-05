@@ -20,7 +20,7 @@ export function Button(props: ButtonProps) {
     className,
     loading && styles.loading,
     disabled && styles.disabled,
-    layout && styles[layout],
+    layout && styles[layout.toLowerCase()],
   );
 
   return (

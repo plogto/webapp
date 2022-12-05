@@ -12,17 +12,18 @@
     @apply cursor-wait;
   }
 
-  &.outline {
+  &.normal {
     @apply border border-transparent text-foreground;
     @apply hover:border-background-medium hover:shadow;
   }
 
-  &.remove {
+  /* TODO: change the name class */
+  &.danger {
     @apply border border-danger text-danger;
     @apply hover:bg-danger-light;
   }
 
-  &.apply {
+  &.fill {
     @apply border border-transparent bg-foreground text-background-pure;
   }
 }

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { CropImageTypeKey } from "@enums";
+import { ButtonLayout, CropImageTypeKey } from "@enums";
 import { AttachmentPreview } from "@components/AttachmentPreview";
 import { Button } from "@components/Buttons/Button";
 import { CropImage } from "@components/CropImage";
@@ -73,7 +73,7 @@ export function AddTicket(props: AddTicketProps) {
         <div className={styles.buttons}>
           <Button
             className={styles.button}
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             type="button"
             onClick={onCloseButton}
           >
@@ -81,7 +81,7 @@ export function AddTicket(props: AddTicketProps) {
           </Button>
           <Button
             className={styles.button}
-            layout="apply"
+            layout={ButtonLayout.FILL}
             type="submit"
             loading={loading}
             disabled={!isValid || loading}

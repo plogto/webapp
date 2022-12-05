@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { DeletionModalProps } from "@components/Modal/Modal.types";
@@ -27,7 +28,7 @@ export function DeletionModal(props: DeletionModalProps) {
         <div className="modal-buttons">
           <Button
             type="button"
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             onClick={closeModal}
             className="modal-button"
           >

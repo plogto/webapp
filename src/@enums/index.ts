@@ -145,3 +145,10 @@ export enum SearchFilters {
   USERS = "USERS",
   TAGS = "TAGS",
 }
+
+export enum ButtonLayout {
+  NORMAL = "OUTLINE",
+  FILL = "FILL",
+  /* TODO: change the name and value */
+  DANGER = "DANGER",
+}

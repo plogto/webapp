@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-import { ModalColor } from "@enums";
+import { ButtonLayout, ModalColor } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import type { ConfirmationModalProps } from "@components/Modal/Modal.types";
@@ -39,7 +39,7 @@ export function ConfirmationModal(props: ConfirmationModalProps) {
         <div className="modal-buttons">
           <Button
             type="button"
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             onClick={closeModal}
             className="modal-button"
           >

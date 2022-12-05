@@ -1,9 +1,9 @@
 import type { MouseEventHandler, ReactNode } from "react";
+import { ButtonLayout } from "@enums";
 
 export interface ButtonProps {
   type?: "button" | "submit";
-  // TODO: create layoutButton enum
-  layout?: "outline" | "remove" | "apply";
+  layout?: ButtonLayout;
   className?: string;
   loadingClassName?: string;
   children?: ReactNode;

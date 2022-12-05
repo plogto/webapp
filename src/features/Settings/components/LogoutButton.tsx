@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { useRouter } from "next/router";
+import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
@@ -33,7 +34,7 @@ export function LogoutButton(props: LogoutButtonProps) {
           <div className="modal-buttons">
             <Button
               type="button"
-              layout="outline"
+              layout={ButtonLayout.NORMAL}
               onClick={closeModal}
               className="modal-button"
             >
@@ -41,7 +42,7 @@ export function LogoutButton(props: LogoutButtonProps) {
             </Button>
             <Button
               type="button"
-              layout="apply"
+              layout={ButtonLayout.FILL}
               onClick={handleLogout}
               className="modal-button"
             >

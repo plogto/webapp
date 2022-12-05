@@ -2,6 +2,7 @@ import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLayout } from "@enums";
 import { Avatar } from "@components/Avatar";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Card } from "@components/Card";
@@ -73,7 +74,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
                 </Link>
               )}
               <LinkButton
-                layout="apply"
+                layout={ButtonLayout.FILL}
                 href={isMobile ? PageUrls.SETTINGS : PageUrls.EDIT_PROFILE}
                 className={styles.settings}
               >

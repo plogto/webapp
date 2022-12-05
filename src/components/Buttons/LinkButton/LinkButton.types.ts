@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
+import { ButtonLayout } from "@enums";
 
 export interface LinkButtonProps {
-  layout?: "outline" | "remove" | "apply";
+  layout?: ButtonLayout;
   href: string;
   className?: string;
   children?: ReactNode;

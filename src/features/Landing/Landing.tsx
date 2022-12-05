@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { ButtonLayout } from "@enums";
 import { LinkButton } from "@components/Buttons/LinkButton";
 import { Icon } from "@components/Icon";
 import { PageUrls } from "@enums/pages";
@@ -28,7 +29,7 @@ export function Landing() {
             {t("pages:register")}
           </LinkButton>
           <LinkButton
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             href={PageUrls.LOGIN}
             className={styles.loginButton}
           >

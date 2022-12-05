@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { USERNAME_PATTERN } from "@constants";
+import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Input } from "@components/Input";
 import { ChangeUsernameModal } from "@components/Modal/components";
@@ -71,7 +72,7 @@ export function ChangeUsername(props: ChangeUsernameProps) {
           </Button>
           <Button
             type="button"
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             onClick={closeModal}
             className="modal-button"
           >

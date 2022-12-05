@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
@@ -26,7 +27,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
         </div>
         <div className={styles.modalButtons}>
           <Button
-            layout="apply"
+            layout={ButtonLayout.FILL}
             className="modal-button"
             onClick={onClickInputFile}
           >
@@ -34,7 +35,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
           </Button>
           {showRemoveButton && (
             <Button
-              layout="remove"
+              layout={ButtonLayout.DANGER}
               className="modal-button"
               onClick={removeImage}
             >
@@ -42,7 +43,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
             </Button>
           )}
           <Button
-            layout="outline"
+            layout={ButtonLayout.NORMAL}
             className="modal-button"
             onClick={closeModal}
           >

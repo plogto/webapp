@@ -1,6 +1,7 @@
 import { isMobile } from "react-device-detect";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { Input } from "@components/Input";
@@ -119,7 +120,7 @@ export function EditProfile() {
           {user && (
             <div className={styles.footer}>
               <Button
-                layout="apply"
+                layout={ButtonLayout.FILL}
                 loading={loading}
                 disabled={!isValid || !isDirty}
                 type="submit"

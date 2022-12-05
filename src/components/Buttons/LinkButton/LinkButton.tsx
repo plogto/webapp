@@ -9,7 +9,7 @@ export function LinkButton(props: LinkButtonProps) {
   const classes = classNames(
     styles.button,
     className,
-    layout && styles[layout],
+    layout && styles[layout.toLowerCase()],
   );
 
   return (
