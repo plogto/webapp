@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
+import { ImageProfileKey } from "@enums";
 import { useMutation } from "@apollo/client";
+import { useAccountContext } from "@contexts/AccountContext";
 import { useModalContext } from "@contexts/ModalContext";
 import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER } from "@graphql/user";
@@ -16,23 +20,48 @@ export function useImageProfile(props: UseImageProfileProps) {
     singleUploadFile,
     singleUploadFileResponse: { data },
   } = useUploadFile();
+  const { t } = useTranslation("profile");
+  const { setUser } = useAccountContext();
 
   useEffect(() => {
     if (data?.singleUploadFile) {
-      editUser({ variables: { [key]: data.singleUploadFile.id } });
+      editUser({
+        variables: { [key]: data.singleUploadFile.id },
+      }).then(({ data }) => {
+        setUser(data?.editUser);
+      });
     }
-  }, [data, editUser, key]);
+  }, [data, editUser, key, setUser]);
+
+  const prepareSuccessMessage = useCallback(
+    (key: ImageProfileKey) => {
+      switch (key) {
+        case ImageProfileKey.AVATAR:
+          return t("toasts.avatarUploaded");
+        case ImageProfileKey.BACKGROUND:
+          return t("toasts.backgroundUploaded");
+      }
+    },
+    [t],
+  );
 
   useEffect(() => {
     if (imagePreview) {
       const file = new File([imagePreview], "file.png", {
         type: "image/png",
       });
-      singleUploadFile({
-        variables: { file },
-      });
+      toast.promise(
+        singleUploadFile({
+          variables: { file },
+        }),
+        {
+          loading: t("toasts.uploadingFile"),
+          success: prepareSuccessMessage(key),
+          error: t("toasts.somethingWentWrong"),
+        },
+      );
     }
-  }, [imagePreview, singleUploadFile]);
+  }, [imagePreview, key, prepareSuccessMessage, singleUploadFile, t]);
 
   const removeImage = useCallback(() => {
     editUser({ variables: { [key]: "" } });

@@ -1,7 +1,0 @@
-.toast {
-  &.fill {
-    @apply rounded-xl py-2.5 px-4;
-    @apply bg-foreground text-background-pure shadow-md;
-    @apply w-full md:w-fit;
-  }
-}

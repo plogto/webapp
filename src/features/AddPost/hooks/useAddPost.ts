@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { EditorState } from "draft-js";
@@ -157,23 +158,30 @@ export function useAddPost(props: UseAddPostProps) {
         const file = new File([attachmentPreview], "file.png", {
           type: "image/png",
         });
-        singleUploadFile({
-          variables: { file },
-        }).then(({ data }) => {
-          addPost({
-            variables: {
-              ...variables,
-              attachment: data?.singleUploadFile?.id
-                ? [data.singleUploadFile.id]
-                : [],
-              content,
-            },
-            refetchQueries,
-          });
-        });
+        toast.promise(
+          singleUploadFile({
+            variables: { file },
+          }).then(({ data }) => {
+            addPost({
+              variables: {
+                ...variables,
+                attachment: data?.singleUploadFile?.id
+                  ? [data.singleUploadFile.id]
+                  : [],
+                content,
+              },
+              refetchQueries,
+            });
+          }),
+          {
+            loading: t("toasts.uploadingPost"),
+            success: t("toasts.postUploaded"),
+            error: t("toasts.somethingWentWrong"),
+          },
+        );
       }
     },
-    [addPost, attachmentPreview, refetchQueries, singleUploadFile],
+    [addPost, attachmentPreview, refetchQueries, singleUploadFile, t],
   );
 
   const onSubmit = useCallback(

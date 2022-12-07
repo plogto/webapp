@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
@@ -14,7 +15,6 @@ import { useModalContext } from "@contexts/ModalContext";
 import { useNavigator } from "@hooks/useNavigator";
 import { useUrls } from "@hooks/useUrls";
 import { copyTextToClipboard } from "@utils/copyTextToClipboard";
-import { fillToast } from "@utils/toast";
 import styles from "../Post.module.css";
 
 export function Header(props: HeaderPostProps) {
@@ -43,7 +43,7 @@ export function Header(props: HeaderPostProps) {
       icon: "Link",
       onClick: () =>
         copyTextToClipboard(formatPostUrl(url)).then(() => {
-          fillToast(t("texts.copiedToClipboard"));
+          toast.success(t("texts.copiedToClipboard"));
         }),
     },
     {

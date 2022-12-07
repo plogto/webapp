@@ -11,6 +11,11 @@
     "texts": {
       "newPost": "New Post",
       "replyPost": "Reply Post"
+    },
+    "toasts": {
+      "postUploaded": "Post uploaded",
+      "somethingWentWrong": "Something went wrong!",
+      "uploadingPost": "Uploading post ..."
     }
   },
   "auth": {
@@ -254,6 +259,12 @@
     "tabs": {
       "posts": "Posts",
       "saved": "Saved"
+    },
+    "toasts": {
+      "avatarUploaded": "Avatar uploaded",
+      "backgroundUploaded": "Background uploaded",
+      "somethingWentWrong": "Something went wrong!",
+      "uploadingFile": "Uploading file ..."
     }
   },
   "saved": {

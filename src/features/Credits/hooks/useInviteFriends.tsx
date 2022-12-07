@@ -1,9 +1,9 @@
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { ModalColor } from "@enums";
 import type { InformationModalProps } from "@components/Modal/Modal.types";
 import { useUrls } from "@hooks/useUrls";
 import { copyTextToClipboard } from "@utils/copyTextToClipboard";
-import { fillToast } from "@utils/toast";
 import type { UseInviteFriendsProps } from "../Credits.types";
 import { InvitationCode } from "../components/InvitationCode";
 
@@ -21,7 +21,7 @@ export function useInviteFriends(props: UseInviteFriendsProps) {
     onSubmit: () =>
       copyTextToClipboard(formatInvitationUrl(user?.invitationCode)).then(
         () => {
-          fillToast(t("texts.invitationLinkCopiedToClipboard"));
+          toast.success(t("texts.invitationLinkCopiedToClipboard"));
         },
       ),
     color: ModalColor.NORMAL,

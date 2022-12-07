@@ -7,6 +7,7 @@ import "@locales";
 import { ApolloProvider } from "@apollo/client";
 import { AppInit } from "@components/AppInit";
 import { SafeHydrate } from "@components/SafeHydrate";
+import { TOAST_OPTIONS } from "@constants/toast";
 import { useApollo } from "@lib/apolloClient";
 import "@styles/globals.css";
 
@@ -26,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
               />
             </Head>
 
-            <Toaster />
+            <Toaster toastOptions={TOAST_OPTIONS} />
             <Component {...pageProps} />
           </AppContext>
         </ThemeProvider>
