@@ -26,6 +26,7 @@ import Link from "./svg/link.svg";
 import Loader from "./svg/loader.svg";
 import LockClosedFill from "./svg/lock-closed-fill.svg";
 import LockClosed from "./svg/lock-closed.svg";
+import Logout from "./svg/logout.svg";
 import Mail from "./svg/mail.svg";
 import Pencil from "./svg/pencil.svg";
 import Photo from "./svg/photo.svg";
@@ -80,6 +81,7 @@ export const IconsList = {
   Loader,
   LockClosedFill,
   LockClosed,
+  Logout,
   Mail,
   Pencil,
   Photo,
