@@ -64,9 +64,11 @@ export function useImageProfile(props: UseImageProfileProps) {
   }, [imagePreview, key, prepareSuccessMessage, singleUploadFile, t]);
 
   const removeImage = useCallback(() => {
-    editUser({ variables: { [key]: "" } });
+    editUser({ variables: { [key]: "" } }).then(({ data }) => {
+      setUser(data?.editUser);
+    });
     closeModal();
-  }, [closeModal, editUser, key]);
+  }, [closeModal, editUser, key, setUser]);
 
   const onClickInputFile = useCallback(() => {
     closeModal();
