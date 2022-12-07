@@ -27,8 +27,13 @@
     }
 
     & .logoutButton {
+      @apply flex items-center space-x-3;
       @apply justify-start p-3.5;
       @apply w-full rounded-none text-danger;
+
+      & .icon {
+        @apply h-6 w-6 stroke-2;
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ import { Modal } from "@components/Modal";
 import { useModalContext } from "@contexts/ModalContext";
 import { PageUrls } from "@enums/pages";
 import type { LogoutButtonProps } from "@features/Settings/Settings.types";
+import styles from "../Settings.module.css";
 
 // TODO: split button and modal and move modal part to Modal/components
 export function LogoutButton(props: LogoutButtonProps) {
@@ -52,7 +53,8 @@ export function LogoutButton(props: LogoutButtonProps) {
         </div>
       </Modal>
       <Button onClick={openModal} className={classNames(className)}>
-        {t("texts.logout")}
+        <Icon className={styles.icon} name="Logout" />
+        <span>{t("texts.logout")}</span>
       </Button>
     </>
   );

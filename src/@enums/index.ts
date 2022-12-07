@@ -147,7 +147,7 @@ export enum SearchFilters {
 }
 
 export enum ButtonLayout {
-  NORMAL = "OUTLINE",
+  NORMAL = "NORMAL",
   FILL = "FILL",
   /* TODO: change the name and value */
   DANGER = "DANGER",

@@ -20,7 +20,7 @@
   /* TODO: change the name class */
   &.danger {
     @apply border border-danger text-danger;
-    @apply hover:bg-danger-light;
+    @apply hover:bg-danger hover:text-foreground;
   }
 
   &.fill {
