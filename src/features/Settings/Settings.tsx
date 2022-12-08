@@ -45,12 +45,15 @@ export function Settings(props: SettingsProps) {
         {!(isMobile && !isSettingsPage && children) && (
           <Card shadow={!isMobile} rounded={!isMobile} className={styles.items}>
             {SETTINGS_ITEMS.map(({ title, icon, href, className }) => (
-              <Link key={`settings-${title}`} href={href}>
-                <a className={classNames(styles.item, className)}>
-                  {icon && <Icon className={styles.icon} name={icon} />}
-                  <span>{title}</span>
-                </a>
-              </Link>
+              <>
+                <Link key={`settings-${title}`} href={href}>
+                  <a className={classNames(styles.item, className)}>
+                    {icon && <Icon className={styles.icon} name={icon} />}
+                    <span>{title}</span>
+                  </a>
+                </Link>
+                <div className={styles.separator} />
+              </>
             ))}
             <ModalProvider>
               <LogoutButton className={styles.logoutButton} />

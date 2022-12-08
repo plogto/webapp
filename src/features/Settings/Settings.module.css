@@ -15,10 +15,13 @@
   @apply flex items-start justify-around px-0 md:space-x-4 md:px-4;
 
   & .items {
-    @apply z-30 w-full overflow-hidden bg-background-pure md:-mt-12 md:w-[40%];
-    & .item {
-      @apply flex items-center space-x-3 hover:bg-background-light;
-      @apply whitespace-nowrap border-b border-background-dark p-3;
+    @apply flex flex-col;
+    @apply z-30 w-full bg-background-pure md:-mt-12 md:w-[40%];
+
+    & .item,
+    & .logoutButton {
+      @apply flex items-center justify-start space-x-3 hover:bg-background-light;
+      @apply m-2 whitespace-nowrap rounded-lg border-background-medium p-2;
       @apply text-foreground transition-all duration-300;
 
       & .icon {
@@ -26,10 +29,12 @@
       }
     }
 
+    & .separator {
+      @apply h-px bg-background-light;
+    }
+
     & .logoutButton {
-      @apply flex items-center space-x-3;
-      @apply justify-start p-3.5;
-      @apply w-full rounded-none text-danger;
+      @apply text-danger hover:bg-danger-light;
 
       & .icon {
         @apply h-6 w-6 stroke-2;
