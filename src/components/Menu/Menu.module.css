@@ -32,3 +32,22 @@
     }
   }
 }
+
+.enterMenuTransition {
+  @apply origin-top-right transform transition duration-100 ease-out;
+}
+.enterFromMenuTransition {
+  @apply scale-50 opacity-0;
+}
+.enterToMenuTransition {
+  @apply scale-100 opacity-100;
+}
+.leaveMenuTransition {
+  @apply origin-top-right transform transition duration-100 ease-in;
+}
+.leaveFromMenuTransition {
+  @apply scale-100 opacity-100;
+}
+.leaveToMenuTransition {
+  @apply scale-50 opacity-0;
+}
