@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import { PageUrls } from "@enums/pages";
@@ -14,7 +15,7 @@ import type { Placeholder } from "@t/placeholder";
 
 export function useHome() {
   const { user, token } = useAccountContext();
-  const [getTimelinePosts, { loading, data, fetchMore }] = useLazyQuery<
+  const [getTimelinePosts, { called, loading, data, fetchMore }] = useLazyQuery<
     GetTimelinePostsQuery,
     GetTimelinePostsQueryRequest
   >(GET_TIMELINE_POSTS);
@@ -53,7 +54,7 @@ export function useHome() {
     });
 
   return {
-    loading,
+    isLoading: isDataLoading(called, loading),
     posts: data?.getTimelinePosts,
     emptyStatus,
     getMoreData,

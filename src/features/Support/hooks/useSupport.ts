@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import {
@@ -43,5 +44,10 @@ export function useSupport() {
     [t],
   );
 
-  return { tickets, getMoreData, emptyStatus };
+  const isLoading = useMemo(
+    () => isDataLoading(getTicketsResponse.called, getTicketsResponse.loading),
+    [getTicketsResponse.called, getTicketsResponse.loading],
+  );
+
+  return { tickets, getMoreData, emptyStatus, isLoading };
 }

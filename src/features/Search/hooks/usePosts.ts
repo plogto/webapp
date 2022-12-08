@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type {
@@ -11,7 +12,7 @@ import type { Placeholder } from "@t/placeholder";
 
 export function usePosts() {
   const { user } = useAccountContext();
-  const [getExplorePosts, { loading, data, fetchMore }] = useLazyQuery<
+  const [getExplorePosts, { called, loading, data, fetchMore }] = useLazyQuery<
     GetExplorePostsQuery,
     GetExplorePostsQueryRequest
   >(GET_EXPLORE_POSTS);
@@ -39,7 +40,7 @@ export function usePosts() {
     });
 
   return {
-    loading,
+    isLoading: isDataLoading(called, loading),
     posts: data?.getExplorePosts,
     emptyStatus,
     getMoreData,

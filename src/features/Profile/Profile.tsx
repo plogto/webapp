@@ -17,10 +17,6 @@ export function Profile() {
     return <PageLoader />;
   }
 
-  if (!userData && !isUserLoading) {
-    return <NotFound />;
-  }
-
   if (userData) {
     return (
       <>
@@ -47,5 +43,5 @@ export function Profile() {
     );
   }
 
-  return null;
+  return <NotFound />;
 }

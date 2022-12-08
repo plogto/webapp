@@ -73,7 +73,8 @@
     "posts": "Posts",
     "tags": "Tags",
     "trends": "Trends For You",
-    "users": "Users"
+    "users": "Users",
+    "noResultFound": "No result found"
   },
   "connection": {
     "buttons": {

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import {
@@ -28,8 +29,15 @@ export function useCredits() {
   );
 
   const isLoading = useMemo(
-    () => getCreditTransactionsResponse.loading,
-    [getCreditTransactionsResponse.loading],
+    () =>
+      isDataLoading(
+        getCreditTransactionsResponse.called,
+        getCreditTransactionsResponse.loading,
+      ),
+    [
+      getCreditTransactionsResponse.called,
+      getCreditTransactionsResponse.loading,
+    ],
   );
 
   const getMoreData = useCallback(() => {

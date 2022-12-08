@@ -25,41 +25,45 @@ export function Credits() {
   const { formatProfilePageRoute } = useNavigator();
   const { t } = useTranslation("common");
 
-  return isUserLoading ? (
-    <PageLoader heightType={PageLoaderHeightType.FULL} />
-  ) : !userData ? (
-    <NotFound />
-  ) : (
-    <div className={styles.wrapper}>
-      {isMobile && (
-        <PageHeader
-          className={styles.header}
-          title={t("credits")}
-          backLink={formatProfilePageRoute(userData.username)}
-        />
-      )}
-      {!isMobile && (
-        <div className={styles.background}>
-          {userData?.background ? (
-            <Img
-              alt={`${userData.username}'s background`}
-              image={userData.background}
-            />
-          ) : (
-            <DefaultBackground />
-          )}
+  if (isUserLoading || isLoading) {
+    return <PageLoader heightType={PageLoaderHeightType.FULL} />;
+  }
+
+  if (userData && creditTransactions) {
+    return (
+      <div className={styles.wrapper}>
+        {isMobile && (
+          <PageHeader
+            className={styles.header}
+            title={t("credits")}
+            backLink={formatProfilePageRoute(userData.username)}
+          />
+        )}
+        {!isMobile && (
+          <div className={styles.background}>
+            {userData?.background ? (
+              <Img
+                alt={`${userData.username}'s background`}
+                image={userData.background}
+              />
+            ) : (
+              <DefaultBackground />
+            )}
+          </div>
+        )}
+        <div className={styles.cards} id={ID.CREDIT_TRANSACTIONS}>
+          {!isMobile && <ProfileInfo user={userData} showCredit={false} />}
+          <CreditsContent
+            isLoading={isLoading}
+            creditTransactions={creditTransactions}
+            emptyStatus={emptyStatus}
+            getMoreData={getMoreData}
+            user={userData}
+          />
         </div>
-      )}
-      <div className={styles.cards} id={ID.CREDIT_TRANSACTIONS}>
-        {!isMobile && <ProfileInfo user={userData} showCredit={false} />}
-        <CreditsContent
-          isLoading={isLoading}
-          creditTransactions={creditTransactions}
-          emptyStatus={emptyStatus}
-          getMoreData={getMoreData}
-          user={userData}
-        />
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <NotFound />;
 }

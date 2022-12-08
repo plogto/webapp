@@ -11,7 +11,7 @@ import styles from "./Support.module.css";
 import { useCreateTicket, useSupport } from "./hooks";
 
 export function Support() {
-  const { tickets, emptyStatus, getMoreData } = useSupport();
+  const { isLoading, tickets, emptyStatus, getMoreData } = useSupport();
   const { showCreateTicket, openCreateTicket, closeCreateTicket } =
     useCreateTicket();
 
@@ -40,6 +40,7 @@ export function Support() {
         )}
         <TicketPreviewsList
           data={tickets}
+          isLoading={isLoading}
           emptyStatus={emptyStatus}
           getMoreData={getMoreData}
         />

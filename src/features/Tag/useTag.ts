@@ -95,6 +95,5 @@ export function useTag() {
       data: getTagDataResponse.data?.getTagByTagName,
     },
     TABS,
-    t,
   };
 }

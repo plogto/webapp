@@ -20,7 +20,7 @@ export function Ticket() {
     useAddTicketMessage();
 
   const {
-    loading,
+    isLoading,
     ticketMessages,
     emptyStatus,
     menuItems,
@@ -89,7 +89,7 @@ export function Ticket() {
         )}
         <TicketMessagesList
           data={ticketMessages}
-          isLoading={loading}
+          isLoading={isLoading}
           emptyStatus={emptyStatus}
           getMoreData={getMoreData}
         />

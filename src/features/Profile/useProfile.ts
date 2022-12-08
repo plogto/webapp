@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ProfileActiveTab } from "@enums";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type {
@@ -47,7 +48,7 @@ export function useProfile() {
   );
 
   const isUserLoading = useMemo(
-    () => userResponse.loading || !userResponse.called,
+    () => isDataLoading(userResponse.called, userResponse.loading),
     [userResponse.called, userResponse.loading],
   );
 

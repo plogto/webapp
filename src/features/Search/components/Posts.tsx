@@ -5,12 +5,12 @@ import styles from "../Search.module.css";
 import { usePosts } from "../hooks";
 
 export function Posts() {
-  const { loading, posts, emptyStatus, getMoreData } = usePosts();
+  const { isLoading, posts, emptyStatus, getMoreData } = usePosts();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.posts}>
       <PostsList
-        isLoading={loading}
+        isLoading={isLoading}
         getMoreData={getMoreData}
         data={posts}
         emptyStatus={emptyStatus}

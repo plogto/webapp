@@ -60,7 +60,7 @@
     @apply mt-3 ml-4 w-full border-background-medium md:mx-2 md:mt-5 md:ml-0 md:border-t;
 
     & .count {
-      @apply pb-2 md:m-2 md:w-full md:p-2;
+      @apply pb-2 pr-3 md:m-2 md:w-full md:p-2;
       @apply flex flex-row items-center space-x-1 md:flex-col md:space-y-1 md:space-x-0;
       @apply rounded-lg text-foreground-medium md:hover:bg-background-light;
       @apply transition-all duration-300;

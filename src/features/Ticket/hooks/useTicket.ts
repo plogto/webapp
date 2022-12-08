@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { ModalColor, TicketPermissionType } from "@enums";
+import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import type { MenuProps } from "@components/Menu/Menu.types";
 import { useAccountContext } from "@contexts/AccountContext";
@@ -47,9 +48,13 @@ export function useTicket(props: UseTicketProps) {
     [getTicketMessagesResponse.data?.getTicketMessagesByTicketUrl],
   );
 
-  const loading = useMemo(
-    () => getTicketMessagesResponse.loading,
-    [getTicketMessagesResponse.loading],
+  const isLoading = useMemo(
+    () =>
+      isDataLoading(
+        getTicketMessagesResponse.called,
+        getTicketMessagesResponse.loading,
+      ),
+    [getTicketMessagesResponse.called, getTicketMessagesResponse.loading],
   );
 
   const getMoreData = useCallback(() => {
@@ -204,7 +209,7 @@ export function useTicket(props: UseTicketProps) {
 
   return {
     ticketMessages,
-    loading,
+    isLoading,
     getMoreData,
     emptyStatus,
     menuItems: filterMenuItems(MENU_ITEMS),

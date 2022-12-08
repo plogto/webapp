@@ -6,7 +6,7 @@ import styles from "./Home.module.css";
 import { useHome } from "./useHome";
 
 export function Home() {
-  const { loading, posts, emptyStatus, getMoreData } = useHome();
+  const { isLoading, posts, emptyStatus, getMoreData } = useHome();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.home}>
@@ -16,7 +16,7 @@ export function Home() {
         </div>
       )}
       <PostsList
-        isLoading={loading}
+        isLoading={isLoading}
         getMoreData={getMoreData}
         data={posts}
         emptyStatus={emptyStatus}

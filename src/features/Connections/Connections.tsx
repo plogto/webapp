@@ -1,9 +1,10 @@
 import { isMobile } from "react-device-detect";
 import { ID } from "@constants";
+import { PageLoaderHeightType } from "@enums";
 import { DefaultBackground } from "@components/DefaultBackground/DefaultBackground";
 import { Img } from "@components/Img";
-import { NotFound } from "@components/NotFound";
 import { PageHeader } from "@components/PageHeader";
+import { PageLoader } from "@components/PageLoader";
 import { ProfileInfo } from "@components/ProfileInfo";
 import { useNavigator } from "@hooks/useNavigator";
 import styles from "./Connections.module.css";
@@ -17,8 +18,8 @@ export function Connections({ type }: ConnectionsProps) {
   });
   const { formatProfilePageRoute } = useNavigator();
 
-  if (!userData && !isUserLoading) {
-    return <NotFound />;
+  if (isUserLoading) {
+    return <PageLoader heightType={PageLoaderHeightType.FULL} />;
   }
 
   if (userData) {
