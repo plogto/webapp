@@ -102,8 +102,11 @@ export function ProfileInfo(props: ProfileInfoProps) {
       )}
 
       <div className={styles.counts}>
-        {COUNTS.map(count => (
-          <Count key={count.title} {...count} clickable={clickable} />
+        {COUNTS.map((count, i) => (
+          <>
+            {i > 0 && <div className={styles.countSeparator} />}
+            <Count key={count.title} {...count} clickable={clickable} />
+          </>
         ))}
       </div>
     </Card>
