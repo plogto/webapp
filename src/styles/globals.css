@@ -117,7 +117,7 @@
     @apply absolute top-0 right-0 bg-background-pure;
     @apply mr-2 rounded-lg p-1.5 text-gray-400;
     @apply border border-transparent;
-    @apply hover:border-background-medium hover:text-foreground hover:shadow;
+    @apply hover:text-foreground md:hover:border-background-medium md:hover:shadow;
     @apply box-content transition-all duration-300;
 
     & .icon {
