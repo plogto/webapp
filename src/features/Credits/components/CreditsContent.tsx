@@ -6,7 +6,7 @@ import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { CreditTransactionsList } from "@components/Lists/CreditTransactionsList";
-import { InformationModal } from "@components/Modal/components";
+import { InformationModal } from "@components/Modal";
 import { useModalContext } from "@contexts/ModalContext";
 import { useCredit } from "@hooks/useCredit";
 import styles from "../Credits.module.css";

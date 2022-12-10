@@ -5,7 +5,7 @@ import { USERNAME_PATTERN } from "@constants";
 import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Input } from "@components/Input";
-import { ChangeUsernameModal } from "@components/Modal/components";
+import { ChangeUsernameModal } from "@components/Modal";
 import type { ChangeUsernameProps } from "../EditProfile.types";
 import { useChangeUsername } from "../hooks";
 

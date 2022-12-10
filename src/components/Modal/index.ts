@@ -1,3 +1,15 @@
-import { Modal, DeletionModal } from "./components";
+import {
+  ChangeUsernameModal,
+  DeletionModal,
+  ConfirmationModal,
+  InformationModal,
+  Modal,
+} from "./components";
 
-export { Modal, DeletionModal };
+export {
+  ChangeUsernameModal,
+  DeletionModal,
+  ConfirmationModal,
+  InformationModal,
+  Modal,
+};

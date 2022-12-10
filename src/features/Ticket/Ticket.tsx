@@ -6,7 +6,7 @@ import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
 import { TicketMessagesList } from "@components/Lists/TicketMessagesList";
 import { Menu } from "@components/Menu";
-import { ConfirmationModal } from "@components/Modal/components";
+import { ConfirmationModal } from "@components/Modal";
 import { PageHeader } from "@components/PageHeader";
 import { Status } from "@components/Status";
 import { useModalContext } from "@contexts/ModalContext";
