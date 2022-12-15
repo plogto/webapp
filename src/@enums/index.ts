@@ -134,6 +134,7 @@ export enum PageLoaderHeightType {
 export enum UsersListDataKey {
   FOLLOWING = "following",
   FOLLOWER = "follower",
+  USER = "user",
 }
 
 export enum ImageProfileKey {

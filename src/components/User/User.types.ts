@@ -16,6 +16,7 @@ export interface ActionButtons {
 }
 
 export interface UserProps {
+  className?: string;
   user: User;
   showAccept?: boolean;
   showDelete?: boolean;

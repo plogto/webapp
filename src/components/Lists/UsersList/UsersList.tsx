@@ -11,6 +11,7 @@ export function UsersList(props: UsersListProps) {
     scrollableTarget,
     getMoreData,
     emptyStatus,
+    itemClassName,
   } = props;
 
   return (
@@ -23,7 +24,14 @@ export function UsersList(props: UsersListProps) {
       getMoreData={getMoreData}
     >
       {data?.edges?.map(({ node }) => (
-        <User key={node[dataKey].id} user={node[dataKey]} showFollow />
+        <User
+          // @ts-expect-error ignore
+          key={node[dataKey].id}
+          // @ts-expect-error ignore
+          user={node[dataKey]}
+          className={itemClassName}
+          showFollow
+        />
       ))}
     </ListWrapper>
   );

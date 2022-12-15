@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 import Link from "next/link";
 import { Avatar } from "@components/Avatar";
 import { Button } from "@components/Buttons/Button";
@@ -13,6 +14,7 @@ import { useActions } from "./useActions";
 // TODO: refactor this component
 export function User(props: UserProps) {
   const {
+    className,
     user: { id, username, fullName, connectionStatus, avatar, isVerified },
     showAccept,
     showDelete,
@@ -60,8 +62,10 @@ export function User(props: UserProps) {
     },
   };
 
+  const wrapperClasses = classNames(styles.wrapper, className);
+
   return (
-    <div className={styles.wrapper}>
+    <div className={wrapperClasses}>
       {username && (
         <Link href={formatProfilePageRoute(username)}>
           <a className={styles.userInfo}>
