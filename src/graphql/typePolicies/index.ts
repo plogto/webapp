@@ -1,5 +1,5 @@
 import type { TypePolicies } from "@apollo/client";
-import { mergePosts } from "@graphql/mergeResponses";
+import { mergeLikedPosts, mergePosts } from "@graphql/mergeResponses";
 
 export const typePolicies: TypePolicies = {
   Query: {
@@ -23,6 +23,10 @@ export const typePolicies: TypePolicies = {
       getPostsByTagName: {
         keyArgs: ["tagName"],
         merge: mergePosts,
+      },
+      getLikedPostsByPostId: {
+        keyArgs: ["postId"],
+        merge: mergeLikedPosts,
       },
     },
   },

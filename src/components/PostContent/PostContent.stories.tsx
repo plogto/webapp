@@ -28,6 +28,7 @@ Main.argTypes = {
 };
 
 Main.args = {
+  id: "id",
   content:
     "That from where seriously floundering thinks had are an to ability is forward it one a I is audiences that for to about like the them.",
 };

@@ -4,6 +4,7 @@ import type { ContentSize, DateSize } from "@t/size";
 import type { User } from "@t/user";
 
 export interface PostContentProps {
+  id: Post["id"];
   user?: {
     fullName: User["fullName"];
     username: User["username"];

@@ -9,3 +9,11 @@
     @apply text-xs;
   }
 }
+
+.listWrapper {
+  @apply mt-2 w-full;
+
+  & .user {
+    @apply px-0;
+  }
+}

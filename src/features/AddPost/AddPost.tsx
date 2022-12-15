@@ -64,6 +64,7 @@ export function AddPost(props: AddPostProps) {
               <UserInfo size="normal" user={parentPost.user} />
             </div>
             <PostContent
+              id={parentPost.id}
               dateSize="large"
               size="large"
               dateType={DateType.LONG}

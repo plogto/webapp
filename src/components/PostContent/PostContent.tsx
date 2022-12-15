@@ -9,6 +9,7 @@ import { Img } from "@components/Img";
 import { Mention } from "@components/Mention";
 import { PostDateTime } from "@components/PostDateTime";
 import { PostLikesCounter } from "@components/PostLikesCounter";
+import { ModalProvider } from "@contexts/ModalContext";
 import { useNavigator } from "@hooks/useNavigator";
 import { usePostParser } from "@hooks/usePostParser";
 import styles from "./PostContent.module.css";
@@ -16,6 +17,7 @@ import type { PostContentProps } from "./PostContent.types";
 
 export function PostContent(props: PostContentProps) {
   const {
+    id,
     size = "normal",
     url,
     isClickable,
@@ -86,7 +88,14 @@ export function PostContent(props: PostContentProps) {
             updatedAt={updatedAt}
             size={dateSize}
           />
-          <PostLikesCounter size={dateSize} likes={likes} />
+          <ModalProvider>
+            <PostLikesCounter
+              isClickable={!isClickable}
+              size={dateSize}
+              likes={likes}
+              postId={id}
+            />
+          </ModalProvider>
         </div>
       )}
     </span>

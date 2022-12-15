@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { PageInfoFragment } from "./fragments/pageInfo";
 import { UserFragment } from "./fragments/user";
 
 export const LIKE_POST = gql`
@@ -20,6 +21,7 @@ export const LIKE_POST = gql`
 
 export const GET_LIKED_POSTS_BY_POST_ID = gql`
   ${UserFragment.short}
+  ${PageInfoFragment.complete}
   query getLikedPostsByPostId($postId: ID!) {
     getLikedPostsByPostId(postId: $postId) {
       totalCount

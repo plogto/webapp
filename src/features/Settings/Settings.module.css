@@ -20,7 +20,7 @@
 
     & .item,
     & .logoutButton {
-      @apply flex items-center justify-start space-x-3 md:hover:bg-background-light;
+      @apply flex items-center justify-start space-x-3 hover:bg-background-light;
       @apply m-2 whitespace-nowrap rounded-lg border-background-medium p-2;
       @apply text-foreground transition-all duration-300;
 
@@ -34,7 +34,7 @@
     }
 
     & .logoutButton {
-      @apply text-danger md:hover:bg-danger-light;
+      @apply text-danger hover:bg-danger-light;
 
       & .icon {
         @apply h-6 w-6 stroke-2;

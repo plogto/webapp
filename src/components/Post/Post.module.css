@@ -47,7 +47,7 @@
     }
 
     & .profile {
-      @apply relative inline-flex w-fit px-2;
+      @apply relative inline-flex w-11/12 px-2;
 
       & .avatar {
         @apply mr-2 !important;

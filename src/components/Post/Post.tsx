@@ -98,6 +98,7 @@ export function Post(props: PostProps) {
             />
           </ModalProvider>
           <PostContent
+            id={id}
             showHeader={!isCard}
             url={url}
             isClickable={isContentClickable}

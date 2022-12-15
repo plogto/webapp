@@ -219,17 +219,24 @@
       "reply": "Reply",
       "viewParentPost": "View parent post",
       "viewReplies": "View {{ repliesCount }} replies",
-      "viewReply": "View {{ repliesCount }} reply"
+      "viewReply": "View {{ repliesCount }} reply",
+      "okay": "Okay"
     },
     "modals": {
       "delete": {
         "description": "Are you sure you want to delete your post?",
         "title": "Delete Post"
+      },
+      "likes": {
+        "title": "Liked by"
       }
     },
     "status": {
       "noPosts": {
         "title": "No Posts Yet"
+      },
+      "noLikes": {
+        "title": "No Likes Yet"
       }
     },
     "texts": {
