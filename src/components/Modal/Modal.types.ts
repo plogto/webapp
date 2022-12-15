@@ -42,3 +42,10 @@ export interface InformationModalProps {
   submitButton: ReactNode;
   isOpen?: boolean;
 }
+
+export interface ListModalProps {
+  title: string;
+  children?: ReactNode;
+  closeButton: ReactNode;
+  isOpen?: boolean;
+}
