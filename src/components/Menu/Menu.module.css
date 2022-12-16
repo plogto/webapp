@@ -4,7 +4,7 @@
 
   & .menuItem {
     @apply flex items-center justify-between;
-    @apply stroke-1.5 p-3 hover:bg-background;
+    @apply mx-2 mt-2 rounded-lg stroke-1.5 p-2 last:mb-2 hover:bg-background;
     @apply transition-all duration-300;
 
     &.normal {

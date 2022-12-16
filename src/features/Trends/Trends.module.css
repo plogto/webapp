@@ -3,20 +3,20 @@
   @apply flex flex-col;
 
   & .header {
-    @apply flex items-center px-4 py-3 text-foreground;
+    @apply flex items-center border-b border-background-medium px-4 py-3 text-foreground;
 
     & svg {
       @apply h-7 w-7 stroke-2 text-current;
     }
 
     & .title {
-      @apply mr-2 text-2xl font-bold text-current;
+      @apply mr-2  text-2xl font-bold text-current;
     }
   }
 
   & .tag {
     @apply transition-all duration-300 ease-linear;
-    @apply flex flex-col border-t border-background-medium px-4 py-3;
+    @apply mx-2 mt-2 flex flex-col rounded-xl px-2 py-2 last:mb-2;
     @apply overflow-hidden hover:bg-background-light;
 
     & .tagName {
