@@ -42,6 +42,7 @@ export enum BackgroundColor {
 
 export enum ProfileActiveTab {
   POSTS = "POSTS",
+  REPLIES = "REPLIES",
   SAVED = "SAVED",
 }
 

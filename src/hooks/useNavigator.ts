@@ -12,6 +12,9 @@ export function useNavigator() {
   function formatProfilePageRoute(username: User["username"]) {
     return `/${username}`;
   }
+  function formatRepliesPostsPageRoute(username: User["username"]) {
+    return `/${username}?tab=replies`;
+  }
   function formatSavedPostsPageRoute(username: User["username"]) {
     return `/${username}?tab=saved`;
   }
@@ -60,6 +63,7 @@ export function useNavigator() {
 
   return {
     formatProfilePageRoute,
+    formatRepliesPostsPageRoute,
     formatSavedPostsPageRoute,
     formatPostPageRoute,
     formatTagPageRoute,

@@ -93,6 +93,31 @@ export const GET_POSTS_BY_USERNAME = gql`
   }
 `;
 
+export const GET_REPLIES_BY_USERNAME = gql`
+  ${PageInfoFragment.complete}
+  ${PostFragment.default}
+  query getRepliesByUsername($username: String!, $first: Int, $after: String) {
+    getRepliesByUsername(
+      username: $username
+      pageInfoInput: { first: $first, after: $after }
+    ) {
+      totalCount
+      edges {
+        cursor
+        node {
+          ...PostFragment
+          replies {
+            totalCount
+          }
+        }
+      }
+      pageInfo {
+        ...PageInfoFragmentComplete
+      }
+    }
+  }
+`;
+
 export const GET_SAVED_POSTS = gql`
   ${PageInfoFragment.complete}
   ${PostFragment.default}

@@ -7,10 +7,16 @@ import { useAccountContext } from "@contexts/AccountContext";
 import type {
   GetPostsByUsernameQuery,
   GetPostsByUsernameQueryRequest,
+  GetRepliesByUsernameQuery,
+  GetRepliesByUsernameQueryRequest,
   GetSavedPostsQuery,
   GetSavedPostsQueryRequest,
 } from "@graphql/@types/post";
-import { GET_POSTS_BY_USERNAME, GET_SAVED_POSTS } from "@graphql/post";
+import {
+  GET_POSTS_BY_USERNAME,
+  GET_REPLIES_BY_USERNAME,
+  GET_SAVED_POSTS,
+} from "@graphql/post";
 import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import type { PostTab } from "@t/post";
@@ -21,7 +27,16 @@ export function useProfile() {
   const { t } = useTranslation(["profile", "common"]);
 
   const { isYourAccount } = useAccountContext();
-  const { formatProfilePageRoute, formatSavedPostsPageRoute } = useNavigator();
+  const {
+    formatRepliesPostsPageRoute,
+    formatProfilePageRoute,
+    formatSavedPostsPageRoute,
+  } = useNavigator();
+
+  const [getReplies, getRepliesResponse] = useLazyQuery<
+    GetRepliesByUsernameQuery,
+    GetRepliesByUsernameQueryRequest
+  >(GET_REPLIES_BY_USERNAME);
 
   const [getPosts, getPostsResponse] = useLazyQuery<
     GetPostsByUsernameQuery,
@@ -38,9 +53,12 @@ export function useProfile() {
       getPosts({
         variables,
       });
+      getReplies({
+        variables,
+      });
       isYourAccount(username) && getSavedPosts();
     }
-  }, [getPosts, getSavedPosts, isYourAccount, username, variables]);
+  }, [getPosts, getReplies, getSavedPosts, isYourAccount, username, variables]);
 
   const userData = useMemo(
     () => userResponse.data?.getUserByUsername,
@@ -62,6 +80,16 @@ export function useProfile() {
             ...variables,
             after:
               getPostsResponse?.data?.getPostsByUsername?.pageInfo.endCursor,
+          },
+        });
+
+      case ProfileActiveTab.REPLIES:
+        return getRepliesResponse.fetchMore({
+          variables: {
+            ...variables,
+            after:
+              getRepliesResponse?.data?.getRepliesByUsername?.pageInfo
+                .endCursor,
           },
         });
 
@@ -90,6 +118,19 @@ export function useProfile() {
           icon: "Photo",
         },
       },
+      {
+        title: t("profile:tabs.replies"),
+        href: formatRepliesPostsPageRoute(username),
+        data: {
+          isLoading: getRepliesResponse.loading,
+          data: getRepliesResponse.data?.getRepliesByUsername,
+        },
+        getMoreData: () => getMoreData(ProfileActiveTab.REPLIES),
+        emptyStatus: {
+          title: t("profile:status.noReplies.title"),
+          icon: "Photo",
+        },
+      },
     ];
     if (isYourAccount(username)) {
       tabs.push({
@@ -112,10 +153,13 @@ export function useProfile() {
     return tabs;
   }, [
     formatProfilePageRoute,
+    formatRepliesPostsPageRoute,
     formatSavedPostsPageRoute,
     getMoreData,
     getPostsResponse.data?.getPostsByUsername,
     getPostsResponse.loading,
+    getRepliesResponse.data?.getRepliesByUsername,
+    getRepliesResponse.loading,
     getSavedResponse.data?.getSavedPosts,
     getSavedResponse.loading,
     isYourAccount,

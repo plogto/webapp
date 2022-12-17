@@ -6,12 +6,18 @@ import type { User } from "@t/user";
 export interface GetPostByUrlQuery {
   getPostByUrl: Post;
 }
-
-export interface GetPostsByUsernameQuery {
-  getPostsByUsername: PostsWithPageInfo;
+export interface GetRepliesByUsernameQueryRequest extends PageInfoRequest {
+  username: User["username"];
 }
+export interface GetRepliesByUsernameQuery {
+  getRepliesByUsername: PostsWithPageInfo;
+}
+
 export interface GetPostsByUsernameQueryRequest extends PageInfoRequest {
   username: User["username"];
+}
+export interface GetPostsByUsernameQuery {
+  getPostsByUsername: PostsWithPageInfo;
 }
 
 export interface GetPostsByTagNameQueryRequest extends PageInfoRequest {
@@ -22,27 +28,25 @@ export interface GetPostsByTagNameQuery {
 }
 
 export type GetTimelinePostsQueryRequest = PageInfoRequest;
-
 export interface GetTimelinePostsQuery {
   getTimelinePosts: PostsWithPageInfo;
 }
 
 export type GetExplorePostsQueryRequest = PageInfoRequest;
-
 export interface GetExplorePostsQuery {
   getExplorePosts: PostsWithPageInfo;
 }
+
+export type GetSavedPostsQueryRequest = PageInfoRequest;
 export interface GetSavedPostsQuery {
   getSavedPosts: SavedPostsWithPageInfo;
 }
-export type GetSavedPostsQueryRequest = PageInfoRequest;
 
 export interface AddPostMutationRequest {
   parentId?: string;
   content?: Post["content"];
   attachment?: string[];
 }
-
 export interface AddPostMutation {
   addPost: Post;
 }
@@ -50,7 +54,6 @@ export interface EditPostMutationRequest {
   postId: string;
   content?: Post["content"];
 }
-
 export interface EditPostMutation {
   editPost: Post;
 }

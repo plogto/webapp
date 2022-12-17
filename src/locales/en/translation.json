@@ -259,6 +259,9 @@
       "noSavedPosts": {
         "title": "No Saved Posts Yet"
       },
+      "noReplies": {
+        "title": "No Replies Yet"
+      },
       "private": {
         "description": "Follow to see their posts.",
         "title": "This Account is Private"
@@ -266,6 +269,7 @@
     },
     "tabs": {
       "posts": "Posts",
+      "replies": "Replies",
       "saved": "Saved"
     },
     "toasts": {
