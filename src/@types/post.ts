@@ -40,6 +40,7 @@ export interface PostType {
   footerSize?: FooterSize;
   isContentClickable?: boolean;
   showMoreButton?: boolean;
+  isShowUserInfo?: boolean;
   repliesView?: RepliesView;
 }
 

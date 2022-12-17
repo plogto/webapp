@@ -15,7 +15,7 @@
     }
   }
 
-  &.isNotCard {
+  &:not(.isShowUserInfo) {
     & .headerAndContentWrapper {
       @apply flex items-start;
     }

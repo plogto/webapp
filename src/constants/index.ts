@@ -44,6 +44,7 @@ export const POST_TYPES: PostTypes = {
     footerSize: "normal",
     dateType: DateType.LONG,
     isContentClickable: false,
+    isShowUserInfo: true,
     repliesView: RepliesView.COMPLETE,
   },
   CARD: {
@@ -53,6 +54,7 @@ export const POST_TYPES: PostTypes = {
     dateSize: "small",
     footerSize: "normal",
     isContentClickable: true,
+    isShowUserInfo: true,
     repliesView: RepliesView.QUICK,
   },
   REPLY: {
@@ -80,6 +82,7 @@ export const POST_TYPES: PostTypes = {
     dateSize: "small",
     isContentClickable: false,
     showMoreButton: false,
+    isShowUserInfo: true,
     repliesView: RepliesView.NONE,
   },
 };

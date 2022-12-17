@@ -22,6 +22,7 @@ export function Post(props: PostProps) {
       footerSize,
       isContentClickable,
       showMoreButton = true,
+      isShowUserInfo = false,
       dateType = DateType.SHORT,
     },
     post,
@@ -45,7 +46,6 @@ export function Post(props: PostProps) {
     isPage,
     isParentReply,
     isParent,
-    isCard,
     repliesCounter,
     showQuickReplies,
     showCompleteReplies,
@@ -63,7 +63,7 @@ export function Post(props: PostProps) {
   const wrapperClasses = classNames(
     styles.post,
     isParentReply && styles.isParentReply,
-    !isCard && styles.isNotCard,
+    isShowUserInfo && styles.isShowUserInfo,
     className,
   );
   const headerClasses = classNames(isParent && styles.isParent);
@@ -89,7 +89,7 @@ export function Post(props: PostProps) {
             <Header
               postId={id}
               url={url}
-              showUserInfo={isCard}
+              showUserInfo={isShowUserInfo}
               className={headerClasses}
               size={headerSize}
               user={user}
@@ -99,7 +99,7 @@ export function Post(props: PostProps) {
           </ModalProvider>
           <PostContent
             id={id}
-            showHeader={!isCard}
+            showHeader={!isShowUserInfo}
             url={url}
             isClickable={isContentClickable}
             user={user}

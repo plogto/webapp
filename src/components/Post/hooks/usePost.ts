@@ -22,11 +22,7 @@ export function usePost(props: UsePostProps) {
   const isPage = type.key === PostTypeKey.PAGE;
   const isParentReply = type.key === PostTypeKey.REPLY;
   const isParent = type.key === PostTypeKey.PAGE || isParentReply;
-  const isCard = [
-    PostTypeKey.PAGE,
-    PostTypeKey.CARD,
-    PostTypeKey.PREVIEW,
-  ].includes(type.key);
+  const isCard = [PostTypeKey.CARD, PostTypeKey.PREVIEW].includes(type.key);
 
   const repliesCounter = formatCountTitle({
     singular: "reply",
