@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { MouseEvent, useCallback } from "react";
 import classNames from "classnames";
 import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
@@ -10,9 +10,13 @@ export function ListModal(props: ListModalProps) {
   const { isOpen = false, title, children, closeButton } = props;
   const { closeModal } = useModalContext();
 
-  const handleClose = useCallback(() => {
-    closeModal();
-  }, [closeModal]);
+  const handleClose = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      closeModal();
+    },
+    [closeModal],
+  );
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
