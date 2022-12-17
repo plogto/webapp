@@ -89,12 +89,7 @@ export function PostContent(props: PostContentProps) {
             size={dateSize}
           />
           <ModalProvider>
-            <PostLikesCounter
-              isClickable={!isClickable}
-              size={dateSize}
-              likes={likes}
-              postId={id}
-            />
+            <PostLikesCounter size={dateSize} likes={likes} postId={id} />
           </ModalProvider>
         </div>
       )}

@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { UsersListDataKey } from "@enums";
@@ -10,7 +11,7 @@ import type { PostLikesCounterProps } from "./PostLikesCounter.types";
 import { usePostLikesCounter } from "./usePostLikesCounter";
 
 export function PostLikesCounter(props: PostLikesCounterProps) {
-  const { size = "normal", likes, postId, isClickable } = props;
+  const { size = "normal", likes, postId } = props;
   const sizeClasses = styles[size];
   const wrapperClasses = classNames(styles.likes, sizeClasses);
   const { isOpen, openModal } = useModalContext();
@@ -27,8 +28,9 @@ export function PostLikesCounter(props: PostLikesCounterProps) {
     count: likes?.totalCount,
   });
 
-  const handleOpenModal = () => {
-    isClickable && openModal();
+  const handleOpenModal = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    openModal();
   };
 
   if (count) {

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { useModalContext } from "@contexts/ModalContext";
-import { ListModalProps } from "../Modal.types";
+import type { ListModalProps } from "../Modal.types";
 import { Modal } from "./Modal";
 
 export function ListModal(props: ListModalProps) {

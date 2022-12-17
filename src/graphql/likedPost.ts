@@ -20,7 +20,7 @@ export const LIKE_POST = gql`
 `;
 
 export const GET_LIKED_POSTS_BY_POST_ID = gql`
-  ${UserFragment.short}
+  ${UserFragment.default}
   ${PageInfoFragment.complete}
   query getLikedPostsByPostId($postId: ID!) {
     getLikedPostsByPostId(postId: $postId) {
@@ -29,7 +29,7 @@ export const GET_LIKED_POSTS_BY_POST_ID = gql`
         cursor
         node {
           user {
-            ...UserFragmentShort
+            ...UserFragment
           }
         }
       }

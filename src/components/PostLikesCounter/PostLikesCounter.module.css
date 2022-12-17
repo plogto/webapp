@@ -11,7 +11,7 @@
 }
 
 .listWrapper {
-  @apply mt-2 w-full;
+  @apply mt-2 max-h-[60vh] w-full overflow-y-scroll md:max-h-[50vh];
 
   & .user {
     @apply px-0;
