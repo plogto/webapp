@@ -4,9 +4,10 @@ export function mergeLikedPosts(
   existing: LikedPostsWithPageInfo,
   incoming: LikedPostsWithPageInfo,
 ) {
-  const edges = existing
-    ? [...existing?.edges, ...incoming?.edges]
-    : incoming.edges;
+  const existingEdges = existing?.edges || [];
+  const incomingEdges = incoming?.edges || [];
+
+  const edges = existing ? [...existingEdges, ...incomingEdges] : incomingEdges;
 
   return {
     ...incoming,
