@@ -2,10 +2,6 @@
   @apply whitespace-pre-line break-words;
   @apply inline-flex w-full pr-4 text-foreground;
 
-  & .attachment {
-    @apply overflow-hidden rounded-lg;
-  }
-
   &.showHeader {
     @apply inline-block;
 

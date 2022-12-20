@@ -10,7 +10,7 @@ export function Img(props: ImgProps) {
   const { getFileUrl, getThumbnailUrl } = useUrls();
 
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <Image
         placeholder="blur"
         blurDataURL={getThumbnailUrl(name)}

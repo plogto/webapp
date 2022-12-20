@@ -1,8 +1,10 @@
+import { SwiperSlide } from "swiper/react";
 import anchorme from "anchorme";
 import classNames from "classnames";
 import { isEmpty } from "lodash";
 import { v4 as uuid } from "uuid";
 import Link from "next/link";
+import { Carousel } from "@components/Carousel";
 import { FullName } from "@components/FullName";
 import { Hashtag } from "@components/Hashtag";
 import { Img } from "@components/Img";
@@ -12,6 +14,7 @@ import { PostLikesCounter } from "@components/PostLikesCounter";
 import { ModalProvider } from "@contexts/ModalContext";
 import { useNavigator } from "@hooks/useNavigator";
 import { usePostParser } from "@hooks/usePostParser";
+import type { Attachment } from "@t/attachment";
 import styles from "./PostContent.module.css";
 import type { PostContentProps } from "./PostContent.types";
 
@@ -75,10 +78,14 @@ export function PostContent(props: PostContentProps) {
           })}
         </p>
       )}
-      {attachment?.length > 0 && (
-        <div className={styles.attachment}>
-          <Img alt={content} image={attachment[0]} />
-        </div>
+      {!isEmpty(attachment) && (
+        <Carousel>
+          {attachment?.map((image: Attachment, index: number) => (
+            <SwiperSlide key={`attachment-preview-${index}`}>
+              <Img alt={content} image={image} />
+            </SwiperSlide>
+          ))}
+        </Carousel>
       )}
       {dateSize && (
         <div className="flex flex-row">
