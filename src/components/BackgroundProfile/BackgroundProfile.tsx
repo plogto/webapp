@@ -32,7 +32,7 @@ export function BackgroundProfile(props: BackgroundProfileProps) {
         removeImage={removeImage}
         closeModal={closeModal}
         onClickInputFile={onClickInputFile}
-        showRemoveButton={!!background}
+        isShowRemoveButton={!!background}
       />
       <div
         className={styles.backgroundWrapper}

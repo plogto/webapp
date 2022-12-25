@@ -1,11 +1,13 @@
 import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
+import { SwiperSlide } from "swiper/react";
 import { CONTENT_MAX_LENGTH } from "@constants";
 import { CropImageTypeKey, DateType } from "@enums";
 import { AttachmentPreview } from "@components/AttachmentPreview";
 import { Button } from "@components/Buttons/Button";
 import { Card } from "@components/Card";
+import { Carousel } from "@components/Carousel";
 import { CropImage } from "@components/CropImage";
 import { Icon } from "@components/Icon";
 import { PageHeader } from "@components/PageHeader";
@@ -18,6 +20,7 @@ import styles from "./AddPost.module.css";
 import type { AddPostProps } from "./AddPost.types";
 import { Counter } from "./components/Counter";
 import { useAddPost } from "./hooks/useAddPost";
+import isEmpty from "lodash/isEmpty";
 
 export function AddPost(props: AddPostProps) {
   const { isEditMode } = props;
@@ -29,8 +32,8 @@ export function AddPost(props: AddPostProps) {
     user,
     formMethods,
     onSubmit,
-    attachmentPreview,
-    setAttachmentPreview,
+    attachmentPreviews,
+    addAttachmentPreview,
     removeAttachmentPreview,
     inputFileRef,
     parentPost,
@@ -38,25 +41,35 @@ export function AddPost(props: AddPostProps) {
   const { handleSubmit, watch, setValue } = formMethods;
   const { t } = useTranslation("addPost");
 
-  const attachmentComponent = useMemo(
-    () => (
-      <AttachmentPreview
-        showRemoveButton={!isEditMode}
-        onClickRemoveButton={removeAttachmentPreview}
-        image={attachmentPreview}
-      />
-    ),
-    [attachmentPreview, isEditMode, removeAttachmentPreview],
+  const attachmentComponents = useMemo(
+    () =>
+      !isEmpty(attachmentPreviews) && (
+        <Carousel>
+          {attachmentPreviews?.map((attachmentPreview: Blob, index: number) => (
+            <SwiperSlide key={`attachment-preview-${index}`}>
+              <AttachmentPreview
+                isShowRemoveButton={!isEditMode}
+                onClickRemoveButton={() => removeAttachmentPreview(index)}
+                image={attachmentPreview}
+              />
+            </SwiperSlide>
+          ))}
+        </Carousel>
+      ),
+    [attachmentPreviews, isEditMode, removeAttachmentPreview],
   );
+
+  const title = useMemo(() => {
+    if (isEditMode) {
+      return t("texts.editPost");
+    } else {
+      return parentPost ? t("texts.replyPost") : t("texts.newPost");
+    }
+  }, [isEditMode, parentPost, t]);
 
   return (
     <>
-      {isMobile && (
-        <PageHeader
-          className={styles.mobileHeader}
-          title={parentPost ? t("texts.replyPost") : t("texts.newPost")}
-        />
-      )}
+      {isMobile && <PageHeader className={styles.mobileHeader} title={title} />}
       <Card shadow={!isMobile} rounded={!isMobile} className={styles.addPost}>
         {parentPost && (
           <div className={styles.parentPost}>
@@ -92,11 +105,11 @@ export function AddPost(props: AddPostProps) {
                 placeholder={t("placeholders.writeSomething")}
                 isReply={!!parentPost?.id}
               />
-              {attachmentComponent}
+              {attachmentComponents}
             </div>
 
             <div className={styles.footer}>
-              {!attachmentPreview && !isEditMode && (
+              {!isEditMode && (
                 <Button
                   onClick={() => inputFileRef.current?.click()}
                   className={styles.attachmentButton}
@@ -133,7 +146,7 @@ export function AddPost(props: AddPostProps) {
             <CropImage
               type={CropImageTypeKey.POST}
               inputFileRef={inputFileRef}
-              setImagePreview={setAttachmentPreview}
+              setImagePreview={addAttachmentPreview}
             />
           </form>
         )}

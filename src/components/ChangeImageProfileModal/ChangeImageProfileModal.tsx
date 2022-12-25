@@ -14,7 +14,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
     closeModal,
     onClickInputFile,
     removeImage,
-    showRemoveButton = true,
+    isShowRemoveButton = true,
   } = props;
   const { t } = useTranslation("settings");
 
@@ -33,7 +33,7 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
           >
             {t("buttons.uploadPhoto")}
           </Button>
-          {showRemoveButton && (
+          {isShowRemoveButton && (
             <Button
               layout={ButtonLayout.DANGER}
               className="modal-button"

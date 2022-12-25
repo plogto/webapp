@@ -20,7 +20,7 @@ export interface AddPostForm {
 export interface AttachmentPreviewProps {
   image?: Blob;
   onClickRemoveButton: () => void;
-  showRemoveButton?: boolean;
+  isShowRemoveButton?: boolean;
 }
 
 export interface ContentProps {

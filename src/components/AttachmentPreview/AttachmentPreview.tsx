@@ -3,13 +3,13 @@ import styles from "./AttachmentPreview.module.css";
 import type { AttachmentPreviewProps } from "./AttachmentPreview.types";
 
 export function AttachmentPreview(props: AttachmentPreviewProps) {
-  const { image, onClickRemoveButton, showRemoveButton = true } = props;
+  const { image, onClickRemoveButton, isShowRemoveButton = true } = props;
   const src = image ? URL.createObjectURL(image) : null;
 
   if (src) {
     return (
       <div className={styles.attachmentPreview}>
-        {showRemoveButton && (
+        {isShowRemoveButton && (
           <Button onClick={onClickRemoveButton} className={styles.removeButton}>
             Remove
           </Button>

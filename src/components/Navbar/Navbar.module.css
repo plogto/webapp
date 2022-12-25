@@ -9,6 +9,7 @@
       @apply ring-0 duration-300 focus:ring-0;
       @apply text-gray-400 hover:text-foreground;
       @apply inline-flex items-center justify-center;
+      @apply hover:scale-105;
 
       & .notificationBadgeWrapper {
         @apply absolute top-0 right-0;

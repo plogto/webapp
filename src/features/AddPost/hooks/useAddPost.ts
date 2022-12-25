@@ -22,11 +22,13 @@ import { GET_TRENDS } from "@graphql/tag";
 import { useNavigator } from "@hooks/useNavigator";
 import { usePost } from "@hooks/usePost";
 import { useSuggestions } from "@hooks/useSuggestions";
-import { useUploadFile } from "@hooks/useUploadFile";
+import { useUploadFiles } from "@hooks/useUploadFiles";
 import { useUrls } from "@hooks/useUrls";
 import type { AddPostForm, UseAddPostProps } from "../AddPost.types";
 import { useEditPost } from "./useEditPost";
 import { useParentPost } from "./useParentPost";
+import cloneDeep from "lodash/cloneDeep";
+import isEmpty from "lodash/isEmpty";
 
 export function useAddPost(props: UseAddPostProps) {
   const { isEditMode } = props;
@@ -39,8 +41,8 @@ export function useAddPost(props: UseAddPostProps) {
   >(ADD_POST);
   const { handleCompleteSuggestion } = useSuggestions();
 
-  const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
-  const { singleUploadFile, singleUploadFileResponse } = useUploadFile();
+  const [attachmentPreviews, setAttachmentPreviews] = useState<Blob[]>([]);
+  const { uploadFiles, uploadFilesResponse } = useUploadFiles();
   const { parentPost } = useParentPost();
   const { post } = usePost();
   const formMethods = useForm<AddPostForm>({
@@ -54,9 +56,20 @@ export function useAddPost(props: UseAddPostProps) {
   const { formatPostPageRoute, formatProfilePageRoute } = useNavigator();
   const { t } = useTranslation("addPost");
 
-  const removeAttachmentPreview = useCallback(() => {
-    setAttachmentPreview(undefined);
-  }, []);
+  const addAttachmentPreview = useCallback(
+    (file?: Blob) =>
+      file && setAttachmentPreviews(attachmentPreviews?.concat(file)),
+    [attachmentPreviews],
+  );
+
+  const removeAttachmentPreview = useCallback(
+    (index: number) => {
+      const temp = cloneDeep(attachmentPreviews);
+      temp?.splice(index, 1);
+      setAttachmentPreviews(temp);
+    },
+    [attachmentPreviews],
+  );
 
   const refetchQueries = useMemo(
     () => [
@@ -99,15 +112,19 @@ export function useAddPost(props: UseAddPostProps) {
         if (post?.content) {
           setValue("content", createEditorStateWithText(post.content));
         }
-
         if (post?.attachment) {
-          fetch(getFileUrl(post.attachment[0].name))
-            .then(res => res.blob())
-            .then(blob => setAttachmentPreview(blob));
+          Promise.all(
+            post.attachment?.map(file =>
+              fetch(getFileUrl(file.name))
+                .then(res => res.blob())
+                .then(blob => blob),
+            ),
+          ).then(images => setAttachmentPreviews(images));
         }
       }
     }
-  }, [post?.content, post?.user.id, user?.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify({ post, user })]);
 
   useEffect(() => {
     if (data?.addPost && user) {
@@ -139,14 +156,14 @@ export function useAddPost(props: UseAddPostProps) {
   }, [isEditMode, parentPost, t]);
 
   const isLoading = useMemo(
-    () => loading || singleUploadFileResponse?.loading,
-    [loading, singleUploadFileResponse?.loading],
+    () => loading || uploadFilesResponse?.loading,
+    [loading, uploadFilesResponse?.loading],
   );
 
   const handleAddPost = useCallback(
     (variables: AddPostForm) => {
       const content = variables.content?.getCurrentContent().getPlainText();
-      if (!attachmentPreview) {
+      if (isEmpty(attachmentPreviews)) {
         addPost({
           variables: {
             ...variables,
@@ -155,19 +172,26 @@ export function useAddPost(props: UseAddPostProps) {
           refetchQueries,
         });
       } else {
-        const file = new File([attachmentPreview], "file.png", {
-          type: "image/png",
-        });
+        const files: Blob[] = [];
+
+        Promise.all(
+          attachmentPreviews.map(attachmentPreview => {
+            files.push(
+              new File([attachmentPreview], "file.png", {
+                type: "image/png",
+              }),
+            );
+          }),
+        );
+
         toast.promise(
-          singleUploadFile({
-            variables: { file },
+          uploadFiles({
+            variables: { files },
           }).then(({ data }) => {
             addPost({
               variables: {
                 ...variables,
-                attachment: data?.singleUploadFile?.id
-                  ? [data.singleUploadFile.id]
-                  : [],
+                attachment: data?.uploadFiles?.map(({ id }) => id) || [],
                 content,
               },
               refetchQueries,
@@ -181,7 +205,7 @@ export function useAddPost(props: UseAddPostProps) {
         );
       }
     },
-    [addPost, attachmentPreview, refetchQueries, singleUploadFile, t],
+    [addPost, attachmentPreviews, refetchQueries, t, uploadFiles],
   );
 
   const onSubmit = useCallback(
@@ -215,8 +239,9 @@ export function useAddPost(props: UseAddPostProps) {
     formMethods,
     onSubmit,
     error,
-    attachmentPreview,
-    setAttachmentPreview,
+    attachmentPreviews,
+    setAttachmentPreviews,
+    addAttachmentPreview,
     removeAttachmentPreview,
     inputFileRef,
   };

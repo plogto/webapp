@@ -9,6 +9,7 @@
       "writeSomething": "Write something ..."
     },
     "texts": {
+      "editPost": "Edit Post",
       "newPost": "New Post",
       "replyPost": "Reply Post"
     },

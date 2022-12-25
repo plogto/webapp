@@ -81,7 +81,7 @@ export function PostContent(props: PostContentProps) {
       {!isEmpty(attachment) && (
         <Carousel>
           {attachment?.map((image: Attachment, index: number) => (
-            <SwiperSlide key={`attachment-preview-${index}`}>
+            <SwiperSlide key={`attachment-${index}`}>
               <Img alt={content} image={image} />
             </SwiperSlide>
           ))}

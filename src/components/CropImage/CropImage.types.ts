@@ -42,7 +42,7 @@ export interface CropImageProps {
   type: CropImageTypeKey;
   // TODO: fix this type
   inputFileRef: Ref<HTMLInputElement>;
-  setImagePreview: Dispatch<SetStateAction<Blob | undefined>>;
+  setImagePreview: (file?: Blob) => void;
 }
 
 export interface CropImageHeaderProps {
@@ -58,5 +58,5 @@ export interface AspectMenuProps {
 
 export interface UseCropImageProps {
   type: CropImageTypeKey;
-  setImagePreview: Dispatch<SetStateAction<Blob | undefined>>;
+  setImagePreview: (file?: Blob) => void;
 }

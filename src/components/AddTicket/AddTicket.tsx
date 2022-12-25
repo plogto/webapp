@@ -32,7 +32,7 @@ export function AddTicket(props: AddTicketProps) {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.addTicket}>
       <div className={styles.main}>
         <AttachmentPreview
-          showRemoveButton
+          isShowRemoveButton
           onClickRemoveButton={removeAttachmentPreview}
           image={attachmentPreview}
         />
