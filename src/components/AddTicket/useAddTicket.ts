@@ -15,17 +15,18 @@ import {
   GET_TICKET_MESSAGES_BY_TICKET_URL,
 } from "@graphql/ticket";
 import { useNavigator } from "@hooks/useNavigator";
-import { useUploadFile } from "@hooks/useUploadFile";
+import { useUploadFiles } from "@hooks/useUploadFiles";
 import type { AddTicketFormProps, UseAddTicketProps } from "./AddTicket.types";
+import isEmpty from "lodash/isEmpty";
 
 export function useAddTicket(props: UseAddTicketProps) {
   const { showSubject, ticket, onCloseButton } = props;
   const formMethods = useForm<AddTicketFormProps>({ mode: "all" });
   const [attachmentPreview, setAttachmentPreview] = useState<Blob>();
   const {
-    singleUploadFile,
-    singleUploadFileResponse: { loading: singleUploadFileLoading },
-  } = useUploadFile();
+    uploadFiles,
+    uploadFilesResponse: { loading: uploadFilesLoading },
+  } = useUploadFiles();
   const { formatTicketPageRoute } = useNavigator();
   const { push } = useRouter();
   const inputFileRef = useRef<HTMLInputElement>(null);
@@ -41,9 +42,8 @@ export function useAddTicket(props: UseAddTicketProps) {
   >(ADD_TICKET_MESSAGE);
 
   const loading = useMemo(
-    () =>
-      createTicketLoading || addTicketMessageLoading || singleUploadFileLoading,
-    [addTicketMessageLoading, createTicketLoading, singleUploadFileLoading],
+    () => createTicketLoading || addTicketMessageLoading || uploadFilesLoading,
+    [addTicketMessageLoading, createTicketLoading, uploadFilesLoading],
   );
 
   const removeAttachmentPreview = useCallback(() => {
@@ -110,14 +110,19 @@ export function useAddTicket(props: UseAddTicketProps) {
     if (!attachmentPreview) {
       handleTicketRequest(formData);
     } else {
-      const file = new File([attachmentPreview], "file.png", {
-        type: "image/png",
-      });
-      singleUploadFile({
-        variables: { file },
+      const files = [
+        new File([attachmentPreview], "file.png", {
+          type: "image/png",
+        }),
+      ];
+      uploadFiles({
+        variables: { files },
       }).then(({ data }) => {
-        if (data?.singleUploadFile.id) {
-          handleTicketRequest(formData, [data.singleUploadFile.id]);
+        if (!isEmpty(data?.uploadFiles)) {
+          handleTicketRequest(
+            formData,
+            data?.uploadFiles?.map(({ id }) => id) || [],
+          );
         }
       });
     }

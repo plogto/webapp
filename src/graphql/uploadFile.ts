@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client";
 import { FileFragment } from "./fragments/file";
 
-export const SINGLE_UPLOAD_FILE = gql`
+export const UPLOAD_FILES = gql`
   ${FileFragment.complete}
-  mutation singleUploadFile($file: Upload!) {
-    singleUploadFile(file: $file) {
+  mutation uploadFiles($files: [Upload!]!) {
+    uploadFiles(files: $files) {
       ...FileFragmentComplete
     }
   }

@@ -1,5 +1,8 @@
 import type { Attachment } from "@t/attachment";
 
-export interface SingleUploadFileMutation {
-  singleUploadFile: Attachment;
+export interface UploadFilesMutation {
+  uploadFiles: Attachment[];
+}
+export interface UploadFilesMutationRequest {
+  files: Blob[];
 }

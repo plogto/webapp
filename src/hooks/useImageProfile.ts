@@ -7,8 +7,9 @@ import { useAccountContext } from "@contexts/AccountContext";
 import { useModalContext } from "@contexts/ModalContext";
 import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER } from "@graphql/user";
-import { useUploadFile } from "@hooks/useUploadFile";
+import { useUploadFiles } from "@hooks/useUploadFiles";
 import type { UseImageProfileProps } from "./@types";
+import isEmpty from "lodash/isEmpty";
 
 export function useImageProfile(props: UseImageProfileProps) {
   const { key } = props;
@@ -17,16 +18,16 @@ export function useImageProfile(props: UseImageProfileProps) {
   const { closeModal, openModal, isOpen } = useModalContext();
   const [editUser] = useMutation<EditUserMutation>(EDIT_USER);
   const {
-    singleUploadFile,
-    singleUploadFileResponse: { data },
-  } = useUploadFile();
+    uploadFiles,
+    uploadFilesResponse: { data },
+  } = useUploadFiles();
   const { t } = useTranslation("profile");
   const { setUser } = useAccountContext();
 
   useEffect(() => {
-    if (data?.singleUploadFile) {
+    if (!isEmpty(data?.uploadFiles)) {
       editUser({
-        variables: { [key]: data.singleUploadFile.id },
+        variables: { [key]: data?.uploadFiles?.[0].id },
       }).then(({ data }) => {
         setUser(data?.editUser);
       });
@@ -47,12 +48,14 @@ export function useImageProfile(props: UseImageProfileProps) {
 
   useEffect(() => {
     if (imagePreview) {
-      const file = new File([imagePreview], "file.png", {
-        type: "image/png",
-      });
+      const files = [
+        new File([imagePreview], "file.png", {
+          type: "image/png",
+        }),
+      ];
       toast.promise(
-        singleUploadFile({
-          variables: { file },
+        uploadFiles({
+          variables: { files },
         }),
         {
           loading: t("toasts.uploadingFile"),
@@ -61,7 +64,7 @@ export function useImageProfile(props: UseImageProfileProps) {
         },
       );
     }
-  }, [imagePreview, key, prepareSuccessMessage, singleUploadFile, t]);
+  }, [imagePreview, key, prepareSuccessMessage, uploadFiles, t]);
 
   const removeImage = useCallback(() => {
     editUser({ variables: { [key]: "" } }).then(({ data }) => {
