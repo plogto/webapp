@@ -12,6 +12,10 @@ export const typePolicies: TypePolicies = {
         keyArgs: ["username"],
         merge: mergePosts,
       },
+      getLikedPostsByUsername: {
+        keyArgs: ["username"],
+        merge: mergePosts,
+      },
       getTimelinePosts: {
         keyArgs: false,
         merge: mergePosts,

@@ -70,12 +70,12 @@
     "followers": "Followers",
     "following": "Following",
     "logoName": "Plog",
+    "noResultFound": "No result found",
     "post": "Post",
     "posts": "Posts",
     "tags": "Tags",
     "trends": "Trends For You",
-    "users": "Users",
-    "noResultFound": "No result found"
+    "users": "Users"
   },
   "connection": {
     "buttons": {
@@ -216,12 +216,12 @@
       "copyLink": "Copy Link",
       "deletePost": "Delete Post",
       "editPost": "Edit Post",
+      "okay": "Okay",
       "post": "Post",
       "reply": "Reply",
       "viewParentPost": "View parent post",
       "viewReplies": "View {{ repliesCount }} replies",
-      "viewReply": "View {{ repliesCount }} reply",
-      "okay": "Okay"
+      "viewReply": "View {{ repliesCount }} reply"
     },
     "modals": {
       "delete": {
@@ -233,11 +233,11 @@
       }
     },
     "status": {
-      "noPosts": {
-        "title": "No Posts Yet"
-      },
       "noLikes": {
         "title": "No Likes Yet"
+      },
+      "noPosts": {
+        "title": "No Posts Yet"
       }
     },
     "texts": {
@@ -253,15 +253,18 @@
       "settings": "Settings"
     },
     "status": {
+      "noLikes": {
+        "title": "No Likes Yet"
+      },
       "noPosts": {
         "description": "When they posts, you'll see their posts.",
         "title": "No Posts Yet"
       },
-      "noSavedPosts": {
-        "title": "No Saved Posts Yet"
-      },
       "noReplies": {
         "title": "No Replies Yet"
+      },
+      "noSavedPosts": {
+        "title": "No Saved Posts Yet"
       },
       "private": {
         "description": "Follow to see their posts.",
@@ -269,6 +272,7 @@
       }
     },
     "tabs": {
+      "likes": "Likes",
       "posts": "Posts",
       "replies": "Replies",
       "saved": "Saved"

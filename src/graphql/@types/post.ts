@@ -1,3 +1,4 @@
+import type { LikedPostsWithPageInfo } from "@t/likedPost";
 import type { PageInfoRequest } from "@t/pageInfo";
 import type { Post, NewReply, PostsWithPageInfo } from "@t/post";
 import type { SavedPostsWithPageInfo } from "@t/savedPost";
@@ -40,6 +41,13 @@ export interface GetExplorePostsQuery {
 export type GetSavedPostsQueryRequest = PageInfoRequest;
 export interface GetSavedPostsQuery {
   getSavedPosts: SavedPostsWithPageInfo;
+}
+
+export interface GetLikedPostsByUsernameQueryRequest extends PageInfoRequest {
+  username: User["username"];
+}
+export interface GetLikedPostsByUsernameQuery {
+  getLikedPostsByUsername: LikedPostsWithPageInfo;
 }
 
 export interface AddPostMutationRequest {

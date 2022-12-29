@@ -1,5 +1,6 @@
 import type { WithPageInfo } from ".";
 import { DateType, RepliesView, PostTypeKey } from "@enums";
+import { IconNames } from "@components/Icon";
 import type { Attachment } from "./attachment";
 import type { LikedPost, LikedPostsWithPageInfo } from "./likedPost";
 import type { Placeholder } from "./placeholder";
@@ -55,6 +56,7 @@ export interface PostData {
 
 export interface PostTab {
   title: string;
+  icon?: IconNames;
   href: string;
   data: PostData;
   getMoreData: () => void;

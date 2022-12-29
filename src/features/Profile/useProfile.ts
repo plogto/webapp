@@ -5,6 +5,8 @@ import { isDataLoading } from "@utils";
 import { useLazyQuery } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type {
+  GetLikedPostsByUsernameQuery,
+  GetLikedPostsByUsernameQueryRequest,
   GetPostsByUsernameQuery,
   GetPostsByUsernameQueryRequest,
   GetRepliesByUsernameQuery,
@@ -13,6 +15,7 @@ import type {
   GetSavedPostsQueryRequest,
 } from "@graphql/@types/post";
 import {
+  GET_LIKED_POSTS_BY_USERNAME,
   GET_POSTS_BY_USERNAME,
   GET_REPLIES_BY_USERNAME,
   GET_SAVED_POSTS,
@@ -20,7 +23,10 @@ import {
 import { useNavigator } from "@hooks/useNavigator";
 import { useUserProfile } from "@hooks/useUserProfile";
 import type { PostTab } from "@t/post";
-import { transformSavedPostsToPosts } from "./Profile.utils";
+import {
+  transformLikedPostsToPosts,
+  transformSavedPostsToPosts,
+} from "./Profile.utils";
 
 export function useProfile() {
   const { username, userResponse, variables } = useUserProfile();
@@ -28,8 +34,9 @@ export function useProfile() {
 
   const { isYourAccount } = useAccountContext();
   const {
-    formatRepliesPostsPageRoute,
     formatProfilePageRoute,
+    formatRepliesPostsPageRoute,
+    formatLikesPostsPageRoute,
     formatSavedPostsPageRoute,
   } = useNavigator();
 
@@ -48,6 +55,11 @@ export function useProfile() {
     GetSavedPostsQueryRequest
   >(GET_SAVED_POSTS);
 
+  const [getLikedPosts, getLikedPostsResponse] = useLazyQuery<
+    GetLikedPostsByUsernameQuery,
+    GetLikedPostsByUsernameQueryRequest
+  >(GET_LIKED_POSTS_BY_USERNAME);
+
   useEffect(() => {
     if (username) {
       getPosts({
@@ -56,9 +68,20 @@ export function useProfile() {
       getReplies({
         variables,
       });
+      getLikedPosts({
+        variables,
+      });
       isYourAccount(username) && getSavedPosts();
     }
-  }, [getPosts, getReplies, getSavedPosts, isYourAccount, username, variables]);
+  }, [
+    getLikedPosts,
+    getPosts,
+    getReplies,
+    getSavedPosts,
+    isYourAccount,
+    username,
+    variables,
+  ]);
 
   const userData = useMemo(
     () => userResponse.data?.getUserByUsername,
@@ -93,6 +116,16 @@ export function useProfile() {
           },
         });
 
+      case ProfileActiveTab.LIKES:
+        return getLikedPostsResponse.fetchMore({
+          variables: {
+            ...variables,
+            after:
+              getLikedPostsResponse?.data?.getLikedPostsByUsername?.pageInfo
+                .endCursor,
+          },
+        });
+
       case ProfileActiveTab.SAVED:
         return getSavedResponse.fetchMore({
           variables: {
@@ -106,6 +139,7 @@ export function useProfile() {
     const tabs: PostTab[] = [
       {
         title: t("profile:tabs.posts"),
+        icon: "ViewGrid",
         href: formatProfilePageRoute(username),
         data: {
           isLoading: getPostsResponse.loading,
@@ -120,6 +154,7 @@ export function useProfile() {
       },
       {
         title: t("profile:tabs.replies"),
+        icon: "Comment",
         href: formatRepliesPostsPageRoute(username),
         data: {
           isLoading: getRepliesResponse.loading,
@@ -131,10 +166,27 @@ export function useProfile() {
           icon: "Photo",
         },
       },
+      {
+        title: t("profile:tabs.likes"),
+        icon: "Heart",
+        href: formatLikesPostsPageRoute(username),
+        data: {
+          isLoading: getLikedPostsResponse.loading,
+          data: transformLikedPostsToPosts(
+            getLikedPostsResponse.data?.getLikedPostsByUsername,
+          ),
+        },
+        getMoreData: () => getMoreData(ProfileActiveTab.LIKES),
+        emptyStatus: {
+          title: t("profile:status.noLikes.title"),
+          icon: "Heart",
+        },
+      },
     ];
     if (isYourAccount(username)) {
       tabs.push({
         title: t("profile:tabs.saved"),
+        icon: "Bookmark",
         href: formatSavedPostsPageRoute(username),
         data: {
           isLoading: getSavedResponse.loading,
@@ -152,9 +204,12 @@ export function useProfile() {
 
     return tabs;
   }, [
+    formatLikesPostsPageRoute,
     formatProfilePageRoute,
     formatRepliesPostsPageRoute,
     formatSavedPostsPageRoute,
+    getLikedPostsResponse.data?.getLikedPostsByUsername,
+    getLikedPostsResponse.loading,
     getMoreData,
     getPostsResponse.data?.getPostsByUsername,
     getPostsResponse.loading,

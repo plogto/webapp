@@ -1,5 +1,6 @@
 import type { WithPageInfo } from ".";
 import { UsersListDataKey } from "@enums";
+import { IconNames } from "@components/Icon";
 import type { Placeholder } from "./placeholder";
 import type { User } from "./user";
 
@@ -22,6 +23,7 @@ export interface ConnectionData {
 export interface ConnectionTab {
   dataKey: UsersListDataKey;
   title: string;
+  icon?: IconNames;
   href: string;
   data: ConnectionData;
   getMoreData: () => void;

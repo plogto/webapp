@@ -41,9 +41,10 @@ export enum BackgroundColor {
 }
 
 export enum ProfileActiveTab {
-  POSTS = "POSTS",
-  REPLIES = "REPLIES",
-  SAVED = "SAVED",
+  POSTS = "posts",
+  REPLIES = "replies",
+  LIKES = "likes",
+  SAVED = "saved",
 }
 
 export enum ConnectionsActiveTab {
@@ -153,4 +154,9 @@ export enum ButtonLayout {
   FILL = "FILL",
   /* TODO: change the name and value */
   DANGER = "DANGER",
+}
+
+export enum QueryKeys {
+  PARENT_URL = "parent_url",
+  TAB = "tab",
 }

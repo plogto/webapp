@@ -4,8 +4,8 @@
   @apply border-b border-background-medium px-2;
 
   & .tab {
-    @apply relative inline-flex flex-col;
-    @apply w-fit px-2.5 py-3 text-center font-medium text-gray-400;
+    @apply relative inline-flex items-center space-x-1;
+    @apply w-fit py-3 pl-2 pr-2.5 text-center font-medium text-gray-400;
 
     &.active {
       @apply text-foreground !important;
@@ -14,6 +14,10 @@
         @apply absolute bottom-0 left-2 right-2;
         @apply h-1 rounded-t bg-primary content-[''];
       }
+    }
+
+    & .icon {
+      @apply h-5 w-5 stroke-2;
     }
   }
 }

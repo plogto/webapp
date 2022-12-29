@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Icon } from "@components/Icon";
 import styles from "./Tabs.module.css";
 import type { TabsProps } from "./Tabs.types";
 
@@ -12,7 +13,7 @@ export function Tabs(props: TabsProps) {
 
   return (
     <div className={styles.tabs}>
-      {tabs.map(({ title, href }) => (
+      {tabs.map(({ title, href, icon }) => (
         <Link key={title} href={href} replace>
           <a
             className={classNames(
@@ -20,7 +21,8 @@ export function Tabs(props: TabsProps) {
               isTabActive(href) && styles.active,
             )}
           >
-            {title}
+            {icon && <Icon name={icon} className={styles.icon} />}
+            <span>{title}</span>
           </a>
         </Link>
       ))}

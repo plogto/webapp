@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useRouter } from "next/router";
 import { PROTECTED_PAGES } from "@constants";
+import { ProfileActiveTab, QueryKeys } from "@enums";
 import { PageUrls } from "@enums/pages";
 import type { Post } from "@t/post";
 import type { Tag } from "@t/tag";
@@ -12,11 +13,17 @@ export function useNavigator() {
   function formatProfilePageRoute(username: User["username"]) {
     return `/${username}`;
   }
+
   function formatRepliesPostsPageRoute(username: User["username"]) {
-    return `/${username}?tab=replies`;
+    return `/${username}?${QueryKeys.TAB}=${ProfileActiveTab.REPLIES}`;
   }
+
+  function formatLikesPostsPageRoute(username: User["username"]) {
+    return `/${username}?${QueryKeys.TAB}=${ProfileActiveTab.LIKES}`;
+  }
+
   function formatSavedPostsPageRoute(username: User["username"]) {
-    return `/${username}?tab=saved`;
+    return `/${username}?${QueryKeys.TAB}=${ProfileActiveTab.SAVED}`;
   }
 
   function formatPostPageRoute(url: Post["url"]) {
@@ -36,7 +43,7 @@ export function useNavigator() {
   }
 
   function formatAddPostPageRoute(url: Post["url"]) {
-    return `${PageUrls.ADD_POST}?parentUrl=${url}`;
+    return `${PageUrls.ADD_POST}?${QueryKeys.PARENT_URL}=${url}`;
   }
 
   function formatEditPostPageRoute(url: Post["url"]) {
@@ -64,6 +71,7 @@ export function useNavigator() {
   return {
     formatProfilePageRoute,
     formatRepliesPostsPageRoute,
+    formatLikesPostsPageRoute,
     formatSavedPostsPageRoute,
     formatPostPageRoute,
     formatTagPageRoute,

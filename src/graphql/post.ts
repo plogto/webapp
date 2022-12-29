@@ -142,6 +142,37 @@ export const GET_SAVED_POSTS = gql`
   }
 `;
 
+export const GET_LIKED_POSTS_BY_USERNAME = gql`
+  ${PageInfoFragment.complete}
+  ${PostFragment.default}
+  query getLikedPostsByUsername(
+    $username: String!
+    $first: Int
+    $after: String
+  ) {
+    getLikedPostsByUsername(
+      username: $username
+      pageInfo: { first: $first, after: $after }
+    ) {
+      totalCount
+      edges {
+        cursor
+        node {
+          post {
+            ...PostFragment
+            replies {
+              totalCount
+            }
+          }
+        }
+      }
+      pageInfo {
+        ...PageInfoFragmentComplete
+      }
+    }
+  }
+`;
+
 export const GET_POSTS_BY_TAG_NAME = gql`
   ${PageInfoFragment.complete}
   ${PostFragment.default}
