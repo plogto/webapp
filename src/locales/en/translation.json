@@ -153,6 +153,13 @@
       "editProfile": "Edit Profile"
     }
   },
+  "followRequests": {
+    "placeholders": {
+      "noRequests": {
+        "title": "No Requests Yet"
+      }
+    }
+  },
   "logout": {
     "buttons": {
       "cancel": "Cancel",
