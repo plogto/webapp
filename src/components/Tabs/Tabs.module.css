@@ -5,10 +5,10 @@
 
   & .tab {
     @apply relative inline-flex items-center space-x-1;
-    @apply w-fit py-3 pl-2 pr-2.5 text-center font-medium text-gray-400;
+    @apply w-fit py-3 pl-2 pr-2.5 text-center  text-gray-400;
 
     &.active {
-      @apply text-foreground !important;
+      @apply font-medium text-foreground !important;
 
       &:after {
         @apply absolute bottom-0 left-2 right-2;
@@ -17,7 +17,7 @@
     }
 
     & .icon {
-      @apply h-5 w-5 stroke-2;
+      @apply h-[1.125rem] w-[1.125rem] stroke-2;
     }
   }
 }
