@@ -6,7 +6,7 @@ import styles from "./Home.module.css";
 import { useHome } from "./useHome";
 
 export function Home() {
-  const { isLoading, posts, emptyStatus, getMoreData } = useHome();
+  const { isLoading, posts, placeholder, getMoreData } = useHome();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.home}>
@@ -19,7 +19,7 @@ export function Home() {
         isLoading={isLoading}
         getMoreData={getMoreData}
         data={posts}
-        emptyStatus={emptyStatus}
+        placeholder={placeholder}
       />
     </Card>
   );

@@ -32,21 +32,21 @@ export function ProfileContent(props: ProfileContentProps) {
       <div>
         {!isPosts && !isYourProfile && isPrivate ? (
           <Placeholder
-            title={t("status.private.title")}
-            description={t("status.private.description")}
+            title={t("placeholders.private.title")}
+            description={t("placeholders.private.description")}
             icon="LockClosed"
             className={styles.privateStatus}
           />
         ) : (
           tabs.map(
-            ({ href, data: { data, isLoading }, getMoreData, emptyStatus }) =>
+            ({ href, data: { data, isLoading }, getMoreData, placeholder }) =>
               asPath === href && (
                 <PostsList
                   key={JSON.stringify(data?.pageInfo.endCursor)}
                   data={data}
                   isLoading={isLoading}
                   getMoreData={getMoreData}
-                  emptyStatus={emptyStatus}
+                  placeholder={placeholder}
                   scrollableTarget={ID.PROFILE_CARDS}
                 />
               ),

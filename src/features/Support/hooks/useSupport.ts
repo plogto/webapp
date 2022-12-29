@@ -36,9 +36,9 @@ export function useSupport() {
     });
   }, [getTicketsResponse]);
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("status.noTickets.title"),
+      title: t("placeholders.noTickets.title"),
       icon: "Inbox",
     }),
     [t],
@@ -49,5 +49,5 @@ export function useSupport() {
     [getTicketsResponse.called, getTicketsResponse.loading],
   );
 
-  return { tickets, getMoreData, emptyStatus, isLoading };
+  return { tickets, getMoreData, placeholder, isLoading };
 }

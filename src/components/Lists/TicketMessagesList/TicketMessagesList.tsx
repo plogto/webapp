@@ -4,14 +4,14 @@ import type { TicketMessagesListProps } from "./TicketMessagesList.types";
 import isEmpty from "lodash/isEmpty";
 
 export function TicketMessagesList(props: TicketMessagesListProps) {
-  const { isLoading, data, scrollableTarget, getMoreData, emptyStatus } = props;
+  const { isLoading, data, scrollableTarget, getMoreData, placeholder } = props;
 
   return (
     <ListWrapper
       data={data}
       isEdgesExists={!isEmpty(data?.edges)}
       isLoading={isLoading}
-      emptyStatus={emptyStatus}
+      placeholder={placeholder}
       scrollableTarget={scrollableTarget}
       getMoreData={getMoreData}
     >

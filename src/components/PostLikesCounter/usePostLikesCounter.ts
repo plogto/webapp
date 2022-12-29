@@ -43,13 +43,13 @@ export function usePostLikesCounter(props: UsePostLikesCounterProps) {
       },
     });
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("status.noLikes.title"),
+      title: t("placeholders.noLikes.title"),
       icon: "Heart",
     }),
     [t],
   );
 
-  return { isLoading, likedPosts, getMoreData, emptyStatus };
+  return { isLoading, likedPosts, getMoreData, placeholder };
 }

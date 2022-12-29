@@ -146,9 +146,9 @@ export function useProfile() {
           data: getPostsResponse.data?.getPostsByUsername,
         },
         getMoreData: () => getMoreData(ProfileActiveTab.POSTS),
-        emptyStatus: {
-          title: t("profile:status.noPosts.title"),
-          description: t("profile:status.noPosts.description"),
+        placeholder: {
+          title: t("profile:placeholders.noPosts.title"),
+          description: t("profile:placeholders.noPosts.description"),
           icon: "Photo",
         },
       },
@@ -161,8 +161,8 @@ export function useProfile() {
           data: getRepliesResponse.data?.getRepliesByUsername,
         },
         getMoreData: () => getMoreData(ProfileActiveTab.REPLIES),
-        emptyStatus: {
-          title: t("profile:status.noReplies.title"),
+        placeholder: {
+          title: t("profile:placeholders.noReplies.title"),
           icon: "Photo",
         },
       },
@@ -177,8 +177,8 @@ export function useProfile() {
           ),
         },
         getMoreData: () => getMoreData(ProfileActiveTab.LIKES),
-        emptyStatus: {
-          title: t("profile:status.noLikes.title"),
+        placeholder: {
+          title: t("profile:placeholders.noLikes.title"),
           icon: "Heart",
         },
       },
@@ -195,8 +195,8 @@ export function useProfile() {
           ),
         },
         getMoreData: () => getMoreData(ProfileActiveTab.SAVED),
-        emptyStatus: {
-          title: t("profile:status.noSavedPosts.title"),
+        placeholder: {
+          title: t("profile:placeholders.noSavedPosts.title"),
           icon: "Bookmark",
         },
       });

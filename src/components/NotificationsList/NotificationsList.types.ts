@@ -6,5 +6,5 @@ export interface NotificationsListProps {
   className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }

@@ -85,9 +85,9 @@ export function useConnections({ type }: ConnectionsProps) {
     }
   };
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("connection:status.noConnections.title"),
+      title: t("connection:placeholders.noConnections.title"),
       icon: "Users",
     }),
     [t],
@@ -104,7 +104,7 @@ export function useConnections({ type }: ConnectionsProps) {
           data: getFollowingByUsernameResponse.data?.getFollowingByUsername,
         },
         getMoreData: () => getMoreData(ConnectionsActiveTab.FOLLOWING),
-        emptyStatus,
+        placeholder,
       },
       {
         dataKey: UsersListDataKey.FOLLOWER,
@@ -115,13 +115,13 @@ export function useConnections({ type }: ConnectionsProps) {
           data: getFollowersByUsernameResponse.data?.getFollowersByUsername,
         },
         getMoreData: () => getMoreData(ConnectionsActiveTab.FOLLOWERS),
-        emptyStatus,
+        placeholder,
       },
     ];
 
     return tabs;
   }, [
-    emptyStatus,
+    placeholder,
     formatFollowersPageRoute,
     formatFollowingPageRoute,
     getFollowersByUsernameResponse.data?.getFollowersByUsername,

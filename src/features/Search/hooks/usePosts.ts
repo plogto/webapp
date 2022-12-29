@@ -24,9 +24,9 @@ export function usePosts() {
     }
   }, [user, getExplorePosts]);
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("status.noPosts.title"),
+      title: t("placeholders.noPosts.title"),
       icon: "Photo",
     }),
     [t],
@@ -42,7 +42,7 @@ export function usePosts() {
   return {
     isLoading: isDataLoading(called, loading),
     posts: data?.getExplorePosts,
-    emptyStatus,
+    placeholder,
     getMoreData,
   };
 }

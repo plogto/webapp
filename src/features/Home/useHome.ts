@@ -38,9 +38,9 @@ export function useHome() {
     }
   }, [token]);
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("status.noPosts.title"),
+      title: t("placeholders.noPosts.title"),
       icon: "Photo",
     }),
     [t],
@@ -56,7 +56,7 @@ export function useHome() {
   return {
     isLoading: isDataLoading(called, loading),
     posts: data?.getTimelinePosts,
-    emptyStatus,
+    placeholder,
     getMoreData,
   };
 }

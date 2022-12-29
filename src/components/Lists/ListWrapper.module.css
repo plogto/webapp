@@ -1,7 +1,7 @@
 .wrapper {
   @apply w-full;
 
-  & .emptyStatus {
+  & .placeholder {
     @apply mx-10 mt-20 md:m-32;
   }
 }

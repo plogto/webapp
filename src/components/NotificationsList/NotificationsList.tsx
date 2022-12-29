@@ -14,7 +14,7 @@ export function NotificationsList(props: NotificationsListProps) {
     data,
     className,
     getMoreData,
-    emptyStatus: { title, description, icon },
+    placeholder: { title, description, icon },
   } = props;
   const wrapperClasses = classNames(styles.notificationsList, className);
   const { t } = useTranslation("notifications");
@@ -42,7 +42,7 @@ export function NotificationsList(props: NotificationsListProps) {
           title={title}
           description={description}
           icon={icon}
-          className={styles.emptyStatus}
+          className={styles.placeholder}
         />
       ) : (
         data.edges?.map(({ node }) => (

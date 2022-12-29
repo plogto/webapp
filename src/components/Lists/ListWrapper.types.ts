@@ -10,5 +10,5 @@ export interface ListWrapperProps {
   className?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }

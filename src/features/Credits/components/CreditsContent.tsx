@@ -14,7 +14,7 @@ import type { CreditsContentProps } from "../Credits.types";
 import { useInviteFriends } from "../hooks";
 
 export function CreditsContent(props: CreditsContentProps) {
-  const { user, creditTransactions, getMoreData, emptyStatus, isLoading } =
+  const { user, creditTransactions, getMoreData, placeholder, isLoading } =
     props;
   const { formatCreditAmount } = useCredit();
   const { inviteFriendsModalData } = useInviteFriends({ user });
@@ -50,7 +50,7 @@ export function CreditsContent(props: CreditsContentProps) {
             isLoading={isLoading}
             data={creditTransactions}
             getMoreData={getMoreData}
-            emptyStatus={emptyStatus}
+            placeholder={placeholder}
             scrollableTarget={ID.CREDIT_TRANSACTIONS}
           />
         </div>

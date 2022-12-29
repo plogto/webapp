@@ -14,7 +14,7 @@ export function Notifications() {
     followRequestsCount = 0,
     data,
     getMoreData,
-    emptyStatus,
+    placeholder,
   } = useCounters();
   useNotifications();
   const { t } = useTranslation("notifications");
@@ -47,7 +47,7 @@ export function Notifications() {
         <NotificationsList
           data={data}
           getMoreData={getMoreData}
-          emptyStatus={emptyStatus}
+          placeholder={placeholder}
         />
       </Card>
     </div>

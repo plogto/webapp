@@ -68,9 +68,9 @@ export function useTag() {
           data: getPostsResponse.data?.getPostsByTagName,
         },
         getMoreData,
-        emptyStatus: {
-          title: t("status.noPosts.title"),
-          description: t("status.noPosts.description"),
+        placeholder: {
+          title: t("placeholders.noPosts.title"),
+          description: t("placeholders.noPosts.description"),
           icon: "Photo",
         },
       },

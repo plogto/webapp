@@ -10,7 +10,7 @@ export function UsersList(props: UsersListProps) {
     isLoading,
     scrollableTarget,
     getMoreData,
-    emptyStatus,
+    placeholder,
     itemClassName,
   } = props;
 
@@ -19,7 +19,7 @@ export function UsersList(props: UsersListProps) {
       data={data}
       isEdgesExists={!isEmpty(data?.edges)}
       isLoading={isLoading}
-      emptyStatus={emptyStatus}
+      placeholder={placeholder}
       scrollableTarget={scrollableTarget}
       getMoreData={getMoreData}
     >

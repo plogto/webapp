@@ -14,14 +14,14 @@ export function TagContent(props: TagContentProps) {
     <Card className={styles.tagContent} shadow={!isMobile} rounded={!isMobile}>
       <div>
         {tabs.map(
-          ({ href, data: { data, isLoading }, getMoreData, emptyStatus }) =>
+          ({ href, data: { data, isLoading }, getMoreData, placeholder }) =>
             asPath === href && (
               <PostsList
                 key={data?.pageInfo.endCursor}
                 data={data}
                 isLoading={isLoading}
                 getMoreData={getMoreData}
-                emptyStatus={emptyStatus}
+                placeholder={placeholder}
                 scrollableTarget={ID.PROFILE_CARDS}
               />
             ),

@@ -17,7 +17,7 @@ export function PostLikesCounter(props: PostLikesCounterProps) {
   const { isOpen, openModal } = useModalContext();
   const { t } = useTranslation("post");
 
-  const { likedPosts, getMoreData, isLoading, emptyStatus } =
+  const { likedPosts, getMoreData, isLoading, placeholder } =
     usePostLikesCounter({
       postId,
     });
@@ -50,7 +50,7 @@ export function PostLikesCounter(props: PostLikesCounterProps) {
           <div className={styles.listWrapper}>
             <UsersList
               data={likedPosts}
-              emptyStatus={emptyStatus}
+              placeholder={placeholder}
               dataKey={UsersListDataKey.USER}
               isLoading={isLoading}
               getMoreData={getMoreData}

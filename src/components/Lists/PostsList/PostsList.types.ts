@@ -6,5 +6,5 @@ export interface PostsListProps {
   scrollableTarget?: string;
   isLoading?: boolean;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }

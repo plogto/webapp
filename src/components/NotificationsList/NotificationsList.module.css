@@ -1,7 +1,7 @@
 .notificationsList {
   @apply w-full;
 
-  & .emptyStatus {
+  & .placeholder {
     @apply mx-10 h-[calc(100vh-3rem)] md:m-32 md:h-auto;
   }
 

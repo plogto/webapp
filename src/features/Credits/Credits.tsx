@@ -19,7 +19,7 @@ export function Credits() {
     isUserLoading,
     isLoading,
     getMoreData,
-    emptyStatus,
+    placeholder,
     creditTransactions,
   } = useCredits();
   const { formatProfilePageRoute } = useNavigator();
@@ -56,7 +56,7 @@ export function Credits() {
           <CreditsContent
             isLoading={isLoading}
             creditTransactions={creditTransactions}
-            emptyStatus={emptyStatus}
+            placeholder={placeholder}
             getMoreData={getMoreData}
             user={userData}
           />

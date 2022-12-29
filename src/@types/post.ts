@@ -60,5 +60,5 @@ export interface PostTab {
   href: string;
   data: PostData;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }

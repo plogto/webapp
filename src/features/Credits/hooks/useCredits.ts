@@ -50,9 +50,9 @@ export function useCredits() {
     });
   }, [getCreditTransactionsResponse]);
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("credits:status.noTransactions.title"),
+      title: t("credits:placeholders.noTransactions.title"),
       icon: "User",
     }),
     [t],
@@ -64,6 +64,6 @@ export function useCredits() {
     isLoading,
     creditTransactions,
     getMoreData,
-    emptyStatus,
+    placeholder,
   };
 }

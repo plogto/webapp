@@ -34,8 +34,8 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
       <div>
         {!isConnections && !isYourProfile && isPrivate ? (
           <Placeholder
-            title={t("status.private.title")}
-            description={t("status.private.description")}
+            title={t("placeholders.private.title")}
+            description={t("placeholders.private.description")}
             icon="LockClosed"
             className={styles.privateStatus}
           />
@@ -46,7 +46,7 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
               href,
               data: { data, isLoading },
               getMoreData,
-              emptyStatus,
+              placeholder,
             }) =>
               asPath === href && (
                 <UsersList
@@ -55,7 +55,7 @@ export function ConnectionsContent(props: ConnectionsContentProps) {
                   dataKey={dataKey}
                   isLoading={isLoading}
                   getMoreData={getMoreData}
-                  emptyStatus={emptyStatus}
+                  placeholder={placeholder}
                   scrollableTarget={ID.PROFILE_CARDS}
                 />
               ),

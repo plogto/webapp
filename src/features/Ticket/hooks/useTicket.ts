@@ -67,9 +67,9 @@ export function useTicket(props: UseTicketProps) {
     });
   }, [getTicketMessagesResponse]);
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("support:status.noTicketMessages.title"),
+      title: t("support:placeholders.noTicketMessages.title"),
       icon: "Inbox",
     }),
     [t],
@@ -211,7 +211,7 @@ export function useTicket(props: UseTicketProps) {
     ticketMessages,
     isLoading,
     getMoreData,
-    emptyStatus,
+    placeholder,
     menuItems: filterMenuItems(MENU_ITEMS),
     confirmationModal,
   };

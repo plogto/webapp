@@ -84,7 +84,7 @@
       "following": "Following",
       "requested": "Requested"
     },
-    "status": {
+    "placeholders": {
       "noConnections": {
         "title": "No Connections Yet"
       },
@@ -108,7 +108,7 @@
         "title": "Invite your friends"
       }
     },
-    "status": {
+    "placeholders": {
       "noTransactions": {
         "title": "No Transactions Yet."
       }
@@ -180,7 +180,7 @@
     "buttons": {
       "showMore": "Show more"
     },
-    "status": {
+    "placeholders": {
       "noNotifications": {
         "title": "No Notifications Yet"
       }
@@ -232,7 +232,7 @@
         "title": "Liked by"
       }
     },
-    "status": {
+    "placeholders": {
       "noLikes": {
         "title": "No Likes Yet"
       },
@@ -252,7 +252,7 @@
       "credits": "Credits",
       "settings": "Settings"
     },
-    "status": {
+    "placeholders": {
       "noLikes": {
         "title": "No Likes Yet"
       },
@@ -285,7 +285,7 @@
     }
   },
   "saved": {
-    "status": {
+    "placeholders": {
       "noPosts": {
         "description": "All the posts you've saved will show up here.",
         "title": "Nothing saved yet"
@@ -322,7 +322,7 @@
       "message": "Message",
       "subject": "Subject"
     },
-    "status": {
+    "placeholders": {
       "noTicketMessages": {
         "title": "No Ticket Message yet"
       },
@@ -335,7 +335,7 @@
     }
   },
   "tag": {
-    "status": {
+    "placeholders": {
       "noPosts": {
         "description": "When they posts, you'll see their posts.",
         "title": "No Posts Yet"

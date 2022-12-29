@@ -14,7 +14,7 @@ export function ListWrapper(props: ListWrapperProps) {
     className,
     getMoreData,
     isLoading,
-    emptyStatus: { title, description, icon },
+    placeholder: { title, description, icon },
   } = props;
   const wrapperClasses = classNames(styles.wrapper, className);
 
@@ -36,7 +36,7 @@ export function ListWrapper(props: ListWrapperProps) {
           title={title}
           description={description}
           icon={icon}
-          className={styles.emptyStatus}
+          className={styles.placeholder}
         />
       ) : (
         children

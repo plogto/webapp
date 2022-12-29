@@ -16,9 +16,9 @@ export function useCounters() {
     [user?.followRequestsCount],
   );
 
-  const emptyStatus: Placeholder = useMemo(
+  const placeholder: Placeholder = useMemo(
     () => ({
-      title: t("status.noNotifications.title"),
+      title: t("placeholders.noNotifications.title"),
       icon: "BellFill",
     }),
     [t],
@@ -38,6 +38,6 @@ export function useCounters() {
     followRequestsCount,
     unreadNotificationsCount,
     getMoreData,
-    emptyStatus,
+    placeholder,
   };
 }

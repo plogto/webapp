@@ -5,7 +5,7 @@ import styles from "../Search.module.css";
 import { usePosts } from "../hooks";
 
 export function Posts() {
-  const { isLoading, posts, emptyStatus, getMoreData } = usePosts();
+  const { isLoading, posts, placeholder, getMoreData } = usePosts();
 
   return (
     <Card shadow={!isMobile} rounded={!isMobile} className={styles.posts}>
@@ -13,7 +13,7 @@ export function Posts() {
         isLoading={isLoading}
         getMoreData={getMoreData}
         data={posts}
-        emptyStatus={emptyStatus}
+        placeholder={placeholder}
       />
     </Card>
   );

@@ -27,5 +27,5 @@ export interface ConnectionTab {
   href: string;
   data: ConnectionData;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }

@@ -7,7 +7,7 @@ export interface CreditsContentProps {
   isLoading?: boolean;
   creditTransactions?: CreditTransactionsWithPageInfo;
   getMoreData: () => void;
-  emptyStatus: Placeholder;
+  placeholder: Placeholder;
 }
 
 export interface InvitationCodeProps {

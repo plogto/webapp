@@ -22,7 +22,7 @@ export function Ticket() {
   const {
     isLoading,
     ticketMessages,
-    emptyStatus,
+    placeholder,
     menuItems,
     getMoreData,
     confirmationModal,
@@ -90,7 +90,7 @@ export function Ticket() {
         <TicketMessagesList
           data={ticketMessages}
           isLoading={isLoading}
-          emptyStatus={emptyStatus}
+          placeholder={placeholder}
           getMoreData={getMoreData}
         />
       </Card>
