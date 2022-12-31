@@ -5,7 +5,7 @@ import styles from "./Toggle.module.css";
 import type { ToggleProps } from "./Toggle.types";
 
 export function Toggle(props: ToggleProps) {
-  const { label, className, checked, onChange } = props;
+  const { label, description, className, checked, onChange } = props;
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,16 @@ export function Toggle(props: ToggleProps) {
   return (
     <Switch.Group>
       <div className={wrapperClasses}>
-        {label && <Switch.Label className={styles.label}>{label}</Switch.Label>}
+        <div className="flex flex-col w-10/12">
+          {label && (
+            <Switch.Label>
+              <span className={styles.label}>{label}</span>
+              {description && (
+                <p className={styles.description}>{description}</p>
+              )}
+            </Switch.Label>
+          )}
+        </div>
         <Switch
           checked={enabled}
           className={toggleClasses}
