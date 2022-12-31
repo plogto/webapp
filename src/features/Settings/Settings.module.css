@@ -24,6 +24,10 @@
       @apply m-2 whitespace-nowrap rounded-lg border-background-medium p-2;
       @apply text-foreground transition-all duration-300;
 
+      &.active {
+        @apply bg-background-light;
+      }
+
       & .icon {
         @apply h-6 w-6 stroke-2;
       }

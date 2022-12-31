@@ -2,6 +2,7 @@ import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { BackgroundProfile } from "@components/BackgroundProfile";
 import { Card } from "@components/Card";
 import { Icon } from "@components/Icon";
@@ -19,6 +20,7 @@ export function Settings(props: SettingsProps) {
   const { user } = useSettings();
 
   const { isSettingsPage, formatProfilePageRoute } = useNavigator();
+  const { pathname } = useRouter();
   const { t } = useTranslation("settings");
   const backLink =
     isSettingsPage && user ? formatProfilePageRoute(user?.username) : undefined;
@@ -47,7 +49,13 @@ export function Settings(props: SettingsProps) {
             {SETTINGS_ITEMS.map(({ title, icon, href, className }) => (
               <>
                 <Link key={`settings-${title}`} href={href}>
-                  <a className={classNames(styles.item, className)}>
+                  <a
+                    className={classNames(
+                      styles.item,
+                      className,
+                      pathname === href && styles.active,
+                    )}
+                  >
                     {icon && <Icon className={styles.icon} name={icon} />}
                     <span>{title}</span>
                   </a>
