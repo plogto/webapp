@@ -4,11 +4,11 @@
   @apply border-b border-background-medium px-2;
 
   & .tab {
-    @apply relative inline-flex items-center space-x-1;
-    @apply w-fit py-3 pl-2 pr-2.5 text-center  text-gray-400;
+    @apply relative inline-flex items-center space-x-1 font-medium;
+    @apply w-fit py-3 pl-2 pr-2.5 text-center text-gray-400;
 
     &.active {
-      @apply font-medium text-foreground !important;
+      @apply text-foreground !important;
 
       &:after {
         @apply absolute bottom-0 left-2 right-2;
