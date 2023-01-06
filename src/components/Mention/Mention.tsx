@@ -11,7 +11,7 @@ export function Mention(props: MentionProps) {
   const wrapperClasses = classNames("text-primary hover:underline");
 
   return (
-    <Link href={formatProfilePageRoute(username)}>
+    <Link href={formatProfilePageRoute(username)} legacyBehavior>
       <a className={wrapperClasses}>{value}</a>
     </Link>
   );

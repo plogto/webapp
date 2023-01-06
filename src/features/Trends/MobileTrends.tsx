@@ -18,7 +18,7 @@ export function MobileTrends() {
       </span>
       {tags && tags.length > 0 && (
         <div className={styles.mobileTags}>
-          <Link href={formatTagPageRoute(tags[0]?.node.name)}>
+          <Link href={formatTagPageRoute(tags[0]?.node.name)} legacyBehavior>
             <a className={styles.mobileFirstTag}>
               <span className={styles.mobileFirstTagName}>
                 #{tags[0].node.name}
@@ -35,7 +35,7 @@ export function MobileTrends() {
             </a>
           </Link>
           {[...tags].splice(1).map(({ node: { id, name, count } }) => (
-            <Link key={id} href={formatTagPageRoute(name)}>
+            <Link key={id} href={formatTagPageRoute(name)} legacyBehavior>
               <a className={styles.mobileTag}>
                 <span className={styles.mobileTagName}>#{name}</span>
                 <span className={styles.mobileTagCount}>

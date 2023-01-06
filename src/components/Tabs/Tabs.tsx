@@ -14,7 +14,7 @@ export function Tabs(props: TabsProps) {
   return (
     <div className={styles.tabs}>
       {tabs.map(({ title, href, icon }) => (
-        <Link key={title} href={href} replace>
+        <Link key={title} href={href} replace legacyBehavior>
           <a
             className={classNames(
               styles.tab,

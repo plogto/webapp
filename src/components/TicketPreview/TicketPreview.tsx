@@ -24,7 +24,7 @@ export function TicketPreview(props: TicketPreviewProps) {
   const ticketPreviewClasses = classNames(styles.ticketPreview);
 
   return (
-    <Link href={formatTicketPageRoute(url)}>
+    <Link href={formatTicketPageRoute(url)} legacyBehavior>
       <a className={ticketPreviewClasses}>
         <div className={styles.headerWrapper}>
           <div className={styles.subject}>{subject}</div>

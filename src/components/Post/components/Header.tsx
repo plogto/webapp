@@ -71,7 +71,7 @@ export function Header(props: HeaderPostProps) {
   return (
     <div className={wrapperClasses}>
       <div className={classNames(styles.profile)}>
-        <Link href={formatProfilePageRoute(username)}>
+        <Link href={formatProfilePageRoute(username)} legacyBehavior>
           <a>
             <Avatar
               size={size}
@@ -83,7 +83,7 @@ export function Header(props: HeaderPostProps) {
         </Link>
         {showUserInfo && (
           <div className="flex flex-col justify-center w-5/6 md:w-8/12">
-            <Link href={formatProfilePageRoute(username)}>
+            <Link href={formatProfilePageRoute(username)} legacyBehavior>
               <a className={classNames(styles.userInfo)}>
                 <FullName fullName={fullName} isVerified={isVerified} />
                 <div className={classNames(styles.username)}>@{username}</div>

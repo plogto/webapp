@@ -13,7 +13,7 @@ export function LinkButton(props: LinkButtonProps) {
   );
 
   return (
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a className={classes}>{children}</a>
     </Link>
   );

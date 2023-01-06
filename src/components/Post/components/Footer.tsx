@@ -42,7 +42,7 @@ export function Footer(props: FooterPostProps) {
           className={likeIconClasses}
         />
       </button>
-      <Link href={formatAddPostPageRoute(url)}>
+      <Link href={formatAddPostPageRoute(url)} legacyBehavior>
         <a className={styles.iconWrapper}>
           <Icon className={replyIconClasses} name="Comment" />
         </a>

@@ -48,7 +48,7 @@ export function Settings(props: SettingsProps) {
           <Card shadow={!isMobile} rounded={!isMobile} className={styles.items}>
             {SETTINGS_ITEMS.map(({ title, icon, href, className }) => (
               <>
-                <Link key={`settings-${title}`} href={href}>
+                <Link key={`settings-${title}`} href={href} legacyBehavior>
                   <a
                     className={classNames(
                       styles.item,

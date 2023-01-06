@@ -17,7 +17,7 @@ export function Logo(props: LogoProps) {
   );
 
   return isClickable ? (
-    <Link href={PageUrls.HOME}>
+    <Link href={PageUrls.HOME} legacyBehavior>
       <a className={styles.logoWrapper}>{content}</a>
     </Link>
   ) : (

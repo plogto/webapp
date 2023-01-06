@@ -37,7 +37,7 @@ export function Notifications() {
         rounded={!isMobile}
       >
         {followRequestsCount > 0 && (
-          <Link href={PageUrls.FOLLOW_REQUESTS}>
+          <Link href={PageUrls.FOLLOW_REQUESTS} legacyBehavior>
             <a className={styles.followRequests}>
               {t("texts.followRequests")}({followRequestsCount})
             </a>

@@ -125,7 +125,7 @@ export function Post(props: PostProps) {
       </div>
       <div className="flex flex-col">
         {showQuickReplies && (
-          <Link href={formatPostPageRoute(url)}>
+          <Link href={formatPostPageRoute(url)} legacyBehavior>
             <a className={styles.repliesCounter}>View {repliesCounter.text}</a>
           </Link>
         )}

@@ -48,7 +48,7 @@ export function Navbar(props: NavbarProps) {
     <div className={styles.wrapper}>
       <div className={styles.navbar}>
         {NAVIGATION_ITEMS.map(({ href, icon }) => (
-          <Link key={uuid()} href={href}>
+          <Link key={uuid()} href={href} legacyBehavior>
             <a
               className={classNames(
                 styles.navLink,

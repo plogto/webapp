@@ -21,7 +21,7 @@ export function Register() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Link href={PageUrls.HOME}>
+          <Link href={PageUrls.HOME} legacyBehavior>
             <a className={styles.logoContainer}>
               <Icon name="PlogFill" className={styles.logo} />
               <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
@@ -83,7 +83,7 @@ export function Register() {
         </form>
         <div className={styles.footer}>
           <span>{t("auth:texts.registerFooter")}</span>
-          <Link href={PageUrls.LOGIN}>
+          <Link href={PageUrls.LOGIN} legacyBehavior>
             <a className={styles.link}>Log In</a>
           </Link>
         </div>

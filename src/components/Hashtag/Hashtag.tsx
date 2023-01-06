@@ -15,7 +15,7 @@ export function Hashtag(props: HashtagProps) {
   });
 
   return isClickable ? (
-    <Link href={formatTagPageRoute(tagName)}>
+    <Link href={formatTagPageRoute(tagName)} legacyBehavior>
       <a className={wrapperClasses}>{value}</a>
     </Link>
   ) : (

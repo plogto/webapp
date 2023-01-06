@@ -64,7 +64,7 @@ export function PostContent(props: PostContentProps) {
                   : "https://";
 
               return (
-                <Link key={uuid()} href={`${protocol}${link}`}>
+                <Link key={uuid()} href={`${protocol}${link}`} legacyBehavior>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -108,7 +108,7 @@ export function PostContent(props: PostContentProps) {
       {showHeader && user && (
         <div className={classNames(styles.profile)}>
           <div className="flex flex-col justify-center">
-            <Link href={formatProfilePageRoute(user.username)}>
+            <Link href={formatProfilePageRoute(user.username)} legacyBehavior>
               <a>
                 <FullName
                   fullName={user.fullName}
@@ -122,7 +122,7 @@ export function PostContent(props: PostContentProps) {
       )}
       <span className="w-full">
         {isClickable && url ? (
-          <Link href={formatPostPageRoute(url)}>
+          <Link href={formatPostPageRoute(url)} legacyBehavior>
             <a>{textComponent}</a>
           </Link>
         ) : (

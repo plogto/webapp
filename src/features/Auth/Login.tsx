@@ -21,7 +21,7 @@ export function Login() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Link href={PageUrls.HOME}>
+          <Link href={PageUrls.HOME} legacyBehavior>
             <a className={styles.logoContainer}>
               <Icon name="PlogFill" className={styles.logo} />
               <h1 className={styles.logoTitle}>{t("common:logoName")}</h1>
@@ -68,7 +68,7 @@ export function Login() {
         </form>
         <div className={styles.footer}>
           <span> {t("auth:texts.loginFooter")}</span>
-          <Link href={PageUrls.REGISTER}>
+          <Link href={PageUrls.REGISTER} legacyBehavior>
             <a className={styles.link}>Register</a>
           </Link>
         </div>

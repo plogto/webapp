@@ -40,7 +40,7 @@ export function CreditTransaction(props: CreditTransactionProps) {
 
   return (
     <div className={styles.creditTransaction}>
-      <Link href={formatProfilePageRoute(recipient.username)}>
+      <Link href={formatProfilePageRoute(recipient.username)} legacyBehavior>
         <a className="cursor-pointer">
           <Avatar
             className={styles.avatar}
@@ -51,7 +51,10 @@ export function CreditTransaction(props: CreditTransactionProps) {
       </Link>
       <div className={styles.content}>
         <div className={styles.header}>
-          <Link href={formatProfilePageRoute(recipient.username)}>
+          <Link
+            href={formatProfilePageRoute(recipient.username)}
+            legacyBehavior
+          >
             <a className="cursor-pointer">
               <FullName fullName={recipient?.fullName} size="small" />
             </a>

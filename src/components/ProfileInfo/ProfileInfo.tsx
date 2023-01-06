@@ -53,7 +53,7 @@ export function ProfileInfo(props: ProfileInfoProps) {
           ) : (
             <>
               {showCredit && (
-                <Link href={PageUrls.CREDITS}>
+                <Link href={PageUrls.CREDITS} legacyBehavior>
                   <a className={styles.credits}>
                     <Image
                       src="/static/images/credit.png"

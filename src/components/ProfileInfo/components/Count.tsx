@@ -13,7 +13,7 @@ interface Props {
 // TODO: refactor this component
 export function Count({ title, count, href, clickable }: Props) {
   return clickable && href ? (
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a className={classNames(styles.count, styles.clickable)}>
         <span className={styles.number}>{count}</span>
         <span className={styles.title}>{title}</span>

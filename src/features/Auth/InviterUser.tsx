@@ -18,7 +18,7 @@ export function InviterUser(props: InviterUserProps) {
 
   if (inviterUser) {
     return (
-      <Link href={formatProfilePageRoute(inviterUser.username)}>
+      <Link href={formatProfilePageRoute(inviterUser.username)} legacyBehavior>
         <a className={wrapperClasses}>
           {t("auth:texts.invitedBy")}
           <Avatar

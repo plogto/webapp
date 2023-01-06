@@ -13,7 +13,7 @@ export function TagInfo(props: TagInfoProps) {
   return (
     <div className={styles.wrapper}>
       {name && (
-        <Link href={formatTagPageRoute(name)}>
+        <Link href={formatTagPageRoute(name)} legacyBehavior>
           <a className={styles.tagInfo}>
             <span className={styles.icon}>
               <Icon name="Hashtag" />

@@ -67,7 +67,7 @@ export function User(props: UserProps) {
   return (
     <div className={wrapperClasses}>
       {username && (
-        <Link href={formatProfilePageRoute(username)}>
+        <Link href={formatProfilePageRoute(username)} legacyBehavior>
           <a className={styles.userInfo}>
             <div>
               <Avatar

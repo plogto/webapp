@@ -18,7 +18,7 @@ export function DesktopTrends() {
         <Icon name="TrendingUp" />
       </span>
       {tags?.map(({ node: { id, name, count } }) => (
-        <Link key={id} href={formatTagPageRoute(name)}>
+        <Link key={id} href={formatTagPageRoute(name)} legacyBehavior>
           <a className={styles.tag}>
             <span className={styles.tagName}>#{name}</span>
             <span className={styles.tagCount}>
