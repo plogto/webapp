@@ -13,7 +13,7 @@ export function useInviteFriends(props: UseInviteFriendsProps) {
   const { formatInvitationUrl } = useUrls();
 
   const inviteFriendsModalData: InformationModalProps = {
-    icon: "UserPlus",
+    icon: "User",
     title: t("modals.inviteFriends.title"),
     description: t("modals.inviteFriends.description"),
     content: <InvitationCode invitationCode={user?.invitationCode} />,

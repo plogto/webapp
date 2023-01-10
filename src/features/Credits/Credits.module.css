@@ -51,11 +51,11 @@
 }
 
 .invitationCodeWrapper {
-  @apply mt-4 rounded-xl bg-gray-500 bg-opacity-20 py-2 px-3;
+  @apply mt-4 rounded-xl border border-background-dark bg-opacity-20 py-2 px-3;
   & .title {
     @apply text-center text-xs text-gray-400;
   }
   & .invitationCode {
-    @apply text-2xl font-bold tracking-widest text-foreground;
+    @apply text-3xl font-bold tracking-widest text-foreground;
   }
 }

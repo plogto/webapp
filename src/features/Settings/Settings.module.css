@@ -38,7 +38,7 @@
     }
 
     & .logoutButton {
-      @apply text-danger hover:bg-danger-light;
+      @apply text-warning hover:bg-warning-light;
 
       & .icon {
         @apply h-6 w-6 stroke-2;

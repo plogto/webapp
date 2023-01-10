@@ -3,12 +3,13 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AnimationPattern, ModalColor } from "@enums";
 import { Avatar } from "@components/Avatar";
 import { FullName } from "@components/FullName";
 import { Icon } from "@components/Icon";
 import { Menu } from "@components/Menu";
 import type { MenuProps } from "@components/Menu/Menu.types";
-import { DeletionModal } from "@components/Modal";
+import { ConfirmationModal } from "@components/Modal";
 import type { HeaderPostProps } from "@components/Post/Post.types";
 import { useDeletePost } from "@components/Post/hooks/useDeletePost";
 import { useModalContext } from "@contexts/ModalContext";
@@ -95,11 +96,15 @@ export function Header(props: HeaderPostProps) {
 
       {showMoreButton && (
         <>
-          <DeletionModal
+          <ConfirmationModal
             isOpen={isOpen}
+            icon="Trash"
             title={t("modals.delete.title")}
             description={t("modals.delete.description")}
-            onDelete={deletePost}
+            onSubmit={deletePost}
+            submitButton={t("buttons.delete")}
+            color={ModalColor.RED}
+            animation={AnimationPattern.BUZZ}
           />
 
           <Menu
