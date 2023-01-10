@@ -222,6 +222,7 @@
     "buttons": {
       "copyLink": "Copy Link",
       "deletePost": "Delete Post",
+      "delete": "Delete",
       "editPost": "Edit Post",
       "okay": "Okay",
       "post": "Post",

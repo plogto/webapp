@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { ButtonLayout } from "@enums";
+import classNames from "classnames";
+import { AnimationPattern, ButtonLayout } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import { Modal } from "@components/Modal";
+import { prepareAnimationClasses } from "@utils/animation";
 import type { ChangeImageProfileProps } from "./ChangeImageProfile.types";
 import styles from "./ChangeImageProfileModal.module.css";
 
@@ -18,13 +20,18 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
   } = props;
   const { t } = useTranslation("settings");
 
+  const animationClasses = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
+
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className="modal-title">{title}</div>
-        <div className="icon-wrapper bg-background">
-          <Icon name="Photo" className="icon text-foreground-medium" />
+        <div className={classNames("icon-wrapper", animationClasses)}>
+          <Icon
+            name="Photo"
+            className={classNames("icon text-foreground", animationClasses)}
+          />
         </div>
+        <div className="modal-title">{title}</div>
         <div className={styles.modalButtons}>
           <Button
             layout={ButtonLayout.FILL}

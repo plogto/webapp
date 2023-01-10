@@ -11,8 +11,8 @@
 
     & .content {
       @apply absolute bottom-0 my-8 inline-block w-full max-w-[90%] md:bottom-[unset] md:max-w-xs;
-      @apply overflow-hidden text-left align-middle;
-      @apply transform rounded-2xl bg-background-light shadow backdrop-blur-xl transition-all;
+      @apply text-left align-middle;
+      @apply transform rounded-2xl bg-background-pure shadow transition-all;
     }
 
     /* Transition */

@@ -1,10 +1,11 @@
 import { useCallback } from "react";
 import classNames from "classnames";
-import { ModalColor } from "@enums";
+import { AnimationPattern, ModalColor } from "@enums";
 import { Button } from "@components/Buttons/Button";
 import { Icon } from "@components/Icon";
 import type { InformationModalProps } from "@components/Modal/Modal.types";
 import { useModalContext } from "@contexts/ModalContext";
+import { prepareAnimationClasses } from "@utils/animation";
 import { Modal } from "./Modal";
 
 export function InformationModal(props: InformationModalProps) {
@@ -26,11 +27,12 @@ export function InformationModal(props: InformationModalProps) {
   }, [closeModal, onSubmit]);
 
   const colorClassName = color.toLowerCase();
+  const animationClasses = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className="icon-wrapper">
+        <div className={classNames("icon-wrapper", animationClasses)}>
           <Icon name={icon} className={classNames("icon", colorClassName)} />
         </div>
         <div className="modal-title">{title}</div>

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ModalColor } from "@enums";
+import { AnimationPattern, ModalColor } from "@enums";
 import type { IconNames } from "@components/Icon";
 
 export interface ModalProps {
@@ -23,6 +23,7 @@ export interface ConfirmationModalProps {
   color?: ModalColor;
   submitButton: ReactNode;
   isOpen?: boolean;
+  animation?: AnimationPattern;
 }
 export interface ChangeUsernameModalProps {
   title: string;

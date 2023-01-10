@@ -25,19 +25,20 @@
 
 @layer components {
   .modal {
-    @apply flex flex-col items-center rounded-2xl border border-background-medium px-5 py-5;
+    @apply flex flex-col items-center rounded-2xl border border-background-light px-5 py-5;
 
     & .modal-title {
       @apply text-center text-xl font-bold text-foreground;
     }
 
     & .modal-description {
-      @apply pt-2 text-center text-sm text-foreground-medium;
+      @apply pt-2 text-center text-sm text-foreground-dark;
     }
 
     & .icon-wrapper {
       @apply flex flex-grow items-center justify-center;
-      @apply my-6 rounded-full p-4;
+      @apply -mt-24 mb-4 rounded-full border border-background-light p-4 shadow-md;
+      @apply z-[1000] bg-background-pure;
 
       &.normal {
         @apply bg-gray-500 bg-opacity-10;
@@ -60,7 +61,7 @@
       }
 
       & .icon {
-        @apply h-24 w-24 stroke-1.5;
+        @apply h-28 w-28 stroke-1;
 
         &.normal {
           @apply text-foreground;
