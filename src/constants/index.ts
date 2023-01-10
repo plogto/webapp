@@ -110,3 +110,5 @@ export const PROTECTED_PAGES = [
   PageUrls.FOLLOWERS,
   PageUrls.FOLLOWING,
 ];
+
+export const PLOG_ACCOUNT = process.env.PLOG_ACCOUNT;

@@ -24,6 +24,9 @@ const nextConfiguration = {
   images: {
     domains: process.env.NEXT_PUBLIC_IMAGES_DOMAINS.split(", "),
   },
+  env: {
+    PLOG_ACCOUNT: process.env.NEXT_PUBLIC_PLOG_ACCOUNT,
+  },
 };
 
 /** @type {import('next').NextConfig} */

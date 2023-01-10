@@ -37,3 +37,7 @@ export interface HandleCompleteSuggestionProps {
 export interface FormatCreditAmountOptions {
   sign?: boolean;
 }
+
+export interface UseUserProfileProps {
+  username?: string;
+}

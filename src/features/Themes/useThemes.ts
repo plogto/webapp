@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { DateTime } from "luxon";
 import { useTheme } from "next-themes";
+import { PLOG_ACCOUNT } from "@constants";
 import { PrimaryColor, BackgroundColor } from "@enums";
 import { useMutation } from "@apollo/client";
 import { useAccountContext } from "@contexts/AccountContext";
 import type { EditUserMutation } from "@graphql/@types/user";
 import { EDIT_USER, GET_USER_INFO } from "@graphql/user";
+import { useUserProfile } from "@hooks/useUserProfile";
+import type { Post } from "@t/post";
 
 export function useThemes() {
   const { user } = useAccountContext();
@@ -15,6 +19,9 @@ export function useThemes() {
   const [primaryColor, setPrimaryColor] = useState(user?.primaryColor);
   const [backgroundColor, setBackgroundColor] = useState(user?.backgroundColor);
   const [editUser] = useMutation<EditUserMutation>(EDIT_USER);
+  const { userResponse } = useUserProfile({
+    username: PLOG_ACCOUNT,
+  });
 
   useEffect(() => {
     const theme = `${backgroundColor}-${primaryColor}`;
@@ -85,6 +92,12 @@ export function useThemes() {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
+  const PREVIEW_POST = {
+    user: userResponse.data?.getUserByUsername,
+    createdAt: DateTime.now().minus({ minute: 10 }).toISO().toString(),
+    content: "Hello, #welcome to PLOG.",
+  } as Post;
+
   return {
     user,
     mounted,
@@ -93,5 +106,6 @@ export function useThemes() {
     primaryColor,
     COLORS,
     THEMES,
+    PREVIEW_POST,
   };
 }
