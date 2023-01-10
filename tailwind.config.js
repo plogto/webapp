@@ -22,6 +22,33 @@ module.exports = {
       strokeWidth: {
         1.5: "1.5",
       },
+      keyframes: {
+        zoomIn: {
+          "0%": { transform: "scale(0)", opacity: "0" },
+          "90%": { transform: "scale(1.05)", opacity: "0.9" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        buzz: {
+          "10%, 30%": {
+            transform: "translateX(7px) rotate(2deg)",
+          },
+          "20%, 40%": {
+            transform: "translateX(-7px) rotate(-2deg)",
+          },
+          "50%, 70%": {
+            transform: "translateX(6px) rotate(1deg)",
+          },
+          "60%, 80%": {
+            transform: "translateX(-6px) rotate(-1deg)",
+          },
+          "90%": {
+            transform: "translateX(2px) rotate(0)",
+          },
+          "100%": {
+            transform: "translateX(-2px) rotate(0)",
+          },
+        },
+      },
     },
     colors: {
       transparent: "transparent",

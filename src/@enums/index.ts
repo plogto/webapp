@@ -160,3 +160,8 @@ export enum QueryKeys {
   PARENT_URL = "parent_url",
   TAB = "tab",
 }
+
+export enum AnimationPattern {
+  ZOOM_IN = "zoomIn",
+  BUZZ = "buzz",
+}
