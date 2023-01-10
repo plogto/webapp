@@ -33,6 +33,9 @@ module.exports = {
       // danger
       "danger-light": "var(--danger-light)",
       danger: "var(--danger)",
+      //warning
+      "warning-light": "var(--warning-light)",
+      warning: "var(--warning)",
       // background
       "background-pure": "var(--background-pure)",
       background: "var(--background)",

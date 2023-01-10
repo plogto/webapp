@@ -5,6 +5,9 @@
   --danger-light: #fb718511;
   --danger: theme("colors.rose.500");
 
+  --warning-light: #fbbf2422;
+  --warning: theme("colors.amber.500");
+
   --background-pure: theme("colors.white");
   --background: theme("colors.gray.50");
   --background-light: #f9fafb99;
@@ -57,9 +60,12 @@
   --danger-light: #fb718511;
   --danger: theme("colors.rose.500");
 
+  --warning-light: #fbbf2422;
+  --warning: theme("colors.amber.500");
+
   --background-pure: theme("colors.white");
   --background: theme("colors.gray.50");
-  --background-light: theme("colors.gray.50");
+  --background-light: #f9fafb99;
   --background-medium: theme("colors.gray.100");
   --background-dark: theme("colors.gray.200");
 
@@ -109,6 +115,9 @@
 [data-theme="DIM-YELLOW"] {
   --danger-light: #fb718533;
   --danger: theme("colors.rose.500");
+
+  --warning-light: #fbbf2422;
+  --warning: theme("colors.amber.500");
 
   --background-pure: theme("colors.gray.800");
   --background: theme("colors.gray.900");
@@ -163,9 +172,12 @@
   --danger-light: #fb718533;
   --danger: theme("colors.rose.500");
 
+  --warning-light: #fbbf2422;
+  --warning: theme("colors.amber.500");
+
   --background-pure: theme("colors.black");
   --background: theme("colors.black");
-  --background-light: theme("colors.neutral.900");
+  --background-light: #17171799;
   --background-medium: #262626;
   --background-dark: theme("colors.neutral.700");
 
