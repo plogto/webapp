@@ -6,18 +6,18 @@
     @apply h-screen px-4 text-center;
 
     & .overlay {
-      @apply fixed inset-0 z-0 bg-black bg-opacity-80;
+      @apply fixed inset-0 z-0 backdrop-blur-lg;
     }
 
     & .content {
       @apply absolute bottom-0 my-8 inline-block w-full max-w-[90%] md:bottom-[unset] md:max-w-xs;
       @apply overflow-hidden text-left align-middle;
-      @apply transform rounded-2xl bg-background-pure shadow transition-all;
+      @apply transform rounded-2xl bg-background-light shadow backdrop-blur-xl transition-all;
     }
 
     /* Transition */
     & .enterOverlayTransition {
-      @apply duration-200 ease-out;
+      @apply duration-100 ease-out;
     }
     & .enterFromOverlayTransition {
       @apply opacity-0;
@@ -26,7 +26,7 @@
       @apply opacity-100;
     }
     & .leaveOverlayTransition {
-      @apply duration-200 ease-in;
+      @apply duration-100 ease-in;
     }
     & .leaveFromOverlayTransition {
       @apply opacity-100;
@@ -36,7 +36,7 @@
     }
 
     & .enterModalTransition {
-      @apply duration-200 ease-out;
+      @apply duration-100 ease-out;
     }
     & .enterFromModalTransition {
       @apply scale-95 opacity-0;
@@ -45,7 +45,7 @@
       @apply scale-100 opacity-100;
     }
     & .leaveModalTransition {
-      @apply duration-200 ease-in;
+      @apply duration-75 ease-in;
     }
     & .leaveFromModalTransition {
       @apply scale-100 opacity-100;
