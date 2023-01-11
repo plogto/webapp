@@ -20,15 +20,15 @@ export function ChangeImageProfileModal(props: ChangeImageProfileProps) {
   } = props;
   const { t } = useTranslation("settings");
 
-  const animationClasses = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
+  const motion = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className={classNames("icon-wrapper", animationClasses)}>
+        <div className={classNames("icon-wrapper", motion)}>
           <Icon
             name="Photo"
-            className={classNames("icon text-foreground", animationClasses)}
+            className={classNames("icon text-foreground", motion)}
           />
         </div>
         <div className="modal-title">{title}</div>

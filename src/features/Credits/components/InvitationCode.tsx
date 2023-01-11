@@ -8,12 +8,12 @@ import type { InvitationCodeProps } from "../Credits.types";
 export function InvitationCode(props: InvitationCodeProps) {
   const { invitationCode } = props;
   const { t } = useTranslation("credits");
-  const animationClasses = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
+  const motion = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
 
   return (
     <div className={styles.invitationCodeWrapper}>
       <div className={styles.title}>{t("texts.invitationCode")}</div>
-      <div className={classNames(styles.invitationCode, animationClasses)}>
+      <div className={classNames(styles.invitationCode, motion)}>
         {invitationCode?.toUpperCase()}
       </div>
     </div>

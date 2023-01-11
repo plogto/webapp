@@ -27,12 +27,12 @@ export function InformationModal(props: InformationModalProps) {
   }, [closeModal, onSubmit]);
 
   const colorClassName = color.toLowerCase();
-  const animationClasses = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
+  const motion = prepareAnimationClasses(AnimationPattern.ZOOM_IN);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className={classNames("icon-wrapper", animationClasses)}>
+        <div className={classNames("icon-wrapper", motion)}>
           <Icon name={icon} className={classNames("icon", colorClassName)} />
         </div>
         <div className="modal-title">{title}</div>

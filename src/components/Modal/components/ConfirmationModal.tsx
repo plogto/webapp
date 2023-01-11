@@ -29,15 +29,15 @@ export function ConfirmationModal(props: ConfirmationModalProps) {
   }, [closeModal, onSubmit]);
 
   const colorClassName = color.toLowerCase();
-  const animationClasses = prepareAnimationClasses(animation);
+  const motion = prepareAnimationClasses(animation);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
       <div className="modal">
-        <div className={classNames("icon-wrapper", animationClasses)}>
+        <div className={classNames("icon-wrapper", motion)}>
           <Icon
             name={icon}
-            className={classNames("icon", colorClassName, animationClasses)}
+            className={classNames("icon", colorClassName, motion)}
           />
         </div>
         <div className="modal-title">{title}</div>

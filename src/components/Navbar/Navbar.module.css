@@ -6,10 +6,10 @@
 
     & .navLink {
       @apply mx-1 p-1 md:p-2;
-      @apply ring-0 duration-300 focus:ring-0;
+      @apply ring-0  focus:ring-0;
       @apply text-gray-400 hover:text-foreground;
       @apply inline-flex items-center justify-center;
-      @apply hover:scale-105;
+      @apply transition-all duration-200 hover:scale-105;
 
       & .notificationBadgeWrapper {
         @apply absolute top-0 right-0;
