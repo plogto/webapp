@@ -1,14 +1,14 @@
 // TODO: split this file
 export enum DateType {
-  LONG,
-  SHORT,
+  LONG = "LONG",
+  SHORT = "SHORT",
 }
 
 export enum RepliesView {
-  NONE,
-  QUICK,
-  COMPLETE,
-  THREAD,
+  NONE = "NONE",
+  QUICK = "QUICK",
+  COMPLETE = "COMPLETE",
+  THREAD = "THREAD",
 }
 
 export enum PostTypeKey {
@@ -20,9 +20,9 @@ export enum PostTypeKey {
 }
 
 export enum CropImageTypeKey {
-  AVATAR,
-  BACKGROUND,
-  POST,
+  AVATAR = "AVATAR",
+  BACKGROUND = "BACKGROUND",
+  POST = "POST",
 }
 
 export enum PrimaryColor {
@@ -48,8 +48,8 @@ export enum ProfileActiveTab {
 }
 
 export enum ConnectionsActiveTab {
-  FOLLOWING,
-  FOLLOWERS,
+  FOLLOWING = "FOLLOWING",
+  FOLLOWERS = "FOLLOWERS",
 }
 
 export enum CreditTransactionStatusType {
@@ -69,18 +69,16 @@ export enum TicketStatusType {
 }
 
 export enum TicketPermissionType {
-  NEW_MESSAGE = "new_message",
-  OPEN = "open",
-  CLOSE = "close",
-  ACCEPT = "accept",
-  APPROVE = "approve",
-  REJECT = "reject",
-  SOLVE = "solve",
+  NEW_MESSAGE = "NEW_MESSAGE",
+  OPEN = "OPEN",
+  CLOSE = "CLOSE",
+  ACCEPT = "ACCEPT",
+  APPROVE = "APPROVE",
+  REJECT = "REJECT",
+  SOLVE = "SOLVE",
 }
 
-export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
-
-export type StatusType = typeof Statues;
+export type StatusType = CreditTransactionStatusType | TicketStatusType;
 
 export enum CreditTransactionDescriptionVariableType {
   TICKET = "ticket",
