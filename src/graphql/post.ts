@@ -245,7 +245,7 @@ export const GET_EXPLORE_POSTS = gql`
 export const ADD_POST = gql`
   ${UserFragment.short}
   ${FileFragment.complete}
-  mutation addPost($parentId: ID, $content: String!, $attachment: [String!]) {
+  mutation addPost($parentId: UUID, $content: String!, $attachment: [String!]) {
     addPost(
       input: { content: $content, attachment: $attachment, parentId: $parentId }
     ) {
@@ -267,7 +267,7 @@ export const ADD_POST = gql`
 export const EDIT_POST = gql`
   ${UserFragment.short}
   ${FileFragment.complete}
-  mutation editPost($postId: ID!, $content: String!) {
+  mutation editPost($postId: UUID!, $content: String!) {
     editPost(postId: $postId, input: { content: $content }) {
       id
       url
@@ -285,7 +285,7 @@ export const EDIT_POST = gql`
 `;
 
 export const DELETE_POST = gql`
-  mutation deletePost($postId: ID!) {
+  mutation deletePost($postId: UUID!) {
     deletePost(postId: $postId) {
       id
     }

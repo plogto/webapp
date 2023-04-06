@@ -21,42 +21,42 @@
   --foreground-pure: theme("colors.black");
 }
 
-[data-theme="LIGHT-BLUE"] {
+[data-theme="light-blue"] {
   --primary-light: #0ea5e922;
   --primary: theme("colors.sky.500");
 }
 
-[data-theme="LIGHT-GREEN"] {
+[data-theme="light-green"] {
   --primary-light: #10b98122;
   --primary: theme("colors.emerald.500");
 }
 
-[data-theme="LIGHT-RED"] {
+[data-theme="light-red"] {
   --primary-light: #f43f5e22;
   --primary: theme("colors.rose.500");
 }
 
-[data-theme="LIGHT-PURPLE"] {
+[data-theme="light-purple"] {
   --primary-light: #6366f122;
   --primary: theme("colors.indigo.500");
 }
 
-[data-theme="LIGHT-ORANGE"] {
+[data-theme="light-orange"] {
   --primary-light: #f9731622;
   --primary: theme("colors.orange.500");
 }
 
-[data-theme="LIGHT-YELLOW"] {
+[data-theme="light-yellow"] {
   --primary-light: #fbbf2422;
   --primary: theme("colors.amber.400");
 }
 
-[data-theme="LIGHT-BLUE"],
-[data-theme="LIGHT-GREEN"],
-[data-theme="LIGHT-RED"],
-[data-theme="LIGHT-PURPLE"],
-[data-theme="LIGHT-ORANGE"],
-[data-theme="LIGHT-YELLOW"] {
+[data-theme="light-blue"],
+[data-theme="light-green"],
+[data-theme="light-red"],
+[data-theme="light-purple"],
+[data-theme="light-orange"],
+[data-theme="light-yellow"] {
   --danger-light: #fb718511;
   --danger: theme("colors.rose.500");
 
@@ -77,42 +77,42 @@
 }
 
 // dim
-[data-theme="DIM-BLUE"] {
+[data-theme="dim-blue"] {
   --primary-light: #0ea5e944;
   --primary: theme("colors.sky.500");
 }
 
-[data-theme="DIM-GREEN"] {
+[data-theme="dim-green"] {
   --primary-light: #10b98144;
   --primary: theme("colors.emerald.500");
 }
 
-[data-theme="DIM-RED"] {
+[data-theme="dim-red"] {
   --primary-light: #f43f5e44;
   --primary: theme("colors.rose.500");
 }
 
-[data-theme="DIM-PURPLE"] {
+[data-theme="dim-purple"] {
   --primary-light: #6366f144;
   --primary: theme("colors.indigo.500");
 }
 
-[data-theme="DIM-ORANGE"] {
+[data-theme="dim-orange"] {
   --primary-light: #f9731644;
   --primary: theme("colors.orange.500");
 }
 
-[data-theme="DIM-YELLOW"] {
+[data-theme="dim-yellow"] {
   --primary-light: #fbbf2444;
   --primary: theme("colors.amber.400");
 }
 
-[data-theme="DIM-BLUE"],
-[data-theme="DIM-GREEN"],
-[data-theme="DIM-RED"],
-[data-theme="DIM-PURPLE"],
-[data-theme="DIM-ORANGE"],
-[data-theme="DIM-YELLOW"] {
+[data-theme="dim-blue"],
+[data-theme="dim-green"],
+[data-theme="dim-red"],
+[data-theme="dim-purple"],
+[data-theme="dim-orange"],
+[data-theme="dim-yellow"] {
   --danger-light: #fb718533;
   --danger: theme("colors.rose.500");
 
@@ -133,42 +133,42 @@
 }
 
 // dark
-[data-theme="DARK-BLUE"] {
+[data-theme="dark-blue"] {
   --primary-light: #0ea5e944;
   --primary: theme("colors.sky.500");
 }
 
-[data-theme="DARK-GREEN"] {
+[data-theme="dark-green"] {
   --primary-light: #10b98144;
   --primary: theme("colors.emerald.500");
 }
 
-[data-theme="DARK-RED"] {
+[data-theme="dark-red"] {
   --primary-light: #f43f5e44;
   --primary: theme("colors.rose.500");
 }
 
-[data-theme="DARK-PURPLE"] {
+[data-theme="dark-purple"] {
   --primary-light: #6366f144;
   --primary: theme("colors.indigo.500");
 }
 
-[data-theme="DARK-ORANGE"] {
+[data-theme="dark-orange"] {
   --primary-light: #f9731644;
   --primary: theme("colors.orange.500");
 }
 
-[data-theme="DARK-YELLOW"] {
+[data-theme="dark-yellow"] {
   --primary-light: #fbbf2444;
   --primary: theme("colors.amber.400");
 }
 
-[data-theme="DARK-BLUE"],
-[data-theme="DARK-GREEN"],
-[data-theme="DARK-RED"],
-[data-theme="DARK-PURPLE"],
-[data-theme="DARK-ORANGE"],
-[data-theme="DARK-YELLOW"] {
+[data-theme="dark-blue"],
+[data-theme="dark-green"],
+[data-theme="dark-red"],
+[data-theme="dark-purple"],
+[data-theme="dark-orange"],
+[data-theme="dark-yellow"] {
   --danger-light: #fb718533;
   --danger: theme("colors.rose.500");
 

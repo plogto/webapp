@@ -3,7 +3,7 @@ import { PageInfoFragment } from "./fragments/pageInfo";
 import { UserFragment } from "./fragments/user";
 
 export const FOLLOW_USER = gql`
-  mutation followUser($userId: ID!) {
+  mutation followUser($userId: UUID!) {
     followUser(userId: $userId) {
       id
       status
@@ -23,7 +23,7 @@ export const FOLLOW_USER = gql`
 `;
 
 export const UNFOLLOW_USER = gql`
-  mutation unfollowUser($userId: ID!) {
+  mutation unfollowUser($userId: UUID!) {
     unfollowUser(userId: $userId) {
       id
       status
@@ -43,7 +43,7 @@ export const UNFOLLOW_USER = gql`
 `;
 
 export const ACCEPT_USER = gql`
-  mutation acceptUser($userId: ID!) {
+  mutation acceptUser($userId: UUID!) {
     acceptUser(userId: $userId) {
       id
       status
@@ -59,7 +59,7 @@ export const ACCEPT_USER = gql`
 `;
 
 export const REJECT_USER = gql`
-  mutation rejectUser($userId: ID!) {
+  mutation rejectUser($userId: UUID!) {
     rejectUser(userId: $userId) {
       id
       status

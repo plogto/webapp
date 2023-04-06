@@ -5,10 +5,7 @@ import type { StatusProps } from "./Status.types";
 export function Status(props: StatusProps) {
   const { status } = props;
 
-  const statusClasses = classNames(
-    styles.status,
-    status && styles[status.toLowerCase()],
-  );
+  const statusClasses = classNames(styles.status, status && styles[status]);
 
-  return <div className={statusClasses}>{status}</div>;
+  return <div className={statusClasses}>{status.toUpperCase()}</div>;
 }

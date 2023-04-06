@@ -30,7 +30,7 @@ export function EditProfile() {
   });
   const { t } = useTranslation("editProfile");
   const {
-    value: isOpen,
+    value: isUsernameModalOpen,
     setTrue: openChangeUsernameModal,
     setFalse: closeChangeUsernameModal,
   } = useBoolean();
@@ -39,7 +39,7 @@ export function EditProfile() {
     <>
       {user && (
         <ChangeUsername
-          isOpen={isOpen}
+          isOpen={isUsernameModalOpen}
           openModal={openChangeUsernameModal}
           closeModal={closeChangeUsernameModal}
           username={user?.username}

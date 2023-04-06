@@ -1,14 +1,14 @@
 // TODO: split this file
 export enum DateType {
-  LONG = "LONG",
-  SHORT = "SHORT",
+  LONG,
+  SHORT,
 }
 
 export enum RepliesView {
-  NONE = "NONE",
-  QUICK = "QUICK",
-  COMPLETE = "COMPLETE",
-  THREAD = "THREAD",
+  NONE,
+  QUICK,
+  COMPLETE,
+  THREAD,
 }
 
 export enum PostTypeKey {
@@ -20,24 +20,24 @@ export enum PostTypeKey {
 }
 
 export enum CropImageTypeKey {
-  AVATAR = "AVATAR",
-  BACKGROUND = "BACKGROUND",
-  POST = "POST",
+  AVATAR,
+  BACKGROUND,
+  POST,
 }
 
 export enum PrimaryColor {
-  BLUE = "BLUE",
-  GREEN = "GREEN",
-  RED = "RED",
-  PURPLE = "PURPLE",
-  ORANGE = "ORANGE",
-  YELLOW = "YELLOW",
+  BLUE = "blue",
+  GREEN = "green",
+  RED = "red",
+  PURPLE = "purple",
+  ORANGE = "orange",
+  YELLOW = "yellow",
 }
 
 export enum BackgroundColor {
-  LIGHT = "LIGHT",
-  DIM = "DIM",
-  DARK = "DARK",
+  LIGHT = "light",
+  DIM = "dim",
+  DARK = "dark",
 }
 
 export enum ProfileActiveTab {
@@ -48,34 +48,34 @@ export enum ProfileActiveTab {
 }
 
 export enum ConnectionsActiveTab {
-  FOLLOWING = "FOLLOWING",
-  FOLLOWERS = "FOLLOWERS",
+  FOLLOWING,
+  FOLLOWERS,
 }
 
 export enum CreditTransactionStatusType {
-  APPROVED = "APPROVED",
-  PENDING = "PENDING",
-  FAILED = "FAILED",
-  CANCELED = "CANCELED",
+  APPROVED = "approved",
+  PENDING = "pending",
+  FAILED = "failed",
+  CANCELED = "canceled",
 }
 
 export enum TicketStatusType {
-  OPEN = "OPEN",
-  CLOSED = "CLOSED",
-  ACCEPTED = "ACCEPTED",
-  APPROVED = "APPROVED",
-  REJECTED = "REJECTED",
-  SOLVED = "SOLVED",
+  OPEN = "open",
+  CLOSED = "closed",
+  ACCEPTED = "accepted",
+  APPROVED = "approved",
+  REJECTED = "rejected",
+  SOLVED = "solved",
 }
 
 export enum TicketPermissionType {
-  NEW_MESSAGE = "NEW_MESSAGE",
-  OPEN = "OPEN",
-  CLOSE = "CLOSE",
-  ACCEPT = "ACCEPT",
-  APPROVE = "APPROVE",
-  REJECT = "REJECT",
-  SOLVE = "SOLVE",
+  NEW_MESSAGE = "new_message",
+  OPEN = "open",
+  CLOSE = "close",
+  ACCEPT = "accept",
+  APPROVE = "approve",
+  REJECT = "reject",
+  SOLVE = "solve",
 }
 
 export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
@@ -83,26 +83,26 @@ export const Statues = { ...CreditTransactionStatusType, ...TicketStatusType };
 export type StatusType = typeof Statues;
 
 export enum CreditTransactionDescriptionVariableType {
-  TICKET = "TICKET",
-  USER = "USER",
-  TAG = "TAG",
+  TICKET = "ticket",
+  USER = "user",
+  TAG = "tag",
 }
 
 export enum CreditTransactionTypeName {
-  INVITE_USER = "INVITE_USER",
-  REGISTER_BY_INVITATION_CODE = "REGISTER_BY_INVITATION_CODE",
+  INVITE_USER = "invite_user",
+  REGISTER_BY_INVITATION_CODE = "register_by_invitation_code",
 }
 
 export enum CreditTransactionType {
-  ORDER = "ORDER",
-  TRANSFER = "TRANSFER",
-  COMMISSION = "COMMISSION",
-  FUND = "FUND",
+  ORDER = "order",
+  TRANSFER = "transfer",
+  COMMISSION = "commission",
+  FUND = "fund",
 }
 
 export enum CreditTransactionAmountType {
-  DEPOSIT = "DEPOSIT",
-  WITHDRAW = "WITHDRAW",
+  DEPOSIT = "deposit",
+  WITHDRAW = "withdraw",
 }
 
 export enum LocalStorageKeys {
@@ -111,21 +111,21 @@ export enum LocalStorageKeys {
 }
 
 export enum ModalColor {
-  NORMAL = "NORMAL",
-  RED = "RED",
-  BLUE = "BLUE",
-  GREEN = "GREEN",
-  YELLOW = "YELLOW",
+  NORMAL = "normal",
+  RED = "red",
+  BLUE = "blue",
+  GREEN = "green",
+  YELLOW = "yellow",
 }
 
 export enum NotificationTypeName {
-  WELCOME = "WELCOME",
-  LIKE_POST = "LIKE_POST",
-  REPLY_POST = "REPLY_POST",
-  LIKE_REPLY = "LIKE_REPLY",
-  FOLLOW_USER = "FOLLOW_USER",
-  ACCEPT_USER = "ACCEPT_USER",
-  MENTION_IN_POST = "MENTION_IN_POST",
+  WELCOME = "welcome",
+  LIKE_POST = "like_post",
+  REPLY_POST = "reply_post",
+  LIKE_REPLY = "like_reply",
+  FOLLOW_USER = "follow_user",
+  ACCEPT_USER = "accept_user",
+  MENTION_IN_POST = "mention_in_post",
 }
 
 export enum PageLoaderHeightType {
@@ -145,15 +145,15 @@ export enum ImageProfileKey {
 }
 
 export enum SearchFilters {
-  USERS = "USERS",
-  TAGS = "TAGS",
+  USERS = "users",
+  TAGS = "tags",
 }
 
 export enum ButtonLayout {
-  NORMAL = "NORMAL",
-  FILL = "FILL",
+  NORMAL = "normal",
+  FILL = "fill",
   /* TODO: change the name and value */
-  DANGER = "DANGER",
+  DANGER = "danger",
 }
 
 export enum QueryKeys {

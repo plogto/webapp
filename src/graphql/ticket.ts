@@ -59,7 +59,7 @@ export const GET_TICKET_MESSAGES_BY_TICKET_URL = gql`
 export const ADD_TICKET_MESSAGE = gql`
   ${TicketFragment.complete}
   mutation addTicketMessage(
-    $ticketId: ID!
+    $ticketId: UUID!
     $message: String!
     $attachment: [String!]
   ) {
@@ -91,7 +91,7 @@ export const CREATE_TICKET = gql`
 `;
 
 export const UPDATE_TICKET_STATUS = gql`
-  mutation updateTicketStatus($ticketId: ID!, $status: TicketStatus!) {
+  mutation updateTicketStatus($ticketId: UUID!, $status: TicketStatus!) {
     updateTicketStatus(ticketId: $ticketId, status: $status) {
       id
       status
